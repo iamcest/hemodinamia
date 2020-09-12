@@ -1,0 +1,324 @@
+<% alias Angio.Canons, as: Query %>
+
+
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+
+    </div>
+<div class="notification is-danger">
+    <button class="delete"></button>
+    Oops, something went wrong! Please check the errors below or Dublicate Record
+</div>
+  <% end %>
+ <div class="columns">
+  <div class="column frame_1">
+
+<!---------start--------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Endocarditis?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :infh_endocarditis_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :infh_endocarditis_yn %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+
+
+
+</div><!----column-------------------->
+<div class = "column">
+
+   <!----field start-------------------------------------->
+   <% s_infh_endocarditis_type = Query.select_options("infh_endocarditis_type") %>
+<div class="field">
+  <label class="label"> SBE Type</label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f, :infh_endocarditis_type,
+s_infh_endocarditis_type ,
+prompt: "---Select---",
+class: "form-control") %>
+            </div>
+            <!--select---->
+            <%= error_tag f, :infh_endocarditis_type  %>
+            <p class="help"><%#= i_collat_donor_seg 0%></p>
+          </div>
+          <!--control---->
+        </div>
+        <!---field-end------------------->
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Hepatitis B?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :infh_hepatitis_b_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :infh_hepatitis_b_yn %>
+        </div>
+        <p class="help">C
+        </p>
+    </div><!-----field------------------>
+
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Hepatitis C?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :infh_hepatitis_c_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :infh_hepatitis_c_yn %>
+        </div>
+        <p class="help">
+        </p>
+    </div><!-----field------------------>
+
+
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">HIV ?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :infh_hiv_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :infh_hiv_yn %>
+        </div>
+        <p class="help">
+        </p>
+    </div><!-----field------------------>
+
+
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Malaria ?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :infh_malaria_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :infh_malaria_yn%>
+        </div>
+        <p class="help">
+        </p>
+    </div><!-----field------------------>
+
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Tubercolosis ?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :infh_tubercolosis_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :infh_tubercolosis_yn%>
+        </div>
+        <p class="help">
+        </p>
+    </div><!-----field------------------>
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Pneumonia ?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :infh_pneumonia_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :infh_pneumonia_yn%>
+        </div>
+        <p class="help">
+        </p>
+    </div><!-----field------------------>
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Influenza Vaccine ?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :infh_influenza_vacc_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :infh_influenza_vacc_yn %>
+        </div>
+        <p class="help">
+        </p>
+    </div><!-----field------------------>
+
+
+
+</div><!----column-------------------->
+ <div class = "column">
+<!--------start---field----------------------------->
+ <div class="field">
+          <label class="label">Date  </label>
+          <div class="control">
+      <%= text_input f, :infh_influenza_vacc_dt,
+class: "input",
+type: "date",
+placeholder: "infh_influenza_vacc_dt",
+required: false %>
+<%= error_tag f,:infh_influenza_vacc_dt %>
+          </div>
+          <p class="help"></p>
+        </div>
+        <!---------end ---field---->
+
+
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Pneumococcal  Vaccine ?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :infh_pneumococcal_vacc_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :infh_pneumococcal_vacc_yn %>
+        </div>
+        <p class="help">
+        </p>
+    </div><!-----field------------------>
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!--------start---field----------------------------->
+ <div class="field">
+          <label class="label">Date  </label>
+          <div class="control">
+      <%= text_input f, :infh_pneumococcal_vacc_dt,
+class: "input",
+type: "date",
+placeholder: "infh_pneumococcal_vacc_dt",
+required: false %>
+<%= error_tag f,:infh_pneumococcal_vacc_dt %>
+          </div>
+          <p class="help"></p>
+        </div>
+        <!---------end ---field---->
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+
+</div><!--------left column----------------------->
+  <div class="column frame_1">
+<!--start------------------------------->
+      <div class="columns">
+        <div class="column">
+
+  <div class="field">
+  <label class="label"> My Notes On Infections Record </label>
+  <div class="control">
+    <%= text_input f, :infh_histories_notes,
+        class: "textarea",
+        type: "input", placeholder: "My Notes"  %>
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field------->
+<%= render  AngioWeb.SharedView, "_help_area.html" %>
+
+        </div><!---------column 1-------->
+      </div><!-----colomns---------->
+      <!----end----------------------------------->
+
+    </div>
+
+
+
+
+
+</div><!--------R column----------------------->
+</div><!-------- columns----------------------->
+<div>
+    <%= submit "Save and Continue", class: "button is-info is-large is-fullwidth " %>
+  </div>
+<% end %>

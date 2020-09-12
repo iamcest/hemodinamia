@@ -1,0 +1,119 @@
+
+<div class="title_form">
+  <h6 class="title is-6 has-text-centered"> Showing RA Record</h6>
+</div>
+
+<div class="element_info">
+   <%= render AngioWeb.SharedView, "_patient_info.html", patient:
+  @patient %>
+</div>
+<ul>
+
+  <li>
+    <strong>Era si diameter val:</strong>
+    <%= @echo_right_atrium.era_si_diameter_val %>
+  </li>
+
+  <li>
+    <strong>Era ml diameter val:</strong>
+    <%= @echo_right_atrium.era_ml_diameter_val %>
+  </li>
+
+  <li>
+    <strong>Era max diameter val:</strong>
+    <%= @echo_right_atrium.era_max_diameter_val %>
+  </li>
+
+  <li>
+    <strong>Era area val:</strong>
+    <%= @echo_right_atrium.era_area_val %>
+  </li>
+
+  <li>
+    <strong>Era size volume desc:</strong>
+    <%= @echo_right_atrium.era_size_volume_desc %>
+  </li>
+
+  <li>
+    <strong>Era volume val:</strong>
+    <%= @echo_right_atrium.era_volume_val %>
+  </li>
+
+  <li>
+    <strong>Era size volume method:</strong>
+    <%= @echo_right_atrium.era_size_volume_method %>
+  </li>
+
+  <li>
+    <strong>Era coronary sinus dilated yn:</strong>
+    <%= @echo_right_atrium.era_coronary_sinus_dilated_yn %>
+  </li>
+
+  <li>
+    <strong>Era eustachian prominent yn:</strong>
+    <%= @echo_right_atrium.era_eustachian_prominent_yn %>
+  </li>
+
+  <li>
+    <strong>Era chiari prominent yn:</strong>
+    <%= @echo_right_atrium.era_chiari_prominent_yn %>
+  </li>
+
+  <li>
+    <strong>Era septum bowed left yn:</strong>
+    <%= @echo_right_atrium.era_septum_bowed_left_yn %>
+  </li>
+
+  <li>
+    <strong>Era thrombus tumour yn:</strong>
+    <%= @echo_right_atrium.era_thrombus_tumour_yn %>
+  </li>
+
+  <li>
+    <strong>Era ivc thrombus tumour yn:</strong>
+    <%= @echo_right_atrium.era_ivc_thrombus_tumour_yn %>
+  </li>
+
+  <li>
+    <strong>Era svc thrombus tumour yn:</strong>
+    <%= @echo_right_atrium.era_svc_thrombus_tumour_yn %>
+  </li>
+
+  <li>
+    <strong>Era persistent svc yn:</strong>
+    <%= @echo_right_atrium.era_persistent_svc_yn %>
+  </li>
+
+  <li>
+    <strong>Era cath wire yn:</strong>
+    <%= @echo_right_atrium.era_cath_wire_yn %>
+  </li>
+
+  <li>
+    <strong>Era notes:</strong>
+    <%= @echo_right_atrium.era_notes %>
+  </li>
+
+</ul>
+<p class ="buttons_separator"> . </p>
+<span>
+    <%= link "Edit RA Echo ", to: Routes.pt_echo_era_path(@conn, :edit,
+     @patient,
+     @cardiac_echo, @echo_right_atrium ), class: "button is-link"%>
+</span>
+<span>
+  <%= link "Back To RA Echo  Index", to: Routes.pt_echo_era_path(@conn, :index,
+  @patient, @cardiac_echo) , class: "button is-link"%>
+</span>
+
+<span>
+<%= link "To Patients List",  to: Routes.pt_path(@conn, :index),
+class: "button is-link"   %>
+ </span>
+
+<span>
+<%= link "To Cath Lab",  to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-link"   %>
+ </span>
+
+

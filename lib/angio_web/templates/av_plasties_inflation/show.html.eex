@@ -1,0 +1,86 @@
+
+<div class="title_form">
+<h5 class="title is-5 has-text-centered">
+Show Av plasties inflation</h5>
+</div>
+<div class="element_info">
+
+    <%= render  AngioWeb.SharedView, "_patient_info.html", patient: @patient %>
+</div>
+
+<div class="element_info_coronary">
+Angio : <%= render AngioWeb.SharedView, "_info_coronary.html", info_coronary:
+   @info_coronary%>
+</div>
+<div class="content frame_1 ">
+  <ol type="1">
+
+  <li>
+    <strong>Avpi inflation counter:</strong>
+    <%= @av_plasties_inflation.avpi_inflation_counter %>
+  </li>
+
+  <li>
+    <strong>Avpi balloon technique:</strong>
+    <%= @av_plasties_inflation.avpi_balloon_technique %>
+  </li>
+
+  <li>
+    <strong>Avpi sb bal 1:</strong>
+    <%= @av_plasties_inflation.avpi_sb_bal_1_id %>
+  </li>
+
+  <li>
+    <strong>Avpi db bal 2:</strong>
+    <%= @av_plasties_inflation.avpi_db_bal_2_id %>
+  </li>
+
+  <li>
+    <strong>Avpi stabilization yn:</strong>
+    <%= @av_plasties_inflation.avpi_stabilization_yn %>
+  </li>
+
+  <li>
+    <strong>Avpi max inflation pres:</strong>
+    <%= @av_plasties_inflation.avpi_max_inflation_pres %>
+  </li>
+
+  <li>
+    <strong>Avp bal outcome:</strong>
+    <%= @av_plasties_inflation.avp_bal_outcome %>
+  </li>
+
+  <li>
+    <strong>Avpi peak sys gradient post:</strong>
+    <%= @av_plasties_inflation.avpi_peak_sys_gradient_post %>
+  </li>
+
+  <li>
+    <strong>Avpi av reg degree post:</strong>
+    <%= @av_plasties_inflation.avpi_av_reg_degree_post %>
+  </li>
+
+  <li>
+    <strong>Avpi notes:</strong>
+    <%= @av_plasties_inflation.avpi_notes %>
+  </li>
+
+
+</ol>
+</div>
+<p class ="buttons_separator"> . </p>
+<span>
+    <%= link "Edit AV Inflation", to: Routes.pt_angio_avp_avpi_path(@conn, :edit, @patient,
+  @info_coronary, @av_plasty, @av_plasties_inflation), class: "button is-link"%>
+</span>
+
+<span>
+  <%= link "Back To AV Inflations  List", to: Routes.pt_angio_avp_avpi_path(@conn, :index,
+  @patient, @info_coronary,@av_plasty) , class: "button is-link"%>
+</span>
+<span>
+<%= link "Back To Cath Lab",  to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-link"   %>
+ </span>
+
+

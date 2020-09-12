@@ -1,0 +1,623 @@
+
+<% alias Angio.Canons, as: Query %>
+
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+</div>
+ <div class="notification is-danger">
+    <button class="delete"></button>
+    Oops, something went wrong! Please check the errors below;
+</div>
+
+  <% end %>
+ <div class="columns">
+ <div class = "column frame_1">
+
+<!---------start----------------------------------->
+  <div class = "columns important_column">
+
+ <div class = "column is-6">
+<!-------start Field------------------------------------>
+ <div class="field">
+            <label class="label field_help " >ASD Defect Counter</label>
+            <%= text_input f, :asdcl_defect_counter_assoc,
+            class: "input",
+            type: "text",
+            placeholder: "asdcl_defect_counter_assoc",
+            required: false %>
+            <%= error_tag f,:asdcl_defect_counter_assoc%>
+          <p class="help"></p>
+        </div>
+<!-------end field------------------------------------------->
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+<span class="button is-link  is-fullwidth ">
+<i class="fa fa-sticky-note">
+Operator
+</i>
+</span>
+
+ <!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!-------start Field------------------------------------>
+ <div class="field">
+            <label class="label field_help " >Operator Last Name </label>
+            <%= text_input f, :asdcl_operator_lname,
+            class: "input",
+            type: "text",
+            placeholder: "asdcl_operator_lname",
+            required: false %>
+            <%= error_tag f,:asdcl_operator_lname %>
+          <p class="help"></p>
+        </div>
+<!-------end field------------------------------------------->
+
+
+
+
+</div><!----column-------------------->
+ <div class = "column">
+<!-------start Field------------------------------------>
+ <div class="field">
+            <label class="label field_help " >Operator First Name </label>
+            <%= text_input f, :asdcl_operator_fname,
+            class: "input",
+            type: "text",
+            placeholder: "asdcl_operator_fname",
+            required: false %>
+            <%= error_tag f,:asdcl_operator_fname %>
+          <p class="help"></p>
+        </div>
+<!-------end field------------------------------------------->
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!-------start Field------------------------------------>
+ <div class="field">
+            <label class="label field_help " >Operator Middle Name </label>
+            <%= text_input f, :asdcl_operator_mname,
+            class: "input",
+            type: "text",
+            placeholder: "asdcl_operator_mname",
+            required: false %>
+            <%= error_tag f,:asdcl_operator_mname %>
+          <p class="help"></p>
+        </div>
+<!-------end field------------------------------------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+ <!-------start Field------------------------------------>
+ <div class="field">
+            <label class="label field_help " >Operator NPI </label>
+            <%= text_input f, :asdcl_operator_npi,
+            class: "input",
+            type: "text",
+            placeholder: "asdcl_operator_npI",
+            required: false %>
+            <%= error_tag f,:asdcl_operator_npi %>
+          <p class="help"></p>
+        </div>
+<!-------end field------------------------------------------->
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+<span class="button is-link  is-fullwidth ">
+<i class="fa fa-sticky-note">
+ASD Charasteristics
+</i>
+</span>
+  <!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column is-6">
+
+  <% s_asdcl_primary_indication = Query.select_options("asdcl_primary_indication") %>
+        <%# i_gender =
+raw Query.search_in_instructions("patnts_gender")%>
+
+        <div class="field">
+          <label class="label">Indication </label>
+          <!--------------------
+          <div class="control">
+          ----------------->
+            <div class="select is-primary">
+            <span class="field_help"></span>
+              <%= select(f, :asdcl_primary_indication, s_asdcl_primary_indication,
+   prompt: "---Select---",
+   class: "form-control") %>
+              <option></option>
+            </div>
+            <!--select---->
+            <p class="help">
+              <%#= i_gender%>
+            </p>
+         <!---------------
+          </div>
+          ------------>
+          <!--control---->
+        </div>
+        <!---field--->
+
+
+</div><!----column-------------------->
+ <div class = "column is-6">
+
+  <% s_asdcl_defect_not_treated = Query.select_options("asdcl_defect_not_treated") %>
+        <%# i_gender =
+raw Query.search_in_instructions("patnts_gender")%>
+
+        <div class="field">
+          <label class="label">ASD No Treated Reason </label>
+          <!--------------------
+          <div class="control">
+          ----------------->
+            <div class="select is-primary">
+            <span class="field_help"></span>
+              <%= select(f, :asdcl_defect_not_treated,
+               s_asdcl_defect_not_treated,
+   prompt: "---Select---",
+   class: "form-control") %>
+              <option></option>
+            </div>
+            <!--select---->
+            <p class="help">
+              <%#= i_gender%>
+            </p>
+         <!---------------
+          </div>
+          ------------>
+          <!--control---->
+        </div>
+        <!---field--->
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+ <!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+ <div class="field ">
+          <label class="label">Closure Attempted?</label>
+            <span class="field_help"></span>
+            <%= checkbox f, :asdcl_treat_attempted_yn,
+placeholder: "asdcl_treat_attempted_yn",
+                required: false,
+                type: "checkbox"
+              %>
+             <%= error_tag f, :asdcl_treat_attempted_yn%>
+           <p class = "help">
+           </p>
+
+           </div>
+        <!-----field---->
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+
+
+ <!-------start Field------------------------------------>
+ <div class="field">
+            <label class="label field_help " >Septal Length </label>
+            <%= text_input f, :asdcl_total_septal_length,
+            class: "input",
+            type: "text",
+            placeholder: "asdcl_total_septal_length",
+            required: false %>
+            <%= error_tag f,:asdcl_total_septal_length %>
+          <p class="help"></p>
+        </div>
+<!-------end field------------------------------------------->
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+ <!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<div class="field ">
+          <label class="label">ASD  Aaneurysm?</label>
+            <span class="field_help"></span>
+            <%= checkbox f, :asdcl_atria_septal_aneurys_yn,
+placeholder: "asdcl_atria_septal_aneurysm_yn",
+                required: false,
+                type: "checkbox"
+              %>
+             <%= error_tag f, :asdcl_atria_septal_aneurysm_yn%>
+           <p class = "help">
+           </p>
+
+           </div>
+        <!-----field---->
+
+</div><!----column-------------------->
+ <div class = "column">
+
+
+
+<div class="field ">
+          <label class="label">ASD Femestreted?</label>
+            <span class="field_help"></span>
+            <%= checkbox f, :asdcl_multi_fenestrated_yn ,
+placeholder: "asdcl_multi_fenestrated_yn ",
+                required: false,
+                type: "checkbox"
+              %>
+             <%= error_tag f, :asdcl_multi_fenestrated_yn %>
+           <p class = "help">
+           </p>
+
+           </div>
+        <!-----field---->
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+ <!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+<!-------start Field------------------------------------>
+ <div class="field">
+            <label class="label field_help " >ASD Size </label>
+            <%= text_input f, :asdcl_asd_size,
+            class: "input",
+            type: "text",
+            placeholder: "asdcl_total_septal_length",
+            required: false %>
+            <%= error_tag f,:asdcl_asd_sizeh %>
+          <p class="help"></p>
+        </div>
+<!-------end field------------------------------------------->
+
+
+</div><!----column-------------------->
+ <div class = "column">
+Aux Field
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+  <span class="button is-link  is-fullwidth ">
+<i class="fa fa-sticky-note">
+Balloon Sizing
+</i>
+</span>
+ <div class = "columns">
+<div class = "column">
+ <div class="field ">
+          <label class="label">Balloon Sizing ?</label>
+            <span class="field_help"></span>
+            <%= checkbox f, :asdcl_bal_sizing_perfomed_yn,
+placeholder: "asdcl_bal_sizing_perfomed_yn",
+                required: false,
+                type: "checkbox"
+              %>
+             <%= error_tag f, :asdcl_bal_sizing_perfomed_yn %>
+           <p class = "help">
+           </p>
+
+           </div>
+        <!-----field---->
+
+</div><!------COLUMN-------------------->
+<div class="column">
+<div class="field ">
+          <label class="label">Strech Diameter Performed ?</label>
+            <span class="field_help"></span>
+            <%= checkbox f, :asdcl_stretch_diam_perform_yn,
+placeholder: "asdcl_stretch_diam_perform_yn",
+                required: false,
+                type: "checkbox"
+              %>
+             <%= error_tag f, :asdcl_stretch_diam_perform_yn%>
+           <p class = "help">
+           </p>
+
+           </div>
+        <!-----field---->
+
+</div><!------COLUMN-------------------->
+
+<div class = "column">
+<!-------start Field------------------------------------>
+ <div class="field">
+            <label class="label field_help " >Stretched Diam Size</label>
+            <%= text_input f, :asdcl_stretched_diam_size,
+            class: "input",
+            type: "text",
+            placeholder: "asdcl_stretched_diam_size",
+            required: false %>
+            <%= error_tag f,:asdcl_stretched_diam_size%>
+          <p class="help"></p>
+        </div>
+<!-------end field------------------------------------------->
+
+</div><!------COLUMN-------------------->
+</div><!-----COLUMNS---------------->
+
+ <div class = "columns">
+<div class = "column">
+<div class="field ">
+          <label class="label">Stop Flow Perfomed ?</label>
+            <span class="field_help"></span>
+            <%= checkbox f, :asdcl_stop_flow_performed_yn,
+placeholder: "asdcl_stop_flow_performed_yn",
+                required: false,
+                type: "checkbox"
+              %>
+             <%= error_tag f, :asdcl_stop_flow_performed_yn%>
+           <p class = "help">
+           </p>
+
+           </div>
+        <!-----field---->
+
+</div><!------COLUMN-------------------->
+<div class="column">
+<!-------start Field------------------------------------>
+ <div class="field">
+            <label class="label field_help " >Stop Flow Bal Size</label>
+            <%= text_input f, :asdcl_stop_flow,
+            class: "input",
+            type: "text",
+            placeholder: "asdcl_stop_flow",
+            required: false %>
+            <%= error_tag f,:asdcl_stop_flow %>
+          <p class="help"></p>
+        </div>
+<!-------end field------------------------------------------->
+
+</div><!------COLUMN-------------------->
+</div><!-----COLUMNS---------------->
+
+
+ <span class="button is-link  is-fullwidth ">
+<i class="fa fa-sticky-note">
+Rim Measurment
+</i>
+</span>
+ <div class = "columns">
+<div class = "column">
+<div class="field ">
+          <label class="label">Rim Meas Perfomed ?</label>
+            <span class="field_help"></span>
+            <%= checkbox f, :asdcl_rim_meas_performed_yn,
+placeholder: "asdcl_rim_meas_performed_yn",
+                required: false,
+                type: "checkbox"
+              %>
+             <%= error_tag f, :asdcl_rim_meas_performed_yn%>
+           <p class = "help">
+           </p>
+
+           </div>
+        <!-----field---->
+
+
+</div><!------COLUMN-------------------->
+<div class = "column">
+ <!-------start Field------------------------------------>
+ <div class="field">
+            <label class="label field_help " >Ao Rim Length </label>
+            <%= text_input f, :asdcl_aortic_rim_length,
+            class: "input",
+            type: "text",
+            placeholder: "asdcl_aortic_rim_length",
+            required: false %>
+            <%= error_tag f,:asdcl_aortic_rim_length %>
+          <p class="help"></p>
+        </div>
+<!-------end field------------------------------------------->
+
+
+
+</div><!------COLUMN-------------------->
+
+<div class="column">
+<!-------start Field------------------------------------>
+ <div class="field">
+            <label class="label field_help " >IVC Rim Length </label>
+            <%= text_input f, :asdcl_ivc_rim_length,
+            class: "input",
+            type: "text",
+            placeholder: "asdcl_ivc_rim_length",
+            required: false %>
+            <%= error_tag f,:asdcl_ivc_rim_length %>
+          <p class="help"></p>
+        </div>
+<!-------end field------------------------------------------->
+</div><!-----COLUMN---------------->
+
+</div><!-----COLUMNS---------------->
+
+
+
+<span class="button is-link  is-fullwidth ">
+<i class="fa fa-sticky-note">
+Outcomes - Device
+</i>
+</span>
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<!-------start Field------------------------------------>
+ <div class="field">
+            <label class="label field_help " >Residul Shunt Size</label>
+            <%= text_input f, :asdcl_residual_shunt_size,
+            class: "input",
+            type: "text",
+            placeholder: "asdcl_residual_shunt_size",
+            required: false %>
+            <%= error_tag f,:asdcl_residual_shunt_size %>
+          <p class="help"></p>
+        </div>
+<!-------end field------------------------------------------->
+</div><!----column-------------------->
+
+ <div class = "column">
+
+<!-------start Field------------------------------------>
+ <div class="field">
+            <label class="label field_help " >Device Utilized ID</label>
+            <%= text_input f, :asdcl_device_utilized_id,
+            class: "input",
+            type: "text",
+            placeholder: "asdcl_device_utilized_id",
+            required: false %>
+            <%= error_tag f,:asdcl_device_utilized_id%>
+          <p class="help"></p>
+        </div>
+<!-------end field------------------------------------------->
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!-------start Field------------------------------------>
+ <div class="field">
+            <label class="label field_help " >Device Utilized Name</label>
+            <%= text_input f, :asdcl_device_utilized_name,
+            class: "input",
+            type: "text",
+            placeholder: "asdcl_device_utilized_name",
+            required: false %>
+            <%= error_tag f,:asdcl_device_utilized_name%>
+          <p class="help"></p>
+        </div>
+<!-------end field------------------------------------------->
+
+
+</div><!----column-------------------->
+ <div class = "column">
+  <% s_asdcl_device_used_outcome = Query.select_options("asdcl_device_used_outcome") %>
+        <%# i_gender =
+raw Query.search_in_instructions("patnts_gender")%>
+
+        <div class="field">
+          <label class="label">Device Outcome </label>
+          <!--------------------
+          <div class="control">
+          ----------------->
+            <div class="select is-primary">
+            <span class="field_help"></span>
+              <%= select(f, :asdcl_device_used_outcome,
+              s_asdcl_device_used_outcome,
+   prompt: "---Select---",
+   class: "form-control") %>
+              <option></option>
+            </div>
+            <!--select---->
+            <p class="help">
+              <%#= i_gender%>
+            </p>
+         <!---------------
+          </div>
+          ------------>
+          <!--control---->
+        </div>
+        <!---field--->
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+
+
+</div><!----L COLUMN------------------------------------->
+
+<div class = "column frame_1">
+
+
+<div class="columns">
+<div class="column" >
+
+ <!------start---------------------->
+      <span class="button is-danger  is-fullwidth ">
+<i class="fa fa-sticky-note">
+My Notes
+</i>
+</span>
+      <div class="columns">
+        <div class="column">
+
+              <div class="field">
+  <label class="label"> Notes on ASD Closure  </label>
+  <div class="control">
+    <%= text_input f, :asdcl_notes,
+        class: "textarea",
+        type: "input", placeholder: "asdcl_notes"  %>
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+        </div><!----column 1------------->
+
+     </div><!-----columns------------>
+     <!-------end start------------------------>
+
+
+
+</div><!------column for notes------------------------>
+</div><!-------column for the notes------------------------------------->
+
+<div class="columns">
+<div class="column">
+
+<%= render  AngioWeb.SharedView, "_help_area.html" %>
+
+</div><!------column for help------------------------>
+</div><!-------column for the help----------------->
+
+
+</div> <!----COLUMN--------------------------->
+</div><!----------column-------------->
+</div><!-------COLUMNS------------------------>
+
+<div><!------------------------------------>
+    <%= submit "Save ASD Closure Record", class: "button is-info  is-medium is-fullwidth " %>
+  </div>
+<% end %>

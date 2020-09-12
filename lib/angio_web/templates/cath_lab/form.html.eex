@@ -1,0 +1,580 @@
+
+<% alias Angio.Canons, as: Query %>
+
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+  <div class="notification is-danger">
+    <button class="delete"></button>
+    Oops, something went wrong! Please check the errors below or Dublicate Record
+</div>
+  <% end %>
+
+
+<div class="columns">
+<div class="column frame_1">
+<span class="button is-link  is-fullwidth ">
+Hb
+</span>
+<!---------start----------------------------------->
+  <div class = "columns">
+   
+<div class = "column">
+
+
+<!---------field---------------------->
+<div class="field">
+            <label class="label field_help " >Hb Pre Cath </label> 
+            <%= text_input f, :cath_hb_pre_val, class: "input", type: "text",
+            placeholder: "cath_hb_pre_val", required: false %> <%= error_tag f,
+            :cath_hb_pre_val %>
+          <p class="help"></p>
+        </div>
+<!----------field end------------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+ <!---------field------------------------->
+ <div class="field">
+        <label class="label">Hb Pre N/A</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :cath_hb_pre_na,
+            type: "checkbox" %> <%= error_tag f,
+           :cath_hb_pre_na %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+  
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!---------field---------------------->
+<div class="field">
+            <label class="label field_help " >Hb Post Cath </label> 
+            <%= text_input f, :cath_hb_post_val, class: "input", type: "text",
+            placeholder: "cath_hb_post_val", 
+            required: false %> 
+            <%= error_tag f, :cath_hb_post_val %>
+          <p class="help"></p>
+        </div>
+<!----------field end------------------->
+</div><!----column-------------------->
+ <div class = "column">
+ 
+<!---------field---------------------->
+<div class="field">
+            <label class="label field_help " >Hb Post Lowest </label> 
+            <%= text_input f, :cath_hb_post_lowest_val, class: "input", type: "text",
+            placeholder: "cath_hb_post_lowest_val", 
+            required: false %> 
+            <%= error_tag f, :cath_hb_post_lowest_val %>
+          <p class="help"></p>
+        </div>
+<!----------field end------------------->
+
+ </div><!----column-------------------->
+<div class = "column">
+ <!---------field------------------------->
+ <div class="field">
+        <label class="label">Hb Post N/A</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :cath_hb_post_na,
+            type: "checkbox" %> <%= error_tag f, :cath_hb_post_na %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+ </div><!----column-------------------->
+
+
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+  
+<!---------start----------------------------------->
+  <span class="button is-link  is-fullwidth ">
+Biomarkers
+</span>
+  <div class = "columns">
+ 
+<div class = "column">
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">CK Post Positive </label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :cath_biomarker_positive_post_yn,
+            type: "checkbox" %> 
+            <%= error_tag f, :cath_biomarker_positive_post_yn %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+</div><!----column-------------------->
+ <div class = "column">
+ <!---------field------------------------->
+ <div class="field">
+        <label class="label">CK Pre Normal (CKMb N/A) </label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :cath_ck_pre_normal_ckmb_pre_na,
+            type: "checkbox" %> <%= error_tag f, :cath_ck_pre_normal_ckmb_pre_na%>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+ </div><!----column-------------------->
+
+<div class = "column">
+ <!---------field------------------------->
+ <div class="field">
+        <label class="label">CK Post Normal (CKMb N/A) </label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :cath_ck_post_normal_ckmb_na,
+            type: "checkbox" %> <%= error_tag f, :cath_ck_post_normal_ckmb_na%>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+
+ </div><!----column-------------------->
+
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+ <span class="button is-link  is-fullwidth ">
+Ckmb
+</span>
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<!---------field---------------------->
+<div class="field">
+            <label class="label field_help " >CKMb Pre </label> 
+            <%= text_input f, :cath_ckmb_pre_val, class: "input", type: "text",
+            placeholder: "cath_ckmb_pre_val", 
+            required: false %> 
+            <%= error_tag f, :cath_ckmb_pre_val %>
+          <p class="help"></p>
+        </div>
+<!----------field end------------------->
+</div><!----column-------------------->
+ <div class = "column">
+ 
+ <!---------field------------------------->
+ <div class="field">
+        <label class="label">CKMb Pre N/A </label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :cath_ckmb_pre_na,
+            type: "checkbox" %> <%= error_tag f, :cath_ckmb_pre_na%>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------> 
+
+
+ </div><!----column-------------------->
+
+
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+  <!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<!---------field---------------------->
+<div class="field">
+            <label class="label field_help " >CKMb Post </label> 
+            <%= text_input f, :cath_ckmb_post_val, class: "input", type: "text",
+            placeholder: "cath_ckmb_post_val", 
+            required: false %> 
+            <%= error_tag f, :cath_ckmb_post_val %>
+          <p class="help"></p>
+        </div>
+<!----------field end------------------->
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+ <!---------field------------------------->
+ <div class="field">
+        <label class="label">CKMb Post Peak N/A </label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :cath_ckmb_peak_post_na,
+            type: "checkbox" %> <%= error_tag f, :cath_ckmb_peak_post_na%>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+ </div><!----column-------------------->
+
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+   <span class="button is-link  is-fullwidth ">
+Troponine
+</span>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<!---------field---------------------->
+<div class="field">
+            <label class="label field_help " >Tropo t  Pre </label> 
+            <%= text_input f, :cath_tropo_t_pre_val, class: "input", type: "text",
+            placeholder: "cath_tropo_t_pre_val", 
+            required: false %> 
+            <%= error_tag f, :cacath_tropo_t_pre_val %>
+          <p class="help"></p>
+        </div>
+<!----------field end------------------->
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+ <!---------field------------------------->
+ <div class="field">
+        <label class="label">Troponin t Pre  N/A </label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :cath_tropo_t_pre_na,
+            type: "checkbox" %> <%= error_tag f, :cath_tropo_t_pre_na %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+ </div><!----column-------------------->
+
+
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+  
+
+
+  <!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<!---------field---------------------->
+<div class="field">
+            <label class="label field_help " >Tropo t  Post Peak </label> 
+            <%= text_input f, :cath_tropo_t_peak_post_val, class: "input", type: "text",
+            placeholder: "cath_tropo_t_peak_post_val", 
+            required: false %> 
+            <%= error_tag f, :cath_tropo_t_peak_post_val %>
+          <p class="help"></p>
+        </div>
+<!----------field end------------------->
+
+
+
+</div><!----column-------------------->
+ <div class = "column">
+ <!---------field------------------------->
+ <div class="field">
+        <label class="label">Troponin t Post Peak  N/A </label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :cath_tropo_t_peak_post_na,
+            type: "checkbox" %> <%= error_tag f, :cath_tropo_t_peak_post_na %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+ </div><!----column-------------------->
+
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+  <!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<!---------field---------------------->
+<div class="field">
+            <label class="label field_help " >Tropo i  Pre </label> 
+            <%= text_input f, :cath_tropo_i_pre_val, class: "input", type: "text",
+            placeholder: "cath_tropo_i_pre_val", 
+            required: false %> 
+            <%= error_tag f, :cath_tropo_i_pre_val %>
+          <p class="help"></p>
+        </div>
+<!----------field end------------------->
+
+
+</div><!----column-------------------->
+ <div class = "column">
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Tropo i Pre  N/A </label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :cath_tropo_i_pre_na,
+            type: "checkbox" %> <%= error_tag f, :cath_tropo_i_pre_na %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+ </div><!----column-------------------->
+
+
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+  
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<!---------field---------------------->
+<div class="field">
+            <label class="label field_help " >Tropo i Post Peak </label> 
+            <%= text_input f, :cath_tropo_i_peak_post_val, class: "input", type: "text",
+            placeholder: "cath_tropo_i_peak_post_val", 
+            required: false %> 
+            <%= error_tag f, :cath_tropo_i_peak_post_val %>
+          <p class="help"></p>
+        </div>
+<!----------field end------------------->
+
+
+</div><!----column-------------------->
+ <div class = "column">
+ <!---------field------------------------->
+ <div class="field">
+        <label class="label">Tropo i Post Peak N/A </label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :cath_tropo_i_peak_post_na,
+            type: "checkbox" %> <%= error_tag f, :cath_tropo_i_peak_post_na %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+
+ </div><!----column-------------------->
+
+
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+  
+
+  
+
+  
+
+ 
+
+  
+
+</div><!---LEFT-----------column------------------>
+<div class="column frame_1">
+
+<span class="button is-link  is-fullwidth ">
+Creatinine
+</span>
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<!---------field---------------------->
+<div class="field">
+            <label class="label field_help " >Cr Pre </label> 
+            <%= text_input f, :cath_creatinine_pre_val, class: "input", type: "text",
+            placeholder: "cath_creatinine_pre_val", 
+            required: false %> 
+            <%= error_tag f, :cath_creatinine_pre_val %>
+          <p class="help"></p>
+        </div>
+<!----------field end------------------->
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+ <!---------field------------------------->
+ <div class="field">
+        <label class="label">Cr Pre N/A </label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :cath_creatinine_pre_na,
+            type: "checkbox" %> <%= error_tag f, :cath_creatinine_pre_na %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+
+ </div><!----column-------------------->
+
+
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<!---------field---------------------->
+<div class="field">
+            <label class="label field_help " >Cr Post Highest </label> 
+            <%= text_input f, :cath_creatinine_highest_val, class: "input", type: "text",
+            placeholder: "cath_creatinine_highest_val", 
+            required: false %> 
+            <%= error_tag f, :cath_creatinine_highest_val %>
+          <p class="help"></p>
+        </div>
+<!----------field end------------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+ <!---------field------------------------->
+ <div class="field">
+        <label class="label">Cr Post Highest  N/A </label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :cath_creatinine_highest_na,
+            type: "checkbox" %> <%= error_tag f, :cath_creatinine_highest_na %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+ </div><!----column-------------------->
+
+
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!---------field---------------------->
+<div class="field">
+            <label class="label field_help " >Cr Post </label> 
+            <%= text_input f, :cath_creatinine_post_val, class: "input", type: "text",
+            placeholder: "cath_creatinine_post_val", 
+            required: false %> 
+            <%= error_tag f, :cath_creatinine_post_val %>
+          <p class="help"></p>
+        </div>
+<!----------field end------------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Cr Post   N/A </label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :cath_creatinine_post_na,
+            type: "checkbox" %> <%= error_tag f, :cath_creatinine_post_na %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+ </div><!----column-------------------->
+
+
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<!---------field---------------------->
+<div class="field">
+            <label class="label field_help " >Cr Pre Discharge </label> 
+            <%= text_input f, :cath_creatinine_pre_discharge, class: "input", type: "text",
+            placeholder: "cath_creatinine_pre_discharge", 
+            required: false %> 
+            <%= error_tag f, :cath_creatinine_pre_discharge %>
+          <p class="help"></p>
+        </div>
+<!----------field end------------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Cr Pre Discharge   N/A </label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :cath_creatinine_pre_discharge_na,
+            type: "checkbox" %> <%= error_tag f, :cath_creatinine_pre_discharge_na %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+
+ </div><!----column-------------------->
+
+
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+ <!------start--------------------->
+      <span class="button is-danger  is-fullwidth ">
+<i class="fa fa-sticky-note">
+My Notes
+</i>
+</span>
+      <div class="columns">
+        <div class="column">
+
+         <div class="field">
+  <label class="label"> Notes on Blood Results </label>
+  <div class="control">
+    <%= text_input f, :cath_lab_notes,
+        class: "textarea",
+        type: "input", placeholder: "car_notes"  %>
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+        </div><!----column 1------------->
+
+     </div><!-----columns------------>
+     <!-------end start------------------------>
+
+
+  <div class="columns">
+  <div class="column">
+   <%= render  AngioWeb.SharedView, "_help_area.html" %>
+   </div><!---------------------------->
+   </div><!--------help colums----------------->
+</div><!---------Right-----column------------------>
+</div> <!---------columns--------------------------->
+<div>
+    <%= submit "Save and Continue", class: "button is-info is-large is-fullwidth " %>
+  </div>
+<% end %>

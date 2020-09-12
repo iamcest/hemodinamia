@@ -1,0 +1,131 @@
+
+<div class="title_form">
+<h5 class="title is-5 has-text-centered">Show ASD Closure F/Ups</h5>
+</div>
+<div class="element_info">
+    Patient :
+    <%= render  AngioWeb.SharedView, "_patient_info.html", patient: @patient %>
+</div>
+
+
+<div class="content frame_1 ">
+  <ol type="1">
+
+
+  <li>
+    <strong>ASD Closure F/Up Date:</strong>
+    <%= @asd_closures_fup.asdclf_assessment_dt %>
+  </li>
+
+  <li>
+    <strong>Asdclf start dt:</strong>
+    <%= @asd_closures_fup.asdclf_start_dt %>
+  </li>
+
+  <li>
+    <strong>Asdclf fup status:</strong>
+    <%= @asd_closures_fup.asdclf_fup_status %>
+  </li>
+
+  <li>
+    <strong>Asdclf visit status:</strong>
+    <%= @asd_closures_fup.asdclf_visit_status %>
+  </li>
+
+  <li>
+    <strong>Asdclf free events yn:</strong>
+    <%= @asd_closures_fup.asdclf_free_events_yn %>
+  </li>
+
+  <li>
+    <strong>Asdclf residual shunt size:</strong>
+    <%= @asd_closures_fup.asdclf_residual_shunt_size %>
+  </li>
+
+  <li>
+    <strong>Asdclf frame fracture yn:</strong>
+    <%= @asd_closures_fup.asdclf_frame_fracture_yn %>
+  </li>
+
+  <li>
+    <strong>Asdclf sbe yn:</strong>
+    <%= @asd_closures_fup.asdclf_sbe_yn %>
+  </li>
+
+  <li>
+    <strong>Asdclf sbe diagnosis dt:</strong>
+    <%= @asd_closures_fup.asdclf_sbe_diagnosis_dt %>
+  </li>
+
+  <li>
+    <strong>Asdclf sbe factors:</strong>
+    <%= @asd_closures_fup.asdclf_sbe_factors %>
+  </li>
+
+  <li>
+    <strong>Asdclf erosion yn:</strong>
+    <%= @asd_closures_fup.asdclf_erosion_yn %>
+  </li>
+
+  <li>
+    <strong>Asdclf sbe treatment:</strong>
+    <%= @asd_closures_fup.asdclf_sbe_treatment %>
+  </li>
+
+  <li>
+    <strong>Asdclf embolization yn:</strong>
+    <%= @asd_closures_fup.asdclf_embolization_yn %>
+  </li>
+
+  <li>
+    <strong>Asdclf retrivied surgery yn:</strong>
+    <%= @asd_closures_fup.asdclf_retrivied_surgery_yn %>
+  </li>
+
+  <li>
+    <strong>Asdclf reintervention closure yn:</strong>
+    <%= @asd_closures_fup.asdclf_reintervention_closure_yn %>
+  </li>
+
+  <li>
+    <strong>Asdclf reintervention closure dt:</strong>
+    <%= @asd_closures_fup.asdclf_reintervention_closure_dt %>
+  </li>
+
+  <li>
+    <strong>Asdclf new headaches yn:</strong>
+    <%= @asd_closures_fup.asdclf_new_headaches_yn %>
+  </li>
+
+  <li>
+    <strong>Asdclf arrhythmias yn:</strong>
+    <%= @asd_closures_fup.asdclf_arrhythmias_yn %>
+  </li>
+
+  <li>
+    <strong>Asdclf anti platelet yn:</strong>
+    <%= @asd_closures_fup.asdclf_anti_platelet_yn %>
+  </li>
+
+  <li>
+    <strong>Asdclf notes:</strong>
+    <%= @asd_closures_fup.asdclf_notes %>
+  </li>
+
+</ol>
+<p class ="buttons_separator"> . </p>
+<span>
+    <%= link "Edit ASD Closure F/U", to: Routes.pt_asdclf_path(@conn, :edit, @patient,
+    @asd_closures_fup ), class: "button is-link"%>
+</span>
+<span>
+  <%= link "Back To ASD F/up Index", to: Routes.pt_asdclf_path(@conn, :index,
+  @patient) , class: "button is-link"%>
+</span>
+
+<span>
+<%= link "To Cath  Lab",  to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-link"   %>
+ </span>
+
+

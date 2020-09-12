@@ -1,0 +1,244 @@
+
+<div class="element_info">
+    <%= render  AngioWeb.SharedView, "_patient_info.html", patient: @patient %>
+</div>
+
+<% alias Angio.Canons, as: Query %>
+<%#= render  AngioWeb.SharedView, "_menu_info_coronary.html", conn: @conn,
+patient: @patient,
+info_coronary: @info_coronary,
+assigns %>
+
+<%#= render  AngioWeb.SharedView, "_menu_info_coronary.html", assigns %>
+<div class="title_form">
+<h6 class="title is-6 has-text-centered" >Listing Cath Lab Visits </h6>
+</div>
+
+<div class="frame_1">
+
+
+<table class="
+table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+  <thead class="thead">
+    <tr>
+
+      <th>Cath Status</th>
+      <th>Cath date</th>
+      <th>Lab Exam Num</th>
+      <th>Main reason</th>
+      <!-------------------------
+      <th> LiveView</th>
+      ----------->
+      <th>
+            <span>
+         <i class="fa  fa-book"
+          style="font-size:20px;color:#f0027f;text-align:center;">
+          </i>
+          <br/>
+         </span>
+      Reports
+
+      </th>
+
+      <th>
+            <span>
+         <i class="fa  fa-image"
+          style="font-size:20px;color:#386cb0;text-align:center;">
+          </i>
+           <br/>
+         </span>
+      Graphics
+
+      </th>
+      <th>
+          <span>
+         <i class="fa  fa-flag"
+          style="font-size:20px;color:#7fc97f;text-align:center;">
+          </i>
+           <br/>
+          </span>
+       Past History
+      </th>
+
+     <th>
+          <span>
+         <i class="fa  fa-user-md"
+          style="font-size:20px;color:#3182bd;text-align:center;">
+          </i>
+           <br/>
+          </span>
+       Assesment
+      </th>
+
+      <th>
+          <span>
+         <i class="fa  fa-bell"
+          style="font-size:20px;color:#beaed4;text-align:center;">
+          </i>
+           <br/>
+          </span>
+       Diagnostic Tests
+      </th>
+      <th>
+          <span>
+         <i class="fa  fa-heartbeat"
+          style="font-size:20px;color:#1c9099;text-align:center;">
+          </i>
+           <br/>
+          </span>
+       Congenitals
+      </th>
+
+      <th>
+          <span>
+         <i class="fa  fa-edit"
+          style="font-size:20px;color:#e41a1c;text-align:center;">
+          </i>
+           <br/>
+          </span>
+       Cath Laboratory
+      </th>
+<th>
+          <span>
+         <i class="fa  fa-superpowers"
+          style="font-size:20px;color:#984ea3;text-align:center;">
+          </i>
+           <br/>
+          </span>
+       Interventions
+      </th>
+
+      <th>Show</th>
+      <th>Edit</th>
+      <th>Delete</th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+<%= for info_coronary <- @info_coronaries do %>
+    <tr>
+
+      <td>
+       <% s_status =  Query.select_options("info_cor_diagnostic_status") %>
+ <% v_status = info_coronary.info_cor_diagnostic_status  %>
+  <ul class="list-group">
+<%= raw(Query.convert_select_key( s_status, v_status)) %>
+</ul>
+
+      </td>
+      <td>
+        <strong>
+        <%= info_coronary.info_cor_date %>
+        </strong>
+      </td>
+      <td><%= info_coronary.info_exam_num %></td>
+
+
+
+     <td>
+<% s_reason =  Query.select_options("info_cor_main_reason") %>
+ <% v_reason = info_coronary.info_cor_main_reason  %>
+  <ul class="list-group">
+<%= raw(Query.convert_select_key( s_reason, v_reason)) %>
+</ul>
+     </td>
+
+      <!--------------------------
+      <td><%#= raw Query.convert_true_false( info_coronary.info_cor_prior_interv_yn)%></td>
+      <td><%#= raw  Query.convert_true_false(info_coronary.info_cor_grafts_yn) %></td>
+      ----------------->
+      </td>
+<!-----------
+<td>
+<%#= link "Test LiveView", to: Routes.live_path(@conn, AngioWeb.CounterLive) %>
+</td>
+------>
+      <td>
+     <span><%= link "Summary", to: Routes.pt_angio_report_path(@conn,
+      :show,
+      @patient,
+      info_coronary, info_coronary.id),
+      class: "button is-link is-small is-fullwidth" %></span>
+      </td>
+
+       <td>
+     <span><%= link "Coronary Sketch ", to: Routes.pt_angio_cor_tree_path(@conn,
+      :show,
+      @patient,
+      info_coronary, info_coronary.id),
+      class: "button is-link is-small is-fullwidth" %></span>
+      </td>
+ <td>
+ <%= render  AngioWeb.SharedView, "_menu_histories.html",
+conn: @conn, patient: @patient, info_coronary: info_coronary %>
+
+        </td>
+<td>
+ <%= render  AngioWeb.SharedView, "_menu_assesment.html",
+conn: @conn, patient: @patient, info_coronary: info_coronary %>
+
+        </td>
+
+     <td>
+ <%= render  AngioWeb.SharedView, "_menu_diagnostic_tests.html",
+conn: @conn, patient: @patient, info_coronary: info_coronary %>
+
+        </td>
+ <td>
+ <%= render  AngioWeb.SharedView, "_menu_congenitals.html",
+conn: @conn, patient: @patient, info_coronary: info_coronary %>
+
+        </td>
+
+      <td>
+
+ <%= render  AngioWeb.SharedView, "_menu_info_coronary.html",
+conn: @conn, patient: @patient, info_coronary: info_coronary %>
+
+        </td>
+
+        <td>
+
+        <%= render  AngioWeb.SharedView, "_menu_interventions.html",
+conn: @conn, patient: @patient, info_coronary: info_coronary %>
+        </td>
+
+           <td>
+        <span><%= link "Show", to: Routes.pt_angio_path(@conn, :show,
+@patient,info_coronary), class: "button is-link is-small is-fullwidth" %></span>
+
+      </td>
+      <td>
+        <span><%= link "Edit", to: Routes.pt_angio_path(@conn,
+         :edit, @patient,info_coronary), class: "button is-link is-small is-fullwidth" %></span>
+
+      </td>
+
+      <td>
+          <span>
+            <%= link "Delete", to: Routes.pt_angio_path(@conn, :delete, @patient, info_coronary), method: :delete, data: [confirm: "Are you sure?"], class: " button is-danger is-small is-fullwidth" %>
+        </span>
+
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+
+</table>
+</div><!-----frame_1 ---------------------->
+
+
+<span><%= link "Insert A New Visit",
+      to: Routes.pt_angio_path(@conn, :new, @patient ),
+class: "button is-info is-medium is-fullwidth" %>
+</span>
+
+
+<p class ="buttons_separator"> . </p>
+
+<span>
+<%= link "To Patient List ", to: Routes.pt_path(@conn, :index),
+       class: "button is-link"  %>
+
+</span>

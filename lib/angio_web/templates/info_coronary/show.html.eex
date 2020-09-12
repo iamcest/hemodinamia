@@ -1,0 +1,143 @@
+<% import  Angio.Caths.Cor_diagram_calcs  %>
+<% alias Angio.Caths.Cor_diagram_calcs %>
+
+<div class="element_info">
+
+    <%= render  AngioWeb.SharedView, "_patient_info.html", patient: @patient %>
+</div>
+<ul>
+
+  <li>
+    <strong>Diagnostic status,:</strong>
+    <%= @info_coronary.info_cor_diagnostic_status %>
+  </li>
+
+
+  <li>
+    <strong>Info cor date:</strong>
+    <%= @info_coronary.info_cor_date %>
+  </li>
+
+  <li>
+    <strong>Info cor arrival dt:</strong>
+    <%= @info_coronary.info_cor_arrival_dt %>
+  </li>
+
+  <li>
+    <strong>Info cor arrival tm:</strong>
+    <%= @info_coronary.info_cor_arrival_tm %>
+  </li>
+
+  <li>
+    <strong>Info cor start tm:</strong>
+    <%= @info_coronary.info_cor_start_tm %>
+  </li>
+
+  <li>
+    <strong>Info cor end tm:</strong>
+    <%= @info_coronary.info_cor_end_tm %>
+  </li>
+
+  <li>
+    <strong>Info exam num:</strong>
+    <%= @info_coronary.info_exam_num %>
+  </li>
+
+  <li>
+    <strong>Info cor main reason:</strong>
+    <%= @info_coronary.info_cor_main_reason %>
+  </li>
+
+  <li>
+    <strong>Icd10cm code 1:</strong>
+    <%= @info_coronary.icd10cm_code_1 %>
+  </li>
+
+  <li>
+    <strong>Icd10cm code 2:</strong>
+    <%= @info_coronary.icd10cm_code_2 %>
+  </li>
+
+  <li>
+    <strong>Icd10cm code 3:</strong>
+    <%= @info_coronary.icd10cm_code_3 %>
+  </li>
+
+  <li>
+    <strong>Icd10cm code 4:</strong>
+    <%= @info_coronary.icd10cm_code_4 %>
+  </li>
+
+  <li>
+    <strong>Info cor normal natives yn:</strong>
+    <%= @info_coronary.info_cor_normal_natives_yn %>
+  </li>
+
+  <li>
+    <strong>Info cor anomalies yn:</strong>
+    <%= @info_coronary.info_cor_anomalies_yn %>
+  </li>
+
+  <li>
+    <strong>Info cor dis ves num:</strong>
+    <%= @info_coronary.info_cor_dis_ves_num %>
+  </li>
+
+  <li>
+    <strong>Info cor prior interv yn:</strong>
+    <%= @info_coronary.info_cor_prior_interv_yn %>
+  </li>
+
+  <li>
+    <strong>Info cor grafts yn:</strong>
+    <%= @info_coronary.info_cor_grafts_yn %>
+  </li>
+
+  <li>
+    <strong>Info cor grafts dis yn:</strong>
+    <%= @info_coronary.info_cor_grafts_dis_yn %>
+  </li>
+
+  <li>
+    <strong>Info cor cabg prior dt:</strong>
+    <%= @info_coronary.info_cor_cabg_prior_dt %>
+  </li>
+
+  <li>
+    <strong>Info cor grafts implanted num:</strong>
+    <%= @info_coronary.info_cor_grafts_implanted_num %>
+  </li>
+
+  <li>
+    <strong>Info cor grafts patent num:</strong>
+    <%= @info_coronary.info_cor_grafts_patent_num %>
+  </li>
+
+  <li>
+    <strong>Info cor rx recommend:</strong>
+    <%= @info_coronary.info_cor_rx_recommend %>
+  </li>
+
+  <li>
+    <strong>Info cor notes:</strong>
+    <%= @info_coronary.info_cor_notes %>
+  </li>
+
+  <li>
+    <strong>Cor les count:</strong>
+    <%= @info_coronary.cor_les_count %>
+  </li>
+
+</ul>
+
+<p class ="buttons_separator"> . </p>
+
+
+<span><%= link "Edit", to: Routes.pt_angio_path(@conn, :edit,
+@patient, @info_coronary), class: "button is-link"%>
+</span>
+<span>
+<%= link "Back To Cath Lab", to: Routes.pt_angio_path(@conn, :index,
+@patient) , class: "button is-link"%>
+</span>
+

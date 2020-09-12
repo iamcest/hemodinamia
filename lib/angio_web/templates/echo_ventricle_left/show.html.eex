@@ -1,0 +1,240 @@
+<div class="title_form">
+  <h6 class="title is-6 has-text-centered"> Showing Left Atrium Record</h6>
+</div>
+
+<div class="element_info">
+   <%= render AngioWeb.SharedView, "_patient_info.html", patient:
+  @patient %>
+</div>
+
+<ul>
+
+  <li>
+    <strong>Elv lv appearance desc:</strong>
+    <%= @echo_ventricle_left.elv_lv_appearance_desc %>
+  </li>
+
+  <li>
+    <strong>Elv lv appearance other text:</strong>
+    <%= @echo_ventricle_left.elv_lv_appearance_other_text %>
+  </li>
+
+  <li>
+    <strong>Elv concentric hyper yn:</strong>
+    <%= @echo_ventricle_left.elv_concentric_hyper_yn %>
+  </li>
+
+  <li>
+    <strong>Elv myocardial mass qualitative:</strong>
+    <%= @echo_ventricle_left.elv_myocardial_mass_qualitative %>
+  </li>
+
+  <li>
+    <strong>Elv myocardial mass val:</strong>
+    <%= @echo_ventricle_left.elv_myocardial_mass_val %>
+  </li>
+
+  <li>
+    <strong>Elv myocardial mass method:</strong>
+    <%= @echo_ventricle_left.elv_myocardial_mass_method %>
+  </li>
+
+  <li>
+    <strong>Elv lv shape normal yn:</strong>
+    <%= @echo_ventricle_left.elv_lv_shape_normal_yn %>
+  </li>
+
+  <li>
+    <strong>Elv lv geometry desc:</strong>
+    <%= @echo_ventricle_left.elv_lv_geometry_desc %>
+  </li>
+
+  <li>
+    <strong>Elv lved cavity size desc:</strong>
+    <%= @echo_ventricle_left.elv_lved_cavity_size_desc %>
+  </li>
+
+  <li>
+    <strong>Elv lved volume val:</strong>
+    <%= @echo_ventricle_left.elv_lved_volume_val %>
+  </li>
+
+  <li>
+    <strong>Elv lved volume index:</strong>
+    <%= @echo_ventricle_left.elv_lved_volume_index %>
+  </li>
+
+  <li>
+    <strong>Elv lved volume method:</strong>
+    <%= @echo_ventricle_left.elv_lved_volume_method %>
+  </li>
+
+  <li>
+    <strong>Elv lves volume val:</strong>
+    <%= @echo_ventricle_left.elv_lves_volume_val %>
+  </li>
+
+  <li>
+    <strong>Elv lves volume method:</strong>
+    <%= @echo_ventricle_left.elv_lves_volume_method %>
+  </li>
+
+  <li>
+    <strong>Elv thrombus tumour yn:</strong>
+    <%= @echo_ventricle_left.elv_thrombus_tumour_yn %>
+  </li>
+
+  <li>
+    <strong>Elv thrombus tumour loc:</strong>
+    <%= @echo_ventricle_left.elv_thrombus_tumour_loc %>
+  </li>
+
+  <li>
+    <strong>Elv aneurism shape desc:</strong>
+    <%= @echo_ventricle_left.elv_aneurism_shape_desc %>
+  </li>
+
+  <li>
+    <strong>Elv aneurism pseudo shape desc:</strong>
+    <%= @echo_ventricle_left.elv_aneurism_pseudo_shape_desc %>
+  </li>
+
+  <li>
+    <strong>Elv wall thick normal yn:</strong>
+    <%= @echo_ventricle_left.elv_wall_thick_normal_yn %>
+  </li>
+
+  <li>
+    <strong>Elv wall thick region:</strong>
+    <%= @echo_ventricle_left.elv_wall_thick_region %>
+  </li>
+
+  <li>
+    <strong>Elv wall thick region qualitative:</strong>
+    <%= @echo_ventricle_left.elv_wall_thick_region_qualitative %>
+  </li>
+
+  <li>
+    <strong>Elv wall thick region name:</strong>
+    <%= @echo_ventricle_left.elv_wall_thick_region_name %>
+  </li>
+
+  <li>
+    <strong>Elv wall thick asym hyper desc:</strong>
+    <%= @echo_ventricle_left.elv_wall_thick_asym_hyper_desc %>
+  </li>
+
+  <li>
+    <strong>Elv lvpw thick sys val:</strong>
+    <%= @echo_ventricle_left.elv_lvpw_thick_sys_val %>
+  </li>
+
+  <li>
+    <strong>Elv lvpw thick diast val:</strong>
+    <%= @echo_ventricle_left.elv_lvpw_thick_diast_val %>
+  </li>
+
+  <li>
+    <strong>Elv lved septal thick val:</strong>
+    <%= @echo_ventricle_left.elv_lved_septal_thick_val %>
+  </li>
+
+  <li>
+    <strong>Elv lves septal thick val:</strong>
+    <%= @echo_ventricle_left.elv_lves_septal_thick_val %>
+  </li>
+
+  <li>
+    <strong>Elv lved inferior lateral septal thick val:</strong>
+    <%= @echo_ventricle_left.elv_lved_inferior_lateral_septal_thick_val %>
+  </li>
+
+  <li>
+    <strong>Elv lved overall septal thick desc:</strong>
+    <%= @echo_ventricle_left.elv_lved_overall_septal_thick_desc %>
+  </li>
+
+  <li>
+    <strong>Elv lvid lved val:</strong>
+    <%= @echo_ventricle_left.elv_lvid_lved_val %>
+  </li>
+
+  <li>
+    <strong>Elv lvid lved na:</strong>
+    <%= @echo_ventricle_left.elv_lvid_lved_na %>
+  </li>
+
+  <li>
+    <strong>Elv lvid lves val:</strong>
+    <%= @echo_ventricle_left.elv_lvid_lves_val %>
+  </li>
+
+  <li>
+    <strong>Elv lvid lves na:</strong>
+    <%= @echo_ventricle_left.elv_lvid_lves_na %>
+  </li>
+
+  <li>
+    <strong>Elv lvot desc:</strong>
+    <%= @echo_ventricle_left.elv_lvot_desc %>
+  </li>
+
+  <li>
+    <strong>Elv lv appearance other text:</strong>
+    <%= @echo_ventricle_left.elv_lv_appearance_other_text %>
+  </li>
+
+  <li>
+    <strong>Elv lves volume index:</strong>
+    <%= @echo_ventricle_left.elv_lves_volume_index %>
+  </li>
+
+  <li>
+    <strong>Elv non compaction yn:</strong>
+    <%= @echo_ventricle_left.elv_non_compaction_yn %>
+  </li>
+
+  <li>
+    <strong>Elv segment 17model:</strong>
+    <%= @echo_ventricle_left.elv_segment_17model %>
+  </li>
+
+  <li>
+    <strong>Elv ste circ peak strain:</strong>
+    <%= @echo_ventricle_left.elv_ste_circ_peak_strain %>
+  </li>
+
+  <li>
+    <strong>Elv ste radial peak strain:</strong>
+    <%= @echo_ventricle_left.elv_ste_radial_peak_strain %>
+  </li>
+
+  <li>
+    <strong>Elv notes:</strong>
+    <%= @echo_ventricle_left.elv_notes %>
+  </li>
+
+</ul>
+
+<p class ="buttons_separator"> . </p>
+
+<span>
+    <%= link "Edit LV Echo ", to: Routes.pt_echo_elv_path(@conn, :edit,
+     @patient,
+     @cardiac_echo, @echo_ventricle_left ), class: "button is-link"%>
+</span>
+<span>
+  <%= link "Back To LV Echo  Index", to: Routes.pt_echo_elv_path(@conn, :index,
+  @patient, @cardiac_echo) , class: "button is-link"%>
+</span>
+
+<span>
+<%= link "To Patients List",  to: Routes.pt_path(@conn, :index),
+class: "button is-link"   %>
+ </span>
+
+<span>
+<%= link "To Cath Lab",  to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-link"   %>
+ </span>
+

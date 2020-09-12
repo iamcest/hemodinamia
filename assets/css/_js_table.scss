@@ -1,0 +1,95 @@
+//////////////////////////////////
+//////DON'T USE IT TO BE FIXED
+
+.jg_table {
+    width:98%;
+    float:left;
+    margin-top:4px;
+    margin-left:auto;
+    margin-right:auto;
+    border-collapse: collapse;
+    color: #000;
+    font-family: "Lucida Bright", "Times New Roman", serif;
+    font-size: 0.85em;
+
+  /*
+    border-collapse: collapse;
+    color: #000;
+    font-family: "Lucida Bright", "Times New Roman", serif;
+    font-size: 0.98em;
+    overflow:scroll;
+*/
+  >thead th {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 2px 10px;
+    background-color: #fff;
+    color: #aaa;
+    text-align: left;
+    font-variant: small-caps;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+
+
+  }
+
+    > tbody th, tbody td {
+    border-bottom: 2px solid #ccc;
+    padding: 3px 10px;
+    text-align: left;
+    vertical-align: top;
+    word-wrap: break-word;
+
+   }
+   > tbody tr:hover {
+         background-color: lighten(#ccc, 48%);
+     } 
+
+   > caption { 
+     padding-bottom: 5px;
+     font-variant: small-caps;
+     letter-spacing: 0.1em;
+     text-align: left;
+     white-space: wrap;
+     word-wrap: break-word;
+     }//caption
+  >tbody td:hover{
+        // @include td_transform;
+
+      }//tbody td hover
+  > tfoot th, tfoot td {
+    border-top: 3px double #ccc;
+    border-bottom: 3px double #ccc;
+    padding: 2px 10px;
+    font-variant: small-caps;
+    letter-spacing: 0.1em;
+  }
+
+
+  > tbody td+td+td+td a {
+    padding-right: 16px;
+    color: #00d;
+    font-variant: small-caps;
+    letter-spacing: 0.1em; 
+    word-wrap: break-word;
+
+  }
+
+  > tbody a {
+    background-color: transparent;
+    color: #00d;
+    text-decoration: none;}
+
+  > tbody a:visited {
+    background-color: transparent;
+    color: #00a;}
+  > tbody a:hover {
+    background-color: transparent;
+    color: #00f;}
+  > tbody a:active {
+    background-color: transparent;
+    color: #f00;} 
+
+  }
+
+

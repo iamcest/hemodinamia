@@ -1,0 +1,876 @@
+<% alias Angio.Canons, as: Query %>
+ <div>
+
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+  <div class="notification is-danger">
+    <button class="delete"></button>
+    Oops, something went wrong! Please check the errors below or Dublicate Record
+</div>
+  <% end %>
+  <div class="columns">
+  <div class="column frame_1">
+
+
+ 
+
+  <!-----------start--------------------------------------->
+ <div class="columns">
+   <div class="column">
+
+
+    <%# i_proc_epis_request_dt  =
+raw Query.search_in_instructions("proc_epis_request_dt")%>
+    <div class="field">
+          <label class="label">Cath Request Date </label>
+          <div class="control">
+          <span class='field_help'></span>
+     <%= text_input f, :proc_epis_request_dt,
+        class: "input", type: "date",
+         placeholder: "proc_epis_request_dt", required: false %>
+          <%= error_tag f,
+            :proc_epis_request_dt  %>
+          </div>
+          <p class="help">  <%#= i_proc_epis_request_dt %> </p>
+        </div>
+        <!--field---->
+
+
+
+
+
+  </div><!-----end 1------------------->
+
+
+  <div class="column">
+
+  <% i_proc_epis_request_tm  =
+raw Query.search_in_instructions("proc_epis_request_tm")%>
+    <div class="field">
+          <label class="label">Cath Request Time</label>
+          <div class="control">
+           <span class='field_help'></span>
+     <%= text_input f, :proc_epis_request_tm,
+        class: "input", type: "time",
+         placeholder: "proc_epis_request_tm", required: false %>
+          <%= error_tag f,
+            :proc_epis_request_tm %>
+          </div>
+          <p class="help">  <%#= i_proc_epis_request_dt %> </p>
+        </div>
+        <!--field---->
+
+    </div><!-----end 2------------------->
+
+    </div><!--------end columns-------------->
+   <!-----------end start-------------------------------------->
+
+
+
+    <span class="button is-link is-fullwidth ">
+      Angio Machine
+ </span>
+
+
+   <!-----------start--------------------------------------->
+
+
+   <div class="columns">
+     <div class="column">
+<% s_proc_epis_cor_machine =
+         Query.select_options("proc_epis_cor_machine") %>
+
+      <%# i_proc_epis_cor_machine  =
+raw Query.search_in_instructions("proc_epis_cor_machine")%>
+
+<div class="field">
+    <label class="label"> Machine </label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class='field_help'></span>
+              <%= select(f,
+:proc_epis_cor_machine, s_proc_epis_cor_machine,
+   prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <%= error_tag f, :proc_epis_cor_machine   %>
+            <span class="help"><%#=i_proc_epis_cor_machine %></span>
+          </div>
+          <!----control---->
+
+</div>
+        <!---field--->
+
+
+
+
+  </div><!-----end 1------------------->
+
+
+   <div class="column">
+
+<% s_proc_epis_cor_machine_loc  =
+         Query.select_options("proc_epis_cor_machine_loc") %>
+
+      <%# i_proc_epis_cor_machine_loc   =
+raw Query.search_in_instructions("proc_epis_cor_machine_loc")%>
+
+<div class="field">
+    <label class="label"> Machine Location </label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class='field_help'></span>
+              <%= select(f,
+:proc_epis_cor_machine_loc , s_proc_epis_cor_machine_loc ,
+   prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <%= error_tag f, :proc_epis_cor_machine_loc   %>
+            <span class="help"><%#=i_proc_epis_cor_machine_loc  %></span>
+          </div>
+          <!----control---->
+
+</div>
+        <!---field--->
+
+
+
+
+    </div><!-----end 2------------------->
+  <%#= label f, :proc_epis_cor_machine_id %>
+  <%#= text_input f, :proc_epis_cor_machine_id %>
+  <%#= error_tag f, :proc_epis_cor_machine_id %>
+
+
+
+    </div><!--------end columns-------------->
+   <!-----------end start-------------------------------------->
+
+
+
+
+
+   <!-----------start--------------------------------------->
+ <div class="columns">
+  <div class="column">
+
+
+    <div class="field">
+          <label class="label">Referring Person </label>
+          <div class="control">
+            <%= text_input f, :proc_epis_refer_person , class: "input", type: "text",
+            placeholder: "proc_epis_refer_person", required: false %> <%= error_tag f,
+            :proc_epis_refer_person  %>
+          </div>
+          <p class="help"></p>
+  </div><!------field------------->
+
+
+
+  </div><!-----end 1------------------->
+
+<div class="column">
+Aux
+</div><!------end 2------------->
+
+
+    </div><!--------end columns-------------->
+   <!-----------end start-------------------------------------->
+ <span class="button is-primary is-fullwidth ">
+      Operator
+ </span>
+
+
+   <!-----------start--------------------------------------->
+   <div class="columns">
+     <div class="column">
+
+
+
+
+    <div class="field">
+          <label class="label">Operator Last Name </label>
+
+          <div class="control">
+            <%= text_input f, :proc_epis_prim_operator_lname ,
+               class: "input",
+            type: "text",
+placeholder: "proc_epis_prim_operator_lname",
+required: false %>
+<%= error_tag f, :proc_epis_prim_operator_lname  %>
+          </div>
+          <p class="help"></p>
+  </div><!------field------------->
+
+
+    </div><!-----end 1------------------->
+
+    <div class="column">
+<div class="field">
+          <label class="label">Operator First Name </label>
+
+          <div class="control">
+            <%= text_input f, :proc_epis_prim_operator_fname ,
+               class: "input",
+            type: "text",
+placeholder: "proc_epis_prim_operator_fname",
+required: false %>
+<%= error_tag f, :proc_epis_prim_operator_fname  %>
+          </div>
+          <p class="help"></p>
+  </div><!------field------------->
+
+
+
+  </div><!-----end 2------------------->
+
+
+
+
+    </div><!--------end columns-------------->
+   <!-----------end start-------------------------------------->
+
+<!------jgour----------->
+<div class="columns">
+   <div class="column">
+<div class="field">
+          <label class="label">Operator Mid Name </label>
+
+          <div class="control">
+            <%= text_input f, :proc_epis_prim_operator_mname ,
+               class: "input",
+            type: "text",
+placeholder: "proc_epis_prim_operator_mname",
+required: false %>
+<%= error_tag f, :proc_epis_prim_operator_mname  %>
+          </div>
+          <p class="help"></p>
+  </div><!------field------------->
+
+
+    </div><!-----end 2------------------->
+
+<div class="column">
+<div class="field">
+          <label class="label">Operator NPI </label>
+
+          <div class="control">
+            <%= text_input f, :proc_epis_prim_operator_npi ,
+               class: "input",
+            type: "text",
+placeholder: "proc_epis_prim_operator_npi",
+required: false %>
+<%= error_tag f, :proc_epis_prim_operator_npi  %>
+          </div>
+          <p class="help"></p>
+  </div><!------field------------->
+
+ </div><!-----end 1------------------->
+ </div><!--------end columns-------------->
+<!----------jgour--------------->
+
+
+
+
+
+
+
+
+ <span class="button is-primary is-fullwidth ">
+    Access Site
+ </span>
+
+
+<!-----------start--------------------------------------->
+ <div class="columns">
+  <div class="column">
+
+<% s_art_access =
+         Query.select_options("uni_art_access") %>
+
+      <% i_proc_epis_art_access_r_femoral =
+raw Query.search_in_instructions("proc_epis_art_access_r_femoral")%>
+
+<div class="field">
+    <label class="label"> R Femoral </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f,
+:proc_epis_art_access_r_femoral, s_art_access,
+   prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <%= error_tag f, :proc_epis_art_access_r_femoral  %>
+            <span class="help"><%#=i_proc_epis_cor_machine %></span>
+          </div>
+          <!----control---->
+
+</div>
+        <!---field--->
+
+
+
+  </div><!-----end 1------------------->
+
+
+  <div class="column">
+
+
+
+    <div class="field">
+    <label class="label"> R Radial </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f,
+:caepsds_art_access_r_radial, s_art_access,
+   prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <%= error_tag f, :caepsds_art_access_r_radial  %>
+            <span class="help"><%#=i_proc_epis_cor_machine %></span>
+          </div>
+          <!----control---->
+
+</div>
+        <!---field--->
+
+
+
+    </div><!-----end 2------------------->
+
+    </div><!--------end columns-------------->
+   <!-----------end start-------------------------------------->
+
+<!-----------start--------------------------------------->
+ <div class="columns">
+   <div class="column">
+
+   <div class="field">
+    <label class="label"> Left Femoral </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f,
+:proc_epis_art_access_l_femoral, s_art_access,
+   prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <%= error_tag f, :proc_epis_art_access_l_femoral  %>
+            <span class="help"><%#=i_proc_epis_cor_machine %></span>
+          </div>
+          <!----control---->
+
+</div>
+        <!---field--->
+
+
+
+
+
+
+
+  </div><!-----end 1------------------->
+
+
+   <div class="column">
+
+  <div class="field">
+    <label class="label"> Left Radial </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f,
+:proc_epis_art_access_l_radial, s_art_access,
+   prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <%= error_tag f, :proc_epis_art_access_l_radial  %>
+            <span class="help"><%#=i_proc_epis_cor_machine %></span>
+          </div>
+          <!----control---->
+
+</div>
+        <!---field--->
+
+
+
+
+
+
+    </div><!-----end 2------------------->
+
+    </div><!--------end columns-------------->
+   <!-----------end start-------------------------------------->
+
+ <!-----------start--------------------------------------->
+ <div class="columns">
+   <div class="column">
+
+
+
+      <div class="field">
+    <label class="label"> R Brachial </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f,
+:proc_epis_art_access_r_brachial, s_art_access,
+   prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <%= error_tag f, :proc_epis_art_access_r_brachial  %>
+            <span class="help"><%#=i_proc_epis_cor_machine %></span>
+          </div>
+          <!----control---->
+
+</div>
+        <!---field--->
+
+
+
+
+  </div><!-----end 1------------------->
+
+
+  <div class="column">
+
+
+  <div class="field">
+    <label class="label"> Left Brachial </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f,
+:proc_epis_art_access_l_brachial, s_art_access,
+   prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <%= error_tag f, :proc_epis_art_access_l_brachial   %>
+            <span class="help"><%#=i_proc_epis_cor_machine %></span>
+          </div>
+          <!----control---->
+
+</div>
+        <!---field--->
+
+
+
+
+    </div><!-----end 2------------------->
+    <div class="column">
+<div class="field">
+          <label class="label">Closure Device </label>
+
+          <div class="control">
+            <%= text_input f, :proc_epis_closure_device,
+               class: "input",
+            type: "text",
+placeholder: "proc_epis_closure_device",
+required: false %>
+<%= error_tag f, :proc_epis_closure_device  %>
+          </div>
+          <p class="help"></p>
+  </div><!------field------------->
+
+
+
+
+  </div><!-----end 3------------------->
+
+    </div><!--------end columns-------------->
+   <!-----------end start-------------------------------------->
+
+
+
+
+
+
+ </div><!---------end Left column---------------------->
+ <div class="column frame_1">
+   <span class="button is-primary is-fullwidth ">
+    ICD-10 Procedure Codes
+ </span>
+
+ <!-----------start--------------------------------------->
+ <div class="columns">
+  <div class="column">
+<div class="field">
+          <label class="label">ICD-10-PCS 1 </label>
+
+          <div class="control">
+            <%= text_input f, :proc_epis_icd10_pcs_1 ,
+               class: "input",
+            type: "text",
+placeholder: "proc_epis_icd10_pcs_1",
+required: false %>
+<%= error_tag f, :proc_epis_icd10_pcs_1  %>
+          </div>
+          <p class="help"></p>
+  </div><!------field------------->
+
+
+
+  </div><!-----end 1------------------->
+
+
+  <div class="column">
+
+
+
+<div class="field">
+          <label class="label">ICD-10-PCS 2 </label>
+
+          <div class="control">
+            <%= text_input f, :proc_epis_icd10_pcs_2 ,
+               class: "input",
+            type: "text",
+placeholder: "proc_epis_icd10_pcs_2",
+required: false %>
+<%= error_tag f, :proc_epis_icd10_pcs_2  %>
+          </div>
+          <p class="help"></p>
+  </div><!------field------------->
+
+
+
+
+    </div><!-----end 2------------------->
+
+    </div><!--------end columns-------------->
+   <!-----------end start-------------------------------------->
+ <!-----------start--------------------------------------->
+ <div class="columns">
+   <div class="column">
+
+<div class="field">
+          <label class="label">ICD-10-PCS 3 </label>
+
+          <div class="control">
+            <%= text_input f, :proc_epis_icd10_pcs_3 ,
+               class: "input",
+            type: "text",
+placeholder: "proc_epis_icd10_pcs_3",
+required: false %>
+<%= error_tag f, :proc_epis_icd10_pcs_3  %>
+          </div>
+          <p class="help"></p>
+  </div><!------field------------->
+
+
+
+
+  </div><!-----end 1------------------->
+
+
+   <div class="column">
+
+
+     <div class="field">
+          <label class="label">ICD-10-PCS 4 </label>
+
+          <div class="control">
+            <%= text_input f, :proc_epis_icd10_pcs_4 ,
+               class: "input",
+            type: "text",
+placeholder: "proc_epis_icd10_pcs_4",
+required: false %>
+<%= error_tag f, :proc_epis_icd10_pcs_4  %>
+          </div>
+          <p class="help"></p>
+  </div><!------field------------->
+
+
+
+    </div><!-----end 2------------------->
+
+    </div><!--------end columns-------------->
+   <!-----------end start-------------------------------------->
+
+ <span class="button is-primary is-fullwidth ">
+    Contrast
+ </span>
+
+
+
+     <!-----------start--------------------------------------->
+ <div class="columns">
+  <div class="column ">
+
+ <div class="field">
+          <label class="label">Contrast Volume (mL) </label>
+
+          <div class="control">
+            <%= text_input f, :proc_epis_contrast_volume,
+               class: "input",
+            type: "text",
+placeholder: "proc_epis_contrast_volume",
+required: false %>
+<%= error_tag f, :proc_epis_contrast_volume  %>
+          </div>
+          <p class="help"></p>
+  </div><!------field------------->
+
+
+
+
+
+  </div><!-----end 1------------------->
+
+
+   <div class="column">
+
+ <div class="field">
+          <label class="label">Contrast Name </label>
+
+          <div class="control">
+            <%= text_input f, :proc_epis_contrast_name,
+               class: "input",
+            type: "text",
+placeholder: "proc_epis_contrast_name",
+required: false %>
+<%= error_tag f, :proc_epis_contrast_name  %>
+          </div>
+          <p class="help"></p>
+  </div><!------field------------->
+
+
+    </div><!-----end 2------------------->
+
+    </div><!--------end columns-------------->
+   <!-----------end start-------------------------------------->
+ <span class="button is-primary is-fullwidth ">
+    Best Catheters
+ </span>
+
+  <!-----------start--------------------------------------->
+ <div class="columns">
+  <div class="column ">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="field">
+          <label class="label">Best Left Catheter Name </label>
+
+          <div class="control">
+            <%= text_input f, :proc_epis_catheter_l_name,
+               class: "input",
+            type: "text",
+placeholder: "proc_epis_catheter_l_name",
+required: false %>
+<%= error_tag f, :proc_epis_catheter_l_name  %>
+          </div>
+          <p class="help"></p>
+  </div><!------field------------->
+
+
+  </div><!-----end 1------------------->
+
+
+   <div class="column">
+<% s_proc_epis_catheter_size =
+         Query.select_options("uni_guide_size") %>
+
+      <% i_proc_epis_catheter_size  =
+raw Query.search_in_instructions("uni_guide_size")%>
+
+<div class="field">
+    <label class="label">Size Fr </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f,
+:proc_epis_catheter_l_size, s_proc_epis_catheter_size,
+   prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <%= error_tag f, :proc_epis_catheter_l_size   %>
+            <span class="help"><%=i_proc_epis_catheter_size %></span>
+          </div>
+          <!----control---->
+
+</div>
+        <!---field--->
+
+
+
+    </div><!-----end 2------------------->
+
+    </div><!--------end columns-------------->
+   <!-----------end start-------------------------------------->
+
+
+   <!-----------start--------------------------------------->
+ <div class="columns">
+  <div class="column ">
+
+
+
+
+
+<div class="field">
+          <label class="label">Best Right Catheter Name </label>
+
+          <div class="control">
+            <%= text_input f, :proc_epis_catheter_r_name,
+               class: "input",
+            type: "text",
+placeholder: "proc_epis_catheter_r_name",
+required: false %>
+<%= error_tag f, :proc_epis_catheter_r_name  %>
+          </div>
+          <p class="help"></p>
+  </div><!------field------------->
+
+
+  </div><!-----end 1------------------->
+
+
+  <div class="column">
+<div class="field">
+    <label class="label">Size Fr </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f,
+:proc_epis_catheter_r_size, s_proc_epis_catheter_size,
+   prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <%= error_tag f, :proc_epis_catheter_r_size   %>
+            <span class="help"><%=i_proc_epis_catheter_size %></span>
+          </div>
+          <!----control---->
+
+</div>
+        <!---field--->
+
+
+
+
+
+    </div><!-----end 2------------------->
+
+    </div><!--------end columns-------------->
+   <!-----------end start-------------------------------------->
+
+
+
+
+  <!-----------start--------------------------------------->
+ <div class="columns">
+   <div class="column ">
+
+<div class="field">
+          <label class="label">Best LV Catheter Name </label>
+
+          <div class="control">
+            <%= text_input f, :proc_epis_catheter_lv_name,
+               class: "input",
+            type: "text",
+placeholder: "proc_epis_catheter_r_name",
+required: false %>
+<%= error_tag f, :proc_epis_catheter_lv_name  %>
+          </div>
+          <p class="help"></p>
+  </div><!------field------------->
+
+
+
+
+  </div><!-----end 1------------------->
+
+
+   <div class="column">
+<div class="field">
+    <label class="label">Size Fr </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f,
+:proc_epis_catheter_lv_size, s_proc_epis_catheter_size,
+   prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <%= error_tag f, :proc_epis_catheter_lv_size   %>
+            <span class="help"><%=i_proc_epis_catheter_size %></span>
+          </div>
+          <!----control---->
+
+</div>
+        <!---field--->
+
+
+
+
+
+
+
+
+
+    </div><!-----end 2------------------->
+
+    </div><!--------end columns-------------->
+   <!-----------end start-------------------------------------->
+
+
+     <span class="button is-danger  is-fullwidth ">
+<i class="fa fa-sticky-note">
+My Notes
+</i>
+</span>
+
+  <!-----------start--------------------------------------->
+ <div class="columns">
+   <div class="column ">
+
+
+         <div class="field">
+  <label class="label">  Notes Procedure Details</label>
+  <div class="control">
+    <%= text_input f, :proc_epis_notes,
+        class: "textarea",
+        type: "input", placeholder: "proc_epis_notes"  %>
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+
+
+
+  </div><!-----end 1------------------->
+
+
+     </div><!--------end columns-------------->
+   <!-----------end start-------------------------------------->
+
+
+<!-- -HELP AREA -->
+  <%= render  AngioWeb.SharedView, "_help_area.html" %>
+  </div>
+
+
+
+
+  </div><!---------end Right column---------------------->
+ </div><!---------end Columns------------------------------------>
+
+  <div>
+    <%= submit "Save and Continue", class: "button is-info is-large is-fullwidth " %>
+  </div>
+<% end %>

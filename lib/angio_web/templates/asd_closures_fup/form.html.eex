@@ -1,0 +1,538 @@
+
+<% alias Angio.Canons, as: Query %>
+
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+  <div class="notification is-danger">
+    <button class="delete"></button>
+    Oops, something went wrong! Please check the errors below.
+</div>
+
+  <% end %>
+
+<div class="columns">
+<div class="column frame_1">
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+<!--------start---field----------------------------->
+ <div class="field">
+          <label class="label">Follow-up Date  </label>
+          <div class="control">
+
+      <%= text_input f, :asdclf_assessment_dt,
+class: "input",
+type: "date",
+placeholder: "asdclf_assessment_dt",
+required: true %>
+<%= error_tag f,:asdclf_assessment_dt %>
+          </div>
+          <p class="help"></p>
+        </div>
+        <!---------end ---field------------>
+
+
+</div><!----column-------------------->
+
+ <div class = "column">
+
+
+
+<!--------start---field----------------------------->
+ <div class="field">
+  <label class="label">ASD Closure Date  </label>
+  <div class="control">
+<%= text_input f, :asdclf_start_dt,
+class: "input",
+type: "date",
+placeholder: "asdclf_start_dt",
+required: false %>
+<%= error_tag f,:asdclf_start_dt %>
+          </div>
+          <p class="help"></p>
+        </div>
+        <!---------end ---field------------>
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+<div class="field">
+          <label class="label">Is Free Of Events?</label>
+          <div class="control">
+            <%= checkbox f, :asdclf_free_events_yn,
+             placeholder: "caepsds_zip_na",
+            required: false,
+            type: "checkbox" %> <%= error_tag f,
+            :asdclf_free_events_yn %>
+          </div>
+          <p class="help">Check if Yes</p>
+        </div>
+        <!--------------------end------field------------------------->
+
+</div><!----column-------------------->
+
+ <div class = "column">
+
+<!-------start Field------------------------------------>
+ <div class="field">
+            <label class="label field_help " >Residual Shunt</label>
+            <%= text_input f, :asdclf_residual_shunt_size,
+            class: "input",
+            type: "text",
+            placeholder: "asdclf_residual_shunt_size",
+            required: false %>
+            <%= error_tag f,:asdclf_residual_shunt_size%>
+          <p class="help"></p>
+        </div>
+<!-------end field------------------------------------------->
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!--------start------------------------------------>
+<% s_asdclf_fup_status  =
+         Query.select_options("asdclf_fup_status") %>
+
+<div class="field">
+    <label class="label">F/Up Patient Status </label>
+          <div class="control">
+            <div class="select is-link">
+              <%= select(f,
+:asdclf_fup_status  , s_asdclf_fup_status ,
+   prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <%= error_tag f, :asdclf_fup_status    %>
+            <span class="help"></span>
+          </div>
+          <!----control---->
+        </div>
+    <!---end field-------------------------------->
+
+</div><!----column-------------------->
+
+ <div class = "column">
+<!--------start------------------------------------>
+<% s_asdclf_visit_status  =
+         Query.select_options("asdclf_visit_status") %>
+
+<div class="field">
+    <label class="label">F/Up Method </label>
+          <div class="control">
+            <div class="select is-link">
+              <%= select(f,
+:asdclf_visit_status ,
+s_asdclf_visit_status ,
+   prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <%= error_tag f, :asdclf_visit_status    %>
+            <span class="help"></span>
+          </div>
+          <!----control---->
+        </div>
+    <!---end field-------------------------------->
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<div class="field">
+          <label class="label">Has Endocarditis?</label>
+          <div class="control">
+            <%= checkbox f, :asdclf_sbe_yn,
+             placeholder: "asdclf_sbe_yn",
+            required: false,
+            type: "checkbox" %> <%= error_tag f,
+            :asdclf_sbe_yn %>
+          </div>
+          <p class="help">Check if Yes</p>
+        </div>
+
+<!--------------------end------field------------------------->
+
+
+ </div><!----column-------------------->
+<div class = "column">
+<!--------start---field----------------------------->
+ <div class="field">
+          <label class="label">SBE: Date of Diagnosis  </label>
+          <div class="control">
+
+      <%= text_input f, :asdclf_sbe_diagnosis_dt,
+class: "input",
+type: "date",
+placeholder: "asdclf_sbe_diagnosis_dt",
+required: true %>
+<%= error_tag f,:asdclf_sbe_diagnosis_dt %>
+          </div>
+          <p class="help"></p>
+        </div>
+        <!---------end ---field------------>
+</div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+
+ <div class = "column">
+
+<!--------start------------------------------------>
+<% s_asdclf_sbe_factors  =
+         Query.select_options("asdclf_sbe_factors") %>
+
+<div class="field">
+    <label class="label">SBE: Risk Factors </label>
+          <div class="control">
+            <div class="select is-link">
+              <%= select(f,
+                :asdclf_sbe_factors  ,
+                s_asdclf_sbe_factors ,
+
+   prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <%= error_tag f, :asdclf_sbe_factors    %>
+            <span class="help"></span>
+          </div>
+          <!----control---->
+        </div>
+    <!---end field-------------------------------->
+
+
+ </div><!----column-------------------->
+<div class = "column">
+
+<!--------start------------------------------------>
+<% s_asdclf_sbe_treatment  =
+         Query.select_options("asdclf_sbe_treatment") %>
+
+<div class="field">
+    <label class="label">SBE Treatment </label>
+          <div class="control">
+            <div class="select is-link">
+              <%= select(f,
+                :asdclf_sbe_treatment,
+                s_asdclf_sbe_treatment ,
+
+   prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <%= error_tag f, :asdclf_sbe_treatment    %>
+            <span class="help"></span>
+          </div>
+          <!----control---->
+        </div>
+    <!---end field-------------------------------->
+
+
+
+</div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+
+
+<div class = "column">
+
+
+<div class="field">
+          <label class="label">Device Erosion?</label>
+          <div class="control">
+          <span class="field_help"></span>
+            <%= checkbox f, :asdclf_erosion_yn,
+             placeholder: "asdclf_erosion_yn",
+            required: false,
+            type: "checkbox" %> <%= error_tag f,
+            :asdclf_erosion_yn %>
+          </div>
+          <p class="help">Check if Yes</p>
+        </div>
+
+<!--------------------end------field------------------------->
+
+
+
+</div><!----column-------------------->
+
+<div class = "column">
+
+
+<div class="field">
+          <label class="label">Frame Fracture ?</label>
+          <div class="control">
+          <span class="field_help"></span>
+            <%= checkbox f, :asdclf_frame_fracture_yn,
+             placeholder: "asdclf_frame_fracture_yn",
+            required: false,
+            type: "checkbox" %>
+             <%= error_tag f, :asdclf_frame_fracture_yn %>
+          </div>
+          <p class="help">Check if Yes</p>
+        </div>
+
+<!--------------------end------field------------------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+
+
+<div class="field">
+          <label class="label">Embolization ?</label>
+          <div class="control">
+          <span class="field_help"></span>
+            <%= checkbox f, :asdclf_embolization_yn,
+             placeholder: "asdclf_embolization_yn",
+            required: false,
+            type: "checkbox" %>
+             <%= error_tag f, :asdclf_embolization_yn %>
+          </div>
+          <p class="help">Check if Yes</p>
+        </div>
+
+<!--------------------end------field------------------------->
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!-----------start field------------------------------------>
+<div class="field">
+          <label class="label">Retrivied By Surgery ?</label>
+          <div class="control">
+          <span class="field_help"></span>
+            <%= checkbox f, :asdclf_retrivied_surgery_yn,
+             placeholder: "asdclf_retrivied_surgery_yn",
+            required: false,
+            type: "checkbox" %>
+             <%= error_tag f, :asdclf_retrivied_surgery_yn %>
+          </div>
+          <p class="help">Check if Yes</p>
+        </div>
+
+<!--------------------end------field------------------------->
+
+
+
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+
+<!-----------start field------------------------------------>
+<div class="field">
+          <label class="label">ReIntervention Closure ?</label>
+          <div class="control">
+          <span class="field_help"></span>
+            <%= checkbox f, :asdclf_reintervention_closure_yn,
+             placeholder: "asdclf_reintervention_closure_yn",
+            required: false,
+            type: "checkbox" %>
+             <%= error_tag f, :asdclf_reintervention_closure_yn %>
+          </div>
+          <p class="help">Check if Yes</p>
+        </div>
+<!--------------------end------field------------------------->
+
+
+ </div><!----column-------------------->
+<div class = "column">
+
+
+<!--------start---field----------------------------->
+ <div class="field">
+          <label class="label">ReInterv  Date  </label>
+          <div class="control">
+<span class="field_help"></span>
+      <%= text_input f, :asdclf_reintervention_closure_dt,
+class: "input",
+type: "date",
+placeholder: "asdclf_reintervention_closure_dt",
+required: true %>
+<%= error_tag f,:asdclf_reintervention_closure_dt %>
+          </div>
+          <p class="help"></p>
+        </div>
+        <!---------end ---field------------>
+</div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+
+
+
+ <div class = "column">
+
+
+<!-----------start field------------------------------------>
+<div class="field">
+          <label class="label">Headaches ?</label>
+          <div class="control">
+          <span class="field_help"></span>
+            <%= checkbox f, :asdclf_new_headaches_yn,
+             placeholder: "asdclf_new_headaches_yn",
+            required: false,
+            type: "checkbox" %>
+             <%= error_tag f, :asdclf_new_headaches_yn %>
+          </div>
+          <p class="help">Check if Yes</p>
+        </div>
+<!--------------------end------field------------------------->
+
+ </div><!----column-------------------->
+
+
+<div class = "column">
+
+
+<!-----------start field------------------------------------>
+<div class="field">
+          <label class="label">Arrhythmias?</label>
+          <div class="control">
+          <span class="field_help"></span>
+            <%= checkbox f, :asdclf_arrhythmias_yn,
+             placeholder: "asdclf_arrhythmias_yn",
+            required: false,
+            type: "checkbox" %>
+             <%= error_tag f, :asdclf_arrhythmias_yn %>
+          </div>
+          <p class="help">Check if Yes</p>
+        </div>
+<!--------------------end------field------------------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!-----------start field------------------------------------>
+<div class="field">
+          <label class="label">On Antiplatelets?</label>
+          <div class="control">
+            <span class="field_help"></span>
+            <%= checkbox f, :asdclf_anti_platelet_yn,
+             placeholder: "asdclf_anti_platelet_yn",
+            required: false,
+            type: "checkbox" %>
+             <%= error_tag f, :asdclf_anti_platelet_yn %>
+          </div>
+          <p class="help">Check if Yes</p>
+        </div>
+<!--------------------end------field------------------------->
+
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><!--------END LEFT COLUMN------------------------------>
+
+<div class="column frame_1"><!---EKD LEFT COLUMN------------------------>
+
+
+ <span class="button is-danger  is-fullwidth ">
+<i class="fa fa-sticky-note">
+My Notes
+</i>
+</span>
+  <div class = "columns">
+<div class = "column">
+
+<div class="field">
+          <label class="label">My Notes </label>
+          <div class="control">
+            <%= text_input f, :asdclf_notes, class: "textarea", type: "input",
+            placeholder: "asdclf_notes" %> <%= error_tag f, :asdclf_notes %>
+
+            <p class="help"></p>
+          </div>
+          <!---control---------->
+        </div>
+        <!-------field-------->
+
+</div><!-----NOTES column---------------->
+  </div><!----NOTES ----COLUMNS-------------------------------------->
+
+
+
+<div class = "columns">
+<div class = "column">
+ <%= render  AngioWeb.SharedView, "_help_area.html" %>
+
+</div><!-----HELP column---------------->
+  </div><!----HELP ----COLUMNS-------------------------------------->
+
+</div><!------RIGHT COLUMN---------------------->
+</div><!-------END COLUMNS------------------------------>
+
+
+
+
+<div>
+    <%= submit "Save and Continue", class: "button is-info is-large is-fullwidth " %>
+
+  </div>
+<% end %>

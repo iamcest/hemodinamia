@@ -1,0 +1,48 @@
+
+<% alias Angio.Congenitals%>
+<% alias Angio.Caths%>
+<% alias Angio.Interventions %>
+<% alias Angio.Ivestigations %>
+<span class="button  is-primary is-medium is-fullwidth ">
+    Echo  Records
+ </span>
+<div class="menu_info_coronary_tabs">
+  <div class="tabs is-small is-centered">
+    <ul>
+
+
+<li>
+<% count_echo_left_atriums  =  Ivestigations.count_echo_left_atriums(@cardiac_echo.id) %>
+<%= link to: Routes.pt_echo_ela_path(@conn, :index, @patient,
+      @cardiac_echo), class: "button is-link is-rounded is-small is-fullwidth " do %>
+ <%= render  AngioWeb.SharedView, "_info_menu_count.html",
+                 prompt: "Echo LA",
+                 count: count_echo_left_atriums %>
+      <% end %>
+
+</li>
+
+<li>
+<% count_echo_right_atriums  =  Ivestigations.count_echo_right_atriums(@cardiac_echo.id) %>
+<%= link to: Routes.pt_echo_era_path(@conn, :index, @patient,
+      @cardiac_echo), class: "button is-link is-rounded is-small is-fullwidth " do %>
+ <%= render  AngioWeb.SharedView, "_info_menu_count.html",
+                 prompt: "Echo RA",
+                 count: count_echo_right_atriums %>
+      <% end %>
+</li>
+
+<li>
+<% count_echo_ventricle_lefts  =  Ivestigations.count_echo_ventricle_lefts(@cardiac_echo.id) %>
+<%= link to: Routes.pt_echo_elv_path(@conn, :index, @patient,
+      @cardiac_echo), class: "button is-link is-rounded is-small is-fullwidth " do %>
+ <%= render  AngioWeb.SharedView, "_info_menu_count.html",
+                 prompt: "Echo LV Structure",
+                 count: count_echo_ventricle_lefts %>
+      <% end %>
+</li>
+      <!------------------------------------>
+     </ul>
+
+</div><!-------------------------------->
+</div><!--------------------------------->

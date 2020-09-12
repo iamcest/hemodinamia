@@ -1,0 +1,200 @@
+
+<div class="title_form">
+<h5 class="title is-5 has-text-centered">Show Echo Encounter Record</h5>
+</div>
+<div class="element_info">
+    Patient :
+    <%= render  AngioWeb.SharedView, "_patient_info.html", patient: @patient %>
+</div>
+
+
+<ul>
+
+  <li>
+    <strong>Echo consent yn:</strong>
+    <%= @cardiac_echo.echo_consent_yn %>
+  </li>
+
+  <li>
+    <strong>Echo performed yn:</strong>
+    <%= @cardiac_echo.echo_performed_yn %>
+  </li>
+
+  <li>
+    <strong>Echo reason:</strong>
+    <%= @cardiac_echo.echo_reason %>
+  </li>
+
+  <li>
+    <strong>Echo indication:</strong>
+    <%= @cardiac_echo.echo_indication %>
+  </li>
+
+  <li>
+    <strong>Echo idication icd10cm:</strong>
+    <%= @cardiac_echo.echo_idication_icd10cm %>
+  </li>
+
+  <li>
+    <strong>Echo priority:</strong>
+    <%= @cardiac_echo.echo_priority %>
+  </li>
+
+  <li>
+    <strong>Echo start dt:</strong>
+    <%= @cardiac_echo.echo_start_dt %>
+  </li>
+
+  <li>
+    <strong>Echo start tm:</strong>
+    <%= @cardiac_echo.echo_start_tm %>
+  </li>
+
+  <li>
+    <strong>Echo stop tm:</strong>
+    <%= @cardiac_echo.echo_stop_tm %>
+  </li>
+
+  <li>
+    <strong>Echo lab:</strong>
+    <%= @cardiac_echo.echo_lab_id %>
+  </li>
+
+  <li>
+    <strong>Echo lab num:</strong>
+    <%= @cardiac_echo.echo_lab_num %>
+  </li>
+
+  <li>
+    <strong>Echo lab num yr:</strong>
+    <%= @cardiac_echo.echo_lab_num_yr %>
+  </li>
+
+  <li>
+    <strong>Echo maschine type:</strong>
+    <%= @cardiac_echo.echo_maschine_type %>
+  </li>
+
+  <li>
+    <strong>Echo study location:</strong>
+    <%= @cardiac_echo.echo_study_location %>
+  </li>
+
+  <li>
+    <strong>Echo study protocole:</strong>
+    <%= @cardiac_echo.echo_study_protocole %>
+  </li>
+
+  <li>
+    <strong>Echo patient location:</strong>
+    <%= @cardiac_echo.echo_patient_location %>
+  </li>
+
+  <li>
+    <strong>Echo requested dt:</strong>
+    <%= @cardiac_echo.echo_requested_dt %>
+  </li>
+
+  <li>
+    <strong>Echo referring doctor 1:</strong>
+    <%= @cardiac_echo.echo_referring_doctor_1 %>
+  </li>
+
+  <li>
+    <strong>Echo referring doctor 2:</strong>
+    <%= @cardiac_echo.echo_referring_doctor_2 %>
+  </li>
+
+  <li>
+    <strong>Echo doctor reading:</strong>
+    <%= @cardiac_echo.echo_doctor_reading %>
+  </li>
+
+  <li>
+    <strong>Echo doctor reading npi:</strong>
+    <%= @cardiac_echo.echo_doctor_reading_npi %>
+  </li>
+
+  <li>
+    <strong>Echo doctor interpeting group:</strong>
+    <%= @cardiac_echo.echo_doctor_interpeting_group %>
+  </li>
+
+  <li>
+    <strong>Echo doctor operator:</strong>
+    <%= @cardiac_echo.echo_doctor_operator %>
+  </li>
+
+  <li>
+    <strong>Sonographer name:</strong>
+    <%= @cardiac_echo.sonographer_name %>
+  </li>
+
+  <li>
+    <strong>Echo blood pressure sys:</strong>
+    <%= @cardiac_echo.echo_blood_pressure_sys %>
+  </li>
+
+  <li>
+    <strong>Echo blood pressure diast:</strong>
+    <%= @cardiac_echo.echo_blood_pressure_diast %>
+  </li>
+
+  <li>
+    <strong>Echo bsa:</strong>
+    <%= @cardiac_echo.echo_bsa %>
+  </li>
+
+  <li>
+    <strong>Echo pt weight:</strong>
+    <%= @cardiac_echo.echo_pt_weight %>
+  </li>
+
+  <li>
+    <strong>Echo pt height:</strong>
+    <%= @cardiac_echo.echo_pt_height %>
+  </li>
+
+  <li>
+    <strong>Echo heart rate:</strong>
+    <%= @cardiac_echo.echo_heart_rate %>
+  </li>
+
+  <li>
+    <strong>Echo afib yn:</strong>
+    <%= @cardiac_echo.echo_afib_yn %>
+  </li>
+
+  <li>
+    <strong>Echo media location:</strong>
+    <%= @cardiac_echo.echo_media_location %>
+  </li>
+
+  <li>
+    <strong>Echo summary report:</strong>
+    <%= @cardiac_echo.echo_summary_report %>
+  </li>
+
+</ul>
+
+<p class ="buttons_separator"> . </p>
+
+<span>
+    <%= link "Edit Echo ", to: Routes.pt_echo_path(@conn, :edit,
+     @patient,
+     @cardiac_echo ), class: "button is-primary"%>
+</span>
+<span>
+  <%= link "Back To Echo Encounter Index", to: Routes.pt_echo_path(@conn, :index,
+  @patient) , class: "button is-primary"%>
+</span>
+
+<span>
+<%= link "To Patients List",  to: Routes.pt_path(@conn, :index),
+class: "button is-primary"   %>
+ </span>
+
+<span>
+<%= link "To Cath Lab",  to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-primary"   %>
+ </span>

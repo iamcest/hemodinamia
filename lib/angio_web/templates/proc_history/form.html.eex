@@ -1,0 +1,412 @@
+<% alias Angio.Canons, as: Query %>
+
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+  <div class="notification is-danger">
+    <button class="delete"></button>
+    Oops, something went wrong! Please check the errors below or Dublicate Record
+</div>
+
+  <% end %>
+  <div class = "columns">
+  <div class = "column is-7 frame_1"
+
+<!---------start----------------------------------->
+    <div class = "columns">
+      <div class = "column">
+        <!-----field---------------->
+  <div class="field">
+          <label class="label">Prior PCI </label>
+          <div class="control">
+            <%= checkbox f, :proch_pci_prior_yn,
+             placeholder: "proch_pci_prior_yn",
+             required: false,
+             type: "checkbox" %>
+             <%= error_tag f, :proch_pci_prior_yn %>
+          </div>
+          <p class="help">Check if Yes</p>
+  </div>
+  <!------------field---->
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+  <!-------field start----------------------->
+ <div class="field">
+          <label class="label">PCI Date </label>
+          <div class="control">
+          <span class="field_help"></span>
+          <%= text_input f, :proch_pci_prior_dt,
+             class: "input",
+             type: "date",
+             placeholder: "proch_pci_prior_dt ",
+             required: false %>
+             <%= error_tag f, :proch_pci_prior_dt  %>
+          </div>
+          <p class="help"></p>
+</div><!-----field---------------->
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!-------end start------------------------------------>
+
+
+ <!-------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<div class="field">
+          <label class="label">Prior Valve Intervention </label>
+          <div class="control">
+            <%= checkbox f, :proch_prior_valve_interv_yn,
+             placeholder: "proch_prior_valve_interv_yn",
+             required: false,
+             type: "checkbox" %>
+             <%= error_tag f, :proch_prior_valve_interv_yn %>
+          </div>
+          <p class="help">Check if Yes</p>
+        </div><!----------field-end--->
+
+</div><!----column-------------------->
+ <div class = "column">
+
+        <div class="field">
+          <label class="label">Valve Date </label>
+          <div class="control">
+          <span class="field_help"></span>
+          <%= text_input f, :proch_prior_valve_interv_dt ,
+             class: "input",
+             type: "date",
+             placeholder: "proch_prior_valve_interv_dt ",
+             required: false %>
+             <%= error_tag f, :proch_prior_valve_interv_dt  %>
+          </div>
+          <p class="help"></p>
+       </div>
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+  <div class="field">
+          <label class="label">Prior Heart Transpant </label>
+          <div class="control">
+            <%= checkbox f, :proch_transplant_prior_yn ,
+             placeholder: "proch_transplant_prior_yn ",
+             required: false,
+             type: "checkbox" %>
+             <%= error_tag f, :proch_transplant_prior_yn  %>
+          </div>
+          <p class="help"></p>
+        </div><!------------field---->
+
+</div><!----column-------------------->
+ <div class = "column">
+  <div class="field">
+          <label class="label">Transplant Date </label>
+          <div class="control">
+          <span class="field_help"></span>
+          <%= text_input f, :proch_transplant_prior_dt  ,
+             class: "input",
+             type: "date",
+             placeholder: " proch_transplant_prior_dt ",
+             required: false %>
+             <%= error_tag f, :proch_transplant_prior_dt %>
+          </div>
+          <p class="help"></p>
+  </div><!----field------------------------------------->
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+  <div class="field">
+          <label class="label">Prior Pacemaker </label>
+          <div class="control">
+            <%= checkbox f, :proch_pacer_prior_yn ,
+             placeholder: "proch_pacer_prior_yn",
+             required: false,
+             type: "checkbox" %>
+             <%= error_tag f, :proch_pacer_prior_yn  %>
+          </div>
+          <p class="help"></p>
+        </div>
+
+
+</div><!----column-------------------->
+ <div class = "column">
+  <div class="field">
+          <label class="label">Pacemaker Date </label>
+          <div class="control">
+          <span class="field_help"></span>
+          <%= text_input f, :proch_pacer_prior_dt,
+             class: "input",
+             type: "date",
+             placeholder: "proch_pacer_prior_dt",
+             required: false %>
+             <%= error_tag f, :proch_pacer_prior_dt %>
+          </div>
+          <p class="help"></p>
+ </div>
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+  <div class="field">
+          <label class="label">Prior ICD </label>
+          <div class="control">
+            <%= checkbox f, :proch_prior_icd_yn,
+             placeholder: "proch_prior_icd_yn",
+             required: false,
+             type: "checkbox" %>
+             <%= error_tag f, :proch_prior_icd_yn  %>
+          </div>
+          <p class="help"></p>
+          </div>
+
+</div><!----column-------------------->
+ <div class = "column">
+ <div class="field">
+          <label class="label">ICD Date </label>
+          <div class="control">
+     <%= text_input f, :proch_prior_icd_dt,
+        class: "input", type: "date",
+         placeholder: "proch_prior_icd_dt", required: false %>
+          <%= error_tag f,
+            :proc_epis_request_dt  %>
+          </div>
+          <p class="help">   </p>
+        </div>
+        <!-----field---->
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+     <!-----field---------------->
+  <div class="field">
+          <label class="label">Prior RV Biopsy </label>
+          <div class="control">
+            <%= checkbox f, :proch_prior_rv_biopsy_yn ,
+             placeholder: "proch_prior_rv_biopsy_yn ",
+             required: false,
+             type: "checkbox" %>
+             <%= error_tag f, :proch_prior_rv_biopsy_yn   %>
+          </div>
+          <p class="help"></p>
+  </div>
+
+</div><!----column-------------------->
+ <div class = "column">
+
+ <div class="field">
+          <label class="label">Biopsy Date </label>
+ <div class="control">
+          <%= text_input f, :proch_prior_rv_biopsy_dt ,
+          class: "input",
+             type: "date",
+             placeholder: "proch_prior_rv_biopsy_dt",
+             required: false %>
+             <%= error_tag f, :proch_prior_rv_biopsy_dt %>
+          </div>
+          <p class="help"></p>
+ </div>
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+ <div class="field">
+          <label class="label">Carotid Stent? </label>
+          <div class="control">
+            <%= checkbox f, :proch_carotid_surg_stent_yn,
+             placeholder: "proch_carotid_surg_stent_yn",
+             required: false,
+             type: "checkbox" %>
+             <%= error_tag f, :proch_carotid_surg_stent_yn   %>
+          </div>
+          <p class="help"></p>
+  </div>
+  <!------------field---->
+
+</div><!----column-------------------->
+<div class = "column">
+
+    <!-------field start----------------------->
+ <div class="field">
+          <label class="label">Carotid  Date </label>
+          <div class="control">
+          <span class="field_help"></span>
+          <%= text_input f, :proch_carotid_surg_stent_dt ,
+             class: "input",
+             type: "date",
+             placeholder: "proch_carotid_surg_stent_dt ",
+             required: false %>
+             <%= error_tag f, :proch_carotid_surg_stent_dt  %>
+          </div>
+          <p class="help"></p>
+</div><!-----field---------------->
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+  <div class="field">
+          <label class="label">Privious CABG? </label>
+          <div class="control">
+            <%= checkbox f, :proch_cabg_prior_yn,
+             placeholder: "proch_cabg_prior_yn",
+             required: false,
+             type: "checkbox" %>
+             <%= error_tag f, :proch_cabg_prior_yn   %>
+          </div>
+          <p class="help"></p>
+        </div>
+  <!------------field---->
+
+</div><!----column-------------------->
+<div class = "column">
+    <!-------field start----------------------->
+ <div class="field">
+          <label class="label">CABG Date </label>
+          <div class="control">
+          <span class="field_help"></span>
+          <%= text_input f, :proch_cabg_prior_dT ,
+             class: "input",
+             type: "date",
+             placeholder: "proch_cabg_prior_dt  ",
+             required: false %>
+             <%= error_tag f, :proch_cabg_prior_dt  %>
+          </div>
+          <p class="help"></p>
+</div><!-----field---------------->
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+  <!-----field---------------->
+  <div class="field">
+          <label class="label">Other Cardiac Surgery? </label>
+          <div class="control">
+            <%= checkbox f, :proch_cardiac_surg_other_yn ,
+             placeholder: "proch_cardiac_surg_other_yn ",
+             required: false,
+             type: "checkbox" %>
+             <%= error_tag f, :proch_cardiac_surg_other_yn    %>
+          </div>
+          <p class="help"></p>
+        </div>
+  <!------------field---->
+
+</div><!----column-------------------->
+<div class = "column">
+  <!-------field start----------------------->
+ <div class="field">
+          <label class="label">Agnio Request Date </label>
+          <div class="control">
+          <span class="field_help"></span>
+          <%= text_input f, :proc_epis_request_dt ,
+             class: "input",
+             type: "date",
+             placeholder: "proc_epis_request_dt  ",
+             required: false %>
+             <%= error_tag f, :proc_epis_request_dt  %>
+          </div>
+          <p class="help"></p>
+</div><!-----field---------------->
+
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!-------end start------------------------------------>
+
+
+
+
+
+
+
+  </div><!----column----------------->
+
+  <div class = "column is-5 frame_1">
+
+
+<div class="field">
+  <label class="label"> My Notes On Prior Proce History Record </label>
+  <div class="control">
+    <%= text_input f, :proch_notes,
+        class: "textarea",
+        type: "input", placeholder: "My Notes"  %>
+
+    <p class="help"></p>
+  </div><!---control---------->
+  </div><!------field--------------->
+
+
+
+  <%= render  AngioWeb.SharedView, "_help_area.html" %>
+
+
+  </div><!------column-------------->
+  </div><!------columns------------------->
+
+  <div>
+    <%= submit "Save and Continue", class: "button is-info is-large is-fullwidth " %>
+  </div>
+
+
+<% end %>

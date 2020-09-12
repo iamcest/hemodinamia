@@ -1,0 +1,298 @@
+<% alias Angio.Canons, as: Query %>
+
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+   <div class="notification is-danger">
+    <button class="delete"></button>
+    Oops, something went wrong! Please check the errors below or Dublicate Record
+</div>
+
+  <% end %>
+<div class = "columns">
+
+
+<div class = "column frame_1">
+
+<!--------start--------------------------------->
+  <div class = "columns">
+    <div class = "column important_column">
+ <div class="field">
+          <label class="label">Exam Date </label>
+          <div class="control">
+          <span class='field_help'></span>
+     <%= text_input f, :funs_status_assess_dt ,
+        class: "input", type: "date",
+         placeholder: "vital_sgns_dt", required: false %>
+          <%= error_tag f,
+            :funs_status_assess_dt %>
+          </div>
+          <p class="help">  <%#= i_proc_epis_request_dt %> </p>
+        </div>
+        <!--field---->
+</div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start--------------------------------->
+
+<!---------start--------------------------------->
+  <div class = "columns">
+    <div class = "column">
+     <% s_funs_cognition_level  =
+         Query.select_options("funs_cognition_level") %>
+ 
+      <div class="field">
+    <label class="label"> Cognition Level  </label>
+          <div class="control">
+          
+            <div class="select">
+            <span class="field_help"></span>
+              <%= select(f,
+:funs_cognition_level , s_funs_cognition_level,
+   prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <%= error_tag f, :funs_cognition_level    %>
+            <span class="help"><%#=_i_nyha_prior_2wk_category %></span>
+          </div>
+        </div>
+        <!---field--->
+
+      
+    
+
+</div><!----column-------------------->
+ <div class = "column">
+
+   <% s_funs_katz_index   =
+         Query.select_options("funs_katz_index") %>
+ 
+      <div class="field">
+    <label class="label"> Katz Index  </label>
+          <div class="control">
+          
+            <div class="select">
+            <span class="field_help"></span>
+              <%= select(f,
+:funs_katz_index , s_funs_katz_index,
+   prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <%= error_tag f, :funs_katz_index   %>
+            <span class="help"><%#=_i_nyha_prior_2wk_category %></span>
+          </div>
+        </div>
+        <!---field--->
+
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start----------------------------------->
+
+
+
+<!---------start--------------------------------->
+  <div class = "columns">
+    <div class = "column">
+
+ <% s_funs_frailty_scale_csha    =
+         Query.select_options("funs_frailty_scale_csha") %>
+ 
+      <div class="field">
+    <label class="label"> Frailty Scale  </label>
+          <div class="control">
+          
+            <div class="select">
+            <span class="field_help"></span>
+              <%= select(f,
+:funs_frailty_scale_csha , s_funs_frailty_scale_csha,
+   prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <%= error_tag f, :funs_frailty_scale_csha   %>
+            <span class="help"><%#=_i_nyha_prior_2wk_category %></span>
+          </div>
+        </div>
+        <!---field--->
+
+
+
+
+</div><!----column-------------------->
+ <div class = "column">
+ <div class="field">
+          <label class="label">Rankin Exam Date </label>
+          <div class="control">
+          <span class='field_help'></span>
+     <%= text_input f, :funs_stroke_rankin_dt ,
+        class: "input", type: "date",
+         placeholder: "funs_stroke_rankin_dt", required: false %>
+          <%= error_tag f,
+            :funs_stroke_rankin_dt %>
+          </div>
+          <p class="help">  <%#= i_proc_epis_request_dt %> </p>
+        </div>
+        <!--field---->
+ 
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start----------------------------------->
+
+
+<!---------start------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<% s_funs_stroke_rankin_modified     =
+         Query.select_options("funs_stroke_rankin_modified") %>
+ 
+      <div class="field">
+    <label class="label"> Rankin  Scale  </label>
+          <div class="control">
+          
+            <div class="select">
+            <span class="field_help"></span>
+              <%= select(f,
+:funs_stroke_rankin_modified , s_funs_stroke_rankin_modified,
+   prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <%= error_tag f, :funs_stroke_rankin_modified   %>
+            <span class="help"><%#=_i_nyha_prior_2wk_category %></span>
+          </div>
+        </div>
+        <!---field--->
+
+
+
+
+</div><!----column-------------------->
+ <div class = "column">
+  <%#= label f, :funs_kccq12_score %>
+  <%#= text_input f, :funs_kccq12_score %>
+  <%#= error_tag f, :funs_kccq12_score %>
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start----------------------------------->
+
+
+
+
+<!---------start--------------------------------->
+  <div class = "columns">
+    <div class = "column">
+
+<% s_funs_walking_level     =
+         Query.select_options("funs_walking_level") %>
+ 
+      <div class="field">
+    <label class="label"> Walking Level  </label>
+          <div class="control">
+          
+            <div class="select">
+            <span class="field_help"></span>
+              <%= select(f,
+:funs_walking_level , s_funs_walking_level,
+   prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <%= error_tag f, :funs_walking_level   %>
+            <span class="help"><%#=_i_nyha_prior_2wk_category %></span>
+          </div>
+        </div>
+        <!---field--->
+
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+  <% s_funs_basic_adl   =
+         Query.select_options("funs_basic_adl") %>
+ 
+      <div class="field">
+    <label class="label"> Basic ADL  </label>
+          <div class="control">
+          
+            <div class="select">
+            <span class="field_help"></span>
+              <%= select(f,
+:funs_basic_adl , s_funs_basic_adl,
+   prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <%= error_tag f, :funs_basic_adl   %>
+            <span class="help"><%#=_i_nyha_prior_2wk_category %></span>
+          </div>
+        </div>
+        <!---field--->
+ 
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start----------------------------------->
+
+
+
+
+
+  
+ 
+ 
+ 
+   </div> <!~-----column------------------------>
+   
+   <div class = "column frame_1">
+    
+     <div class="columns">
+       <div class="column"> 
+
+ <div class="field">
+  <label class="label">  Notes </label>
+  <div class="control">
+    <%= text_input f, :funs_notes,
+        class: "textarea",
+        type: "input", placeholder: "funs_notes"  %>
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+
+
+       </div> <!~-----column----------------->
+   </div> <!------notes columns------------------->
+  
+     <div class="columns">
+       <div class="column">  
+     <!-- -HELP AREA -->
+  <%= render  AngioWeb.SharedView, "_help_area.html" %>
+ 
+       </div> <!~-------column----------------->
+   </div> <!------notes columns-------------------->
+ 
+  
+   </div> <!-----column-------------------->
+ 
+ </div> <!--------columns------------------>
+  <div>
+  <%= submit "Save and Continue", class: "button is-info is-large is-fullwidth " %>
+</div>
+
+<% end %>

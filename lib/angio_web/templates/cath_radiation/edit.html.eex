@@ -1,0 +1,39 @@
+
+
+<section>
+<div class="container">
+<div class="title_form">
+<h5 class="title is-5 has-text-centered">Editing Radiation Record</h5>
+</div><!-----------title_form------------------->
+<div class="element_info">
+
+    <%= render  AngioWeb.SharedView, "_patient_info.html", patient: @patient %>
+</div>
+
+<div class="element_info_coronary">
+Angio : <%= render AngioWeb.SharedView, "_info_coronary.html", info_coronary:
+   @info_coronary%>
+</div>
+
+
+
+
+
+ <%= render "form.html", changeset: @changeset,
+        cath_radiation: @cath_radiation,
+action: Routes.pt_angio_radiation_path(@conn, :update,
+@patient,
+@info_coronary,
+@cath_radiation ) %>
+<p class ="buttons_separator"> . </p>
+        <span>
+ <%= link "Back To Radiation Index",
+  to: Routes.pt_angio_radiation_path(@conn, :index,
+@patient,@info_coronary) , class: "button is-link "%>
+</span>
+<span>
+<%= link "Back To Lab",  to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-link"   %>
+ </span>
+<div><!--------container--------------------------->
+</section>

@@ -1,0 +1,287 @@
+import $ from 'jquery';
+window.jQuery = $;
+window.$ = $;
+
+//import { Ajax } from "phoenix";
+//Ajax.request("GET", "/api/foo/index.json", "application/json", "", 1000, onTimeout, callback);
+export class ShowInstructions {
+  constructor() {} //constructor
+
+  show() {
+    console.log('on ShowInstructions');
+  }
+} //ViewInstructions
+
+class Present {
+  constructor() {}
+
+  request(url, field = '', logo = '') {
+    //function submittedRemotely ({target}) {
+    //const request = new window.Request(target.getAttribute('href'), {
+    //  method: target.getAttribute('data-method'),
+    //  headers: new window.Headers({'x-csrf-token': window.csrfToken}),
+    //  credentials: 'same-origin'
+    //})
+    // window.fetch(request)
+    // }
+    //let  csrf_a = <%= raw Poison.encode!(Plug.CSRFProtection.get_csrf_token()) %>;
+
+    let csrf = document.querySelector('meta[name=csrf]').content;
+
+    let request = $.ajax({
+      url: url,
+      method: 'POST', // whatever You need
+      data: {
+        input: field,
+      }, //
+      headers: {
+        'X-CSRF-TOKEN': csrf,
+      },
+      dataType: 'json',
+    });
+
+    request.done(function(res) {
+      $('.info_res').remove();
+      if (res == null || res == '') {
+        $('.info_area').append('<div class="info_res" ></div>');
+        $('.info_res').append(
+          '<span class="info_res_logo">' +
+            logo +
+            ' ' +
+            ' For Field ' +
+            field +
+            ': ' +
+            '</span>',
+        );
+
+        $('.info_res').append(
+          '<span style="color:#efedf5;background-color:#D46946;" >' +
+            'Nothing Found' +
+            '</span>',
+        );
+      } else {
+        $('.info_area').append('<div class="info_res"></div>');
+        //  $('.info_res').append('<span>'+ res+ '</span>');
+        $('.info_res').append(
+          '<span class="info_res_logo">' +
+            logo +
+            ' ' +
+            ' For Field ' +
+            '<span style="color:#9a1a00;font-weight: 600;">' +
+            field +
+            '</span>' +
+            ': ' +
+            '</span>',
+        );
+        //$('.info_res').append( '<span>'+ res[0][0]+ '</span>');
+        $('.info_res').append('<span>' + res + '</span>');
+        //if( res[0][1] !== null &&  res[0][1].length > 0 ){
+        // $('.info_res').append( '<span style="color:#dd4814;">'+ " Reference: " + res[0][1] + '</span>');
+        // }
+        //console.log(res );
+      }
+      //alert( "Request success: " + res );
+      //let area = d3.select(".info_area");
+      // let area_g = area.append('g');
+      // area_g.text(a_text)
+      //     .transition()
+      //     .duration(7000)
+      //     .style('opacity', 0.9)
+      //     .duration(2000)
+      //     .style('opacity', 0.6)
+      //     .duration(2000)
+      //     .style('opacity', 0.3)
+      //     .duration(3000)
+      //     .remove(this);
+    });
+
+    request.fail(function(jqXHR, textStatus) {
+      $('.info_area').append(
+        '<div class="info_res" style="background-color:##fc8d59;color:#ffffbf;"></div>',
+      );
+      $('.info_res').append('<span>' + textStatus + '</span>');
+    });
+  } //request
+} //class
+
+class Response {
+  constructor() {} //constructor
+
+  bind_events(field, field_id = '') {
+    $('.label_info').mouseenter(function(e) {
+      let id = $(this).attr('id');
+
+      switch (id) {
+        case 'button_instructions': {
+          $('#button_instructions').click(function(e) {
+            let url = '/definitions/search_instructions';
+            let present = new Present();
+            let logo = 'Instructions ';
+            present.request(url, field, logo);
+
+            return false;
+          });
+
+          break;
+        } //case
+        //////////////////
+
+        case 'button_support_definitions': {
+          $('#button_support_definitions').click(function(e) {
+            let url = '/definitions/search_support_definitions';
+            let present = new Present();
+            let logo = 'Supporting Definition ';
+            present.request(url, field, logo);
+
+            return false;
+          });
+
+          break;
+        } //case
+        case 'button_option_definitions': {
+          $('#button_option_definitions').click(function(e) {
+            let url = '/definitions/search_option_definitions';
+            let option_field = $('#' + field_id + ' :selected').text();
+            let present = new Present();
+            let combined_field = field + '=' + option_field;
+            let logo = 'Option Definition ';
+            present.request(url, combined_field, logo);
+            return false;
+          });
+
+          break;
+        } //case
+        ///////////////////
+        case 'button_notes': {
+          $('#button_notes').click(function(e) {
+            let url = '/definitions/search_notes';
+            let present = new Present();
+            let logo = 'Notes ';
+            present.request(url, field, logo);
+            return false;
+          });
+
+          break;
+        } //case
+        //////////////////
+        case 'button_field_name': {
+          $('#button_field_name').click(function(e) {
+            $('.info_res').remove();
+            $('.info_area').append('<div class="info_res"></div>');
+            $('.info_res').append(
+              '<span style="color:#4682b4;">' +
+                'The  Name of Field is: ' +
+                '<span style="color:#9a1a00;font-weight: 600;">' +
+                field +
+                '</span>' +
+                '</span>',
+            );
+            // return false;
+          });
+
+          break;
+        } //case
+        //////////////////
+
+        default: {
+          //statements;
+          break;
+        } //case
+      }
+    });
+  } //bindEvents
+} //class Response
+/////////////////////////
+
+class Info_buttons {
+  constructor(label_obj) {
+    this.label_obj = label_obj;
+  } //consturctor
+
+  build(a_div) {
+    $('.label_info_div')
+      .append(
+        $(
+          "<span  style='color:#6a3d9a;' title='View Coding Instructions' id='button_instructions' class='label_info'><i class='fa fa-street-view'></i></span>",
+        ),
+      )
+      .append(
+        $(
+          "<span style='color:#cab2d6' title='View Supporting Definition' id='button_support_definitions' class='label_info'><i class='fa  fa-tags'></i></span>",
+        ),
+      )
+      .append(
+        $(
+          "<span style='color:#ff7f00' title='View the Notes'  id= 'button_notes'  class='label_info'><i class='fa fa-sticky-note'></span>",
+        ),
+      )
+      .append(
+        $(
+          "<span style='color:#fdbf6f'  title='If selection View Option Definition'  id= 'button_option_definitions' class='label_info'><i class='fa fa-list-alt'></i></span>",
+        ),
+      )
+      .append(
+        $(
+          "<span style='color:#33a02c' title='Show Field Name' id= 'button_field_name' class='label_info'><i class='fa fa-anchor'></i></span>",
+        ),
+      );
+  } //build
+}
+
+class Main_button {
+  constructor() {
+    let label_with_button = $(
+         "<span style='color:#0F3D0F' title='Click to View Element Info' class='label_with_button'><i class='fa fa-gg'></i></span>",
+ 
+    ).appendTo('.control-label');
+   
+   
+  }
+
+  make() {
+      // console.log("++++++++++++=IN")
+
+    $('.control-label').mouseenter(function(e) {
+      $(this).append(
+       $("<span style='background-color:#fff' class='label_info_div'></span>"),
+      );
+
+      let info_buttons = new Info_buttons($(this));
+      info_buttons.build();
+      return false;
+    });
+
+    $('.control-label').click(function(e) {
+      $('.label_check_div').show();
+      $('.label_info_div').show();
+      // $(".label_check_div").slideRight(250).show();
+      //  $(".label_info_div").slideRight(250).show();
+      //let input_name = $(this).next('input').attr('name');
+      let next_item = $(this).next();
+      let item_name = next_item.attr('name');
+      //code = $( "." + @searching_term + " :selected").val();
+
+      let start_name = item_name.indexOf('[');
+      let end_name = item_name.indexOf(']');
+      let field = item_name.substring(start_name + 1, end_name);
+      let field_id = next_item.attr('id');
+
+      let response = new Response();
+      response.bind_events(field, field_id);
+
+      return false;
+    });
+
+    $('.control-label').mouseleave(function(e) {
+      $('.label_info_div').remove();
+      return false;
+    });
+  } //make
+} //class
+const init_draw_instructions = () => {
+  //console.log("IN --------------")
+  const main = new Main_button();
+  main.make();
+};
+
+init_draw_instructions();

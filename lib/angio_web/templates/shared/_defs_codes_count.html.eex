@@ -1,0 +1,14 @@
+<% alias Angio.Canons %>
+
+<% codes_count =  Canons.count_codes(@definition.id)  %>
+<span></span>
+<%= if codes_count > 0 do %>
+  <span class="tag is-small is-success">
+    <strong><%= codes_count %></strong>
+  </span>
+<% else %>
+  <span class="tag is-small is-danger">
+    <%= codes_count %>
+  </span>
+<% end %>
+

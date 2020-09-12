@@ -1,0 +1,844 @@
+<% alias Angio.Canons, as: Query %>  
+
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+  <div class="notification is-danger">
+    <button class="delete"></button>
+    Oops, something went wrong! Please check the errors below or Dublicate Record
+</div>
+  <% end %>
+
+ <div class="columns">
+<div class="column frame_1">
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column  important_column">
+
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Contrast Allergy?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :coh_contrast_allergy_yn,
+            type: "checkbox" %> 
+            <%= error_tag f,  :coh_contrast_allergy_yn %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+
+
+</div><!----column-------------------->
+</div><!----columns--------------------------->
+<!---------end start------------------------------------>
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Angina History?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :coh_angina_yn,
+            type: "checkbox" %> 
+            <%= error_tag f,  :coh_angina_yn %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+</div><!----column-------------------->
+ <div class = "column">
+ 
+   <!---start field------------------------>
+  <% s_coh_angina_class =
+             Query.select_options("coh_angina_class") %>
+        <div class="field">
+          <label class="label">Angina Class</label>
+          <div class="control">
+            <div class="select is-primary">
+            <span class="field_help"></span>
+              <%= select(f, :coh_angina_class,
+                     s_coh_angina_class,
+prompt: "---Select---",
+class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help">
+            </p>
+          </div>
+          <!--control---->
+        </div>
+        <!---end field --------------------------->
+
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Prior Intervention?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :coh_prior_cor_interv_yn,
+            type: "checkbox" %> 
+            <%= error_tag f,  :coh_prior_cor_interv_yn %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Prior Coronary Stenosis > 50%?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :coh_prior_sten_50pct_yn,
+            type: "checkbox" %> 
+            <%= error_tag f,  :coh_prior_sten_50pct_yn %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+
+  
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Prior MI?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :coh_prior_mi_yn,
+            type: "checkbox" %> 
+            <%= error_tag f,  :coh_prior_mi_yn %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+</div><!----column-------------------->
+ <div class = "column">
+ <!---start field------------------------>
+  <% s_coh_mi_timeframe =
+             Query.select_options("coh_mi_timeframe") %>
+        <div class="field">
+          <label class="label">MI TimeFrame</label>
+          <div class="control">
+            <div class="select is-primary">
+            <span class="field_help"></span>
+              <%= select(f, :coh_mi_timeframe,
+                     s_coh_mi_timeframe,
+prompt: "---Select---",
+class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help">
+            </p>
+          </div>
+          <!--control---->
+        </div>
+        <!---end field --------------------------->
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+<!---------end start------------------------------------>
+  
+
+  
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Family Hist of Coronary Disease?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :coh_family_cor_dis_yn,
+            type: "checkbox" %> 
+            <%= error_tag f,  :coh_family_cor_dis_yn %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+</div><!----column-------------------->
+ <div class = "column">
+ 
+ <!---start field------------------------>
+  <% s_coh_cardiomyo  =
+             Query.select_options("coh_cardiomyo") %>
+        <div class="field">
+          <label class="label">CardioMyo</label>
+          <div class="control">
+            <div class="select is-primary">
+            <span class="field_help"></span>
+              <%= select(f, :coh_cardiomyo ,
+                     s_coh_cardiomyo ,
+prompt: "---Select---",
+class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help">
+            </p>
+          </div>
+          <!--control---->
+        </div>
+        <!---end field --------------------------->
+ 
+ 
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+<!---------end start------------------------------------>
+  
+
+ 
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Has Diabetes?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :coh_diabetes_yn,
+            type: "checkbox" %> 
+            <%= error_tag f,  :coh_diabetes_yn  %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+ <!---start field------------------------>
+  <% s_coh_diabetes_therapy  =
+             Query.select_options("coh_diabetes_therapy") %>
+        <div class="field">
+          <label class="label">Diabetes Therapy</label>
+          <div class="control">
+            <div class="select is-primary">
+            <span class="field_help"></span>
+              <%= select(f, :coh_diabetes_therapy,
+                     s_coh_diabetes_therapy ,
+prompt: "---Select---",
+class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help">
+            </p>
+          </div>
+          <!--control---->
+        </div>
+        <!---end field --------------------------->
+ 
+ 
+ 
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+<!---------end start------------------------------------>
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Family Hist of  Diabetes?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :coh_family_diabetes_yn,
+            type: "checkbox" %> 
+            <%= error_tag f,  :coh_family_diabetes_yn  %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+</div><!----column-------------------->
+ <div class = "column">
+ Aux
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+<!---------end start------------------------------------>
+
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Hypertansion?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :coh_hypertension_yn,
+            type: "checkbox" %> 
+            <%= error_tag f,  :coh_hypertension_yn  %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Dyslipidemia?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :coh_dyslipidemia_yn,
+            type: "checkbox" %> 
+            <%= error_tag f,  :coh_dyslipidemia_yn  %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+<!---------end start------------------------------------>
+
+  
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Prior Cardiac Arrest?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :coh_arrest_cardiac_yn ,
+            type: "checkbox" %> 
+            <%= error_tag f,  :coh_arrest_cardiac_yn  %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+</div><!----column-------------------->
+
+
+
+
+
+
+ <div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Cereblovascular Disease?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :coh_cerebrovasc_dis_yn,
+            type: "checkbox" %> 
+            <%= error_tag f,  :coh_cerebrovasc_dis_yn %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+<!---------end start------------------------------------>
+ 
+
+
+  
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">COPD?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :coh_copd_yn ,
+            type: "checkbox" %> 
+            <%= error_tag f,  :coh_copd_yn  %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+</div><!----column-------------------->
+ <div class = "column">
+ 
+ Aux
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+<!---------end start------------------------------------>
+ 
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Prior Heart Failure?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :coh_chf_prior_yn ,
+            type: "checkbox" %> 
+            <%= error_tag f,  :coh_chf_prior_yn  %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+</div><!----column-------------------->
+ <div class = "column">
+<!---start field------------------------>
+  <% s_coh_chf_etiology  =
+             Query.select_options("coh_chf_etiology") %>
+        <div class="field">
+          <label class="label">Heart Failure Etiology</label>
+          <div class="control">
+            <div class="select is-primary">
+            <span class="field_help"></span>
+              <%= select(f, :coh_chf_etiology,
+                     s_coh_chf_etiology ,
+prompt: "---Select---",
+class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help">
+            </p>
+          </div>
+          <!--control---->
+        </div>
+        <!---end field --------------------------->
+ 
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+<!---------end start------------------------------------>
+  
+
+ 
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!---start field------------------------>
+  <% s_coh_chf_symptom_duration   =
+             Query.select_options("coh_chf_symptom_duration") %>
+        <div class="field">
+          <label class="label">Heart Failure Symptom Duration</label>
+          <div class="control">
+            <div class="select is-primary">
+            <span class="field_help"></span>
+              <%= select(f, :coh_chf_symptom_duration ,
+                     s_coh_chf_symptom_duration  ,
+prompt: "---Select---",
+class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help">
+            </p>
+          </div>
+          <!--control---->
+        </div>
+        <!---end field --------------------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!---start field------------------------>
+  <% s_coh_chf_hosp_timeframe   =
+             Query.select_options("coh_chf_hosp_timeframe") %>
+        <div class="field">
+          <label class="label">Heart Failure Time Frame</label>
+          <div class="control">
+            <div class="select is-primary">
+            <span class="field_help"></span>
+              <%= select(f, :coh_chf_hosp_timeframe ,
+                     s_coh_chf_hosp_timeframe,
+prompt: "---Select---",
+class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help">
+            </p>
+          </div>
+          <!--control---->
+        </div>
+        <!---end field --------------------------->
+
+
+
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+<!---------end start------------------------------------>
+
+  
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Cancer History?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :coh_cancer_history_yn ,
+            type: "checkbox" %> 
+            <%= error_tag f,  :coh_cancer_history_yn  %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!---start field------------------------>
+  <% s_coh_cancer_type   =
+             Query.select_options("coh_cancer_type") %>
+        <div class="field">
+          <label class="label">Cancer Type</label>
+          <div class="control">
+            <div class="select is-primary">
+            <span class="field_help"></span>
+              <%= select(f, :coh_cancer_type ,
+                     s_coh_cancer_type,
+prompt: "---Select---",
+class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help">
+            </p>
+          </div>
+          <!--control---->
+        </div>
+        <!---end field --------------------------->
+
+
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+<!---------end start------------------------------------>
+
+  <!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Arthritis/Collagen Diseases?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :coh_arthritis_collagen_dis_yn ,
+            type: "checkbox" %> 
+            <%= error_tag f,  :coh_arthritis_collagen_dis_yn  %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+</div><!----column-------------------->
+ <div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">History of Atrial Fib?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :coh_prior_afib_yn ,
+            type: "checkbox" %> 
+            <%= error_tag f,  :coh_prior_afib_yn %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+<!---------end start------------------------------------>
+
+
+  
+  <div class = "columns">
+<div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Fatigue?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :coh_fatigue_yn,
+            type: "checkbox" %> 
+            <%= error_tag f,  :coh_fatigue_yn %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Mascular Disease?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :coh_mascular_dis_yn,
+            type: "checkbox" %> 
+            <%= error_tag f,  :coh_mascular_dis_yn %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+<!---------end start------------------------------------>
+  
+
+  
+
+
+ 
+
+  
+
+  
+
+ 
+</div><!--------LEFT COLUMN-------------------->
+<div class = "column frame_1">
+
+
+  <!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!---start field------------------------>
+  <% s_coh_tobacco_use   =
+             Query.select_options("coh_tobacco_use") %>
+        <div class="field">
+          <label class="label">Tobacco Use</label>
+          <div class="control">
+            <div class="select is-primary">
+            <span class="field_help"></span>
+              <%= select(f, :coh_tobacco_use,
+                     s_coh_tobacco_use,
+prompt: "---Select---",
+class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help">
+            </p>
+          </div>
+          <!--control---->
+        </div>
+        <!---end field --------------------------->
+
+</div><!----column-------------------->
+
+
+ <div class = "column">
+
+<!---start field------------------------>
+  <% s_coh_tobacco_type   =
+             Query.select_options("coh_tobacco_type") %>
+        <div class="field">
+          <label class="label">Tobacco Type</label>
+          <div class="control">
+            <div class="select is-primary">
+            <span class="field_help"></span>
+              <%= select(f, :coh_tobacco_type,
+                     s_coh_tobacco_type,
+prompt: "---Select---",
+class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help">
+            </p>
+          </div>
+          <!--control---->
+        </div>
+        <!---end field --------------------------->
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+<!---------end start------------------------------------>
+
+  
+  <!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!---start field------------------------>
+  <% s_coh_tobacco_cigarette_amount   =
+             Query.select_options("coh_tobacco_cigarette_amount") %>
+        <div class="field">
+          <label class="label">Tobacco Amount</label>
+          <div class="control">
+            <div class="select is-primary">
+            <span class="field_help"></span>
+              <%= select(f, :coh_tobacco_cigarette_amount,
+                     s_coh_tobacco_cigarette_amount,
+prompt: "---Select---",
+class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help">
+            </p>
+          </div>
+          <!--control---->
+        </div>
+        <!---end field --------------------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+ Aux
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+<!---------end start------------------------------------>
+<!---------start----------------------------------->
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Renal Artery Disease?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :coh_renal_artery_dis_yn,
+            type: "checkbox" %> 
+            <%= error_tag f,  :coh_renal_artery_dis_yn %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Kidney Disease?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :coh_chronic_kidney_dis,
+            type: "checkbox" %> 
+            <%= error_tag f,  :coh_chronic_kidney_dis %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+<!---------end start------------------------------------>
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">On Dyalisis?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :coh_cur_on_dyalisis_yn,
+            type: "checkbox" %> 
+            <%= error_tag f,  :coh_cur_on_dyalisis_yn %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+</div><!----column-------------------->
+ <div class = "column">
+ Aux Field
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+<!---------end start------------------------------------>
+
+  
+
+  <!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">History of Ischemic Stroke?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :coh_stroke_ischemic_yn,
+            type: "checkbox" %> 
+            <%= error_tag f,  :coh_stroke_ischemic_yn %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+</div><!----column-------------------->
+ <div class = "column">
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Peripheral Artery Disease?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :coh_peripheral_art_dis_yn,
+            type: "checkbox" %> 
+            <%= error_tag f,  :coh_peripheral_art_dis_yn %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+<!---------end start------------------------------------>
+
+  
+
+  
+  
+
+<!------start---------------------->
+      <div class="columns">
+        <div class="column">
+
+              <div class="field">
+  <label class="label"> My Notes </label>
+  <div class="control">
+    <%= text_input f, :coh_histories_notes,
+        class: "textarea",
+        type: "input", placeholder: "coh_histories_notes"  %>
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+        </div><!----column 1------------->
+
+     </div><!-----columns------------>
+     <!-------end start------------------------>
+  <div class="columns">
+        <div class="column">
+ <%= render  AngioWeb.SharedView, "_help_area.html" %>
+ </div><!----column sharedView------------->
+     </div><!-----columns------------>
+  </div><!--------R COLUMN-------------------->
+  </div><!----------columns------------------------>
+<div>
+    <%= submit "Save and Continue", class: "button is-info is-large is-fullwidth " %>
+  </div>
+<% end %>

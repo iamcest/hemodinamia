@@ -1,0 +1,458 @@
+
+div class="title_form">
+<h5 class="title is-5 has-text-centered">Show EXT Record</h5>
+</div>
+<div class="element_info">
+    Patient :
+    <%= render  AngioWeb.SharedView, "_patient_info.html", patient: @patient %>
+</div>
+
+<ul>
+
+  <li>
+    <strong>Ext dt:</strong>
+    <%= @treadmill_exercise.ext_dt %>
+  </li>
+
+  <li>
+    <strong>Ext tm:</strong>
+    <%= @treadmill_exercise.ext_tm %>
+  </li>
+
+  <li>
+    <strong>Ext lab num:</strong>
+    <%= @treadmill_exercise.ext_lab_num %>
+  </li>
+
+  <li>
+    <strong>Ext lab yr:</strong>
+    <%= @treadmill_exercise.ext_lab_yr %>
+  </li>
+
+  <li>
+    <strong>Ext lab:</strong>
+    <%= @treadmill_exercise.ext_lab_id %>
+  </li>
+
+  <li>
+    <strong>Ext consent yn:</strong>
+    <%= @treadmill_exercise.ext_consent_yn %>
+  </li>
+
+  <li>
+    <strong>Ext doctor lname:</strong>
+    <%= @treadmill_exercise.ext_doctor_lname %>
+  </li>
+
+  <li>
+    <strong>Ext doctor fname:</strong>
+    <%= @treadmill_exercise.ext_doctor_fname %>
+  </li>
+
+  <li>
+    <strong>Ext technician lname:</strong>
+    <%= @treadmill_exercise.ext_technician_lname %>
+  </li>
+
+  <li>
+    <strong>Ext technician fname:</strong>
+    <%= @treadmill_exercise.ext_technician_fname %>
+  </li>
+
+  <li>
+    <strong>Ext referral person:</strong>
+    <%= @treadmill_exercise.ext_referral_person %>
+  </li>
+
+  <li>
+    <strong>Ext is done yn:</strong>
+    <%= @treadmill_exercise.ext_is_done_yn %>
+  </li>
+
+  <li>
+    <strong>Ext not done reason:</strong>
+    <%= @treadmill_exercise.ext_not_done_reason %>
+  </li>
+
+  <li>
+    <strong>Ext indication:</strong>
+    <%= @treadmill_exercise.ext_indication %>
+  </li>
+
+  <li>
+    <strong>Ext limitations relative:</strong>
+    <%= @treadmill_exercise.ext_limitations_relative %>
+  </li>
+
+  <li>
+    <strong>Ext limitations:</strong>
+    <%= @treadmill_exercise.ext_limitations %>
+  </li>
+
+  <li>
+    <strong>Ext indication notes:</strong>
+    <%= @treadmill_exercise.ext_indication_notes %>
+  </li>
+
+  <li>
+    <strong>Ext protocole used:</strong>
+    <%= @treadmill_exercise.ext_protocole_used %>
+  </li>
+
+  <li>
+    <strong>Ext main problem cardiac yn:</strong>
+    <%= @treadmill_exercise.ext_main_problem_cardiac_yn %>
+  </li>
+
+  <li>
+    <strong>Ext cad pretest probability:</strong>
+    <%= @treadmill_exercise.ext_cad_pretest_probability %>
+  </li>
+
+  <li>
+    <strong>Ext mortality cad risk:</strong>
+    <%= @treadmill_exercise.ext_mortality_cad_risk %>
+  </li>
+
+  <li>
+    <strong>Ext main problem pulm yn:</strong>
+    <%= @treadmill_exercise.ext_main_problem_pulm_yn %>
+  </li>
+
+  <li>
+    <strong>Ext main problem medical yn:</strong>
+    <%= @treadmill_exercise.ext_main_problem_medical_yn %>
+  </li>
+
+  <li>
+    <strong>Ext main problem notes:</strong>
+    <%= @treadmill_exercise.ext_main_problem_notes %>
+  </li>
+
+  <li>
+    <strong>Ext medications yn:</strong>
+    <%= @treadmill_exercise.ext_medications_yn %>
+  </li>
+
+  <li>
+    <strong>Ext anginal meds yn:</strong>
+    <%= @treadmill_exercise.ext_anginal_meds_yn %>
+  </li>
+
+  <li>
+    <strong>Ext on digoxin yn:</strong>
+    <%= @treadmill_exercise.ext_on_digoxin_yn %>
+  </li>
+
+  <li>
+    <strong>Ext on bblockers yn:</strong>
+    <%= @treadmill_exercise.ext_on_bblockers_yn %>
+  </li>
+
+  <li>
+    <strong>Ext ecg normal pre yn:</strong>
+    <%= @treadmill_exercise.ext_ecg_normal_pre_yn %>
+  </li>
+
+  <li>
+    <strong>Ext qrs morphology pre:</strong>
+    <%= @treadmill_exercise.ext_qrs_morphology_pre %>
+  </li>
+
+  <li>
+    <strong>Ext qwaves pre:</strong>
+    <%= @treadmill_exercise.ext_qwaves_pre %>
+  </li>
+
+  <li>
+    <strong>Ext st depres pre yn:</strong>
+    <%= @treadmill_exercise.ext_st_depres_pre_yn %>
+  </li>
+
+  <li>
+    <strong>Ext st depres pre val:</strong>
+    <%= @treadmill_exercise.ext_st_depres_pre_val %>
+  </li>
+
+  <li>
+    <strong>Ext t wave inversion pre yn:</strong>
+    <%= @treadmill_exercise.ext_t_wave_inversion_pre_yn %>
+  </li>
+
+  <li>
+    <strong>Ext lv hypertrophy pre yn:</strong>
+    <%= @treadmill_exercise.ext_lv_hypertrophy_pre_yn %>
+  </li>
+
+  <li>
+    <strong>Ext pvc pre yn:</strong>
+    <%= @treadmill_exercise.ext_pvc_pre_yn %>
+  </li>
+
+  <li>
+    <strong>Ext afib pre yn:</strong>
+    <%= @treadmill_exercise.ext_afib_pre_yn %>
+  </li>
+
+  <li>
+    <strong>Ext stages completed:</strong>
+    <%= @treadmill_exercise.ext_stages_completed %>
+  </li>
+
+  <li>
+    <strong>Ext stop reason:</strong>
+    <%= @treadmill_exercise.ext_stop_reason %>
+  </li>
+
+  <li>
+    <strong>Ext stop reason angina yn:</strong>
+    <%= @treadmill_exercise.ext_stop_reason_angina_yn %>
+  </li>
+
+  <li>
+    <strong>Ext stop reason other yn:</strong>
+    <%= @treadmill_exercise.ext_stop_reason_other_yn %>
+  </li>
+
+  <li>
+    <strong>Ext need hold handrails yn:</strong>
+    <%= @treadmill_exercise.ext_need_hold_handrails_yn %>
+  </li>
+
+  <li>
+    <strong>Ext stopping reason notes:</strong>
+    <%= @treadmill_exercise.ext_stopping_reason_notes %>
+  </li>
+
+  <li>
+    <strong>Ext bp diast rest:</strong>
+    <%= @treadmill_exercise.ext_bp_diast_rest %>
+  </li>
+
+  <li>
+    <strong>Ext bp sys rest:</strong>
+    <%= @treadmill_exercise.ext_bp_sys_rest %>
+  </li>
+
+  <li>
+    <strong>Ext bp sys max:</strong>
+    <%= @treadmill_exercise.ext_bp_sys_max %>
+  </li>
+
+  <li>
+    <strong>Ext bp diast max:</strong>
+    <%= @treadmill_exercise.ext_bp_diast_max %>
+  </li>
+
+  <li>
+    <strong>Ext heart rate rest:</strong>
+    <%= @treadmill_exercise.ext_heart_rate_rest %>
+  </li>
+
+  <li>
+    <strong>Ext heart rate achieved:</strong>
+    <%= @treadmill_exercise.ext_heart_rate_achieved %>
+  </li>
+
+  <li>
+    <strong>Ext heart rate max predicted:</strong>
+    <%= @treadmill_exercise.ext_heart_rate_max_predicted %>
+  </li>
+
+  <li>
+    <strong>Ext st elevation max:</strong>
+    <%= @treadmill_exercise.ext_st_elevation_max %>
+  </li>
+
+  <li>
+    <strong>Ext st depres max:</strong>
+    <%= @treadmill_exercise.ext_st_depres_max %>
+  </li>
+
+  <li>
+    <strong>Ext st depres max duration:</strong>
+    <%= @treadmill_exercise.ext_st_depres_max_duration %>
+  </li>
+
+  <li>
+    <strong>Ext st depres max location:</strong>
+    <%= @treadmill_exercise.ext_st_depres_max_location %>
+  </li>
+
+  <li>
+    <strong>Ext st slop max:</strong>
+    <%= @treadmill_exercise.ext_st_slop_max %>
+  </li>
+
+  <li>
+    <strong>Ext mets:</strong>
+    <%= @treadmill_exercise.ext_mets %>
+  </li>
+
+  <li>
+    <strong>Ext watts:</strong>
+    <%= @treadmill_exercise.ext_watts %>
+  </li>
+
+  <li>
+    <strong>Ext duke score:</strong>
+    <%= @treadmill_exercise.ext_duke_score %>
+  </li>
+
+  <li>
+    <strong>Ext borg scale:</strong>
+    <%= @treadmill_exercise.ext_borg_scale %>
+  </li>
+
+  <li>
+    <strong>Ext athens score:</strong>
+    <%= @treadmill_exercise.ext_athens_score %>
+  </li>
+
+  <li>
+    <strong>Ext bp sys recovery:</strong>
+    <%= @treadmill_exercise.ext_bp_sys_recovery %>
+  </li>
+
+  <li>
+    <strong>Ext bp diast recovery:</strong>
+    <%= @treadmill_exercise.ext_bp_diast_recovery %>
+  </li>
+
+  <li>
+    <strong>Ext st depres recovery val:</strong>
+    <%= @treadmill_exercise.ext_st_depres_recovery_val %>
+  </li>
+
+  <li>
+    <strong>Ext st depres recovery location:</strong>
+    <%= @treadmill_exercise.ext_st_depres_recovery_location %>
+  </li>
+
+  <li>
+    <strong>Ext heart rate at max st depres:</strong>
+    <%= @treadmill_exercise.ext_heart_rate_at_max_st_depres %>
+  </li>
+
+  <li>
+    <strong>Ext complication yn:</strong>
+    <%= @treadmill_exercise.ext_complication_yn %>
+  </li>
+
+  <li>
+    <strong>Ext cpr post yn:</strong>
+    <%= @treadmill_exercise.ext_cpr_post_yn %>
+  </li>
+
+  <li>
+    <strong>Ext bradycardia post yn:</strong>
+    <%= @treadmill_exercise.ext_bradycardia_post_yn %>
+  </li>
+
+  <li>
+    <strong>Ext cardio shock post yn:</strong>
+    <%= @treadmill_exercise.ext_cardio_shock_post_yn %>
+  </li>
+
+  <li>
+    <strong>Ext mi post yn:</strong>
+    <%= @treadmill_exercise.ext_mi_post_yn %>
+  </li>
+
+  <li>
+    <strong>Ext angina severe post yn:</strong>
+    <%= @treadmill_exercise.ext_angina_severe_post_yn %>
+  </li>
+
+  <li>
+    <strong>Ext compl other yn:</strong>
+    <%= @treadmill_exercise.ext_compl_other_yn %>
+  </li>
+
+  <li>
+    <strong>Ext vt post yn:</strong>
+    <%= @treadmill_exercise.ext_vt_post_yn %>
+  </li>
+
+  <li>
+    <strong>Ext compl afib post yn:</strong>
+    <%= @treadmill_exercise.ext_compl_afib_post_yn %>
+  </li>
+
+  <li>
+    <strong>Ext compl notes:</strong>
+    <%= @treadmill_exercise.ext_compl_notes %>
+  </li>
+
+  <li>
+    <strong>Ext result:</strong>
+    <%= @treadmill_exercise.ext_result %>
+  </li>
+
+  <li>
+    <strong>Ext result notes:</strong>
+    <%= @treadmill_exercise.ext_result_notes %>
+  </li>
+
+  <li>
+    <strong>Ext recommendations:</strong>
+    <%= @treadmill_exercise.ext_recommendations %>
+  </li>
+
+  <li>
+    <strong>Ext cpx age vo2:</strong>
+    <%= @treadmill_exercise.ext_cpx_age_vo2 %>
+  </li>
+
+  <li>
+    <strong>Ext cpx vo2 ventilatory response:</strong>
+    <%= @treadmill_exercise.ext_cpx_vo2_ventilatory_response %>
+  </li>
+
+  <li>
+    <strong>Ext cpx ve vco2 slope:</strong>
+    <%= @treadmill_exercise.ext_cpx_ve_vco2_slope %>
+  </li>
+
+  <li>
+    <strong>Ext cpx peak mets:</strong>
+    <%= @treadmill_exercise.ext_cpx_peak_mets %>
+  </li>
+
+  <li>
+    <strong>Ext cpx peak vo2:</strong>
+    <%= @treadmill_exercise.ext_cpx_peak_vo2 %>
+  </li>
+
+  <li>
+    <strong>Ext va treadmill score:</strong>
+    <%= @treadmill_exercise.ext_va_treadmill_score %>
+  </li>
+
+  <li>
+    <strong>Ext aerobic capacity max:</strong>
+    <%= @treadmill_exercise.ext_aerobic_capacity_max %>
+  </li>
+
+  <li>
+    <strong>Ext notes:</strong>
+    <%= @treadmill_exercise.ext_notes %>
+  </li>
+
+</ul>
+<p class ="buttons_separator"> . </p>
+<span>
+    <%= link "Edit EXT", to: Routes.pt_ext_path(@conn, :edit,
+     @patient,
+     @treadmill_exercise ), class: "button is-link"%>
+</span>
+<span>
+  <%= link "Back To EXT Index", to: Routes.pt_ext_path(@conn, :index,
+  @patient) , class: "button is-link"%>
+</span>
+
+<span>
+<%= link "To Cath Lab",  to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-link"   %>
+ </span>
+

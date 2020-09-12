@@ -1,0 +1,520 @@
+<% alias Angio.Canons, as: Query %>
+
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+<div class="notification is-danger">
+    <button class="delete"></button>
+    Oops, something went wrong! Please check the errors below or Dublicate Record
+</div>
+
+  <% end %>
+<div class="columns">
+<div class="column  is-7 frame_1">
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Information Restriction?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :pt_restriction_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :pt_restriction_yn  %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Research Study?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :chd_research_study_yn,
+            type: "checkbox" %>
+            <%= error_tag f, :chd_research_study_yn %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+<div class="is-divider" data-content="&"></div>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!--------start---field----------------------------->
+ <div class="field">
+          <label class="label">Arrival Date  </label>
+          <div class="control">
+      <%= text_input f, :chd_arrival_dt,
+class: "input",
+type: "date",
+placeholder: "chd_arrival_dt",
+required: false %>
+<%= error_tag f,:chd_arrival_dt %>
+          </div>
+          <p class="help"></p>
+        </div>
+        <!---------end ---field---->
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!--------start ------------------------->
+          <% s_uni_insurance=
+          Query.select_options("uni_insurance") %>
+          <%# i_cath_ev_hematoma_size=
+raw Query.search_in_instructions("cath_ev_hematoma_size")%>
+<div class="field">
+  <label class="label">Insurance </label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f, :uni_insurance,
+              s_uni_insurance,
+              prompt: "--Select--",  class: "form-control") %>
+            </div>
+            <!--select---->
+            <%= error_tag f, :uni_insurance  %>
+            <span class="help"><%#=  i_cath_ev_hematoma_size %> </span>
+          </div>
+          <!--control---->
+        </div>
+        <!---field--->
+ </div><!----column-------------------->
+
+<div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Non US insurance?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :uni_insurance_non_us,
+            type: "checkbox" %>
+            <%= error_tag f, :uni_insurance_non_us %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+ </div><!----column-------------------->
+
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+
+ <!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<!--------start field----------------------------->
+ <div class="field">
+            <label class="label field_help " >HIC Number </label>
+            <%= text_input f, :uni_hic_num, class: "input", type: "text",
+            placeholder: "uni_hic_num", required: false %>
+            <%= error_tag f, :uni_hic_num %>
+          <p class="help"></p>
+        </div>
+<!-----------end field----------------------->
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+ <!---------field------------------------->
+ <div class="field">
+        <label class="label">International Patient?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :chd_pt_international_yn,
+            type: "checkbox" %>
+            <%= error_tag f, :chd_pt_international_yn %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+ </div><!----column-------------------->
+
+<div class = "column">
+
+  <div class="field">
+          <label class="label">Country of Residence </label>
+          <div class="control">
+
+            <div class="select is-primary">
+              <%= select(f, :chd_country_of_residence, @countries,  prompt: "---Select---",
+                   class: "form-control") %>
+            </div>
+            <p class="help is-danger"></p>
+          </div>
+          <!--control---->
+        </div>
+        <!---field--->
+ </div><!----column-------------------->
+
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Prior Caths?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :chd_caths_prior_yn,
+            type: "checkbox" %>
+            <%= error_tag f, :chd_caths_prior_yn %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!--------start field----------------------------->
+ <div class="field">
+            <label class="label field_help " >Number of Caths </label>
+            <%= text_input f, :chd_caths_prior_num, class: "input", type: "text",
+            placeholder: "chd_caths_prior_num", required: false %>
+            <%= error_tag f, :chd_caths_prior_num %>
+          <p class="help"></p>
+        </div>
+<!-----------end field----------------------->
+
+ </div><!----column-------------------->
+
+<div class = "column">
+
+
+<!--------start---field----------------------------->
+ <div class="field">
+          <label class="label">Recent Cath Date  </label>
+          <div class="control">
+      <%= text_input f, :chd_cath_prior_recent_dt,
+      class: "input",
+      type: "date",
+      placeholder: "chd_cath_prior_recent_dt",
+      required: false %>
+         <%= error_tag f,:chd_cath_prior_recent_dt %>
+          </div>
+          <p class="help"></p>
+        </div>
+        <!---------end ---field---->
+
+ </div><!----column-------------------->
+
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<!--------start field----------------------------->
+ <div class="field">
+            <label class="label field_help " >Procedure Code (1) </label>
+            <%= text_input f, :chd_cath_proc_recent_1_id, class: "input", type: "text",
+            placeholder: "chd_cath_proc_recent_1_id", required: false %>
+            <%= error_tag f, :chd_cath_proc_recent_1_id %>
+          <p class="help"></p>
+        </div>
+<!-----------end field----------------------->
+  <%#= label f, :chd_cath_proc_recent_id %>
+  <%#= multiple_select f, :chd_cath_proc_recent_id, ["Option 1": "option1", "Option 2": "option2"] %>
+  <%#= error_tag f, :chd_cath_proc_recent_id %>
+</div><!----column-------------------->
+ <div class = "column">
+
+<!--------start field----------------------------->
+ <div class="field">
+            <label class="label field_help " >Procedure Code (2)  </label>
+            <%= text_input f, :chd_cath_proc_recent_2_id, class: "input", type: "text",
+            placeholder: "chd_cath_proc_recent_2_id", required: false %>
+            <%= error_tag f, :chd_cath_proc_recent_2_id %>
+          <p class="help"></p>
+        </div>
+<!-----------end field----------------------->
+
+ </div><!----column-------------------->
+
+
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+ <div class = "column">
+
+  <!--------start field----------------------------->
+ <div class="field">
+            <label class="label field_help " >Procedure Code (3) </label>
+            <%= text_input f, :chd_cath_proc_recent_3_id, class: "input", type: "text",
+            placeholder: "chd_cath_proc_recent_3_id", required: false %>
+            <%= error_tag f, :chd_cath_proc_recent_3_id %>
+          <p class="help"></p>
+        </div>
+<!-----------end field----------------------->
+ </div><!----column-------------------->
+
+<div class = "column">
+
+  <!--------start field----------------------------->
+ <div class="field">
+            <label class="label field_help " >Procedue Code(4) </label>
+            <%= text_input f, :chd_cath_proc_recent_4_id, class: "input", type: "text",
+            placeholder: "chd_cath_proc_recent_4_id", required: false %>
+            <%= error_tag f, :chd_cath_proc_recent_4_id %>
+          <p class="help"></p>
+        </div>
+<!-----------end field----------------------->
+ </div><!----column-------------------->
+
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Premature Birth?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :chd_premature_birth_yn,
+            type: "checkbox" %>
+            <%= error_tag f, :chd_premature_birth_yn %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+</div><!----column-------------------->
+
+ <div class = "column">
+ <!--------start field----------------------------->
+ <div class="field">
+            <label class="label field_help " >Weight At Birth </label>
+            <%= text_input f, :chd_weight_at_birth, class: "input", type: "text",
+            placeholder: "chd_weight_at_birth", required: false %>
+            <%= error_tag f, :chd_weight_at_birth %>
+          <p class="help"></p>
+        </div>
+<!-----------end field----------------------->
+ </div><!----column-------------------->
+
+<div class = "column">
+ <!--------start field----------------------------->
+ <div class="field">
+            <label class="label field_help " >Gestational Age (wks)</label>
+            <%= text_input f, :chd_gestational_age, class: "input", type: "text",
+            placeholder: "chd_gestational_age", required: false %>
+            <%= error_tag f, :chd_gestational_age %>
+          <p class="help"></p>
+        </div>
+<!-----------end field----------------------->
+
+ </div><!----column-------------------->
+
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Prior Surgery</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :chd_surg_prior_yn,
+            type: "checkbox" %>
+            <%= error_tag f, :chd_surg_prior_yn %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+</div><!----column-------------------->
+ <div class = "column">
+
+ <!--------start field----------------------------->
+ <div class="field">
+            <label class="label field_help " >Number of Surgeries</label>
+            <%= text_input f, :chd_surg_prior_num, class: "input", type: "text",
+            placeholder: "chd_surg_prior_num", required: false %>
+            <%= error_tag f, :chd_surg_prior_num %>
+          <p class="help"></p>
+        </div>
+<!-----------end field----------------------->
+ </div><!----column-------------------->
+
+<div class = "column">
+
+<!--------start---field----------------------------->
+ <div class="field">
+          <label class="label">Recent Surgery Date  </label>
+          <div class="control">
+      <%= text_input f, :chd_surg_recent_dt,
+class: "input",
+type: "date",
+placeholder: "chd_surg_recent_dt",
+required: false %>
+<%= error_tag f,:chd_surg_recent_dt%>
+          </div>
+          <p class="help"></p>
+        </div>
+        <!---------end ---field---->
+
+ </div><!----column-------------------->
+
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<!--------start field----------------------------->
+ <div class="field">
+            <label class="label field_help " >Surgery Code (1)</label>
+            <%= text_input f, :chd_surg_prior_1_id, class: "input", type: "text",
+            placeholder: "chd_surg_prior_1_id", required: false %>
+            <%= error_tag f, :chd_surg_prior_1_id %>
+          <p class="help"></p>
+        </div>
+<!-----------end field----------------------->
+ <%#= label f, :chd_surg_prior_id %>
+  <%#= multiple_select f, :chd_surg_prior_id, ["Option 1": "option1", "Option 2": "option2"] %>
+  <%#= error_tag f, :chd_surg_prior_id %>
+</div><!----column-------------------->
+ <div class = "column">
+<!--------start field----------------------------->
+ <div class="field">
+            <label class="label field_help " >Surgery Code (2)</label>
+            <%= text_input f, :chd_surg_prior_2_id, class: "input", type: "text",
+            placeholder: "chd_surg_prior_2_id", required: false %>
+            <%= error_tag f, :chd_surg_prior_2_id %>
+          <p class="help"></p>
+        </div>
+<!-----------end field----------------------->
+
+ </div><!----column-------------------->
+
+
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+  <!---------start----------------------------------->
+  <div class = "columns">
+ <div class = "column">
+ <!--------start field----------------------------->
+ <div class="field">
+            <label class="label field_help " >Surgery Code (3)</label>
+            <%= text_input f, :chd_surg_prior_3_id, class: "input", type: "text",
+            placeholder: "chd_surg_prior_3_id", required: false %>
+            <%= error_tag f, :chd_surg_prior_3_id %>
+          <p class="help"></p>
+        </div>
+<!-----------end field----------------------->
+
+ </div><!----column-------------------->
+
+<div class = "column">
+ <!--------start field----------------------------->
+ <div class="field">
+            <label class="label field_help " >Surgery Code (4)</label>
+            <%= text_input f, :chd_surg_prior_4_id, class: "input", type: "text",
+            placeholder: "chd_surg_prior_4_id", required: false %>
+            <%= error_tag f, :chd_surg_prior_4_id %>
+          <p class="help"></p>
+        </div>
+<!-----------end field----------------------->
+
+ </div><!----column-------------------->
+
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+
+</div><!---END LEFT COLUMN column--------------------------->
+<!------------------------------------------------->
+<div class="column is-5 frame_1">
+
+
+<!------start---------------------->
+      <div class="columns">
+        <div class="column">
+
+              <div class="field">
+  <label class="label"> My Notes </label>
+  <div class="control">
+    <%= text_input f, :chd_episode_notes,
+        class: "textarea",
+        type: "input", placeholder: "chd_episode_notes"  %>
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+        </div><!----column 1------------->
+
+     </div><!-----columns------------>
+     <!-------end start------------------------>
+
+ <%= render  AngioWeb.SharedView, "_help_area.html" %>
+  </div><!--------END RIGHT COLUMN------------------------------>
+  </div><!--------columns------------------------->
+<div>
+    <%= submit "Save and Continue", class: "button is-info is-large is-fullwidth " %>
+  </div>
+<% end %>

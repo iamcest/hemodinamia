@@ -1,0 +1,127 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    </div>
+ <div class="notification is-danger">
+    <button class="delete"></button>
+    Oops, something went wrong! Please check the errors below or Dublicate Record
+</div>
+  <% end %>
+
+  <!----columns----L-R COLUMNS--------------->
+    <div class="columns">
+  
+   <div class="column frame_1">
+
+
+
+  <div class="columns">
+    <div class="column">
+ <div class="field">
+  <label class="label">Field - Element Name</label>
+  <div class="control">
+  <%= text_input f, :name, value: "#{@definition.name}",
+class: "input" %>
+
+  <%= error_tag f, :name %>
+
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+
+
+  </div><!----column------->
+
+  <div class="column">
+
+ <div class="field">
+  <label class="label">Save In DB As Code </label>
+  <div class="control">
+    <%= text_input f, :code,
+        class: "input is-primary",
+type: "text", placeholder: "code",  required: true
+%>
+  <%= error_tag f, :code %>
+
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+
+  </div><!----column------->
+
+  </div><!----columns------->
+
+<div class="columns">
+  <div class="column">
+ <div class="field">
+  <label class="label">Selections Text </label>
+  <div class="control">
+    <%= text_input f, :selection_text,
+        class: "textarea",
+        type: "input", placeholder: "selection_text"  %>
+        <%= error_tag f, :selection_text %>
+
+        <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+
+
+
+ </div><!----column------->
+ </div><!---columns-------------------->
+ <div class="columns">
+  <div class="column">
+    <div class="field">
+  <label class="label">Selection Definition </label>
+  <div class="control">
+    <%= text_input f, :selection_definition,
+        class: "textarea",
+        type: "input", placeholder: "Selection Text"  %>
+        <%= error_tag f, :selection_definition %>
+
+        <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+
+ </div><!----column------->
+
+</div><!----columns------->
+
+</div> <!---------LEFT COLUMN----------------------->
+ <div class="column">
+ <!---R COLUMN------------------->
+<div class="is-divider-horizontal" data-content="OR"></div>
+<div class="columns">
+  <div class="column frame_1">
+    <div class="field">
+  <label class="label">My Private Notes </label>
+  <div class="control">
+    <%= text_input f, :selection_notes,
+        class: "textarea",
+        type: "input", placeholder: "selection_notes"  %>
+        <%= error_tag f, :selection_notes %>
+
+        <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+
+
+  </div><!----column------->
+
+
+ </div><!----columns------->
+ 
+ </div><!---R COLUMN--------------------->
+ </div><!----columns--L-R----->
+
+
+<div>
+     <%= submit "Save Option Item", class: "button is-info is-large is-fullwidth " %>
+
+  </div>
+
+<% end %>

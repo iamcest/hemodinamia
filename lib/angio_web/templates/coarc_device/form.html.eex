@@ -1,0 +1,274 @@
+<% alias Angio.Canons, as: Query %>
+
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+<div class="columns">
+  <div class="column frame_1">
+ 
+  <!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column important_column">
+ <!--- start field--------------------------------->
+<div class="field">
+            <label class="label field_help " >Device Counter </label>
+            <%= text_input f, :coarc_device_counter , class: "input", type: "text",
+            placeholder: "coarc_device_counter", required: false %>
+            <%= error_tag f, :coarc_device_counter %>
+          <p class="help"></p>
+        </div>
+<!-----------end field----------------------->
+
+
+</div><!----column-------------------->
+ <div class = "column">
+ Aux Field 
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+ <!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+  <!--- start field--------------------------------->
+<div class="field">
+        <label class="label field_help " >Device ID </label>
+          <%= text_input f, :coarc_device_id , class: "input", type: "text",
+            placeholder: "coarc_device_id", required: false %>
+            <%= error_tag f, :coarc_device_id %>
+          <p class="help"></p>
+        </div>
+<!-----------end field----------------------->
+
+</div><!----column-------------------->
+<div class = "column">
+
+
+<!----- start selection field---------------------------->
+   <%  s_coarc_device_type  =  Query.select_options("coarc_device_type") %>
+<div class="field">
+    <label class="label">This Device Type </label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f,
+:coarc_device_type, s_coarc_device_type,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :coarc_device_type   %>
+            <span class="help"></span>
+
+
+          </div><!----control---->
+        </div><!------field--->
+
+ <!-------end selection field----------------------->
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+ <!---------start----------------------------------->
+  <div class = "columns">
+    <div class = "column">
+
+
+<!----- start selection field---------------------------->
+   <%  s_coarc_balloon_purpose =  Query.select_options("coarc_balloon_purpose") %>
+<div class="field">
+    <label class="label">Device Purpose </label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f,
+:coarc_balloon_purpose, s_coarc_balloon_purpose,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :coarc_balloon_purpose   %>
+            <span class="help"></span>
+
+
+          </div><!----control---->
+        </div><!------field--->
+
+ <!-------end selection field----------------------->
+
+
+</div><!----column-------------------->
+<div class = "column">
+ <!--- start field--------------------------------->
+<div class="field">
+        <label class="label field_help " >Balloon Max Pres </label>
+          <%= text_input f, :coarc_balloon_max_pres , class: "input", type: "text",
+            placeholder: "coarc_balloon_max_pres", required: false %>
+            <%= error_tag f, :coarc_balloon_max_pres %>
+          <p class="help"></p>
+        </div>
+<!-----------end field----------------------->
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+ <!---------start----------------------------------->
+  <div class = "columns">
+    <div class = "column">
+
+<!----- start selection field---------------------------->
+   <%  s_coarc_balloon_outcome =  Query.select_options("coarc_balloon_outcome") %>
+<div class="field">
+    <label class="label">Balloon Outcome </label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f,
+:coarc_balloon_outcome, s_coarc_balloon_outcome,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :coarc_balloon_outcome   %>
+            <span class="help"></span>
+
+
+          </div><!----control---->
+        </div><!------field--->
+
+        <!-------end selection field---------------------->-
+
+</div><!----column-------------------->
+<div class = "column">
+
+<!----- start selection field---------------------------->
+   <%  s_coarc_stent_outcome =  Query.select_options("coarc_stent_outcome") %>
+<div class="field">
+    <label class="label">Stent Outcome </label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f,
+:coarc_stent_outcome, s_coarc_stent_outcome,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :coarc_stent_outcome   %>
+            <span class="help"></span>
+
+
+          </div><!----control---->
+        </div><!------field--->
+
+        <!-------end selection field---------------------->-
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+  <!---------start----------------------------------->
+  <div class = "columns">
+    <div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Min Stent Diameter Assesed?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :coarc_stent_diam_min_assesed_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :coarc_stent_diam_min_assesed_yn %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+
+
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!--- start field--------------------------------->
+<div class="field">
+            <label class="label field_help " >Min Stent Diam Post Procedure </label>
+            <%= text_input f, :coarc_stent_diam_min_post , class: "input", type: "text",
+            placeholder: "coarc_stent_diam_min_post", required: false %>
+            <%= error_tag f, :coarc_stent_diam_min_post %>
+          <p class="help"></p>
+        </div>
+<!-----------end field----------------------->
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+  
+  
+ 
+ 
+    </div><!--------LEFT COLUMN----------------->
+  <div class="column frame_1">
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+  <div class="field">
+  <label class="label"> My Notes On Devices for Coarctation Procedure</label>
+  <div class="control">
+    <%= text_input f, :coarc_device_notes,
+        class: "textarea",
+        type: "input", placeholder: "coarc_device_notes"  %>
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+</div><!----column-------------------->
+</div><!----columns--------------------------->
+
+
+ <div class = "columns">
+<div class = "column">
+ <%= render  AngioWeb.SharedView, "_help_area.html" %>
+</div><!----column-------------------->
+</div><!----columns--------------------------->
+
+
+
+  </div><!------RIGHT COLUMN----------------------------->
+</div><!------end columns-------------------------------------------->
+
+<div><!------------------------------------>
+    <%= submit "Save Coarctation Devices Record", class: "button is-info  is-medium is-fullwidth " %>
+  </div>
+
+<% end %>

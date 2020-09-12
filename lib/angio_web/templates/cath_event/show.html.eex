@@ -1,0 +1,315 @@
+
+<div class="title_form">
+<h5 class="title is-5 has-text-centered">Show Cath Complications </h5>
+</div>
+
+<div class="element_info">
+   <%= render AngioWeb.SharedView, "_patient_info.html", patient:
+  @patient %>
+</div>
+
+<div class="element_info_coronary">
+<%= render AngioWeb.SharedView, "_info_coronary.html", info_coronary:
+   @info_coronary%>
+</div>
+
+<div class="content frame_1">
+  <ol type="1">
+
+
+
+
+
+
+  <li>
+    <strong>Cath ev header:</strong>
+    <%= @cath_event.cath_ev_header %>
+  </li>
+
+  <li>
+    <strong>Cath ev event yn:</strong>
+    <%= @cath_event.cath_ev_event_yn %>
+  </li>
+
+  <li>
+    <strong>Cath ev expired yn:</strong>
+    <%= @cath_event.cath_ev_expired_yn %>
+  </li>
+
+  <li>
+    <strong>Cath ev death at proc yn:</strong>
+    <%= @cath_event.cath_ev_death_at_proc_yn %>
+  </li>
+
+  <li>
+    <strong>Cath ev infarction yn:</strong>
+    <%= @cath_event.cath_ev_infarction_yn %>
+  </li>
+
+  <li>
+    <strong>Res term infarction type:</strong>
+    <%= @cath_event.res_term_infarction_type %>
+  </li>
+
+  <li>
+    <strong>Cath ev prior mi yn:</strong>
+    <%= @cath_event.cath_ev_prior_mi_yn %>
+  </li>
+
+  <li>
+    <strong>Cath ev shock start yn:</strong>
+    <%= @cath_event.cath_ev_shock_start_yn %>
+  </li>
+
+  <li>
+    <strong>Cath ev shock cath induced yn:</strong>
+    <%= @cath_event.cath_ev_shock_cath_induced_yn %>
+  </li>
+
+  <li>
+    <strong>Cath ev shock new post yn:</strong>
+    <%= @cath_event.cath_ev_shock_new_post_yn %>
+  </li>
+
+  <li>
+    <strong>Cath ev cardiac perforation yn:</strong>
+    <%= @cath_event.cath_ev_cardiac_perforation_yn %>
+  </li>
+
+  <li>
+    <strong>Uni cardiac perforation site:</strong>
+    <%= @cath_event.uni_cardiac_perforation_site %>
+  </li>
+
+  <li>
+    <strong>Cath ev tamponate yn:</strong>
+    <%= @cath_event.cath_ev_tamponate_yn %>
+  </li>
+
+  <li>
+    <strong>Cath ev chf new post yn:</strong>
+    <%= @cath_event.cath_ev_chf_new_post_yn %>
+  </li>
+
+  <li>
+    <strong>Cath ev cor art perforation yn:</strong>
+    <%= @cath_event.cath_ev_cor_art_perforation_yn %>
+  </li>
+
+
+  <li>
+    <strong>Cath ev cor art dissection yn:</strong>
+    <%= @cath_event.cath_ev_cor_art_dissection_yn %>
+  </li>
+
+  <li>
+    <strong>Cath ev cor vein dissection yn:</strong>
+    <%= @cath_event.cath_ev_cor_vein_dissection_yn %>
+  </li>
+
+  <li>
+    <strong>Cath ev cor art thrombus yn:</strong>
+    <%= @cath_event.cath_ev_cor_art_thrombus_yn %>
+  </li>
+
+  <li>
+    <strong>Cath ev stroke new yn:</strong>
+    <%= @cath_event.cath_ev_stroke_new_yn %>
+  </li>
+
+  <li>
+    <strong>Cath ev stroke new hemo yn:</strong>
+    <%= @cath_event.cath_ev_stroke_new_hemo_yn %>
+  </li>
+
+  <li>
+    <strong>Cath ev stroke new 24h yn:</strong>
+    <%= @cath_event.cath_ev_stroke_new_24h_yn %>
+  </li>
+
+  <li>
+    <strong>Cath ev stroke prior yn:</strong>
+    <%= @cath_event.cath_ev_stroke_prior_yn %>
+  </li>
+
+  <li>
+    <strong>Uni dialysis new req yn:</strong>
+    <%= @cath_event.uni_dialysis_new_req_yn %>
+  </li>
+
+  <li>
+    <strong>Uni dialysis new req dt:</strong>
+    <%= @cath_event.uni_dialysis_new_req_dt %>
+  </li>
+
+  <li>
+    <strong>Uni currently on dialysis:</strong>
+    <%= @cath_event.uni_currently_on_dialysis %>
+  </li>
+
+  <li>
+    <strong>Cath ev bleed yn:</strong>
+    <%= @cath_event.cath_ev_bleed_yn %>
+  </li>
+
+  <li>
+    <strong>Cath ev bleed dt:</strong>
+    <%= @cath_event.cath_ev_bleed_dt %>
+  </li>
+
+  <li>
+    <strong>Cath ev bleed tm:</strong>
+    <%= @cath_event.cath_ev_bleed_tm %>
+  </li>
+
+  <li>
+    <strong>Cath ev bleed dt tm utc:</strong>
+    <%= @cath_event.cath_ev_bleed_dt_tm_utc %>
+  </li>
+
+  <li>
+    <strong>Cath ev blood transfusion yn:</strong>
+    <%= @cath_event.cath_ev_blood_transfusion_yn %>
+  </li>
+
+  <li>
+    <strong>Cath ev hb prior transfer:</strong>
+    <%= @cath_event.cath_ev_hb_prior_transfer %>
+  </li>
+
+  <li>
+    <strong>Cath ev bleed access yn:</strong>
+    <%= @cath_event.cath_ev_bleed_access_yn %>
+  </li>
+
+
+  <li>
+    <strong>Cath ev bleed gu yn:</strong>
+    <%= @cath_event.cath_ev_bleed_gu_yn %>
+  </li>
+
+  <li>
+    <strong>Cath ev bleed gi yn:</strong>
+    <%= @cath_event.cath_ev_bleed_gi_yn %>
+  </li>
+
+  <li>
+    <strong>Cath ev bleed retroperi yn:</strong>
+    <%= @cath_event.cath_ev_bleed_retroperi_yn %>
+  </li>
+
+  <li>
+    <strong>Uni bleed barc class:</strong>
+    <%#= @cath_event.uni_bleed_barc_class %>
+  </li>
+
+  <li>
+    <strong>Cath ev bleed other yn:</strong>
+    <%= @cath_event.cath_ev_bleed_other_yn %>
+  </li>
+
+  <li>
+    <strong>Cath ev vasc compl yn:</strong>
+    <%= @cath_event.cath_ev_vasc_compl_yn %>
+  </li>
+
+  <li>
+    <strong>Cath ev hematoma at access yn:</strong>
+    <%= @cath_event.cath_ev_hematoma_at_access_yn %>
+  </li>
+
+  <li>
+    <strong>Cath ev hematoma size:</strong>
+    <%= @cath_event.cath_ev_hematoma_size %>
+  </li>
+
+  <li>
+    <strong>Cath ev hematoma treat:</strong>
+    <%= @cath_event.cath_ev_hematoma_treat %>
+  </li>
+
+  <li>
+    <strong>Cath ev vasc pseudoaneurysm yn:</strong>
+    <%= @cath_event.cath_ev_vasc_pseudoaneurysm_yn %>
+  </li>
+
+  <li>
+    <strong>Cath ev vasc dissection yn:</strong>
+    <%= @cath_event.cath_ev_vasc_dissection_yn %>
+  </li>
+
+  <li>
+    <strong>Cath ev av fistula yn:</strong>
+    <%= @cath_event.cath_ev_av_fistula_yn %>
+  </li>
+
+  <li>
+    <strong>Cath ev vasc limb ischemia yn:</strong>
+    <%= @cath_event.cath_ev_vasc_limb_ischemia_yn %>
+  </li>
+
+  <li>
+    <strong>Cath ev for cabg indication:</strong>
+    <%= @cath_event.cath_ev_for_cabg_indication %>
+  </li>
+
+  <li>
+    <strong>Cath ev for cabg status:</strong>
+    <%= @cath_event.cath_ev_for_cabg_status %>
+  </li>
+
+  <li>
+    <strong>Cath ev cabg location:</strong>
+    <%= @cath_event.cath_ev_cabg_location %>
+  </li>
+
+  <li>
+    <strong>Cath ev cabg dt:</strong>
+    <%= @cath_event.cath_ev_cabg_dt %>
+  </li>
+
+  <li>
+    <strong>Cath ev cabg tm:</strong>
+    <%= @cath_event.cath_ev_cabg_tm %>
+  </li>
+
+  <li>
+    <strong>Cath ev cabg dt tm utc:</strong>
+    <%= @cath_event.cath_ev_cabg_dt_tm_utc %>
+  </li>
+
+  <li>
+    <strong>Cath ev valve injury yn:</strong>
+    <%= @cath_event.cath_ev_valve_injury_yn %>
+  </li>
+
+  <li>
+    <strong>Cath ev heart block yn:</strong>
+    <%= @cath_event.cath_ev_heart_block_yn %>
+  </li>
+
+  <li>
+    <strong>Cath ev cardioversion yn:</strong>
+    <%= @cath_event.cath_ev_cardioversion_yn %>
+  </li>
+
+  <li>
+    <strong>Cath event notes:</strong>
+    <%= @cath_event.cath_event_notes %>
+  </li>
+
+</ol>
+<div>
+
+<span>
+    <%= link "Edit Event", to: Routes.pt_angio_event_path(@conn, :edit, @patient,
+  @info_coronary, @cath_event ), class: "button is-link"%>
+</span>
+<span>
+  <%= link "Back To Event Index", to: Routes.pt_angio_event_path(@conn, :index,
+  @patient, @info_coronary) , class: "button is-link"%>
+</span>
+<span>
+<%= link "Back To Lab",  to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-link"   %>
+ </span>

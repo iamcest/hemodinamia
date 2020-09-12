@@ -1,0 +1,275 @@
+
+<div class="search_form">
+ <h5 class="title is-5 has-text-centered">
+  Showning Loinc Items`
+ </h5>
+</div><!------title form------------------->
+<div class="columns">
+<div class="column  is-7 frame_1"
+<ul>
+
+  <li>
+   <i class="fa fa-arrow-circle-o-right"
+          style="font-size:18px;color:brawn;text-align:center;">
+          </i>
+  <span style="font-size:20px;color:#111111;text-align:center;">
+    <strong>Loinc num:</strong>
+    <%= @loinc.loinc_num %>
+    </span>
+  </li>
+
+  <li>
+ <span>
+         <i class="fa fa-arrow-circle-o-right"
+          style="font-size:18px;color:#053eff;text-align:center;">
+          </i>
+         </span>
+    <span style="font-size:20px;color:#111111;text-align:center;">
+    <strong>Long common name:</strong>
+    <%= raw @loinc.long_common_name %>
+    </span>
+  </li>
+
+
+ <li>
+
+ <span>
+         <i class="fa fa-arrow-circle-o-right"
+          style="font-size:18px;color:#053eff;text-align:center;">
+          </i>
+         </span>
+<span style="font-size:20px;color:#111111;text-align:center;">
+    <strong>Shortname:</strong>
+     <%= @loinc.shortname %>
+ </span>
+
+  </li>
+
+<li>
+<span style="font-size:18px;color:#000;text-align:center;">
+    <strong>Relatednames2:</strong>
+    <%= @loinc.relatednames2 %>
+   <span>
+
+  </li>
+
+  <li>
+    <strong>Component:</strong>
+    <%= @loinc.component %>
+  </li>
+
+  <li>
+    <strong>Property:</strong>
+    <%= @loinc.property %>
+  </li>
+
+  <li>
+    <strong>Time aspct:</strong>
+    <%= @loinc.time_aspct %>
+  </li>
+
+  <li>
+    <strong>System:</strong>
+    <%= @loinc.system %>
+  </li>
+
+  <li>
+    <strong>Scale typ:</strong>
+    <%= @loinc.scale_typ %>
+  </li>
+
+  <li>
+    <strong>Method typ:</strong>
+    <%= @loinc.method_typ %>
+  </li>
+
+  <li>
+    <strong>Class:</strong>
+    <%= @loinc.class %>
+  </li>
+
+  <li>
+    <strong>Versionlastchanged:</strong>
+    <%= @loinc.versionlastchanged %>
+  </li>
+
+  <li>
+    <strong>Chng type:</strong>
+    <%= @loinc.chng_type %>
+  </li>
+
+  <li>
+    <strong>Definitiondescription:</strong>
+    <%= @loinc.definitiondescription %>
+  </li>
+
+  <li>
+    <strong>Status:</strong>
+    <%= @loinc.status %>
+  </li>
+
+  <li>
+    <strong>Consumer name:</strong>
+    <%= @loinc.consumer_name %>
+  </li>
+
+  <li>
+    <strong>Classtype:</strong>
+    <%= @loinc.classtype %>
+  </li>
+
+  <li>
+    <strong>Formula:</strong>
+    <%= @loinc.formula %>
+  </li>
+
+  <li>
+    <strong>Species:</strong>
+    <%= @loinc.species %>
+  </li>
+
+  <li>
+    <strong>Exmpl answers:</strong>
+    <%= @loinc.exmpl_answers %>
+  </li>
+  </ul>
+
+
+</div><!---------column--------------------------->
+
+<div class="column is-5 frame_1">
+<ul>
+  <li>
+    <strong>Survey quest text:</strong>
+    <%= @loinc.survey_quest_text %>
+  </li>
+
+  <li>
+    <strong>Survey quest src:</strong>
+    <%= @loinc.survey_quest_src %>
+  </li>
+
+  <li>
+    <strong>Unitsrequired:</strong>
+    <%= @loinc.unitsrequired %>
+  </li>
+
+  <li>
+    <strong>Submitted units:</strong>
+    <%= @loinc.submitted_units %>
+  </li>
+
+
+
+  <li>
+    <strong>Order obs:</strong>
+    <%= @loinc.order_obs %>
+  </li>
+
+  <li>
+    <strong>Cdisc common tests:</strong>
+    <%= @loinc.cdisc_common_tests %>
+  </li>
+
+  <li>
+    <strong>Hl7 field subfield:</strong>
+    <%= @loinc.hl7_field_subfield_id %>
+  </li>
+
+  <li>
+    <strong>External copyright notice:</strong>
+    <%= @loinc.external_copyright_notice %>
+  </li>
+
+  <li>
+    <strong>Example units:</strong>
+    <%= @loinc.example_units %>
+  </li>
+
+  <li>
+    <strong>Unitsandrange:</strong>
+    <%= @loinc.unitsandrange %>
+  </li>
+
+  <li>
+    <strong>Example ucum units:</strong>
+    <%= @loinc.example_ucum_units %>
+  </li>
+
+  <li>
+    <strong>Example si ucum units:</strong>
+    <%= @loinc.example_si_ucum_units %>
+  </li>
+
+  <li>
+    <strong>Status reason:</strong>
+    <%= @loinc.status_reason %>
+  </li>
+
+  <li>
+    <strong>Status text:</strong>
+    <%= @loinc.status_text %>
+  </li>
+
+  <li>
+    <strong>Change reason public:</strong>
+    <%= @loinc.change_reason_public %>
+  </li>
+
+  <li>
+    <strong>Common test rank:</strong>
+    <%= @loinc.common_test_rank %>
+  </li>
+
+  <li>
+    <strong>Common order rank:</strong>
+    <%= @loinc.common_order_rank %>
+  </li>
+
+  <li>
+    <strong>Common si test rank:</strong>
+    <%= @loinc.common_si_test_rank %>
+  </li>
+
+  <li>
+    <strong>Hl7 attachment structure:</strong>
+    <%= @loinc.hl7_attachment_structure %>
+  </li>
+
+  <li>
+    <strong>Externalcopyrightlink:</strong>
+    <%= @loinc.externalcopyrightlink %>
+  </li>
+
+  <li>
+    <strong>Paneltype:</strong>
+    <%= @loinc.paneltype %>
+  </li>
+
+
+  <li>
+    <strong>Associatedobservations:</strong>
+    <%= @loinc.associatedobservations %>
+  </li>
+
+  <li>
+    <strong>Versionfirstreleased:</strong>
+    <%= @loinc.versionfirstreleased %>
+  </li>
+
+  <li>
+    <strong>Validhl7attachmentrequest:</strong>
+    <%= @loinc.validhl7attachmentrequest %>
+  </li>
+
+  <li>
+    <strong>Displayname:</strong>
+    <%= @loinc.displayname %>
+  </li>
+
+</ul>
+</div><!------column----------------------->
+</div><!------------columns------------------------->
+<span><%= link "Back Loinc List", to: Routes.loinc_path(@conn, :index),
+ class: "button is-link is-fullwidth" %>
+</span>

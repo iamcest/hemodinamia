@@ -1,0 +1,305 @@
+
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+     <div class="notification is-danger">
+    <button class="delete"></button>
+    Oops, something went wrong! Please check the errors below or Dublicate Record
+</div>
+
+  <% end %>
+<div class = "columns">
+ <div class = "column frame_1   ">
+
+<!-------start----------------------------------->
+<div class = "columns">
+<div class = "column">
+  <div class="field">
+  <label class="label">Field Name </label>
+  <div class="control">
+    <%= text_input f, :name, class: "input",
+                       type: "text",
+                       placeholder: "name",
+                      required: true,
+                      minlength: 3,
+                      maxlength: 45
+  %>
+   <%= error_tag f, :name %>
+  </div>
+  <p class="help"></p>
+    </div>
+</div><!----column-------------------->
+ <div class = "column">
+<div class="field">
+     <label class="label">Select Section - Table Name </label>
+     <div class="control">
+    <div class="select is-primary">
+  <%= select(f, :defs_table_id, @defs_tables, class: "form-control")    %>
+    </div><!--select---->
+     </div><!--control---->
+  </div><!---field--->
+
+ </div><!----column-------------------->
+
+
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+<!---------start----------------------------------->
+<div class = "columns">
+<div class = "column">
+
+ <div class="field">
+  <label class="label">Coding Instructions </label>
+  <div class="control">
+    <%= text_input f, :coding_instructions,
+      class: "textarea", type: "input is-primary", placeholder: "Text input"  %>
+  </div>
+
+  </div>
+
+</div><!----column-------------------->
+
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+<!---------start----------------------------------->
+<div class = "columns">
+<div class = "column">
+
+    <div class="field">
+  <label class="label">Target Value </label>
+  <div class="control">
+    <%= text_input f, :target_value,
+        class: "textarea",
+        type: "input", placeholder: "Text input"  %>
+  </div>
+   </div>
+
+
+
+</div><!----column-------------------->
+
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+<!---------start----------------------------------->
+<div class = "columns">
+<div class = "column">
+<label class="label">Title Name </label>
+  <div class="control">
+   <%= text_input f, :title_name,
+   class: "input",
+   type: "text",
+   placeholder: "title_name"  %>
+  </div>
+   <%= error_tag f, :title_name %>
+   <p class="help"></p>
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<div class="field">
+  <label class="label">Short Name In Reference OR In  Loinc </label>
+  <div class="control">
+   <%= text_input f, :short_name, class: "input", type: "text", placeholder: "Text input"  %>
+  </div>
+   <%= error_tag f, :short_name %>
+  <p class="help"></p>
+  </div>
+
+ </div><!----column-------------------->
+
+
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+<!---------start----------------------------------->
+<div class = "columns">
+<div class = "column">
+
+
+<label class="label">Reference </label>
+  <div class="control">
+   <%= text_input f, :ref, class: "input", type: "text", placeholder: "Text input"  %>
+  </div>
+   <%= error_tag f, :ref %>
+  <p class="help"></p>
+</div><!----column-------------------->
+
+ <div class = "column">
+<label class="label">Default Value </label>
+  <div class="control">
+   <%= text_input f, :default_value, class: "input", type: "text", placeholder: "Text input"  %>
+  </div>
+   <%= error_tag f, :default_value %>
+   <p class="help"></p>
+
+ </div><!----column-------------------->
+
+
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+ </div><!----end Lcolumn-------------------->
+
+<div class = "column frame_1">
+
+<!---------start----------------------------------->
+<div class = "columns">
+<div class = "column">
+<div class="field">
+  <label class="label">Support Definition </label>
+  <div class="control">
+    <%= text_input f, :support_definition,
+        class: "textarea",
+        type: "input", placeholder: "Text input"  %>
+  </div>
+  <p class="help">Supp Def</p>
+   </div>
+</div><!----column-------------------->
+
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<!---------start----------------------------------->
+<div class = "columns">
+
+<div class = "column">
+<label class="label">Usual Range</label>
+  <div class="control">
+   <%= text_input f, :usual_range, class: "input", type: "text", placeholder: "Text input"  %>
+  </div>
+   <%= error_tag f, :usual_range %>
+   <p class="help"></p>
+</div><!----column-------------------->
+
+<div class = "column">
+<label class="label">Upper Normal</label>
+  <div class="control">
+   <%= text_input f, :upper_value,
+   class: "input",
+   type: "text", placeholder: "upper_value"  %>
+  </div>
+   <%= error_tag f, :upper_value_ %>
+   <p class="help"></p>
+</div><!----column-------------------->
+<div class = "column">
+<label class="label">Lower Normal</label>
+  <div class="control">
+   <%= text_input f, :low_value,
+   class: "input",
+   type: "text", placeholder: "low_value"  %>
+  </div>
+   <%= error_tag f, :low_value_ %>
+   <p class="help"></p>
+</div><!----column-------------------->
+
+
+ <div class = "column">
+<label class="label">Valid Range</label>
+  <div class="control">
+   <%= text_input f, :valid_range, class: "input", type: "text", placeholder: "Text input"  %>
+  </div>
+   <%= error_tag f, :valid_range %>
+   <p class="help"></p>
+ </div><!----column-------------------->
+
+
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+<!---------start----------------------------------->
+<div class = "columns">
+<div class = "column">
+<label class="label">Data Source</label>
+  <div class="control">
+   <%= text_input f, :data_source, class: "input", type: "text", placeholder: "Text input"  %>
+   <%= error_tag f, :data_source %>
+   <p class="help"></p>
+</div>
+</div><!----column-------------------->
+ <div class = "column">
+Aux
+ </div><!----column-------------------->
+
+
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+ <div class = "columns">
+
+<div class = "column important_column">
+
+  <div class="field ">
+          <label class="label">Is this Field Used?</label>
+            <%= checkbox f, :used_yn,
+placeholder: "used_yn",
+                required: false,
+                type: "checkbox"
+              %>
+             <%= error_tag f, :used_yn %>
+           <p class = "help">
+           </p>
+
+           </div>
+        <!-----field---->
+
+</div><!----column-------------------->
+ </div><!----------columns------------------------>
+
+<!---------start----------------------------------->
+<div class = "columns">
+<div class = "column">
+<div class="field">
+  <label class="label">Notes </label>
+  <div class="control">
+    <%= text_input f, :notes,
+        class: "textarea",
+        type: "input", placeholder: "Text input"  %>
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+
+</div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+ </div><!----column-------------------->
+
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+
+
+
+  <!---------------------->
+
+  <div>
+    <%= submit "Save and Continue", class: "button is-info is-large is-fullwidth " %>
+  </div>
+<% end %>

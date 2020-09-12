@@ -1,0 +1,251 @@
+
+<%alias Angio.Canons %>
+
+
+<div class="search_form">
+ <h5 class="title is-5 has-text-centered">
+  Search In Fields - Definitions
+ </h5>
+</div><!------title form------------------->
+<div class="columns  is-centered search_form_2">
+
+  <div class="column is-3">
+<span class="has-form">
+   <%= form_for @conn, Routes.definition_path(@conn, :search_definitions), [as: :search_definitions], fn f -> %>
+
+ <div class="field">
+     <label class="label">Select Search: </label>
+
+     <div class="control">
+    <div class="select is-link">
+      <%= select(f, :selection,
+       ["In Tables": "table_name",
+       "In Fields - Elements Name": "name",
+       "Options Selection": "option_name",
+       "In Instructions": "instruction",
+       "In Name, Instructions - As Free Text": "tsv_search"
+],
+ class: "form-control")    %>
+
+    </div><!--select---->
+     </div><!--control---->
+  </div><!---field--->
+
+    </span>
+  </div><!--column---------->
+
+  <div class="column is-4">
+  <label class="label"> Your Query  </label>
+  <div class="control">
+   <%= text_input f, :query, class: "input", type: "text", placeholder: "Your Query"  %>
+   <%= error_tag f, :query %>
+  </div>
+
+  </div> <!--column------>
+
+  <div class="column is-3">
+ <label class="label">Search  </label>
+   <%= submit "Search", class: "button is-link is-fullwidth"  %>
+</div>
+
+<% end %>
+
+
+</div><!--columns------>
+<div class="is-divider-horizontal" data-content="OR">
+</div>
+
+<div class="title_form">
+<%definitions_count = Canons.count_definitions() %>
+
+<%definitions_used_count = Canons.count_used_definitions() %>
+
+ <h5 class="title  is-5 has-text-centered">
+  Listing Database Fields - Definitions (Total Number of Definitions
+ <span class = "tag is-warning is-medium"> <%= definitions_count %></span>
+  Used In Angio System:
+<span class = "tag is-success is-medium"> <%= definitions_used_count %></span>
+  )
+ </h5>
+
+</div><!------title form------------------->
+
+  <table class="table is-bordered
+is-striped
+is-narrow
+is-fullwidth
+ is-hoverable">
+    <thead class="thead">
+
+
+      <tr>
+        <th>#</th>
+        <th>Field
+             Field ID -
+             Inserted -
+              Updated </th>
+        <th>Field Is Used?</th>
+          <th>Table (Table id) </th>
+          <th>Instructions</th>
+
+
+
+          <th>
+           Pick-List Items
+             <br />
+           <span>
+         <i class="fa fa-list-ol"
+          style="font-size:20px;color:#053eff;text-align:center;">
+          </i>
+         </span>
+
+
+           </th>
+
+          <th>
+           Field Sentences
+            <br />
+          <span>
+         <i class="fa fa-language"
+          style="font-size:20px;color:#053eff;text-align:center;">
+          </i>
+         </span>
+
+
+
+
+          </th>
+
+          <th>
+
+          Codes For Field
+         <br />
+             <span>
+         <i class="fa fa-code"
+          style="font-size:20px;color:#053eff;text-align:center;">
+          </i>
+         </span>
+
+
+          </th>
+          <th>Show</th>
+          <th>Edit</th>
+          <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= for {definition, index} <- Enum.with_index(@definitions) do %>
+                <tr>
+                  <td>
+                    <%= index + 1  %>
+                  </td>
+
+<%#= for definition <- @definitions do %>
+
+      <td>
+        <strong>
+        <%= definition.name %>
+        </strong>
+       <br/>
+       <span style="color:#993D00;">
+             ( <%=definition.id%> ) </span>
+            <br/>
+
+      <span style="color:#8c92ac;">
+      <em>
+   <%= inserted_date = "#{definition.inserted_at.year}/
+                #{definition.inserted_at.month}/
+                #{definition.inserted_at.day}:
+                #{definition.inserted_at.minute}min
+                "%>
+      </em>
+
+      </span>
+
+    <br/>
+    <span style="color:#8c92ac;">
+    <em>
+ <%= up_date = "#{definition.updated_at.year}/
+               #{definition.updated_at.month}/
+               #{definition.updated_at.day}:
+               #{definition.updated_at.minute}min
+               "%>
+</em>
+      </span>
+
+      </td>
+      <td> <%= raw Canons.convert_true_false(definition.used_yn)%>
+
+
+      </td>
+      <td>
+        <em>
+
+        <% table_id = "#{definition.defs_table_id}"%>
+        <%= Angio.Canons.Defs_table.id_to_name(table_id)%>
+        <br/>
+      <span style="color:#993D00;">( <%=table_id%> ) </span>
+
+        </em>
+    </td>
+ 
+    <td>
+          
+      <span>
+      <%= raw( definition.coding_instructions) %>
+      </span>
+
+    </td>
+<td>
+  <%= link  to: Routes.definition_defs_option_path(@conn, :index, definition),
+           class: "button is-info is-small is-fullwidth"  do %>
+        <%= render  AngioWeb.SharedView, "_defs_options_count.html", definition: definition %>
+
+           <%end%>
+
+           </td>
+
+           <td>
+             <%= link   to: Routes.definition_defs_sentence_path(@conn, :index, definition),
+class: "button is-info is-small is-fullwidth" do   %>
+   <%= render  AngioWeb.SharedView, "_defs_phrases_count.html", definition: definition %>
+
+           <%end%>
+
+           </td>
+            <td>
+             <%= link   to: Routes.definition_defs_code_path(@conn, :index, definition),
+
+class: "button is-info is-small is-fullwidth "  do %>
+  <%= render  AngioWeb.SharedView, "_defs_codes_count.html", definition: definition %>
+
+           <%end%>
+
+           </td>
+
+      <td>
+        <%= link "Show",
+  to: Routes.definition_path(@conn, :show, definition), class: "button is-link is-small is-fullwidth " %>
+      </td>
+
+      <td>
+        <%= link "Edit", to: Routes.definition_path(@conn, :edit, definition) , class: "button is-link is-small" %>
+      </td>
+
+      <td>
+        <%= link "Delete", to: Routes.definition_path(@conn, :delete, definition), method: :delete, data: [confirm: "Are you sure?"] ,
+     class: " button  is-danger is-small is-fullwidth " %>
+      </td>
+
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= pagination_links @page %>
+
+<span><%= link "Add A New Definition  - Field",
+ to: Routes.definition_path(@conn, :new), class: "button is-link is-large is-fullwidth"  %>
+  </span>
+        </div><!---------column---->
+</div><!------cokumns-------->

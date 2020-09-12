@@ -1,0 +1,2085 @@
+
+<% alias Angio.Canons, as: Query %>
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+  <div class="notification is-danger">
+    <button class="delete"></button>
+    Oops, something went wrong! Please check the errors below
+
+</div>
+  <% end %>
+
+
+
+
+<div class="columns">
+  <div class="column frame_1">
+
+
+
+
+<span class="button is-primary  is-fullwidth ">
+<i class="fa fa-sticky-note">
+Lesion
+</i>
+</span>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!-------start Field------------------------------------>
+ <div class="field">
+            <label class="label field_help " >Lesion Counter </label>
+            <%= text_input f, :pci_les_counter,
+            class: "input",
+            type: "text",
+            placeholder: "pci_les_counter",
+            required: false %>
+            <%= error_tag f,:pci_les_counter %>
+          <p class="help"></p>
+        </div>
+<!-------end field------------------------------------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">G/Wire Crossed the Lesion?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :pci_les_gw_cossed_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :pci_les_gw_cossed_yn %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+
+
+ </div><!----column-------------------->
+<div class = "column">
+
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">PCI Lesion Success?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :pci_les_success_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :pci_les_success_yn %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!--------------field start------------------------------>
+<% s_pci_les_status  = Query.select_options("pci_les_status") %>
+
+        <div class="field">
+          <label class="label">Lesion Status </label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f, :pci_les_status ,
+              s_pci_les_status,
+   prompt: "---Select---",
+   class: "form-control") %>
+              <option></option>
+            </div>
+            <!--select---->
+            <p class="help">
+            </p>
+          </div>
+          <!--control---->
+        </div><!---field end ------------------------------>
+
+
+
+</div><!----column-------------------->
+<div class = "column">
+<!---------field------------------------>
+ <div class="field">
+        <label class="label"> In Natives?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :pci_les_in_native_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :pci_les_in_native_yn%>
+        </div>
+        <p class="help"></p>
+    </div>
+    <!---field------------------>
+
+</div><!----column-------------------->
+ <div class = "column">
+ <!---------field------------------------->
+ <div class="field">
+        <label class="label">In Graft?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :pci_les_in_graft_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :pci_les_in_graft_yn%>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+
+ </div><!----column-------------------->
+<div class = "column">
+ <!--------------field start------------------------------>
+<% s_pci_les_main_technique  = Query.select_options("pci_les_main_technique") %>
+
+        <div class="field">
+          <label class="label">Main Technique </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f, :pci_les_main_technique,
+              s_pci_les_main_technique,
+   prompt: "---Select---",
+   class: "form-control") %>
+              <option></option>
+            </div>
+            <!--select---->
+            <p class="help">
+            </p>
+          </div>
+          <!--control---->
+        </div><!---field end ------------------------------>
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<!---------field------------------------->
+ <div class="field">
+        <label class="label"> Culprit Lesion?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :pci_les_culprit_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :pci_les_culprit_yn %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+</div><!----column-------------------->
+ <div class = "column">
+ Aux Position
+ </div><!----column-----F--------------->
+<div class = "column">
+ Aux Position
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+<span class="button is-primary  is-fullwidth ">
+<i class="fa fa-sticky-note">
+Lesion Complexity - Characteristics
+</i>
+</span>
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+
+ <div class = "column">
+
+<!--------------field start------------------------------>
+<% s_pci_les_complexity  = Query.select_options("uni_lesion_complexity") %>
+
+        <div class="field">
+          <label class="label">Lesion Complexity </label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f, :pci_les_complexity ,
+              s_pci_les_complexity,
+   prompt: "---Select---",
+   class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help">
+            </p>
+          </div>
+          <!--control---->
+        </div><!---field end ------------------------------>
+
+
+ </div><!----column-------------------->
+<div class = "column">
+
+<!-------start Field------------------------------------>
+ <div class="field">
+            <label class="label field_help " >Lesion Length </label>
+            <%= text_input f, :pci_les_length,
+            class: "input",
+            type: "text",
+            placeholder: "pci_les_length",
+            required: false %>
+            <%= error_tag f,:pci_les_length %>
+          <p class="help"></p>
+        </div>
+<!-------end field------------------------------------------->
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!--------------field start------------------------------>
+<% s_pci_les_aha_type  = Query.select_options("uni_lesion_type_aha") %>
+
+        <div class="field">
+          <label class="label">AHA Type </label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f, :pci_les_aha_type ,
+              s_pci_les_aha_type,
+   prompt: "---Select---",
+   class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help">
+            </p>
+          </div>
+          <!--control---->
+        </div><!---field end ------------------------------>
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label"> Calcified?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :pci_les_calcium_yn ,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :pci_les_calcium_yn  %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+
+ </div><!----column-------------------->
+<div class = "column">
+
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label"> Chronic Total Occlusion?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :pci_les_cto_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :pci_les_cto_yn %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+
+ <div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label"> In Bifurctation ?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :pci_les_bifurcation_yn ,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :pci_les_bifurcation_yn%>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+ </div><!----column-------------------->
+
+<div class = "column">
+<!---------field------------------------->
+ <div class="field">
+        <label class="label"> Bifurcation Lesion: SB Treated?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :pci_les_bifurc_sb_treat_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :pci_les_bifurc_sb_treat_yn %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+
+
+
+</div><!----column-------------------->
+</div><!----columns--------------------------->
+<span class="button is-info  is-fullwidth ">
+<i class="fa fa-sticky-note">
+Lesion Location In Natives
+</i>
+</span>
+<!---------start----------------------------------->
+  <div class = "columns">
+ <div class = "column">
+
+
+<!--------------field start------------------------------>
+<% s_pci_les_after_graft_type  =
+   Query.select_options("pci_les_after_graft_type") %>
+
+        <div class="field">
+          <label class="label">Lesion After Graft:  Type </label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f, :pci_les_after_graft_type ,
+              s_pci_les_after_graft_type,
+   prompt: "---Select---",
+   class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help">
+            </p>
+          </div>
+          <!--control---->
+        </div><!---field end ------------------------------>
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!-------------start---------------------------------->
+<% s_pci_les_involved_seg_cdisc =
+   Query.select_options("uni_segments_cdisc") %>
+
+ <%# i_sts=
+raw  Query.search_in_instructions("uni_segments_sts")%>
+<div class="field">
+  <label class="label"> Segments involved - CDISC</label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= multiple_select(f, :pci_les_involved_seg_cdisc,
+                s_pci_les_involved_seg_cdisc ,
+               prompt: "---Select---",
+               class: "form-control", size: 2)
+              %>
+            </div>
+            <!--select---->
+            <%= error_tag f, :pci_les_involved_seg_cdisc  %>
+            <p class="help"></p>
+          </div>
+          <!--control---->
+        </div>
+        <!---field--->
+
+</div><!----column-------------------->
+
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+
+
+
+ <div class = "column">
+
+<!----------------------------------------------->
+<% s_pci_les_involved_seg_ncdr =
+   Query.select_options("uni_segments_ncdr") %>
+
+ <%# i_sts=
+raw  Query.search_in_instructions("uni_segments_sts")%>
+<div class="field">
+  <label class="label"> Segments involved - NCDR</label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= multiple_select(f, :pci_les_involved_seg_ncdr,
+                s_pci_les_involved_seg_ncdr ,
+               prompt: "---Select---",
+               class: "form-control", size: 2)
+              %>
+            </div>
+            <!--select---->
+            <%= error_tag f, :pci_les_involved_seg_ncdr  %>
+            <p class="help"></p>
+          </div>
+          <!--control---->
+        </div>
+        <!---field--->
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!----------------------------------------------->
+<% s_pci_les_involved_seg_sts =
+   Query.select_options("uni_segments_sts") %>
+<div class="field">
+  <label class="label"> Segments involved - STS</label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= multiple_select(f, :pci_les_involved_seg_sts,
+                s_pci_les_involved_seg_sts ,
+               prompt: "---Select---",
+               class: "form-control", size: 2)
+              %>
+            </div>
+            <!--select---->
+            <%= error_tag f, :pci_les_involved_seg_sts  %>
+            <p class="help"></p>
+          </div>
+          <!--control---->
+        </div>
+        <!---field--->
+
+</div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+<span class="button is-primary  is-fullwidth ">
+<i class="fa fa-sticky-note">
+Lesion Prior Treated
+</i>
+</span>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+  <div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label"> Prior Treated ?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :pci_les_prior_treated_yn ,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :pci_les_prior_treated_yn  %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+
+ </div><!----column-------------------->
+<div class = "column">
+<!--------------field start------------------------------>
+<% s_pci_les_status_stent_thrombus = Query.select_options("pci_les_status_stent_thrombus") %>
+
+        <div class="field">
+          <label class="label">Stent Thrombus Status </label>
+          <div class="control">
+            <div class="select is-primary">
+<span class="field_help"></span>
+              <%= select(f, :pci_les_status_stent_thrombus,
+              s_pci_les_status_stent_thrombus,
+   prompt: "---Select---",
+   class: "form-control") %>
+              <option></option>
+            </div>
+            <!--select---->
+            <p class="help">
+            </p>
+          </div>
+          <!--control---->
+        </div><!---field end ------------------------------>
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label"> Restenotic Lesion: Prior Stented</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :pci_les_prior_treat_stent_yn ,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :pci_les_prior_treat_stent_yn %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+
+<!--------------field start------------------------------>
+<% s_pci_les_prior_stent_type  = Query.select_options("uni_stent_type") %>
+
+        <div class="field">
+          <label class="label">Prior Stent Type </label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f, :pci_les_prior_stent_type ,
+              s_pci_les_prior_stent_type,
+   prompt: "---Select---",
+   class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help">
+            </p>
+          </div>
+          <!--control---->
+        </div><!---field end ------------------------------>
+
+</div><!----column-------------------->
+ <div class = "column">
+
+
+
+
+<!--------------field start------------------------------>
+<% s_pci_les_status_isr_stent_type = Query.select_options("uni_stent_type") %>
+
+        <div class="field">
+          <label class="label">ISR: Stent Type </label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f, :pci_les_status_isr_stent_type,
+              s_pci_les_status_isr_stent_type,
+   prompt: "---Select---",
+   class: "form-control") %>
+              <option></option>
+            </div>
+            <!--select---->
+            <p class="help">
+            </p>
+          </div>
+          <!--control---->
+        </div><!---field end ------------------------------>
+
+
+
+ </div><!----column-------------------->
+<div class = "column">
+
+
+
+<!--------------field start------------------------------>
+<% s_pci_les_status_isr_duration  = Query.select_options("pci_les_status_isr_duration") %>
+
+        <div class="field">
+          <label class="label">ISR Duration </label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f, :pci_les_status_isr_duration ,
+              s_pci_les_status_isr_duration  ,
+   prompt: "---Select---",
+   class: "form-control") %>
+              <option></option>
+            </div>
+            <!--select---->
+            <p class="help">
+            </p>
+          </div>
+          <!--control---->
+        </div><!---field end ------------------------------>
+
+
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+<!--------------field start------------------------------>
+<% s_pci_les_status_isr_class  = Query.select_options("pci_les_status_isr_class") %>
+
+        <div class="field">
+          <label class="label">ISR Class </label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f, :pci_les_status_isr_class ,
+              s_pci_les_status_isr_class  ,
+   prompt: "---Select---",
+   class: "form-control") %>
+              <option></option>
+            </div>
+            <!--select---->
+            <p class="help">
+            </p>
+          </div>
+          <!--control---->
+        </div><!---field end ------------------------------>
+
+
+
+</div><!----column-------------------->
+ <div class = "column">
+<!--------------field start------------------------------>
+<% s_pci_les_prior_treat_timeframe  = Query.select_options("pci_les_prior_treat_timeframe") %>
+
+        <div class="field">
+          <label class="label">Treat Timeframe (months) </label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f, :pci_les_prior_treat_timeframe ,
+              s_pci_les_prior_treat_timeframe,
+   prompt: "---Select---",
+   class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help">
+            </p>
+          </div>
+          <!--control---->
+        </div><!---field end ------------------------------>
+
+
+
+
+ </div><!----column-------------------->
+<div class = "column">
+
+
+
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label"> Prior Stented: For ISR?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :pci_les_prior_stent_for_isr_yn  ,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :pci_les_prior_stent_for_isr_yn  %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+
+
+
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+<span class="button is-primary  is-fullwidth ">
+<i class="fa fa-sticky-note">
+Lesion Complexity - Characteristics
+</i>
+</span>
+
+
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<!--------------field start------------------------------>
+<% s_pci_les_timi_flow_pre  = Query.select_options("uni_timi_flow") %>
+
+        <div class="field">
+          <label class="label">Prior Treatment TIMI Flow </label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f, :pci_les_timi_flow_pre ,
+              s_pci_les_timi_flow_pre,
+   prompt: "---Select---",
+   class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help">
+            </p>
+          </div>
+          <!--control---->
+        </div><!---field end ------------------------------>
+
+
+</div><!----column-------------------->
+
+<div class = "column">
+
+<!--------------field start------------------------------>
+<% s_pci_les_timi_flow_post  = Query.select_options("uni_timi_flow") %>
+
+        <div class="field">
+          <label class="label">Post Treatment TIMI Flow </label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f, :pci_les_timi_flow_post ,
+              s_pci_les_timi_flow_post,
+   prompt: "---Select---",
+   class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help">
+            </p>
+          </div>
+          <!--control---->
+        </div><!---field end ------------------------------>
+
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+<!-------start Field------------------------------------>
+ <div class="field">
+            <label class="label field_help " >After PCI Stenosis (%) </label>
+            <%= text_input f, :pci_les_sten_pct_post,
+            class: "input",
+            type: "text",
+            placeholder: "pci_les_sten_pct_post",
+            required: false %>
+            <%= error_tag f,:pci_les_sten_pct_post %>
+          <p class="help"></p>
+        </div>
+<!-------end field------------------------------------------->
+
+
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!-------start Field------------------------------------>
+ <div class="field">
+            <label class="label field_help " >Pre  Stenosis (%) </label>
+            <%= text_input f, :pci_les_sten_pct_pre,
+            class: "input",
+            type: "text",
+            placeholder: "pci_les_sten_pct_pre",
+            required: false %>
+            <%= error_tag f,:pci_les_sten_pct_pre %>
+          <p class="help"></p>
+        </div>
+<!-------end field------------------------------------------->
+
+
+ </div><!----column-------------------->
+<div class = "column">
+
+Aux Position
+
+
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+<span class="button is-primary  is-fullwidth ">
+<i class="fa fa-sticky-note">
+Inflations
+</i>
+</span>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+ <div class = "column">
+
+<!-------start Field------------------------------------>
+ <div class="field">
+            <label class="label field_help " >Max Bal Size Pre  </label>
+             <span class="field_help"></span>
+            <%= text_input f, :pci_les_balloon_size_pre,
+            class: "input",
+            type: "text",
+            placeholder: "pci_les_balloon_size_pre",
+            required: false %>
+            <%= error_tag f,:pci_les_balloon_size_pre %>
+          <p class="help"></p>
+        </div>
+<!-------end field------------------------------------------->
+
+
+ </div><!----column-------------------->
+<div class = "column">
+
+<!--------------field start------------------------------>
+<% s_pci_les_balloon_type_pre  = Query.select_options("uni_balloon_type") %>
+
+        <div class="field">
+          <label class="label">Balloon Type Pre</label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f, :pci_les_balloon_type_pre ,
+              s_pci_les_balloon_type_pre,
+   prompt: "---Select---",
+   class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help">
+            </p>
+          </div>
+          <!--control---->
+        </div><!---field end ------------------------------>
+
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+<!-------start Field------------------------------------>
+ <div class="field">
+            <label class="label field_help " >Max Bal Size Post  </label>
+             <span class="field_help"></span>
+            <%= text_input f, :pci_les_balloon_size_post,
+            class: "input",
+            type: "text",
+            placeholder: "pci_les_balloon_size_pre",
+            required: false %>
+            <%= error_tag f,:pci_les_balloon_size_post %>
+          <p class="help"></p>
+        </div>
+<!-------end field------------------------------------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+
+
+<!--------------field start------------------------------>
+<% s_pci_les_balloon_type_post  = Query.select_options("uni_balloon_type") %>
+
+        <div class="field">
+          <label class="label">Balloon Type Post</label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f, :pci_les_balloon_type_post ,
+              s_pci_les_balloon_type_post,
+   prompt: "---Select---",
+   class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help">
+            </p>
+          </div>
+          <!--control---->
+        </div><!---field end ------------------------------>
+
+ </div><!----column-------------------->
+<div class = "column">
+<!-------start Field------------------------------------>
+ <div class="field">
+            <label class="label field_help " >Max Bal PressurePost  </label>
+             <span class="field_help"></span>
+            <%= text_input f, :pci_les_balloon_pres_post,
+            class: "input",
+            type: "text",
+            placeholder: "pci_les_balloon_pres_post",
+            required: false %>
+            <%= error_tag f,:pci_les_balloon_pres_post %>
+          <p class="help"></p>
+        </div>
+<!-------end field------------------------------------------->
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<span class="button is-info  is-fullwidth ">
+<i class="fa fa-sticky-note">
+Complications
+</i>
+</span>
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Complication?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :pci_les_event_yn ,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :pci_les_event_yn  %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Dissection?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :pci_lesev_dissection_yn ,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :pci_lesev_dissection_yn %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+
+
+ </div><!----column-------------------->
+<div class = "column">
+
+<!--------------field start------------------------------>
+<% s_pci_lesev_dissection_type  = Query.select_options("pci_lesev_dissection_type") %>
+
+        <div class="field">
+          <label class="label">Dissection Type</label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f, :pci_lesev_dissection_type ,
+              s_pci_lesev_dissection_type,
+   prompt: "---Select---",
+   class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help">
+            </p>
+          </div>
+          <!--control---->
+        </div><!---field end ------------------------------>
+
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Perforation ?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :pci_lesev_perforation_yn ,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :pci_lesev_perforation_yn %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!--------------field start------------------------------>
+<% s_pci_lesev_perforation_class  =
+   Query.select_options("pci_lesev_perforation_class") %>
+
+        <div class="field">
+          <label class="label">Perforation Class</label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f, :pci_lesev_perforation_class ,
+              s_pci_lesev_perforation_class,
+   prompt: "---Select---",
+   class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help">
+            </p>
+          </div>
+          <!--control---->
+        </div><!---field end ------------------------------>
+
+ </div><!----column-------------------->
+<div class = "column">
+<!--------------field start------------------------------>
+<% s_pci_lesev_perforation_treat  =
+   Query.select_options("pci_lesev_perforation_treat") %>
+
+        <div class="field">
+          <label class="label">Perforation Treatment</label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f, :pci_lesev_perforation_treat,
+              s_pci_lesev_perforation_treat,
+   prompt: "---Select---",
+   class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help">
+            </p>
+          </div>
+          <!--control---->
+        </div><!---field end ------------------------------>
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Acute Closure?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :pci_lesev_acute_clossure_yn ,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :pci_lesev_acute_clossure_yn%>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!--------------field start------------------------------>
+<% s_pci_lesev_acute_clossure_treat  =
+   Query.select_options("pci_lesev_acute_closure_treat") %>
+
+        <div class="field">
+          <label class="label">Acute Closure Treatment</label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f, :pci_lesev_acute_clossure_treat ,
+              s_pci_lesev_acute_clossure_treat,
+   prompt: "---Select---",
+   class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help">
+            </p>
+          </div>
+          <!--control---->
+        </div><!---field end ------------------------------>
+
+
+ </div><!----column-------------------->
+<div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Side Branch Occlusion?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :pci_les_branch_occlusion_yn ,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :pci_les_branch_occlusion_ynn%>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">No-Reflow?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :pci_les_no_reflow_yn ,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :pci_les_no_reflow_yn %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+
+<!--------------field start------------------------------>
+<% s_pci_les_no_reflow_type  =
+   Query.select_options("pci_les_no_reflow_type") %>
+
+        <div class="field">
+          <label class="label">No-Reflow Type</label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f, :pci_les_no_reflow_type ,
+              s_pci_les_no_reflow_type,
+   prompt: "---Select---",
+   class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help">
+            </p>
+          </div>
+          <!--control---->
+        </div><!---field end ------------------------------>
+
+
+
+ </div><!----column-------------------->
+<div class = "column">
+
+<!--------------field start------------------------------>
+<% s_pci_les_no_reflow_treat  =
+   Query.select_options("pci_les_no_reflow_treat") %>
+
+        <div class="field">
+          <label class="label">No-Reflow Treatment</label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f, :pci_les_no_reflow_treat ,
+              s_pci_les_no_reflow_treat,
+   prompt: "---Select---",
+   class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help">
+            </p>
+          </div>
+          <!--control---->
+        </div><!---field end ------------------------------>
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!--------------field start------------------------------>
+<% s_pci_lesev_hosp_stent_thrombosis_category  =
+   Query.select_options("pci_lesev_hosp_stent_thrombosis_category") %>
+
+        <div class="field">
+          <label class="label">Stent Thromb Category </label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f, :pci_lesev_hosp_stent_thrombosis_category ,
+              s_pci_lesev_hosp_stent_thrombosis_category,
+   prompt: "---Select---",
+   class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help">
+            </p>
+          </div>
+          <!--control---->
+        </div><!---field end ------------------------------>
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Re-Intervantion ?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :pci_lesev_re_interven_yn ,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :pci_lesev_re_interven_yn %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+
+ </div><!----column-------------------->
+<div class = "column">
+ Aux Position
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+
+
+</div><!--------LEFT COLUMN----------------->
+  <div class="column frame_1">
+
+<span class="button is-success  is-fullwidth ">
+<i class="fa fa-sticky-note">
+Lesion Location In Graft
+</i>
+</span>
+<!---------start----------------------------------->
+  <div class = "columns">
+
+ <div class = "column">
+
+
+<!----------------------------------------------->
+<% s_pci_les_graft_conduit_type =
+   Query.select_options("uni_graft_conduit_type") %>
+<div class="field">
+  <label class="label"> Conduit Type</label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= multiple_select(f, :pci_les_graft_conduit_type,
+                s_pci_les_graft_conduit_type ,
+               prompt: "---Select---",
+               class: "form-control", size: 2)
+              %>
+            </div>
+            <!--select---->
+            <%= error_tag f, :pci_les_graft_conduit_type  %>
+            <p class="help"></p>
+          </div>
+          <!--control---->
+        </div>
+        <!---field--->
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+<!--------------field start------------------------------>
+<% s_pci_les_graft_prox_site  =
+   Query.select_options("uni_graft_prox_site") %>
+
+        <div class="field">
+          <label class="label"> Graft Prox Position </label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f, :pci_les_graft_prox_site ,
+              s_pci_les_graft_prox_site,
+   prompt: "---Select---",
+   class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help">
+            </p>
+          </div>
+          <!--control---->
+        </div><!---field end ------------------------------>
+
+</div><!----column-------------------->
+     <div class = "column">
+
+<!--------------field start------------------------------>
+<% s_pci_les_graft_segment_pos  = Query.select_options("uni_graft_segment_pos") %>
+
+        <div class="field">
+          <label class="label"> Lesion Position In Graft</label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f, :pci_les_graft_segment_pos ,
+              s_pci_les_graft_segment_pos,
+   prompt: "---Select---",
+   class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help">
+            </p>
+          </div>
+          <!--control---->
+        </div><!---field end ------------------------------>
+
+</div><!----column-------------------->
+
+
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+
+
+ <div class = "column">
+
+
+<!----------------------------------------------->
+<% s_pci_les_graft_segments_cdisc =
+   Query.select_options("uni_segments_cdisc") %>
+
+<div class="field">
+  <label class="label"> Distal Anastomosis - CDISC</label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= multiple_select(f, :pci_les_graft_segments_cdisc,
+                s_pci_les_graft_segments_cdisc ,
+               prompt: "---Select---",
+               class: "form-control", size: 2)
+              %>
+            </div>
+            <!--select---->
+            <%= error_tag f, :pci_les_graft_segments_cdisc  %>
+            <p class="help"></p>
+          </div>
+          <!--control---->
+        </div>
+        <!---field--->
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<% s_pci_les_graft_segments_ncdr =
+   Query.select_options("uni_segments_ncdr") %>
+
+<div class="field">
+  <label class="label"> Distal Anastomosis - NCDR</label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= multiple_select(f, :pci_les_graft_segments_ncdr,
+                s_pci_les_graft_segments_ncdr ,
+               prompt: "---Select---",
+               class: "form-control", size: 2)
+              %>
+            </div>
+            <!--select---->
+            <%= error_tag f, :pci_les_graft_segments_ncdr  %>
+            <p class="help"></p>
+          </div>
+          <!--control---->
+        </div>
+        <!---field--->
+
+</div><!----column-------------------->
+
+
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+ <div class = "column">
+
+<% s_pci_les_graft_segments_sts =
+   Query.select_options("uni_segments_sts") %>
+
+<div class="field">
+  <label class="label"> Distal Anastomosis - STS</label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= multiple_select(f, :pci_les_graft_segments_sts,
+                s_pci_les_graft_segments_sts,
+               prompt: "---Select---",
+               class: "form-control", size: 2)
+              %>
+            </div>
+            <!--select---->
+            <%= error_tag f, :pci_les_graft_segments_sts  %>
+            <p class="help"></p>
+          </div>
+          <!--control---->
+        </div>
+        <!---field--->
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+<span class="button is-warning  is-fullwidth ">
+<i class="fa fa-sticky-note">
+Materials
+</i>
+</span>
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!--------------field start------------------------------>
+<% s_pci_les_guide_types  =
+Query.select_options("uni_guide_types") %>
+
+        <div class="field">
+          <label class="label">Guiding Type </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f, :pci_les_guide_types,
+              s_pci_les_guide_types,
+   prompt: "---Select---",
+   class: "form-control") %>
+              <option></option>
+            </div>
+            <!--select---->
+            <p class="help">
+            </p>
+          </div>
+          <!--control---->
+        </div><!---field end ------------------------------>
+
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!--------------field start------------------------------>
+<% s_pci_les_guide_size  =
+Query.select_options("uni_guide_size") %>
+
+        <div class="field">
+          <label class="label">Guiding Size </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f, :pci_les_guide_size,
+              s_pci_les_guide_size,
+   prompt: "---Select---",
+   class: "form-control") %>
+              <option></option>
+            </div>
+            <!--select---->
+            <p class="help">
+            </p>
+          </div>
+          <!--control---->
+        </div><!---field end ------------------------------>
+
+ </div><!----column-------------------->
+<div class = "column">
+ <!--------------field start------------------------------>
+<% s_pci_les_embolic_protect_type  =
+Query.select_options("pci_les_embolic_protect_type") %>
+
+        <div class="field">
+          <label class="label">Embolic Protect Device </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f, :pci_les_embolic_protect_type,
+              s_pci_les_embolic_protect_type,
+   prompt: "---Select---",
+   class: "form-control") %>
+              <option></option>
+            </div>
+            <!--select---->
+            <p class="help">
+            </p>
+          </div>
+          <!--control---->
+        </div><!---field end ------------------------------>
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+
+<!-------------start---------------------------------->
+<% s_pci_les_devices_used =
+   Query.select_options("pci_les_devices_used") %>
+<div class="field">
+  <label class="label"> Devices Used</label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= multiple_select(f, :pci_les_devices_used,
+                s_pci_les_devices_used ,
+               prompt: "---Select---",
+               class: "form-control", size: 2)
+              %>
+            </div>
+            <!--select---->
+            <%= error_tag f, :pci_les_devices_used  %>
+            <p class="help"></p>
+          </div>
+          <!--control---->
+        </div>
+        <!---field--->
+
+</div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+<span class="button is-warning  is-fullwidth ">
+<i class="fa fa-sticky-note">
+Stents
+</i>
+</span>
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<!---------field------------------------->
+ <div class="field">
+        <label class="label"> Is The Lesion Stented ?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :pci_les_stented_yn ,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :pci_les_stented_yn  %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+</div><!----column-------------------->
+ <div class = "column">
+<!-------start Field------------------------------------>
+ <div class="field">
+            <label class="label field_help " >Stent Total Length </label>
+            <%= text_input f, :pci_les_stent_length_total,
+            class: "input",
+            type: "text",
+            placeholder: "pci_les_stent_length_total",
+            required: false %>
+            <%= error_tag f,:pci_les_stent_length_total %>
+          <p class="help"></p>
+        </div>
+<!-------end field------------------------------------------->
+
+
+ </div><!----column-------------------->
+<div class = "column">
+ <!--------------field start------------------------------>
+<!-----------------------
+<% s_pci_les_des_type  = Query.select_options("pci_les_des_type") %>
+
+        <div class="field">
+          <label class="label">Stent DES Type</label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%#= select(f, :pci_les_des_type ,
+              s_pci_les_des_type,
+   prompt: "---Select---",
+   class: "form-control") %>
+            </div>
+            <p class="help">
+            </p>
+          </div>
+        </div>
+        -------------------------->
+        <!---field end ------------------------------>
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+
+
+
+  <!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+<!-------start Field------------------------------------>
+ <div class="field">
+            <label class="label field_help " >Stent 1 Diameter </label>
+            <%= text_input f, :pci_les_stent_1_diam,
+            class: "input",
+            type: "text",
+            placeholder: "pci_les_stent_1_diam",
+            required: false %>
+            <%= error_tag f,:pci_les_stent_1_diam %>
+          <p class="help"></p>
+        </div>
+<!-------end field------------------------------------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!-------start Field------------------------------------>
+ <div class="field">
+            <label class="label field_help " >Stent 1 Length </label>
+            <%= text_input f, :pci_les_stent_1_len,
+            class: "input",
+            type: "text",
+            placeholder: "pci_les_stent_1_len",
+            required: false %>
+            <%= error_tag f,:pci_les_stent_1_len %>
+          <p class="help"></p>
+        </div>
+<!-------end field------------------------------------------->
+
+
+ </div><!----column-------------------->
+<div class = "column">
+
+
+<!-------start Field------------------------------------>
+ <div class="field">
+            <label class="label field_help " >Stent 1 Code </label>
+            <%= text_input f, :pci_les_stent_1_code,
+            class: "input",
+            type: "text",
+            placeholder: "pci_les_stent_1_code",
+            required: false %>
+            <%= error_tag f,:pci_les_stent_1_code %>
+          <p class="help"></p>
+        </div>
+<!-------end field------------------------------------------->
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+
+  <!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!-------start Field------------------------------------>
+ <div class="field">
+            <label class="label field_help " >Stent 2 Diameter </label>
+            <%= text_input f, :pci_les_stent_2_diam,
+            class: "input",
+            type: "text",
+            placeholder: "pci_les_stent_2_diam",
+            required: false %>
+            <%= error_tag f,:pci_les_stent_2_diam %>
+          <p class="help"></p>
+        </div>
+<!-------end field------------------------------------------->
+</div><!----column-------------------->
+
+
+
+ <div class = "column">
+
+
+
+<!-------start Field------------------------------------>
+ <div class="field">
+            <label class="label field_help " >Stent 2 Length </label>
+            <%= text_input f, :pci_les_stent_2_len,
+            class: "input",
+            type: "text",
+            placeholder: "pci_les_stent_2_len",
+            required: false %>
+            <%= error_tag f,:pci_les_stent_2_len %>
+          <p class="help"></p>
+        </div>
+<!-------end field------------------------------------------->
+
+
+ </div><!----column-------------------->
+
+<div class = "column">
+
+<!-------start Field------------------------------------>
+ <div class="field">
+            <label class="label field_help " >Stent 2 Code </label>
+            <%= text_input f, :pci_les_stent_2_code,
+            class: "input",
+            type: "text",
+            placeholder: "pci_les_stent_2_code",
+            required: false %>
+            <%= error_tag f,:pci_les_stent_2_code %>
+          <p class="help"></p>
+        </div>
+<!-------end field------------------------------------------->
+
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+  <!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!-------start Field------------------------------------>
+ <div class="field">
+            <label class="label field_help " >Stent 3 Diameter </label>
+            <%= text_input f, :pci_les_stent_3_diam,
+            class: "input",
+            type: "text",
+            placeholder: "pci_les_stent_3_diam",
+            required: false %>
+            <%= error_tag f,:pci_les_stent_3_diam %>
+          <p class="help"></p>
+        </div>
+<!-------end field------------------------------------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!-------start Field------------------------------------>
+ <div class="field">
+            <label class="label field_help " >Stent 3 Length </label>
+            <%= text_input f, :pci_les_stent_3_len,
+            class: "input",
+            type: "text",
+            placeholder: "pci_les_stent_3_len",
+            required: false %>
+            <%= error_tag f,:pci_les_stent_3_len %>
+          <p class="help"></p>
+        </div>
+<!-------end field------------------------------------------->
+
+ </div><!----column-------------------->
+<div class = "column">
+
+<!-------start Field------------------------------------>
+ <div class="field">
+            <label class="label field_help " >Stent 3 Code </label>
+            <%= text_input f, :pci_les_stent_3_code,
+            class: "input",
+            type: "text",
+            placeholder: "pci_les_stent_3_code",
+            required: false %>
+            <%= error_tag f,:pci_les_stent_3_code %>
+          <p class="help"></p>
+        </div>
+<!-------end field------------------------------------------->
+
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+  <!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!-------start Field------------------------------------>
+ <div class="field">
+            <label class="label field_help " >Stent 4 Diameter </label>
+            <%= text_input f, :pci_les_stent_4_diam,
+            class: "input",
+            type: "text",
+            placeholder: "pci_les_stent_4_diam",
+            required: false %>
+            <%= error_tag f,:pci_les_stent_4_diam %>
+          <p class="help"></p>
+        </div>
+<!-------end field------------------------------------------->
+</div><!----column-------------------->
+ <div class = "column">
+
+<!-------start Field------------------------------------>
+ <div class="field">
+            <label class="label field_help " >Stent 4 Length </label>
+            <%= text_input f, :pci_les_stent_4_len,
+            class: "input",
+            type: "text",
+            placeholder: "pci_les_stent_4_len",
+            required: false %>
+            <%= error_tag f,:pci_les_stent_4_len %>
+          <p class="help"></p>
+        </div>
+<!-------end field------------------------------------------->
+
+ </div><!----column-------------------->
+<div class = "column">
+
+<!-------start Field------------------------------------>
+ <div class="field">
+            <label class="label field_help " >Stent 4 Code </label>
+            <%= text_input f, :pci_les_stent_4_code,
+            class: "input",
+            type: "text",
+            placeholder: "pci_les_stent_4_code",
+            required: false %>
+            <%= error_tag f,:pci_les_stent_4_code %>
+          <p class="help"></p>
+        </div>
+<!-------end field------------------------------------------->
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+
+
+
+
+<div class="is-divider" data-content="My Notes"></div>
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+  <div class="field">
+  <label class="label"> My Notes On PCI Lesions</label>
+  <div class="control">
+    <%= text_input f, :pci_les_notes,
+        class: "textarea",
+        type: "input", placeholder: "pci_les_notes"  %>
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+</div><!----column-------------------->
+</div><!----columns--------------------------->
+
+
+ <div class = "columns">
+<div class = "column">
+ <%= render  AngioWeb.SharedView, "_help_area.html" %>
+</div><!----column-------------------->
+</div><!----columns--------------------------->
+
+
+
+  </div><!------RIGHT COLUMN----------------------------->
+</div><!------end columns-------------------------------------------->
+
+<!---------field-------------------------
+ <div class="field">
+        <label class="label"> Direct Stented ?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%#= checkbox f, :pci_les_direct_stenting_yn ,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :pci_les_direct_stenting_yn  %>
+        </div>
+        <p class="help"></p>
+    </div>
+    -----field------------------>
+
+<%#= label f, :pci_les_device_counter %>
+  <%#= text_input f, :pci_les_device_counter %>
+  <%#= error_tag f, :pci_les_device_counter %>
+
+<!---------field------------------------->
+<!-------------------------------------
+ <div class="field">
+        <label class="label">De-Novo Lesion?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%#= checkbox f, :pci_les_de_novo_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :pci_les_de_novo_yn %>
+        </div>
+        <p class="help"></p>
+    </div>
+    ---field------------------>
+<!--------------------
+ <div class="field">
+        <label class="label"> Restenotic Lesion: No prior Stented</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%#= checkbox f, :pci_les_rest_no_prior_stent_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :pci_les_rest_no_prior_stent_yn %>
+        </div>
+        <p class="help"></p>
+    </div>
+    ----field------------------>
+
+
+
+<!-----------------------------
+
+ <div class="field">
+        <label class="label"> Stent Thrombosis?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%#= checkbox f, :pci_les_prior_stent_thromb_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :pci_les_prior_stent_thromb_yn %>
+        </div>
+        <p class="help"></p>
+    </div>
+    ---field------------------>
+
+<!---------field------------------------
+ <div class="field">
+        <label class="label"> Intra-Stent Restenosis?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%#= checkbox f, :pci_les_status_isr_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :pci_les_status_isr_yn %>
+        </div>
+        <p class="help"></p>
+    </div>
+    ---field------------------>
+
+ <!--------------field start-----------------------------
+<% s_pci_les_stent_type  = Query.select_options("uni_stent_type") %>
+
+        <div class="field">
+          <label class="label">Stent Type Deploed</label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%#= select(f, :pci_les_stent_type ,
+              s_pci_les_stent_type,
+   prompt: "---Select---",
+   class: "form-control") %>
+            </div>
+            <p class="help">
+            </p>
+          </div>
+        </div>
+        --field end ------------------------------>
+
+
+<div><!------------------------------------>
+    <%= submit "Save  Record For PCI Lesion ", class: "button is-info  is-medium is-fullwidth " %>
+  </div>
+
+
+
+
+<% end %>

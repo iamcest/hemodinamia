@@ -1,0 +1,182 @@
+<div class="title_form">
+<h5 class="title is-5 has-text-centered">Show Congenital Care Episode</h5>
+</div>
+<div class="element_info">
+
+    <%= render  AngioWeb.SharedView, "_patient_info.html", patient: @patient %>
+</div>
+
+<div class="element_info_coronary">
+Angio : <%= render AngioWeb.SharedView, "_info_coronary.html", info_coronary:
+   @info_coronary%>
+</div>
+
+<div class="columns">
+<div class="column frame_1">
+
+<ul>
+
+  <li class="important_column">
+    <strong>Record Restriction :</strong>
+    <%= @chd_care_episode.pt_restriction_yn %>
+  </li>
+
+  <li>
+    <strong>Chd research study yn:</strong>
+    <%= @chd_care_episode.chd_research_study_yn %>
+  </li>
+
+  <li>
+    <strong>Chd arrival dt:</strong>
+    <%= @chd_care_episode.chd_arrival_dt %>
+  </li>
+
+  <li>
+    <strong>Uni insurance:</strong>
+    <%= @chd_care_episode.uni_insurance %>
+  </li>
+
+  <li>
+    <strong>Uni insurance non us:</strong>
+    <%= @chd_care_episode.uni_insurance_non_us %>
+  </li>
+
+  <li>
+    <strong>Uni hic num:</strong>
+    <%= @chd_care_episode.uni_hic_num %>
+  </li>
+
+  <li>
+    <strong>Chd pt international yn:</strong>
+    <%= @chd_care_episode.chd_pt_international_yn %>
+  </li>
+
+  <li>
+    <strong>Chd country of residence:</strong>
+    <%= @chd_care_episode.chd_country_of_residence %>
+  </li>
+
+  <li>
+    <strong>Chd caths prior yn:</strong>
+    <%= @chd_care_episode.chd_caths_prior_yn %>
+  </li>
+
+  <li>
+    <strong>Chd caths prior num:</strong>
+    <%= @chd_care_episode.chd_caths_prior_num %>
+  </li>
+
+  <li>
+    <strong>Chd cath prior recent dt:</strong>
+    <%= @chd_care_episode.chd_cath_prior_recent_dt %>
+  </li>
+
+  <li>
+    <strong>Chd cath proc recent:</strong>
+    <%= @chd_care_episode.chd_cath_proc_recent_id %>
+  </li>
+
+  <li>
+    <strong>Chd cath proc recent 1 i:</strong>
+    <%= @chd_care_episode.chd_cath_proc_recent_1_id %>
+  </li>
+
+  <li>
+    <strong>Chd cath proc recent 2:</strong>
+    <%= @chd_care_episode.chd_cath_proc_recent_2_id %>
+  </li>
+
+  <li>
+    <strong>Chd cath proc recent 3:</strong>
+    <%= @chd_care_episode.chd_cath_proc_recent_3_id %>
+  </li>
+
+  <li>
+    <strong>Chd cath proc recent 4:</strong>
+    <%= @chd_care_episode.chd_cath_proc_recent_4_id %>
+  </li>
+
+</ul>
+</div> <!---------column-------------------->
+<div class="column frame_1">
+
+  <ul>
+  <li>
+    <strong>Chd premature birth yn:</strong>
+    <%= @chd_care_episode.chd_premature_birth_yn %>
+  </li>
+
+  <li>
+    <strong>Chd weight at birth:</strong>
+    <%= @chd_care_episode.chd_weight_at_birth %>
+  </li>
+
+  <li>
+    <strong>Chd gestational age:</strong>
+    <%= @chd_care_episode.chd_gestational_age %>
+  </li>
+
+  <li>
+    <strong>Chd surg prior yn:</strong>
+    <%= @chd_care_episode.chd_surg_prior_yn %>
+  </li>
+
+  <li>
+    <strong>Chd surg prior num:</strong>
+    <%= @chd_care_episode.chd_surg_prior_num %>
+  </li>
+
+  <li>
+    <strong>Chd surg recent dt:</strong>
+    <%= @chd_care_episode.chd_surg_recent_dt %>
+  </li>
+
+  <li>
+    <strong>Chd surg prior:</strong>
+    <%= @chd_care_episode.chd_surg_prior_id %>
+  </li>
+
+  <li>
+    <strong>Chd surg prior 1:</strong>
+    <%= @chd_care_episode.chd_surg_prior_1_id %>
+  </li>
+
+  <li>
+    <strong>Chd surg prior 2:</strong>
+    <%= @chd_care_episode.chd_surg_prior_2_id %>
+  </li>
+
+  <li>
+    <strong>Chd surg prior 3:</strong>
+    <%= @chd_care_episode.chd_surg_prior_3_id %>
+  </li>
+
+  <li>
+    <strong>Chd surg prior 4:</strong>
+    <%= @chd_care_episode.chd_surg_prior_4_id %>
+  </li>
+
+  <li>
+    <strong>Chd episode notes:</strong>
+    <%= @chd_care_episode.chd_episode_notes %>
+  </li>
+
+</ul>
+</div><!-------column------------------->
+</div><!--------columns ----------------------------->
+<p class ="buttons_separator"> . </p>
+
+<span>
+    <%= link "Edit CHD Episode", to: Routes.pt_angio_chd_episode_path(@conn, :edit, @patient,
+  @info_coronary, @chd_care_episode), class: "button is-link"%>
+</span>
+
+<span>
+  <%= link "Back To CHD Episode Index", to: Routes.pt_angio_chd_episode_path(@conn, :index,
+  @patient, @info_coronary) , class: "button is-link"%>
+</span>
+<span>
+<%= link "Back To Cath Lab",  to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-link"   %>
+ </span>
+

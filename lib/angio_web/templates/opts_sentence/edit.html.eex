@@ -1,0 +1,22 @@
+
+<div class="title_form">
+<h5 class="title is-5 has-text-centered">Editing Sentences  For an Option,  Pick-List Item</h5>
+</div>
+
+<div class="element_info">
+    Option Sentences For
+    <%= render  AngioWeb.SharedView, "_definition_info.html", definition: @definition %>
+</div>
+ 
+
+    <%= render "form.html", changeset: @changeset, languages: @languages,
+    action: Routes.definition_defs_option_opts_sentence_path(@conn, :update, 
+        @definition, @defs_option, @opts_sentence) %>
+
+    <%= link "Back To Option Sentence", to:  Routes.definition_defs_option_opts_sentence_path(@conn, :create,
+@definition, @defs_option),  
+class: "button  is-link"%>
+
+
+   
+

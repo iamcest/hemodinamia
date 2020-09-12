@@ -1,0 +1,1025 @@
+
+<% alias Angio.Canons, as: Query %>
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+
+<div class="columns">
+ <div class = "column frame_1">
+
+
+
+<span class="button is-link  is-fullwidth ">
+<i class="fa fa-sticky-note">
+Operator
+</i>
+</span>
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!-------start Field------------------------------------>
+ <div class="field">
+            <label class="label field_help " >Operator Last Name </label>
+            <%= text_input f, :pci_proc_lname,
+            class: "input",
+            type: "text",
+            placeholder: "pci_proc_operator_lname",
+            required: false %>
+            <%= error_tag f,:pci_proc_operator_lname %>
+          <p class="help"></p>
+        </div>
+<!-------end field------------------------------------------->
+
+
+
+
+</div><!----column-------------------->
+ <div class = "column">
+<!-------start Field------------------------------------>
+ <div class="field">
+            <label class="label field_help " >Operator First Name </label>
+            <%= text_input f, :pci_proc_operator_fname,
+            class: "input",
+            type: "text",
+            placeholder: "pci_proc_operator_fname",
+            required: false %>
+            <%= error_tag f,:pci_proc_operator_fname %>
+          <p class="help"></p>
+        </div>
+<!-------end field------------------------------------------->
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!-------start Field------------------------------------>
+ <div class="field">
+            <label class="label field_help " >Operator Middle Name </label>
+            <%= text_input f, :pci_proc_operator_mname,
+            class: "input",
+            type: "text",
+            placeholder: "pci_proc_operator_mname",
+            required: false %>
+            <%= error_tag f,:pci_proc_operator_mname %>
+          <p class="help"></p>
+        </div>
+<!-------end field------------------------------------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+ <!-------start Field------------------------------------>
+ <div class="field">
+            <label class="label field_help " >Operator NPI </label>
+            <%= text_input f, :pci_proc_operator_npi,
+            class: "input",
+            type: "text",
+            placeholder: "pci_proc_operator_npI",
+            required: false %>
+            <%= error_tag f,:pci_proc_operator_npi %>
+          <p class="help"></p>
+        </div>
+<!-------end field------------------------------------------->
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!--------------field start------------------------------>
+<% s_pci_proc_machine_id  = Query.select_options("pci_proc_machine_id") %>
+        <%# i_gender =
+raw Query.search_in_instructions("patnts_gender")%>
+
+        <div class="field">
+          <label class="label">Angio Room </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f, :pci_proc_machine_id,
+              s_pci_proc_machine_id ,
+   prompt: "---Select---",
+   class: "form-control") %>
+              <option></option>
+            </div>
+            <!--select---->
+            <p class="help">
+            </p>
+          </div>
+          <!--control---->
+        </div><!---field end ------------------------------>
+
+</div><!----column-------------------->
+
+
+
+ <div class = "column">
+  <!-------start Field------------------------------------>
+ <div class="field">
+            <label class="label" >Lab Number </label>
+            <%= text_input f, :pci_proc_lab_num,
+            class: "input",
+            type: "text",
+            placeholder: "pci_proc_lab_num",
+            required: false %>
+            <%= error_tag f,:pci_proc_lab_num %>
+          <p class="help"></p>
+        </div>
+<!-------end field------------------------------------------->
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+<!---------field------------------------------->
+<div class="field">
+          <label class="label">Lab Arrival Date </label>
+          <div class="control">
+          <span class='field_help'></span>
+     <%= text_input f, :pci_proc_lab_arrive_dt,
+        class: "input", type: "date",
+         placeholder: "pci_proc_lab_arrive_dt", required: false %>
+          <%= error_tag f,
+            :pci_proc_lab_arrive_dt %>
+          </div>
+          <p class="help">  <%#= i_proc_epis_request_dt %> </p>
+        </div>
+<!-------------------------field---->
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!---------field------------------------------->
+<div class="field">
+          <label class="label">Arrival Time </label>
+          <div class="control">
+          <span class='field_help'></span>
+     <%= text_input f, :pci_proc_lab_arrive_tm,
+        class: "input", type: "time",
+         placeholder: "pci_proc_lab_arrive_tm", required: false %>
+          <%= error_tag f,
+            :pci_proc_lab_arrive_tm %>
+          </div>
+          <p class="help">  <%#= i_proc_epis_request_dt %> </p>
+        </div>
+<!-------------------------field---->
+ </div><!----column-------------------->
+
+ <div class = "column">
+<!---------field------------------------------->
+<div class="field">
+          <label class="label">Time Out Of Lab</label>
+          <div class="control">
+          <span class='field_help'></span>
+     <%= text_input f, :pci_proc_lab_out_tm,
+        class: "input", type: "time",
+         placeholder: "pci_proc_lab_out_tm", required: false %>
+          <%= error_tag f,
+            :pci_proc_lab_out_tm%>
+          </div>
+          <p class="help">  <%#= i_proc_epis_request_dt %> </p>
+        </div>
+<!-------------------------field---->
+
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<span class="button is-link  is-fullwidth ">
+<i class="fa fa-sticky-note">
+Status
+</i>
+</span>
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!--------------field start------------------------------>
+<% s_pci_proc_status  = Query.select_options("pci_proc_status") %>
+
+        <div class="field">
+          <label class="label">PCI Status </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f, :pci_proc_status,
+              s_pci_proc_status,
+   prompt: "---Select---",
+   class: "form-control") %>
+              <option></option>
+            </div>
+            <!--select---->
+            <p class="help">
+            </p>
+          </div>
+          <!--control---->
+        </div><!---field end ------------------------------>
+
+
+</div><!----column-------------------->
+ <div class = "column">
+ <!--------------field start------------------------------>
+<% s_pci_proc_indication  = Query.select_options("pci_proc_indication") %>
+
+        <div class="field">
+          <label class="label">PCI Indication </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f, :pci_proc_indication,
+              s_pci_proc_indication,
+   prompt: "---Select---",
+   class: "form-control") %>
+              <option></option>
+            </div>
+            <!--select---->
+            <p class="help">
+            </p>
+          </div>
+          <!--control---->
+        </div><!---field end ------------------------------>
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">PCI Successfull?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :pci_proc_success_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :pci_proc_success_yn %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+
+</div><!----column-------------------->
+
+ <div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">PCI In MultiVessel ?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :pci_proc_multivessel_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :pci_proc_multivessel_yn %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+
+ <!--------------field start------------------------------>
+<% s_pci_proc_multivessel_result  = Query.select_options("pci_proc_multivessel_result") %>
+
+        <div class="field">
+          <label class="label">In Multi: Results </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f, :pci_proc_multivessel_result,
+              s_pci_proc_multivessel_result,
+   prompt: "---Select---",
+   class: "form-control") %>
+              <option></option>
+            </div>
+            <!--select---->
+            <p class="help">
+            </p>
+          </div>
+          <!--control---->
+        </div><!---field end ------------------------------>
+
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!-------start Field------------------------------------>
+ <div class="field">
+            <label class="label field_help " >Number of Attempted Lesions </label>
+            <%= text_input f, :pci_proc_les_attempt_num,
+            class: "input",
+            type: "text",
+            placeholder: "pci_proc_les_attempt_num",
+            required: false %>
+            <%= error_tag f,:pci_proc_les_attempt_num %>
+          <p class="help"></p>
+        </div>
+<!-------end field------------------------------------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+<!-------start Field------------------------------------>
+ <div class="field">
+            <label class="label field_help " >Number of Treated Lesions </label>
+            <%= text_input f, :pci_proc_les_treated_num,
+            class: "input",
+            type: "text",
+            placeholder: "pci_proc_les_treated_num",
+            required: false %>
+            <%= error_tag f,:pci_proc_les_treated_num %>
+          <p class="help"></p>
+        </div>
+<!-------end field------------------------------------------->
+ </div><!----column-------------------->
+
+<div class = "column">
+
+<!-------start Field------------------------------------>
+ <div class="field">
+            <label class="label field_help " >Number of Balloons Used </label>
+            <%= text_input f, :pci_proc_ballons_used_num,
+            class: "input",
+            type: "text",
+            placeholder: "pci_proc_ballons_used_num",
+            required: false %>
+            <%= error_tag f,:pci_proc_ballons_used_num %>
+          <p class="help"></p>
+        </div>
+<!-------end field------------------------------------------->
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Device Deployed ?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :pci_proc_device_deployed_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :pci_proc_device_deployed_yn %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!---------field------------------------------->
+<div class="field">
+          <label class="label">Device Activation Time</label>
+          <div class="control">
+          <span class='field_help'></span>
+     <%= text_input f, :pci_proc_dev_first_activ_tm,
+        class: "input", type: "time",
+         placeholder: "pci_proc_lab_out_tm", required: false %>
+          <%= error_tag f,
+            :pci_proc_dev_first_activ_tm%>
+          </div>
+          <p class="help">  <%#= i_proc_epis_request_dt %> </p>
+        </div>
+<!-------------------------field---->
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+<!-------start Field------------------------------------>
+ <div class="field">
+            <label class="label field_help " >Number of Stents Used </label>
+            <%= text_input f, :pci_proc_stents_used_num,
+            class: "input",
+            type: "text",
+            placeholder: "pci_proc_stents_used_num",
+            required: false %>
+            <%= error_tag f,:pci_proc_stents_used_num %>
+          <p class="help"></p>
+        </div>
+<!-------end field------------------------------------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!-------start Field------------------------------------>
+ <div class="field">
+            <label class="label field_help " >Number of Stents Implanted </label>
+            <%= text_input f, :pci_proc_stents_implanted_num,
+            class: "input",
+            type: "text",
+            placeholder: "pci_proc_stents_implanted_num",
+            required: false %>
+            <%= error_tag f,:pci_proc_stents_implanted_num %>
+          <p class="help"></p>
+        </div>
+<!-------end field------------------------------------------->
+
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<span class="button is-link  is-fullwidth ">
+<i class="fa fa-sticky-note">
+ACS - STEMI
+</i>
+</span>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+
+<div class = "column">
+
+
+<!---------field------------------------------->
+<div class="field">
+          <label class="label">STEMI Date </label>
+          <div class="control">
+          <span class='field_help'></span>
+     <%= text_input f, :pci_proc_stemi_onset_dt,
+        class: "input", type: "date",
+         placeholder: "pci_proc_stemi_onset_dt", required: false %>
+          <%= error_tag f,
+            :pci_proc_stemi_onset_dt %>
+          </div>
+          <p class="help">  <%#= i_proc_epis_request_dt %> </p>
+        </div>
+<!-------------------------field---->
+</div><!----column-------------------->
+
+ <div class = "column">
+<!---------field------------------------------->
+<div class="field">
+          <label class="label">STEMI Time </label>
+          <div class="control">
+          <span class='field_help'></span>
+     <%= text_input f, :pci_proc_stemi_onset_tm,
+        class: "input", type: "time",
+         placeholder: "pci_proc_stemi_onset_tm", required: false %>
+          <%= error_tag f,
+            :pci_proc_stemi_onset_tm %>
+          </div>
+          <p class="help">  <%#= i_proc_epis_request_dt %> </p>
+        </div>
+<!-------------------------field---->
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+
+<div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Tranfered For Primary ?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :pci_proc_primary_transfer_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :pci_proc_primary_transfer_yn %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+
+</div><!----column-------------------->
+
+ <div class = "column">
+
+<!--------------field start------------------------------>
+<% s_pci_proc_status_stemi  = Query.select_options("pci_proc_status_stemi") %>
+
+        <div class="field">
+          <label class="label">STEMI Status </label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f, :pci_proc_status_stemi,
+              s_pci_proc_status_stemi,
+   prompt: "---Select---",
+   class: "form-control") %>
+              <option></option>
+            </div>
+            <!--select---->
+            <p class="help">
+            </p>
+          </div>
+          <!--control---->
+        </div><!---field end ------------------------------>
+
+
+ </div><!----column-------------------->
+
+<div class = "column">
+
+<!--------------field start------------------------------>
+<% s_pci_proc_status_acs  = Query.select_options("pci_proc_status_acs") %>
+
+        <div class="field">
+          <label class="label">ACS Status </label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f, :pci_proc_status_acs,
+              s_pci_proc_status_acs,
+   prompt: "---Select---",
+   class: "form-control") %>
+              <option></option>
+            </div>
+            <!--select---->
+            <p class="help">
+            </p>
+          </div>
+          <!--control---->
+        </div><!---field end ------------------------------>
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+ <div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Surgery Consultation ?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :pci_proc_surg_consult_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :pci_proc_surg_consult_yn %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+
+ </div><!----column-------------------->
+
+<div class = "column">
+
+
+<!--------------field start------------------------------>
+<% s_pci_proc_surg_consult  = Query.select_options("pci_proc_surg_consult") %>
+
+        <div class="field">
+          <label class="label">Surgery Consult </label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f, :pci_proc_surg_consult,
+              s_pci_proc_surg_consult,
+   prompt: "---Select---",
+   class: "form-control") %>
+              <option></option>
+            </div>
+            <!--select---->
+            <p class="help">
+            </p>
+          </div>
+          <!--control---->
+        </div><!---field end ------------------------------>
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+
+<!-------start Field------------------------------------>
+ <div class="field">
+            <label class="label field_help " >EF  </label>
+            <%= text_input f, :pci_proc_lv_ef_pre_val,
+            class: "input",
+            type: "text",
+            placeholder: "pci_proc_lv_ef_pre_val",
+            required: false %>
+            <%= error_tag f,:pci_proc_lv_ef_pre_val%>
+          <p class="help"></p>
+        </div>
+<!-------end field------------------------------------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">EF N/A</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :pci_proc_lv_ef_pre_na,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :pci_proc_lv_ef_pre_na %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+
+<!-------start Field------------------------------------>
+ <div class="field">
+            <label class="label field_help " >Fluoro Time  </label>
+            <%= text_input f, :pci_proc_fluoro_tm,
+            class: "input",
+            type: "text",
+            placeholder: "pci_proc_fluoro_tm",
+            required: false %>
+            <%= error_tag f,:pci_proc_fluoro_tm %>
+          <p class="help"></p>
+        </div>
+<!-------end field------------------------------------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!-------start Field------------------------------------>
+ <div class="field">
+            <label class="label field_help " >Fluoro Dose  </label>
+            <%= text_input f, :pci_proc_fluoro_dose,
+            class: "input",
+            type: "text",
+            placeholder: "pci_proc_fluoro_dose",
+            required: false %>
+            <%= error_tag f,:pci_proc_fluoro_dose %>
+          <p class="help"></p>
+        </div>
+<!-------end field------------------------------------------->
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+
+<!--------------field start------------------------------>
+<% s_pci_proc_entry  = Query.select_options("pci_proc_entry") %>
+
+        <div class="field">
+          <label class="label">Vascular Entry </label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f, :pci_proc_entry,
+              s_pci_proc_entry,
+   prompt: "---Select---",
+   class: "form-control") %>
+              <option></option>
+            </div>
+            <!--select---->
+            <p class="help">
+            </p>
+          </div>
+          <!--control---->
+        </div><!---field end ------------------------------>
+
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!-------start Field------------------------------------>
+ <div class="field">
+            <label class="label field_help " >Closure Device </label>
+            <%= text_input f, :pci_proc_closure_device,
+            class: "input",
+            type: "text",
+            placeholder: "pci_proc_closure_device",
+            required: false %>
+            <%= error_tag f,:pci_proc_closure_device %>
+          <p class="help"></p>
+        </div>
+<!-------end field------------------------------------------->
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!-------start Field------------------------------------>
+ <div class="field">
+            <label class="label field_help " >Contrast Volume </label>
+            <%= text_input f, :pci_proc_contrast_volume,
+            class: "input",
+            type: "text",
+            placeholder: "pci_proc_contrast_volume",
+            required: false %>
+            <%= error_tag f,:pci_proc_contrast_volume %>
+          <p class="help"></p>
+        </div>
+<!-------end field------------------------------------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+<!-------start Field------------------------------------>
+ <div class="field">
+            <label class="label field_help " >Syndax Score </label>
+            <%= text_input f, :pci_proc_syndax_score,
+            class: "input",
+            type: "text",
+            placeholder: "pci_proc_syndax_score",
+            required: false %>
+            <%= error_tag f,:pci_proc_syndax_score %>
+          <p class="help"></p>
+        </div>
+<!-------end field------------------------------------------->
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<span class="button is-link  is-fullwidth ">
+<i class="fa fa-sticky-note">
+Epicardial Vessels Deased
+</i>
+</span>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Left Main > 50% </label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :pci_proc_50pct_lm_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :pci_proc_50pct_lm_yn %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">LAD > 50% </label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :pci_proc_50pct_lad_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :pci_proc_50pct_lad_yn %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Lcx > 50% </label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :pci_proc_50pct_lcx_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :pci_proc_50pct_lcx_yn %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">RCA > 50% </label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :pci_proc_50pct_rca_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :pci_proc_50pct_rca_yn %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+ </div><!----column-------------------->
+<div class = "column">
+
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Any Graft > 50% </label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :pci_proc_50pct_graft_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :pci_proc_50pct_graft_yn %>
+        </div>
+        <p class="help"></p>
+    </div><!-----field------------------>
+
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+
+
+
+
+
+
+<!----------------------------------
+  <%#= label f, :pci_proc_device_first_activ_dt %>
+  <%#= date_select f, :pci_proc_device_first_activ_dt %>
+  <%#= error_tag f, :pci_proc_device_first_activ_dt %>
+--------------------------->
+   </div><!----------end LEFT COLUMN---------------------->
+
+  <div class="column frame_1">
+ <!------start---------------------->
+<span class="button is-danger  is-fullwidth ">
+<i class="fa fa-sticky-note">
+My Notes
+</i>
+</span>
+
+<div class="columns">
+
+<div class="column">
+
+<div class="field">
+  <label class="label"> Notes On PCI Procedure  </label>
+
+  <div class="control">
+    <%= text_input f, :pci_proc_notes,
+        class: "textarea",
+        type: "input", placeholder: "pci_proc_notes"  %>
+  <p class="help"></p>
+
+  </div><!---control---------->
+
+   </div><!-------field-------->
+
+    </div><!----column 1------------->
+
+  </div><!-----columns------------>
+     <!-------end start------------------------>
+
+<div class="columns">
+<div class="column">
+
+<%= render  AngioWeb.SharedView, "_help_area.html" %>
+
+</div><!------column for help------------------------>
+</div><!-------column for the help----------------->
+
+
+
+
+
+
+</div><!----------column-------------->
+</div><!-------COLUMNS------------------------>
+
+<div><!------------------------------------>
+    <%= submit "Save My Nice Work", class: "button is-info  is-medium is-fullwidth " %>
+  </div>
+
+<% end %>

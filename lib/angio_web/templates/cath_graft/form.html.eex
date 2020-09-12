@@ -1,0 +1,1072 @@
+<% alias Angio.Canons, as: Query %>
+
+<div class="notification is-warning">
+  <button class="delete"></button>
+   <h6 class="title is-6 has-text-centered"> Please For Each Graft Implanted Complete This Form</h6>
+</div>
+
+      <script>
+document.addEventListener('DOMContentLoaded', () => {
+  (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
+    $notification = $delete.parentNode;
+    $delete.addEventListener('click', () => {
+      $notification.parentNode.removeChild($notification);
+    });
+  });
+});
+      </script>
+
+
+
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+   <div class="notification is-danger">
+    <button class="delete"></button>
+    Oops, something went wrong! Please check the errors below or Dublicate Record
+</div>
+  <% end %>
+  <!----------
+  <%#= label f, :cath_graft_header %>
+  <%#= text_input f, :cath_graft_header %>
+  <%#= error_tag f, :cath_graft_header %>
+  --------->
+
+  <!--start -------------------------------->
+       <span class="button is-link  is-fullwidth ">
+        Proximal And Distal Anastomosis of Graft
+        </span>
+
+      <div class="columns ">
+
+        <div class="column is-4">
+    <% s_cath_graft_prox_site= Query.select_options("uni_graft_prox_site") %>
+          <%# i_cath_graft_prox_site =
+raw Query.search_in_instructions("uni_graft_prox_site")%>
+
+<div class="field">
+    <label class="label"> Prox Site </label>
+          <div class="control">
+            <div class="select is-primary">
+            <span class = "field_help" ></span>
+              <%= select(f,
+:cath_graft_prox_site, s_cath_graft_prox_site,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select---->
+            <%= error_tag f, :cath_graft_prox_site   %>
+            <span class="help"></span>
+          </div>
+          <!--control---->
+        </div>
+        <!---field--->
+
+
+        </div><!---------column 1-------->
+<div class="column is-2">
+
+ <% s_main_vessel =
+         Query.select_options("cor_les_major_branch") %>
+          <%# i_main_vessel =
+raw Query.search_in_instructions("cor_les_major_branch")%>
+
+
+<div class="field">
+
+  <label class="label"> Distal Anast Main Vessels  </label>
+
+          <div class="control">
+            <div class="select is-primary">
+            <span class = "field_help" ></span>
+              <%= select(f, :cath_graft_segments_main_vessel,
+s_main_vessel,
+   prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select---->
+
+            <%= error_tag f, :cath_graft_segments_main_vessel  %>
+
+            <span class="help"> <%#=  i_cath_graft_segments_main_vessel %> </span>
+
+          </div>
+          <!--control---->
+        </div>
+        <!---field--->
+
+
+        </div><!---------column 1-------->
+<div class="column is-6">
+
+<!----start select--------------------->
+<% s_cdisc =
+         Query.select_options("uni_segments_cdisc") %>
+          <%# i_cdisc =
+raw Query.search_in_instructions("uni_segments_cdisc")%>
+
+
+<div class="field">
+  <label class="label"> Distal Anastomosis - CDISC Classification Segments (Multi Selection) </label>
+
+          <div class="control">
+            <div class="select is-primary">
+              <%= multiple_select(f, :cath_graft_segments_cdisc,
+s_cdisc,
+   prompt: "---Select---",
+required: true,
+size: 2,
+class: "form-control")
+              %>
+            </div>
+            <!--select---->
+            <%= error_tag f, :cath_graft_segments_cdisc  %>
+            <span class="help"> <%#=  i_cdisc%> </span>
+          </div>
+      <!--control---->
+        </div>
+        <!---field--->
+
+   <!-----end select----------------------->
+</div><!---------column 1-------->
+
+
+      </div><!-----colomns---------->
+      <!----end----------------------------------->
+      <!--start-------------------------------->
+<!--start-------------------------------->
+<div class="columns  ">
+
+<div class = "column">
+<!----start select--------------------->
+<% s_ncdr =
+         Query.select_options("uni_segments_ncdr") %>
+          <%# i_ncdr =
+raw Query.search_in_instructions("uni_segments_ncdr")%>
+
+
+<div class="field">
+  <label class="label"> Distal Anastomosis -  NCDR Classification Segments </label>
+
+          <div class="control">
+            <div class="select is-primary">
+              <%= multiple_select(f, :cath_graft_segments_ncdr,
+s_ncdr,
+   prompt: "---Select---",
+size: 2,
+class: "form-control")
+              %>
+            </div>
+            <!--select---->
+            <%= error_tag f, :cath_graft_segments_ncdr   %>
+            <span class="help"> <%#=  i_cdisc%> </span>
+          </div>
+          <!--control---->
+        </div>
+        <!---field--->
+
+          <!-----end select----------------------->
+</div><!---column------->
+<div class = "column">
+ <!----start select--------------------->
+<% s_sts =
+         Query.select_options("uni_segments_sts") %>
+          <%# i_sts =
+raw Query.search_in_instructions("uni_segments_sts")%>
+
+
+<div class="field">
+  <label class="label"> Distal Anastomosis - To STS Segments </label>
+
+          <div class="control">
+            <div class="select is-primary">
+              <%= multiple_select(f, :cath_graft_segments_sts,
+s_sts,
+   prompt: "---Select---",
+size: 2,
+class: "form-control")
+              %>
+            </div>
+            <!--select---->
+            <%= error_tag f, :cath_graft_segments_sts   %>
+            <span class="help"> <%#=  i_stsc%> </span>
+          </div>
+          <!--control---->
+        </div>
+        <!---field--->
+
+          <!-----end select----------------------->
+</div><!---column------->
+
+
+</div><!----end columns--------------->
+<!--end-------------------------------->
+
+ <span class="button is-link  is-fullwidth ">
+        Conduit
+        </span>
+<div class="columns  ">
+
+<div class="column">
+
+  <% s_cath_graft_conduit_type =
+         Query.select_options("uni_graft_conduit_type") %>
+          <%# i_cath_graft_conduit_type =
+raw Query.search_in_instructions("uni_graft_conduit_type")%>
+
+
+<div class="field">
+  <label class="label">  Type Of Conduit </label>
+
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f, :cath_graft_conduit_type,
+s_cath_graft_conduit_type,
+   prompt: "---Select---",
+
+class: "form-control")
+              %>
+            </div>
+            <!--select---->
+            <%= error_tag f, :cath_graft_conduit_type   %>
+            <span class="help"> <%#=  i_cath_graft_conduit_type%> </span>
+          </div>
+          <!--control---->
+        </div>
+        <!---field--->
+
+        </div><!---------column 2-------->
+
+        <div class="column">
+
+<!----start select--------------------->
+<% s_graft_morphology  =
+         Query.select_options("graft_morphology") %>
+          <%# i_graft_morphology =
+raw Query.search_in_instructions("graft_morphology")%>
+<div class="field">
+  <label class="label"> Morphology  </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f, :graft_morphology,
+s_graft_morphology,
+   prompt: "---Select---",
+class: "form-control")  %>
+            </div>
+            <!--select---->
+            <%= error_tag f, :graft_morphology   %>
+            <span class="help"> <%#= i_graft_morphology%> </span>
+          </div>
+          <!--control---->
+        </div>
+        <!---field--->
+
+        </div><!---------column 1-------->
+
+        <div class="column">
+<div class="field">
+          <label class="label">Graft Number </label>
+          <div class="control">
+            <%= text_input f, :graft_index,
+             class: "input", type: "text",
+             placeholder: "graft_index",
+             required: false %>
+             <%= error_tag f,:graft_index %>
+          </div>
+          <p class="help"></p>
+        </div>
+      <!--------->
+</div><!---------column 2-------->
+
+<div class="column">
+<div class="field">
+          <label class="label">Graft Is Totally Occluded </label>
+          <div class="control">
+            <%= checkbox f, :graft_total_occlusion_yn ,
+             placeholder: "graft_total_occlusion_yn",
+            required: false,
+            type: "checkbox" %> <%= error_tag f,
+            :graft_total_occlusion_yn%>
+          </div>
+          <p class="help"><%#= i_graft_total_occlusion_yn %></p>
+        </div>
+        <!--field---->
+
+</div><!---------column 1-------->
+<div class="column">
+<div class="field">
+          <label class="label">Graft Has Stenosis </label>
+          <div class="control">
+            <%= checkbox f, :graft_sten_yn ,
+             placeholder: "Field Name",
+            required: false,
+            type: "checkbox" %> <%= error_tag f,
+            :graft_sten_yn%>
+          </div>
+          <p class="help">Check if Yes</p>
+        </div>
+        <!--field---->
+
+        </div><!---------column 1-------->
+
+
+      </div><!-----colomns---------->
+      <!----end----------------------------------->
+
+
+ <span class="button is-danger  is-fullwidth ">
+      If The Graft is Abnormal /  Diseased You may  Enter Details For each  Graft Segment
+        </span>
+
+  <p class ="buttons_separator"> . </p>
+
+
+      <span class="button is-primary  is-fullwidth ">
+        Ostium
+        </span>
+
+      <div class="columns  ">
+        <div class="column">
+
+
+
+        <div class="field">
+          <label class="label">Stenosis? </label>
+          <div class="control">
+            <%= checkbox f, :graft_ostial_sten_yn  ,
+             placeholder: "graft_ostial_sten_yn",
+            required: false,
+            type: "checkbox"
+             %> <%= error_tag f,
+            :graft_ostial_sten_yn %>
+          </div>
+          <p class="help"><%#=  i_graft_ostial_sten_yn%></p>
+        </div>
+        <!--field---->
+
+      </div><!---------column 1-------->
+
+        <div class="column">
+<!------------------------------------------------->
+<!-------------------------------------------------->
+          <% s_ostial_pct = 0..100 %>
+<div class="field">
+  <label class="label"> Stenosis (%)  </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f, :graft_ostial_sten_pct,
+s_ostial_pct,
+   prompt: "---Select---",
+class: "form-control")  %>
+            </div>
+            <!--select---->
+            <%= error_tag f, :graft_ostial_sten_pct   %>
+            <span class="help"> <%#=  %> </span>
+          </div>
+          <!--control---->
+        </div>
+        <!---field--->
+
+
+        </div><!---------column 2-------->
+<div class="column">
+
+
+  <div class="field">
+          <label class="label">Stent Present? </label>
+          <div class="control">
+            <%= checkbox f, :graft_ostial_device_present_yn ,
+             placeholder: "graft_ostial_device_present_yn",
+            required: false,
+            type: "checkbox" %> <%= error_tag f,
+            :graft_ostial_device_present_yn%>
+          </div>
+          <p class="help"><%#= i_hispanic %></p>
+        </div>
+        <!--field---->
+
+        </div><!---------column 3-------->
+
+<div class="column">
+
+<div class="field">
+          <label class="label">Treated? </label>
+          <div class="control">
+            <%= checkbox f, :graft_ostial_prior_treated_yn ,
+             placeholder: "graft_ostial_prior_treated_yn",
+            required: false,
+            type: "checkbox" %> <%= error_tag f,
+            :graft_ostial_prior_treated_yn%>
+          </div>
+          <p class="help"><%#= i_hispanic %></p>
+        </div>
+        <!--field---->
+        </div><!---------column 4-------->
+
+
+<div class="column">
+<div class="field">
+          <label class="label">Date Of Treatment</label>
+          <div class="control">
+            <%= text_input f, :graft_ostial_prior_treated_dt, class: "input", type: "date",
+            placeholder: "Field Name", required: false %> <%= error_tag f,
+            :graft_ostial_prior_treated_dt %>
+          </div>
+          <p class="help"></p>
+        </div>
+        <!--field---->
+</div><!---------column 6 -------->
+
+
+<div class="column">
+  <div class="field">
+          <label class="label">FFR </label>
+          <div class="control">
+            <%= text_input f, :graft_ostial_sten_ffr , class: "input", type: "text",
+            placeholder: "graft_ostial_sten_ffr", required: false %> <%= error_tag f,
+            :graft_ostial_sten_ffr %>
+          </div>
+          <p class="help"></p>
+  </div><!------field------------->
+
+
+
+
+
+</div><!---------column 6 -------->
+
+<div class="column">
+
+  <div class="field">
+          <label class="label">IVUS </label>
+          <div class="control">
+            <%= text_input f, :graft_ostial_sten_ivus ,
+              class: "input", type: "text",
+              placeholder: "graft_ostial_sten_ivus",
+              required: false %> <%= error_tag f,
+            :graft_ostial_sten_ivus   %>
+          </div>
+          <p class="help"></p>
+  </div><!------field------------->
+
+
+</div><!---------column 7 -------->
+
+
+      </div><!-----colomns---------->
+      <!----end----------------------------------->
+
+
+<!--start-------------------------------->
+ <span class="button is-link  is-fullwidth ">
+        Graft Prox Part
+        </span>
+
+
+      <div class="columns ">
+
+        <div class="column">
+
+
+          <div class="field">
+          <label class="label">Stenosis? </label>
+          <div class="control">
+            <%= checkbox f, :graft_prox_sten_yn ,
+             placeholder: " graft_prox_sten_yn",
+            required: false,
+            type: "checkbox" %> <%= error_tag f,
+            :graft_prox_sten_yn %>
+          </div>
+          <p class="help"><%#= i_hispanic %></p>
+        </div>
+        <!--field---->
+
+
+        </div><!---------column 1-------->
+        <div class="column">
+
+          <% s_prox_pct = 0..100 %>
+<div class="field">
+  <label class="label"> Stenosis (%)  </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f, :graft_prox_sten_pct,
+s_prox_pct,
+   prompt: "---Select---",
+class: "form-control")  %>
+            </div>
+            <!--select---->
+            <%= error_tag f, :graft_prox_sten_pct   %>
+            <span class="help"> <%#= %> </span>
+          </div>
+          <!--control---->
+        </div>
+        <!---field--->
+
+</div><!---------column 2-------->
+<div class="column">
+
+ <div class="field">
+          <label class="label">Stent Present? </label>
+          <div class="control">
+            <%= checkbox f, :graft_prox_sten_device_present_yn ,
+             placeholder: "graft_prox_sten_device_present_yn",
+            required: false,
+            type: "checkbox" %> <%= error_tag f,
+            :graft_prox_sten_device_present_yn%>
+          </div>
+          <p class="help"><%#= i_hispanic %></p>
+        </div>
+        <!--field---->
+
+
+</div><!---------column 3-------->
+<div class="column">
+ <div class="field">
+          <label class="label">Treated? </label>
+          <div class="control">
+            <%= checkbox f, :graft_prox_sten_prior_treated_yn ,
+placeholder: "graft_prox_sten_prior_treated_yn",
+            required: false,
+            type: "checkbox" %> <%= error_tag f,
+            :graft_prox_sten_prior_treated_yn%>
+          </div>
+          <p class="help"><%#= %></p>
+        </div>
+        <!--field---->
+
+
+</div><!---------column 4-------->
+<div class="column">
+<div class="field">
+          <label class="label">Date </label>
+          <div class="control">
+     <%= text_input f, :graft_prox_sten_prior_treated_dt,
+        class: "input", type: "date",
+         placeholder: "Field Name", required: false %>
+          <%= error_tag f,
+            :graft_prox_sten_prior_treated_dt %>
+          </div>
+          <p class="help"></p>
+        </div>
+        <!--field---->
+
+
+</div><!---------column 5-------->
+
+<div class="column">
+ <div class="field">
+          <label class="label">FFR </label>
+          <div class="control">
+            <%= text_input f, :graft_prox_sten_ffr , class: "input", type: "text",
+            placeholder: "graft_prox_sten_ffr", required: false %> <%= error_tag f,
+            :graft_prox_sten_ffr  %>
+          </div>
+          <p class="help"></p>
+  </div><!------field------------->
+
+
+</div><!---------column 6 -------->
+
+<div class="column">
+ <div class="field">
+          <label class="label">IVUS </label>
+          <div class="control">
+            <%= text_input f, :graft_prox_sten_ivus ,
+              class: "input", type: "text",
+              placeholder: "graft_prox_sten_ivus",
+              required: false %> <%= error_tag f,
+            :graft_prox_sten_ivus   %>
+          </div>
+          <p class="help"></p>
+  </div><!------field------------->
+
+
+</div><!---------column 7 -------->
+
+
+</div><!-----colomns---------->
+ <!----end----------------------------------->
+
+ <!--start-------------------------------->
+
+ <span class="button is-link  is-fullwidth ">
+        Graft Mid Part
+        </span>
+
+ <div class="columns ">
+
+
+     <div class="column">
+
+          <div class="field">
+          <label class="label">Stenosis? </label>
+          <div class="control">
+            <%= checkbox f, :graft_mid_sten_yn ,
+             placeholder: "graft_mid_sten_yn",
+            required: false,
+            type: "checkbox" %> <%= error_tag f,
+            :graft_mid_sten_yn %>
+          </div>
+          <p class="help"><%#= %></p>
+        </div>
+        <!--field---->
+
+
+        </div><!---------column 1-------->
+<div class="column">
+
+          <% s_mid_pct = 0..100 %>
+<div class="field">
+  <label class="label"> Stenosis (%)  </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f, :graft_mid_sten_pct,
+s_mid_pct,
+   prompt: "---Select---",
+class: "form-control")  %>
+            </div>
+            <!--select---->
+            <%= error_tag f, :graft_mid_sten_pct   %>
+            <span class="help"> <%#=  i_cdisc%> </span>
+          </div>
+          <!--control---->
+        </div>
+        <!---field--->
+
+        </div><!---------column 2-------->
+
+
+        <div class="column">
+
+<div class="field">
+          <label class="label">Stent Present? </label>
+          <div class="control">
+            <%= checkbox f, :graft_mid_sten_device_present_yn  ,
+             placeholder: "graft_mid_sten_device_present_yn",
+            required: false,
+            type: "checkbox" %> <%= error_tag f,
+            :graft_mid_sten_device_present_yn %>
+          </div>
+          <p class="help"><%#= %></p>
+        </div>
+        <!--field---->
+
+
+
+
+        </div><!---------column 3-------->
+        <div class="column">
+ <div class="field">
+          <label class="label"> Treated? </label>
+          <div class="control">
+            <%= checkbox f, :graft_mid_sten_prior_treated_yn ,
+placeholder: "graft_mid_sten_prior_treated_yn",
+            required: false,
+            type: "checkbox" %> <%= error_tag f,
+            :graft_mid_sten_prior_treated_yn%>
+          </div>
+          <p class="help"><%#= i_hispanic %></p>
+        </div>
+        <!--field---->
+
+
+</div><!---------column 4-------->
+<div class="column">
+  <div class="field">
+          <label class="label">Date </label>
+          <div class="control">
+     <%= text_input f, :graft_mid_sten_prior_treated_dt,
+        class: "input", type: "date",
+         placeholder: "graft_mid_sten_prior_treated_dt", required: false %>
+          <%= error_tag f,
+            :graft_mid_sten_prior_treated_dt %>
+          </div>
+          <p class="help"></p>
+        </div>
+        <!--field---->
+
+
+</div><!---------column 5-------->
+
+<div class="column">
+
+
+  <div class="field">
+          <label class="label">FFR </label>
+          <div class="control">
+            <%= text_input f, :graft_mid_sten_ffr ,
+              class: "input", type: "text",
+              placeholder: "graft_mid_sten_ffr",
+              required: false %> <%= error_tag f,
+            :graft_mid_sten_ffr  %>
+          </div>
+          <p class="help"></p>
+  </div><!------field------------->
+
+
+</div><!---------column 6 -------->
+
+<div class="column">
+ <div class="field">
+          <label class="label">IVUS </label>
+          <div class="control">
+            <%= text_input f, :graft_mid_sten_ivus ,
+              class: "input", type: "text",
+              placeholder: "graft_mid_sten_ivus",
+              required: false %> <%= error_tag f,
+            :graft_mid_sten_ivus   %>
+          </div>
+          <p class="help"></p>
+  </div><!------field------------->
+
+
+</div><!---------column 7 -------->
+
+
+      </div><!-----colomns---------->
+      <!----end----------------------------------->
+
+
+ <!--start-------------------------------->
+<span class="button is-link  is-fullwidth ">
+        Distal Part
+        </span>
+
+
+      <div class="columns  ">
+
+
+        <div class="column">
+ <div class="field">
+          <label class="label">Stenosis? </label>
+          <div class="control">
+            <%= checkbox f, :graft_dist_sten_yn ,
+             placeholder: "graft_dist_sten_yn",
+            required: false,
+            type: "checkbox" %> <%= error_tag f,
+            :graft_dist_sten_yn %>
+          </div>
+          <p class="help"><%#= i_hispanic %></p>
+        </div>
+        <!--field---->
+
+
+        </div><!---------column 1-------->
+<div class="column">
+
+
+  <% s_dist_pct = 0..100 %>
+<div class="field">
+  <label class="label"> Stenosis (%)  </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f, :graft_dist_sten_pct,
+s_dist_pct,
+   prompt: "---Select---",
+class: "form-control")  %>
+            </div>
+            <!--select---->
+            <%= error_tag f, :graft_dist_sten_pct   %>
+            <span class="help"> <%#=  i_cdisc%> </span>
+          </div>
+          <!--control---->
+        </div>
+        <!---field--->
+
+
+</div><!---------column 2-------->
+<div class="column">
+<div class="field">
+          <label class="label">Stent Present? </label>
+          <div class="control">
+            <%= checkbox f, :graft_dist_sten_device_present_yn ,
+             placeholder: "graft_dist_sten_device_present_yn",
+            required: false,
+            type: "checkbox" %> <%= error_tag f,
+            :graft_dist_sten_device_present_yn  %>
+          </div>
+          <p class="help"><%#= i_hispanic %></p>
+        </div>
+        <!--field---->
+
+
+        </div><!---------column 3-------->
+<div class="column">
+  <div class="field">
+          <label class="label">Treated? </label>
+          <div class="control">
+            <%= checkbox f, :graft_dist_sten_prior_treated_yn ,
+placeholder: "graft_dist_sten_prior_treated_yn",
+            required: false,
+            type: "checkbox" %> <%= error_tag f,
+            :graft_dist_sten_prior_treated_yn%>
+          </div>
+          <p class="help"><%#= i_hispanic %></p>
+        </div>
+        <!--field---->
+
+
+</div><!---------column 4-------->
+<div class="column">
+   <div class="field">
+          <label class="label">Date </label>
+          <div class="control">
+     <%= text_input f, :graft_dist_sten_prior_treated_dt,
+        class: "input", type: "date",
+         placeholder: "graft_dist_sten_prior_treated_dt", required: false %>
+          <%= error_tag f,
+            :graft_dist_sten_prior_treated_dt  %>
+          </div>
+          <p class="help"></p>
+        </div>
+        <!--field---->
+
+
+</div><!---------column 5-------->
+
+<div class="column">
+
+   <div class="field">
+          <label class="label">FFR </label>
+          <div class="control">
+            <%= text_input f, :graft_dist_sten_ffr ,
+              class: "input", type: "text",
+              placeholder: "graft_dist_sten_ffr",
+              required: false %> <%= error_tag f,
+            :graft_dist_sten_ffr  %>
+          </div>
+          <p class="help"></p>
+  </div><!------field------------->
+
+
+
+</div><!---------column 6 -------->
+
+<div class="column">
+
+  <div class="field">
+          <label class="label">IVUS </label>
+          <div class="control">
+            <%= text_input f, :graft_dist_sten_ivus ,
+              class: "input", type: "text",
+              placeholder: " graft_dist_sten_ivus",
+              required: false %> <%= error_tag f,
+            :graft_dist_sten_ivus   %>
+          </div>
+          <p class="help"></p>
+  </div><!------field------------->
+
+</div><!---------column 7 -------->
+
+
+      </div><!-----colomns---------->
+      <!----end----------------------------------->
+<!--start-------------------------------->
+
+<span class="button is-link  is-fullwidth ">
+        Distal Anastomosis
+        </span>
+
+
+      <div class="columns  ">
+
+
+         <div class="column">
+ <div class="field">
+          <label class="label">Stenosis? </label>
+          <div class="control">
+            <%= checkbox f, :graft_dist_anast_sten_yn ,
+             placeholder: "graft_dist_anast_sten_yn",
+            required: false,
+            type: "checkbox" %> <%= error_tag f,
+            :graft_dist_anast_sten_yn  %>
+          </div>
+          <p class="help"><%#= i_hispanic %></p>
+        </div>
+        <!--field---->
+
+
+        </div><!---------column 1-------->
+        <div class="column">
+
+
+ <% s_graft_dist_anast_type = Query.select_options("graft_distal_anast_type") %>
+          <%# i_graft_dist_anast_type  =
+raw Query.search_in_instructions("graft_distal_anast_type")%>
+
+<div class="field">
+    <label class="label"> Type </label>
+
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f,
+:graft_dist_anast_type , s_graft_dist_anast_type ,
+   prompt: "---Select---",
+
+class: "form-control")
+              %>
+            </div>
+            <!--select---->
+            <%= error_tag f, :graft_dist_anast_type   %>
+            <span class="help"></span>
+          </div>
+          <!--control---->
+        </div>
+        <!---field--->
+
+
+        </div><!---------column 2-------->
+<div class="column">
+<div class="field">
+          <label class="label">Stent Present? </label>
+          <div class="control">
+            <%= checkbox f, :graft_dist_anast_device_present_yn ,
+             placeholder: " graft_dist_anast_device_present_yn ",
+            required: false,
+            type: "checkbox" %> <%= error_tag f,
+            :graft_dist_anast_device_present_yn   %>
+          </div>
+          <p class="help"><%#= i_hispanic %></p>
+        </div>
+        <!--field---->
+
+
+</div><!---------column 3-------->
+<div class="column">
+  <% s_dist_anast_pct = 0..100 %>
+<div class="field">
+  <label class="label"> Stenosis (%)  </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f, :graft_dist_anast_sten_pct,
+s_dist_anast_pct,
+   prompt: "---Select---",
+class: "form-control")  %>
+            </div>
+            <!--select---->
+            <%= error_tag f, :graft_dist_anast_sten_pct   %>
+            <span class="help"> <%#=  i_cdisc%> </span>
+          </div>
+          <!--control---->
+        </div>
+        <!---field--->
+
+
+
+
+</div><!---------column 4-------->
+<div class="column">
+ <div class="field">
+          <label class="label"> Treated? </label>
+          <div class="control">
+            <%= checkbox f, :graft_dist_anast_prior_treated_yn  ,
+placeholder: "graft_dist_anast_prior_treated_yn",
+            required: false,
+            type: "checkbox" %> <%= error_tag f,
+            :graft_dist_anast_prior_treated_yn%>
+          </div>
+          <p class="help"><%#=  %></p>
+        </div>
+        <!--field---->
+
+
+</div><!---------column 5-------->
+
+<div class="column">
+
+  <div class="field">
+          <label class="label">Date </label>
+          <div class="control">
+     <%= text_input f, :graft_dist_anast_prior_treated_dt ,
+        class: "input", type: "date",
+         placeholder: "graft_dist_anast_prior_treated_dt", required: false %>
+          <%= error_tag f,
+            :graft_dist_anast_prior_treated_dt  %>
+          </div>
+          <p class="help"></p>
+        </div>
+        <!--field---->
+
+        </div><!---------column 6 -------->
+
+<div class="column">
+ <div class="field">
+          <label class="label">FFR </label>
+          <div class="control">
+            <%= text_input f, :graft_dist_anast_sten_ffr  ,
+              class: "input", type: "text",
+              placeholder: "graft_dist_anast_sten_ffr",
+              required: false %> <%= error_tag f,
+            :graft_dist_anast_sten_ffr %>
+          </div>
+          <p class="help"></p>
+  </div><!------field------------->
+
+
+</div><!---------column 7 -------->
+
+<div class="column">
+ <div class="field">
+          <label class="label">IVUS </label>
+          <div class="control">
+            <%= text_input f, :graft_dist_anast_sten_ivus ,
+              class: "input", type: "text",
+              placeholder: " graft_dist_anast_sten_ivus",
+              required: false %> <%= error_tag f,
+            :graft_dist_anast_sten_ivus   %>
+          </div>
+          <p class="help"></p>
+  </div><!------field------------->
+
+        </div><!---------column 7 -------->
+
+
+      </div><!-----colomns---------->
+      <!----end----------------------------------->
+
+
+
+  <div class="columns ">
+
+
+    <div class="column frame_1">
+<p class ="buttons_separator"> . </p>
+ <span class="button is-success  is-fullwidth ">
+<i class="fa fa-sticky-note">
+My Notes
+</i>
+</span>
+
+  <div class="field">
+  <label class="label"> My Notes On Graft</label>
+  <div class="control">
+    <%= text_input f, :graft_notes,
+        class: "textarea",
+        type: "input", placeholder: "My Notes"  %>
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+
+</div><!---------column------------------>
+
+
+
+
+ <div class="column frame_1">
+<p class ="buttons_separator"> .  </p
+<!-- -HELP AREA -->
+  <%= render  AngioWeb.SharedView, "_help_area.html" %>
+
+</div><!---------column------------------>
+        </div><!---------column 7 -------->
+      </div><!-----colomns---------->
+
+
+   <div>
+    <%= submit "Save and Continue", class: "button is-info is-large is-fullwidth " %>
+
+  </div>
+<% end %>

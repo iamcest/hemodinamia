@@ -1,0 +1,55 @@
+
+
+<% alias  Angio.Followups%>
+
+<div class="dropdown">
+  <div class="dropdown-trigger">
+    <button class="button is-small is-info is-fullwidth" aria-haspopup="true" aria-controls="dropdown-menu4">
+      <span>FollowUps</span>
+      <span class="icon is-small">
+        <i class="fa  fa-angle-down" aria-hidden="true"></i>
+      </span>
+    </button>
+  </div>
+
+  <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+    <div class="dropdown-content">
+     <div class="dropdown-item">
+  </div>
+
+<!----------------------------------->
+
+<div class="dropdown-item">
+<% count_closures_fups  =
+ Followups.count_asd_closures_fups(@patient.id) %>
+<%= link to: Routes.pt_asdclf_path(@conn, :index, @patient),
+        class: "button is-link  is-small is-fullwidth", title: "ASD Closures F/Ups" do %>
+        <%= render  AngioWeb.SharedView, "_info_menu_count.html",
+                 prompt: "ASD Closure",
+                 count: count_closures_fups %>
+        <% end %>
+
+      </div>
+<!----------------------------------->
+
+<!----------------------------------->
+
+<div class="dropdown-item">
+<% count_pci_fups  =
+ Followups.count_pci_fups(@patient.id) %>
+<%= link to: Routes.pt_pcif_path(@conn, :index, @patient),
+        class: "button is-link  is-small is-fullwidth", title: "PCI F/Ups" do %>
+        <%= render  AngioWeb.SharedView, "_info_menu_count.html",
+                 prompt: "PCI F/Ups",
+                 count: count_pci_fups %>
+        <% end %>
+
+      </div>
+<!----------------------------------->
+
+
+   </div>
+
+    </div>
+  </div>
+</div>

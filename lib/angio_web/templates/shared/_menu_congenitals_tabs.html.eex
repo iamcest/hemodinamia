@@ -1,0 +1,60 @@
+<% alias Angio.Congenitals%>
+<% alias Angio.Caths%>
+<% alias Angio.Interventions %>
+<span class="button  is-primary is-medium is-fullwidth ">
+    Congenital Records 
+ </span>
+<div class="menu_info_coronary_tabs">
+  <div class="tabs is-small is-centered">
+    <ul>
+<li>
+<% count_episodes  =  Congenitals.count_chd_episodes(@info_coronary.id) %>
+<%= link(to: Routes.pt_angio_chd_episode_path(@conn, :index, @patient, @info_coronary), class: "button is-link", custom: "property", title: "Test Img - Congenital Care Episode") do %>
+ <i class='fa fa-cubes' aria-hidden='true'></i>
+   <%= render  AngioWeb.SharedView, "_info_menu_count.html",
+                 prompt: "",
+                 count: count_episodes %>
+<% end %>
+
+</li>
+      <li>
+
+        <%= link to: Routes.pt_angio_chd_episode_path(@conn, :index, @patient, @info_coronary),
+        class: "button is-link  is-fullwidth", title: "Congenital Care Episode: Proc Codes, Insurance, Arrival Date..." do %>
+        <%= render  AngioWeb.SharedView, "_info_menu_count.html",
+                 prompt: "Care Episode",
+                 count: count_episodes %>
+        <% end %>
+      </li>
+      <li>
+     <% count_conditions  =  Congenitals.count_chd_conditions(@info_coronary.id) %>
+        <%= link to: Routes.pt_angio_chd_condition_path(@conn, :index, @patient, @info_coronary),
+        class: "button is-link  is-fullwidth", title: "Congenital Coditions as: Heterotaxy, Marfan..." do %>
+
+        <%= render  AngioWeb.SharedView, "_info_menu_count.html",
+                 prompt: "Conditions",
+                 count: count_conditions %>
+        <% end %>
+
+      </li>
+
+      <!--------------------------------->
+       <li>
+<% count_risk_factors  =  Congenitals.count_chd_risk_factors(@info_coronary.id) %>
+        <%= link to: Routes.pt_angio_chd_risk_path(@conn, :index, @patient, @info_coronary),
+        class: "button is-link  is-fullwidth", title: "Congenital Risk Factors as: Heterotaxy, Marfan..." do %>
+
+        <%= render  AngioWeb.SharedView, "_info_menu_count.html",
+                 prompt: "Risk Factors",
+                 count: count_risk_factors %>
+        <% end %>
+
+      </li>
+      <!----------------------------- ------->
+     <!--------------------------------->
+
+      <!------------------------------------>
+     </ul>
+
+</div><!-------------------------------->
+</div><!--------------------------------->

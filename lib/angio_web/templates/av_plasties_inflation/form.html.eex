@@ -1,0 +1,254 @@
+<% alias Angio.Canons, as: Query %>
+
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+<div class="columns">
+  <div class="column frame_1">
+
+<!---------start----------------------------------->
+  <div class = "columns">
+
+<div class = "column">
+
+<!--- start field--------------------------------->
+<div class="field">
+            <label class="label field_help " >Device Counter </label>
+            <%= text_input f, :avpi_inflation_counter , class: "input", type: "text",
+            placeholder: "avpi_inflation_counter", required: false %>
+            <%= error_tag f, :avpi_inflation_counter %>
+          <p class="help"></p>
+        </div>
+<!-----------end field----------------------->
+
+
+</div><!----column-------------------->
+<div class = "column">
+
+<!----- start selection field---------------------------->
+   <%  s_avpi_balloon_technique  =  Query.select_options("avpi_balloon_technique") %>
+<div class="field">
+    <label class="label">Balloon Technique </label>
+          <div class="control">
+            <div class="select is-link">
+             <span class="field_help"></span>
+              <%= select(f,
+:avpi_balloon_technique, s_avpi_balloon_technique,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :avpi_balloon_technique %>
+            <span class="help"></span>
+
+
+          </div><!----control---->
+        </div><!------field--->
+
+ <!-------end selection field----------------------->
+
+</div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+
+<div class = "column">
+<!--- start field--------------------------------->
+<div class="field">
+            <label class="label field_help " >Single Bal ID </label>
+            <%= text_input f, :avpi_sb_bal_1_id, class: "input", type: "text",
+            placeholder: "avpi_sb_bal_1_id", required: false %>
+            <%= error_tag f, :avpi_sb_bal_1_id%>
+          <p class="help"></p>
+        </div>
+<!-----------end field----------------------->
+
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!--- start field--------------------------------->
+<div class="field">
+            <label class="label field_help " >Double Bal ID </label>
+            <%= text_input f, :avpi_db_bal_2_id, class: "input", type: "text",
+            placeholder: "avpi_db_bal_2_id", required: false %>
+            <%= error_tag f, :avpi_db_bal_2_id %>
+          <p class="help"></p>
+        </div>
+<!-----------end field----------------------->
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+
+<div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Balloon Stabilization?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :avpi_stabilization_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :avpi_stabilization_yn %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+
+
+
+</div><!----column-------------------->
+ <div class = "column">
+<!--- start field--------------------------------->
+<div class="field">
+            <label class="label field_help " >Max Inflation Pressure </label>
+            <%= text_input f, :avpi_max_inflation_pres, class: "input", type: "text",
+            placeholder: "avpi_max_inflation_pres", required: false %>
+            <%= error_tag f, :avpi_max_inflation_pres %>
+          <p class="help"></p>
+        </div>
+<!-----------end field----------------------->
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+
+<div class = "column">
+
+
+<!----- start selection field---------------------------->
+   <%  s_avp_bal_outcome  =  Query.select_options("avp_bal_outcome") %>
+<div class="field">
+    <label class="label">Balloon Outcome </label>
+          <div class="control">
+            <div class="select is-link">
+             <span class="field_help"></span>
+              <%= select(f,
+:avp_bal_outcome, s_avp_bal_outcome,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :avp_bal_outcome %>
+            <span class="help"></span>
+
+
+          </div><!----control---->
+        </div><!------field--->
+
+ <!-------end selection field----------------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!--- start field--------------------------------->
+<div class="field">
+            <label class="label field_help " >Peak Sys Gradient Post </label>
+            <%= text_input f, :avpi_peak_sys_gradient_post , class: "input", type: "text",
+            placeholder: "avpi_peak_sys_gradient_post", required: false %>
+            <%= error_tag f, :avpi_peak_sys_gradient_post %>
+          <p class="help"></p>
+        </div>
+<!-----------end field----------------------->
+
+
+
+
+ </div><!----column-------------------->
+<div class = "column">
+
+
+<!----- start selection field---------------------------->
+   <%  s_avpi_av_reg_degree_post  =  Query.select_options("avpi_av_reg_degree_post") %>
+<div class="field">
+    <label class="label">Ao Valve Regurgitation </label>
+          <div class="control">
+            <div class="select is-link">
+             <span class="field_help"></span>
+              <%= select(f,
+:avpi_av_reg_degree_post, s_avpi_av_reg_degree_post,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :avpi_av_reg_degree_post %>
+            <span class="help"></span>
+
+
+          </div><!----control---->
+        </div><!------field--->
+
+ <!-------end selection field----------------------->
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+  </div><!--------LEFT COLUMN----------------->
+  <div class="column frame_1">
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+  <div class="field">
+  <label class="label"> My Notes On Aortic Valvuloplasty Inflations Procedure</label>
+  <div class="control">
+    <%= text_input f, :avpi_notes,
+        class: "textarea",
+        type: "input", placeholder: "avpi_notes"  %>
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+</div><!----column-------------------->
+</div><!----columns--------------------------->
+
+
+ <div class = "columns">
+<div class = "column">
+ <%= render  AngioWeb.SharedView, "_help_area.html" %>
+</div><!----column-------------------->
+</div><!----columns--------------------------->
+
+
+
+  </div><!------RIGHT COLUMN----------------------------->
+</div><!------end columns-------------------------------------------->
+
+
+<div><!------------------------------------>
+    <%= submit "Save  Record For AV Inflation", class: "button is-info  is-medium is-fullwidth " %>
+  </div>
+
+
+<% end %>

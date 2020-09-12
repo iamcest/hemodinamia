@@ -1,0 +1,382 @@
+
+<% alias Angio.Canons, as: Query %>
+
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+  <div class="notification is-danger">
+    <button class="delete"></button>
+    Oops, something went wrong! Please check the errors below or Dublicate Record
+</div>
+  <% end %>
+
+
+
+<div class = "columns">
+
+
+<div class = "column is-7 frame_1">
+
+<!-------start---------------------------------->
+  <div class = "columns">
+<div class = "column">
+ <div class="field">
+          <label class="label">Exam Date </label>
+          <div class="control">
+          <span class='field_help'></span>
+     <%= text_input f, :vital_sgns_dt,
+        class: "input", type: "date",
+         placeholder: "vital_sgns_dt", required: false %>
+          <%= error_tag f,
+            :vital_sgns_dt %>
+          </div>
+          <p class="help">  <%#= i_proc_epis_request_dt %> </p>
+        </div>
+        <!--field---->
+
+</div><!----column-------------------->
+
+ <div class = "column">
+
+<div class="field">
+          <label class="label"> Time</label>
+          <div class="control">
+          <span class='field_help'></span>
+     <%= text_input f, :vital_sgns_tm,
+        class: "input", type: "time",
+         placeholder: "vital_sgns_tm", required: false %>
+          <%= error_tag f,
+            :vital_sgns_tm %>
+          </div>
+          <p class="help">  <%#= i_proc_epis_request_dt %> </p>
+        </div>
+        <!--field---->
+
+
+ </div><!----column-------------------->
+
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+ <div class="field">
+          <label class="label"> BP  Sys </label>
+
+          <div class="control">
+          <span class= "field_help"></span>
+            <%= text_input f, :vital_sgns_bp_sys,
+               class: "input",
+            type: "text",
+placeholder: "vital_sgns_bp_sys",
+required: false %>
+<%= error_tag f, :vital_sgns_bp_sys  %>
+          </div>
+          <p class="help"></p>
+  </div><!------field------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+<div class="field">
+          <label class="label"> BP  Diastolic </label>
+
+          <div class="control">
+          <span class= "field_help"></span>
+            <%= text_input f, :vital_sgns_bp_diast,
+               class: "input",
+            type: "text",
+placeholder: "vital_sgns_bp_diast",
+required: false %>
+<%= error_tag f, :vital_sgns_bp_diast  %>
+          </div>
+          <p class="help"></p>
+  </div><!------field------------->
+
+
+ </div><!----column-------------------->
+
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<div class="field">
+          <label class="label"> Pulse Rate (beats/s) </label>
+
+          <div class="control">
+          <span class= "field_help"></span>
+            <%= text_input f, :vital_sgns_pulse_rate,
+               class: "input",
+            type: "text",
+placeholder: "vital_sgns_pulse_rate",
+required: false %>
+<%= error_tag f, :vital_sgns_pulse_rate  %>
+          </div>
+          <p class="help"></p>
+  </div><!------field------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+<div class="field">
+          <label class="label"> Body Temperature (Celcius)</label>
+
+          <div class="control">
+          <span class= "field_help"></span>
+            <%= text_input f, :vital_sgns_body_temp,
+               class: "input",
+            type: "text",
+placeholder: "vital_sgns_body_temp",
+required: false %>
+<%= error_tag f, :vital_sgns_body_temp  %>
+          </div>
+          <p class="help"></p>
+  </div><!------field------------->
+
+
+
+ </div><!----column-------------------->
+
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+   <!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<div class="field">
+          <label class="label"> Respiratory Rate (cycles/min)</label>
+
+          <div class="control">
+          <span class= "field_help"></span>
+            <%= text_input f, :vital_sgns_respiratory_rate,
+               class: "input",
+            type: "text",
+placeholder: "vital_sgns_respiratory_rate",
+required: false %>
+<%= error_tag f, :vital_sgns_respiratory_rate  %>
+          </div>
+          <p class="help"></p>
+  </div><!------field------------->
+</div><!----column-------------------->
+ <div class = "column">
+<div class="field">
+          <label class="label"> Saturation </label>
+
+          <div class="control">
+          <span class= "field_help"></span>
+            <%= text_input f, :vital_sgns_sat_val,
+               class: "input",
+            type: "text",
+placeholder: "vital_sgns_sat_val v",
+required: false %>
+<%= error_tag f, :vital_sgns_sat_val  %>
+          </div>
+          <p class="help"></p>
+  </div><!------field------------->
+
+ </div><!----column-------------------->
+
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+ <!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<div class="field">
+          <label class="label"> Height (cm) </label>
+
+          <div class="control">
+          <span class= "field_help"></span>
+            <%= text_input f, :vital_sgns_height,
+               class: "input",
+            type: "text",
+placeholder: "vital_sgns_height",
+required: false %>
+<%= error_tag f, :vital_sgns_height  %>
+          </div>
+          <p class="help"></p>
+  </div><!------field------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+ <div class="field">
+          <label class="label"> Height Laying (cm) </label>
+
+          <div class="control">
+          <span class= "field_help"></span>
+            <%= text_input f, :vital_sgns_height_lying,
+               class: "input",
+            type: "text",
+placeholder: "vital_sgns_height_lying",
+required: false %>
+<%= error_tag f, :vital_sgns_height_lying  %>
+          </div>
+          <p class="help"></p>
+  </div><!------field------------->
+ </div><!----column-------------------->
+
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+ <div class="field">
+          <label class="label"> Weight (kg) </label>
+
+          <div class="control">
+          <span class= "field_help"></span>
+            <%= text_input f, :vital_sgns_weight_val,
+               class: "input",
+            type: "text",
+placeholder: "vital_sgns_weight_val",
+required: false %>
+<%= error_tag f, :vital_sgns_weight_val  %>
+          </div>
+          <p class="help"></p>
+  </div><!------field------------->
+
+
+</div><!----column-------------------->
+ <div class = "column">
+ <div class="field">
+          <label class="label"> Waist (cm) </label>
+
+          <div class="control">
+          <span class= "field_help"></span>
+            <%= text_input f, :vital_sgns_waist_val,
+               class: "input",
+            type: "text",
+placeholder: "vital_sgns_waist_val",
+required: false %>
+<%= error_tag f, :vital_sgns_waist_val  %>
+          </div>
+          <p class="help"></p>
+  </div><!------field------------->
+
+ </div><!----column-------------------->
+
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<div class="field">
+          <label class="label"> Head Circumferenc (cm) </label>
+
+          <div class="control">
+          <span class= "field_help"></span>
+            <%= text_input f, :vital_sgns_head_circumference,
+               class: "input",
+            type: "text",
+placeholder: "vital_sgns_head_circumference",
+required: false %>
+<%= error_tag f, :vital_sgns_head_circumference  %>
+          </div>
+          <p class="help"></p>
+  </div><!------field------------->
+</div><!----column-------------------->
+ <div class = "column">
+
+<div class="field">
+          <label class="label"> Body Mass Index </label>
+
+          <div class="control">
+          <span class= "field_help"></span>
+            <%= text_input f, :vital_sgns_bmi,
+               class: "input",
+            type: "text",
+placeholder: "vital_sgns_bmi",
+required: false %>
+<%= error_tag f, :vital_sgns_bmi  %>
+          </div>
+          <p class="help"></p>
+  </div><!------field------------->
+
+
+ </div><!----column-------------------->
+
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+
+</div><!-----LEFT--column----------------------------->
+
+
+<div class="column is-5 frame_1">
+
+   <!---------start----------------------------------->
+      <span class="button is-danger  is-fullwidth ">
+<i class="fa fa-sticky-note">
+My Notes
+</i>
+</span>
+  <div class = "columns">
+
+<div class = "column">
+    <div class="field">
+  <label class="label">  Notes </label>
+  <div class="control">
+    <%= text_input f, :vital_sgns_notes,
+        class: "textarea",
+        type: "input", placeholder: "vital_sgns_notes"  %>
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+</div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+  <!---------start----------------------------------->
+<div class = "columns">
+<div class = "column">
+<!-- -HELP AREA -->
+  <%= render  AngioWeb.SharedView, "_help_area.html" %>
+</div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+
+
+
+
+
+</div><!---------RIGHT COLUMN---------------------------->
+</div><!----------columns------------------------>
+
+
+
+<div>
+  <%= submit "Save and Continue", class: "button is-info is-large is-fullwidth " %>
+</div>
+
+<% end %>

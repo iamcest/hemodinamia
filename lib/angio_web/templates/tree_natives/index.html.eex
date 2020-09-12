@@ -1,0 +1,79 @@
+<%alias Angio.Canons %>
+
+ <h6 class="title_form is-6 has-text-centered">
+  Listing Data For Drawing the Coronary Tree. Data are connected to draw_coronary.js
+ </h6>
+
+  <table class="table is-bordered
+is-striped
+is-narrow
+                    is-full-width
+                    is-hoverable">
+    <thead class="thead">
+    <tr>
+    <th> Description</th>
+      <th> Epicardial Vessel </th>
+      <th>Segment ID</th>
+      <th>If RCA/LCx/Balanced Dominance To Draw?</th>
+     <th>Size</th>
+     <th>Definition</th>
+      <th>Show</th>
+      <th>Edit</th>
+      <th>Delete</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  <%#= for {tree_natives, index} <- @tree_native do %>
+<%= for tree_natives <- @tree_native do %>
+    <tr>
+    <!----------------------
+    <td><%#= index %></td>
+    ------------->
+    <td> <%= tree_natives.description_name %></td>
+    <td><%= tree_natives.vessel %></td>
+
+      <td><strong><%= tree_natives.vessel_id %></strong></td>
+     <td>
+     <strong>
+       <%= raw Canons.convert_true_false(tree_natives.rca_dom_draw) %>
+     </strong>
+
+    <strong>
+    <%= raw Canons.convert_true_false(tree_natives.lcx_dom_draw) %>
+    </strong>
+
+
+    <strong>
+    <%= raw Canons.convert_true_false(tree_natives.balanced_dom_draw) %>
+    </strong>
+
+     </td>
+      <td><%= tree_natives.size %></td>
+      <td><%= tree_natives.seg_def %></td>
+
+      <td>
+        <%= link "Show", to: Routes.tree_natives_path(@conn, :show, tree_natives),
+         class: "button is-primary is-small" %>
+        <%#= link "Show", to: Routes.tree_natives_path(@conn, :show, tree_natives) %>
+        </td>
+
+        <td>
+        <%= link "Edit", to: Routes.tree_natives_path(@conn, :edit, tree_natives),    class: "button is-primary is-small" %>
+       </td>
+
+
+        <td>
+        <%= link "Delete", to: Routes.tree_natives_path(@conn, :delete, tree_natives),
+        method: :delete, data: [confirm: "Are you sure?"], class: "button is-danger is-small" %>
+      </td>
+
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= pagination_links @page %>
+<p class ="buttons_separator"> . </p>
+<span><%= link "New Tree natives",
+to: Routes.tree_natives_path(@conn, :new), class: "button is-primary is-medium is-fullwidth"  %></span>

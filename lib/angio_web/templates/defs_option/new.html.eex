@@ -1,0 +1,14 @@
+
+<div class="element_info">
+New Definition Option For Pick-List
+<%= render  AngioWeb.SharedView, "_definition_info.html", definition: @definition %>
+
+</div>
+
+ <%= render "form.html", changeset: @changeset, definition: @definition,
+        action: Routes.definition_defs_option_path(@conn, :create, @definition) %>
+
+<p class ="buttons_separator"> . </p>
+<span>
+<%= link "Back To Field Options  List", to: Routes.definition_defs_option_path(@conn, :index, @definition) , class: "button is-link is-medium"%>
+</span>

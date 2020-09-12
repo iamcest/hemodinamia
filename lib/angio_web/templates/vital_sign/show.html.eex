@@ -1,0 +1,110 @@
+<div class="title_form">
+<h5 class="title is-5 has-text-centered"> Showing Vital Signs </h4>
+</div>
+
+<div class="element_info">
+   <%= render AngioWeb.SharedView, "_patient_info.html", patient:
+  @patient %>
+</div>
+
+<div class="element_info_coronary">
+<%= render AngioWeb.SharedView, "_info_coronary.html", info_coronary:
+   @info_coronary%>
+</div>
+
+<div class="content frame_1">
+  <ol type="1">
+
+
+  <li>
+    <strong>Vital sgns dt:</strong>
+    <%= @vital_sign.vital_sgns_dt %>
+  </li>
+
+  <li>
+    <strong>Vital sgns tm:</strong>
+    <%= @vital_sign.vital_sgns_tm %>
+  </li>
+
+  <li>
+    <strong>Vital sgns bp sys:</strong>
+    <%= @vital_sign.vital_sgns_bp_sys %>
+  </li>
+
+  <li>
+    <strong>Vital sgns bp diast:</strong>
+    <%= @vital_sign.vital_sgns_bp_diast %>
+  </li>
+
+  <li>
+    <strong>Vital sgns pulse rate:</strong>
+    <%= @vital_sign.vital_sgns_pulse_rate %>
+  </li>
+
+  <li>
+    <strong>Vital sgns body temp:</strong>
+    <%= @vital_sign.vital_sgns_body_temp %>
+  </li>
+
+  <li>
+    <strong>Vital sgns respiratory rate:</strong>
+    <%= @vital_sign.vital_sgns_respiratory_rate %>
+  </li>
+
+  <li>
+    <strong>Vital sgns sat val:</strong>
+    <%= @vital_sign.vital_sgns_sat_val %>
+  </li>
+
+  <li>
+    <strong>Vital sgns height:</strong>
+    <%= @vital_sign.vital_sgns_height %>
+  </li>
+
+  <li>
+    <strong>Vital sgns height lying:</strong>
+    <%= @vital_sign.vital_sgns_height_lying %>
+  </li>
+
+  <li>
+    <strong>Vital sgns weight val:</strong>
+    <%= @vital_sign.vital_sgns_weight_val %>
+  </li>
+
+  <li>
+    <strong>Vital sgns waist val:</strong>
+    <%= @vital_sign.vital_sgns_waist_val %>
+  </li>
+
+  <li>
+    <strong>Vital sgns head circumference:</strong>
+    <%= @vital_sign.vital_sgns_head_circumference %>
+  </li>
+
+  <li>
+    <strong>Vital sgns bmi:</strong>
+    <%= @vital_sign.vital_sgns_bmi %>
+  </li>
+
+  <li>
+    <strong>Vital sgns notes:</strong>
+    <%= @vital_sign.vital_sgns_notes %>
+  </li>
+
+</ol>
+</div>
+
+<p class ="buttons_separator"> . </p>
+
+<span>
+    <%= link "Edit Vitals ", to: Routes.pt_angio_vitals_path(@conn, :edit, @patient,
+  @info_coronary, @vital_sign ), class: "button is-link"%>
+</span>
+<span>
+  <%= link "Back To Vitals Index", to: Routes.pt_angio_vitals_path(@conn, :index,
+  @patient, @info_coronary) , class: "button is-link"%>
+</span>
+<span>
+<%= link "Back To Lab",  to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-link"   %>
+ </span>

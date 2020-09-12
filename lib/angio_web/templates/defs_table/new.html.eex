@@ -1,0 +1,6 @@
+<h4 class="title is-4">New DB table</h4>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.defs_table_path(@conn, :create)) %>
+
+<span><%= link "Back To DB Tables Index", 
+to: Routes.defs_table_path(@conn, :index), class: "button is-link is-medium" %></span>

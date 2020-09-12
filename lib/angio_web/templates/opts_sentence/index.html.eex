@@ -1,0 +1,78 @@
+
+
+<div class="title_form">
+<div class="title is-5 has-text-centered">
+    Listing Sentences  For an Option,  Pick-List Item
+    </div>
+</div>
+
+
+<div class="element_info">
+    Sentences  for Option:   <%= "#{@defs_option.selection_text}" %>
+    <br>
+    Of <%= render  AngioWeb.SharedView, "_definition_info.html", definition: @definition %>
+</div>
+<table class="table is-bordered
+                    is-striped
+                    is-full-width
+                    is-hoverable">
+
+  <thead class="thead">
+
+    <tr>
+      <th>Language</th>
+      <th>Sentence</th>
+      <th>Show</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for opts_sentence <- @opts_sentences do %>
+    <tr>
+      <td><%= opts_sentence.language %></td>
+      <td><%= opts_sentence.sentence %></td>
+    
+
+      <td>
+<%= link "Show",
+to: Routes.definition_defs_option_opts_sentence_path(@conn, :show,
+                                @definition,
+                                @defs_option, opts_sentence),
+                            class: "button is-primary is-small" %>
+      
+      </td>
+      <td>
+         <%= link "Edit", to: Routes.definition_defs_option_opts_sentence_path(@conn, :edit,
+                                @definition ,
+                                @defs_option, opts_sentence),
+                            class: "button is-primary is-small" %>
+        
+        </td>
+        <td>
+      
+<%= link "Delete", to:  Routes.definition_defs_option_opts_sentence_path(@conn, :delete,
+          @definition, @defs_option, opts_sentence), method: :delete, data: [confirm: "Are you sure?"],
+        class: "button is-small is-danger" %>
+     
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+<span>
+     <%= link  "New Sentence For Option: " <> "#{@defs_option.selection_text}",
+  to:  Routes.definition_defs_option_opts_sentence_path(@conn, :new, @definition, @defs_option),
+class: "button is-info is-large is-fullwidth"%>
+</span>
+
+<span>
+ <%= link "Back Pick-List",  to: Routes.definition_defs_option_path(@conn, :index, @definition),
+class: "button is-link "  %>
+</span>
+
+
+<span>
+<%= link "To Field List", to: Routes.definition_path(@conn, :index),
+       class: "button is-link"  %>
+</span><%#= link "New Opts sentence", to: Routes.opts_sentence_path(@conn, :new) %></span>

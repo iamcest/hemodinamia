@@ -1,0 +1,92 @@
+<% alias Angio.Canons, as: Query %>
+<div class="menu_info_tabs" >
+<%= render  AngioWeb.SharedView, "_menu_congenitals_tabs.html", assigns %>
+</div>
+
+
+
+
+<div class="element_info">
+   <%= render AngioWeb.SharedView, "_patient_info.html", patient:
+  @patient %>
+</div>
+
+<div class="element_info_coronary">
+<%= render AngioWeb.SharedView, "_info_coronary.html", info_coronary:
+   @info_coronary%>
+</div>
+
+<div class="columns">
+<div class="column is-2 menu_all">
+<%= render AngioWeb.SharedView, "_menu_all.html", info_coronary:
+   @info_coronary, conn: @conn, patient: @patient%>
+</div><!----------------------------->
+
+<div class="column is-10 frame_1">
+<div class="table-container">
+<table
+  class="table is-bordered
+                    is-striped
+                    is-full-width
+                    is-hoverable" >
+ <div class="title_form">
+<h6 class="title is-6 has-text-centered">Congenital Episode Index</h6>
+</div>
+  <thead>
+
+    <tr>
+      <th>Record Restriction</th>
+      <th>In Study?</th>
+      <th>Arrival Date</th>
+
+      <th>Show</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for chd_care_episode <- @chd_care_episodes do %>
+    <tr>
+     <td><%= raw Query.convert_true_false(chd_care_episode.pt_restriction_yn) %></td>
+      <td><%= raw Query.convert_true_false(chd_care_episode.chd_research_study_yn) %></td>
+      <td> <strong><%= chd_care_episode.chd_arrival_dt %></strong></td>
+
+      <td>
+            <%= link "Show", to: Routes.pt_angio_chd_episode_path(@conn, :show, @patient, @info_coronary, chd_care_episode), class: "button is-link is-small" %>
+        </td>
+
+        <td>
+ <%= link "Edit", to: Routes.pt_angio_chd_episode_path(@conn, :edit, @patient,
+        @info_coronary, chd_care_episode), class: "button is-link is-small" %>
+
+        </td>
+
+        <td>
+
+        <%= link "Delete", to: Routes.pt_angio_chd_episode_path(@conn, :delete,
+        @patient, @info_coronary, chd_care_episode), method: :delete, data: [confirm:
+        "Are you sure?"], class: "button is-small is-danger" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+</div><!------table container--------------------------->
+
+</div><!-------------------column---------------->
+</div><!------columns----------------->
+<span><%= link "Insert Once  A New Congenital Episode Record ",
+      to: Routes.pt_angio_chd_episode_path(@conn, :new,
+  @patient, @info_coronary), class: "button is-info is-medium is-fullwidth" %>
+</span>
+<p class ="buttons_separator"> . </p>
+<span>
+  <%= link "To Patient List", to: Routes.pt_path(@conn, :index), class: "button
+  is-link" %>
+</span>
+
+<span>
+<%= link "Back To Cath Lab",  to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-link"   %>
+ </span>

@@ -1,0 +1,1434 @@
+
+<% alias Angio.Canons, as: Query %>
+
+<%= form_for @changeset, @action, fn f -> %>
+
+ <%= if @changeset.action do %>
+  <div class="notification is-danger">
+    <button class="delete"></button>
+    Oops, something went wrong! Please check the errors below.
+</div>
+
+  <% end %>
+
+<div class="columns">
+<div class="column frame_1">
+
+
+<span class="button is-primary  is-fullwidth ">
+<i class="fa fa-sticky-note">
+General
+</i>
+</span>
+
+
+<!---------end start------------------------------------>
+<!---------start----------------------------------->
+  <div class = "columns">
+
+<div class = "column">
+
+ <!---------start field---------------------------->
+        <div class="field">
+          <label class="label">Follow Up Date </label>
+          <div class="control">
+            <%= text_input f, :pfup_assessment_dt,
+            class: "input",
+            type: "date",
+            placeholder: "pfup_assessment_dt",
+            required: false
+            %> <%= error_tag f, :pfup_assessment_dt %>
+          </div>
+          <p class="help"></p>
+        </div>
+        <!----------------field---->
+</div><!----column-------------------->
+ <div class = "column">
+
+
+
+<% s_pfup_reason= Query.select_options("pfup_reason") %>
+
+<div class="field">
+  <label class="label"> Follow Up Reason </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f, :pfup_reason,
+              s_pfup_reason ,
+              prompt: "---Select---",
+              class: "form-control") %>
+            </div>
+            <%= error_tag f, :pfup_reason  %>
+            <span class="help"></span>
+          </div>
+        </div>
+        <!---field--->
+
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+
+<% s_pfup_type = Query.select_options("pfup_type") %>
+
+<div class="field">
+  <label class="label"> Follow Up Type  </label>
+          <div class="control">
+            <div class="select is-danger">
+              <%= select(f, :pfup_type,
+              s_pfup_type ,
+              prompt: "---Select---",
+              class: "form-control") %>
+            </div>
+            <%= error_tag f, :pfup_type  %>
+            <span class="help"></span>
+          </div>
+        </div>
+        <!---field--->
+
+
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+
+
+<% s_pfup_primary_fup_method = Query.select_options("pfup_primary_fup_method") %>
+
+<div class="field">
+  <label class="label"> Follow Up Method  </label>
+          <div class="control">
+            <div class="select is-info">
+              <%= select(f, :pfup_primary_fup_method,
+              s_pfup_primary_fup_method ,
+              prompt: "---Select---",
+              class: "form-control") %>
+            </div>
+            <%= error_tag f, :pfup_primary_fup_method  %>
+            <span class="help"></span>
+          </div>
+        </div>
+        <!---field--->
+
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+<% s_pfup_survival_status = Query.select_options("pfup_survival_status") %>
+
+<div class="field">
+  <label class="label"> Survival Status  </label>
+          <div class="control">
+            <div class="select is-info">
+              <%= select(f, :pfup_survival_status,
+              s_pfup_survival_status ,
+              prompt: "---Select---",
+              class: "form-control") %>
+            </div>
+            <%= error_tag f, :pfup_survival_status  %>
+            <span class="help"></span>
+          </div>
+        </div>
+        <!---field--->
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+
+  <!---------start field---------------------------->
+        <div class="field">
+          <label class="label">Date of Death </label>
+          <div class="control">
+            <%= text_input f, :pfup_death_dt,
+            class: "input",
+            type: "date",
+            placeholder: "pfup_death_dt",
+            required: false
+            %> <%= error_tag f, :pfup_death_dt %>
+          </div>
+          <p class="help"></p>
+        </div>
+        <!----------------field---->
+
+
+ </div><!----column-------------------->
+<div class = "column">
+
+
+<% s_pfup_death_cause = Query.select_options("uni_death_cause") %>
+
+<div class="field">
+  <label class="label"> Cause Of Death  </label>
+          <div class="control">
+            <div class="select is-info">
+              <%= select(f, :pfup_death_cause,
+              s_pfup_death_cause ,
+              prompt: "---Select---",
+              class: "form-control") %>
+            </div>
+            <%= error_tag f, :pfup_death_cause %>
+            <span class="help"></span>
+          </div>
+        </div>
+        <!---field--->
+
+</div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+
+
+
+
+
+<span class="button is-primary  is-fullwidth ">
+<i class="fa fa-thumbs-down">
+Complications - Events
+</i>
+</span>
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!----------start field--------------------------------------->
+<div class="field">
+          <label class="label">Clincal Improment? </label>
+          <div class="control">
+            <%= checkbox f, :pfup_clinical_improvement_yn  ,
+            placeholder: "pfup_clinical_improvement_yn ",
+            required: false,
+            type: "checkbox" %>
+            <%= error_tag f, :pfup_clinical_improvement_yn %>
+          </div>
+          <p class="help"><%#= i_hispanic %></p>
+        </div>
+        <!--field---->
+
+
+
+</div><!----column-------------------->
+ <div class = "column">
+<!----------start field--------------------------------------->
+<div class="field">
+          <label class="label">Complications After Index PCI ? </label>
+          <div class="control">
+            <%= checkbox f, :pfup_complications_after_pci,
+            placeholder: "pfup_complications_after_pci",
+            required: false,
+            type: "checkbox" %>
+            <%= error_tag f, :pfup_complications_after_pci %>
+          </div>
+          <p class="help"><%#= i_hispanic %></p>
+        </div>
+        <!--field---->
+
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<% s_pfup_prior_stent_type = Query.select_options("uni_stent_type") %>
+
+<div class="field">
+  <label class="label"> Stent Type  </label>
+          <div class="control">
+            <div class="select is-info">
+              <%= select(f, :pfup_prior_stent_type,
+              s_pfup_prior_stent_type ,
+              prompt: "---Select---",
+              class: "form-control") %>
+            </div>
+            <%= error_tag f, :pfup_prior_stent_type %>
+            <span class="help"></span>
+          </div>
+        </div>
+        <!---field--->
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+ <!----------start field--------------------------------------->
+<div class="field">
+          <label class="label">Stent Thrombosed? </label>
+          <div class="control">
+            <%= checkbox f, :pfup_stent_thrombosis_yn,
+            placeholder: "pfup_clinical_improvement_yn ",
+            required: false,
+            type: "checkbox" %>
+            <%= error_tag f, :pfup_stent_thrombosis_yn %>
+          </div>
+          <p class="help">Check If Yes</p>
+        </div>
+        <!--field------------------------------->
+
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+
+   <div class = "column">
+   <!---------start field---------------------------->
+        <div class="field">
+          <label class="label">Estimated Stent Thrombosis Date </label>
+          <div class="control">
+            <%= text_input f, :pfup_stent_thrombosis_dt,
+            class: "input",
+            type: "date",
+            placeholder: "pfup_stent_thrombosis_dt",
+            required: false
+            %> <%= error_tag f, :pfup_stent_thrombosis_dt %>
+          </div>
+          <p class="help"></p>
+        </div>
+        <!----------------field---->
+
+
+
+</div><!----column-------------------->
+
+ <div class = "column">
+
+
+
+
+<% s_pfup_stent_thrombosis_timing = Query.select_options("pfup_stent_thrombosis_timing") %>
+
+<div class="field">
+  <label class="label"> Stent Thrombosis Timing  </label>
+          <div class="control">
+            <div class="select is-info">
+              <%= select(f, :pfup_stent_thrombosis_timing,
+              s_pfup_stent_thrombosis_timing,
+              prompt: "---Select---",
+              class: "form-control") %>
+            </div>
+            <%= error_tag f, :pfup_stent_thrombosis_timing %>
+            <span class="help"></span>
+          </div>
+        </div>
+        <!---field--->
+
+
+
+
+
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+ <!----------start field--------------------------------------->
+<div class="field">
+          <label class="label">Was Readmited? </label>
+          <div class="control">
+            <%= checkbox f, :pfup_readmission_yn,
+            placeholder: "pfup_readmission_yn",
+            required: false,
+            type: "checkbox" %>
+            <%= error_tag f, :pfup_readmission_yn %>
+          </div>
+          <p class="help">Check If Yes</p>
+        </div>
+        <!--field------------------------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+
+  <!---------start field---------------------------->
+        <div class="field">
+          <label class="label">Readmission  Date </label>
+          <div class="control">
+            <%= text_input f, :pfup_readmission_dt,
+            class: "input",
+            type: "date",
+            placeholder: "pfup_readmission_dt",
+            required: false
+            %> <%= error_tag f, :pfup_readmission_dt %>
+          </div>
+          <p class="help"></p>
+        </div>
+        <!----------------field---->
+
+ </div><!----column-------------------->
+
+ <div class = "column">
+
+<% s_pfup_readmission_reason = Query.select_options("pfup_readmission_reason") %>
+
+<div class="field">
+  <label class="label"> ReAdmission Reason  </label>
+          <div class="control">
+            <div class="select is-info">
+            <span class="field_help"></span>
+              <%= select(f, :pfup_readmission_reason,
+              s_pfup_readmission_reason,
+              prompt: "---Select---",
+              class: "form-control") %>
+            </div>
+            <%= error_tag f, :pfup_readmission_reason %>
+            <span class="help"></span>
+          </div>
+        </div>
+        <!---field--->
+
+
+</div><!----column-------------------->
+</div><!----columns--------------------------->
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+ <!----------start field--------------------------------------->
+<div class="field">
+          <label class="label">Stroke? </label>
+          <div class="control">
+            <%= checkbox f, :pfup_stroke_yn,
+            placeholder: "pfup_stroke_yn",
+            required: false,
+            type: "checkbox" %>
+            <%= error_tag f, :pfup_stroke_yn %>
+          </div>
+          <p class="help">Check If Yes</p>
+        </div>
+        <!--field------------------------------->
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+ <!---------start field---------------------------->
+        <div class="field">
+          <label class="label">Stroke  Date </label>
+          <div class="control">
+            <%= text_input f, :pfup_stroke_dt,
+            class: "input",
+            type: "date",
+            placeholder: "pfup_stroke_dt",
+            required: false
+            %> <%= error_tag f, :pfup_stroke_dt %>
+          </div>
+          <p class="help"></p>
+        </div>
+        <!----------------field---->
+
+
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+
+
+
+
+
+
+<span class="button is-primary  is-fullwidth ">
+<i class="fa fa-sticky-note">
+Angio - PCI
+</i>
+</span>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+<!----------start field--------------------------------------->
+
+
+<div class="field">
+          <label class="label">Angio? </label>
+          <div class="control">
+          <p class="field_help"></p>
+            <%= checkbox f, :pfup_angio_after_yn,
+            placeholder: "pfup_angio_after_yn",
+            required: false,
+            type: "checkbox" %>
+            <%= error_tag f, :pfup_angio_after_yn %>
+          </div>
+          <p class="help">Check If Yes</p>
+        </div>
+        <!--field------------------------------->
+
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+
+<!---------start field---------------------------->
+        <div class="field">
+          <label class="label">New Angio   Date </label>
+          <div class="control">
+            <%= text_input f, :pfup_angio_after_dt,
+            class: "input",
+            type: "date",
+            placeholder: "pfup_angio_after_dt",
+            required: false
+            %> <%= error_tag f, :pfup_angio_after_dt %>
+          </div>
+          <p class="help"></p>
+        </div>
+        <!----------------field---->
+
+
+
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!-------field start---------------------------------->
+<div class="field">
+          <label class="label">Notes On Angio Results </label>
+          <div class="control">
+            <%= text_input f, :pfup_angio_after_results,
+            class: "textarea",
+            type: "input",
+            placeholder: "pfup_angio_after_results" %>
+             <%= error_tag f, :pfup_notes %>
+            <p class="help"></p>
+          </div>
+          <!---control---------->
+        </div>
+        <!-------field-------->
+
+</div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+
+
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!----------start field--------------------------------------->
+<div class="field">
+          <label class="label">PCI ? </label>
+          <div class="control">
+            <%= checkbox f, :pfup_pci_after_yn,
+            placeholder: "pfup_pci_after_yn",
+            required: false,
+            type: "checkbox" %>
+            <%= error_tag f, :pfup_pci_after_yn %>
+          </div>
+          <p class="help">Check If Yes</p>
+        </div>
+        <!--field------------------------------->
+
+
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+
+<!---------start field---------------------------->
+        <div class="field">
+          <label class="label">New PCI   Date </label>
+          <div class="control">
+            <%= text_input f, :pfup_pci_after_dt,
+            class: "input",
+            type: "date",
+            placeholder: "pfup_pci_after_dt",
+            required: false
+            %> <%= error_tag f, :pfup_pci_after_dt %>
+          </div>
+          <p class="help"></p>
+        </div>
+        <!----------------field---->
+
+ </div><!----column-------------------->
+</div><!-------columns------------------------------------>
+
+<div class="columns">
+<div class = "column">
+
+<% s_pfup_pci_location = Query.select_options("uni_segments_cdisc") %>
+
+<div class="field">
+  <label class="label"> PCI Segments - CDISC (Multi Select) </label>
+          <div class="control">
+            <div class="select">
+              <%= multiple_select(f, :pfup_pci_location,
+              s_pfup_pci_location,
+              prompt: "---Select---",
+              class: "form-control", size: 2) %>
+            </div>
+            <%= error_tag f, :pfup_pci_location %>
+            <span class="help"></span>
+          </div>
+        </div>
+        <!---field--->
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+
+
+
+
+
+<span class="button is-primary  is-fullwidth ">
+<i class="fa fa-sticky-note">
+CABG
+</i>
+</span>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!----------start field--------------------------------------->
+<div class="field">
+          <label class="label">CABG ? </label>
+          <div class="control">
+            <%= checkbox f, :pfup_cabg_after_yn,
+            placeholder: "pfup_cabg_after_yn",
+            required: false,
+            type: "checkbox" %>
+            <%= error_tag f, :pfup_cabg_after_yn %>
+          </div>
+          <p class="help">Check If Yes</p>
+        </div>
+        <!--field------------------------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+
+ <!---------start field---------------------------->
+        <div class="field">
+          <label class="label">CABG  Date </label>
+          <div class="control">
+            <%= text_input f, :pfup_cabg_after_dt,
+            class: "input",
+            type: "date",
+            placeholder: "pfup_cabg_after_dt",
+            required: false
+            %> <%= error_tag f, :pfup_cabg_after_dt %>
+          </div>
+          <p class="help"></p>
+        </div>
+        <!----------------field---->
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<!-------field start---------------------------------->
+<div class="field">
+          <label class="label">Notes On CABG </label>
+          <div class="control">
+            <%= text_input f, :pfup_cabage_notes,
+            class: "textarea",
+            type: "input",
+            placeholder: "pfup_cabage_notes" %>
+             <%= error_tag f, :pfup_cabage_notes %>
+            <p class="help"></p>
+          </div>
+          <!---control---------->
+        </div>
+        <!-------field-------->
+
+
+
+</div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+
+<div class = "columns">
+<div class = "column">
+
+<!----------start field--------------------------------------->
+<div class="field">
+          <label class="label">Reintervention ? </label>
+          <div class="control">
+            <%= checkbox f, :pfup_other_intevention_yn,
+            placeholder: "pfup_other_intevention_yn",
+            required: false,
+            type: "checkbox" %>
+            <%= error_tag f, :pfup_other_intevention_yn %>
+          </div>
+          <p class="help">Check If Yes</p>
+        </div>
+        <!--field------------------------------->
+
+
+
+
+</div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<!-------field start---------------------------------->
+<div class="field">
+          <label class="label">Notes On Other Interventions </label>
+          <div class="control">
+            <%= text_input f, :pfup_other_intevention_notes,
+            class: "textarea",
+            type: "input",
+            placeholder: "pfup_other_intevention_notes" %>
+             <%= error_tag f, :pfup_other_intevention_notes %>
+            <p class="help"></p>
+          </div>
+          <!---control---------->
+        </div>
+        <!-------field-------->
+
+</div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="button is-primary  is-fullwidth ">
+<i class="fa fa-sticky-note">
+Angina
+</i>
+</span>
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<% s_pfup_chest_pain = Query.select_options("uni_chest_pain_type") %>
+
+<div class="field">
+  <label class="label">Chest Pain  </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f, :pfup_chest_pain,
+              s_pfup_chest_pain,
+              prompt: "---Select---",
+              class: "form-control") %>
+            </div>
+            <%= error_tag f, :pfup_chest_pain %>
+            <span class="help"></span>
+          </div>
+        </div>
+        <!---field--->
+
+
+
+
+</div><!----column-------------------->
+ <div class = "column">
+ Aux Field for the future
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<% s_pfup_angina_type = Query.select_options("uni_angina_type") %>
+
+<div class="field">
+  <label class="label">Angina Type  </label>
+          <div class="control">
+            <div class="select is-info">
+              <%= select(f, :pfup_angina_type,
+              s_pfup_angina_type,
+              prompt: "---Select---",
+              class: "form-control") %>
+            </div>
+            <%= error_tag f, :pfup_angina_type %>
+            <span class="help"></span>
+          </div>
+        </div>
+        <!---field--->
+</div><!----column-------------------->
+ <div class = "column">
+
+<!-------------------------------------->
+<div class="field">
+          <label class="label">Total Number Of Angina </label>
+          <div class="control">
+            <%= text_input f, :pfup_angina_total_num,
+            class: "input",
+            type: "text",
+            placeholder: "pfup_angina_total_num",
+            required: false %>
+             <%= error_tag f, :pfup_angina_total_num %>
+          </div>
+          <p class="help"></p>
+        </div>
+<!-------------------------field---->
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<!--------------
+uni_angina_duration
+----------------->
+<!----------start field---------------------------------------->
+<% s_pfup_angina_duration = Query.select_options("uni_angina_duration") %>
+
+<div class="field">
+  <label class="label">Pain Duration  </label>
+          <div class="control">
+            <div class="select is-info">
+              <%= select(f, :pfup_angina_duration,
+              s_pfup_angina_duration,
+              prompt: "---Select---",
+              class: "form-control") %>
+            </div>
+            <%= error_tag f, :pfup_angina_duration %>
+            <span class="help"></span>
+          </div>
+        </div>
+        <!---field-------------------------->
+
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+
+<!---------start field---------------------------->
+        <div class="field">
+          <label class="label">Last Angina Episode Date </label>
+          <div class="control">
+            <%= text_input f, :pfup_angina_last_episode_dt,
+            class: "input",
+            type: "date",
+            placeholder: "pfup_angina_last_episode_dt",
+            required: false
+            %> <%= error_tag f, :pfup_angina_last_episode_dt %>
+          </div>
+          <p class="help"></p>
+        </div>
+        <!----------------field---->
+
+
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!----------start field---------------------------------------->
+<% s_pfup_angina_class_canadian = Query.select_options("uni_angina_class") %>
+
+<div class="field">
+  <label class="label">Angina Class (CCS)  </label>
+          <div class="control">
+            <div class="select is-info">
+              <%= select(f, :pfup_angina_class_canadian,
+              s_pfup_angina_class_canadian,
+              prompt: "---Select---",
+              class: "form-control") %>
+            </div>
+            <%= error_tag f, :pfup_angina_class_canadian %>
+            <span class="help"></span>
+          </div>
+        </div>
+        <!---field-------------------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!----------start field---------------------------------------->
+<% s_pfup_nyha = Query.select_options("uni_nyha_class") %>
+
+<div class="field">
+  <label class="label">NYHA Class  </label>
+          <div class="control">
+            <div class="select is-info">
+              <%= select(f, :pfup_nyha,
+              s_pfup_nyha,
+              prompt: "---Select---",
+              class: "form-control") %>
+            </div>
+            <%= error_tag f, :pfup_nyha %>
+            <span class="help"></span>
+          </div>
+        </div>
+        <!---field-------------------------->
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+
+
+
+
+
+
+
+
+</div><!--------end LEFT COLUMN------------------------------>
+
+
+<div class="column frame_1"><!----start R COLUMN-------------------------->
+
+
+
+<span class="button is-primary  is-fullwidth ">
+<i class="fa fa-sticky-note">
+Infarction
+</i>
+</span>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+
+<!----------start field--------------------------------------->
+<div class="field">
+          <label class="label">Infarction? </label>
+          <div class="control">
+            <%= checkbox f, :pfup_infarction_yn,
+            placeholder: "pfup_infarction_yn",
+            required: false,
+            type: "checkbox" %>
+            <%= error_tag f, :pfup_infarction_yn%>
+          </div>
+          <p class="help">Check If Yes</p>
+        </div>
+        <!--field------------------------------->
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!----------start field---------------------------------------->
+<% s_pfup_old_infarction_location = Query.select_options("uni_ecg_infarct_pattern_location") %>
+
+<div class="field">
+  <label class="label">Old Infarction Location  </label>
+          <div class="control">
+            <div class="select is-info">
+              <%= select(f, :pfup_old_infarction_location,
+              s_pfup_old_infarction_location,
+              prompt: "---Select---",
+              class: "form-control") %>
+            </div>
+            <%= error_tag f, :pfup_old_infarction_location %>
+            <span class="help"></span>
+          </div>
+        </div>
+        <!---field-------------------------->
+
+ </div><!----column------------------------------------>
+</div><!----columns--------------------------->
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!---------start field---------------------------->
+        <div class="field">
+          <label class="label">New Infarction Date </label>
+          <div class="control">
+            <%= text_input f, :pfup_new_infarction_dt,
+            class: "input",
+            type: "date",
+            placeholder: "pfup_new_infarction_dt",
+            required: false
+            %> <%= error_tag f, :pfup_new_infarction_dt %>
+          </div>
+          <p class="help"></p>
+        </div>
+        <!----------------field---->
+
+</div><!----column-------------------->
+ <div class = "column">
+<% s_pfup_old_infarction_location = Query.select_options("uni_ecg_infarct_pattern_location") %>
+
+<div class="field">
+  <label class="label">New Infarction Location  </label>
+          <div class="control">
+            <div class="select is-info">
+              <%= select(f, :pfup_old_infarction_location,
+              s_pfup_old_infarction_location,
+              prompt: "---Select---",
+              class: "form-control") %>
+            </div>
+            <%= error_tag f, :pfup_old_infarction_location %>
+            <span class="help"></span>
+          </div>
+        </div>
+        <!---field--->
+
+
+ </div><!----column-------------------->
+
+<div class = "column">
+
+<% s_pfup_new_infarction_treatment = Query.select_options("uni_infarction_treatment") %>
+
+<div class="field">
+  <label class="label">New Infarction Treatment  </label>
+          <div class="control">
+            <div class="select is-info">
+              <%= select(f, :pfup_new_infarction_treatment,
+              s_pfup_new_infarction_treatment,
+              prompt: "---Select---",
+              class: "form-control") %>
+            </div>
+            <%= error_tag f, :pfup_new_infarction_treatment %>
+            <span class="help"></span>
+          </div>
+        </div>
+        <!---field--->
+
+
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!-------field start---------------------------------->
+<div class="field">
+          <label class="label">Notes On New Infarction </label>
+          <div class="control">
+            <%= text_input f, :pfup_infarction_notes,
+            class: "textarea",
+            type: "input",
+            placeholder: "pfup_infarction_notes" %>
+              <%= error_tag f, :pfup_infarction_notes %>
+            <p class="help"></p>
+          </div>
+          <!---control---------->
+        </div>
+        <!-------field-------->
+
+</div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+
+
+<span class="button is-primary  is-fullwidth ">
+<i class="fa fa-sticky-note">
+Medications At Follow Up
+</i>
+</span>
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+
+<!----------start field--------------------------------------->
+<div class="field">
+          <label class="label">On Aspirin? </label>
+          <div class="control">
+            <%= checkbox f, :pfup_aspirin_yn,
+            placeholder: "pfup_aspirin_yn",
+            required: false,
+            type: "checkbox" %>
+            <%= error_tag f, :pfup_aspirin_yn %>
+          </div>
+          <p class="help">Check If Yes</p>
+        </div>
+        <!--field------------------------------->
+
+
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+
+ <!----------start field--------------------------------------->
+<div class="field">
+          <label class="label">On Beta Blocker? </label>
+          <div class="control">
+            <%= checkbox f, :pfup_beta_blocker_yn,
+            placeholder: "pfup_beta_blocker_yn",
+            required: false,
+            type: "checkbox" %>
+            <%= error_tag f, :pfup_beta_blocker_yn %>
+          </div>
+          <p class="help">Check If Yes</p>
+        </div>
+        <!--field------------------------------->
+
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+
+ <!----------start field--------------------------------------->
+<div class="field">
+          <label class="label">On Nitrates? </label>
+          <div class="control">
+            <%= checkbox f, :pfup_nitrates_yn,
+            placeholder: "pfup_nitrates_yn",
+            required: false,
+            type: "checkbox" %>
+            <%= error_tag f, :pfup_nitrates_yn %>
+          </div>
+          <p class="help">Check If Yes</p>
+        </div>
+        <!--field------------------------------->
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+ <!----------start field--------------------------------------->
+<div class="field">
+          <label class="label">On Diuretics? </label>
+          <div class="control">
+            <%= checkbox f, :pfup_diuretics_yn,
+            placeholder: "pfup_diuretics_yn",
+            required: false,
+            type: "checkbox" %>
+            <%= error_tag f, :pfup_diuretics_yn %>
+          </div>
+          <p class="help">Check If Yes</p>
+        </div>
+        <!--field------------------------------->
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+ <!----------start field--------------------------------------->
+<div class="field">
+          <label class="label">On Statins? </label>
+          <div class="control">
+            <%= checkbox f, :pfup_statin_yn,
+            placeholder: "pfup_statin_yn",
+            required: false,
+            type: "checkbox" %>
+            <%= error_tag f, :pfup_statin_yn %>
+          </div>
+          <p class="help">Check If Yes</p>
+        </div>
+        <!--field------------------------------->
+
+
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+
+<!----------start field--------------------------------------->
+<div class="field">
+          <label class="label">Patient is not On Statins? </label>
+          <div class="control">
+            <%= checkbox f, :pfup_no_statin_yn,
+            placeholder: "pfup_no_statin_yn",
+            required: false,
+            type: "checkbox" %>
+            <%= error_tag f, :pfup_no_statin_yn %>
+          </div>
+          <p class="help">Check If Is NOT On Statins</p>
+        </div>
+        <!--field------------------------------->
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!----------start field--------------------------------------->
+<div class="field">
+          <label class="label">On AntiPlatelets? </label>
+          <div class="control">
+            <%= checkbox f, :pfup_antiplatelet_yn,
+            placeholder: "pfup_antiplatelet_yn",
+            required: false,
+            type: "checkbox" %>
+            <%= error_tag f, :pfup_antiplatelet_yn %>
+          </div>
+          <p class="help">Check If Yes</p>
+        </div>
+        <!--field------------------------------->
+
+
+
+</div><!----column-------------------->
+ <div class = "column">
+<!----------start field---------------------------------------->
+<% s_pfup_thienopyridines = Query.select_options("uni_thienopyridines_types") %>
+
+<div class="field">
+  <label class="label">Thienopyridines  </label>
+          <div class="control">
+            <div class="select is-info">
+              <%= select(f, :pfup_thienopyridines,
+              s_pfup_thienopyridines,
+              prompt: "---Select---",
+              class: "form-control") %>
+            </div>
+            <%= error_tag f, :pfup_thienopyridines %>
+            <span class="help"></span>
+          </div>
+        </div>
+        <!---field-------------------------->
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!----------start field--------------------------------------->
+<div class="field">
+          <label class="label">On ARB? </label>
+          <div class="control">
+            <%= checkbox f, :pfup_arb_yn,
+            placeholder: "pfup_arb_yn",
+            required: false,
+            type: "checkbox" %>
+            <%= error_tag f, :pfup_arb_yn %>
+          </div>
+          <p class="help">Check If Yes</p>
+        </div>
+        <!--field------------------------------->
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+
+<!----------start field--------------------------------------->
+<div class="field">
+          <label class="label">On Anticoagulants? </label>
+          <div class="control">
+            <%= checkbox f, :pfup_anticoagulant_yn,
+            placeholder: "pfup_anticoagulant_yn",
+            required: false,
+            type: "checkbox" %>
+            <%= error_tag f, :pfup_anticoagulant_yn %>
+          </div>
+          <p class="help">Check If Yes</p>
+        </div>
+        <!--field------------------------------->
+
+
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+Aux Field For the Future
+</div><!----column-------------------->
+ <div class = "column">
+
+<!----------start field---------------------------------------->
+<% s_pfup_xa_inhibitors = Query.select_options("uni_xa_inhibitors") %>
+
+<div class="field">
+  <label class="label">Xa Inhibitors  </label>
+          <div class="control">
+            <div class="select is-info">
+              <%= select(f, :pfup_xa_inhibitors,
+              s_pfup_xa_inhibitors,
+              prompt: "---Select---",
+              class: "form-control") %>
+            </div>
+            <%= error_tag f, :pfup_xa_inhibitors %>
+            <span class="help"></span>
+          </div>
+        </div>
+        <!---field-------------------------->
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<!----------start field--------------------------------------->
+<div class="field">
+          <label class="label">On ACE? </label>
+          <div class="control">
+            <%= checkbox f, :pfup_ace_yn,
+            placeholder: "pfup_ace_yn",
+            required: false,
+            type: "checkbox" %>
+            <%= error_tag f, :pfup_ace_yn %>
+          </div>
+          <p class="help">Check If Yes</p>
+        </div>
+        <!--field------------------------------->
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!----------start field---------------------------------------->
+<% s_pfup_rehabilitation = Query.select_options("pfup_rehabilitation") %>
+
+<div class="field">
+  <label class="label">Rehabilitation  </label>
+          <div class="control">
+            <div class="select is-info">
+            <span class="field_help"></span>
+              <%= select(f, :pfup_rehabilitation,
+              s_pfup_rehabilitation,
+              prompt: "---Select---",
+              class: "form-control") %>
+            </div>
+            <%= error_tag f, :pfup_rehabilitation %>
+            <span class="help"></span>
+          </div>
+        </div>
+        <!---field-------------------------->
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+
+
+<span class="button is-danger  is-fullwidth ">
+<i class="fa fa-sticky-note">
+My Notes
+</i>
+</span>
+
+  <div class = "columns">
+  <div class = "column">
+
+
+<!-------field start---------------------------------->
+<div class="field">
+          <label class="label">My Notes </label>
+          <div class="control">
+            <%= text_input f, :pfup_notes, class: "textarea", type: "input",
+            placeholder: "pfup_notes" %>
+             <%= error_tag f, :pfup_notes %>
+            <p class="help"></p>
+          </div>
+          <!---control---------->
+        </div>
+        <!-------field-------->
+
+</div><!-----NOTES column---------------->
+</div><!----NOTES ----COLUMNS----------------------------------->
+
+
+<div class = "columns">
+<div class = "column">
+ <%= render  AngioWeb.SharedView, "_help_area.html" %>
+
+</div><!-----HELP column---------------->
+</div><!----HELP ----COLUMNS-------------------------------------->
+
+ </div><!-----END R COLUMN---------------------------->
+</div><!------end columns------------------------->
+  <div>
+     <%= submit "Save Record", class: "button is-info is-large is-fullwidth " %>
+
+  </div>
+
+<% end %>

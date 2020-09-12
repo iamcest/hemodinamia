@@ -1,0 +1,145 @@
+<div class="title_form">
+  <h6 class="title is-6 has-text-centered"> Showing Left Atrium Record</h6>
+</div>
+
+<div class="element_info">
+   <%= render AngioWeb.SharedView, "_patient_info.html", patient:
+  @patient %>
+</div>
+<ul>
+
+  <li>
+    <strong>Ela volume val:</strong>
+    <%= @echo_left_atrium.ela_volume_val %>
+  </li>
+
+  <li>
+    <strong>Ela chatheter loc desc:</strong>
+    <%= @echo_left_atrium.ela_chatheter_loc_desc %>
+  </li>
+
+  <li>
+    <strong>Ela volume desc:</strong>
+    <%= @echo_left_atrium.ela_volume_desc %>
+  </li>
+
+  <li>
+    <strong>Ela diam si val:</strong>
+    <%= @echo_left_atrium.ela_diam_si_val %>
+  </li>
+
+  <li>
+    <strong>Ela volume index:</strong>
+    <%= @echo_left_atrium.ela_volume_index %>
+  </li>
+
+  <li>
+    <strong>Ela diam ml val:</strong>
+    <%= @echo_left_atrium.ela_diam_ml_val %>
+  </li>
+
+  <li>
+    <strong>Ela appearance trasplantation yn:</strong>
+    <%= @echo_left_atrium.ela_appearance_trasplantation_yn %>
+  </li>
+
+  <li>
+    <strong>Ela mas location desc:</strong>
+    <%= @echo_left_atrium.ela_mas_location_desc %>
+  </li>
+
+  <li>
+    <strong>Ela cor triatrium yn:</strong>
+    <%= @echo_left_atrium.ela_cor_triatrium_yn %>
+  </li>
+
+  <li>
+    <strong>Ela asd yn:</strong>
+    <%= @echo_left_atrium.ela_asd_yn %>
+  </li>
+
+  <li>
+    <strong>Ela pum veins thrombus tumour yn:</strong>
+    <%= @echo_left_atrium.ela_pum_veins_thrombus_tumour_yn %>
+  </li>
+
+  <li>
+    <strong>Ela chatheter yn:</strong>
+    <%= @echo_left_atrium.ela_chatheter_yn %>
+  </li>
+
+  <li>
+    <strong>Ela area 4ch 2d us:</strong>
+    <%= @echo_left_atrium.ela_area_4ch_2d_us %>
+  </li>
+
+  <li>
+    <strong>Ela spontaneous contrast yn:</strong>
+    <%= @echo_left_atrium.ela_spontaneous_contrast_yn %>
+  </li>
+
+  <li>
+    <strong>Ela thromus tumour body loc:</strong>
+    <%= @echo_left_atrium.ela_thromus_tumour_body_loc %>
+  </li>
+
+  <li>
+    <strong>Ela mas attachment site:</strong>
+    <%= @echo_left_atrium.ela_mas_attachment_site %>
+  </li>
+
+  <li>
+    <strong>Ela volume method:</strong>
+    <%= @echo_left_atrium.ela_volume_method %>
+  </li>
+
+  <li>
+    <strong>Ela mas yn:</strong>
+    <%= @echo_left_atrium.ela_mas_yn %>
+  </li>
+
+  <li>
+    <strong>Ela spontaneous contrast persist:</strong>
+    <%= @echo_left_atrium.ela_spontaneous_contrast_persist %>
+  </li>
+
+  <li>
+    <strong>Ela diam ap val:</strong>
+    <%= @echo_left_atrium.ela_diam_ap_val %>
+  </li>
+
+  <li>
+    <strong>Ela spontaneous contrast loc:</strong>
+    <%= @echo_left_atrium.ela_spontaneous_contrast_loc %>
+  </li>
+
+  <li>
+    <strong>Ela notes:</strong>
+    <%= @echo_left_atrium.ela_notes %>
+  </li>
+
+</ul>
+
+<p class ="buttons_separator"> . </p>
+
+<span>
+    <%= link "Edit LA Echo ", to: Routes.pt_echo_ela_path(@conn, :edit,
+     @patient,
+     @cardiac_echo, @echo_left_atrium ), class: "button is-link"%>
+</span>
+<span>
+  <%= link "Back To LA Echo  Index", to: Routes.pt_echo_ela_path(@conn, :index,
+  @patient, @cardiac_echo) , class: "button is-link"%>
+</span>
+
+<span>
+<%= link "To Patients List",  to: Routes.pt_path(@conn, :index),
+class: "button is-link"   %>
+ </span>
+
+<span>
+<%= link "To Cath Lab",  to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-link"   %>
+ </span>
+
+

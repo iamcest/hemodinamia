@@ -1,0 +1,195 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+  <%= label f, :loinc_num %>
+  <%= text_input f, :loinc_num %>
+  <%= error_tag f, :loinc_num %>
+
+  <%= label f, :component %>
+  <%= text_input f, :component %>
+  <%= error_tag f, :component %>
+
+  <%= label f, :property %>
+  <%= text_input f, :property %>
+  <%= error_tag f, :property %>
+
+  <%= label f, :time_aspct %>
+  <%= text_input f, :time_aspct %>
+  <%= error_tag f, :time_aspct %>
+
+  <%= label f, :system %>
+  <%= text_input f, :system %>
+  <%= error_tag f, :system %>
+
+  <%= label f, :scale_typ %>
+  <%= text_input f, :scale_typ %>
+  <%= error_tag f, :scale_typ %>
+
+  <%= label f, :method_typ %>
+  <%= text_input f, :method_typ %>
+  <%= error_tag f, :method_typ %>
+
+  <%= label f, :class %>
+  <%= text_input f, :class %>
+  <%= error_tag f, :class %>
+
+  <%= label f, :versionlastchanged %>
+  <%= text_input f, :versionlastchanged %>
+  <%= error_tag f, :versionlastchanged %>
+
+  <%= label f, :chng_type %>
+  <%= text_input f, :chng_type %>
+  <%= error_tag f, :chng_type %>
+
+  <%= label f, :definitiondescription %>
+  <%= textarea f, :definitiondescription %>
+  <%= error_tag f, :definitiondescription %>
+
+  <%= label f, :status %>
+  <%= text_input f, :status %>
+  <%= error_tag f, :status %>
+
+  <%= label f, :consumer_name %>
+  <%= text_input f, :consumer_name %>
+  <%= error_tag f, :consumer_name %>
+
+  <%= label f, :classtype %>
+  <%= number_input f, :classtype %>
+  <%= error_tag f, :classtype %>
+
+  <%= label f, :formula %>
+  <%= textarea f, :formula %>
+  <%= error_tag f, :formula %>
+
+  <%= label f, :species %>
+  <%= text_input f, :species %>
+  <%= error_tag f, :species %>
+
+  <%= label f, :exmpl_answers %>
+  <%= textarea f, :exmpl_answers %>
+  <%= error_tag f, :exmpl_answers %>
+
+  <%= label f, :survey_quest_text %>
+  <%= textarea f, :survey_quest_text %>
+  <%= error_tag f, :survey_quest_text %>
+
+  <%= label f, :survey_quest_src %>
+  <%= text_input f, :survey_quest_src %>
+  <%= error_tag f, :survey_quest_src %>
+
+  <%= label f, :unitsrequired %>
+  <%= text_input f, :unitsrequired %>
+  <%= error_tag f, :unitsrequired %>
+
+  <%= label f, :submitted_units %>
+  <%= text_input f, :submitted_units %>
+  <%= error_tag f, :submitted_units %>
+
+  <%= label f, :relatednames2 %>
+  <%= textarea f, :relatednames2 %>
+  <%= error_tag f, :relatednames2 %>
+
+  <%= label f, :shortname %>
+  <%= text_input f, :shortname %>
+  <%= error_tag f, :shortname %>
+
+  <%= label f, :order_obs %>
+  <%= text_input f, :order_obs %>
+  <%= error_tag f, :order_obs %>
+
+  <%= label f, :cdisc_common_tests %>
+  <%= text_input f, :cdisc_common_tests %>
+  <%= error_tag f, :cdisc_common_tests %>
+
+  <%= label f, :hl7_field_subfield_id %>
+  <%= text_input f, :hl7_field_subfield_id %>
+  <%= error_tag f, :hl7_field_subfield_id %>
+
+  <%= label f, :external_copyright_notice %>
+  <%= textarea f, :external_copyright_notice %>
+  <%= error_tag f, :external_copyright_notice %>
+
+  <%= label f, :example_units %>
+  <%= text_input f, :example_units %>
+  <%= error_tag f, :example_units %>
+
+  <%= label f, :long_common_name %>
+  <%= text_input f, :long_common_name %>
+  <%= error_tag f, :long_common_name %>
+
+  <%= label f, :unitsandrange %>
+  <%= textarea f, :unitsandrange %>
+  <%= error_tag f, :unitsandrange %>
+
+  <%= label f, :example_ucum_units %>
+  <%= text_input f, :example_ucum_units %>
+  <%= error_tag f, :example_ucum_units %>
+
+  <%= label f, :example_si_ucum_units %>
+  <%= text_input f, :example_si_ucum_units %>
+  <%= error_tag f, :example_si_ucum_units %>
+
+  <%= label f, :status_reason %>
+  <%= text_input f, :status_reason %>
+  <%= error_tag f, :status_reason %>
+
+  <%= label f, :status_text %>
+  <%= textarea f, :status_text %>
+  <%= error_tag f, :status_text %>
+
+  <%= label f, :change_reason_public %>
+  <%= textarea f, :change_reason_public %>
+  <%= error_tag f, :change_reason_public %>
+
+  <%= label f, :common_test_rank %>
+  <%= number_input f, :common_test_rank %>
+  <%= error_tag f, :common_test_rank %>
+
+  <%= label f, :common_order_rank %>
+  <%= number_input f, :common_order_rank %>
+  <%= error_tag f, :common_order_rank %>
+
+  <%= label f, :common_si_test_rank %>
+  <%= number_input f, :common_si_test_rank %>
+  <%= error_tag f, :common_si_test_rank %>
+
+  <%= label f, :hl7_attachment_structure %>
+  <%= text_input f, :hl7_attachment_structure %>
+  <%= error_tag f, :hl7_attachment_structure %>
+
+  <%= label f, :ExternalCopyrightLink %>
+  <%= text_input f, :ExternalCopyrightLink %>
+  <%= error_tag f, :ExternalCopyrightLink %>
+
+  <%= label f, :paneltype %>
+  <%= text_input f, :PanelType %>
+  <%= error_tag f, :PanelType %>
+
+  <%= label f, :askatorderentry %>
+  <%= text_input f, :askAtorderentry %>
+  <%= error_tag f, :askAtorderentry %>
+
+  <%= label f, :associatedobservations %>
+  <%= text_input f, :associatedobservations %>
+  <%= error_tag f, :associatedobservations %>
+
+  <%= label f, :versionfirstreleased %>
+  <%= text_input f, :versionfirstreleased %>
+  <%= error_tag f, :versionfirstreleased %>
+
+  <%= label f, :validhl7attachmentrequest %>
+  <%= text_input f, :validhl7attachmentrequest %>
+  <%= error_tag f, :validhl7attachmentrequest %>
+
+  <%= label f, :displayname %>
+  <%= text_input f, :displayname %>
+  <%= error_tag f, :displayname %>
+
+  <div>
+    <%= submit "Save" %>
+  </div>
+<% end %>

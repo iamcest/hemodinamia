@@ -1,0 +1,540 @@
+
+
+<div class="title_form">
+<h5 class="title is-5 has-text-centered"> Show Sats Pressures </h5>
+</div>
+
+<div class="element_info">
+   <%= render AngioWeb.SharedView, "_patient_info.html", patient:
+  @patient %>
+</div>
+
+<div class="element_info_coronary">
+<%= render AngioWeb.SharedView, "_info_coronary.html", info_coronary:
+   @info_coronary%>
+</div>
+<div class="columns">
+<div class="column is-2 frame_1" style="background-color:#ddd;">
+<div class="title_form">
+<h6 class="title is-6 has-text-centered"> Sats Data </h6>
+
+</div>
+
+<ul>
+
+
+
+
+<li>
+    <strong>IVC Sao2:</strong>
+    <%= @sats_pressure.sao2_ivc %>
+  </li>
+
+
+<li>
+    <strong>IVC Pres mean:</strong>
+    <%= @sats_pressure.ivc_pres_mean %>
+  </li>
+
+
+
+  <li>
+    <strong>IVC pres sys:</strong>
+    <%= @sats_pressure.ivc_pres_sys %>
+  </li>
+
+
+<li>
+    <strong>Sao2 hepatic veins:</strong>
+    <%= @sats_pressure.sao2_hepatic_veins %>
+  </li>
+
+
+
+<li>
+    <strong>Hepatic veins pres:</strong>
+    <%= @sats_pressure.hepatic_veins_pres %>
+  </li>
+
+<li>
+<span class="tag is-small is-rounded is-link">Right Atrium</span>
+</li>
+
+ <li>
+    <strong>RA Pres mean:</strong>
+    <%= @sats_pressure.ra_pres_mean %>
+  </li>
+
+<li>
+    <strong>RA  a wave:</strong>
+    <%= @sats_pressure.ra_pres_a %>
+  </li>
+ <li>
+    <strong>RA  c wave :</strong>
+    <%= @sats_pressure.ra_pres_c %>
+  </li>
+
+<li>
+    <strong>RA x wave:</strong>
+    <%= @sats_pressure.ra_pres_x %>
+  </li>
+
+
+
+
+<li>
+    <strong>RA v wave:</strong>
+    <%= @sats_pressure.ra_pres_v %>
+  </li>
+
+
+
+
+ <li>
+    <strong>RA pres y:</strong>
+    <%= @sats_pressure.ra_pres_y %>
+  </li>
+
+
+  <li>
+    <strong>RA Low Sao2:</strong>
+    <%= @sats_pressure.sao2_ra_low %>
+  </li>
+
+
+
+
+  <li>
+    <strong>RA High Sao2 :</strong>
+    <%= @sats_pressure.sao2_ra_high %>
+  </li>
+
+<li>
+<span class="tag is-small is-rounded is-link">Superior Vena Cava</span>
+</li>
+
+
+
+
+  <li>
+    <strong>SVC High Sao2:</strong>
+    <%= @sats_pressure.sao2_svc_high %>
+  </li>
+
+
+
+  <li>
+    <strong>Sao2 SVC low:</strong>
+    <%= @sats_pressure.sao2_svc_low %>
+  </li>
+ <li>
+    <strong>SVC Pres mean:</strong>
+    <%= @sats_pressure.svc_pres_mean %>
+  </li>
+
+<li>
+<span class="tag is-small is-rounded is-link">Right Ventricle</span>
+</li>
+
+
+<li>
+    <strong>RV pres sys:</strong>
+    <%= @sats_pressure.rv_pres_sys %>
+  </li>
+
+  <li>
+    <strong>RV pres dias:</strong>
+    <%= @sats_pressure.rv_pres_dias %>
+  </li>
+
+ <li>
+    <strong>Rv pres mean:</strong>
+    <%= @sats_pressure.rv_pres_mean %>
+  </li>
+
+<li>
+    <strong>RV Sao2 :</strong>
+    <%= @sats_pressure.sao2_rv %>
+  </li>
+
+   <li>
+    <strong>RV Mid Sao2:</strong>
+    <%= @sats_pressure.sao2_rv_mid %>
+  </li>
+
+  <li>
+    <strong> RV apex Sao2 :</strong>
+    <%= @sats_pressure.sao2_rv_apex %>
+  </li>
+
+ <li>
+    <strong>RV outflow Sao2 :</strong>
+    <%= @sats_pressure.sao2_rv_outflow %>
+  </li>
+
+<li>
+<span class="tag is-small is-rounded is-link">Pulmonary  Artery</span>
+</li>
+
+
+  <li>
+    <strong>PA pres sys:</strong>
+    <%= @sats_pressure.pa_pres_sys %>
+  </li>
+
+<li>
+    <strong>PA Pres dias:</strong>
+    <%= @sats_pressure.pa_pres_dias %>
+  </li>
+
+
+  <li>
+    <strong>PA pres mean:</strong>
+    <%= @sats_pressure.pa_pres_mean %>
+  </li>
+
+
+ <li>
+    <strong>PA Sao2:</strong>
+    <%= @sats_pressure.sao2_pa %>
+  </li>
+
+
+
+<li>
+<span class="tag is-small is-rounded is-warning">Right Pulmonary  Artery</span>
+</li>
+ <li>
+    <strong>PA Right Mean Pres:</strong>
+    <%= @sats_pressure.pa_right_pres_mean %>
+  </li>
+ <li>
+    <strong>PA Right Sao2:</strong>
+    <%= @sats_pressure.sao2_pa_right %>
+  </li>
+
+
+  <li>
+    <strong>PA Right pres sys:</strong>
+    <%= @sats_pressure.pa_right_pres_sys %>
+  </li>
+
+  <li>
+    <strong>PA Right pres dias:</strong>
+    <%= @sats_pressure.pa_right_pres_dias %>
+  </li>
+
+<li>
+<span class="tag is-small is-rounded is-warning">Left Pulmonary  Artery</span>
+</li>
+
+<li>
+    <strong>PA Left Pres sys:</strong>
+    <%= @sats_pressure.pa_left_pres_sys %>
+  </li>
+
+  <li>
+    <strong>PA Left pres dias:</strong>
+    <%= @sats_pressure.pa_left_pres_dias %>
+  </li>
+  <li>
+    <strong>PA Left pres mean:</strong>
+    <%= @sats_pressure.pa_left_pres_mean %>
+  </li>
+
+
+<li>
+    <strong>PA Left Sao2:</strong>
+    <%= @sats_pressure.sao2_pa_left %>
+  </li>
+
+
+
+</ul>
+</div><!----LEFT COLUMN----------------------------->
+<div class="column is-8 frame_1">
+<div class="title_form">
+<h6 class="title is-6 has-text-centered"> Final Sats Pressures Diagram (Mullins Atlas) - Please Resize Window. </h6>
+</div>
+
+
+  <script type="text/javascript">
+var SAT_PRES_DATA =  <%= raw Poison.encode!(%{sat_pressure: @sats_pressure} ) %>
+//console.log(SAT_PRES_DATA)
+  </script>
+
+  <div id="draw_pressures_button_div">
+  </div><!--draw_pres_div -->
+
+  <div id="draw_pressures_div">
+
+  </div><!--draw_pressures_div -->
+  <div class="is-divider" data-content="Admin"></div>
+
+  <li>
+    <strong>Cath Date:</strong>
+    <%= @sats_pressure.sat_pres_start_dt %>
+
+    <strong>Starting Time:</strong>
+    <%= @sats_pressure.sat_pres_start_tm %>
+
+    <strong > End Time :</strong>
+    <%= @sats_pressure.sat_pres_end_tm %>
+
+    <strong>End Date:</strong>
+    <%= @sats_pressure.sat_pres_end_dt %>
+  </li>
+
+   <div class="is-divider" data-content=" Diagnoses / Procedures /Comments "></div>
+
+
+    <%= raw @sats_pressure.sat_pres_notes %>
+
+ <div class="is-divider" data-content="Calc Reminders"></div>
+
+
+  <li>
+  <strong>O2 Capacity</strong> = Hb x 1.36
+   <em>(<%#= String.to_float(@sats_pressure.sat_pres_hb)*1.36   %>)</em >
+   </li>
+
+ <li>
+
+ <strong>Mixed venous oxygen saturation (MV Sat) </strong>= (3 * SVC Sat) + (1 * IVC Sat) / 4
+
+ </li>
+
+  <li>
+ <strong>Mixed Venous oxygen content(Cvo2) </strong> = (O2 capacity x MV Sat)
+</li>
+
+<li>
+ <strong> Arterial oxygen content  (CaO2) </strong> = (O2 capacity x SA Sat)
+  </li>
+
+
+
+  <li>
+ <strong>Mixed venous partial pressure of oxygen  PvCO2</strong> = (O2 capacity x PA sat)
+</li>
+
+  <li>
+  <strong> PV O2 content</strong> = (O2 capacity x PV sat)
+ </li>
+
+   <li>
+ <strong> O2 Content </strong>= O2 Capacity O2 sat
+
+   </li>
+
+
+   <li>
+  <strong>  Resistance Pulmonary - Rp indexed (indexed  ) </strong>=  mean MPA - PA wedge/Qp
+
+</li>
+<li>
+
+  <strong> Resistance Systemic -  Rs indexed (indexed  )</strong> =  mean Sys - mean RA/Qp
+
+</li>
+
+<li>
+<strong>For Males. Oxygen Consumption(ml/min/m2) </strong>= 138.1 - (11.49 x log(age in years)) + (0.379 x Heart Rate)
+OR Sedentary men: 57.8 (0.445 x age)
+</li>
+<li>
+<strong>For Females. Oxygen Consumption(ml/min/m2) </strong>= 138.1 - (17.04 x log(age in years)) + (0.379 x Heart Rate)
+OR Sedentary women: 42.3 (0.356 x age)
+</li>
+
+<li>
+ <strong> Qp </strong>= O2 consumption / ((PV - PA content) x 10)
+ </li>
+
+ <li>
+ <strong>Qs</strong> = O2 consumption / ((SA - MV content) x 10)
+</li>
+
+</div><!-----RIGHT COLUMN----------------------------->
+<div class="column is-2 frame_1" style="background-color:#ddd;">
+
+
+<div class="title_form">
+<h6 class="title is-6 has-text-centered"> Sats Data </h6>
+</div>
+
+<ul>
+
+<li>
+<span class="tag is-small is-rounded is-link">PCW</span>
+</li>
+
+
+ <li>
+    <strong>PCW pres mean:</strong>
+    <%= @sats_pressure.pcw_pres_mean %>
+  </li>
+
+<li>
+    <strong>PCW Sao2:</strong>
+    <%= @sats_pressure.sao2_pcw %>
+  </li>
+
+  <li>
+    <strong>PCW  a wave:</strong>
+    <%= @sats_pressure.pcw_pres_a %>
+  </li>
+
+<li>
+    <strong>PCW pres c:</strong>
+    <%= @sats_pressure.pcw_pres_c %>
+  </li>
+
+ <li>
+    <strong>PCW pres x wave:</strong>
+    <%= @sats_pressure.pcw_pres_x %>
+  </li>
+
+<li>
+    <strong>PCW  v wave:</strong>
+    <%= @sats_pressure.pcw_pres_v %>
+  </li>
+
+
+
+<li>
+    <strong>PCW pres y:</strong>
+    <%= @sats_pressure.pcw_pres_y %>
+  </li>
+
+
+
+  <li>
+
+<span class="tag is-small is-rounded is-link">Left Ventricle</span>
+</li>
+
+
+
+<li>
+    <strong>LV Pres  Sys:</strong>
+    <%= @sats_pressure.lv_pres_sys %>
+  </li>
+
+<li>
+    <strong>LV EDP :</strong>
+    <%= @sats_pressure.lv_pres_end_dias %>
+  </li>
+
+
+  <li>
+    <strong>LV pres mean:</strong>
+    <%= @sats_pressure.lv_pres_mean %>
+  </li>
+
+ <li>
+    <strong>LV Sao2:</strong>
+    <%= @sats_pressure.sao2_lv %>
+  </li>
+
+
+  <li>
+<span class="tag is-small is-rounded is-link">Aorta</span>
+</li>
+
+
+  <li>
+    <strong>Aortic Pres Sys:</strong>
+    <%= @sats_pressure.aortic_pres_sys %>
+  </li>
+
+  <li>
+    <strong>Aortic pres dias:</strong>
+    <%= @sats_pressure.aortic_pres_dias %>
+  </li>
+<li>
+    <strong>Aortic pres mean:</strong>
+    <%= @sats_pressure.aortic_pres_mean %>
+  </li>
+
+ <li>
+    <strong>Ao Root Sao2:</strong>
+    <%= @sats_pressure.sao2_ao_root %>
+  </li>
+
+ <li>
+    <strong>Aortic Distal Sao2:</strong>
+    <%= @sats_pressure.sao2_ao_distal %>
+  </li>
+
+
+
+
+<li>
+<span class="tag is-small is-rounded is-link">Complementary Data</span>
+</li>
+  <li>
+    <strong>Vent Diast Fill Period:</strong>
+    <%= @sats_pressure.ventr_dias_fill_period %>
+  </li>
+
+
+  <li>
+    <strong>O2 Inhalation:</strong>
+    <%= @sats_pressure.sat_pres_o2_inhalation %>
+  </li>
+
+ <li>
+    <strong>O2  Consumption:</strong>
+    <%= @sats_pressure.sat_pres_oxygen_consumption %>
+  </li>
+
+<li>
+    <strong>Hb:</strong>
+    <%= @sats_pressure.sat_pres_hb %>
+  </li>
+
+    <strong>Heart Rate:</strong>
+    <%= @sats_pressure.sat_pres_heart_rate %>
+  </li>
+  <li>
+    <strong>BSA:</strong>
+    <%= @sats_pressure.uni_bsa %>
+  </li>
+ <li>
+    <strong>Sat pres meds:</strong>
+    <%= @sats_pressure.sat_pres_meds %>
+  </li>
+ <li>
+    <strong>Vent Sys Ejc period:</strong>
+    <%= @sats_pressure.ventr_sys_ejc_period %>
+  </li>
+
+<li style="background-color:yellow;">
+    <strong>Qp/Qs:</strong>
+    <%= @sats_pressure.uni_qp_qs %>
+  </li>
+
+
+<ul>
+</div>
+</div><!-----columns------------------------------>
+<p class ="buttons_separator"> . </p>
+<span>
+    <%= link "Edit Sats ", to: Routes.pt_angio_satpres_path(@conn, :edit, @patient,
+  @info_coronary, @sats_pressure ), class: "button is-link"%>
+</span>
+<span>
+  <%= link "Back To Sats Index", to: Routes.pt_angio_satpres_path(@conn, :index,
+  @patient, @info_coronary) , class: "button is-link"%>
+</span>
+<span>
+<%= link "Back To Lab",  to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-link"   %>
+ </span>
+
+<!--------UNUSED FIELDS-------------------------
+
+
+----------------------------------->
+

@@ -1,0 +1,24 @@
+
+<% alias Angio.Cath%>
+<h4 class="title is-4">New Sats Pressure Record</h4>
+
+<div class="element_info">
+ <%= render AngioWeb.SharedView, "_patient_info.html", patient:
+  @patient %>
+</div>
+
+<%= render "form.html", changeset: @changeset, action:
+Routes.pt_angio_satpres_path(@conn, :create, @patient, @info_coronary) %>
+
+<p class ="buttons_separator"> . </p>
+<span>
+<%=link "Back To Sats Pressure Index ", to: Routes.pt_angio_satpres_path(@conn, :create,
+@patient, @info_coronary), class: "button is-link"%>
+</span>
+
+<span>
+<%= link "Back To Lab",  to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-link"   %>
+ </span>
+
+

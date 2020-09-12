@@ -1,0 +1,99 @@
+
+
+
+
+<!-----------------------
+<div class="dropdown is-hoverable">
+------------------>
+
+
+<div class="dropdown">
+  <div class="dropdown-trigger">
+    <button class="button is-small is-info is-fullwidth" aria-haspopup="true" aria-controls="dropdown-menu4">
+      <span>Cath  Menu</span>
+      <span class="icon is-small">
+        <i class="fa  fa-angle-down" aria-hidden="true"></i>
+      </span>
+    </button>
+  </div>
+
+  <div class="dropdown-menu " id="dropdown-menu4" role="menu">
+    <div class="dropdown-content">
+     <div class="dropdown-item">
+  </div>
+
+
+
+      <div class="dropdown-item">
+        <%= link to: Routes.pt_angio_proc_episode_path(@conn, :index, @patient,
+      @info_coronary), class: "button is-link is-small  is-fullwidth" do %> Procedure Details <% end %>
+      </div>
+
+       <div class="dropdown-item ">
+          <%= link to: Routes.pt_angio_anatomy_path(@conn, :index, @patient,
+      @info_coronary), class: "button is-link is-small is-fullwidth " do %> Coronary Anatomy <% end %>
+
+      </div>
+
+      <div class="dropdown-item ">
+          <%= link to: Routes.pt_angio_lesion_path(@conn, :index, @patient,
+      @info_coronary), class: "button is-link is-small is-fullwidth " do %> Coronary Lesions <% end %>
+
+      </div>
+      <div class="dropdown-item">
+      <%= link to: Routes.pt_angio_graft_path(@conn, :index, @patient,
+      @info_coronary), class: "button is-link is-small is-fullwidth " do %> Grafts <% end %>
+
+      </div>
+  <div class="dropdown-item">
+      <%= link to: Routes.pt_angio_collateral_path(@conn, :index, @patient,
+      @info_coronary), class: "button is-link is-small is-fullwidth " do %> Collaterals
+      <% end %>
+
+      </div>
+  <div class="dropdown-item">
+       <%= link to: Routes.pt_angio_lv_path(@conn, :index, @patient,
+      @info_coronary), class: "button is-link is-small  is-fullwidth " do %> Left Ventricle
+    <% end %>
+      </div>
+
+      <div class="dropdown-item">
+       <%= link to: Routes.pt_angio_satpres_path(@conn, :index, @patient,
+      @info_coronary), class: "button is-link is-small  is-fullwidth " do %> Sats Pressures
+    <% end %>
+      </div>
+
+  <div class="dropdown-item">
+       <%= link to: Routes.pt_angio_event_path(@conn, :index, @patient,
+      @info_coronary), class: "button is-link is-small is-fullwidth " do %>  Events - Complications
+    <% end %>
+
+      </div>
+  <div class="dropdown-item">
+         <%= link to: Routes.pt_angio_radiation_path(@conn, :index, @patient,
+      @info_coronary), class: "button is-link is-small is-fullwidth" do %> Radiation <% end %>
+
+      </div>
+       <div class="dropdown-item">
+         <%= link to: Routes.pt_angio_cath_lab_path(@conn, :index, @patient,
+      @info_coronary), class: "button is-link is-small is-fullwidth " do %> Blood Results <% end %>
+
+      </div>
+  <div class="dropdown-item">
+         <%= link to: Routes.pt_angio_cathmed_path(@conn, :index, @patient,
+      @info_coronary), class: "button is-link is-small is-fullwidth " do %> Medications <% end %>
+
+      </div>
+
+ <div class="dropdown-item">
+         <%= link to: Routes.pt_angio_cor_media_path(@conn, :index, @patient,
+      @info_coronary), class: "button is-link is-small is-fullwidth " do %> Media <% end %>
+
+      </div>
+
+
+
+
+    </div>
+  </div>
+</div>

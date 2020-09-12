@@ -1,0 +1,8 @@
+<span>Field: </span>
+<span><%= @definition.name %>
+  Section - Table: 
+</span>
+<span>
+<%= @definition.table_name %>
+</span>
+

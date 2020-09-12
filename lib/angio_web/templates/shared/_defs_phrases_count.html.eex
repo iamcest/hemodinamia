@@ -1,0 +1,15 @@
+<% alias Angio.Canons %>
+ <% phrases_count = Canons.count_element_phrases(@definition.id) %>
+<span></span>
+<%= if phrases_count > 0 do %>
+     
+<span class="tag is-success is-small">
+ <strong><%= phrases_count %></strong>
+</span>
+
+<% else %>
+  <span class="tag is-danger is-small">
+   <%= phrases_count %>
+  </span>
+  <% end %>
+

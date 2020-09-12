@@ -1,0 +1,65 @@
+
+
+<div class="title_form">
+<h5 class="title is-5 has-text-centered">Listing Contacts</h5>
+</div>
+<table
+  class="table is-bordered
+                    is-striped
+                    is-full-width
+                    is-hoverable"
+>
+  <thead class="thead">
+    <tr>
+      <th>Last Name</th>
+      <th>First Name</th>
+      <th>SSN</th>
+      <th>Show</th>
+        <th>Edit</th>
+         <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for contact <- @contacts do %>
+    <tr>
+      <td><%= contact.pacntcts_lname %></td>
+      <td><%= contact.pacntcts_fname %></td>
+      <td><%= contact.pacntcts_ssn %></td>
+
+      <td>
+      <%= link "Show", to: Routes.pt_contacts_path(@conn, :show, @patient, contact),
+      class: "button is-primary is-small is-fullwidth" %>
+      </td>
+
+      <td>
+
+ <%= link "Edit", to: Routes.pt_contacts_path(@conn, :edit, @patient, contact),
+ class: "button is-primary is-small is-fullwidth" %>
+
+        </td>
+
+        <td>
+
+ <%= link "Delete", to: Routes.pt_contacts_path(@conn, :delete,
+        @patient,  contact), method: :delete, data: [confirm:
+        "Are you sure?"], class: "button is-small is-danger is-fullwidth" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+<span><%= link "New Contact  Record ",
+      to: Routes.pt_contacts_path(@conn, :new,
+  @patient), class: "button is-info is-medium is-fullwidth" %>
+</span>
+<p class ="buttons_separator"> . </p>
+<span>
+  <%= link "To Patient List", to: Routes.pt_path(@conn, :index), class: "button
+  is-link" %>
+</span>
+
+<span>
+<%= link " To Cath Lab ",  to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-link"   %>
+ </span>
+

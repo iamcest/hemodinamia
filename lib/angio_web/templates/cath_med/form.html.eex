@@ -1,0 +1,839 @@
+<% alias Angio.Canons, as: Query %>
+
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+   <div class="notification is-danger">
+    <button class="delete"></button>
+    Oops, something went wrong! Please check the errors below or Dublicate Record
+</div>
+  <% end %>
+  <div class="columns">
+  <div class="column frame_1">
+
+
+<span class="button is-primary is-fullwidth ">
+<i class="fa fa-heartbeat" ></i>
+ </span>
+
+  <!---------start---------------------------->
+     <div class="columns">
+       <div class="column">
+
+
+         <div class="field ">
+          <label class="label"> On Anti Anginal?</label>
+          <div class="control ">
+            <%= checkbox f, :cmed_anti_anginal_yn,
+placeholder: "cmed_anti_anginal_yn",
+                required: false,
+                type: "checkbox"
+              %>
+             <%= error_tag f, :cmed_anti_anginal_yn %>
+           <p class = "help">
+           </p>
+
+          </div>
+           </div>
+        <!-----field---->
+
+
+
+  </div><!----column------------->
+
+  <div class="column">
+  <div class="field ">
+
+          <label class="label">Anti Anginal Other?</label>
+          <div class="control ">
+            <%= checkbox f, :cmed_anti_anginal_other_yn,
+placeholder: "cmed_anti_anginal_other_yn",
+                required: false,
+                type: "checkbox"
+              %>
+             <%= error_tag f, :cmed_anti_anginal_other_yn %>
+           <p class = "help">
+           </p>
+
+          </div>
+           </div>
+        <!-----field---->
+</div><!----column------------->
+ <div class="column">
+
+<div class="field ">
+          <label class="label is-size-6"> On ranolazine?</label>
+          <div class="control ">
+            <%= checkbox f, :cmed_ranolazine_yn,
+                placeholder: "cmed_ranolazine_yn",
+                required: false,
+                type: "checkbox"
+              %>
+             <%= error_tag f, :cmed_ranolazine_yn %>
+           <p class = "help">
+           </p>
+
+          </div>
+           </div>
+        <!-----field---->
+ </div><!-------------------------->
+  <div class="column">
+    <div class="field ">
+          <label class="label is-size-6"> On Long Active Nitrates?</label>
+          <div class="control ">
+            <%= checkbox f, :cmed_nitrates_long_act_yn,
+                placeholder: "cmed_nitrates_long_act_yn",
+                required: false,
+                type: "checkbox"
+              %>
+             <%= error_tag f, :cmed_nitrates_long_act_yn %>
+           <p class = "help">
+           </p>
+
+          </div>
+           </div>
+        <!-----field---->
+     </div><!-------Column----------------->
+
+ </div><!----columns------------->
+
+
+<span class="button is-primary is-fullwidth ">
+  <i class="fa fa-heartbeat" ></i>
+ </span>
+
+<!---------start---------------------------->
+     <div class="columns">
+       <div class="column">
+
+<div class="field ">
+          <label class="label is-size-6"> On antiplatelets?</label>
+          <div class="control ">
+            <%= checkbox f, :cmed_antiplatelets_yn,
+placeholder: "cmed_antiplatelets_yn ",
+                required: false,
+                type: "checkbox"
+              %>
+             <%= error_tag f, :cmed_antiplatelets_yn  %>
+           <p class = "help">
+           </p>
+
+          </div>
+           </div>
+        <!-----field---->
+
+
+     </div><!-------Column----------------->
+
+ <div class="column">
+
+<% s_cmed_thienopyridines  =
+         Query.select_options("uni_thienopyridines_types") %>
+
+      <% _i_cmed_thienopyridines   = raw Query.search_in_instructions("cmed_thienopyridines")%>
+
+<div class="field">
+    <label class="label"> Thienopyridines? </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f,
+:cmed_thienopyridines, s_cmed_thienopyridines,
+   prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <%= error_tag f, :cmed_thienopyridines    %>
+            <span class="help"><%#=_i_cmed_thienopyridines %></span>
+          </div>
+        </div>
+        <!---field--->
+
+     </div><!-------Column----------------->
+
+ <div class="column">
+      <% s_cmed_xa_inhibitors  =
+         Query.select_options("uni_xa_inhibitors") %>
+
+      <% _i_cmed_xa_inhibitors   =
+raw Query.search_in_instructions("cmed_xa_inhibitors")%>
+
+<div class="field">
+    <label class="label"> Xa inhibitors? </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f,
+:cmed_xa_inhibitors, s_cmed_xa_inhibitors,
+   prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <%= error_tag f, :cmed_xa_inhibitors    %>
+            <span class="help"><%#=i_cmed_xa_inhibitors  %></span>
+          </div>
+        </div>
+        <!---field--->
+
+     </div><!-------Column----------------->
+
+      </div><!-----columns-------------------->
+
+       <!-----end-start--------------------------------->
+
+
+
+
+ <!---------end start---------------------------->
+
+<!---------start---------------------------->
+     <div class="columns">
+       <div class="column">
+
+<div class="field ">
+          <label class="label is-size-6"> On aspirin?</label>
+          <div class="control ">
+            <%= checkbox f, :cmed_aspirin_yn,
+placeholder: "cmed_aspirin_yn",
+                required: false,
+                type: "checkbox"
+              %>
+             <%= error_tag f, :cmed_aspirin_yn %>
+           <p class = "help">
+           </p>
+
+          </div>
+           </div>
+        <!-----field---->
+
+     </div><!-------Column----------------->
+
+ <div class="column">
+       <div class="field ">
+          <label class="label is-size-6"> PDE Inhibitor?</label>
+          <div class="control ">
+            <%= checkbox f, :cmed_pde_inhibitor_yn ,
+                placeholder: "cmed_pde_inhibitor_yn",
+                required: false,
+                type: "checkbox"
+              %>
+             <%= error_tag f, :cmed_pde_inhibitor_yn %>
+           <p class = "help">
+           </p>
+
+          </div>
+           </div>
+        <!-----field---->
+
+     </div><!-------Column----------------->
+
+ <div class="column">
+       Aux Field
+     </div><!-------Column----------------->
+
+      </div><!-----columns-------------------->
+
+       <!-----end-start--------------------------------->
+
+
+
+<span class="button is-primary is-fullwidth ">
+<i class="fa fa-heartbeat" ></i>
+ </span>
+<!---------start---------------------------->
+     <div class="columns">
+       <div class="column">
+
+<div class="field ">
+          <label class="label is-size-6"> Lytics?</label>
+          <div class="control ">
+          <span class="field_help"></span>
+            <%= checkbox f, :cmed_lytics_yn,
+                placeholder: "cmed_lytics_yn",
+                required: false,
+                type: "checkbox"
+              %>
+             <%= error_tag f, :cmed_lytics_yn  %>
+           <p class = "help">
+           </p>
+
+          </div>
+           </div>
+        <!-----field---->
+     </div><!-------Column----------------->
+
+ <div class="column">
+
+      <%# i_cmed_lytics_bolus_dt  =
+raw Query.search_in_instructions("cmed_lytics_bolus_dt")%>
+    <div class="field">
+          <label class="label">Lytics Bolus  Date </label>
+          <div class="control">
+          <span class="field_help"></span>
+     <%= text_input f, :cmed_lytics_bolus_dt,
+        class: "input", type: "date",
+         placeholder: "cmed_lytics_bolus_dt", required: false %>
+          <%= error_tag f,
+            :cmed_lytics_bolus_dt  %>
+          </div>
+          <p class="help">  <%#= i_cmed_lytics_bolus_dt %> </p>
+        </div>
+        <!----field---->
+     </div><!-------Column----------------->
+
+ <div class="column">
+       <%# i_cmed_lytics_bolus_tm  =
+raw Query.search_in_instructions("cmed_lytics_bolus_tm")%>
+    <div class="field">
+      <label class="label">Lytics Time </label>
+          <div class="control">
+     <%= text_input f, :cmed_lytics_bolus_tm,
+        class: "input", type: "time",
+         placeholder: "cmed_lytics_bolus_tm", required: false %>
+          <%= error_tag f,
+            :cmed_lytics_bolus_dt  %>
+          </div>
+          <p class="help">  <%#= i_cmed_lytics_bolus_tm %> </p>
+        </div>
+        <!----field---->
+
+     </div><!-------Column----------------->
+
+      </div><!-----columns-------------------->
+
+       <!-----end-start--------------------------------->
+<!---------start---------------------------->
+     <div class="columns">
+       <div class="column">
+
+<div class="field ">
+          <label class="label is-size-6"> On gp_iib_iiia?</label>
+          <div class="control ">
+            <%= checkbox f, :cmed_gp_iib_iiia_yn,
+placeholder: "cmed_gp_iib_iiia_yn",
+                required: false,
+                type: "checkbox"
+              %>
+             <%= error_tag f, :cmed_gp_iib_iiia_yn  %>
+           <p class = "help">
+           </p>
+
+          </div>
+           </div>
+        <!-----field---->
+
+
+     </div><!-------Column----------------->
+
+ <div class="column">
+
+<% s_cmed_direct_thrombin  =
+         Query.select_options("cmed_direct_thrombin") %>
+
+      <%# i_cmed_direct_thrombin   =
+raw Query.search_in_instructions("cmed_direct_thrombin")%>
+
+<div class="field">
+    <label class="label"> If Direct Thrombin </label>
+          <div class="control">
+
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f,
+:cmed_direct_thrombin, s_cmed_direct_thrombin,
+   prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <%= error_tag f, :cmed_direct_thrombin    %>
+            <span class="help"><%#=i_cmed_direct_thrombin  %></span>
+          </div>
+        </div>
+        <!---field--->
+
+     </div><!-------Column----------------->
+
+ <div class="column">
+       Auxiliary
+     </div><!-------Column----------------->
+
+      </div><!-----columns-------------------->
+
+       <!-----end-start--------------------------------->
+
+<span class="button is-primary is-fullwidth ">
+<i class="fa fa-heartbeat" ></i>
+ </span>
+ <!---------start---------------------------->
+     <div class="columns">
+
+ <div class="column">
+
+
+<div class="field ">
+          <label class="label is-size-6"> On UF Heparin </label>
+          <div class="control ">
+            <%= checkbox f, :cmed_ufh_yn,
+                placeholder: "cmed_ufh_yn",
+                required: false,
+                type: "checkbox"
+              %>
+             <%= error_tag f, :cmed_ufh_yn %>
+           <p class = "help">
+           </p>
+
+          </div>
+           </div>
+        <!-----field---->
+
+
+
+
+</div><!----column------------->
+
+       <div class="column">
+
+ <% s_cmed_ufh_dose = 1000..10000%>
+<div class="field">
+     <label class="label">UF Heparin Dose Units</label>
+     <div class="control">
+    <div class="select is-primary">
+  <%= select(f, :cmed_ufh_dose , s_cmed_ufh_dose, class: "form-control")    %>
+<%= error_tag f, :cmed_ufh_dose %>
+      <p class="help"></p>
+    </div><!--select---->
+     </div><!--control---->
+  </div><!---field--->
+
+
+
+
+  </div><!----column------------->
+
+  <div class="column">
+
+
+<div class="field ">
+          <label class="label is-size-6"> On LM Heparin </label>
+          <div class="control ">
+            <%= checkbox f, :cmed_lmwh_yn,
+                placeholder: "cmed_lmwh_yn",
+                required: false,
+                type: "checkbox"
+              %>
+             <%= error_tag f, :cmed_lmwh_yn %>
+           <p class = "help">
+           </p>
+
+          </div>
+           </div>
+        <!-----field---->
+
+
+
+
+</div><!----column------------->
+
+ </div><!----columns------------->
+ <!---------end start---------------------------->
+
+   <!---------start---------------------------->
+     <div class="columns">
+       <div class="column">
+
+<div class="field ">
+
+          <label class="label"> On antiarrhythmics?</label>
+          <div class="control ">
+            <%= checkbox f, :cmed_antiarrhythmics_yn,
+placeholder: "cmed_antiarrhythmics_yn",
+                required: false,
+                type: "checkbox"
+              %>
+             <%= error_tag f, :cmed_antiarrhythmics_yn %>
+           <p class = "help">
+           </p>
+
+          </div>
+           </div>
+        <!-----field---->
+
+
+
+
+  </div><!----column------------->
+
+  <div class="column">
+
+
+    <div class="field ">
+
+          <label class="label"> On anticoagulants?</label>
+          <div class="control ">
+            <%= checkbox f, :cmed_anticoagulants_yn,
+placeholder: "cmed_anticoagulants_yn",
+                required: false,
+                type: "checkbox"
+              %>
+             <%= error_tag f, :cmed_anticoagulants_yn  %>
+           <p class = "help">
+           </p>
+
+          </div>
+           </div>
+        <!-----field---->
+
+
+
+
+
+</div><!----column------------->
+<div class="column">
+
+
+ <div class="field ">
+          <label class="label is-size-6"> On diuretics ?</label>
+          <div class="control ">
+            <%= checkbox f, :cmed_diuretics_yn,
+placeholder: "cmed_diuretics_yn",
+                required: false,
+                type: "checkbox"
+              %>
+             <%= error_tag f, :cmed_diuretics_yn  %>
+           <p class = "help">
+           </p>
+
+          </div>
+           </div>
+        <!-----field---->
+</div><!----column------------->
+<div class="column">
+<div class="field ">
+          <label class="label is-size-6"> On inotrops?</label>
+          <div class="control ">
+            <%= checkbox f, :cmed_inotrops_yn,
+placeholder: "cmed_inotrops_yn",
+                required: false,
+                type: "checkbox"
+              %>
+             <%= error_tag f, :cmed_inotrops_yn  %>
+           <p class = "help">
+           </p>
+
+          </div>
+           </div>
+        <!-----field---->
+    </div><!----column------------->
+ </div><!----columns------------->
+ <!---------end start---------------------------->
+
+
+
+
+
+
+ <!---------start---------------------------->
+     <div class="columns">
+
+     <div class="column">
+    <div class="field ">
+          <label class="label is-size-6"> Recieved atropine?</label>
+          <div class="control ">
+            <%= checkbox f, :cmed_atropine_yn,
+placeholder: "cmed_atropine_yn ",
+                required: false,
+                type: "checkbox"
+              %>
+             <%= error_tag f, :cmed_atropine_yn  %>
+           <p class = "help">
+           </p>
+
+          </div>
+           </div>
+        <!-----field---->
+
+</div><!----column-------------------------->
+
+  <div class="column">
+
+
+
+   <div class="field ">
+          <label class="label is-size-6"> On beta blocker?</label>
+          <div class="control ">
+            <%= checkbox f, :cmed_bblocker_yn,
+placeholder: "cmed_bblocker_yn",
+                required: false,
+                type: "checkbox"
+              %>
+             <%= error_tag f, :cmed_bblocker_yn  %>
+           <p class = "help">
+           </p>
+
+          </div>
+           </div>
+        <!-----field---->
+
+
+  </div><!----column------------->
+
+  <div class="column">
+
+
+
+    <div class="field ">
+          <label class="label is-size-6"> Was On Calcium blocker?</label>
+          <div class="control ">
+            <%= checkbox f, :cmed_ca_channel_pre_yn,
+placeholder: "cmed_ca_channel_pre_yn",
+                required: false,
+                type: "checkbox"
+              %>
+             <%= error_tag f, :cmed_ca_channel_pre_yn  %>
+           <p class = "help">
+           </p>
+
+          </div>
+           </div>
+        <!-----field---->
+
+
+
+</div><!----column------------->
+
+ </div><!----columns------------->
+ <!---------end start---------------------------->
+
+  </div> <!----end of Left column----------------->
+
+
+  <div class="column frame_1">
+
+
+<span class="button is-primary is-fullwidth ">
+<i class="fa fa-heartbeat" ></i>
+ </span>
+    <!---------start---------------------------->
+     <div class="columns">
+
+
+     <div class = "column">
+     <div class="field ">
+          <label class="label"> On antihypertensives?</label>
+          <div class="control ">
+            <%= checkbox f, :cmed_antihypertensives_yn,
+placeholder: "cmed_antihypertensives_yn",
+                required: false,
+                type: "checkbox"
+              %>
+             <%= error_tag f, :cmed_antihypertensives_yn  %>
+           <p class = "help">
+           </p>
+
+          </div>
+           </div>
+        <!-----field---->
+</div><!------column--------------------->
+  <div class="column">
+
+
+<div class="field ">
+          <label class="label is-size-6">ACE? </label>
+          <div class="control ">
+            <%= checkbox f, :cmed_ace_yn,
+                placeholder: "cmed_ace_yn",
+                required: false,
+                type: "checkbox"
+              %>
+             <%= error_tag f, :cmed_ace_yn %>
+           <p class = "help">
+           </p>
+
+          </div>
+           </div>
+        <!-----field---->
+
+
+
+  </div><!----column------------->
+  <div class="column">
+
+  <div class="field ">
+          <label class="label is-size-6"> Vasodilators?</label>
+          <div class="control ">
+            <%= checkbox f, :cmed_vaso_dilators_yn,
+                placeholder: "cmed_vaso_dilators_yn",
+                required: false,
+                type: "checkbox"
+              %>
+             <%= error_tag f, :cmed_vaso_dilators_yn %>
+           <p class = "help">
+           </p>
+
+          </div>
+           </div>
+        <!-----field---->
+</div><!------column--------------------->
+  <div class="column">
+
+
+<div class="field ">
+          <label class="label is-size-6">Angiotensin II receptor blockers ? </label>
+          <div class="control ">
+            <%= checkbox f, :cmed_arb_yn,
+                placeholder: "cmed_arb_yn",
+                required: false,
+                type: "checkbox"
+              %>
+             <%= error_tag f, :cmed_arb_yn %>
+           <p class = "help">
+           </p>
+
+          </div>
+           </div>
+        <!-----field---->
+
+
+
+
+
+
+
+</div><!----column------------->
+
+ </div><!----columns------------->
+ <!---------end start---------------------------->
+
+
+
+
+    <!---------start---------------------------->
+     <div class="columns">
+
+
+<div class="column">
+
+ <div class="field ">
+          <label class="label is-size-6"> Prostaglandins?</label>
+          <div class="control ">
+            <%= checkbox f, :cmed_prostaglandins_yn,
+                placeholder: "cmed_prostaglandins_yn",
+                required: false,
+                type: "checkbox"
+              %>
+             <%= error_tag f, :cmed_prostaglandins_yn %>
+           <p class = "help">
+           </p>
+
+          </div>
+           </div>
+        <!-----field---->
+</div><!----column------------->
+<div class="column">
+<div class="field ">
+          <label class="label is-size-6">Statins? </label>
+          <div class="control ">
+            <%= checkbox f, :cmed_statin_yn ,
+                placeholder: "cmed_statin_yn ",
+                required: false,
+                type: "checkbox"
+              %>
+             <%= error_tag f, :cmed_statin_yn  %>
+           <p class = "help">
+           </p>
+
+          </div>
+           </div>
+        <!-----field---->
+
+
+
+  </div><!----column------------->
+
+  <div class="column">
+<div class="field ">
+          <label class="label is-size-6">No Statin Agents? </label>
+          <div class="control ">
+            <%= checkbox f, :cmed_no_statin_agent_yn ,
+                placeholder: "cmed_no_statin_agent_yn",
+                required: false,
+                type: "checkbox"
+              %>
+             <%= error_tag f, :cmed_no_statin_agent_yn  %>
+           <p class = "help">
+           </p>
+
+          </div>
+           </div>
+        <!-----field---->
+
+
+
+</div><!----column------------->
+
+ </div><!----columns------------->
+ <!---------end start---------------------------->
+
+
+  <!---------start---------------------------->
+     <div class="columns">
+  <div class="column">
+
+    <div class="field ">
+          <label class="label is-size-6">Medications Other? </label>
+          <div class="control ">
+            <%= checkbox f, :cmed_medications_other_yn ,
+                placeholder: "cmed_medications_other_yn",
+                required: false,
+                type: "checkbox"
+              %>
+             <%= error_tag f, :cmed_medications_other_yn  %>
+           <p class = "help">
+           </p>
+
+          </div>
+           </div>
+        <!-----field---->
+
+
+  </div><!----column------------->
+
+<
+ </div><!----columns------------->
+ <!---------end start---------------------------->
+<span class="button is-danger  is-fullwidth ">
+<i class="fa fa-sticky-note">
+My Notes
+</i>
+</span>
+  <!---------start---------------------------->
+     <div class="columns">
+  <div class="column">
+
+              <div class="field">
+  <label class="label"> My Notes On Medications Record</label>
+  <div class="control">
+    <%= text_input f, :cmed_notes,
+        class: "textarea",
+        type: "input", placeholder: "cmed_notes"  %>
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+
+
+
+  </div><!----column------------->
+
+
+ </div><!----columns------------->
+ <!---------end start---------------------------->
+
+ <%= render  AngioWeb.SharedView, "_help_area.html" %>
+
+  </div> <!----column----------------->
+   </div><!-----columns--------------------->
+
+
+   <div>
+    <%= submit "Save and Continue", class: "button is-info is-large is-fullwidth " %>
+
+  </div>
+<% end %>

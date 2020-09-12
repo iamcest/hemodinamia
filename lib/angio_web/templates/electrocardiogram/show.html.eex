@@ -1,0 +1,172 @@
+<div class="title_form">
+  <h5 class="title is-5 has-text-centered">Show ECG Record</h5>
+</div>
+
+<div class="element_info">
+
+    <%= render  AngioWeb.SharedView, "_patient_info.html", patient: @patient %>
+</div>
+
+<div class="element_info_coronary">
+Angio : <%= render AngioWeb.SharedView, "_info_coronary.html", info_coronary:
+   @info_coronary%>
+</div>
+
+
+
+<div class="content frame_1">
+  <ol type="1">
+
+
+  <li>
+    <strong>Ecg dt:</strong>
+    <%= @electrocardiogram.ecg_dt %>
+  </li>
+
+  <li>
+    <strong>Ecg tm:</strong>
+    <%= @electrocardiogram.ecg_tm %>
+  </li>
+
+  <li>
+    <strong>Ecg first tm:</strong>
+    <%= @electrocardiogram.ecg_first_tm %>
+  </li>
+
+  <li>
+    <strong>Ecg normal yn:</strong>
+    <%= @electrocardiogram.ecg_normal_yn %>
+  </li>
+
+  <li>
+    <strong>Ecg with symptoms yn:</strong>
+    <%= @electrocardiogram.ecg_with_symptoms_yn %>
+  </li>
+
+  <li>
+    <strong>Ecg with symptoms yn:</strong>
+    <%= @electrocardiogram.ecg_with_symptoms_yn %>
+  </li>
+
+  <li>
+    <strong>Ecg heart rate:</strong>
+    <%= @electrocardiogram.ecg_heart_rate %>
+  </li>
+
+  <li>
+    <strong>Ecg rhythm:</strong>
+    <%= @electrocardiogram.ecg_rhythm %>
+  </li>
+
+  <li>
+    <strong>Ecg p duration val:</strong>
+    <%= @electrocardiogram.ecg_p_duration_val %>
+  </li>
+
+  <li>
+    <strong>Ecg pr interval val:</strong>
+    <%= @electrocardiogram.ecg_pr_interval_val %>
+  </li>
+
+  <li>
+    <strong>Ecg qrs duration val:</strong>
+    <%= @electrocardiogram.ecg_qrs_duration_val %>
+  </li>
+
+  <li>
+    <strong>Ecg qtc long yn:</strong>
+    <%= @electrocardiogram.ecg_qtc_long_yn %>
+  </li>
+
+  <li>
+    <strong>Ecg st depression yn:</strong>
+    <%= @electrocardiogram.ecg_st_depression_yn %>
+  </li>
+
+  <li>
+    <strong>Ecg st elevation yn:</strong>
+    <%= @electrocardiogram.ecg_st_elevation_yn %>
+  </li>
+
+  <li>
+    <strong>Ecg st with symptoms:</strong>
+    <%= @electrocardiogram.ecg_st_with_symptoms %>
+  </li>
+
+  <li>
+    <strong>Ecg inverted t waves yn:</strong>
+    <%= @electrocardiogram.ecg_inverted_t_waves_yn %>
+  </li>
+
+  <li>
+    <strong>Ecg t with symptoms:</strong>
+    <%= @electrocardiogram.ecg_t_with_symptoms %>
+  </li>
+
+  <li>
+    <strong>Ecg pathological q yn:</strong>
+    <%= @electrocardiogram.ecg_pathological_q_yn %>
+  </li>
+
+  <li>
+    <strong>Ecg infarct pattern yn:</strong>
+    <%= @electrocardiogram.ecg_infarct_pattern_yn %>
+  </li>
+
+  <li>
+    <strong>Ecg infarct pattern location:</strong>
+    <%= @electrocardiogram.ecg_infarct_pattern_location %>
+  </li>
+
+  <li>
+    <strong>Ecg lv hypertrophy:</strong>
+    <%= @electrocardiogram.ecg_lv_hypertrophy %>
+  </li>
+
+  <li>
+    <strong>Ecg rv hypertrophy yn:</strong>
+    <%= @electrocardiogram.ecg_rv_hypertrophy_yn %>
+  </li>
+
+  <li>
+    <strong>Ecg av conduction:</strong>
+    <%= @electrocardiogram.ecg_av_conduction %>
+  </li>
+
+  <li>
+    <strong>Ecg lbbb:</strong>
+    <%= @electrocardiogram.ecg_lbbb %>
+  </li>
+
+  <li>
+    <strong>Ecg rbbb yn:</strong>
+    <%= @electrocardiogram.ecg_rbbb_yn %>
+  </li>
+
+  <li>
+    <strong>Ecg epsilon wave yn:</strong>
+    <%= @electrocardiogram.ecg_epsilon_wave_yn %>
+  </li>
+
+  <li>
+    <strong>Ecg notes:</strong>
+    <%= @electrocardiogram.ecg_notes %>
+  </li>
+
+</ol>
+</div>
+
+<span>
+    <%= link "Edit ECG ", to: Routes.pt_angio_ecg_path(@conn, :edit, @patient,
+  @info_coronary, @electrocardiogram), class: "button is-link"%>
+</span>
+
+<span>
+  <%= link "Back To ECG  Index", to: Routes.pt_angio_ecg_path(@conn, :index,
+  @patient, @electrocardiogram) , class: "button is-link"%>
+</span>
+<span>
+
+<%= link "Back To Cath Lab",  to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-link"   %>
+ </span>

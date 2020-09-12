@@ -1,0 +1,31 @@
+<%= if @count> 0 do %>
+<!-----------------
+<span class="fa fa-check"></span>
+------------->
+<div class="field is-grouped is-grouped-multiline">
+  <div class="control">
+    <div class="tags is-small">
+      <span class="tag  is-small is-link ">
+      <span class="fa fa-check"></span>
+        <em><%= @prompt %>
+          </em>
+      </span>
+      <span class="tag  is-white is-small">
+        <span>
+         <strong> <%= @count %></strong>
+        </span>
+      </span>
+    </div>
+  </div>
+
+</div>
+
+<% else %>
+
+<span class="tag is-danger is-small ">
+ <span class="fa fa-ban"></span>
+  <strong><em><%= @prompt %></em></strong>
+
+
+
+  <% end %>

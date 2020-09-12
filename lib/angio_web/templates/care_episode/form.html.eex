@@ -1,0 +1,532 @@
+<% alias Angio.Canons, as: Query %>
+ <div>
+ <button class="delete"></button>
+   Please Complete Once  This Form
+</div>
+
+      <script>
+document.addEventListener('DOMContentLoaded', () => {
+  (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
+    $notification = $delete.parentNode;
+    $delete.addEventListener('click', () => {
+      $notification.parentNode.removeChild($notification);
+    });
+  });
+});
+  </script>
+
+
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    </div>
+ <div class="notification is-danger">
+    <button class="delete"></button>
+    Oops, something went wrong! Please check the errors below or Dublicate Record
+</div>
+  <% end %>
+  !<div class="columns">
+<div class="column frame_1">
+
+ <!-------START------------------------------>
+  <div class="columns">
+    <div class="column">
+            <% i_pt_restriction_yn  =
+raw Query.search_in_instructions("pt_restriction_yn")%>
+
+
+      <div class="field">
+          <label class="label">Do not use patient Data</label>
+          <div class="control">
+            <%= checkbox f, :pt_restriction_yn ,
+             placeholder: "pt_restriction_yn",
+            required: false,
+type: "checkbox" %>
+<%= error_tag f, :pt_restriction_yn%>
+           <p class = "help">
+             <%= i_pt_restriction_yn %>
+           </p>
+
+          </div>
+           </div>
+        <!--field---->
+
+    </div><!----end col 1---------->
+
+    <div class="column">
+      <% s_caepsds_institution_id =
+         Query.select_options("caepsds_institution_id") %>
+
+      <% i_caepsds_institution_id  =
+raw Query.search_in_instructions("caepsds_institution_id")%>
+
+<div class="field">
+    <label class="label"> Institution </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f,
+:caepsds_institution_id, s_caepsds_institution_id,
+   prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <%= error_tag f, :caepsds_institution_id   %>
+            <span class="help"><%=i_caepsds_institution_id %></span>
+          </div>
+          <!----control---->
+
+</div>
+        <!---field--->
+
+
+    </div><!---end col 2---------->
+
+    </div><!-----end columns--------->
+
+ <!------END-START------------------------------>
+
+<span class="button is-success is-fullwidth ">
+    Patient Contact
+
+ </span>
+
+    <!-------START------------------------------>
+  <div class="columns">
+    <div class="column">
+
+<div class="field">
+          <label class="label">Home Phone </label>
+          <div class="control">
+            <%= text_input f, :caepsds_phone_home , class: "input", type: "text",
+            placeholder: "caepsds_phone_home", required: false %> <%= error_tag f,
+            :caepsds_phone_home   %>
+          </div>
+          <p class="help"></p>
+  </div><!------field------------->
+
+
+
+    </div><!---end col 1---------->
+
+    <div class="column">
+<div class="field">
+          <label class="label">Cell Phone </label>
+          <div class="control">
+            <%= text_input f, :caepsds_phone_mobile,
+             class: "input", type: "text",
+            placeholder: "caepsds_phone_mobile", required: false %> <%= error_tag f,
+            :caepsds_phone_mobile   %>
+          </div>
+          <p class="help"></p>
+  </div><!------field------------->
+
+
+    </div><!---end col 2---------->
+
+    </div><!-----end columns--------->
+
+ <!-------END START------------------------------>
+  <div class="columns">
+    <div class="column">
+<div class="field">
+          <label class="label">E-mail </label>
+          <div class="control">
+            <%= text_input f, :caepsds_telecom,
+             class: "input", type: "text",
+            placeholder: "caepsds_telecom", required: false %> <%= error_tag f,
+            :caepsds_telecom    %>
+          </div>
+          <p class="help"></p>
+  </div><!------field------------->
+
+    </div><!---end col 1---------->
+
+    <div class="column">
+<div class="field">
+          <label class="label">City</label>
+          <div class="control">
+            <%= text_input f, :caepsds_city,
+             class: "input", type: "text",
+            placeholder: "Field Name", required: false %> <%= error_tag f,
+            :caepsds_city    %>
+          </div>
+          <p class="help"></p>
+  </div><!------field------------->
+
+    </div><!---end col 2---------->
+
+    </div><!-----end columns--------->
+
+ <!-------  END START------------------------------>
+
+ <!-------START------------------------------>
+  <div class="columns">
+    <div class="column">
+<div class="field">
+          <label class="label">Street</label>
+          <div class="control">
+            <%= text_input f, :caepsds_street,
+             class: "input", type: "text",
+            placeholder: "caepsds_street", required: false %> <%= error_tag f,
+            :caepsds_street    %>
+          </div>
+          <p class="help"></p>
+  </div><!------field------------->
+
+    </div><!---end col 1---------->
+
+    <div class="column">
+
+      <div class="field">
+          <label class="label">Street Num</label>
+          <div class="control">
+            <%= text_input f, :caepsds_street_num,
+             class: "input", type: "text",
+            placeholder: "caepsds_street_num", required: false %> <%= error_tag f,
+            :caepsds_street_num    %>
+          </div>
+          <p class="help"></p>
+  </div><!------field------------->
+
+    </div><!---end col 2---------->
+
+    </div><!-----end columns--------->
+
+ <!-------END START------------------------------>
+
+
+ <!-------START------------------------------>
+  <div class="columns">
+     <div class="column">
+
+    <div class="field">
+          <label class="label">Zip Code </label>
+          <div class="control">
+            <%= text_input f, :caepsds_zip,
+             class: "input", type: "text",
+            placeholder: "caepsds_zip", required: false %> <%= error_tag f,
+            :caepsds_zip  %>
+          </div>
+          <p class="help"></p>
+  </div><!------field------------->
+
+
+    </div><!---end col 1---------->
+
+    <div class="column">
+
+ <div class="field">
+          <label class="label">Zip Code N/A </label>
+          <div class="control">
+            <%= checkbox f, :caepsds_zip_na,
+             placeholder: "caepsds_zip_na",
+            required: false,
+            type: "checkbox" %> <%= error_tag f,
+            :caepsds_zip_na %>
+          </div>
+          <p class="help"><%#= i_hispanic %></p>
+        </div>
+        <!--field---->
+
+    </div><!---end col 2---------->
+
+    </div><!-----end columns--------->
+
+ <!-------END START------------------------------>
+
+
+
+  <!-------START------------------------------>
+  <div class="columns">
+    <div class="column">
+    <div class="field">
+          <label class="label">P.O. Box </label>
+          <div class="control">
+            <%= text_input f, :caepsds_post_box,
+             class: "input", type: "text",
+            placeholder: "caepsds_post_box", required: false %> <%= error_tag f,
+            :caepsds_post_box   %>
+          </div>
+          <p class="help"></p>
+  </div><!------field------------->
+    </div><!---end col 1---------->
+<div class="column">
+  </div><!---end col 2---------->
+
+    </div><!-----end columns--------->
+
+ <!-------END START------------------------------>
+
+
+
+
+
+
+  </div><!------END LEFT COLUMN---------->
+<div class = "column frame_1">
+    <span class="button is-success is-fullwidth ">
+      Arrival
+ </span>
+
+ <!-------START------------------------------>
+  <div class="columns">
+    <div class="column">
+
+    <% i_caepsds_arrival_dt  =
+raw Query.search_in_instructions("caepsds_arrival_dt")%>
+    <div class="field">
+          <label class="label">Arrival Date </label>
+          <div class="control">
+     <%= text_input f, :caepsds_arrival_dt,
+        class: "input", type: "date",
+         placeholder: "caepsds_arrival_dt", required: false %>
+          <%= error_tag f,
+            :caepsds_arrival_dt  %>
+          </div>
+          <p class="help">  <%= i_caepsds_arrival_dt %> </p>
+        </div>
+        <!--field---->
+
+    </div><!---end col 1---------->
+
+    <div class="column">
+    <div class="field">
+          <label class="label">Arrival Time </label>
+          <div class="control">
+     <%= text_input f, :caepsds_arrival_tm,
+        class: "input", type: "time",
+         placeholder: "caepsds_arrival_tm", required: false %>
+          <%= error_tag f,
+            :caepsds_arrival_tm  %>
+          </div>
+          <p class="help">  <%#= i_caepsds_arrival_dt %> </p>
+        </div>
+        <!--field---->
+
+    </div><!---end col 2---------->
+
+    </div><!-----end columns--------->
+
+    <!-------END START------------------------------>
+  <!--------START------------------------------>
+  <div class="columns">
+    <div class="column">
+ <% s_caepsds_arrival_location  =
+         Query.select_options("caepsds_arrival_location") %>
+
+      <% i_caepsds_arrival_location   =
+raw Query.search_in_instructions("caepsds_arrival_location")%>
+
+<div class="field">
+    <label class="label"> Arrival Location </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f,
+:caepsds_arrival_location , s_caepsds_arrival_location ,
+   prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <%= error_tag f, :caepsds_arrival_location    %>
+            <span class="help"><%=i_caepsds_arrival_location  %></span>
+          </div>
+          <!----control---->
+        </div>
+        <!---field--->
+
+
+    </div><!------end col 1---------->
+
+
+    </div><!-----end columns--------->
+
+ <!-------END START------------------------------>
+
+    <span class="button is-success is-fullwidth ">
+   Patient  Insurance
+
+ </span>
+
+
+ <!-------START------------------------------>
+  <div class="columns">
+    <div class="column">
+
+<% s_uni_insurance  =
+         Query.select_options("uni_insurance") %>
+
+      <% i_uni_insurance   =
+raw Query.search_in_instructions("uni_insurance")%>
+
+<div class="field">
+    <label class="label"> Insurance </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f,
+:uni_insurance, s_uni_insurance ,
+   prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <%= error_tag f, :uni_insurance %>
+            <span class="help"><%=i_uni_insurance  %></span>
+          </div>
+          <!----control---->
+        </div>
+        <!---field--->
+    </div><!---end col 1---------->
+
+    <div class="column">
+
+       <div class="field">
+          <label class="label">No US Insuranse</label>
+          <div class="control">
+            <%= checkbox f, :uni_insurance_non_us ,
+               type: "checkbox" %>
+                 <%= error_tag f, :uni_insurance_non_us %>
+            <p class = "help"><%#= i_pt_restriction_yn %></p>
+
+          </div>
+                 </div>
+        <!--field---->
+
+    </div><!----end col 2---------->
+<div class="column">
+
+      <div class="field">
+          <label class="label">Claim Number - HIC </label>
+          <div class="control">
+            <%= text_input f, :uni_hic, class: "input", type: "text",
+            placeholder: "uni_hic", required: false %> <%= error_tag f,
+            :uni_hic   %>
+          </div>
+          <p class="help"></p>
+  </div><!------field------------->
+
+
+    </div><!---end col 2---------->
+
+    </div><!-----end columns--------->
+
+ <!-------END START------------------------------>
+
+  <!-------START------------------------------>
+  <div class="columns">
+    <div class="column">
+  <div class="field">
+          <label class="label">Provider NPI </label>
+          <div class="control">
+            <%= text_input f, :caepsds_provider_npi,
+            class: "input", type: "text",
+placeholder: "caepsds_provider_npi",
+required: false %> <%= error_tag f,
+            :caepsds_provider_npi   %>
+          </div>
+          <p class="help"></p>
+  </div><!------field------------->
+
+
+    </div><!---end col 1---------->
+
+    <div class="column">
+ <div class="field">
+          <label class="label">Provider Last Name </label>
+          <div class="control">
+            <%= text_input f, :caepsds_provider_lname ,
+            class: "input", type: "text",
+placeholder: "caepsds_provider_lname",
+required: false %> <%= error_tag f,
+            :caepsds_provider_lname   %>
+          </div>
+          <p class="help"></p>
+  </div><!------field------------->
+
+
+
+    </div><!---end col 2---------->
+
+    </div><!-----end columns--------->
+
+ <!-------END START------------------------------>
+
+
+ <!-------START------------------------------>
+  <div class="columns">
+    <div class="column">
+
+      <div class="field">
+          <label class="label">Provider First Name </label>
+          <div class="control">
+            <%= text_input f, :caepsds_provider_fname ,
+            class: "input", type: "text",
+placeholder: "caepsds_provider_fname",
+required: false %> <%= error_tag f,
+            :caepsds_provider_fname   %>
+          </div>
+          <p class="help"></p>
+  </div><!------field------------->
+
+    </div><!---end col 1---------->
+
+
+    <div class="column">
+
+        <div class="field">
+          <label class="label">Provider Mid Name </label>
+          <div class="control">
+            <%= text_input f, :caepsds_provider_mname ,
+            class: "input", type: "text",
+placeholder: "caepsds_provider_mname",
+required: false %>
+<%= error_tag f, :caepsds_provider_mname   %>
+          </div>
+          <p class="help"></p>
+  </div><!------field------------->
+
+
+    </div><!---end col 2---------->
+
+    </div><!-----end columns--------->
+
+    <!-------END START------------------------------>
+      <span class="button is-warning is-fullwidth ">
+       Notes
+ </span>
+
+<!-------START------------------------------>
+  <div class="columns">
+    <div class="column">
+        <div class="field">
+  <label class="label"> My Notes </label>
+  <div class="control">
+    <%= text_input f, :caepsds_notes,
+        class: "textarea",
+        type: "input", placeholder: "caepsds_notes"  %>
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+
+    </div><!---end col 1---------->
+
+
+    </div><!-----end columns--------->
+
+ <!-------END START------------------------------>
+
+
+   <%#= label f, :caepsds_photo %>
+  <%#= text_input f, :caepsds_photo %>
+  <%#= error_tag f, :caepsds_photo %>
+
+
+
+</div><!------END LEFT COLUMN---------->
+
+  </div><!----colimns-------------------->
+
+
+
+  <div>
+    <%= submit "Save and Continue", class: "button is-info is-large is-fullwidth " %>
+    </div>
+<% end %>

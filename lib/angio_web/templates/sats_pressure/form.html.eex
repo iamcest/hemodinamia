@@ -1,0 +1,1661 @@
+
+<% alias Angio.Canons, as: Query %>
+
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+  <div class="notification is-danger">
+    <button class="delete"></button>
+    Oops, something went wrong! Please check the errors below or Dublicate Record
+</div>
+  <% end %>
+<!------------------------------------>
+
+
+<!----------------------------------------->
+<div class = "columns">
+<div class = "column frame_1">
+<span class="button is-link is-fullwidth ">
+    Aorta
+ </span>
+<!---------start----------------------------------->
+<div class = "columns">
+<div class = "column">
+
+ <div class="field">
+  <label class="label">Ao Root Sys Pressure </label>
+  <div class="control">
+  <span class="field_help"></span>
+    <%= text_input f, :aortic_pres_sys, class: "input",
+                       type: "text",
+                       placeholder: "aortic_pres_sys",
+                      required: false
+  %>
+   <%= error_tag f, :aortic_pres_sys%>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+</div><!----column-------------------->
+
+
+
+
+<div class = "column">
+<!------field------------------------------------->
+<div class="field">
+  <label class="label">Ao Root Diast Pressure </label>
+  <div class="control">
+    <%= text_input f, :aortic_pres_dias, class: "input",
+                       type: "text",
+                       placeholder: "aortic_pres_diast",
+                      required: false
+  %>
+   <%= error_tag f, :aortic_pres_dias%>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+</div><!----column-------------------->
+
+
+
+
+
+
+<div class = "column">
+<!------field------------------------------------->
+  <div class="field">
+  <label class="label">Ao Root Saturation </label>
+  <div class="control">
+    <%= text_input f, :sao2_ao_root , class: "input",
+                       type: "text",
+                       placeholder: "sao2_ao_root ",
+                      required: false
+  %>
+   <%= error_tag f, :sao2_ao_root%>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+
+
+</div><!----column-------------------->
+
+
+
+
+
+</div><!----columns--------------------------->
+
+<div class="columns">
+<div class="column">
+
+<div class="field">
+  <label class="label">Ao Distal Sys Pressure </label>
+  <div class="control">
+  <span class="field_help"></span>
+    <%= text_input f, :ao_pres_sys_distal, class: "input",
+                       type: "text",
+                       placeholder: "ao_pres_sys_distal",
+                      required: false %>
+   <%= error_tag f, :ao_pres_sys_distal%>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+</div><!-----column-------------->
+<div class="column">
+<div class="field">
+  <label class="label">Ao Distal Dias Pressure </label>
+  <div class="control">
+  <span class="field_help"></span>
+    <%= text_input f, :ao_pres_dias_distal, class: "input",
+                       type: "text",
+                       placeholder: "ao_pres_dias_distal",
+                      required: false %>
+   <%= error_tag f, :ao_pres_dias_distal%>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+</div><!-----column-------------->
+<div class="column">
+<!------field------------------------------------->
+  <div class="field">
+  <label class="label">Ao Distal Saturation</label>
+  <div class="control">
+    <%= text_input f, :sao2_ao_distal , class: "input",
+                       type: "text",
+                       placeholder: "sao2_ao_distal ",
+                      required: false
+  %>
+   <%= error_tag f, :sao2_ao_distal%>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+</div><!-----column-------------->
+
+
+</div><!-------columns---------------------->
+
+<!---------end start------------------------------------>
+
+  <!---------start----------------------------------->
+<div class = "columns">
+<div class = "column">
+
+<!------field------------------------------------->
+  <div class="field">
+  <label class="label">Ao Root Mean (SBP + (2 x DBP)/3) </label>
+  <div class="control">
+    <%= text_input f, :aortic_pres_mean , class: "input",
+                       type: "text",
+                       placeholder: "aortic_pres_mean",
+                      required: false %>
+   <%= error_tag f, :aortic_pres_mean%>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+
+
+</div><!----column-------------------->
+ <div class = column>
+
+
+
+
+
+ </div><!----column-------------------->
+
+
+
+
+</div><!----columns--------------------------->
+
+
+
+
+
+
+
+
+
+
+
+
+<!---------end start------------------------------------>
+  <!---------start----------------------------------->
+  <span class="button is-link is-fullwidth ">
+    Left Ventricle
+ </span>
+<div class = "columns">
+<div class = "column" >
+
+
+<!------field------------------------------------->
+  <div class="field">
+  <label class="label">LV Sys Pressure </label>
+  <div class="control">
+    <%= text_input f, :lv_pres_sys , class: "input",
+                       type: "text",
+                       placeholder: "lv_pres_sys ",
+                      required: false
+  %>
+   <%= error_tag f, :lv_pres_sys%>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+</div><!----column-------------------->
+ <div class = column>
+
+
+<!------field------------------------------------->
+  <div class="field">
+  <label class="label">LV End Disatolic </label>
+  <div class="control">
+    <%= text_input f, :lv_pres_end_dias , class: "input",
+                       type: "text",
+                       placeholder: "lv_pres_end_dias ",
+                      required: false
+  %>
+   <%= error_tag f, :lv_pres_end_dias%>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+ </div><!----column-------------------->
+
+<div class = "column" >
+
+
+<!------field------------------------------------->
+  <div class="field">
+  <label class="label">LV Mean </label>
+  <div class="control">
+    <%= text_input f, :lv_pres_mean , class: "input",
+                       type: "text",
+                       placeholder: "lv_pres_mean",
+                      required: false
+  %>
+   <%= error_tag f, :lv_pres_mean%>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+
+
+ </div><!----column-------------------->
+<div class = "column" >
+
+
+<!------field------------------------------------->
+  <div class="field">
+  <label class="label">LV Sat </label>
+  <div class="control">
+    <%= text_input f, :sao2_lv, class: "input",
+                       type: "text",
+                       placeholder: "sao2_lv",
+                      required: false
+  %>
+   <%= error_tag f, :sao2_lv%>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+
+<span class="button is-link is-fullwidth ">
+    PCW
+    </span>
+
+<!---------start----------------------------------->
+<div class = "columns">
+<div class = "column">
+
+<!------field------------------------------------->
+  <div class="field">
+  <label class="label">Mean PCW Pressure </label>
+  <div class="control">
+    <%= text_input f, :pcw_pres_mean, class: "input",
+                       type: "text",
+                       placeholder: "pcw_pres_mean",
+                      required: false
+  %>
+   <%= error_tag f, :pcw_pres_mean%>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!------field------------------------------------->
+  <div class="field">
+  <label class="label">PCW Saturation </label>
+  <div class="control">
+    <%= text_input f, :sao2_pcw, class: "input",
+                       type: "text",
+                       placeholder: "sao2_pcw",
+                      required: false
+  %>
+   <%= error_tag f, :sao2_pcw%>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+ </div><!----column-------------------->
+
+
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!------field------------------------------------->
+  <div class="field">
+  <label class="label">PCW a  </label>
+  <div class="control">
+    <%= text_input f, :pcw_pres_a, class: "input",
+                       type: "text",
+                       placeholder: "pcw_pres_a",
+                      required: false
+  %>
+   <%= error_tag f, :pcw_pres_a%>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+</div><!----column-------------------->
+ <div class = "column">
+
+ <!------field------------------------------------->
+  <div class="field">
+  <label class="label">PCW c  </label>
+  <div class="control">
+    <%= text_input f, :pcw_pres_c, class: "input",
+                       type: "text",
+                       placeholder: "pcw_pres_c",
+                      required: false
+  %>
+   <%= error_tag f, :pcw_pres_c%>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+ </div><!----column-------------------->
+
+<div class = "column">
+
+ <!------field------------------------------------->
+  <div class="field">
+  <label class="label">PCW x </label>
+  <div class="control">
+    <%= text_input f, :pcw_pres_x, class: "input",
+                       type: "text",
+                       placeholder: "pcw_pres_x",
+                      required: false
+  %>
+   <%= error_tag f, :pcw_pres_x%>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+ </div><!----column-------------------->
+
+<div class = "column">
+
+ <!------field------------------------------------->
+  <div class="field">
+  <label class="label">PCW v </label>
+  <div class="control">
+    <%= text_input f, :pcw_pres_v, class: "input",
+                       type: "text",
+                       placeholder: "pcw_pres_v",
+                      required: false
+  %>
+   <%= error_tag f, :pcw_pres_v%>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+ <!------field------------------------------------->
+  <div class="field">
+  <label class="label">PCW y </label>
+  <div class="control">
+    <%= text_input f, :pcw_pres_y, class: "input",
+                       type: "text",
+                       placeholder: "pcw_pres_y",
+                      required: false
+  %>
+   <%= error_tag f, :pcw_pres_y%>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<span class="button is-link is-fullwidth ">
+    Pulmonary Artery
+    </span>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<!------field------------------------------------->
+  <div class="field">
+  <label class="label">PA Sys Pres </label>
+  <div class="control">
+    <%= text_input f, :pa_pres_sys, class: "input",
+                       type: "text",
+                       placeholder: "pa_pres_sys",
+                      required: false
+  %>
+   <%= error_tag f, :pa_pres_sys%>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+
+
+</div><!----column-------------------->
+ <div class = "column">
+<!------field------------------------------------->
+  <div class="field">
+  <label class="label">PA Dias Pres </label>
+  <div class="control">
+    <%= text_input f, :pa_pres_dias, class: "input",
+                       type: "text",
+                       placeholder: "pa_pres_dias",
+                      required: false
+  %>
+   <%= error_tag f, :pa_pres_dias%>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+ </div><!----column-------------------->
+
+<div class = "column">
+<!------field------------------------------------->
+  <div class="field">
+  <label class="label">PA Mean Pres </label>
+  <div class="control">
+    <%= text_input f, :pa_pres_mean, class: "input",
+                       type: "text",
+                       placeholder: "pa_pres_mean",
+                      required: false
+  %>
+   <%= error_tag f, :pa_pres_mean%>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+
+ </div><!----column-------------------->
+
+<div class = "column">
+<!------field------------------------------------->
+  <div class="field">
+  <label class="label">PA Sat </label>
+  <div class="control">
+    <%= text_input f, :sao2_pa, class: "input",
+                       type: "text",
+                       placeholder: "sao2_pa",
+                      required: false
+  %>
+   <%= error_tag f, :sao2_pa%>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+</div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+   <span class = "tag is-info">PA Right</span>
+<div class = "column">
+<!------field------------------------------------->
+  <div class="field">
+  <label class="label">PA Right Sys Pres </label>
+  <div class="control">
+    <%= text_input f, :pa_right_pres_sys, class: "input",
+                       type: "text",
+                       placeholder: "pa_right_pres_sys",
+                      required: false
+  %>
+   <%= error_tag f, :pa_right_pres_sys%>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+</div><!----column-------------------->
+
+
+
+
+ <div class = "column">
+  <%#= error_tag f, :pa_right_pres_dias %>
+
+<!------field------------------------------------->
+  <div class="field">
+  <label class="label">PA Right Diast Pres </label>
+  <div class="control">
+    <%= text_input f, :pa_right_pres_dias, class: "input",
+                       type: "text",
+                       placeholder: "pa_right_pres_dias",
+                      required: false
+  %>
+   <%= error_tag f, :pa_right_pres_dias%>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+
+
+ </div><!----column-------------------->
+
+<div class = "column">
+  <%#= error_tag f, :pa_right_pres_mean %>
+<!------field------------------------------------->
+  <div class="field">
+  <label class="label">PA Right Mean </label>
+  <div class="control">
+    <%= text_input f, :pa_right_pres_mean, class: "input",
+                       type: "text",
+                       placeholder: "pa_right_pres_mean",
+                      required: false
+  %>
+   <%= error_tag f, :pa_right_pres_mean%>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+ </div><!----column-------------------->
+
+<div class = "column">
+  <%#= error_tag f, :sao2_pa_right %>
+
+<!------field------------------------------------->
+  <div class="field">
+  <label class="label">PA Right Sat </label>
+  <div class="control">
+    <%= text_input f, :sao2_pa_right, class: "input",
+                       type: "text",
+                       placeholder: "sao2_pa_right",
+                      required: false
+  %>
+   <%= error_tag f, :sao2_pa_right%>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+  <!---------start----------------------------------->
+  <div class = "columns">
+   <span class = "tag is-info">PA Left</span>
+<div class = "column">
+  <!------field------------------------------------->
+  <div class="field">
+  <label class="label">PA Left Sys Pres </label>
+  <div class="control">
+    <%= text_input f, :pa_left_pres_sys, class: "input",
+                       type: "text",
+                       placeholder: "pa_left_pres_sys",
+                      required: false
+  %>
+   <%= error_tag f, :pa_left_pres_sys%>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+<!------field------------------------------------->
+  <div class="field">
+  <label class="label">PA Left Diast Pres </label>
+  <div class="control">
+    <%= text_input f, :pa_left_pres_dias, class: "input",
+                       type: "text",
+                       placeholder: "pa_left_pres_dias",
+                      required: false
+  %>
+   <%= error_tag f, :pa_left_pres_dias%>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+
+
+ </div><!----column-------------------->
+
+<div class = "column">
+
+<!------field------------------------------------->
+  <div class="field">
+  <label class="label">PA Left Mean </label>
+  <div class="control">
+    <%= text_input f, :pa_left_pres_mean, class: "input",
+                       type: "text",
+                       placeholder: "pa_left_pres_mean",
+                      required: false
+  %>
+   <%= error_tag f, :pa_left_pres_mean%>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+
+ </div><!----column-------------------->
+
+
+<div class = "column">
+<!------field------------------------------------->
+  <div class="field">
+  <label class="label">PA Left Sat </label>
+  <div class="control">
+    <%= text_input f, :sao2_pa_left, class: "input",
+                       type: "text",
+                       placeholder: "sao2_pa_left",
+                      required: false
+  %>
+   <%= error_tag f, :sao2_pa_left%>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<span class="button is-link is-fullwidth ">
+    Right Ventricle
+    </span>
+
+ <!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<!------field------------------------------------->
+  <div class="field">
+  <label class="label">RV Sys Pres </label>
+  <div class="control">
+    <%= text_input f, :rv_pres_sys, class: "input",
+                       type: "text",
+                       placeholder: "rv_pres_sys",
+                      required: false
+  %>
+   <%= error_tag f, :rv_pres_sys %>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+
+</div><!----column-------------------->
+
+
+
+
+ <div class = "column">
+
+  <!------field------------------------------------->
+  <div class="field">
+  <label class="label">RV Dias Pres </label>
+  <div class="control">
+    <%= text_input f, :rv_pres_dias, class: "input",
+                       type: "text",
+                       placeholder: "rv_pres_dias rv_pre",
+                      required: false
+  %>
+   <%= error_tag f, :rv_pres_dias %>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+ </div><!----column-------------------->
+
+<div class = "column">
+  <!------field------------------------------------->
+  <div class="field">
+  <label class="label">RV Mean </label>
+  <div class="control">
+    <%= text_input f, :rv_pres_mean, class: "input",
+                       type: "text",
+                       placeholder: "rv_pres_mean",
+                      required: false
+  %>
+   <%= error_tag f, :rv_pres_mean %>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+ </div><!----column-------------------->
+
+
+<div class = "column">
+<!------field------------------------------------->
+  <div class="field">
+  <label class="label">RV Sat </label>
+  <div class="control">
+    <%= text_input f, :sao2_rv, class: "input",
+                       type: "text",
+                       placeholder: "sao2_rv",
+                      required: false
+  %>
+   <%= error_tag f, :sao2_rv %>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+ <!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<!------field------------------------------------->
+  <div class="field">
+  <label class="label">RV OutFlow Sat </label>
+  <div class="control">
+    <%= text_input f, :sao2_rv_outflow, class: "input",
+                       type: "text",
+                       placeholder: "sao2_rv_outflow",
+                      required: false
+  %>
+   <%= error_tag f, :sao2_rv_outflow %>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+
+
+
+
+
+
+
+
+
+</div><!----column-------------------->
+ <div class = "column">
+<!------field------------------------------------->
+  <div class="field">
+  <label class="label">RV Mid Sat </label>
+  <div class="control">
+    <%= text_input f, :sao2_rv_mid, class: "input",
+                       type: "text",
+                       placeholder: "sao2_rv_mid",
+                      required: false
+  %>
+   <%= error_tag f, :sao2_rv_mid %>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+
+ </div><!----column-------------------->
+
+<div class = "column">
+<!------field------------------------------------->
+  <div class="field">
+  <label class="label">RV Apex Sat </label>
+  <div class="control">
+    <%= text_input f, :sao2_rv_apex, class: "input",
+                       type: "text",
+                       placeholder: "sao2_rv_apex",
+                      required: false
+  %>
+   <%= error_tag f, :sao2_rv_apex %>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+
+
+ </div><!----column-------------------->
+
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+ <span class="button is-link is-fullwidth ">
+    Right Atrium
+    </span>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+
+<div class = "column">
+  <!------field------------------------------------->
+  <div class="field">
+  <label class="label">RA Mean Pres </label>
+  <div class="control">
+    <%= text_input f, :ra_pres_mean, class: "input",
+                       type: "text",
+                       placeholder: "ra_pres_mean",
+                      required: false
+  %>
+   <%= error_tag f, :ra_pres_mean %>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+
+</div><!----column-------------------->
+ <div class = "column">
+<!------field------------------------------------->
+  <div class="field">
+  <label class="label">RA Mid Sat </label>
+  <div class="control">
+    <%= text_input f, :sao2_ra_mid, class: "input",
+                       type: "text",
+                       placeholder: "sao2_ra_mid",
+                      required: false
+  %>
+   <%= error_tag f, :sao2_ra_mid %>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+ </div><!----column-------------------->
+
+<div class = "column">
+  <!------field------------------------------------->
+  <div class="field">
+  <label class="label">RA Low Sat </label>
+  <div class="control">
+    <%= text_input f, :sao2_ra_low, class: "input",
+                       type: "text",
+                       placeholder: "sao2_ra_low",
+                      required: false
+  %>
+   <%= error_tag f, :sao2_ra_low %>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+ </div><!----column-------------------->
+
+<div class = "column">
+
+ <!------field------------------------------------->
+  <div class="field">
+  <label class="label">RA High Sat </label>
+  <div class="control">
+    <%= text_input f, :sao2_ra_high, class: "input",
+                       type: "text",
+                       placeholder: "sao2_ra_high",
+                      required: false
+  %>
+   <%= error_tag f, :sao2_ra_high %>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+ <!---------start----------------------------------->
+  <div class = "columns">
+  <span class = "tag is-info"> RA Waves</span>
+<div class = "column">
+<!------field------------------------------------->
+  <div class="field">
+  <label class="label"> a Wave  </label>
+  <div class="control">
+    <%= text_input f, :ra_pres_a, class: "input",
+                       type: "text",
+                       placeholder: "ra_pres_a",
+                      required: false
+  %>
+   <%= error_tag f, :ra_pres_a %>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!------field------------------------------------->
+  <div class="field">
+  <label class="label"> c Wave  </label>
+  <div class="control">
+    <%= text_input f, :ra_pres_c, class: "input",
+                       type: "text",
+                       placeholder: "ra_pres_c",
+                      required: false
+  %>
+   <%= error_tag f, :ra_pres_c %>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+
+ </div><!----column-------------------->
+<div class = "column">
+
+<!------field------------------------------------->
+  <div class="field">
+  <label class="label">v Wave  </label>
+  <div class="control">
+    <%= text_input f, :ra_pres_v, class: "input",
+                       type: "text",
+                       placeholder: "ra_pres_v",
+                      required: false
+  %>
+   <%= error_tag f, :ra_pres_v %>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+</div><!----column-------------------->
+
+<div class = "column">
+<!------field------------------------------------->
+  <div class="field">
+  <label class="label">x Wave  </label>
+  <div class="control">
+    <%= text_input f, :ra_pres_x, class: "input",
+                       type: "text",
+                       placeholder: "ra_pres_x",
+                      required: false
+  %>
+   <%= error_tag f, :ra_pres_x %>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+
+
+ </div><!----column-------------------->
+ <div class = "column">
+
+
+<!------field------------------------------------->
+  <div class="field">
+  <label class="label"> y Wave  </label>
+  <div class="control">
+    <%= text_input f, :ra_pres_y, class: "input",
+                       type: "text",
+                       placeholder: "ra_pres_y",
+                      required: false
+  %>
+   <%= error_tag f, :ra_pres_y %>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+
+</div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+</div><!-----BIG LEFT COLUMN----------------------------------->
+
+<div class="column frame_1">
+<span class="button is-link is-fullwidth ">
+    Inferior Vena Cava
+    </span>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<!------field------------------------------------->
+  <div class="field">
+  <label class="label"> IVC Sat  </label>
+  <div class="control">
+    <%= text_input f, :sao2_ivc, class: "input",
+                       type: "text",
+                       placeholder: "sao2_ivc",
+                      required: false
+  %>
+   <%= error_tag f, :sao2_ivc %>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+
+</div><!----column-------------------->
+ <div class = "column">
+<!------field------------------------------------->
+  <div class="field">
+  <label class="label"> IVC Mean Pres  </label>
+  <div class="control">
+    <%= text_input f, :ivc_pres_mean, class: "input",
+                       type: "text",
+                       placeholder: "ivc_pres_mean",
+                      required: false
+  %>
+   <%= error_tag f, :ivc_pres_mean %>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+ </div><!----column-------------------->
+
+<div class = "column">
+<!------field------------------------------------->
+  <div class="field">
+  <label class="label"> Hepatic Veins Sat   </label>
+  <div class="control">
+    <%= text_input f, :sao2_hepatic_veins, class: "input",
+                       type: "text",
+                       placeholder: "sao2_hepatic_veins",
+                      required: false
+  %>
+   <%= error_tag f, :sao2_hepatic_veins %>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+ </div><!----column-------------------->
+<div class = "column">
+
+<!------field------------------------------------->
+  <div class="field">
+  <label class="label"> Hepatic Vein Pres </label>
+  <div class="control">
+    <%= text_input f, :hepatic_veins_pres, class: "input",
+                       type: "text",
+                       placeholder: "hepatic_veins_pres",
+                      required: false
+  %>
+   <%= error_tag f, :hepatic_veins_pres %>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+<span class="button is-link is-fullwidth ">
+    Superior  Vena Cava
+    </span>
+
+
+ <!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!------field------------------------------------->
+  <div class="field">
+  <label class="label"> SVC Mean Pres </label>
+  <div class="control">
+    <%= text_input f, :svc_pres_mean, class: "input",
+                       type: "text",
+                       placeholder: "svc_pres_mean",
+                      required: false
+  %>
+   <%= error_tag f, :svc_pres_mean %>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!------field------------------------------------->
+  <div class="field">
+  <label class="label"> SVC Sat Low </label>
+  <div class="control">
+    <%= text_input f, :sao2_svc_low, class: "input",
+                       type: "text",
+                       placeholder: "sao2_svc_low",
+                      required: false
+  %>
+   <%= error_tag f, :sao2_svc_low %>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+
+
+ </div><!----column-------------------->
+
+<div class = "column">
+  <%#= error_tag f, :sao2_svc_high %>
+
+
+<!------field------------------------------------->
+  <div class="field">
+  <label class="label"> SVC Sat High </label>
+  <div class="control">
+    <%= text_input f, :sao2_svc_high, class: "input",
+                       type: "text",
+                       placeholder: "sao2_svc_high",
+                      required: false
+  %>
+   <%= error_tag f, :sao2_svc_high %>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+
+
+
+ </div><!----column-------------------->
+
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+ <div class="is-divider" data-content=" Complementary Data "></div>
+
+
+ <div class = "columns">
+
+<div class = "column">
+<!------field------------------------------------->
+  <div class="field">
+  <label class="label"> Heigth (cm)</label>
+  <div class="control">
+    <%= text_input f, :height, class: "input",
+                       type: "text",
+                       placeholder: "height",
+                      required: false
+  %>
+   <%= error_tag f, :height %>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+
+</div><!------------column------------------>
+<div class = "column">
+<!------field------------------------------------->
+  <div class="field">
+  <label class="label"> Weigth (kg)</label>
+  <div class="control">
+    <%= text_input f, :weigth, class: "input",
+                       type: "text",
+                       placeholder: "weigth",
+                      required: false%>
+   <%= error_tag f, :weigth %>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+</div><!------------column------------------>
+<div class = "column">
+<!------field------------------------------------->
+  <div class="field">
+  <label class="label"> BSA </label>
+  <div class="control">
+    <%= text_input f, :uni_bsa, class: "input",
+                       type: "text",
+                       placeholder: "uni_bsa",
+                      required: false
+  %>
+   <%= error_tag f, :uni_bsa %>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+
+ </div><!----column-------------------->
+
+</div><!------------columns-------------->
+
+ <!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!------field------------------------------------->
+  <div class="field">
+  <label class="label"> Heart Rate </label>
+  <div class="control">
+    <%= text_input f, :sat_pres_heart_rate, class: "input",
+                       type: "text",
+                       placeholder: "sat_pres_heart_rate",
+                      required: false
+  %>
+   <%= error_tag f, :sat_pres_heart_rate %>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+</div><!----column-------------------->
+
+
+<div class = "column">
+
+
+<!------field------------------------------------->
+  <div class="field">
+  <label class="label"> Hb </label>
+  <div class="control">
+    <%= text_input f, :sat_pres_hb, class: "input",
+                       type: "text",
+                       placeholder: "sat_pres_hb",
+                      required: false
+  %>
+   <%= error_tag f, :sat_pres_hb %>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+
+
+
+
+ </div><!----column-------------------->
+
+<div class = "column">
+
+
+
+<!------field------------------------------------->
+  <div class="field">
+  <label class="label"> Diast Filling Period </label>
+  <div class="control">
+   <span class="field_help"></span>
+    <%= text_input f, :ventr_dias_fill_period, class: "input",
+                       type: "text",
+                       placeholder: "ventr_dias_fill_period",
+                      required: false
+  %>
+   <%= error_tag f, :ventr_dias_fill_period  %>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+
+
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!------field------------------------------------->
+  <div class="field">
+  <label class="label">Sys Ejec Period </label>
+  <div class="control">
+  <span class="field_help"></span>
+    <%= text_input f, :ventr_sys_ejc_period, class: "input",
+                       type: "text",
+                       placeholder: "ventr_sys_ejc_period",
+                      required: false
+  %>
+   <%= error_tag f, :ventr_sys_ejc_period  %>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+
+
+
+
+
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!------field------------------------------------->
+  <div class="field">
+  <label class="label">VO2 mL/kg/min </label>
+  <div class="control">
+  <span class="field_help"></span>
+    <%= text_input f, :sat_pres_oxygen_consumption, class: "input",
+                       type: "text",
+                       placeholder: "sat_pres_oxygen_consumption",
+                      required: false
+  %>
+   <%= error_tag f, :sat_pres_oxygen_consumption %>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+
+
+ </div><!----column-------------------->
+<div class = "column">
+
+<!------field------------------------------------->
+  <div class="field">
+  <label class="label">O2 Inhalation (%) </label>
+  <div class="control">
+    <%= text_input f, :sat_pres_o2_inhalation, class: "input",
+                       type: "text",
+                       placeholder: "sat_pres_o2_inhalation",
+                      required: false
+  %>
+   <%= error_tag f, :sat_pres_o2_inhalation %>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+ </div><!----column-------------------->
+<div class = "column">
+
+
+<%  s_sat_pres_meds =  Query.select_options("sat_pres_meds") %>
+<div class="field">
+    <label class="label"> VasoActive Meds</label>
+          <div class="control">
+
+            <div class="select is-primary">
+            <span class="field_help"></span>
+              <%= select(f,
+:sat_pres_meds , s_sat_pres_meds,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select---->
+            <%= error_tag f, :sat_pres_meds   %>
+            <span class="help"></span>
+          </div>
+          <!--control---->
+        </div>
+        <!---field--->
+
+
+
+ </div><!----column-------------------->
+
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<span class="button is-link is-fullwidth ">
+    Chronology  Data
+
+    </span>
+
+ <!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+ <% i_sat_pres_start_dt  =
+raw Query.search_in_instructions("sat_pres_start_dt")%>
+    <div class="field">
+          <label class="label">Start Date </label>
+          <div class="control">
+     <%= text_input f, :sat_pres_start_dt,
+        class: "input", type: "date",
+         placeholder: "sat_pres_start_dt", required: false %>
+          <%= error_tag f,
+            :proc_epis_request_dt  %>
+          </div>
+          <p class="help">  <%= i_sat_pres_start_dt  %> </p>
+        </div>
+        <!--field---->
+
+
+ </div><!----column-------------------->
+
+ <div class = "column">
+
+
+ <% i_sat_pres_start_tm  =
+raw Query.search_in_instructions("sat_pres_start_tm")%>
+    <div class="field">
+          <label class="label">Start Time </label>
+          <div class="control">
+     <%= text_input f, :sat_pres_start_tm,
+        class: "input", type: "time",
+         placeholder: "sat_pres_start_tm", required: false %>
+          <%= error_tag f,
+            :sat_pres_start_tm  %>
+          </div>
+          <p class="help">  <%= i_sat_pres_start_tm  %> </p>
+        </div>
+        <!--field---->
+ </div><!----column-------------------->
+
+<div class = "column">
+  <%#= error_tag f, :sat_pres_end_dt %>
+
+
+ <% i_sat_pres_end_dt  =
+raw Query.search_in_instructions("sat_pres_end_dt")%>
+    <div class="field">
+          <label class="label">Ending Date </label>
+          <div class="control">
+     <%= text_input f, :sat_pres_end_dt,
+        class: "input", type: "date",
+         placeholder: "sat_pres_end_tm", required: false %>
+          <%= error_tag f,
+            :sat_pres_end_dt  %>
+          </div>
+          <p class="help">  <%= i_sat_pres_end_dt  %> </p>
+        </div>
+        <!--field---->
+
+
+
+
+
+
+ </div><!----column-------------------->
+
+<div class = "column">
+  <%#= error_tag f, :sat_pres_end_tm %>
+
+
+ <%# i_sat_pres_end_tm  =
+raw Query.search_in_instructions("sat_pres_end_tm")%>
+    <div class="field">
+          <label class="label">Ending Time </label>
+          <div class="control">
+     <%= text_input f, :sat_pres_end_tm,
+        class: "input", type: "time",
+         placeholder: "sat_pres_end_tm", required: false %>
+          <%= error_tag f,
+            :sat_pres_end_tm  %>
+          </div>
+          <p class="help">  <%#= i_sat_pres_end_tm  %> </p>
+        </div>
+        <!--field---->
+
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column important_column">
+
+<!------field------------------------------------->
+  <div class="field">
+  <label class="label"> Qp/Qs  </label>
+  <div class="control">
+    <%= text_input f, :uni_qp_qs, class: "input",
+                       type: "text",
+                       placeholder: "uni_qp_qs",
+                      required: false
+  %>
+   <%= error_tag f, :uni_qp_qs %>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+</div><!----column-------------------->
+
+
+
+ <div class = "column">
+ Aux
+ </div><!----column-------------------->
+
+
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+     <span class="button is-danger  is-fullwidth ">
+<i class="fa fa-sticky-note">
+Diagnosis - Procedure Description - Notes
+</i>
+</span>
+ <!-----------start--------------------------------------->
+ <div class="columns">
+   <div class="column ">
+
+
+         <div class="field">
+  <label class="label">  Diagnoses / Procedures  </label>
+  <div class="control">
+    <%= text_input f, :sat_pres_notes,
+        class: "textarea",
+        type: "input", placeholder: "sat_pres_notes"  %>
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+
+
+  </div><!-----column------------------->
+
+</div><!--------column-------------------->
+<!----------------gormating form---------------------------------------------->
+ <!-- -HELP AREA -->
+  <%= render  AngioWeb.SharedView, "_help_area.html" %>
+<!------------UNUSED FIELDS---------------------------------------->
+<!-----------------------
+  <%= label f, :pcw_pres_h %>
+  <%= text_input f, :pcw_pres_h %>
+  <%= error_tag f, :pcw_pres_h %>
+
+
+
+
+  <%= label f, :pcw_pres_z %>
+  <%= text_input f, :pcw_pres_z %>
+  <%= error_tag f, :pcw_pres_z %>
+
+  <%= label f, :svc_pres_sys %>
+  <%= text_input f, :svc_pres_sys %>
+  <%= error_tag f, :svc_pres_sys %>
+
+  <%= label f, :ivc_pres_sys %>
+  <%= text_input f, :ivc_pres_sys %>
+  <%= error_tag f, :ivc_pres_sys %>
+
+
+  <%= label f, :ra_pres_h %>
+  <%= text_input f, :ra_pres_h %>
+  <%= error_tag f, :ra_pres_h %>
+
+  <%= label f, :pa_pres_sys_na %>
+  <%= text_input f, :pa_pres_sys_na %>
+  <%= error_tag f, :pa_pres_sys_na %>
+
+  <%= label f, :ra_pres_dias %>
+  <%= text_input f, :ra_pres_dias %>
+  <%= error_tag f, :ra_pres_dias %>
+
+  <%= label f, :ra_pres_z %>
+  <%= text_input f, :ra_pres_z %>
+  <%= error_tag f, :ra_pres_z %>
+
+  <%= label f, :pa_pres_mean_na %>
+  <%= text_input f, :pa_pres_mean_na %>
+  <%= error_tag f, :pa_pres_mean_na %>
+
+  <%= label f, :ivc_pres_dias %>
+  <%= text_input f, :ivc_pres_dias %>
+  <%= error_tag f, :ivc_pres_dias %>
+
+
+  <%= label f, :ra_pres_sys %>
+  <%= text_input f, :ra_pres_sys %>
+  <%= error_tag f, :ra_pres_sys %>
+
+  <%= label f, :pcw_pres_sys %>
+  <%= text_input f, :pcw_pres_sys %>
+  <%= error_tag f, :pcw_pres_sys %>
+
+  <%= label f, :sat_pulm_veins %>
+  <%= text_input f, :sat_pulm_veins %>
+  <%= error_tag f, :sat_pulm_veins %>
+-----
+
+  <%= label f, :svc_pres_dias %>
+  <%= text_input f, :svc_pres_dias %>
+  <%= error_tag f, :svc_pres_dias %>
+
+  <%= label f, :pcw_pres_dias %>
+  <%= text_input f, :pcw_pres_dias %>
+  <%= error_tag f, :pcw_pres_dias %>
+------------------------->
+
+  <!----------------------------------------->
+
+
+</div ><!-------end R Colum----------------------------->
+</div><!--------end Columns-------------------------------------------->
+   <div>
+    <%= submit "Save Sats Pressures and Continue", class: "button is-info is-large is-fullwidth " %>
+  </div>
+<% end %>

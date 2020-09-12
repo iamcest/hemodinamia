@@ -1,0 +1,1245 @@
+<% alias Angio.Canons, as: Query %>
+
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+   <div class="notification is-danger">
+    <button class="delete"></button>
+    Oops, something went wrong! Please check the errors below or Dublicate Record
+</div>
+
+  <% end %>
+<div class="notification is-warning">
+  <button class="delete"></button>
+   <h6 class="title is-6 has-text-centered"> 
+   Information about Patient Coronary Anatomy.
+      Complete Once for Each Cath
+  </h6>
+</div>
+
+      <script>
+document.addEventListener('DOMContentLoaded', () => {
+  (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
+    $notification = $delete.parentNode;
+    $delete.addEventListener('click', () => {
+      $notification.parentNode.removeChild($notification);
+    });
+  });
+});
+      </script>
+
+
+<div class="columns">
+       <div class="column frame_1">
+
+    <!-------start------------------------->
+     <div class="columns">
+       <div class="column important_column">
+
+
+         <% s_cor_anat_dominance =
+             Query.select_options("cor_anat_dominance") %>
+
+          <%# i_cor_anat_dominance =
+raw  Query.search_in_instructions("cor_anat_dominance")%>
+
+        <div class="field">
+          <label class="label">Dominance  </label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"> </span>
+              <%= select(f, :cor_anat_dominance,
+                     s_cor_anat_dominance,
+prompt: "---Select---",
+required: true,
+#selected: "rca" ,
+class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help is-danger">
+              <%#= i_cor_anat_dominance%>
+            </p>
+          </div>
+          <!--control---->
+        </div>
+        <!---field--->
+
+
+
+        </div><!------column 1----------------->
+
+
+
+
+      </div><!----columns--------->
+  <!-------end start------------------------->
+
+
+  <!-------start------------------------->
+     <div class="columns">
+       <div class="column">
+
+
+          <div class="field">
+            <label class="label">Cor Variations?</label>
+          <div class="control">
+          <span class="field_help"> </span>
+            <%= checkbox f, :cor_anat_variations_yn,
+             placeholder: "cor_anat_variations_yn",
+            required: false,
+type: "checkbox" %>
+<%= error_tag f, :cor_anat_variations_yn%>
+           <p class = "help">
+             <%#= "Check if Yes" %>
+           </p>
+
+          </div>
+           </div>
+        <!--field---->
+
+        </div><!------column 1----------------->
+
+
+
+        <div class="column">
+
+  <div class="field">
+            <label class="label">Cor Anomalies ?</label>
+          <div class="control">
+           <span class="field_help"> </span>
+            <%= checkbox f, :cor_anat_anomalies_yn,
+             placeholder: "cor_anat_anomalies_yn",
+            required: false,
+type: "checkbox" %>
+<%= error_tag f, :cor_anat_anomalies_yn%>
+           <p class = "help">
+             <%#= "Check if Yes" %>
+           </p>
+
+          </div>
+           </div>
+        <!--field---->
+
+
+
+
+        </div><!------column 2----------------->
+
+
+      </div><!----columns--------->
+  <!-------end start------------------------->
+
+ <span class="button is-primary is-fullwidth ">
+       Left Main
+
+ </span>
+
+
+
+ <!-------start------------------------->
+     <div class="columns">
+       <div class="column">
+
+
+
+  <% s_cor_anat_lm_ostium_type =
+             Query.select_options("cor_anat_lm_ostium_type") %>
+
+          <% i_cor_anat_lm_ostium_type =
+raw  Query.search_in_instructions("cor_anat_lm_ostium_type")%>
+
+        <div class="field">
+          <label class="label">LM Ostium Types  </label>
+          <div class="control">
+
+            <div class="select is-primary">
+            <span class="field_help"> </span>
+              <%= select(f, :cor_anat_lm_ostium_type,
+                     s_cor_anat_lm_ostium_type,
+prompt: "---Select---",
+#selected: "lm_ostium",
+class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help">
+              <%= i_cor_anat_lm_ostium_type%>
+            </p>
+          </div>
+          <!--control---->
+        </div>
+        <!---field--->
+
+
+
+        </div><!------column 1----------------->
+
+        <div class="column">
+
+ <% s_cor_anat_lm_type =
+             Query.select_options("cor_anat_lm_type") %>
+
+          <% i_cor_anat_lm_type =
+raw  Query.search_in_instructions("cor_anat_lm_type")%>
+
+        <div class="field">
+          <label class="label">LM  Types  </label>
+          <div class="control">
+            <div class="select is-primary">
+            <span class="field_help"> </span>
+              <%= select(f, :cor_anat_lm_type,
+                     s_cor_anat_lm_type,
+prompt: "---Select---",
+class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help ">
+              <%= i_cor_anat_lm_type%>
+            </p>
+          </div>
+          <!--control---->
+        </div>
+        <!---field--->
+
+
+
+
+        </div><!------column 2----------------->
+
+
+      </div><!----columns--------->
+  <!-------end start------------------------->
+<span class="button is-primary is-fullwidth ">
+       RCA
+ </span>
+
+ <!-------start------------------------->
+     <div class="columns">
+       <div class="column">
+
+ <% s_cor_anat_rca_type =
+             Query.select_options("cor_anat_rca_type") %>
+
+          <% i_cor_anat_rca_type =
+raw  Query.search_in_instructions("cor_anat_rca_type")%>
+
+        <div class="field">
+          <label class="label">RCA Types  </label>
+
+          <div class="control">
+            <div class="select is-primary">
+            <span class="field_help"> </span>
+              <%= select(f, :cor_anat_rca_type,
+                     s_cor_anat_rca_type,
+prompt: "---Select---",
+class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help ">
+              <%= i_cor_anat_rca_type%>
+            </p>
+          </div>
+          <!--control---->
+        </div>
+        <!---field--->
+        </div><!------column 1----------------->
+
+
+
+        <div class="column">
+
+
+ <% s_cor_anat_rca_ostium_type  =
+             Query.select_options("cor_anat_rca_ostium_type") %>
+
+          <% i_cor_anat_rca_ostium_type =
+raw  Query.search_in_instructions("cor_anat_rca_ostium_type")%>
+
+        <div class="field">
+          <label class="label">RCA Ostium Types  </label>
+
+
+          <div class="control">
+            <div class="select is-primary">
+            <span class="field_help"> </span>
+              <%= select(f, :cor_anat_rca_ostium_type,
+                     s_cor_anat_rca_ostium_type,
+prompt: "---Select---",
+#selected: "rca_ostium" ,
+class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help ">
+              <%#= i_cor_anat_rca_ostium_type%>
+            </p>
+          </div>
+          <!--control---->
+        </div>
+        <!---field--->
+
+
+
+
+
+        </div><!------column 2----------------->
+
+
+      </div><!----columns--------->
+  <!-------end start------------------------->
+
+ <!-------start------------------------->
+     <div class="columns">
+       <div class="column">
+
+ <% s_cor_anat_rca_mid_type  =
+             Query.select_options("cor_anat_rca_mid_type") %>
+
+          <% i_cor_anat_rca_mid_type =
+raw  Query.search_in_instructions("cor_anat_rca_mid_type")%>
+
+        <div class="field">
+          <label class="label">RCA Mid  Types  </label>
+
+
+          <div class="control">
+            <div class="select is-primary">
+            <span class="field_help"> </span>
+              <%= select(f, :cor_anat_rca_mid_type,
+                     s_cor_anat_rca_mid_type,
+prompt: "---Select---",
+class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help ">
+              <%= i_cor_anat_rca_mid_type%>
+            </p>
+          </div>
+          <!--control---->
+        </div>
+        <!---field--->
+
+
+
+
+
+        </div><!------column 1----------------->
+
+
+
+        <div class="column">
+
+<% s_cor_anat_rca_rv_branch_type  =
+             Query.select_options("cor_anat_rca_rv_branch_type") %>
+
+          <%# i_cor_anat_rca_rv_branch_type =
+raw  Query.search_in_instructions("cor_anat_rca_rv_branch_type")%>
+
+        <div class="field">
+          <label class="label">RCA RV Branch  Types  </label>
+
+
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"> </span>
+              <%= select(f, :cor_anat_rca_rv_branch_type,
+                     s_cor_anat_rca_rv_branch_type,
+prompt: "---Select---",
+class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help ">
+              <%#= i_cor_anat_rca_rv_branch_type%>
+            </p>
+          </div>
+          <!--control---->
+        </div>
+        <!---field--->
+
+
+        </div><!------column 2----------------->
+
+
+      </div><!----columns--------->
+  <!-------end start------------------------->
+
+
+
+
+ <!-------start------------------------->
+     <div class="columns">
+       <div class="column">
+
+
+<% s_cor_anat_rca_distal_type   =
+             Query.select_options("cor_anat_rca_distal_type") %>
+
+          <% i_cor_anat_rca_distal_type  =
+raw  Query.search_in_instructions("cor_anat_rca_distal_type")%>
+
+        <div class="field">
+          <label class="label">RCA Distal  Types  </label>
+
+
+          <div class="control">
+            <div class="select is-primary">
+            <span class="field_help"> </span>
+              <%= select(f, :cor_anat_rca_distal_type,
+                     s_cor_anat_rca_distal_type ,
+prompt: "---Select---",
+class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help ">
+              <%#= i_cor_anat_rca_distal_type %>
+            </p>
+          </div
+          <!----control---->
+        </div>
+        <!---field--->
+
+
+
+        </div><!------column 1----------------->
+
+
+
+        <div class="column">
+
+
+<% s_cor_anat_rca_pda_type   =
+             Query.select_options("cor_anat_rca_pda_type") %>
+
+          <% i_cor_anat_rca_pda_type  =
+                raw  Query.search_in_instructions("cor_anat_rca_pda_type")%>
+
+        <div class="field">
+          <label class="label">RCA PDA Types  </label>
+
+
+          <div class="control">
+            <div class="select is-primary">
+            <span class="field_help"> </span>
+              <%= select(f, :cor_anat_rca_pda_type,
+                     s_cor_anat_rca_pda_type,
+prompt: "---Select---",
+#selected: "rca_pda",
+class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help ">
+              <%#= i_cor_anat_rca_pda_type %>
+            </p>
+          </div
+          <!--control---->
+        </div>
+        <!---field--->
+
+
+
+
+
+        </div><!------column 2----------------->
+
+
+      </div><!----columns--------->
+  <!-------end start------------------------->
+
+<span class="button is-primary is-fullwidth ">
+       LAD
+ </span>
+
+  <!-------start------------------------->
+     <div class="columns">
+       <div class="column">
+
+<% s_cor_anat_lad_ostium_type   =
+             Query.select_options("cor_anat_lad_ostium_type") %>
+
+          <% i_cor_anat_lad_ostium_type  =
+                raw  Query.search_in_instructions("cor_anat_lad_ostium_type")%>
+
+        <div class="field">
+          <label class="label">LAD Ostium   </label>
+
+
+          <div class="control">
+            <div class="select is-primary">
+            <span class="field_help"> </span>
+              <%= select(f, :cor_anat_lad_ostium_type,
+                     s_cor_anat_lad_ostium_type,
+prompt: "---Select---",
+class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help ">
+              <%#= i_cor_anat_lad_ostium_type %>
+            </p>
+          </div
+          <!--control---->
+        </div>
+        <!---field--->
+
+
+        </div><!------column 1----------------->
+
+
+
+        <div class="column">
+
+
+<% s_cor_anat_lad_prox_type   =
+             Query.select_options("cor_anat_lad_prox_type") %>
+
+          <% i_cor_anat_lad_prox_type  =
+                raw  Query.search_in_instructions("cor_anat_lad_prox_type")%>
+
+        <div class="field">
+          <label class="label">LAD Proximal   </label>
+
+
+          <div class="control">
+            <div class="select is-primary">
+            <span class="field_help"> </span>
+              <%= select(f, :cor_anat_lad_prox_type,
+                     s_cor_anat_lad_prox_type,
+prompt: "---Select---",
+class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help ">
+              <%#= i_cor_anat_lad_prox_type %>
+            </p>
+          </div
+          <!--control---->
+        </div>
+        <!---field--->
+
+
+
+
+        </div><!------column 2----------------->
+
+
+      </div><!----columns--------->
+  <!-------end start------------------------->
+
+  <!-------start------------------------->
+     <div class="columns">
+       <div class="column">
+<% s_cor_anat_lad_mid_type   =
+             Query.select_options("cor_anat_lad_mid_type") %>
+
+          <% i_cor_anat_lad_mid_type  =
+                raw  Query.search_in_instructions("cor_anat_lad_mid_type")%>
+
+        <div class="field">
+          <label class="label">LAD Mid    </label>
+
+
+          <div class="control">
+            <div class="select is-primary">
+            <span class="field_help"> </span>
+              <%= select(f, :cor_anat_lad_mid_type,
+                     s_cor_anat_lad_mid_type,
+prompt: "---Select---",
+class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help ">
+              <%#= i_cor_anat_lad_mid_type %>
+            </p>
+          </div
+          <!--control---->
+        </div>
+        <!---field--->
+
+
+        </div><!------column 1----------------->
+
+
+
+        <div class="column">
+
+<% s_cor_anat_septal_ostium_type   =
+             Query.select_options("cor_anat_septal_ostium_type") %>
+
+          <% i_cor_anat_septal_ostium_type =
+                raw  Query.search_in_instructions("cor_anat_septal_ostium_type")%>
+
+        <div class="field">
+          <label class="label">Septal    </label>
+
+
+          <div class="control">
+            <div class="select is-primary">
+            <span class="field_help"> </span>
+              <%= select(f, :cor_anat_septal_ostium_type,
+                     s_cor_anat_septal_ostium_type,
+prompt: "---Select---",
+class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help ">
+              <%= i_cor_anat_septal_ostium_type %>
+            </p>
+          </div
+          <!--control---->
+        </div>
+        <!---field--->
+
+
+
+        </div><!------column 2----------------->
+
+
+      </div><!----columns--------->
+  <!-------end start------------------------->
+
+  <!-------start------------------------->
+     <div class="columns">
+       <div class="column">
+
+
+
+         <% s_cor_anat_lad_distal_type   =
+             Query.select_options("cor_anat_lad_distal_type") %>
+
+          <% i_cor_anat_lad_distal_type =
+                raw  Query.search_in_instructions("cor_anat_lad_distal_type")%>
+
+        <div class="field">
+          <label class="label">LAD Distal Type     </label>
+
+
+          <div class="control">
+            <div class="select is-primary">
+            <span class="field_help"> </span>
+              <%= select(f, :cor_anat_lad_distal_type,
+                     s_cor_anat_lad_distal_type,
+prompt: "---Select---",
+class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help ">
+              <%= i_cor_anat_lad_distal_type %>
+            </p>
+          </div
+          <!--control---->
+        </div>
+        <!---field--->
+
+
+
+        </div><!------column 1----------------->
+
+
+
+        <div class="column">
+
+ <% s_cor_anat_lad_d1_type   =
+             Query.select_options("cor_anat_lad_d1_type") %>
+
+          <% i_cor_anat_lad_d1_type =
+                raw  Query.search_in_instructions("cor_anat_lad_d1_type")%>
+
+        <div class="field">
+          <label class="label">LAD D1  Type     </label>
+
+
+          <div class="control">
+            <div class="select is-primary">
+            <span class="field_help"> </span>
+              <%= select(f, :cor_anat_lad_d1_type,
+                     s_cor_anat_lad_d1_type,
+prompt: "---Select---",
+class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help ">
+              <%= i_cor_anat_lad_d1_type %>
+            </p>
+          </div
+          <!--control---->
+        </div>
+        <!---field--->
+
+
+
+        </div><!------column 2----------------->
+
+
+      </div><!----columns--------->
+  <!-------end start------------------------->
+
+  <!-------start------------------------->
+     <div class="columns">
+       <div class="column">
+
+ <% s_cor_anat_lad_d2_type   =
+             Query.select_options("cor_anat_lad_d2_type") %>
+
+          <% i_cor_anat_lad_d2_type =
+                raw  Query.search_in_instructions("cor_anat_lad_d2_type")%>
+
+        <div class="field">
+          <label class="label">LAD D2  Type     </label>
+
+
+          <div class="control">
+            <div class="select is-primary">
+            <span class="field_help"> </span>
+              <%= select(f, :cor_anat_lad_d2_type,
+                     s_cor_anat_lad_d2_type,
+prompt: "---Select---",
+class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help ">
+              <%= i_cor_anat_lad_d2_type %>
+            </p>
+          </div
+          <!--control---->
+        </div>
+        <!---field--->
+
+
+
+
+        </div><!------column 1----------------->
+
+
+
+        <div class="column">
+
+
+
+ <% s_cor_anat_lad_d3_type   =
+             Query.select_options("cor_anat_lad_d3_type") %>
+
+          <% i_cor_anat_lad_d3_type =
+                raw  Query.search_in_instructions("cor_anat_lad_d3_type")%>
+
+        <div class="field">
+          <label class="label">LAD D3  Type     </label>
+
+
+          <div class="control">
+            <div class="select is-primary">
+            <span class="field_help"> </span>
+              <%= select(f, :cor_anat_lad_d3_type,
+                     s_cor_anat_lad_d3_type,
+prompt: "---Select---",
+class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help ">
+              <%= i_cor_anat_lad_d3_type %>
+            </p>
+          </div
+          <!--control---->
+        </div>
+        <!---field--->
+
+        </div><!------column 2----------------->
+
+
+      </div><!----columns--------->
+  <!-------end start------------------------->
+
+
+
+
+       </div><!--------end Left Column------------------->
+  <div class="column frame_1">
+
+<span class="button is-primary is-fullwidth ">
+       LCX
+ </span>
+
+
+<!-------start------------------------->
+     <div class="columns">
+       <div class="column">
+
+
+
+
+         <% s_cor_anat_lcx_type   =
+             Query.select_options("cor_anat_lcx_type") %>
+
+          <% i_cor_anat_lcx_type =
+                raw  Query.search_in_instructions("cor_anat_lcx_type")%>
+
+        <div class="field">
+          <label class="label">Lcx  Type     </label>
+
+
+          <div class="control">
+            <div class="select is-primary">
+            <span class="field_help"> </span>
+              <%= select(f, :cor_anat_lcx_type,
+                     s_cor_anat_lcx_type,
+prompt: "---Select---",
+class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help ">
+              <%= i_cor_anat_lcx_type %>
+            </p>
+          </div
+          <!--control---->
+        </div>
+        <!---field--->
+
+
+        </div><!------column 1----------------->
+
+
+
+        <div class="column">
+   <% s_cor_anat_lcx_ostium_type   =
+             Query.select_options("cor_anat_lcx_ostium_type") %>
+
+          <% i_cor_anat_lcx_ostium_type =
+                raw  Query.search_in_instructions("cor_anat_lcx_ostium_type")%>
+
+        <div class="field">
+          <label class="label">Lcx  Ostium Type     </label>
+
+
+          <div class="control">
+            <div class="select is-primary">
+            <span class="field_help"> </span>
+              <%= select(f, :cor_anat_lcx_ostium_type,
+                     s_cor_anat_lcx_ostium_type,
+prompt: "---Select---",
+class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help ">
+              <%= i_cor_anat_lcx_ostium_type %>
+            </p>
+          </div
+          <!--control---->
+        </div>
+        <!---field--->
+
+
+        </div><!------column 2----------------->
+
+
+      </div><!----columns--------->
+  <!-------end start------------------------->
+
+<!-------start------------------------->
+     <div class="columns">
+       <div class="column">
+
+
+<% s_cor_anat_lcx_prox_type  =
+             Query.select_options("cor_anat_lcx_prox_type") %>
+
+          <% i_cor_anat_lcx_prox_type =
+                raw  Query.search_in_instructions("cor_anat_lcx_prox_type")%>
+
+        <div class="field">
+          <label class="label">Lcx  Proximal Type     </label>
+
+
+          <div class="control">
+            <div class="select is-primary">
+            <span class="field_help"> </span>
+              <%= select(f, :cor_anat_lcx_prox_type,
+                     s_cor_anat_lcx_prox_type,
+prompt: "---Select---",
+class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help ">
+              <%= i_cor_anat_lcx_prox_type %>
+            </p>
+          </div
+          <!--control---->
+        </div>
+        <!---field--->
+
+
+        </div><!------column 1----------------->
+
+
+
+        <div class="column">
+
+
+
+<% s_cor_anat_lcx_mid_type  =
+             Query.select_options("cor_anat_lcx_mid_type") %>
+
+          <% i_cor_anat_lcx_mid_type =
+                raw  Query.search_in_instructions("cor_anat_lcx_mid_type")%>
+
+        <div class="field">
+          <label class="label">Lcx  Mid Type     </label>
+
+
+          <div class="control">
+            <div class="select is-primary">
+            <span class="field_help"> </span>
+              <%= select(f, :cor_anat_lcx_mid_type,
+                     s_cor_anat_lcx_mid_type,
+prompt: "---Select---",
+class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help ">
+              <%= i_cor_anat_lcx_mid_type %>
+            </p>
+          </div
+          <!--control---->
+        </div>
+        <!---field--->
+
+
+        </div><!------column 2----------------->
+
+
+      </div><!----columns--------->
+  <!-------end start------------------------->
+
+<!-------start------------------------->
+     <div class="columns">
+       <div class="column">
+
+
+
+<% s_cor_anat_lcx_distal_type  =
+             Query.select_options("cor_anat_lcx_distal_type") %>
+
+          <% i_cor_anat_lcx_distal_type =
+                raw  Query.search_in_instructions("cor_anat_lcx_distal_type")%>
+
+        <div class="field">
+          <label class="label">Lcx  Distal Type     </label>
+
+
+          <div class="control">
+            <div class="select is-primary">
+            <span class="field_help"> </span>
+              <%= select(f, :cor_anat_lcx_distal_type,
+                     s_cor_anat_lcx_distal_type,
+prompt: "---Select---",
+class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help ">
+              <%= i_cor_anat_lcx_distal_type %>
+            </p>
+          </div
+          <!--control---->
+        </div>
+        <!---field--->
+
+
+
+        </div><!------column 1----------------->
+
+
+
+        <div class="column">
+<% s_cor_anat_lcx_om1_type  =
+             Query.select_options("cor_anat_lcx_om1_type") %>
+
+          <% i_cor_anat_lcx_om1_type =
+                raw  Query.search_in_instructions("cor_anat_lcx_om1_type")%>
+
+        <div class="field">
+          <label class="label">Lcx  OM1 Type     </label>
+
+
+          <div class="control">
+            <div class="select is-primary">
+            <span class="field_help"> </span>
+              <%= select(f, :cor_anat_lcx_om1_type,
+                     s_cor_anat_lcx_om1_type,
+prompt: "---Select---",
+class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help ">
+              <%= i_cor_anat_lcx_om1_type %>
+            </p>
+          </div
+          <!--control---->
+        </div>
+        <!---field--->
+
+
+
+
+        </div><!------column 2----------------->
+
+
+      </div><!----columns--------->
+  <!-------end start------------------------->
+
+<!-------start------------------------->
+     <div class="columns">
+       <div class="column">
+<% s_cor_anat_lcx_om2_type  =
+             Query.select_options("cor_anat_lcx_om2_type") %>
+
+          <% i_cor_anat_lcx_om2_type =
+                raw  Query.search_in_instructions("cor_anat_lcx_om2_type")%>
+
+        <div class="field">
+          <label class="label">Lcx  OM2 Type     </label>
+
+
+          <div class="control">
+            <div class="select is-primary">
+            <span class="field_help"> </span>
+              <%= select(f, :cor_anat_lcx_om2_type,
+                     s_cor_anat_lcx_om2_type,
+prompt: "---Select---",
+class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help ">
+              <%= i_cor_anat_lcx_om2_type %>
+            </p>
+          </div
+          <!--control---->
+        </div>
+        <!---field--->
+
+
+        </div><!------column 1----------------->
+
+
+
+        <div class="column">
+
+
+          <% s_cor_anat_lcx_om3_type  =
+             Query.select_options("cor_anat_lcx_om3_type") %>
+
+          <% i_cor_anat_lcx_om3_type =
+                raw  Query.search_in_instructions("cor_anat_lcx_om3_type")%>
+
+        <div class="field">
+          <label class="label">Lcx  OM3 Type     </label>
+
+
+          <div class="control">
+            <div class="select is-primary">
+            <span class="field_help"> </span>
+              <%= select(f, :cor_anat_lcx_om3_type,
+                     s_cor_anat_lcx_om3_type,
+prompt: "---Select---",
+class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help ">
+              <%= i_cor_anat_lcx_om3_type %>
+            </p>
+          </div
+          <!--control---->
+        </div>
+        <!---field--->
+
+
+
+        </div><!------column 2----------------->
+
+
+      </div><!----columns--------->
+  <!-------end start------------------------->
+
+<span class="button is-primary is-fullwidth ">
+       Other Branches
+ </span>
+
+
+<!-------start------------------------->
+     <div class="columns">
+       <div class="column">
+
+  <% s_cor_anat_ramus_type  =
+             Query.select_options("cor_anat_ramus_type") %>
+
+          <% i_cor_anat_ramus_type =
+                raw  Query.search_in_instructions("cor_anat_ramus_type")%>
+
+        <div class="field">
+          <label class="label">Ramus Type     </label>
+
+
+          <div class="control">
+            <div class="select is-primary">
+            <span class="field_help"> </span>
+              <%= select(f, :cor_anat_ramus_type,
+                     s_cor_anat_ramus_type,
+prompt: "---Select---",
+class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help ">
+              <%= i_cor_anat_ramus_type%>
+            </p>
+          </div
+          <!--control---->
+        </div>
+        <!---field--->
+
+
+
+
+
+
+
+        </div><!------column 1----------------->
+
+
+
+        <div class="column">
+
+<% s_cor_anat_pl_type  =
+             Query.select_options("cor_anat_pl_type") %>
+
+          <% i_cor_anat_pl_type =
+                raw  Query.search_in_instructions("cor_anat_pl_type")%>
+
+        <div class="field">
+          <label class="label">Posterior Lateral Type     </label>
+
+          <div class="control">
+            <div class="select is-primary">
+            <span class="field_help"> </span>
+              <%= select(f, :cor_anat_pl_type,
+                     s_cor_anat_pl_type,
+prompt: "---Select---",
+class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help ">
+              <%= i_cor_anat_pl_type%>
+            </p>
+          </div
+          <!--control---->
+        </div>
+        <!---field--->
+
+
+
+        </div><!------column 2----------------->
+
+
+      </div><!----columns--------->
+  <!-------end start------------------------->
+
+
+
+  <!-------start------------------------->
+     <div class="columns">
+       <div class="column">
+
+
+<% s_cor_anat_sino_atrial_type  =
+             Query.select_options("cor_anat_sino_atrial_type") %>
+
+          <% i_cor_anat_sino_atrial_type =
+                raw  Query.search_in_instructions("cor_anat_sino_atrial_type")%>
+
+        <div class="field">
+          <label class="label">Sino-Atrial Type     </label>
+
+          <div class="control">
+            <div class="select is-primary">
+            <span class="field_help"> </span>
+              <%= select(f, :cor_anat_sino_atrial_type,
+                     s_cor_anat_sino_atrial_type,
+prompt: "---Select---",
+class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help ">
+              <%= i_cor_anat_sino_atrial_type%>
+            </p>
+          </div
+          <!--control---->
+        </div>
+        <!---field--->
+
+
+        </div><!------column 1----------------->
+
+        <div class="column">
+             <% s_cor_anat_conus_type  =
+             Query.select_options("cor_anat_conus_type") %>
+
+          <% i_cor_anat_conus_type =
+                raw  Query.search_in_instructions("cor_anat_conus_type")%>
+
+        <div class="field">
+          <label class="label">Conus Type     </label>
+
+          <div class="control">
+            <div class="select is-primary">
+            <span class="field_help"> </span>
+              <%= select(f, :cor_anat_conus_type,
+                     s_cor_anat_conus_type,
+prompt: "---Select---",
+class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help ">
+              <%= i_cor_anat_conus_type%>
+            </p>
+          </div
+          <!--control---->
+        </div>
+        <!---field--->
+
+
+        </div><!------column 2----------------->
+
+
+      </div><!----columns--------->
+  <!-------end start------------------------->
+
+     <span class="button is-danger  is-fullwidth ">
+<i class="fa fa-sticky-note">
+My Notes
+</i>
+</span>
+
+ <!-------start------------------------->
+     <div class="columns">
+       <div class="column">
+          <div class="field">
+          <label class="label">My Notes On Coronary Anatomy </label>
+          <div class="control">
+            <%= text_input f, :cor_anat_notes, class: "textarea", type: "input",
+            placeholder: "Type Your Notes" %> <%= error_tag f, :cor_anat_notes %>
+
+            <p class="help"></p>
+          </div>
+          <!---control---------->
+        </div>
+        <!-------field-------->
+
+        </div><!------column 1----------------->
+      </div><!----columns--------->
+  <!-------end start------------------------->
+
+    <!-- -HELP AREA -->
+  <%= render  AngioWeb.SharedView, "_help_area.html" %>
+
+
+
+   </div><!--------end R Column------------------->
+ </div><!--------end Columns------------------->
+
+ <div>
+    <%= submit "Save and Continue", class: "button is-info is-medium is-fullwidth " %>
+
+  </div>
+<% end %>

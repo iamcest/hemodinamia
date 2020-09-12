@@ -1,0 +1,12 @@
+<% alias Angio.Canons%>
+<% options_count =  Canons.count_options(@definition.id) %>
+<%= if options_count> 0 do %>
+  <span class="tag is-small is-success">
+    <strong><%= options_count %></strong>
+  </span>
+<% else %>
+  <span class="tag is-small is-danger">
+    <%= options_count %>
+  </span>
+<% end %>
+

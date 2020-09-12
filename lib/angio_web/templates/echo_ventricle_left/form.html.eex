@@ -1,0 +1,977 @@
+
+<% alias Angio.Canons, as: Query %>
+
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+  <div class="notification is-danger">
+    <button class="delete"></button>
+    Oops, something went wrong! Please check the errors below or Maybe dublicated Record.
+</div>
+
+  <% end %>
+<div class="columns">
+  <div class="column is-7 frame_1">
+
+
+
+
+<!---------end start------------------------------------>
+<div class="is-divider" data-content="LV Appearance -  Myo Mass"></div>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+  <div class = "column">
+
+<!----- start selection field---------------------------->
+   <%  s_elv_lv_appearance_desc  =  Query.select_options("elv_lv_appearance_desc") %>
+<div class="field">
+    <label class="label">LV Appearance</label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f, :elv_lv_appearance_desc, s_elv_lv_appearance_desc,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :elv_lv_appearance_desc %>
+            <span class="help"></span>
+          </div><!----control---->
+        </div><!------field--->
+
+ <!-------end selection field----------------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+
+  <!--- start field--------------------------------->
+<div class="field">
+            <label class="label" >Appearance Other </label>
+            <p/>
+           <span class= "field_help"></span>
+            <%= text_input f, :elv_lv_appearance_other_text,
+            class: "input",
+            type: "text",
+            placeholder: "elv_lv_appearance_other_text",
+            required: false %>
+            <%= error_tag f, :elv_lv_appearance_other_text %>
+          <p class="help"></p>
+        </div>
+<!-----------end field----------------------->
+
+ </div><!----column-------------------->
+ <div class = "column">
+
+
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Concentric Hyperthrophy?</label>
+        <div class="control">
+         <p/>
+         <span class="field_help"></span>
+          <%= checkbox f, :elv_concentric_hyper_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :elv_concentric_hyper_yn %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+  <div class = "column">
+
+
+
+
+<!----- start selection field---------------------------->
+   <%  s_elv_myocardial_mass_qualitative  =  Query.select_options("elv_myocardial_mass_qualitative") %>
+<div class="field">
+    <label class="label">MyoCardial Mass</label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f, :elv_myocardial_mass_qualitative,
+              s_elv_myocardial_mass_qualitative,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :elv_myocardial_mass_qualitative %>
+            <span class="help"></span>
+          </div><!----control---->
+        </div><!------field--->
+
+ <!-------end selection field----------------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+
+  <!--- start field--------------------------------->
+<div class="field">
+            <label class="label" >Myo Mass Value </label>
+            <p/>
+           <span class= "field_help"></span>
+            <%= text_input f, :elv_myocardial_mass_val,
+            class: "input",
+            type: "text",
+            placeholder: "elv_myocardial_mass_val",
+            required: false %>
+            <%= error_tag f, :elv_myocardial_mass_val %>
+          <p class="help"></p>
+        </div>
+<!-----------end field----------------------->
+
+
+
+
+
+ </div><!----column-------------------->
+ <div class = "column">
+
+<!----- start selection field---------------------------->
+   <%  s_elv_myocardial_mass_method  =  Query.select_options("elv_myocardial_mass_method") %>
+<div class="field">
+    <label class="label">Myo Mass Estimation Method</label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f, :elv_myocardial_mass_method,
+              s_elv_myocardial_mass_method,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :elv_myocardial_mass_method%>
+            <span class="help"></span>
+          </div><!----control---->
+        </div><!------field--->
+
+ <!-------end selection field----------------------->
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+<div class="is-divider" data-content="LV Cavity"></div>
+<!---------start----------------------------------->
+  <div class = "columns">
+  <div class = "column">
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">LV Shape Is Normal ?</label>
+        <div class="control">
+         <p/>
+         <span class="field_help"></span>
+          <%= checkbox f, :elv_lv_shape_normal_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :elv_lv_shape_normal_yn %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!----- start selection field---------------------------->
+   <%  s_elv_lv_geometry_desc  =  Query.select_options("elv_lv_geometry_desc") %>
+<div class="field">
+    <label class="label">LV Geometry</label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f, :elv_lv_geometry_desc,
+              s_elv_lv_geometry_desc,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :elv_lv_geometry_desc %>
+            <span class="help"></span>
+          </div><!----control---->
+        </div><!------field--->
+
+ <!-------end selection field----------------------->
+
+ </div><!----column-------------------->
+ <div class = "column">
+
+<!----- start selection field---------------------------->
+   <%  s_elv_lved_cavity_size_desc  =  Query.select_options("elv_lved_cavity_size_desc") %>
+<div class="field">
+    <label class="label">LV Cavity Size</label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f, :elv_lved_cavity_size_desc,
+              s_elv_lved_cavity_size_desc,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :elv_lved_cavity_size_desc %>
+            <span class="help"></span>
+          </div><!----control---->
+        </div><!------field--->
+
+ <!-------end selection field----------------------->
+
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+  <div class = "column">
+
+
+  <!--- start field--------------------------------->
+<div class="field">
+            <label class="label" >LVED Volume Value </label>
+            <p/>
+           <span class= "field_help"></span>
+            <%= text_input f, :elv_lved_volume_val,
+            class: "input",
+            type: "text",
+            placeholder: "elv_lved_volume_val",
+            required: false %>
+            <%= error_tag f, :elv_lved_volume_val %>
+          <p class="help"></p>
+        </div>
+<!-----------end field----------------------->
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+  <!--- start field--------------------------------->
+<div class="field">
+            <label class="label" >LV End Diast Volume Index </label>
+            <p/>
+           <span class= "field_help"></span>
+            <%= text_input f, :elv_lved_volume_index,
+            class: "input",
+            type: "text",
+            placeholder: "elv_lved_volume_index",
+            required: false %>
+            <%= error_tag f, :elv_lved_volume_index %>
+          <p class="help"></p>
+        </div>
+<!-----------end field----------------------->
+
+
+ </div><!----column-------------------->
+ <div class = "column">
+
+<!----- start selection field---------------------------->
+   <%  s_elv_lved_volume_method  =  Query.select_options("elv_lved_volume_method") %>
+<div class="field">
+    <label class="label">LV End Diast  Volume Estim Method</label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f, :elv_lved_volume_method,
+              s_elv_lved_volume_method,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :elv_lved_volume_method %>
+            <span class="help"></span>
+          </div><!----control---->
+        </div><!------field--->
+
+ <!-------end selection field----------------------->
+
+
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+  <div class = "column">
+
+
+  <!--- start field--------------------------------->
+<div class="field">
+            <label class="label" >LVE-Sys Volume Value </label>
+            <p/>
+           <span class= "field_help"></span>
+            <%= text_input f, :elv_lves_volume_val,
+            class: "input",
+            type: "text",
+            placeholder: "elv_lves_volume_val",
+            required: false %>
+            <%= error_tag f, :elv_lves_volume_val %>
+          <p class="help"></p>
+        </div>
+<!-----------end field----------------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+
+
+<!----- start selection field---------------------------->
+   <%  s_elv_lves_volume_method  =  Query.select_options("elv_lves_volume_method") %>
+<div class="field">
+    <label class="label">LVE-Sys Estimation Method</label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f, :elv_lves_volume_method,
+              s_elv_lves_volume_method,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :elv_lves_volume_method %>
+            <span class="help"></span>
+          </div><!----control---->
+        </div><!------field--->
+
+ <!-------end selection field----------------------->
+
+ </div><!----column-------------------->
+ <div class = "column">
+ Aux
+ </div><!----column------------------>
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+  <div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Thrombus/Mass In LV?</label>
+        <div class="control">
+         <p/>
+         <span class="field_help"></span>
+          <%= checkbox f, :elv_thrombus_tumour_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :elv_thrombus_tumour_yn %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+ <!----- start selection field---------------------------->
+   <%  s_elv_thrombus_tumour_loc  =  Query.select_options("elv_thrombus_tumour_loc") %>
+<div class="field">
+    <label class="label">Thrombus/Tumour Location</label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f, :elv_thrombus_tumour_loc, s_elv_thrombus_tumour_loc,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :elv_thrombus_tumour_loc %>
+            <span class="help"></span>
+          </div><!----control---->
+        </div><!------field--->
+
+ <!-------end selection field----------------------->
+
+
+ </div><!----column-------------------->
+ <div class = "column">
+ Aux For Future Use
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+  <div class = "column">
+
+
+ <!----- start selection field---------------------------->
+   <%  s_elv_aneurism_shape_desc  =  Query.select_options("elv_aneurism_shape_desc") %>
+<div class="field">
+    <label class="label">Aneurism Shape</label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f, :elv_aneurism_shape_desc, s_elv_aneurism_shape_desc,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :elv_aneurism_shape_desc %>
+            <span class="help"></span>
+          </div><!----control---->
+        </div><!------field--->
+
+ <!-------end selection field----------------------->
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+ <!----- start selection field---------------------------->
+   <%  s_elv_aneurism_pseudo_shape_desc  =  Query.select_options("elv_aneurism_pseudo_shape_desc") %>
+<div class="field">
+    <label class="label">Pseudo Aneurism Shape</label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f, :elv_aneurism_pseudo_shape_desc, s_elv_aneurism_pseudo_shape_desc,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :elv_aneurism_pseudo_shape_desc %>
+            <span class="help"></span>
+          </div><!----control---->
+        </div><!------field--->
+
+ <!-------end selection field----------------------->
+
+
+ </div><!----column-------------------->
+ <div class = "column">
+ 3333333333
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+<div class="is-divider" data-content="Thickness"></div>
+<!---------start----------------------------------->
+  <div class = "columns">
+  <div class = "column">
+
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">LV Wall Thickness Is Normal?</label>
+        <div class="control">
+         <p/>
+         <span class="field_help"></span>
+          <%= checkbox f, :elv_wall_thick_normal_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :elv_wall_thick_normal_yn %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+
+
+ <!----- start selection field---------------------------->
+   <%  s_elv_wall_thick_region  =  Query.select_options("elv_wall_thick_region") %>
+<div class="field">
+    <label class="label">LV Region of Thickness</label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f, :elv_wall_thick_region, s_elv_wall_thick_region,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :elv_aneurism_pseudo_shape_desc %>
+            <span class="help"></span>
+          </div><!----control---->
+        </div><!------field--->
+
+ <!-------end selection field----------------------->
+
+ </div><!----column-------------------->
+ <div class = "column">
+
+ <!----- start selection field---------------------------->
+   <%  s_elv_wall_thick_region_qualitative  =  Query.select_options("elv_wall_thick_region_qualitative") %>
+<div class="field">
+    <label class="label">LV Region of Thickness Qualitative</label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f, :elv_wall_thick_region_qualitative, s_elv_wall_thick_region_qualitative,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :elv_wall_thick_region_qualitative %>
+            <span class="help"></span>
+          </div><!----control---->
+        </div><!------field--->
+
+ <!-------end selection field----------------------->
+
+
+
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+  <div class = "column">
+
+
+ <!----- start selection field---------------------------->
+   <%  s_elv_wall_thick_region_name  =  Query.select_options("elv_wall_thick_region_name") %>
+<div class="field">
+    <label class="label">LV Region Name</label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f, :elv_wall_thick_region_name, s_elv_wall_thick_region_name,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :elv_wall_thick_region_name %>
+            <span class="help"></span>
+          </div><!----control---->
+        </div><!------field--->
+
+ <!-------end selection field----------------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+
+
+ <!----- start selection field---------------------------->
+   <%  s_elv_wall_thick_asym_hyper_desc  =  Query.select_options("elv_wall_thick_asym_hyper_desc") %>
+<div class="field">
+    <label class="label">LV Asymetric Hypertrophy</label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f, :elv_wall_thick_asym_hyper_desc, s_elv_wall_thick_asym_hyper_desc,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :elv_wall_thick_asym_hyper_desc %>
+            <span class="help"></span>
+          </div><!----control---->
+        </div><!------field--->
+
+ <!-------end selection field----------------------->
+
+ </div><!----column-------------------->
+ <div class = "column">
+
+ <!--- start field--------------------------------->
+<div class="field">
+            <label class="label" >LVPW Sys Thickness </label>
+            <p/>
+           <span class= "field_help"></span>
+            <%= text_input f, :elv_lvpw_thick_sys_val,
+            class: "input",
+            type: "text",
+            placeholder: "elv_lvpw_thick_sys_val",
+            required: false %>
+            <%= error_tag f, :elv_lvpw_thick_sys_val %>
+          <p class="help"></p>
+        </div>
+<!-----------end field----------------------->
+
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+  <div class = "column">
+
+ <!--- start field--------------------------------->
+<div class="field">
+            <label class="label" >LVPW Diast Thickness (LVPWd) </label>
+            <p/>
+           <span class= "field_help"></span>
+            <%= text_input f, :elv_lvpw_thick_diast_val,
+            class: "input",
+            type: "text",
+            placeholder: "elv_lvpw_thick_diast_val",
+            required: false %>
+            <%= error_tag f, :elv_lvpw_thick_diast_val %>
+          <p class="help"></p>
+        </div>
+<!-----------end field----------------------->
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+
+ <!--- start field--------------------------------->
+<div class="field">
+            <label class="label" >LVED Septal Thickness </label>
+            <p/>
+           <span class= "field_help"></span>
+            <%= text_input f, :elv_lved_septal_thick_val,
+            class: "input",
+            type: "text",
+            placeholder: "elv_lved_septal_thick_val",
+            required: false %>
+            <%= error_tag f, :elv_lved_septal_thick_val %>
+          <p class="help"></p>
+        </div>
+<!-----------end field----------------------->
+
+ </div><!----column-------------------->
+ <div class = "column">
+
+ <!--- start field--------------------------------->
+<div class="field">
+            <label class="label" >IV Septum Sys Thickness </label>
+            <p/>
+           <span class= "field_help"></span>
+            <%= text_input f, :elv_lves_septal_thick_val,
+            class: "input",
+            type: "text",
+            placeholder: "elv_lves_septal_thick_val",
+            required: false %>
+            <%= error_tag f, :elv_lves_septal_thick_val %>
+          <p class="help"></p>
+        </div>
+<!-----------end field----------------------->
+
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+  <div class = "column">
+
+
+ <!--- start field--------------------------------->
+<div class="field">
+            <label class="label" >LVED Inf-Lat Septal Thickness Value </label>
+            <p/>
+           <span class= "field_help"></span>
+            <%= text_input f, :elv_lved_inferior_lateral_septal_thick_val,
+            class: "input",
+            type: "text",
+            placeholder: "elv_lved_inferior_lateral_septal_thick_val",
+            required: false %>
+            <%= error_tag f, :elv_lved_inferior_lateral_septal_thick_val %>
+          <p class="help"></p>
+        </div>
+<!-----------end field----------------------->
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+
+ <!----- start selection field---------------------------->
+   <%  s_elv_lved_overall_septal_thick_desc  =  Query.select_options("elv_lved_overall_septal_thick_desc") %>
+<div class="field">
+    <label class="label">LVed Overall Septal Thickness</label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f, :elv_lved_overall_septal_thick_desc, s_elv_lved_overall_septal_thick_desc,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :elv_lved_overall_septal_thick_desc %>
+            <span class="help"></span>
+          </div><!----control---->
+        </div><!------field--->
+
+ <!-------end selection field----------------------->
+
+ </div><!----column-------------------->
+ <div class = "column">
+
+  <!--- start field--------------------------------->
+<div class="field">
+            <label class="label" >LVIDd  Value </label>
+            <p/>
+           <span class= "field_help"></span>
+            <%= text_input f, :elv_lvid_lved_val,
+            class: "input",
+            type: "text",
+            placeholder: "elv_lvid_lved_val",
+            required: false %>
+            <%= error_tag f, :elv_lvid_lved_val %>
+          <p class="help"></p>
+        </div>
+<!-----------end field----------------------->
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+  <div class = "column">
+
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">LVIDd N/A?</label>
+        <div class="control">
+         <p/>
+         <span class="field_help"></span>
+          <%= checkbox f, :elv_lvid_lved_na,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :elv_lvid_lved_na %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+</div><!----column-------------------->
+ <div class = "column">
+
+ <!--- start field--------------------------------->
+<div class="field">
+            <label class="label" >LVE-sys LVID Value </label>
+            <p/>
+           <span class= "field_help"></span>
+            <%= text_input f, :elv_lvid_lves_val,
+            class: "input",
+            type: "text",
+            placeholder: "elv_lvid_lves_val",
+            required: false %>
+            <%= error_tag f, :elv_lvid_lves_val %>
+          <p class="help"></p>
+        </div>
+<!-----------end field----------------------->
+
+
+ </div><!----column-------------------->
+ <div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">LVID/LVE-Sys N/A?</label>
+        <div class="control">
+         <p/>
+         <span class="field_help"></span>
+          <%= checkbox f, :elv_lvid_lves_na,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :elv_lvid_lves_na %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+  <div class = "column">
+
+
+ <!----- start selection field---------------------------->
+   <%  s_elv_lvot_desc  =  Query.select_options("elv_lvot_desc") %>
+<div class="field">
+    <label class="label">LV Outflow Description </label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f, :elv_lvot_desc, s_elv_lvot_desc,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :elv_lvot_desc %>
+            <span class="help"></span>
+          </div><!----control---->
+        </div><!------field--->
+
+ <!-------end selection field----------------------->
+
+</div><!----column-------------------->
+
+ <div class = "column">
+
+<!--- start field--------------------------------->
+<div class="field">
+            <label class="label" >LVE-Sys Volume Index </label>
+            <p/>
+           <span class= "field_help"></span>
+            <%= text_input f, :elv_lves_volume_index,
+            class: "input",
+            type: "text",
+            placeholder: "elv_lves_septal_thick_val",
+            required: false %>
+            <%= error_tag f, :elv_lves_volume_index %>
+          <p class="help"></p>
+        </div>
+<!-----------end field----------------------->
+
+ </div><!----column-------------------->
+ <div class = "column">
+111111111111
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+  <div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Non Compaction ?</label>
+        <div class="control">
+         <p/>
+         <span class="field_help"></span>
+          <%= checkbox f, :elv_non_compaction_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :elv_non_compaction_yn %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+</div><!----column-------------------->
+
+ <div class = "column">
+
+
+<!--- start field--------------------------------->
+<div class="field">
+            <label class="label" >Peak Circ Stain </label>
+            <p/>
+           <span class= "field_help"></span>
+            <%= text_input f, :elv_ste_circ_peak_strain,
+            class: "input",
+            type: "text",
+            placeholder: "elv_ste_circ_peak_strain",
+            required: false %>
+            <%= error_tag f, :elv_ste_circ_peak_strain %>
+          <p class="help"></p>
+        </div>
+<!-----------end field----------------------->
+
+ </div><!----column-------------------->
+<div class = "column">
+
+<!--- start field--------------------------------->
+<div class="field">
+            <label class="label" >Peak Radial Stain </label>
+            <p/>
+           <span class= "field_help"></span>
+            <%= text_input f, :elv_ste_radial_peak_strain ,
+            class: "input",
+            type: "text",
+            placeholder: "elv_ste_radial_peak_strain ",
+            required: false %>
+            <%= error_tag f, :elv_ste_radial_peak_strain  %>
+          <p class="help"></p>
+        </div>
+<!-----------end field----------------------->
+
+</div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+
+  </div><!--------LEFT COLUMN----------------->
+  <div class="column is-5 frame_1">
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+  <div class="field">
+  <label class="label"> My Notes On LV Echo</label>
+  <div class="control">
+    <%= text_input f, :elv_notes,
+        class: "textarea",
+        type: "input", placeholder: "elv_notes"  %>
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+</div><!----column-------------------->
+</div><!----columns--------------------------->
+
+
+ <div class = "columns">
+<div class = "column">
+ <%= render  AngioWeb.SharedView, "_help_area.html" %>
+</div><!----column-------------------->
+</div><!----columns--------------------------->
+
+
+</div><!------RIGHT COLUMN----------------------------->
+</div><!------end columns-------------------------------------------->
+
+ <!--------------------------------
+  <%#= label f, :elv_segment_17model %>
+  <%#= text_input f, :elv_segment_17model %>
+  <%#= error_tag f, :elv_segment_17model %>
+ --------------------------------->
+   <div>
+    <%= submit "Save Record", class: "button is-info is-medium is-fullwidth " %>
+
+  </div>
+
+
+<% end %>

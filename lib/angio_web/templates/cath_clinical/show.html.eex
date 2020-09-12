@@ -1,0 +1,174 @@
+<div class="title_form">
+<h5 class="title is-5 has-text-centered">Show Clinical</h5>
+</div>
+<div class="element_info">
+    <%= render  AngioWeb.SharedView, "_patient_info.html", patient: @patient %>
+</div>
+
+<div class="element_info_coronary">
+Angio : <%= render AngioWeb.SharedView, "_info_coronary.html", info_coronary:
+   @info_coronary%>
+</div>
+
+<ul>
+
+  <li>
+    <strong>Chf prior 2wk yn:</strong>
+    <%= @cath_clinical.chf_prior_2wk_yn %>
+  </li>
+
+  <li>
+    <strong>Nyha class prior 2wk cath yn:</strong>
+    <%= @cath_clinical.nyha_class_prior_2wk_cath_yn %>
+  </li>
+
+  <li>
+    <strong>Nyha prior 2wk category:</strong>
+    <%= @cath_clinical.nyha_prior_2wk_category %>
+  </li>
+
+  <li>
+    <strong>Lv dysfunction yn:</strong>
+    <%= @cath_clinical.lv_dysfunction_yn %>
+  </li>
+
+  <li>
+    <strong>Cardio shock last 24hours yn:</strong>
+    <%= @cath_clinical.cardio_shock_last_24hours_yn %>
+  </li>
+
+  <li>
+    <strong>Iabp support req yn:</strong>
+    <%= @cath_clinical.iabp_support_req_yn %>
+  </li>
+
+  <li>
+    <strong>Cath cl iabp start dt:</strong>
+    <%= @cath_clinical.cath_cl_iabp_start_dt %>
+  </li>
+
+  <li>
+    <strong>Iabp start tm:</strong>
+    <%= @cath_clinical.iabp_start_tm %>
+  </li>
+
+  <li>
+    <strong>Mech lv support other yn:</strong>
+    <%= @cath_clinical.mech_lv_support_other_yn %>
+  </li>
+
+  <li>
+    <strong>Mech lv support other dt:</strong>
+    <%= @cath_clinical.mech_lv_support_other_dt %>
+  </li>
+
+  <li>
+    <strong>Mech lv support other tm:</strong>
+    <%= @cath_clinical.mech_lv_support_other_tm %>
+  </li>
+
+  <li>
+    <strong>Cath cl arrest pre wit yn:</strong>
+    <%= @cath_clinical.cath_cl_arrest_pre_wit_yn %>
+  </li>
+
+  <li>
+    <strong>Cath cl arrest loc:</strong>
+    <%= @cath_clinical.cath_cl_arrest_loc %>
+  </li>
+
+  <li>
+    <strong>Cath cl arrest hypothermia yn:</strong>
+    <%= @cath_clinical.cath_cl_arrest_hypothermia_yn %>
+  </li>
+
+  <li>
+    <strong>Cath cl arrest hypothermia dt:</strong>
+    <%= @cath_clinical.cath_cl_arrest_hypothermia_dt %>
+  </li>
+
+  <li>
+    <strong>Cath cl arrest hypothermia tm:</strong>
+    <%= @cath_clinical.cath_cl_arrest_hypothermia_tm %>
+  </li>
+
+  <li>
+    <strong>Intubated before cath yn:</strong>
+    <%= @cath_clinical.intubated_before_cath_yn %>
+  </li>
+
+  <li>
+    <strong>Ventilator support yn:</strong>
+    <%= @cath_clinical.ventilator_support_yn %>
+  </li>
+
+  <li>
+    <strong>Bag mask ventilation yn:</strong>
+    <%= @cath_clinical.bag_mask_ventilation_yn %>
+  </li>
+
+  <li>
+    <strong>Glasgow coma scale:</strong>
+    <%= @cath_clinical.glasgow_coma_scale %>
+  </li>
+
+  <li>
+    <strong>Cad presentation type:</strong>
+    <%= @cath_clinical.cad_presentation_type %>
+  </li>
+
+  <li>
+    <strong>Angina class within 2wk yn:</strong>
+    <%= @cath_clinical.angina_class_within_2wk_yn %>
+  </li>
+
+  <li>
+    <strong>Symptom onset tm:</strong>
+    <%= @cath_clinical.symptom_onset_tm %>
+  </li>
+
+  <li>
+    <strong>Cath cl symptom onset dt:</strong>
+    <%= @cath_clinical.cath_cl_symptom_onset_dt %>
+  </li>
+
+  <li>
+    <strong>Symptom onset tm na:</strong>
+    <%= @cath_clinical.symptom_onset_tm_na %>
+  </li>
+
+  <li>
+    <strong>Symptom onset tm estim:</strong>
+    <%= @cath_clinical.symptom_onset_tm_estim %>
+  </li>
+
+  <li>
+    <strong>Cabg most recent dt:</strong>
+    <%= @cath_clinical.cabg_most_recent_dt %>
+  </li>
+
+  <li>
+    <strong>Sedation type:</strong>
+    <%= @cath_clinical.sedation_type %>
+  </li>
+
+  <li>
+    <strong>Anesthitist at start yn:</strong>
+    <%= @cath_clinical.anesthitist_at_start_yn %>
+  </li>
+
+</ul>
+<p class ="buttons_separator"> . </p>
+
+<span>
+    <%= link "Edit Clinicals", to: Routes.pt_angio_clinical_path(@conn, :edit, @patient,
+  @info_coronary, @cath_clinical ), class: "button is-link"%>
+</span>
+<span>
+  <%= link "Back To Clinical List", to: Routes.pt_angio_clinical_path(@conn, :index,
+  @patient, @info_coronary) , class: "button is-link"%>
+</span>
+<span>
+<%= link "Back To Lab",  to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-link"   %>
+ </span>

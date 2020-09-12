@@ -1,0 +1,13 @@
+<% alias Angio.Canons %>
+
+<% sentence_count =  Canons.count_opts_sentences(@defs_option.id)  %>
+<span></span>
+<%= if sentence_count > 0 do %>
+  <span class="tag is-small is-success">
+    <strong><%= sentence_count %></strong>
+  </span>
+<% else %>
+  <span class="tag is-small is-danger">
+    <%= sentence_count %>
+  </span>
+<% end %>

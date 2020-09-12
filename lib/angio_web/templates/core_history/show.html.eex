@@ -1,0 +1,228 @@
+
+<div class="title_form">
+<h5 class="title is-5 has-text-centered">Show Essential Past History  Record</h5>
+</div>
+
+<div class="element_info">
+
+    <%= render  AngioWeb.SharedView, "_patient_info.html", patient: @patient %>
+</div>
+
+<div class="element_info_coronary">
+Angio : <%= render AngioWeb.SharedView, "_info_coronary.html", info_coronary:
+   @info_coronary%>
+</div>
+
+
+<div class="columns">
+<div class="column">
+<div class="content frame_1 ">
+  <ol type="1">
+
+
+  <li>
+    <strong>Coh contrast allergy yn:</strong>
+    <%= @core_history.coh_contrast_allergy_yn %>
+  </li>
+
+  <li>
+    <strong>Coh angina yn:</strong>
+    <%= @core_history.coh_angina_yn %>
+  </li>
+
+  <li>
+    <strong>Coh angina class:</strong>
+    <%= @core_history.coh_angina_class %>
+  </li>
+
+  <li>
+    <strong>Coh prior cor interv yn:</strong>
+    <%= @core_history.coh_prior_cor_interv_yn %>
+  </li>
+
+  <li>
+    <strong>Coh prior sten 50pct yn:</strong>
+    <%= @core_history.coh_prior_sten_50pct_yn %>
+  </li>
+
+  <li>
+    <strong>Coh prior mi yn:</strong>
+    <%= @core_history.coh_prior_mi_yn %>
+  </li>
+
+  <li>
+    <strong>Coh mi timeframe:</strong>
+    <%= @core_history.coh_mi_timeframe %>
+  </li>
+
+  <li>
+    <strong>Coh family cor dis yn:</strong>
+    <%= @core_history.coh_family_cor_dis_yn %>
+  </li>
+
+  <li>
+    <strong>Coh diabetes yn:</strong>
+    <%= @core_history.coh_diabetes_yn %>
+  </li>
+
+  <li>
+    <strong>Coh diabetes therapy:</strong>
+    <%= @core_history.coh_diabetes_therapy %>
+  </li>
+
+  <li>
+    <strong>Coh family diabetes yn:</strong>
+    <%= @core_history.coh_family_diabetes_yn %>
+  </li>
+
+  <li>
+    <strong>Coh hypertension yn:</strong>
+    <%= @core_history.coh_hypertension_yn %>
+  </li>
+
+  <li>
+    <strong>Coh dyslipidemia yn:</strong>
+    <%= @core_history.coh_dyslipidemia_yn %>
+  </li>
+
+  <li>
+    <strong>Coh arrest cardiac yn:</strong>
+    <%= @core_history.coh_arrest_cardiac_yn %>
+  </li>
+
+  <li>
+    <strong>Coh cerebrovasc dis yn:</strong>
+    <%= @core_history.coh_cerebrovasc_dis_yn %>
+  </li>
+
+  <li>
+    <strong>Coh copd yn:</strong>
+    <%= @core_history.coh_copd_yn %>
+  </li>
+
+  <li>
+    <strong>Coh chf prior yn:</strong>
+    <%= @core_history.coh_chf_prior_yn %>
+  </li>
+
+  <li>
+    <strong>Coh chf etiology:</strong>
+    <%= @core_history.coh_chf_etiology %>
+  </li>
+
+  <li>
+    <strong>Coh chf symptom duration:</strong>
+    <%= @core_history.coh_chf_symptom_duration %>
+  </li>
+
+  <li>
+    <strong>Coh chf hosp timeframe:</strong>
+    <%= @core_history.coh_chf_hosp_timeframe %>
+  </li>
+
+  <li>
+    <strong>Coh cancer type:</strong>
+    <%= @core_history.coh_cancer_type %>
+  </li>
+
+  <li>
+    <strong>Coh cancer history yn:</strong>
+    <%= @core_history.coh_cancer_history_yn %>
+  </li>
+
+  <li>
+    <strong>Coh arthritis collagen dis yn:</strong>
+    <%= @core_history.coh_arthritis_collagen_dis_yn %>
+  </li>
+
+  <li>
+    <strong>Coh prior afib yn:</strong>
+    <%= @core_history.coh_prior_afib_yn %>
+  </li>
+
+  <li>
+    <strong>Coh tobacco use:</strong>
+    <%= @core_history.coh_tobacco_use %>
+  </li>
+
+  <li>
+    <strong>Coh tobacco type:</strong>
+    <%= @core_history.coh_tobacco_type %>
+  </li>
+
+  <li>
+    <strong>Coh tobacco cigarette amount:</strong>
+    <%= @core_history.coh_tobacco_cigarette_amount %>
+  </li>
+
+  <li>
+    <strong>Coh renal artery dis yn:</strong>
+    <%= @core_history.coh_renal_artery_dis_yn %>
+  </li>
+
+  <li>
+    <strong>Coh fatigue yn:</strong>
+    <%= @core_history.coh_fatigue_yn %>
+  </li>
+
+  <li>
+    <strong>Coh mascular dis yn:</strong>
+    <%= @core_history.coh_mascular_dis_yn %>
+  </li>
+
+  <li>
+    <strong>Coh chronic kidney dis:</strong>
+    <%= @core_history.coh_chronic_kidney_dis %>
+  </li>
+
+  <li>
+    <strong>Coh cur on dyalisis yn:</strong>
+    <%= @core_history.coh_cur_on_dyalisis_yn %>
+  </li>
+
+  <li>
+    <strong>Coh stroke ischemic yn:</strong>
+    <%= @core_history.coh_stroke_ischemic_yn %>
+  </li>
+
+  <li>
+    <strong>Coh cardiomyo:</strong>
+    <%= @core_history.coh_cardiomyo %>
+  </li>
+
+  <li>
+    <strong>Coh peripheral art dis yn:</strong>
+    <%= @core_history.coh_peripheral_art_dis_yn %>
+  </li>
+
+  <li>
+    <strong>Coh histories notes:</strong>
+    <%= @core_history.coh_histories_notes %>
+  </li>
+
+</ol>
+</div>
+</div><!---------column------------------------>
+<div class="column frame_1">
+<h4 class="title is-4 has-text-centered" >Showing Core  History  Report In English Under Constraction</h4>
+  <%#= raw Angio.Canons.Report.make_infect_history(@info_coronary.id, "en") %>
+</div>
+
+</div><!-------column--------------------->
+</div><!---------columns------------------>
+
+<p class ="buttons_separator"> . </p>
+
+<span>
+    <%= link "Edit Past History", to: Routes.pt_angio_coreh_path(@conn, :edit, @patient,
+  @info_coronary, @core_history), class: "button is-link"%>
+</span>
+
+<span>
+  <%= link "Back To Essential Past History Index", to: Routes.pt_angio_coreh_path(@conn, :index,
+  @patient, @info_coronary) , class: "button is-link"%>
+</span>
+<span>
+<%= link "Back To Cath Lab",  to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-link"   %>
+ </span>

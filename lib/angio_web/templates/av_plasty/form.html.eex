@@ -1,0 +1,295 @@
+<% alias Angio.Canons, as: Query %>
+
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+<div class="columns">
+<div class="column frame_1">
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+<!--------start---field----------------------------->
+ <div class="field">
+          <label class="label">Procedure Date  </label>
+          <div class="control">
+
+
+
+      <%= text_input f, :avp_dt,
+class: "input",
+type: "date",
+placeholder: "avp_dt",
+required: false %>
+<%= error_tag f,:avp_dt %>
+          </div>
+          <p class="help"></p>
+        </div>
+        <!---------end ---field---->
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!--------start---field----------------------------->
+ <div class="field">
+          <label class="label">Procedure Time  </label>
+          <div class="control">
+
+
+
+      <%= text_input f, :avp_tm,
+class: "input",
+type: "time",
+placeholder: "avp_tm",
+required: false %>
+<%= error_tag f,:avp_tm %>
+          </div>
+          <p class="help"></p>
+        </div>
+        <!---------end ---field---->
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+ <!--- start field--------------------------------->
+<div class="field">
+            <label class="label" >Operator Last Name </label>
+            <%= text_input f, :avp_operator_lname , class: "input", type: "text",
+            placeholder: "avp_operator_lname", required: false %>
+            <%= error_tag f, :avp_operator_lname %>
+          <p class="help"></p>
+        </div>
+<!-----------end field----------------------->
+
+
+</div><!----column-------------------->
+
+
+ <div class = "column">
+
+ <!--- start field--------------------------------->
+<div class="field">
+            <label class="label field_help " >First Name </label>
+            <%= text_input f, :avp_operator_fname , class: "input", type: "text",
+            placeholder: "avp_operator_fname", required: false %>
+            <%= error_tag f, :avp_operator_fname %>
+          <p class="help"></p>
+        </div>
+<!-----------end field----------------------->
+
+
+ </div><!----column-------------------->
+ <div class = "column">
+
+
+
+ <!--- start field--------------------------------->
+<div class="field">
+            <label class="label" >Mid Name </label>
+            <%= text_input f, :avp_operator_mname , class: "input", type: "text",
+            placeholder: "avp_operator_mname", required: false %>
+            <%= error_tag f, :avp_operator_mname %>
+          <p class="help"></p>
+        </div>
+<!-----------end field----------------------->
+ </div><!----column-------------------->
+<div class = "column">
+<!--- start field--------------------------------->
+<div class="field">
+            <label class="label" >NPI </label>
+            <%= text_input f, :avp_operator_npi , class: "input", type: "text",
+            placeholder: "avp_operator_npi", required: false %>
+            <%= error_tag f, :avp_operator_npi %>
+          <p class="help"></p>
+        </div>
+<!-----------end field----------------------->
+ </div><!----column-------------------->
+
+
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+<!----- start selection field---------------------------->
+   <%  s_avp_primary_indication  =  Query.select_options("avp_primary_indication") %>
+<div class="field">
+    <label class="label">Primary Indication </label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f,
+:avp_primary_indication, s_avp_primary_indication,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :avp_primary_indication   %>
+            <span class="help"></span>
+
+
+          </div><!----control---->
+        </div><!------field--->
+
+ <!-------end selection field----------------------->
+
+</div><!----column-------------------->
+
+
+
+ <div class = "column">
+
+
+<!----- start selection field---------------------------->
+   <%  s_avp_av_morphology  =  Query.select_options("avp_av_morphology") %>
+<div class="field">
+    <label class="label">Ao Valve Morphology </label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f,
+:avp_av_morphology, s_avp_av_morphology,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :avp_av_morphology   %>
+            <span class="help"></span>
+
+
+          </div><!----control---->
+        </div><!------field--->
+
+ <!-------end selection field----------------------->
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<!----- start selection field---------------------------->
+   <%  s_avp_av_reg_degree_pre =
+   Query.select_options("avp_av_reg_degree_pre") %>
+<div class="field">
+    <label class="label">Ao Valve Reg </label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f,
+:avp_av_reg_degree_pre, s_avp_av_reg_degree_pre,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :avp_av_reg_degree_pre   %>
+            <span class="help"></span>
+
+
+          </div><!----control---->
+        </div><!------field--->
+
+ <!-------end selection field----------------------->
+</div><!----column-------------------->
+ <div class = "column">
+<!--- start field--------------------------------->
+<div class="field">
+            <label class="label" >AV Annular Diam (mm) </label>
+            <%= text_input f, :avp_av_ann_diam_us, class: "input", type: "text",
+            placeholder: "avp_av_ann_diam_us", required: false %>
+            <%= error_tag f, :avp_av_ann_diam_us %>
+          <p class="help"></p>
+        </div>
+<!-----------end field----------------------->
+
+ </div><!----column-------------------->
+<div class = "column">
+
+<!--- start field--------------------------------->
+<div class="field">
+            <label class="label" >AV Sys Gradient Before Proc </label>
+            <%= text_input f, :avp_peak_sys_gradient_pre, class: "input", type: "text",
+            placeholder: "avp_peak_sys_gradient_pre", required: false %>
+            <%= error_tag f, :avp_peak_sys_gradient_pre %>
+          <p class="help"></p>
+        </div>
+<!-----------end field----------------------->
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+
+
+
+
+
+
+</div><!----------LEFT COLUMN------------------------>
+
+<div class="column frame_1">
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+  <div class="field">
+  <label class="label"> My Notes On Aortic Valvuloplasty Procedure</label>
+  <div class="control">
+    <%= text_input f, :avp_notes,
+        class: "textarea",
+        type: "input", placeholder: "avp_notes"  %>
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+</div><!----column-------------------->
+</div><!----columns--------------------------->
+
+
+ <div class = "columns">
+<div class = "column">
+ <%= render  AngioWeb.SharedView, "_help_area.html" %>
+</div><!----column-------------------->
+</div><!----columns--------------------------->
+
+
+</div><!-----------RIGTH COLUMN----------------->
+</div><!-------------column------------------>
+
+
+
+<div><!------------------------------------>
+    <%= submit "Save Aortic Valvuloplasty Record. Please Continue with Inflations", class: "button is-info  is-medium is-fullwidth " %>
+  </div>
+
+<% end %>

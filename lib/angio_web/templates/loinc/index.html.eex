@@ -1,0 +1,149 @@
+<%alias Angio.Loincs %>
+<div class="search_form">
+ <h5 class="title is-5 has-text-centered">
+  Search In Loinc Codes
+ </h5>
+</div><!------title form------------------->
+<div class="columns  is-centered search_form_2">
+
+  <div class="column is-3">
+<span class="has-form">
+   <%= form_for @conn, Routes.loinc_path(@conn,
+          :search_loincs), [as: :search_loincs], fn f -> %>
+
+ <div class="field">
+     <label class="label">Select Search: </label>
+
+     <div class="control">
+    <div class="select is-link">
+      <%= select(f, :selection,
+       ["In In Codes": "loinc_codes",
+       "As Free Text In short and Long Names": "tsv_search",
+       "In Long Names ": "tsv_long_name"
+],
+ class: "form-control")    %>
+
+    </div><!--select---->
+     </div><!--control---->
+  </div><!---field--->
+
+    </span>
+  </div><!--column---------->
+
+  <div class="column is-4">
+  <label class="label"> Your Query  </label>
+  <div class="control">
+   <%= text_input f, :query, 
+             class: "input", 
+             type: "text", 
+              minlength: 4,
+              maxlength: 40,
+             placeholder: "Your Query"  %>
+   <%= error_tag f, :query %>
+  </div>
+
+  </div> <!--column------>
+
+  <div class="column is-3">
+ <label class="label">Search  </label>
+   <%= submit "Search", class: "button is-link is-fullwidth"  %>
+</div>
+
+<% end %>
+
+
+</div><!--columns------>
+<div class="is-divider-horizontal" data-content="OR">
+</div>
+
+
+
+<div class="title_form">
+ <h5 class="title  is-5 has-text-centered">
+  Loinc List
+ </h5>
+
+</div><!------title form------------------->
+
+
+ <table class="table is-bordered
+is-striped
+is-narrow
+is-fullwidth
+ is-hoverable">
+    <thead class="thead">
+    <tr>
+    <th>#</th>
+      <th>Loinc Number</th>
+      <th>Shortname - Class </th>
+      <th>Long common name</th>
+      <th>Show</th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for {loinc, index} <- Enum.with_index(@loincs) do %>
+<%#= for loinc <- @loincs do %>
+    <tr>
+    <td>
+                    <%= index + 1  %>
+    </td>
+      <td>
+      <strong><%= loinc.loinc_num %></strong>
+      </td>
+      <td>
+      <span>
+      <em>
+      <%= raw loinc.shortname %>
+      </em>
+       </span>
+       <p/>
+      <span style="font-size:12px;background-color:#f5f5dc; color:000;">
+
+      (
+        <%= raw loinc.class %>
+
+      )
+
+      </span>
+
+
+      </td>
+      
+     
+      <td>
+        <span class="icon is-small" style="font-size:14px;color:#3399FF;">
+        <i class="fa  fa-star" aria-hidden="true"></i>
+      </span>
+      <%= raw loinc.long_common_name  %>
+       <p/>
+
+        <span class="icon is-small" style="font-size:12px;color:#8b8589;">
+        <i class="fa  fa-pencil" aria-hidden="true"></i>
+      </span>
+         Status: 
+      <%= raw loinc.status  %>
+      
+
+
+    <span class="icon is-small" style="font-size:12px;color:#8b8589;">
+        <i class="fa fa-pencil" aria-hidden="true"></i>
+      </span> 
+       Component: 
+      <%= raw loinc.component %>
+      
+      </td>
+      <td>
+    <span><%= link "Show", to: Routes.loinc_path(@conn, :show, loinc),
+    class: "button is-link is-small is-fullwidth " %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+<%#= pagination_links @page, next: "Next", previous: "Prev" %>
+
+
+<%= pagination_links @page %>
+<!---------------------
+<span><%= link "New Loinc", to: Routes.loinc_path(@conn, :new) %></span>
+------------------>

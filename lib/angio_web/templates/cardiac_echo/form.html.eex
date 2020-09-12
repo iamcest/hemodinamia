@@ -1,0 +1,834 @@
+
+<% alias Angio.Canons, as: Query %>
+
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+  <div class="notification is-danger">
+    <button class="delete"></button>
+    Oops, something went wrong! Please check the errors below.
+</div>
+
+  <% end %>
+
+
+
+<div class="columns">
+
+<div class="column is-7 frame_1">
+
+
+
+
+<div class="is-divider" data-content="Admin"></div>
+<!---------start----------------------------------->
+
+  <div class = "columns">
+<div class = "column">
+
+
+<!-------------start--field--------------------------------->
+    <div class="field">
+          <label class="label">Consent  For The Echo ?</label>
+          <div class="control">
+            <%= checkbox f, :echo_consent_yn,
+               type: "checkbox" %>
+                 <%= error_tag f, :echo_consent_yn %>
+            <p class = "help">Check if Yes</p>
+
+          </div>
+                 </div>
+<!----------------end field------------------------------>
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!-------------start--field--------------------------------->
+    <div class="field">
+          <label class="label">Echo Completed ?</label>
+          <div class="control">
+            <%= checkbox f, :echo_performed_yn,
+               type: "checkbox" %>
+                 <%= error_tag f, :echo_performed_yn %>
+            <p class = "help">Check if Yes</p>
+
+          </div>
+                 </div>
+<!----------------end field------------------------------>
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+<!--------start------------------------------------>
+<% s_echo_reason  = Query.select_options("echo_reason") %>
+
+<div class="field">
+    <label class="label">Echo Reason </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f, :echo_reason, s_echo_reason,
+              prompt: "---Select---",
+              class: "form-control")
+              %>
+            </div>
+            <%= error_tag f, :echo_reason %>
+            <span class="help"></span>
+          </div>
+          <!----control---->
+        </div>
+<!---end field-------------------------------->
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!--------start------------------------------------>
+<% s_echo_indication  = Query.select_options("echo_indication") %>
+
+<div class="field">
+    <label class="label">Echo Indication </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f, :echo_indication, s_echo_indication,
+              prompt: "---Select---",
+              class: "form-control")
+              %>
+            </div>
+            <%= error_tag f, :echo_indication %>
+            <span class="help"></span>
+          </div>
+          <!----control---->
+        </div>
+    <!---end field-------------------------------->
+
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<!-----------start field------------------------------------------->
+<div class="field">
+          <label class="label">Main Diagnosis ICD10-CM </label>
+          <div class="control">
+          <span class="field_help"></span>
+            <%= text_input f,
+              :echo_idication_icd10cm,
+               class: "input", type: "text",
+                placeholder: "echo_idication_icd10cm",
+              required: false %>
+              <%= error_tag f, :echo_idication_icd10cm %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+<!---------end field---------------------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!--------start------------------------------------>
+<% s_echo_priority  = Query.select_options("echo_priority") %>
+
+<div class="field">
+    <label class="label">Echo Priority </label>
+          <div class="control">
+            <div class="select is-primary">
+            <span class="field_help"></span>
+              <%= select(f, :echo_priority, s_echo_priority,
+              prompt: "---Select---",
+              class: "form-control")
+              %>
+            </div>
+            <%= error_tag f, :echo_priority %>
+            <span class="help"></span>
+          </div>
+          <!----control---->
+        </div>
+    <!---end field-------------------------------->
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+ <!-----------start Field------------------------------------------>
+<div class="field">
+          <label class="label">Echo Date </label>
+          <div class="control">
+          <%= text_input f, :echo_start_dt, class: "input", type: "date",
+            placeholder: "echo_start_dt", required: false %>
+            <%= error_tag f,
+            :echo_start_dt %>
+          </div>
+          <p class="help"></p>
+        </div>
+<!----------end field---------------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+
+ <!-----------start Field------------------------------------------>
+<div class="field">
+          <label class="label">Echo Start Time </label>
+          <div class="control">
+          <%= text_input f, :echo_start_tm, class: "input", type: "time",
+            placeholder: "echo_start_tm", required: false %>
+            <%= error_tag f,
+            :echo_start_tm %>
+          </div>
+          <p class="help"></p>
+        </div>
+<!----------end field---------------------->
+
+ </div><!----column-------------------->
+
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+ <!-----------start Field------------------------------------------>
+<div class="field">
+          <label class="label">Echo Stop Time </label>
+          <div class="control">
+          <%= text_input f, :echo_stop_tm, class: "input", type: "time",
+            placeholder: "echo_stop_tm", required: false %>
+            <%= error_tag f,
+            :echo_stop_tm %>
+          </div>
+          <p class="help"></p>
+        </div>
+<!----------end field---------------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!--------start------------------------------------>
+<% s_echo_lab_id  = Query.select_options("echo_lab_id") %>
+
+<div class="field">
+    <label class="label">Lab ID - Room </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f, :echo_lab_id, s_echo_lab_id,
+              prompt: "---Select---",
+              class: "form-control")
+              %>
+            </div>
+            <%= error_tag f, :echo_lab_id %>
+            <span class="help"></span>
+          </div>
+          <!----control---->
+        </div>
+    <!---end field-------------------------------->
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+<!-----------start field------------------------------------------->
+<div class="field">
+          <label class="label">Echo Lab Number </label>
+          <div class="control">
+            <%= text_input f,
+              :echo_lab_num,
+               class: "input", type: "text",
+                placeholder: "echo_lab_num",
+              required: false %>
+              <%= error_tag f, :echo_lab_num %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+<!---------end field---------------------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!-----------start field------------------------------------------->
+<div class="field">
+          <label class="label">Examination Year  </label>
+          <div class="control">
+            <%= text_input f,
+              :echo_lab_num_yr,
+               class: "input", type: "text",
+                placeholder: "echo_lab_num_yr",
+              required: false %>
+              <%= error_tag f, :echo_lab_num_yr %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+<!---------end field---------------------------->
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<div class="is-divider" data-content="Echo Maschine - Personel Involved"></div>
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!--------start------------------------------------>
+<% s_echo_maschine_type  = Query.select_options("echo_maschine_type") %>
+
+<div class="field">
+    <label class="label">Echo Maschine Type </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f, :echo_maschine_type, s_echo_maschine_type,
+              prompt: "---Select---",
+              class: "form-control")
+              %>
+            </div>
+            <%= error_tag f, :echo_maschine_type %>
+            <span class="help"></span>
+          </div>
+          <!----control---->
+        </div>
+    <!---end field-------------------------------->
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!--------start------------------------------------>
+<% s_echo_study_location  = Query.select_options("echo_study_location") %>
+
+<div class="field">
+    <label class="label">Echo Study Location </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f, :echo_study_location, s_echo_study_location,
+              prompt: "---Select---",
+              class: "form-control")
+              %>
+            </div>
+            <%= error_tag f, :echo_study_location %>
+            <span class="help"></span>
+          </div>
+          <!----control---->
+        </div>
+    <!---end field-------------------------------->
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!--------start------------------------------------>
+<% s_echo_study_protocole  = Query.select_options("echo_study_protocole") %>
+
+<div class="field">
+    <label class="label">Echo Study Protocol </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f, :echo_study_protocole, s_echo_study_protocole,
+              prompt: "---Select---",
+              class: "form-control")
+              %>
+            </div>
+            <%= error_tag f, :echo_study_protocole %>
+            <span class="help"></span>
+          </div>
+          <!----control---->
+        </div>
+    <!---end field-------------------------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!--------start------------------------------------>
+<% s_echo_patient_location  = Query.select_options("echo_patient_location") %>
+
+<div class="field">
+    <label class="label"> Patient Location</label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f, :echo_patient_location, s_echo_patient_location,
+              prompt: "---Select---",
+              class: "form-control")
+              %>
+            </div>
+            <%= error_tag f, :echo_patient_location %>
+            <span class="help"></span>
+          </div>
+          <!----control---->
+        </div>
+    <!---end field-------------------------------->
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+ <!-----------start Field------------------------------------------>
+<div class="field">
+          <label class="label">Echo Request Date </label>
+          <div class="control">
+          <%= text_input f, :echo_requested_dt, class: "input", type: "date",
+            placeholder: "echo_requested_dt", required: false %>
+            <%= error_tag f,
+            :echo_requested_dt %>
+          </div>
+          <p class="help"></p>
+        </div>
+<!----------end field---------------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+ 2222222
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!-----------start field------------------------------------------->
+<div class="field">
+          <label class="label">Referring Person 1 </label>
+          <div class="control">
+            <%= text_input f,
+              :echo_referring_doctor_1,
+               class: "input", type: "text",
+                placeholder: "echo_referring_doctor_1",
+              required: false %>
+              <%= error_tag f, :echo_referring_doctor_1 %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+<!---------end field---------------------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!-----------start field------------------------------------------->
+<div class="field">
+          <label class="label"> Referring Person 2 </label>
+          <div class="control">
+            <%= text_input f,
+              :echo_referring_doctor_2,
+               class: "input", type: "text",
+                placeholder: "echo_referring_doctor_2",
+              required: false %>
+              <%= error_tag f, :echo_referring_doctor_2 %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+<!---------end field---------------------------->
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!-----------start field------------------------------------------->
+<div class="field">
+          <label class="label"> Doctor Operator </label>
+          <div class="control">
+            <%= text_input f,
+              :echo_doctor_operator,
+               class: "input", type: "text",
+                placeholder: "echo_doctor_operator",
+              required: false %>
+              <%= error_tag f, :echo_doctor_operator %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+<!---------end field---------------------------->
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!-----------start field------------------------------------------->
+<div class="field">
+          <label class="label"> Sonographer Name </label>
+          <div class="control">
+            <%= text_input f,
+              :sonographer_name,
+               class: "input", type: "text",
+                placeholder: "sonographer_name",
+              required: false %>
+              <%= error_tag f, :sonographer_name %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+<!---------end field---------------------------->
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!-----------start field------------------------------------------->
+<div class="field">
+          <label class="label"> Doctor Interpeting Results </label>
+          <div class="control">
+            <%= text_input f,
+              :echo_doctor_reading,
+               class: "input", type: "text",
+                placeholder: "echo_doctor_reading",
+              required: false %>
+              <%= error_tag f, :echo_doctor_reading %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+<!---------end field---------------------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!-----------start field------------------------------------------->
+<div class="field">
+          <label class="label"> Doctor Interpeting NPI</label>
+          <div class="control">
+            <%= text_input f,
+              :echo_doctor_reading_npi,
+               class: "input", type: "text",
+                placeholder: "echo_doctor_reading_npi",
+              required: false %>
+              <%= error_tag f, :echo_doctor_reading_npi %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+<!---------end field---------------------------->
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+<div class="is-divider" data-content="Patient Data"></div>
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+<!-----------start field------------------------------------------->
+<div class="field">
+          <label class="label"> BP Systolic</label>
+          <div class="control">
+            <%= text_input f,
+              :echo_blood_pressure_sys,
+               class: "input", type: "text",
+                placeholder: "echo_blood_pressure_sys",
+              required: false %>
+              <%= error_tag f, :echo_blood_pressure_sys %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+<!---------end field---------------------------->
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!-----------start field------------------------------------------->
+<div class="field">
+          <label class="label"> BP Diastolic</label>
+          <div class="control">
+            <%= text_input f,
+              :echo_blood_pressure_diast,
+               class: "input", type: "text",
+                placeholder: "echo_blood_pressure_diast",
+              required: false %>
+              <%= error_tag f, :echo_blood_pressure_diast %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+<!---------end field---------------------------->
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!-----------start field------------------------------------------->
+<div class="field">
+          <label class="label"> Body Surface Area</label>
+          <div class="control">
+            <%= text_input f,
+              :echo_bsa,
+               class: "input", type: "text",
+                placeholder: "echo_bsa",
+              required: false %>
+              <%= error_tag f, :echo_bsa %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+<!---------end field---------------------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!-----------start field------------------------------------------->
+<div class="field">
+          <label class="label">Patient Weight</label>
+          <div class="control">
+            <%= text_input f,
+              :echo_pt_weight,
+               class: "input", type: "text",
+                placeholder: "echo_pt_weight",
+              required: false %>
+              <%= error_tag f, :echo_pt_weight %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+<!---------end field---------------------------->
+
+ </div><!----column-------------------->
+ <div class = "column">
+
+<!-----------start field------------------------------------------->
+<div class="field">
+          <label class="label">Patient Height </label>
+          <div class="control">
+            <%= text_input f,
+              :echo_pt_height,
+               class: "input", type: "text",
+                placeholder: "echo_pt_height",
+              required: false %>
+              <%= error_tag f, :echo_pt_height %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+<!---------end field---------------------------->
+
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!-------------start--field--------------------------------->
+    <div class="field">
+          <label class="label">In Atrial Fib ?</label>
+          <div class="control">
+            <%= checkbox f, :echo_afib_yn,
+               type: "checkbox" %>
+                 <%= error_tag f, :echo_afib_yn %>
+            <p class = "help">Check if Yes</p>
+
+          </div>
+                 </div>
+<!----------------end field------------------------------>
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!-----------start field------------------------------------------->
+<div class="field">
+          <label class="label">Heart Rate </label>
+          <div class="control">
+            <%= text_input f,
+              :echo_heart_rate,
+               class: "input", type: "text",
+                placeholder: "echo_heart_rate",
+              required: false %>
+              <%= error_tag f, :echo_heart_rate %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+<!---------end field---------------------------->
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!-----------start field------------------------------------------->
+<div class="field">
+          <label class="label">Echo Intepreting Group </label>
+          <div class="control">
+            <%= text_input f,
+              :echo_doctor_interpeting_group,
+               class: "input", type: "text",
+                placeholder: "echo_doctor_interpeting_group",
+              required: false %>
+              <%= error_tag f, :echo_doctor_interpeting_group %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+<!---------end field---------------------------->
+
+
+</div><!----column-------------------->
+ <div class = "column">
+<!--------start------------------------------------>
+<% s_echo_media_location  = Query.select_options("echo_media_location") %>
+
+<div class="field">
+    <label class="label">Echo Media - Pictures Storage Location </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f, :echo_media_location, s_echo_media_location,
+              prompt: "---Select---",
+              class: "form-control")
+              %>
+            </div>
+            <%= error_tag f, :echo_media_location %>
+            <span class="help"></span>
+          </div>
+          <!----control---->
+        </div>
+    <!---end field-------------------------------->
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+
+
+
+
+
+
+
+
+
+</div><!---------LEFT COLUMN----------------------->
+
+<div class="column is-5 frame_1 ">
+<span class="button is-primary  is-fullwidth ">
+<i class="fa fa-sticky-note">
+Summary
+</i>
+</span>
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<div class="field">
+          <label class="label">Summary Report </label>
+          <div class="control">
+            <%= text_input f, :echo_summary_report, class: "textarea", type: "input",
+            placeholder: "echo_summary_report" %>
+            <%= error_tag f, :echo_summary_report %>
+
+            <p class="help"></p>
+          </div>
+          <!---control---------->
+        </div>
+        <!-------field-------->
+
+
+</div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<%= render  AngioWeb.SharedView, "_help_area.html" %>
+</div><!----column-------------------->
+
+</div><!----columns--------------------------->
+<!---------end start------------------------------------>
+
+
+</div><!-----R COLUMN----------------------------------->
+
+
+
+</div><!-----columns--------------------------->
+
+
+<div>
+    <%= submit "Save and Continue", class: "button is-info is-large is-fullwidth " %>
+
+  </div>
+
+
+
+<% end %>

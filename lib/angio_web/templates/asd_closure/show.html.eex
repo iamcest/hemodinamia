@@ -1,0 +1,159 @@
+
+<div class="title_form">
+<h5 class="title is-5 has-text-centered">Show ASD Closure Procedure</h5>
+</div>
+<div class="element_info">
+
+    <%= render  AngioWeb.SharedView, "_patient_info.html", patient: @patient %>
+</div>
+
+<div class="element_info_coronary">
+Angio : <%= render AngioWeb.SharedView, "_info_coronary.html", info_coronary:
+   @info_coronary%>
+</div>
+<div class="content frame_1 ">
+  <ol type="1">
+
+
+  <li>
+    <strong>Asdcl operator lname:</strong>
+    <%= @asd_closure.asdcl_operator_lname %>
+  </li>
+
+  <li>
+    <strong>Asdcl operator fname:</strong>
+    <%= @asd_closure.asdcl_operator_fname %>
+  </li>
+
+  <li>
+    <strong>Asdcl operator mname:</strong>
+    <%= @asd_closure.asdcl_operator_mname %>
+  </li>
+
+  <li>
+    <strong>Asdcl operator npi:</strong>
+    <%= @asd_closure.asdcl_operator_npi %>
+  </li>
+
+  <li>
+    <strong>Asdcl primary indication:</strong>
+    <%= @asd_closure.asdcl_primary_indication %>
+  </li>
+
+  <li>
+    <strong>Asdcl defect not treated:</strong>
+    <%= @asd_closure.asdcl_defect_not_treated %>
+  </li>
+
+  <li>
+    <strong>Asdcl treat attempted yn:</strong>
+    <%= @asd_closure.asdcl_treat_attempted_yn %>
+  </li>
+
+  <li>
+    <strong>Asdcl total septal length:</strong>
+    <%= @asd_closure.asdcl_total_septal_length %>
+  </li>
+
+  <li>
+    <strong>Asdcl atria septal aneurysm yn:</strong>
+    <%= @asd_closure.asdcl_atria_septal_aneurysm_yn %>
+  </li>
+
+  <li>
+    <strong>Asdcl multi fenestrated yn:</strong>
+    <%= @asd_closure.asdcl_multi_fenestrated_yn %>
+  </li>
+
+  <li>
+    <strong>Asdcl asd size:</strong>
+    <%= @asd_closure.asdcl_asd_size %>
+  </li>
+
+  <li>
+    <strong>Asdcl bal sizing perfomed yn:</strong>
+    <%= @asd_closure.asdcl_bal_sizing_perfomed_yn %>
+  </li>
+
+  <li>
+    <strong>Asdcl stop flow performed yn:</strong>
+    <%= @asd_closure.asdcl_stop_flow_performed_yn %>
+  </li>
+
+  <li>
+    <strong>Asdcl rim meas performed yn:</strong>
+    <%= @asd_closure.asdcl_rim_meas_performed_yn %>
+  </li>
+
+  <li>
+    <strong>Asdcl aortic rim length:</strong>
+    <%= @asd_closure.asdcl_aortic_rim_length %>
+  </li>
+
+  <li>
+    <strong>Asdcl ivc rim length:</strong>
+    <%= @asd_closure.asdcl_ivc_rim_length %>
+  </li>
+
+  <li>
+    <strong>Asdcl stop flow,:</strong>
+    <%= @asd_closure.asdcl_stop_flow %>
+  </li>
+
+
+  <li>
+    <strong>Asdcl stretch diam perform yn:</strong>
+    <%= @asd_closure.asdcl_stretch_diam_perform_yn %>
+  </li>
+
+  <li>
+    <strong>Asdcl residual shunt size:</strong>
+    <%= @asd_closure.asdcl_residual_shunt_size %>
+  </li>
+
+  <li>
+    <strong>Asdcl device utilized:</strong>
+    <%= @asd_closure.asdcl_device_utilized_id %>
+  </li>
+
+  <li>
+    <strong>Asdcl device utilized name:</strong>
+    <%= @asd_closure.asdcl_device_utilized_name %>
+  </li>
+
+  <li>
+    <strong>Asdcl device used outcome:</strong>
+    <%= @asd_closure.asdcl_device_used_outcome %>
+  </li>
+
+  <li>
+    <strong>Asdcl stretched diam size:</strong>
+    <%= @asd_closure.asdcl_stretched_diam_size %>
+  </li>
+
+  <li>
+    <strong>Asdcl defect counter assoc:</strong>
+    <%= @asd_closure.asdcl_defect_counter_assoc %>
+  </li>
+
+  <li>
+    <strong>Asdcl notes:</strong>
+    <%= @asd_closure.asdcl_notes %>
+  </li>
+
+</Ol>
+</div>
+<p class ="buttons_separator"> . </p>
+<span>
+    <%= link "Edit ASD Closure", to: Routes.pt_angio_asdcl_path(@conn, :edit, @patient,
+  @info_coronary, @asd_closure), class: "button is-link"%>
+</span>
+
+<span>
+  <%= link "Back To ASD Closure Index", to: Routes.pt_angio_asdcl_path(@conn, :index,
+  @patient, @info_coronary) , class: "button is-link"%>
+</span>
+<span>
+<%= link "Back To Cath Lab",  to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-link"   %>
+ </span>

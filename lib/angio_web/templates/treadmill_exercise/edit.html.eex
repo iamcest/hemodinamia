@@ -1,0 +1,30 @@
+
+
+<div class="title_form">
+<h5 class="title is-5 has-text-centered">Editing Exercise Test</h5>
+</div><!-----------title_form------------------->
+<div class="element_info">
+
+    <%= render  AngioWeb.SharedView, "_patient_info.html", patient: @patient %>
+</div>
+
+ <%= render "form.html", changeset: @changeset,
+        treadmill_exercise: @treadmill_exercise,
+action: Routes.pt_ext_path(@conn, :update,
+@patient,
+@treadmill_exercise ) %>
+<p class ="buttons_separator"> . </p>
+        <span>
+ <%= link "Back To EXT List",
+  to: Routes.pt_ext_path(@conn, :index,
+@patient) , class: "button is-link "%>
+</span>
+
+<span>
+   <%= link "Back To Patient List",
+   to: Routes.pt_path(@conn,   :index), class: "button is-link" %>
+
+ </span>
+
+
+

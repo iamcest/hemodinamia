@@ -1,0 +1,204 @@
+<h4 class="title is-4 has-text-centered">Showing Medication Record</h4>
+<div class="element_info">
+
+    <%= render  AngioWeb.SharedView, "_patient_info.html", patient: @patient %>
+</div>
+
+<div class="element_info_coronary">
+Angio : <%= render AngioWeb.SharedView, "_info_coronary.html", info_coronary:
+   @info_coronary%>
+</div>
+
+<div class="columns">
+<div class="column">
+
+
+<div class="content frame_1">
+  <ol type="1">
+
+
+
+
+  <li>
+    <strong>Cmed anti anginal yn:</strong>
+    <%= @cath_med.cmed_anti_anginal_yn %>
+  </li>
+
+  <li>
+    <strong>Cmed anti anginal other yn:</strong>
+    <%= @cath_med.cmed_anti_anginal_other_yn %>
+  </li>
+
+  <li>
+    <strong>Cmed antiarrhythmics yn:</strong>
+    <%= @cath_med.cmed_antiarrhythmics_yn %>
+  </li>
+
+  <li>
+    <strong>Cmed anticoagulants yn:</strong>
+    <%= @cath_med.cmed_anticoagulants_yn %>
+  </li>
+
+  <li>
+    <strong>Cmed antihypertensives yn:</strong>
+    <%= @cath_med.cmed_antihypertensives_yn %>
+  </li>
+
+  <li>
+    <strong>Cmed antiplatelets yn:</strong>
+    <%= @cath_med.cmed_antiplatelets_yn %>
+  </li>
+
+  <li>
+    <strong>Cmed aspirin yn:</strong>
+    <%= @cath_med.cmed_aspirin_yn %>
+  </li>
+
+  <li>
+    <strong>Cmed atropine yn:</strong>
+    <%= @cath_med.cmed_atropine_yn %>
+  </li>
+
+  <li>
+    <strong>Cmed bblocker yn:</strong>
+    <%= @cath_med.cmed_bblocker_yn %>
+  </li>
+
+  <li>
+    <strong>Cmed ca channel pre yn:</strong>
+    <%= @cath_med.cmed_ca_channel_pre_yn %>
+  </li>
+
+  <li>
+    <strong>Cmed direct thrombin:</strong>
+    <%= @cath_med.cmed_direct_thrombin %>
+  </li>
+
+  <li>
+    <strong>Cmed diuretics yn:</strong>
+    <%= @cath_med.cmed_diuretics_yn %>
+  </li>
+
+  <li>
+    <strong>Cmed gp iib iiia yn:</strong>
+    <%= @cath_med.cmed_gp_iib_iiia_yn %>
+  </li>
+
+  <li>
+    <strong>Cmed inotrops yn:</strong>
+    <%= @cath_med.cmed_inotrops_yn %>
+  </li>
+
+  <li>
+    <strong>Cmed lytics bolus dt:</strong>
+    <%= @cath_med.cmed_lytics_bolus_dt %>
+  </li>
+
+  <li>
+    <strong>Cmed lytics bolus tm:</strong>
+    <%= @cath_med.cmed_lytics_bolus_tm %>
+  </li>
+
+  <li>
+    <strong>Cmed lytics yn:</strong>
+    <%= @cath_med.cmed_lytics_yn %>
+  </li>
+
+  <li>
+    <strong>Cmed pde inhibitor yn:</strong>
+    <%= @cath_med.cmed_pde_inhibitor_yn %>
+  </li>
+
+  <li>
+    <strong>Cmed prostaglandins yn:</strong>
+    <%= @cath_med.cmed_prostaglandins_yn %>
+  </li>
+
+  <li>
+    <strong>Cmed vaso dilators yn:</strong>
+    <%= @cath_med.cmed_vaso_dilators_yn %>
+  </li>
+
+  <li>
+    <strong>Cmed nitrates long act yn:</strong>
+    <%= @cath_med.cmed_nitrates_long_act_yn %>
+  </li>
+
+  <li>
+    <strong>Cmed ranolazine yn:</strong>
+    <%= @cath_med.cmed_ranolazine_yn %>
+  </li>
+
+  <li>
+    <strong>Cmed ufh yn:</strong>
+    <%= @cath_med.cmed_ufh_yn %>
+  </li>
+
+  <li>
+    <strong>Cmed ufh dose:</strong>
+    <%= @cath_med.cmed_ufh_dose %>
+  </li>
+
+  <li>
+    <strong>Cmed lmwh yn:</strong>
+    <%= @cath_med.cmed_lmwh_yn %>
+  </li>
+
+  <li>
+    <strong>Cmed thienopyridines:</strong>
+    <%= @cath_med.cmed_thienopyridines %>
+  </li>
+
+  <li>
+    <strong>Cmed xa inhibitors:</strong>
+    <%= @cath_med.cmed_xa_inhibitors %>
+  </li>
+
+  <li>
+    <strong>Cmed ace yn:</strong>
+    <%= @cath_med.cmed_ace_yn %>
+  </li>
+
+  <li>
+    <strong>Cmed arb yn:</strong>
+    <%= @cath_med.cmed_arb_yn %>
+  </li>
+
+  <li>
+    <strong>Cmed statin yn:</strong>
+    <%= @cath_med.cmed_statin_yn %>
+  </li>
+
+  <li>
+    <strong>Cmed no statin agent yn:</strong>
+    <%= @cath_med.cmed_no_statin_agent_yn %>
+  </li>
+
+  <li>
+    <strong>Cmed medications other yn:</strong>
+    <%= @cath_med.cmed_medications_other_yn %>
+  </li>
+
+  <li>
+    <strong>Cmed notes:</strong>
+    <%= @cath_med.cmed_notes %>
+  </li>
+
+</ol>
+</div>
+
+</div><!------column-------------------------->
+</div>
+<span>
+  <%= link "Edit Medications",
+   to: Routes.pt_angio_cathmed_path(@conn, :edit, @patient,
+  @info_coronary, @cath_med ), class: "button is-link"%>
+</span>
+<span>
+  <%= link "Back To Medications Index", to: Routes.pt_angio_cathmed_path(@conn, :index,
+  @patient, @info_coronary) , class: "button is-link"%>
+</span>
+<span>
+<%= link "Back To Lab",  to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-link"   %>
+ </span>

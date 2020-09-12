@@ -1,0 +1,145 @@
+<div class="search_form">
+ <h5 class="title is-5 has-text-centered">
+  Search For a  Database Table
+ </h5>
+</div><!------title form------------------->
+
+<div class="columns is-centered search_form_2">
+  <div class="column is-3">
+
+    <span class="has-form">
+
+<%= form_for @conn, Routes.defs_table_path(@conn, :search_in_tables), [as: :search_in_tables], fn f -> %>
+<div class="field">
+<label class="label">DB Table </label>
+  <div class="control">
+   <%= text_input f, :query, class: "input", type: "text", placeholder: "Table?"  %>
+   <%= error_tag f, :query %>
+   <p class="help"></p>
+ </div>
+  </div> <!------field------------------->
+    </span>
+
+ </div><!----column-------------------->
+   <div class="column is-2">
+<div class="field">
+
+  <label class="label">Search  </label>
+   <%= submit "Search", class: "button is-primary  is-fullwidth"  %>
+</div>
+
+<% end %>
+
+  </div><!----column-------------------->
+
+  </div><!----colimnus--------------------->
+
+
+   <h6 class="title_form is-6 has-text-centered">
+  Listing Database tables
+ </h6>
+
+  <table class="table is-bordered
+is-striped
+is-narrow
+is-full-width
+is-hoverable">
+    <thead class="thead">
+      <tr>
+    <th>Table </th>
+    <th>Table ID </th>
+    <th>Fields Num</th>
+    <th>Notes</th>
+
+                    <th>Show</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <%= for {defs_table, defs_num} <- @defs_tables do %>
+   <%#= for {defs_table, defs_num, index } <- Enum.with_index(@defs_tables) do %>
+
+
+
+    <tr>
+      <td><strong><%= raw(defs_table.name) %></strong> </td>
+
+      <td >
+
+         <span class="button is-link  is-small is-fullwidth">
+
+  <span class="tag is-small ">
+    <strong><%=  defs_table.id %></strong>
+     <%#= link "Go", to: Routes.definition_path(@conn, :table_to_fields,
+                              table_name: defs_table.name
+
+                            ), class: "small  expanded button" %>
+                            <%#  params =  %{"query" => defs_table.name ,
+" selection" => "table_name" } %>
+<%# AngioWeb.DefinitionController.search_definitions(@conn, params)%>
+<%#= link "Go", to: Routes.definition_path(@conn, :search_definitions, params)%>
+
+  </span>
+   </span>
+
+   </td>
+
+
+   <td>
+     <span class="button is-link  is-small is-fullwidth">
+       <%= if defs_num == 0 do %>
+         <span class="tag  is-small is-danger">
+         <strong><%= defs_num %></strong>
+         </span>
+      <% else %>
+       <span class="tag  is-small">
+        <strong><%= defs_num %></strong>
+        </span>
+
+       <%end %>
+    </span>
+
+
+   </td>
+
+   <td><%= raw(defs_table.defs_tables_notes)%></td>
+
+      <td>
+        <%= link "Show", to: Routes.defs_table_path(@conn, :show, defs_table),  class: "button is-primary is-small" %>
+      </td>
+      <td>
+        <%= link "Edit", to: Routes.defs_table_path(@conn, :edit, defs_table),  class: "button is-primary is-small" %>
+        </td>
+
+        <td>
+
+<%= link "Delete", to: Routes.defs_table_path(@conn, :delete, defs_table.id),
+method: :delete, data: [confirm: "Are you sure?" ],
+ class: "button is-small alert is-danger"  %>
+
+
+                        </td>
+
+    </tr>
+<% end %>
+  </tbody>
+  </table>
+
+  <p/>
+   <div class="columns  is-centered ">
+
+  <div class="pagination text-center " role="navigation" aria-label="pagination">
+    <%= pagination_links @conn,
+                  @page, distance: 20,
+                  next: ">>",
+                  previous: "<<",
+                  first: true,
+                  last: true,
+            path: &Routes.defs_table_path/3, view_style: :bulma %>
+        </div>
+  </div><!-------columns------------>
+
+ <span><%= link "New Database table", to: Routes.defs_table_path(@conn, :new),
+            class: "button is-primary is-medium is-fullwidth"  %></span>

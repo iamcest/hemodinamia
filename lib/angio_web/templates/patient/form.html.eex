@@ -1,0 +1,355 @@
+<% alias Angio.Canons, as: Query %>
+ <!-------------------------
+ To be added:
+ patnts_death_cause
+ patnts_death_dt
+
+---------------------------->
+<%= form_for @changeset, @action, fn f -> %>
+<%= if @changeset.action do %>
+ <div class="notification is-danger">
+    <button class="delete"></button>
+    Oops, something went wrong! Please check the errors below
+</div>
+<% end %>
+<div class="columns">
+  <div class="column frame_1">
+
+
+    <div class="columns">
+      <div class="column">
+
+    <!------------------------------>
+
+    <!-------------------------------->
+
+
+<!----------field--------------------------->
+
+        <div class="field">
+          <label class="label  is-medium field_help" >Last Name </label>
+          </span>
+           <%= text_input f,
+              :patnts_last_name,
+               class: "input", type: "text",
+                placeholder: "patnts_last_name",
+              required: true %>
+              <%= error_tag f, :patnts_last_name %>
+          <p class="help"></p>
+        </div>
+   <!------------------------------------->
+      </div>
+      <!-----------------------------
+      <div class="form-group">
+          <%= label f, :first_name, class: "control-label" %>
+          <%= text_input f, :first_name,
+           type: "text",
+                                    required: true,
+                                    minlength: 3,
+                                    maxlength: 50,
+                                    class: "form-control" %>
+                                    <%= error_tag f, :first_name %>
+                                </div>
+      ----------------------------->
+
+      <!---column------>
+      <div class="column">
+        <div class="field">
+            <label class="label is-medium field_help " >First Name </label>
+            <%= text_input f, :patnts_first_name, class: "input", type: "text",
+            placeholder: "patnts_first_name", required: true %> <%= error_tag f,
+            :patnts_first_name %>
+          <p class="help"></p>
+        </div>
+      </div>
+      <!--------->
+    </div>
+    <!-----columns-------->
+    <div class="columns">
+      <div class="column">
+
+        <div class="field">
+          <label class="label">Middle Name </label>
+          <div class="control">
+            <%= text_input f, :patnts_middle_name, class: "input", type: "text",
+            placeholder: "Field Name", required: false %> <%= error_tag f,
+            :patnts_middle_name %>
+          </div>
+          <p class="help"></p>
+        </div>
+
+      </div>
+      <!--------->
+      <div class="column">
+        <div class="field">
+          <label class="label">Father Name </label>
+          <div class="control">
+            <%= text_input f, :patnts_father_name, class: "input", type: "text",
+            placeholder: "Field Name", required: false %> <%= error_tag f,
+            :patnts_father_name %>
+          </div>
+          <p class="help"></p>
+        </div>
+        <!--field---->
+      </div>
+      <!--column------->
+    </div>
+    <!-----columns-------->
+
+    <div class="columns">
+      <div class="column">
+        <%# i_language =
+raw  Query.search_in_instructions("patnts_language_preferred")%>
+
+        <div class="field">
+          <label class="label">Language Preferred </label>
+          <div class="control">
+            <div class="select is-primary">
+            <span class="field_help"></span>
+              <%= select(f, :patnts_language_preferred, @languages,
+               prompt: "---Select---",
+               class: "form-control") %>
+            </div>
+
+            <!--select---->
+            <p class="help is-danger">
+              <%#= i_language%>
+            </p>
+          </div>
+          <!--control---->
+        </div>
+        <!---field--->
+      </div>
+      <!--column------------->
+    </div>
+    <!-----columns-------->
+    <div class="columns">
+      <div class="column">
+        <% _i_hispanic =
+raw Query.search_in_instructions("patnts_ethnicity_hispanic")%>
+
+        <div class="field">
+          <label class="label">Hispanic </label>
+          <div class="control">
+            <%= checkbox f, :patnts_ethnicity_hispanic , placeholder: "Field
+            Name", required: false, type: "checkbox" %> <%= error_tag f,
+            :patnts_ethnicity_hispanic%>
+          </div>
+          <p class="help"><%#= i_hispanic %></p>
+        </div>
+        <!--field---->
+      </div>
+      <!--column------->
+      <div class="column">
+        <% s_gender = Query.select_options("patnts_gender") %>
+        <%# i_gender =
+raw Query.search_in_instructions("patnts_gender")%>
+
+        <div class="field">
+          <label class="label">Gender </label>
+          <!--------------------
+          <div class="control">
+          ----------------->
+            <div class="select is-primary">
+            <span class="field_help"></span>
+              <%= select(f, :patnts_gender, s_gender,
+   prompt: "---Select---",
+
+class: "form-control") %>
+              <option></option>
+            </div>
+            <!--select---->
+            <p class="help">
+              <%#= i_gender%>
+            </p>
+         <!---------------
+          </div>
+          ------------>
+          <!--control---->
+        </div>
+        <!---field--->
+      </div>
+      <!----s---->
+    </div>
+    <!-----columns-------->
+
+    <div class="columns">
+      <div class="column">
+        <%# i_patnts_record_active =
+raw Query.search_in_instructions("patnts_record_active")%>
+
+        <div class="field">
+          <label class="label">Active Record </label>
+          <div class="control">
+<span class="field_help"></span>
+            <%= checkbox f, :patnts_record_active, placeholder: "patnts_record_active",
+required: false,
+type: "checkbox" %> <%= error_tag f,
+            :patnts_record_active %>
+
+          </div>
+          <p class="help"><%#= i_patnts_record_active %></p>
+        </div>
+        <!--field---->
+      </div>
+      <!-----column-------->
+
+      <div class="column">
+      <!------------with extensions of bulma---------------
+      <div class="field">
+  <input class="is-checkradio is-block is-info" id="exampleCheckboxBlockInfo" type="checkbox" name="exampleCheckboxBlockInfo" checked="checked">
+  <label for="exampleCheckboxBlockInfo">Checkbox - info</label>
+</div>
+
+      <div class="field">
+  <input class="is-checkradio is-medium" id="exampleCheckbox" type="checkbox" name="exampleCheckbox" checked="checked">
+  <label for="exampleCheckbox">Check me</label>
+</div>
+----------------->
+        <%# i_patnts_deceased =
+raw Query.search_in_instructions("patnts_deceased")%>
+
+        <div class="field">
+          <label class="label">Patient Deceased </label>
+          <div class="control">
+      <span class="field_help"></span>
+            <%= checkbox f, :patnts_deceased, placeholder: "Field Name",
+            required: false, type: "checkbox" %> <%= error_tag f,
+            :patnts_deceased %>
+          </div>
+          <p class="help"><%#= i_patnts_deceased %></p>
+        </div>
+        <!--field---->
+      </div>
+      <!-----column-------->
+    </div>
+    <!----columns----------->
+  </div>
+  <!-----Left -column---------->
+
+  <div class="column frame_1">
+    <div class="columns">
+      <div class="column">
+
+      <!---------start field---------------------------->
+        <div class="field">
+          <label class="label">Date Of Birth </label>
+          <div class="control">
+          <span class="field_help"></span>
+            <%= text_input f, :patnts_birth_dt, class: "input", type: "date",
+            placeholder: "patnts_birth_dt", required: false %> <%= error_tag f,
+            :patnts_birth_dt %>
+          </div>
+          <p class="help"></p>
+        </div>
+        <!----------------field---->
+      </div>
+      <!--column------->
+      <div class="column">
+        <div class="field">
+          <label class="label">SSN </label>
+          <div class="control">
+          <span class="field_help"></span>
+            <%= text_input f, :patnts_ssn, class: "input", type: "text",
+            placeholder: "Field Name", required: false %>
+            <%= error_tag f,  :patnts_ssn %>
+          </div>
+          <p class="help"></p>
+        </div>
+        <!--field---->
+      </div>
+      <!-----column---->
+    </div>
+    <!-----columns-------->
+
+    <div class="columns">
+      <div class="column">
+
+<!----------start field--------------------------------------->
+<div class="field">
+          <label class="label">There is not SSN </label>
+          <div class="control">
+            <%= checkbox f, :patnts_ssn_na ,
+            placeholder: "patnts_ssn_na",
+            required: false,
+            type: "checkbox" %>
+            <%= error_tag f, :patnts_ssn_na%>
+          </div>
+          <p class="help"><%#= i_hispanic %></p>
+        </div>
+        <!--field---->
+
+
+
+
+      </div>
+      <!-------------------
+ <div class="form-group">
+ <%#= label f, :race,  class: "control-label" %>
+<%#=  select(f, :race, select_race,
+                                        prompt: "---Select---",  class: "form-control hollow button secondary dropdown f-dropdown"  ) %>
+
+  <%#= error_tag f, :race %>
+                                </div>
+      --------------------->
+      <!---column------>
+      <div class="column">
+        <% s_patnts_race= Query.select_options("patnts_race") %> <% i_race =
+raw Query.search_in_instructions("patnts_race")%>
+        <div class="field">
+          <label class="label"> Race </label>
+            <div class="select is-primary ">
+            <span class="field_help"> </span>
+              <%= select(f, :patnts_race, s_patnts_race,
+   prompt: "---Select---",
+
+class: "form-control")
+              %>
+
+
+            <!--select---->
+            <%= error_tag f, :patnts_race %>
+            <p class="help"><%#= i_race %></p>
+          </div>
+          <!--control---->
+        </div>
+        <!---field--->
+      </div>
+      <!--------->
+    </div>
+    <!-----columns-------->
+
+    <div class="columns">
+      <div class="column">
+
+        <div class="field">
+          <label class="label">My Notes </label>
+          <div class="control ">
+            <%= text_input f, :patnts_notes, class: "textarea", type: "input",
+            placeholder: "Type Your Notes" %> <%= error_tag f, :patnts_notes %>
+
+            <p class="help"></p>
+          </div>
+          <!---control---------->
+        </div>
+        <!-------field-------->
+      </div>
+      <!----column--------->
+    </div>
+    <!---------------->
+ <!-- -HELP AREA -->
+  <%= render  AngioWeb.SharedView, "_help_area.html" %>
+  </div>
+
+  <!------column---------->
+
+
+</div>
+<!---Right ---columns---------->
+
+<!---------------------->
+
+<div>
+  <%= submit "Save Patient", class: "button is-primary is-large is-fullwidth " %>
+</div>
+<% end %>

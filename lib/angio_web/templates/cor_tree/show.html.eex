@@ -1,0 +1,65 @@
+<div class="element_info">
+
+    <%= render  AngioWeb.SharedView, "_patient_info.html", patient: @patient %>
+</div>
+<% import  Angio.Caths.Cor_diagram_calcs  %>
+<% alias Angio.Caths.Cor_diagram_calcs %>
+
+
+<%#=  @info_coronary_id %>
+<%#= @patient %>
+
+<div class="columns ">
+<div class ="column">
+ <div class="info_message">
+ <h6 class="title is-6 ">Message: </h6>
+</div><!-------------------->
+</div><!-----column--------------->
+ </div><!---columns---->
+
+<div class="columns">
+
+  <h5 class="title is-5">A Sketch of  Coranary Angio</h5>
+  <div id="info_coronary_data">
+
+<script type="text/javascript">
+    var  INFO_CORONARY_DATA = window.App || {};
+    INFO_CORONARY_DATA =  
+      <%= raw Poison.encode!(%{info_coronary: Cor_diagram_calcs.get_info_coronary_data(@patient.id, @info_coronary.id) })%>
+      
+// console.log("------------------------------------------"+INFO_CORONARY_DATA)
+  </script>
+
+</div><!--------info_coronary_data-------------------------->
+  
+  </div>
+
+ <div id="draw_info_coronary_button_div" >
+
+ </div><!--draw_cor_div -->
+
+
+
+ <div class="columns">
+      <div class="column">   
+      
+        <div id="draw_info_coronary_canvas">
+      
+     </div>
+    </div><!-------column---------->
+     
+      </div><!---columns-->
+  
+
+<div class= "frame_2">
+<span >
+<%= link "Back to  Cath Lab",   to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-link "   %>
+ </span>
+
+ <span>
+<%= link "To Patients Demographics ", to: Routes.pt_path(@conn, :index),
+       class: "button is-link "  %>
+
+</span>
+</div>

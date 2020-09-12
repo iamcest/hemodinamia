@@ -1,0 +1,145 @@
+<div class="element_info">
+  <%= render  AngioWeb.SharedView, "_patient_info.html", patient: @patient %>
+</div>
+<div class="element_info_coronary">
+<%= render AngioWeb.SharedView, "_info_coronary.html", info_coronary:
+   @info_coronary%>
+</div>
+
+<!--------------------------------
+<div class="notification is-link">
+  <button class="delete"></button>
+  <h5 class="title is-5">
+    Report Summary: info_coronary.id = <%#= @info_coronary.id %>
+  </h5>
+</div>
+------------------------------------>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
+      $notification = $delete.parentNode;
+      $delete.addEventListener('click', () => {
+        $notification.parentNode.removeChild($notification);
+      });
+    });
+  });
+</script>
+
+<div class="columns  is-centered frame_2">
+
+  <div class="column is-3">
+    <span class="has-form">
+
+      <%  @conn.assigns %>
+
+      <%= form_for @conn ,  Routes.pt_angio_angio_report_path(@conn, :choose_report, @patient, @info_coronary), [as: :choose_report], fn f -> %>
+
+      <div class="field">
+        <label class="label">Select Report </label>
+
+        <div class="control">
+          <div class="select is-primary">
+            <%= select(f, :report,
+             ["Demographics": "demo_graphics",
+              "Lab Admission":  "lab_admission",
+              "Clinical Exam Cardio": "cle_cardio",
+              "Clinical For Cath": "clinical",
+              "Funcional States": "functional_state",
+              "ECG": "electrocardiogram",
+              "Infections": "infect_history",
+              "Lesions": "lesions",
+              "Grafts": "grafts",
+              "Collaterals": "collaterals",
+              "Left Ventricle": "lventricle",
+              "Cath Events": "cath_events",
+              "Radiation - Fluoro":   "radiations",
+              "Cath Medications":  "cath_meds",
+              "Procedure Episode": "proc_episode",
+              "ASD Closure": "asd_closure",
+              "Congenital Condition": "chd_condition",
+              "Congenital Risk Factors": "chd_risk_factor",
+              "Exercise Test": "ext_test",
+],
+  prompt: "---Select---",
+  class: "form-control")    %>
+
+          </div>
+          <!--select---->
+        </div>
+        <!--control---->
+      </div>
+      <!---field--->
+
+    </span>
+  </div>
+  <!--column---------->
+
+  <div class="column is-4">
+    <div class="field">
+      <label class="label">Language </label>
+      <div class="control">
+        <div class="select is-primary">
+          <%= select(f, :language, @languages,
+                            prompt: "---Select---",
+class: "form-control") %>
+        </div>
+        <!--select---->
+      </div>
+      <!--control---->
+    </div>
+    <!---field--->
+
+  </div>
+
+  <!--------------------------------------------->
+  <%#= @languages%>
+
+
+
+  <div class="column is-3">
+    <label class="label">Engage </label>
+    <%= submit " Go ", class: "button is-primary is-fullwidth"  %>
+  </div>
+
+  <% end %>
+</div>
+
+
+<%= if assigns[:report_data] do %>
+
+<div class="tile is-parent">
+  <article class="tile is-child notification is-primary">
+    <div class="content">
+      <p class="title">Computer Generated Report for
+        <%= if assigns[:title] do %>
+        <%=  @title %>
+        <% end %>
+      </p>
+      <p class="subtitle">Reports the positive results. Copy Paste to your Editor to Format the Layout </p>
+      <div class="content">
+        <!-- Content -->
+        <%= if assigns[:report_data] do %>
+        <%= raw  @report_data %>
+        <% end %>
+
+      </div>
+  </article>
+</div>
+<% else %>
+<div class="frame_1">
+  <h4 class="title is-4 "> Report Area </h4>
+</div>
+<% end %>
+
+
+<span>
+  <%= link "To Cath Lab",   to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-link "   %>
+</span>
+
+<span>
+  <%= link "To Patients Demographics ", to: Routes.pt_path(@conn, :index),
+       class: "button is-link "  %>
+
+</span>

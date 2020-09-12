@@ -1,0 +1,102 @@
+
+<div class="title_form">
+<h5 class="title is-5 has-text-centered">Show Congenital Coditions</h5>
+</div>
+<div class="element_info">
+
+    <%= render  AngioWeb.SharedView, "_patient_info.html", patient: @patient %>
+</div>
+
+<div class="element_info_coronary">
+Angio : <%= render AngioWeb.SharedView, "_info_coronary.html", info_coronary:
+   @info_coronary%>
+</div>
+
+
+<div class="content frame_1">
+  <ol type="1">
+
+
+
+  <li>
+    <strong>Chd heterotaxy yn:</strong>
+    <%= @chd_condition.chd_heterotaxy_yn %>
+  </li>
+
+  <li>
+    <strong>Chd rubella prior yn:</strong>
+    <%= @chd_condition.chd_rubella_prior_yn %>
+  </li>
+
+  <li>
+    <strong>Chd syndrome noonan yn:</strong>
+    <%= @chd_condition.chd_syndrome_noonan_yn %>
+  </li>
+
+  <li>
+    <strong>Chd syndrome marfan yn:</strong>
+    <%= @chd_condition.chd_syndrome_marfan_yn %>
+  </li>
+
+  <li>
+    <strong>Chd syndrome turner yn:</strong>
+    <%= @chd_condition.chd_syndrome_turner_yn %>
+  </li>
+
+  <li>
+    <strong>Chd syndrome alagille yn:</strong>
+    <%= @chd_condition.chd_syndrome_alagille_yn %>
+  </li>
+
+  <li>
+    <strong>Chd syndrome digeorge yn:</strong>
+    <%= @chd_condition.chd_syndrome_digeorge_yn %>
+  </li>
+
+  <li>
+    <strong>Chd syndrome down yn:</strong>
+    <%= @chd_condition.chd_syndrome_down_yn %>
+  </li>
+
+  <li>
+    <strong>Chd trisomy 13 yn:</strong>
+    <%= @chd_condition.chd_trisomy_13_yn %>
+  </li>
+
+  <li>
+    <strong>Chd trisomy 18 yn:</strong>
+    <%= @chd_condition.chd_trisomy_18_yn %>
+  </li>
+
+  <li>
+    <strong>Chd syndrome williams yn:</strong>
+    <%= @chd_condition.chd_syndrome_williams_yn %>
+  </li>
+
+  <li>
+    <strong>Chd diaphragm hernia yn:</strong>
+    <%= @chd_condition.chd_diaphragm_hernia_yn %>
+  </li>
+
+  <li>
+    <strong>Chd conditions notes:</strong>
+    <%= @chd_condition.chd_conditions_notes %>
+  </li>
+
+</ol>
+</div>
+<p class ="buttons_separator"> . </p>
+<span>
+    <%= link "Edit CHD Conditions", to: Routes.pt_angio_chd_condition_path(@conn, :edit, @patient,
+  @info_coronary, @chd_condition), class: "button is-link"%>
+</span>
+
+<span>
+  <%= link "Back To CHD Conditions Index", to: Routes.pt_angio_chd_condition_path(@conn, :index,
+  @patient, @info_coronary) , class: "button is-link"%>
+</span>
+<span>
+<%= link "Back To Cath Lab",  to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-link"   %>
+ </span>
+

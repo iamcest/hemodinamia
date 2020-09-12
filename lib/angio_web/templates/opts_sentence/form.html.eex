@@ -1,0 +1,96 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+   <div class="notification is-danger">
+    <button class="delete"></button>
+    Oops, something went wrong! Please check the errors below or Dublicate Record
+</div>
+  <% end %>
+ 
+
+
+
+<div class = "columns">
+
+<div class = "column is-4">
+<%= if assigns[:languages] do %>
+<div class="field">
+    <label class="label"> Language </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f,
+:language,  @languages,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select---->
+            <%= error_tag f, :language   %>
+            <span class="help"></span>
+          </div>
+          <!--control---->
+        </div>
+        <!---field--->
+<% end %>
+</div><!------column---------------->
+
+<div class = "column is-8">
+
+<div class="field">
+          <label class="label">Sentence For Report </label>
+          <div class="control">
+            <%= text_input f, :sentence, class: "input", type: "text",
+            placeholder: "sentence", required: false %> 
+            <%= error_tag f,
+            :patnts_father_name %>
+          </div>
+          <p class="help"></p>
+        </div>
+        <!--field---->
+
+
+</div><!------column---------------->
+</div><!----------columns------------>
+<div class="columns">
+<div class = "column">
+
+<div class="field">
+          <label class="label">Notes </label>
+          <div class="control">
+            <%= text_input f, :note, class: "textarea", type: "text",
+            placeholder: "note", required: false %> 
+            <%= error_tag f,
+            :note %>
+          </div>
+          <p class="help"></p>
+        </div>
+        <!--field---->
+
+</div><!------column---------------->
+
+</div><!------columns------------------->
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+  
+  
+
+
+ 
+  
+  
+  <div>
+    <%= submit "Save and Continue", class: "button is-info is-large is-fullwidth " %>
+
+  </div>
+<% end %>

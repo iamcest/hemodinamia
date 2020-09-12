@@ -1,0 +1,306 @@
+<% alias Angio.Canons, as: Query %>
+
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+  <div class="notification is-danger">
+    <button class="delete"></button>
+    Oops, something went wrong! Please check the errors below or Dublicate Record
+</div>
+  <% end %>
+
+  
+ <div class="columns">
+<div class="column frame_1">
+
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Heterotaxy?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :chd_heterotaxy_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :chd_heterotaxy_yn %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+</div><!----column-------------------->
+ <div class = "column">
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Rubella?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :chd_rubella_prior_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :chd_rubella_prior_yn%>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+ </div><!----column-------------------->
+
+
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Noonan?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :chd_syndrome_noonan_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :chd_syndrome_noonan_yn%>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Marfan?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :chd_syndrome_marfan_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :chd_syndrome_marfan_yn%>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Turner?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :chd_syndrome_turner_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :chd_syndrome_turner_yn%>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Alagille?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :chd_syndrome_alagille_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :chd_syndrome_alagille_yn%>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Digeorge?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :chd_syndrome_digeorge_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :chd_syndrome_digeorge_yn%>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+
+
+</div><!----column-------------------->
+ <div class = "column">
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Down Syndrom?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :chd_syndrome_down_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :chd_syndrome_down_yn%>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+
+
+
+</div><!-------LEFT COLUMN-------------------------->
+<div class="column frame_1">
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Trisomy 13?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :chd_trisomy_13_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :chd_trisomy_13_yn%>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+
+
+
+</div><!----column-------------------->
+ <div class = "column">
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Trisomy 18?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :chd_trisomy_18_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :chd_trisomy_18_yn%>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Williams Syndrom?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :chd_syndrome_williams_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :chd_syndrome_williams_yn%>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Congenital Diaphracmatic Hernia?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :chd_diaphragm_hernia_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :chd_diaphragm_hernia_yn%>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<!------start---------------------->
+      <div class="columns">
+        <div class="column">
+
+              <div class="field">
+  <label class="label"> My Notes </label>
+  <div class="control">
+    <%= text_input f, :chd_conditions_notes,
+        class: "textarea",
+        type: "input", placeholder: "chd_conditions_notes"  %>
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+        </div><!----column 1------------->
+
+     </div><!-----columns------------>
+     <!-------end start------------------------>
+
+ <%= render  AngioWeb.SharedView, "_help_area.html" %>
+
+
+
+
+</div><!--------R COLUMN--------------------------------->
+</div><!-------columns--------------------->
+<div>
+    <%= submit "Save and Continue", class: "button is-info is-large is-fullwidth " %>
+  </div>
+<% end %>

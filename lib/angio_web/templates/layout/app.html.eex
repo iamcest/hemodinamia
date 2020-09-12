@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Angio</title>
+    <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
+     <%= render_existing @view_module, "scripts.html", assigns %>
+     <%= render_existing @view_module, "scripts." <> @view_template, assigns %>
+  </head>
+  <body>
+    <header>
+    <%#= csrf_meta_tag %>
+    <nav role="navigation">
+    <%= render "navigation.html", conn: @conn %>
+    </nav>
+    </header>
+
+    <main role="main" class="section">
+
+      <%= unless is_nil(get_flash(@conn, :info)) do %>
+    <div class="notification is-info" role="alert"><%= get_flash(@conn, :info) %></div>
+  <% end %>
+
+  <%= unless is_nil(get_flash(@conn, :error)) do %>
+    <div class="notification is-danger" role="alert"><%= get_flash(@conn, :error) %></div>
+  <% end %>
+
+  <%= render @view_module, @view_template, assigns %>
+  </main>
+  <%#= render_gon_script(@conn) %>
+   <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
+
+   <script async type="text/javascript" src="<%#= Routes.static_path(@conn, "/js/vendor.js") %>"></script>
+ 
+  </body>
+  <footer class="footer">
+     <div class="container">
+ <div class="content has-text-centered">
+   <span> <i class="fa fa-check">  By old J.G. (M.D)   &nbsp;&nbsp;</i>
+ </div>
+  </div>
+
+
+</footer>
+</html>
+<script type="text/javascript">
+  window.csrf_token = <%= raw Poison.encode!(Plug.CSRFProtection.get_csrf_token()) %>;
+</script>

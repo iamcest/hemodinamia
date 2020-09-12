@@ -1,0 +1,24 @@
+<div class="title_form">
+<h5 class="title is-5 has-text-centered">New PCI Follow-Up Record</h5>
+</div><!----title_form----------------------->
+<div class="element_info">
+  Patient : <%= render AngioWeb.SharedView, "_patient_info.html", patient:
+  @patient %>
+</div>
+
+<%= render "form.html", changeset: @changeset, action:
+Routes.pt_pcif_path(@conn, :create, @patient) %>
+<p class ="buttons_separator"> . </p>
+<%=link "Back PCI F/Up List ", to: Routes.pt_pcif_path(@conn, :create,
+@patient), class: "button is-link"%>
+
+<span>
+  <%= link "To Patient List", to: Routes.pt_path(@conn, :index), class: "button
+  is-link" %>
+</span>
+
+<span>
+<%= link "To CathLab",  to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-link"   %>
+ </span>
+

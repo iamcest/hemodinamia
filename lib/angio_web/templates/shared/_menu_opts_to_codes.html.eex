@@ -1,0 +1,42 @@
+<% alias Angio.Canons%>
+<% alias   Angio.Canons.Defs_option %>
+<div class="header panel ">
+    <div class="sign">
+
+        <h1>Select</h1>
+    </div>
+    <table class="table responsive hover stack table-scroll ">
+        <thead>
+            <th>Field Choices</th>
+            <th>To Codes</th>
+        </thead>
+        <%= for defs_option <- @all_defs_options do %>
+            <tr>
+                <td>
+                    <span style="font-weight:500;word-break:break-all;"> <%= defs_option.selection_text %></span>
+
+                </td>
+                <td>
+                    <%= link  to:  Routes.definition_defs_option_opts_code_path(@conn, :index, @definition, defs_option),
+                    class: "hollow tiny primary button"  do %>
+                        <!-- =========== -->
+                        <% codes_count =Canons.count_option_codes(defs_option.id)  %>
+                        <%= if codes_count > 0 do %>
+                            <span class="tag is-success is-small">
+                                <strong><%= codes_count %></strong>
+                            </span>
+                        <% else %>
+                            <span class="tag is-warning is-small">
+                                <%= codes_count %>
+                            </span>
+                        <% end %> <!-- if  do -->
+
+                    <%  end %><!-- link do -->
+
+                </td>
+
+            </tr>
+        <% end %> <!--  for  do -->
+    </table>
+
+</div> <!-- panel-->

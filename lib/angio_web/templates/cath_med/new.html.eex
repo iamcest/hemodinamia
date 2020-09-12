@@ -1,0 +1,18 @@
+<% alias Angio.Cath%>
+<div class="title_form">
+<h5 class="title is-5 has-text-centered">New Medications Record</h5>
+</div><!----title_form----------------------->
+<div class="element_info">
+  <%= render AngioWeb.SharedView, "_patient_info.html", patient:
+  @patient %>
+</div>
+
+<%= render "form.html", changeset: @changeset, action:
+Routes.pt_angio_cathmed_path(@conn, :create, @patient, @info_coronary) %>
+<%=link "Back To Medications Index ", to: Routes.pt_angio_cathmed_path(@conn, :create,
+@patient, @info_coronary), class: "button is-link"%>
+
+<span>
+<%= link "Back To Lab",  to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-link"   %>
+ </span>

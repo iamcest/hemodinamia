@@ -1,0 +1,5 @@
+<h4 class="title is-4">Edit Defs table</h4>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.defs_table_path(@conn, :update, @defs_table)) %>
+
+<span><%= link "Back DB Tables List", to: Routes.defs_table_path(@conn, :index),  class: "button is-link"  %></span>

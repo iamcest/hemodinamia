@@ -1,0 +1,267 @@
+
+<div class="title_form">
+<h5 class="title is-5 has-text-centered">Showing Cardiac  Clinical Examination</h5>
+</div>
+
+<div class="element_info">
+
+    <%= render  AngioWeb.SharedView, "_patient_info.html", patient: @patient %>
+</div>
+
+<div class="element_info_coronary">
+Angio : <%= render AngioWeb.SharedView, "_info_coronary.html", info_coronary:
+   @info_coronary%>
+</div>
+
+<div class="content frame_1">
+  <ol type="1">
+
+
+  <li>
+    <strong>Cle dt:</strong>
+    <%= @clinical_exam_cardio.cle_dt %>
+  </li>
+
+  <li>
+    <strong>Cle tm:</strong>
+    <%= @clinical_exam_cardio.cle_tm %>
+  </li>
+
+  <li>
+    <strong>Cle normal yn:</strong>
+    <%= @clinical_exam_cardio.cle_normal_yn %>
+  </li>
+
+  <li>
+    <strong>Cle complain yn:</strong>
+    <%= @clinical_exam_cardio.cle_complain_yn %>
+  </li>
+
+  <li>
+    <strong>Cle complain dysp:</strong>
+    <%= @clinical_exam_cardio.cle_complain_dysp %>
+  </li>
+
+  <li>
+    <strong>Cle complain chest pain yn:</strong>
+    <%= @clinical_exam_cardio.cle_complain_chest_pain_yn %>
+  </li>
+
+  <li>
+    <strong>Cle complain palpitations yn:</strong>
+    <%= @clinical_exam_cardio.cle_complain_palpitations_yn %>
+  </li>
+
+  <li>
+    <strong>Cle complain cough yn:</strong>
+    <%= @clinical_exam_cardio.cle_complain_cough_yn %>
+  </li>
+
+  <li>
+    <strong>Cle complain notes:</strong>
+    <%= @clinical_exam_cardio.cle_complain_notes %>
+  </li>
+
+  <li>
+    <strong>Cle temperature:</strong>
+    <%= @clinical_exam_cardio.cle_temperature %>
+  </li>
+
+  <li>
+    <strong>Cle killip class:</strong>
+    <%= @clinical_exam_cardio.cle_killip_class %>
+  </li>
+
+  <li>
+    <strong>Cle heart sounds abnormal yn:</strong>
+    <%= @clinical_exam_cardio.cle_heart_sounds_abnormal_yn %>
+  </li>
+
+  <li>
+    <strong>Cle s1 heart sound:</strong>
+    <%= @clinical_exam_cardio.cle_s1_heart_sound %>
+  </li>
+
+  <li>
+    <strong>Cle s2 heart sound:</strong>
+    <%= @clinical_exam_cardio.cle_s2_heart_sound %>
+  </li>
+
+  <li>
+    <strong>Cle s3 heart sound yn:</strong>
+    <%= @clinical_exam_cardio.cle_s3_heart_sound_yn %>
+  </li>
+
+  <li>
+    <strong>Cle s4 heart sound yn:</strong>
+    <%= @clinical_exam_cardio.cle_s4_heart_sound_yn %>
+  </li>
+
+  <li>
+    <strong>Cle peri rub yn:</strong>
+    <%= @clinical_exam_cardio.cle_peri_rub_yn %>
+  </li>
+
+  <li>
+    <strong>Cle sounds notes:</strong>
+    <%= @clinical_exam_cardio.cle_sounds_notes %>
+  </li>
+
+  <li>
+    <strong>Cle mv abnormal yn:</strong>
+    <%= @clinical_exam_cardio.cle_mv_abnormal_yn %>
+  </li>
+
+  <li>
+    <strong>Cle mv sys murmur yn:</strong>
+    <%= @clinical_exam_cardio.cle_mv_sys_murmur_yn %>
+  </li>
+
+  <li>
+    <strong>Cle mv sys murmur grade:</strong>
+    <%= @clinical_exam_cardio.cle_mv_sys_murmur_grade %>
+  </li>
+
+  <li>
+    <strong>Cle mv dias murmur yn:</strong>
+    <%= @clinical_exam_cardio.cle_mv_dias_murmur_yn %>
+  </li>
+
+  <li>
+    <strong>Cle mv dias murmur grade:</strong>
+    <%= @clinical_exam_cardio.cle_mv_dias_murmur_grade %>
+  </li>
+
+  <li>
+    <strong>Cle mv opening snap yn:</strong>
+    <%= @clinical_exam_cardio.cle_mv_opening_snap_yn %>
+  </li>
+
+  <li>
+    <strong>Cle mv prosthetic sound yn:</strong>
+    <%= @clinical_exam_cardio.cle_mv_prosthetic_sound_yn %>
+  </li>
+
+  <li>
+    <strong>Cle mv notes:</strong>
+    <%= @clinical_exam_cardio.cle_mv_notes %>
+  </li>
+
+  <li>
+    <strong>Cle av abnormal yn:</strong>
+    <%= @clinical_exam_cardio.cle_av_abnormal_yn %>
+  </li>
+
+  <li>
+    <strong>Cle av sys murmur yn:</strong>
+    <%= @clinical_exam_cardio.cle_av_sys_murmur_yn %>
+  </li>
+
+  <li>
+    <strong>Cle av sys murmur grade:</strong>
+    <%= @clinical_exam_cardio.cle_av_sys_murmur_grade %>
+  </li>
+
+  <li>
+    <strong>Cle av dias murmur yn:</strong>
+    <%= @clinical_exam_cardio.cle_av_dias_murmur_yn %>
+  </li>
+
+  <li>
+    <strong>Cle av dias murmur grade:</strong>
+    <%= @clinical_exam_cardio.cle_av_dias_murmur_grade %>
+  </li>
+
+  <li>
+    <strong>Cle av ejection click yn:</strong>
+    <%= @clinical_exam_cardio.cle_av_ejection_click_yn %>
+  </li>
+
+  <li>
+    <strong>Cle av prosthetic sound yn:</strong>
+    <%= @clinical_exam_cardio.cle_av_prosthetic_sound_yn %>
+  </li>
+
+  <li>
+    <strong>Cle no ejection click yn:</strong>
+    <%= @clinical_exam_cardio.cle_no_ejection_click_yn %>
+  </li>
+
+  <li>
+    <strong>Cle continuous murmur:</strong>
+    <%= @clinical_exam_cardio.cle_continuous_murmur %>
+  </li>
+
+  <li>
+    <strong>Cle murmur notes:</strong>
+    <%= @clinical_exam_cardio.cle_murmur_notes %>
+  </li>
+
+  <li>
+    <strong>Cle pv abnormal yn:</strong>
+    <%= @clinical_exam_cardio.cle_pv_abnormal_yn %>
+  </li>
+
+  <li>
+    <strong>Cle pv sys murmur yn:</strong>
+    <%= @clinical_exam_cardio.cle_pv_sys_murmur_yn %>
+  </li>
+
+  <li>
+    <strong>Cle pv sys murmur grade:</strong>
+    <%= @clinical_exam_cardio.cle_pv_sys_murmur_grade %>
+  </li>
+
+  <li>
+    <strong>Cle pv dias murmur yn:</strong>
+    <%= @clinical_exam_cardio.cle_pv_dias_murmur_yn %>
+  </li>
+
+  <li>
+    <strong>Cle pv dias murmur grade:</strong>
+    <%= @clinical_exam_cardio.cle_pv_dias_murmur_grade %>
+  </li>
+
+  <li>
+    <strong>Cle pv notes:</strong>
+    <%= @clinical_exam_cardio.cle_pv_notes %>
+  </li>
+
+  <li>
+    <strong>Cle tr abnormal yn:</strong>
+    <%= @clinical_exam_cardio.cle_tr_abnormal_yn %>
+  </li>
+
+  <li>
+    <strong>Cle tr sys murmur yn:</strong>
+    <%= @clinical_exam_cardio.cle_tr_sys_murmur_yn %>
+  </li>
+
+  <li>
+    <strong>Cle tr dias murmur yn:</strong>
+    <%= @clinical_exam_cardio.cle_tr_dias_murmur_yn %>
+  </li>
+
+  <li>
+    <strong>Cle tr notes:</strong>
+    <%= @clinical_exam_cardio.cle_tr_notes %>
+  </li>
+
+</ol>
+</div>
+<p class ="buttons_separator"> . </p>
+
+<span>
+    <%= link "Edit Cardiac Clinical Exam ", to: Routes.pt_angio_cle_cardio_path(@conn, :edit, @patient,
+  @info_coronary, @clinical_exam_cardio), class: "button is-link"%>
+</span>
+
+<span>
+  <%= link "Back To  Exam Index", to: Routes.pt_angio_cle_cardio_path(@conn, :index,
+  @patient, @info_coronary) , class: "button is-link"%>
+</span>
+<span>
+
+<%= link "Back To Cath Lab",  to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-link"   %>
+ </span>

@@ -1,0 +1,523 @@
+<% alias Angio.Canons, as: Query %>
+
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+  <div class="notification is-danger">
+    <button class="delete"></button>
+    Oops, something went wrong! Please check the errors below or Dublicate Record
+</div>
+  <% end %>
+  <div class="columns">
+  <div class="column frame_1">
+
+  <!-------start---------------------->
+      <div class="columns important_column ">
+ <div class="column ">
+
+
+ <div class="field">
+          <label class="label"> LV Is Normal?</label>
+          <div class="control">
+            <%= checkbox f, :cath_lv_normal_yn  ,
+             placeholder: "cath_lv_normal_yn",
+            required: false,
+type: "checkbox" %>
+<%= error_tag f, :cath_lv_normal_yn %>
+           <p class = "help">
+             Check only If LV is Normal
+           </p>
+
+          </div>
+           </div>
+        <!--field---->
+
+ </div><!--------column------------>
+  </div><!----columns------------->
+
+  <!--------end start----------------------->
+
+<span class="button is-primary is-medium is-fullwidth ">
+    General
+ </span>
+
+ <!-------start---------------------->
+
+      <div class="columns">
+ <div class="column">
+
+  <div class="field">
+  <label class="label">Ejection Fraction </label>
+  <div class="control">
+  <span class="field_help"></span>
+    <%= text_input f, :cath_lv_ef_val, class: "input",
+                       type: "text",
+                       placeholder: "cath_lv_ef_val",
+                      required: false
+  %>
+   <%= error_tag f, :cath_lv_ef_val %>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+
+ </div><!--------column------------>
+   <div class="column">
+
+ <% s_cath_lv_ef_method = Query.select_options("cath_lv_ef_method") %>
+
+ <%# i_cath_lv_ef_method  = raw Query.search_in_instructions("cath_lv_ef_method")%>
+
+<div class="field">
+    <label class="label"> EF Assesment Method</label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f,
+                   :cath_lv_ef_method, s_cath_lv_ef_method ,
+                    prompt: "---Select---",
+                  class: "form-control") %>
+            </div>
+            <%= error_tag f, :cath_lv_ef_method    %>
+            <span class="help"><%#= i_cath_lv_ef_method %></span>
+          </div>
+        </div>
+        <!---field--->
+
+
+
+   </div><!--------column------------>
+    <div class="column">
+
+ <div class="field">
+  <label class="label">Heart Rate </label>
+  <div class="control">
+    <%= text_input f, :cath_lv_heart_rate, class: "input",
+                       type: "text",
+                       placeholder: "cath_lv_heart_rate",
+                      required: false
+  %>
+   <%= error_tag f, :cath_lv_heart_rate %>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+      </div><!--------column------------>
+
+      </div><!----columns------------->
+
+  <!--------end start----------------------->
+
+
+  <!-------start---------------------->
+
+      <div class="columns">
+ <div class="column">
+ 
+   
+   <div class="field">
+  <label class="label">LV Systolic Pressure </label>
+  <div class="control">
+    <%= text_input f, :cath_lv_lv_pres_sys, class: "input",
+                       type: "text",
+                       placeholder: "cath_lv_lv_pres_sys",
+                      required: false
+  %>
+   <%= error_tag f, :cath_lv_lv_pres_sys %>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+ </div><!--------column------------>
+   <div class="column">
+    
+   <div class="field">
+  <label class="label">LV End Diastolic Pressure </label>
+  <div class="control">
+    <%= text_input f, :cath_lv_lv_pres_end_dias, class: "input",
+                       type: "text",
+                       placeholder: "cath_lv_lv_pres_end_dias",
+                      required: false
+  %>
+   <%= error_tag f, :cath_lv_lv_pres_end_dias %>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+   
+
+ </div><!--------column------------>
+
+
+  <div class="column">
+    
+   <div class="field">
+  <label class="label">Aortic Systolic  Pressure </label>
+  <div class="control">
+    <%= text_input f, :aortic_pres_sys, class: "input",
+                       type: "text",
+                       placeholder: "aortic_pres_sys",
+                      required: false
+  %>
+   <%= error_tag f, :aortic_pres_sys %>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+   
+
+ </div><!--------column------------>  <div class="column">
+    
+   <div class="field">
+  <label class="label">Aortic  Diastolic Pressure </label>
+  <div class="control">
+    <%= text_input f, :aortic_pres_dia, class: "input",
+                       type: "text",
+                       placeholder: "aortic_pres_dia",
+                      required: false
+  %>
+   <%= error_tag f, :aortic_pres_dia%>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+   
+
+ </div><!--------column------------>
+
+
+
+ <div class="column">
+ <% s_cath_lv_mvr = Query.select_options("cath_lv_mvr") %>
+
+ <%# i_cath_lv_mvr  = raw Query.search_in_instructions("cath_lv_mvr")%>
+
+<div class="field">
+    <label class="label"> Mitral Valve Regurg</label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f,
+                   :cath_lv_mvr, s_cath_lv_mvr ,
+                    prompt: "---Select---",
+                  class: "form-control") %>
+            </div>
+            <%= error_tag f, :cath_lv_mvr  %>
+            <span class="help"><%#= i_cath_lv_mvr %></span>
+          </div>
+        </div>
+        <!---field--->
+
+ </div><!--------column------------>
+
+
+      </div><!----columns------------->
+  <!--------end start----------------------->
+
+  <!-------start---------------------->
+<span class="button is-primary is-medium is-fullwidth ">
+      RAO
+        </span>
+
+      <div class="columns">
+
+        <div class="column">
+
+      <% s_wall_seg_func = Query.select_options("cath_lv_wall_seg_func") %>
+
+ <%# i_cath_lv_rao_antero_basal  = raw Query.search_in_instructions("cath_lv_rao_antero_basal")%>
+
+<div class="field">
+    <label class="label"> RAO Antero Basal (1)</label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f,
+                   :cath_lv_rao_antero_basal, s_wall_seg_func ,
+                    prompt: "---Select---",
+                  class: "form-control") %>
+            </div>
+            <%= error_tag f, :cath_lv_rao_antero_basal    %>
+            <span class="help"><%#= i_cath_lv_rao_antero_basal %></span>
+          </div>
+        </div>
+        <!---field--->
+
+
+
+ </div><!--------column------------>
+
+ <div class="column">
+   <%# i_cath_lv_rao_antero_lat  =
+       raw Query.search_in_instructions("cath_lv_rao_antero_lat")%>
+
+<div class="field">
+    <label class="label"> RAO Antero Lateral (2) </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f,
+                   :cath_lv_rao_antero_lat, s_wall_seg_func ,
+                    prompt: "---Select---",
+                  class: "form-control") %>
+            </div>
+            <%= error_tag f, :cath_lv_rao_antero_lat    %>
+            <span class="help"><%#= i_cath_lv_rao_antero_lat  %></span>
+          </div>
+        </div>
+        <!---field--->
+
+ </div><!--------column------------>
+
+ <div class="column">
+    <%# i_cath_lv_rao_apical  =
+       raw Query.search_in_instructions("cath_lv_rao_apical")%>
+
+<div class="field">
+    <label class="label"> RAO Antero Apical (3)</label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f,
+                   :cath_lv_rao_apical, s_wall_seg_func ,
+                    prompt: "---Select---",
+                  class: "form-control") %>
+            </div>
+            <%= error_tag f, :cath_lv_rao_apical    %>
+            <span class="help"><%#= i_cath_lv_rao_apical  %></span>
+          </div>
+        </div>
+        <!---field--->
+
+
+
+
+ </div><!--------column------------>
+</div><!----columns------------->
+
+ <!--------end start----------------------->
+
+ <!-------start---------------------->
+
+   <div class="columns">
+ <div class="column">
+
+    <%# i_cath_lv_rao_diaphragmatic  =
+       raw Query.search_in_instructions("cath_lv_rao_diaphragmatic ")%>
+
+<div class="field">
+    <label class="label"> RAO Diaphragmatic (4)</label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f,
+                   :cath_lv_rao_diaphragmatic , s_wall_seg_func ,
+                    prompt: "---Select---",
+                  class: "form-control") %>
+            </div>
+            <%= error_tag f, :cath_lv_rao_diaphragmatic     %>
+            <span class="help"><%#= i_cath_lv_rao_diaphragmatic  %></span>
+          </div>
+        </div>
+        <!---field--->
+
+ </div><!--------column------------>
+
+ <div class="column">
+
+    <%# i_cath_lv_rao_post_basal  =
+       raw Query.search_in_instructions("cath_lv_rao_post_basal")%>
+
+<div class="field">
+    <label class="label"> RAO Posterior Basal (5) </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f,
+                   :cath_lv_rao_post_basal , s_wall_seg_func ,
+                    prompt: "---Select---",
+                  class: "form-control") %>
+            </div>
+            <%= error_tag f, :cath_lv_rao_post_basal  %>
+            <span class="help"><%#= i_cath_lv_rao_post_basal  %></span>
+          </div>
+        </div>
+        <!---field--->
+
+
+  </div><!--------column------------>
+
+   </div><!----columns------------->
+
+  <!--------end start----------------------->
+
+
+ <!-------start---------------------->
+<span class="button is-primary is-medium is-fullwidth ">
+    LAO
+ </span>
+
+
+      <div class="columns">
+          <div class="column">
+
+    <%# i_cath_lv_lao_basal_septal   =
+       raw Query.search_in_instructions("cath_lv_lao_basal_septal")%>
+
+<div class="field">
+    <label class="label"> LAO Basal Septal (6)</label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f,
+                   :cath_lv_lao_basal_septal , s_wall_seg_func ,
+                    prompt: "---Select---",
+                  class: "form-control") %>
+            </div>
+            <%= error_tag f, :cath_lv_lao_basal_septal   %>
+            <span class="help"><%#= i_cath_lv_rao_post_basal  %></span>
+          </div>
+        </div>
+        <!---field--->
+
+
+
+    </div><!--------column------------>
+
+
+        <div class="column">
+   <%# i_cath_lv_lao_apical_septal   =
+       raw Query.search_in_instructions("cath_lv_lao_apical_septal")%>
+
+<div class="field">
+    <label class="label"> LAO Apical Septal (7)</label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f,
+                   :cath_lv_lao_apical_septal , s_wall_seg_func ,
+                    prompt: "---Select---",
+                  class: "form-control") %>
+            </div>
+            <%= error_tag f, :cath_lv_lao_apical_septal   %>
+            <span class="help"><%#= i_cath_lv_lao_apical_septal  %></span>
+          </div>
+        </div>
+        <!---field--->
+
+
+
+
+ </div><!--------column------------>
+   <div class="column">
+       <%# i_cath_lv_lao_post_lat   =
+       raw Query.search_in_instructions("cath_lv_lao_post_lat")%>
+
+<div class="field">
+    <label class="label"> LAO Posterior Lateral (8)</label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f,
+                   :cath_lv_lao_post_lat , s_wall_seg_func ,
+                    prompt: "---Select---",
+                  class: "form-control") %>
+            </div>
+            <%= error_tag f, :cath_lv_lao_post_lat   %>
+            <span class="help"><%#= i_cath_lv_lao_post_lat  %></span>
+          </div>
+        </div>
+        <!---field--->
+
+ </div><!--------column------------>
+
+
+      </div><!----columns------------->
+  <!--------end start----------------------->
+
+
+  <!-------start---------------------->
+  <div class="columns">
+     <div class="column">
+
+  <%# i_cath_lv_lao_inf_lat   =
+       raw Query.search_in_instructions("cath_lv_lao_inf_lat ")%>
+
+<div class="field">
+    <label class="label"> LAO Inferior Lateral (9)</label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f,
+                   :cath_lv_lao_inf_lat, s_wall_seg_func ,
+                    prompt: "---Select---",
+                  class: "form-control") %>
+            </div>
+            <%= error_tag f, :cath_lv_lao_inf_lat    %>
+            <span class="help"><%#= i_cath_lv_lao_inf_lat   %></span>
+          </div>
+        </div>
+        <!---field--->
+
+
+
+ </div><!--------column------------>
+
+
+ <div class="column">
+    <%# i_cath_lv_lao_super_lat   =
+       raw Query.search_in_instructions("cath_lv_lao_super_lat ")%>
+
+<div class="field">
+    <label class="label"> LAO Superior Lateral (10)</label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f,
+                   :cath_lv_lao_super_lat, s_wall_seg_func ,
+                    prompt: "---Select---",
+                  class: "form-control") %>
+            </div>
+            <%= error_tag f, :cath_lv_lao_super_lat  %>
+            <span class="help"><%#= i_cath_lv_lao_super_lat   %></span>
+          </div>
+        </div>
+        <!---field--->
+
+
+
+ </div><!--------column------------>
+
+ </div><!----columns------------->
+  <!--------end start----------------------->
+
+
+      </div><!-----column------------>
+
+  </div><!----columns------------------->
+     <span class="button is-danger  is-fullwidth ">
+<i class="fa fa-sticky-note">
+My Notes
+</i>
+</span>
+  <div class="columns">
+    <div class ="column">
+<div class="field">
+  <label class="label"> My Notes </label>
+  <div class="control">
+    <%= text_input f, :cath_lv_notes ,
+        class: "textarea",
+        type: "input", placeholder: "cath_lv_notes"  %>
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+
+    <%= render  AngioWeb.SharedView, "_help_area.html" %>
+  <span class="button is-warning is-medium is-fullwidth ">
+    LV Diagram
+ </span>
+
+
+  <div class="columns">
+    <div class="column frame_1">
+    <img   height="800px" src= "http://localhost:4000/images/lv_angio_segments.jpg" alt="slide image" class="float-center"/>
+ </div><!-----column------------>
+
+  </div><!----columns------------------->
+
+   
+<div>
+    <%= submit "Save and Continue", class: "button is-info is-large is-fullwidth " %>
+  </div>
+<% end %>

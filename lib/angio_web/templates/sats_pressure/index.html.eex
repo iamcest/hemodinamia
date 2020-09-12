@@ -1,0 +1,94 @@
+
+<% alias Angio.Canons, as: Query %>
+
+<div class="menu_info_tabs" >
+<%= render  AngioWeb.SharedView, "_menu_info_coronary_tabs.html", assigns %>
+</div>
+
+
+<div class="element_info">
+  <%= render AngioWeb.SharedView, "_patient_info.html", patient:
+  @patient %>
+</div>
+
+<div class="element_info_coronary">
+<%= render AngioWeb.SharedView, "_info_coronary.html", info_coronary:
+   @info_coronary%>
+</div>
+
+
+<div class="columns">
+<div class="column is-2 menu_all">
+<%= render AngioWeb.SharedView, "_menu_all.html", info_coronary:
+   @info_coronary, conn: @conn, patient: @patient%>
+</div><!----------------------------->
+
+<div class="column is-10 frame_1">
+
+<table
+  class="table is-bordered
+                    is-striped
+                    is-full-width
+                    is-hoverable">
+
+<div class="title_form">
+<h6 class="title is-6 has-text-centered" >Sats Pressures Index</h6>
+</div>
+  <thead class="thead">
+    <tr>
+      <th>Mean Ao Pres</th>
+       <th>Qp/Qs</th>
+      <th>Show Diagram</th>
+<th>Edit </th>
+<th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for sats_pressure <- @sats_pressures do %>
+    <tr>
+      <td><%= sats_pressure.aortic_pres_mean %></td>
+     <td><%= sats_pressure.uni_qp_qs %></td>
+      <td>
+       <%= link "  Show Diagram ", to: Routes.pt_angio_satpres_path(@conn, :show, @patient, @info_coronary,
+          sats_pressure), class: "button is-primary is-small" %>
+        </td>
+
+
+        <td>
+         <%= link "Edit", to: Routes.pt_angio_satpres_path(@conn, :edit, @patient,
+        @info_coronary, sats_pressure), class: "button is-primary is-small" %>
+        </td>
+
+
+        <td>
+            <%= link "Delete", to: Routes.pt_angio_satpres_path(@conn, :delete,
+        @patient, @info_coronary, sats_pressure), method: :delete, data: [confirm:
+        "Are you sure?"], class: "button is-small is-danger" %>
+
+
+
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+</div><!-------------------column---------------->
+</div><!------columns----------------->
+
+<span><%= link "If Not Yet Inserted - Add New Sats Pressures Record  ",
+      to: Routes.pt_angio_satpres_path(@conn, :new,
+  @patient, @info_coronary), class: "button is-info is-medium is-fullwidth" %>
+
+<p class ="buttons_separator"> . </p>
+  <%= link "To Patient List", to: Routes.pt_path(@conn, :index), class: "button
+  is-link" %>
+</span>
+<span>
+<%= link "Back To Lab",  to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-link"   %>
+ </span>
+<span>
+  <%#= link "To Congenital  Care Episodes", to: Routes.pt_angio_chd_episode_path(@conn, :index,
+  @patient, @info_coronary) , class: "button is-warning"%>
+</span>

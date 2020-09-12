@@ -1,0 +1,13 @@
+<% alias  Angio.Caths%>
+<% info_coronary_count =  
+    Caths.count_info_coronary(@patient.id) %>
+<%= if  info_coronary_count > 0 do %>
+  <span class="tag is-small is-white">
+    <strong><%=  info_coronary_count %></strong>
+  </span>
+<% else %>
+  <span class="tag is-small is-danger">
+    <%=  info_coronary_count %>
+  </span>
+<% end %>
+

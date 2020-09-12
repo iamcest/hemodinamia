@@ -1,0 +1,146 @@
+<h4 class="title is-4">Show Care episode</h4>
+
+<ul>
+
+  <li>
+    <strong>Pt restriction yn:</strong>
+    <%= @care_episode.pt_restriction_yn %>
+  </li>
+
+  <li>
+    <strong>Caepsds institution:</strong>
+    <%= @care_episode.caepsds_institution_id %>
+  </li>
+
+  <li>
+    <strong>Caepsds phone home:</strong>
+    <%= @care_episode.caepsds_phone_home %>
+  </li>
+
+  <li>
+    <strong>Caepsds phone mobile:</strong>
+    <%= @care_episode.caepsds_phone_mobile %>
+  </li>
+
+  <li>
+    <strong>Caepsds telecom:</strong>
+    <%= @care_episode.caepsds_telecom %>
+  </li>
+
+  <li>
+    <strong>Caepsds photo:</strong>
+    <%= @care_episode.caepsds_photo %>
+  </li>
+
+  <li>
+    <strong>Caepsds city:</strong>
+    <%= @care_episode.caepsds_city %>
+  </li>
+
+  <li>
+    <strong>Caepsds street:</strong>
+    <%= @care_episode.caepsds_street %>
+  </li>
+
+  <li>
+    <strong>Caepsds street num:</strong>
+    <%= @care_episode.caepsds_street_num %>
+  </li>
+
+  <li>
+    <strong>Caepsds zip:</strong>
+    <%= @care_episode.caepsds_zip %>
+  </li>
+
+  <li>
+    <strong>Caepsds zip na:</strong>
+    <%= @care_episode.caepsds_zip_na %>
+  </li>
+
+  <li>
+    <strong>Caepsds post box:</strong>
+    <%= @care_episode.caepsds_post_box %>
+  </li>
+
+  <li>
+    <strong>Caepsds arrival dt:</strong>
+    <%= @care_episode.caepsds_arrival_dt %>
+  </li>
+
+  <li>
+    <strong>Caepsds arrival tm:</strong>
+    <%= @care_episode.caepsds_arrival_tm %>
+  </li>
+
+  <li>
+    <strong>Caepsds arrival location:</strong>
+    <%= @care_episode.caepsds_arrival_location %>
+  </li>
+
+  <li>
+    <strong>Uni hic:</strong>
+    <%= @care_episode.uni_hic %>
+  </li>
+
+  <li>
+    <strong>Uni insurance:</strong>
+    <%= @care_episode.uni_insurance %>
+  </li>
+
+  <li>
+    <strong>Uni insurance non us:</strong>
+    <%= @care_episode.uni_insurance_non_us %>
+  </li>
+
+  <li>
+    <strong>Caepsds provider npi:</strong>
+    <%= @care_episode.caepsds_provider_npi %>
+  </li>
+
+  <li>
+    <strong>Caepsds provider fname:</strong>
+    <%= @care_episode.caepsds_provider_fname %>
+  </li>
+
+  <li>
+    <strong>Caepsds provider lname:</strong>
+    <%= @care_episode.caepsds_provider_lname %>
+  </li>
+
+  <li>
+    <strong>Caepsds provider mname:</strong>
+    <%= @care_episode.caepsds_provider_mname %>
+  </li>
+
+    <li>
+    <strong>Patient ID:</strong>
+    <%= @care_episode.patient_id %>
+  </li>
+
+  <li>
+    <strong>Parent ID:</strong>
+    <%= @care_episode.parent_id %>
+  </li>
+
+  <li>
+    <strong>Caepsds notes:</strong>
+    <%= @care_episode.caepsds_notes %>
+  </li>
+</ul>
+
+<span>
+  <%= link "Edit Care Episode",
+          to: Routes.pt_angio_episode_path(@conn, :edit, @patient,
+  @info_coronary, @care_episode) , class: "button is-link "%>
+</span>
+<span>
+  <%= link "Back To Care Episode Index ",
+    to: Routes.pt_angio_episode_path(@conn, :index,
+  @patient, @info_coronary) , class: "button is-link"%>
+
+</span>
+<span>
+<%= link "To Lab",  to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-link "   %>
+
+

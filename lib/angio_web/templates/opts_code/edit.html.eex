@@ -1,0 +1,25 @@
+<div class="title_form">
+<h4 class="title is-4 has-text-centered">Editing Option Codes</h4>
+</div>
+
+<div class="element_info">
+    <%= render  AngioWeb.SharedView, "_definition_info.html", definition: @definition %>
+</div>
+
+<div class="columns">
+  
+  <div class="column">
+    <%= render "form.html", changeset: @changeset,
+    action: Routes.definition_defs_option_opts_code_path(@conn, :update, @definition, @defs_option, @opts_code) %>
+
+    <%= link "Back To Options Codes", to:  Routes.definition_defs_option_opts_code_path(@conn, :create,
+@definition, @defs_option),  
+class: "button is-link"%>
+
+</div><!-- colum -->
+
+
+
+</div><!-- columns -->
+
+

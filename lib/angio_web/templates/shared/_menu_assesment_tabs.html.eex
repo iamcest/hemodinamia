@@ -1,0 +1,87 @@
+<% alias Angio.Clinicals%>
+<% alias Angio.Assements %>
+
+<% alias Angio.Congenitals%>
+<% alias Angio.Caths%>
+<% alias Angio.Interventions %>
+<%alias Angio.Histories %>
+<span class="button is-medium is-info is-fullwidth ">
+  Assesment Menu Items
+ </span>
+<div class="menu_info_coronary_tabs">
+  <div class="tabs is-small is-centered">
+    <ul>
+
+
+
+ <div class="dropdown-item">
+
+       <% count_states = Angio.Assements.count_functional_states(@info_coronary.id) %>
+        <%= link to: Routes.pt_angio_funs_path(@conn, :index, @patient,
+      @info_coronary), class: "button is-link is-rounded  is-small is-fullwidth", title: "Functional States: Rankin Katz Index..." do %>
+
+        <%= render  AngioWeb.SharedView,
+ "_info_menu_count.html",
+  prompt: "Functional States", count: count_states %>
+        <% end %>
+      </div>
+
+
+<div class="dropdown-item">
+  <% count_clinicals =  Clinicals.count_clinicals(@info_coronary.id) %>
+        <%= link  to: Routes.pt_angio_clinical_path(@conn, :index, @patient, @info_coronary),
+class: "button is-link is-small is-rounded is-fullwidth", title: "Heart Failure, Shock, IABP..." do  %>
+
+        <%= render  AngioWeb.SharedView,
+ "_info_menu_count.html",
+  prompt: "Pre Cath Clinical ", count: count_clinicals %>
+
+        <%end%>
+
+
+      </div>
+<div class="dropdown-item">
+  <% count_chest_pains =  Clinicals.count_chest_pains(@info_coronary.id) %>
+        <%= link  to: Routes.pt_angio_chestp_path(@conn, :index, @patient, @info_coronary),
+class: "button is-link is-small is-rounded  is-fullwidth", title: "Pain Frequency, Quality etc..." do  %>
+        <%= render  AngioWeb.SharedView,
+ "_info_menu_count.html",
+  prompt: "Chest Pain Evaluation", count: count_chest_pains %>
+
+        <%end%>
+
+
+      </div>
+      <!------------------------------------>
+
+<div class="dropdown-item">
+
+       <% count_vitals =  Assements.count_vitals(@info_coronary.id) %>
+        <%= link to: Routes.pt_angio_vitals_path(@conn, :index, @patient,
+      @info_coronary), class: "button is-link is-rounded  is-small is-fullwidth", title: "Exam Date, BP.." do %>
+
+        <%= render  AngioWeb.SharedView,
+ "_info_menu_count.html",
+  prompt: "Vitals Signs", count: count_vitals %>
+        <% end %>
+      </div>
+
+
+
+<div class="dropdown-item">
+
+       <% c_count_clinical_exams_cardio =  Assements.count_clinical_exams_cardio(@info_coronary.id) %>
+        <%= link to: Routes.pt_angio_cle_cardio_path(@conn, :index, @patient,
+      @info_coronary), class: "button is-link is-rounded  is-small  is-fullwidth", title: "Exam Date, BP.." do %>
+        <%= render  AngioWeb.SharedView,
+ "_info_menu_count.html",
+  prompt: "Cardiac Examination", count: c_count_clinical_exams_cardio %>
+        <% end %>
+      </div>
+
+
+     </ul>
+
+</div><!-------------------------------->
+</div><!--------------------------------->
+

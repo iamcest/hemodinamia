@@ -1,0 +1,31 @@
+<strong style="color:#fff;">
+ <%= "Current Patient: " %>  
+    <span>
+    <%= @patient.patnts_last_name %>
+</span>
+</strong>
+
+<span>  </span>
+<strong style="color:#fff;">
+ <%= " " %>  
+    <span>
+    <%= @patient.patnts_first_name %>
+</span>
+</strong>
+
+<span>  </span>
+
+<%#  if(@patient.patnts_birth_dt !== "") do %>
+<strong style="color:white;" >  
+  - DOB: <%= @patient.patnts_birth_dt %>
+</strong>
+<%#  end %>
+<span>  </span>
+
+     <%#  if(@patient.social_security_num !== "") do %>
+<strong style="color:white;">
+ -  SSN:  <%= @patient.patnts_ssn %>
+</strong>
+<%#  end %>
+
+

@@ -1,0 +1,249 @@
+<div class="title_form">
+<h5 class="title is-5 has-text-centered">Show ASD Closure Procedure</h5>
+</div>
+<div class="element_info">
+
+    <%= render  AngioWeb.SharedView, "_patient_info.html", patient: @patient %>
+</div>
+
+<div class="element_info_coronary">
+Angio : <%= render AngioWeb.SharedView, "_info_coronary.html", info_coronary:
+   @info_coronary%>
+</div>
+<div class="content frame_1 ">
+  <ol type="1">
+
+  <li>
+    <strong>Pci proc operator lname:</strong>
+    <%= @pci_procedure.pci_proc_operator_lname %>
+  </li>
+
+  <li>
+    <strong>Pci proc operator fname:</strong>
+    <%= @pci_procedure.pci_proc_operator_fname %>
+  </li>
+
+  <li>
+    <strong>Pci proc operator mname:</strong>
+    <%= @pci_procedure.pci_proc_operator_mname %>
+  </li>
+
+  <li>
+    <strong>Pci proc operator npi:</strong>
+    <%= @pci_procedure.pci_proc_operator_npi %>
+  </li>
+
+  <li>
+    <strong>Pci proc machine:</strong>
+    <%= @pci_procedure.pci_proc_machine_id %>
+  </li>
+
+  <li>
+    <strong>Pci proc lab num:</strong>
+    <%= @pci_procedure.pci_proc_lab_num %>
+  </li>
+
+  <li>
+    <strong>Pci proc lab arrive dt:</strong>
+    <%= @pci_procedure.pci_proc_lab_arrive_dt %>
+  </li>
+
+  <li>
+    <strong>Pci proc lab arrive tm:</strong>
+    <%= @pci_procedure.pci_proc_lab_arrive_tm %>
+  </li>
+
+  <li>
+    <strong>Pci proc lab out tm:</strong>
+    <%= @pci_procedure.pci_proc_lab_out_tm %>
+  </li>
+
+  <li>
+    <strong>Pci proc indication:</strong>
+    <%= @pci_procedure.pci_proc_indication %>
+  </li>
+
+  <li>
+    <strong>Pci proc status:</strong>
+    <%= @pci_procedure.pci_proc_status %>
+  </li>
+
+  <li>
+    <strong>Pci proc success yn:</strong>
+    <%= @pci_procedure.pci_proc_success_yn %>
+  </li>
+
+  <li>
+    <strong>Pci proc les attempt num:</strong>
+    <%= @pci_procedure.pci_proc_les_attempt_num %>
+  </li>
+
+  <li>
+    <strong>Pci proc les treated num:</strong>
+    <%= @pci_procedure.pci_proc_les_treated_num %>
+  </li>
+
+  <li>
+    <strong>Pci proc ballons used num:</strong>
+    <%= @pci_procedure.pci_proc_ballons_used_num %>
+  </li>
+
+  <li>
+    <strong>Pci proc stents used num:</strong>
+    <%= @pci_procedure.pci_proc_stents_used_num %>
+  </li>
+
+  <li>
+    <strong>Pci proc stents implanted num:</strong>
+    <%= @pci_procedure.pci_proc_stents_implanted_num %>
+  </li>
+
+  <li>
+    <strong>Pci proc multivessel result:</strong>
+    <%= @pci_procedure.pci_proc_multivessel_result %>
+  </li>
+
+  <li>
+    <strong>Pci proc primary transfer yn:</strong>
+    <%= @pci_procedure.pci_proc_primary_transfer_yn %>
+  </li>
+
+  <li>
+    <strong>Pci proc stemi onset dt:</strong>
+    <%= @pci_procedure.pci_proc_stemi_onset_dt %>
+  </li>
+
+  <li>
+    <strong>Pci proc stemi onset tm:</strong>
+    <%= @pci_procedure.pci_proc_stemi_onset_tm %>
+  </li>
+
+  <li>
+    <strong>Pci proc status stemi:</strong>
+    <%= @pci_procedure.pci_proc_status_stemi %>
+  </li>
+
+  <li>
+    <strong>Pci proc status acs:</strong>
+    <%= @pci_procedure.pci_proc_status_acs %>
+  </li>
+
+  <li>
+    <strong>Pci proc surg consult yn:</strong>
+    <%= @pci_procedure.pci_proc_surg_consult_yn %>
+  </li>
+
+  <li>
+    <strong>Pci proc syndax score:</strong>
+    <%= @pci_procedure.pci_proc_syndax_score %>
+  </li>
+
+  <li>
+    <strong>Pci proc device deployed yn:</strong>
+    <%= @pci_procedure.pci_proc_device_deployed_yn %>
+  </li>
+
+  <li>
+    <strong>Pci proc dev first activ tm:</strong>
+    <%= @pci_procedure.pci_proc_dev_first_activ_tm %>
+  </li>
+
+  <li>
+    <strong>Pci proc device first activ dt:</strong>
+    <%= @pci_procedure.pci_proc_device_first_activ_dt %>
+  </li>
+
+  <li>
+    <strong>Pci proc multivessel yn:</strong>
+    <%= @pci_procedure.pci_proc_multivessel_yn %>
+  </li>
+
+  <li>
+    <strong>Pci proc lv ef pre val:</strong>
+    <%= @pci_procedure.pci_proc_lv_ef_pre_val %>
+  </li>
+
+  <li>
+    <strong>Pci proc lv ef pre na:</strong>
+    <%= @pci_procedure.pci_proc_lv_ef_pre_na %>
+  </li>
+
+  <li>
+    <strong>Pci proc surg consult:</strong>
+    <%= @pci_procedure.pci_proc_surg_consult %>
+  </li>
+
+  <li>
+    <strong>Pci proc fluoro tm:</strong>
+    <%= @pci_procedure.pci_proc_fluoro_tm %>
+  </li>
+
+  <li>
+    <strong>Pci proc fluoro dose:</strong>
+    <%= @pci_procedure.pci_proc_fluoro_dose %>
+  </li>
+
+  <li>
+    <strong>Pci proc entry:</strong>
+    <%= @pci_procedure.pci_proc_entry %>
+  </li>
+
+  <li>
+    <strong>Pci proc closure device:</strong>
+    <%= @pci_procedure.pci_proc_closure_device %>
+  </li>
+
+  <li>
+    <strong>Pci proc contrast volume:</strong>
+    <%= @pci_procedure.pci_proc_contrast_volume %>
+  </li>
+
+  <li>
+    <strong>Pci proc 50pct lm yn:</strong>
+    <%= @pci_procedure.pci_proc_50pct_lm_yn %>
+  </li>
+
+  <li>
+    <strong>Pci proc 50pct lad yn:</strong>
+    <%= @pci_procedure.pci_proc_50pct_lad_yn %>
+  </li>
+
+  <li>
+    <strong>Pci proc 50pct lcx yn:</strong>
+    <%= @pci_procedure.pci_proc_50pct_lcx_yn %>
+  </li>
+
+  <li>
+    <strong>Pci proc 50pct rca yn:</strong>
+    <%= @pci_procedure.pci_proc_50pct_rca_yn %>
+  </li>
+
+  <li>
+    <strong>Pci proc 50pct graft yn:</strong>
+    <%= @pci_procedure.pci_proc_50pct_graft_yn %>
+  </li>
+
+  <li>
+    <strong>Pci proc notes:</strong>
+    <%= raw @pci_procedure.pci_proc_notes %>
+  </li>
+
+</Ol>
+</div>
+
+<p class ="buttons_separator"> . </p>
+<span>
+    <%= link "Edit PCI Procedure", to: Routes.pt_angio_pci_proc_path(@conn, :edit, @patient,
+  @info_coronary, @pci_procedure), class: "button is-link"%>
+</span>
+
+<span>
+  <%= link "Back To PCI Procedure  Index", to: Routes.pt_angio_pci_proc_path(@conn, :index,
+  @patient, @info_coronary) , class: "button is-link"%>
+</span>
+<span>
+<%= link "Back To Cath Lab",  to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-link"   %>
+ </span>
+
+

@@ -1,0 +1,94 @@
+
+<div class="title_form">
+<h5 class="title is-5 has-text-centered">Show ASD Closure Procedure</h5>
+</div>
+<div class="element_info">
+
+    <%= render  AngioWeb.SharedView, "_patient_info.html", patient: @patient %>
+</div>
+
+<div class="element_info_coronary">
+Angio : <%= render AngioWeb.SharedView, "_info_coronary.html", info_coronary:
+   @info_coronary%>
+</div>
+<div class="content frame_1 ">
+  <ol type="1">
+
+
+  <li>
+    <strong>Avp dt:</strong>
+    <%= @av_plasty.avp_dt %>
+  </li>
+
+  <li>
+    <strong>Avp tm:</strong>
+    <%= @av_plasty.avp_tm %>
+  </li>
+
+  <li>
+    <strong>Avp operator lname:</strong>
+    <%= @av_plasty.avp_operator_lname %>
+  </li>
+
+  <li>
+    <strong>Avp operator fname:</strong>
+    <%= @av_plasty.avp_operator_fname %>
+  </li>
+
+  <li>
+    <strong>Avp operator mname:</strong>
+    <%= @av_plasty.avp_operator_mname %>
+  </li>
+
+  <li>
+    <strong>Avp operator npi:</strong>
+    <%= @av_plasty.avp_operator_npi %>
+  </li>
+
+  <li>
+    <strong>Avp primary indication:</strong>
+    <%= @av_plasty.avp_primary_indication %>
+  </li>
+
+  <li>
+    <strong>Avp av morphology:</strong>
+    <%= @av_plasty.avp_av_morphology %>
+  </li>
+
+  <li>
+    <strong>Avp av reg degree pre:</strong>
+    <%= @av_plasty.avp_av_reg_degree_pre %>
+  </li>
+
+  <li>
+    <strong>Avp av ann diam us:</strong>
+    <%= @av_plasty.avp_av_ann_diam_us %>
+  </li>
+
+  <li>
+    <strong>Avp peak sys gradient pre:</strong>
+    <%= @av_plasty.avp_peak_sys_gradient_pre %>
+  </li>
+
+  <li>
+    <strong>Avp notes:</strong>
+    <%= @av_plasty.avp_notes %>
+  </li>
+</ol>
+</div>
+
+<p class ="buttons_separator"> . </p>
+<span>
+    <%= link "Edit AV Plasty", to: Routes.pt_angio_avp_path(@conn, :edit, @patient,
+  @info_coronary, @av_plasty), class: "button is-link"%>
+</span>
+
+<span>
+  <%= link "Back To  AV Plasty List", to: Routes.pt_angio_avp_path(@conn, :index,
+  @patient, @info_coronary) , class: "button is-link"%>
+</span>
+<span>
+<%= link "Back To Cath Lab",  to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-link"   %>
+ </span>
+

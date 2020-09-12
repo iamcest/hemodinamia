@@ -1,0 +1,83 @@
+
+<h4 class="title is-4">Listing Care Episodes</h4>
+<div class="element_info">
+   <%= render AngioWeb.SharedView, "_patient_info.html", patient:
+  @patient %>
+</div>
+
+<% alias Angio.Canons, as: Query %>
+<div class="columns">
+  <div class="column is-2 menu_all">
+ <%#= render  AngioWeb.SharedView, "_menu_info_coronary.html",
+conn: @conn, patient: @patient, info_coronary: @info_coronary %>
+<%= render  AngioWeb.SharedView, "_menu_info_coronary.html", assigns %>
+
+  </div><!----column-------------------->
+<div class="column is-10 frame_1">
+
+
+<table
+  class="table is-bordered
+                    is-striped
+                    is-full-width
+                    is-hoverable"
+>
+  <thead class="thead">
+    <tr>
+      <th>Phone home</th>
+      <th>Phone mobile</th>
+      <th>E-mail</th>
+      <th>Show </th>
+      <th>Edit</th>
+      <th> Delete </th>
+
+    </tr>
+  </thead>
+  <tbody>
+<%= for care_episode <- @care_episodes do %>
+    <tr>
+      <td><%= care_episode.caepsds_phone_home %></td>
+      <td><%= care_episode.caepsds_phone_mobile %></td>
+      <td><%= care_episode.caepsds_telecom %></td>
+
+      <td>
+   <%= link "Show", to: Routes.pt_angio_episode_path(@conn, :show, @patient, @info_coronary, care_episode), class: "button is-link is-small" %>
+      </td>
+      <td>
+ <%= link "Edit", to: Routes.pt_angio_episode_path(@conn, :edit, @patient, @info_coronary, care_episode), class: "button is-link is-small" %>
+      </td>
+      <td>
+  <%= link "Delete", to: Routes.pt_angio_episode_path(@conn, :delete,
+        @patient, @info_coronary, care_episode), method: :delete, data: [confirm: "Are you sure?"], class: "button is-small is-danger" %>
+
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+</div><!-------column-------------------->
+</div><!-----columns------------------->
+
+<span>
+
+  <%= link "Insert - Add A New Episode ",
+    to: Routes.pt_angio_episode_path(@conn, :new,
+  @patient, @info_coronary), class: "button is-info is-large is-fullwidth" %>
+</span>
+<span>
+  <%= link "To Patient List",
+   to: Routes.pt_path(@conn, :index), class: "button
+  is-link is-medium" %>
+</span>
+
+<span>
+<%= link "To Lab ",  to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-link is-medium"   %>
+ </span>
+
+
+
+
+
+

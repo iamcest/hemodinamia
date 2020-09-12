@@ -1,0 +1,110 @@
+<div class="title_form">
+<h5 class="title is-5 has-text-centered">Show Infections Record</h5>
+</div>
+
+<div class="element_info">
+
+    <%= render  AngioWeb.SharedView, "_patient_info.html", patient: @patient %>
+</div>
+
+<div class="element_info_coronary">
+Angio : <%= render AngioWeb.SharedView, "_info_coronary.html", info_coronary:
+   @info_coronary%>
+</div>
+
+<div class="content frame_1 ">
+  <ol type="1">
+
+
+  <li>
+    <strong>Infh endocarditis yn:</strong>
+    <%= @infect_history.infh_endocarditis_yn %>
+  </li>
+
+  <li>
+    <strong>Infh endocarditis type:</strong>
+    <%= @infect_history.infh_endocarditis_type %>
+  </li>
+
+  <li>
+    <strong>Infh hepatitis b yn:</strong>
+    <%= @infect_history.infh_hepatitis_b_yn %>
+  </li>
+
+  <li>
+    <strong>Infh hepatitis c yn:</strong>
+    <%= @infect_history.infh_hepatitis_c_yn %>
+  </li>
+
+  <li>
+    <strong>Infh hiv yn:</strong>
+    <%= @infect_history.infh_hiv_yn %>
+  </li>
+
+  <li>
+    <strong>Infh malaria yn:</strong>
+    <%= @infect_history.infh_malaria_yn %>
+  </li>
+
+  <li>
+    <strong>Infh tubercolosis yn:</strong>
+    <%= @infect_history.infh_tubercolosis_yn %>
+  </li>
+
+  <li>
+    <strong>Infh pneumonia yn:</strong>
+    <%= @infect_history.infh_pneumonia_yn %>
+  </li>
+
+  <li>
+    <strong>Infh influenza vacc dt:</strong>
+    <%= @infect_history.infh_influenza_vacc_dt %>
+  </li>
+
+  <li>
+    <strong>Infh pneumococcal vacc dt:</strong>
+    <%= @infect_history.infh_pneumococcal_vacc_dt %>
+  </li>
+
+  <li>
+    <strong>Infh influenza vacc yn:</strong>
+    <%= @infect_history.infh_influenza_vacc_yn %>
+  </li>
+
+
+  <li>
+    <strong>Infh pneumococcal vacc yn:</strong>
+    <%= @infect_history.infh_pneumococcal_vacc_yn %>
+  </li>
+
+  <li>
+    <strong>Infh histories notes:</strong>
+    <%= @infect_history.infh_histories_notes %>
+  </li>
+
+</ol>
+</div><!----------frame--------------->
+
+<div class = "columns">
+<div class="column content frame_1">
+<h4 class="title is-4 has-text-centered" >Showing Infections History  Report In English</h4>
+  <%= raw Angio.Canons.Report.make_infect_history(@info_coronary.id, "en") %>
+</div>
+
+</div><!-------column--------------------->
+</div><!---------columns------------------>
+<p class ="buttons_separator"> . </p>
+<span>
+    <%= link "Edit Infections", to: Routes.pt_angio_infh_path(@conn, :edit, @patient,
+  @info_coronary, @infect_history), class: "button is-link"%>
+</span>
+
+<span>
+  <%= link "Back To Infections Index", to: Routes.pt_angio_infh_path(@conn, :index,
+  @patient, @info_coronary) , class: "button is-link"%>
+</span>
+<span>
+
+<%= link "Back To Cath Lab",  to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-link"   %>
+ </span>

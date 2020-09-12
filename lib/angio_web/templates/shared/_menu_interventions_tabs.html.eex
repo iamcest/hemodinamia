@@ -1,0 +1,60 @@
+
+<% alias Angio.Interventions %>
+
+<span class="button  is-info is-fullwidth ">
+  Interventions
+ </span>
+<div class="menu_info_coronary_tabs">
+  <div class="tabs is-small is-centered">
+    <ul>
+<li>
+<% count_closures  =  Interventions.count_asd_closures(@info_coronary.id) %>
+<%= link to: Routes.pt_angio_asdcl_path(@conn, :index, @patient, @info_coronary),
+        class: "button is-link  is-small is-fullwidth", title: "ASD Closure" do %>
+        <%= render  AngioWeb.SharedView, "_info_menu_count.html",
+                 prompt: "ASD Closure",
+                 count: count_closures %>
+        <% end %>
+
+
+</li>
+
+      <li>
+<% count_coarc  =  Interventions.count_coarc_procedures(@info_coronary.id) %>
+<%= link to: Routes.pt_angio_coarc_path(@conn, :index, @patient, @info_coronary),
+        class: "button is-link  is-small is-fullwidth", title: "Coarctation Procedure" do %>
+        <%= render  AngioWeb.SharedView, "_info_menu_count.html",
+                 prompt: "Coarc Proc",
+                 count: count_coarc %>
+        <% end %>
+      <!--------------start li------------------->
+       <li>
+      <% count_plasties  =  Interventions.count_av_plasties(@info_coronary.id) %>
+<%= link to: Routes.pt_angio_avp_path(@conn, :index, @patient, @info_coronary),
+        class: "button is-link  is-small is-fullwidth", title: "AV-Plasties" do %>
+        <%= render  AngioWeb.SharedView, "_info_menu_count.html",
+                 prompt: "AV-Plasty",
+                 count: count_plasties %>
+        <% end %>
+
+      </li>
+      <!-------------end li---------------- ------->
+ <!--------------start li------------------->
+       <li>
+      <% count_pci_procedures  =  Interventions.count_pci_procedures(@info_coronary.id) %>
+<%= link to: Routes.pt_angio_pci_proc_path(@conn, :index, @patient, @info_coronary),
+        class: "button is-link  is-small is-fullwidth", title: "AV-Plasties" do %>
+        <%= render  AngioWeb.SharedView, "_info_menu_count.html",
+                 prompt: "PCI-Procedures",
+                 count: count_pci_procedures %>
+        <% end %>
+
+      </li>
+      <!-------------end li---------------- ------->
+
+
+      <!------------------------------------>
+     </ul>
+
+</div><!-------------------------------->
+</div><!--------------------------------->

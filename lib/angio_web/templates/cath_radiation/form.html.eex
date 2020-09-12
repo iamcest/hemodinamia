@@ -1,0 +1,191 @@
+<% alias Angio.Canons, as: Query %>
+
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+   <div class="notification is-danger">
+    <button class="delete"></button>
+    Oops, something went wrong! Please check the errors below or Dublicate Record
+</div>
+  <% end %>
+    <div class="columns">
+    <div class="column frame_1">
+
+
+      <!------start---------------------->
+      <div class="columns">
+        <div class="column">
+
+<!-----------------sart field------------->
+        <div class="field">
+          <label class="label">Fluoro Time (min) </label>
+          <div class="control">
+           <span class="field_help"></span>
+            <%= text_input f,
+              :car_fluoro_time,
+               class: "input", type: "text",
+                placeholder: "car_fluoro_time",
+              required: false %>
+              <%= error_tag f, :car_fluoro_time %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+        <!----------end field--------------------------->
+
+        </div><!----column 1------------->
+
+ <div class="column">
+<!------------------------------>
+        <div class="field">
+          <label class="label">Dose Area Product </label>
+          <div class="control">
+           <span class="field_help"></span>
+            <%= text_input f,
+              :car_dose_area_product,
+               class: "input", type: "text",
+                placeholder: "car_dose_area_product",
+              required: false %>
+              <%= error_tag f, :car_dose_area_product %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+   <!------------------------------------->
+
+        </div><!----column 2------------->
+
+     </div><!-----columns------------>
+     <!-------end start------------------------>
+
+ <!------start---------------------->
+      <div class="columns">
+        <div class="column">
+
+          <% s_car_area_product_units =
+             Query.select_options("car_area_product_units") %>
+
+          <% #i_car_area_product_units =
+raw  Query.search_in_instructions("car_area_product_units")%>
+
+        <div class="field">
+          <label class="label">Units  </label>
+          <div class="control">
+            <div class="select is-primary">
+            <span class="field_help"></span>
+              <%= select(f, :car_area_product_units,
+                     s_car_area_product_units,
+prompt: "---Select---",
+class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help is-danger">
+              <%#= i_car_area_product_units%>
+            </p>
+          </div>
+          <!--control---->
+        </div>
+        <!---field--->
+
+
+        </div><!----column 1------------->
+
+ <div class="column">
+ 
+  <% s_car_dose_area_meas_method =
+             Query.select_options("car_dose_area_meas_method") %>
+
+          <%# i_car_dose_area_meas_method =
+raw  Query.search_in_instructions("car_dose_area_meas_method")%>
+
+        <div class="field">
+          <label class="label">Method</label>
+          <div class="control">
+            <div class="select is-primary">
+            <span class="field_help"></span>
+              <%= select(f, :car_dose_area_meas_method,
+                     s_car_dose_area_meas_method,
+prompt: "---Select---",
+class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help">
+              <%#= i_car_dose_area_meas_method%>
+            </p>
+          </div>
+          <!--control---->
+        </div>
+        <!---field--->
+
+        </div><!----column 2------------->
+
+     </div><!-----columns------------>
+     <!-------end start------------------------>
+<!------start---------------------->
+      <div class="columns">
+        <div class="column">
+
+<!------------------------------>
+<div class="field">
+          <label class="label">Comulative kerma </label>
+          <div class="control">
+           <span class="field_help"></span>
+            <%= text_input f,
+              :car_comulative_kerma,
+               class: "input", type: "text",
+                placeholder: "car_comulative_kerma",
+              required: false %>
+              <%= error_tag f, :car_comulative_kerma  %>
+          </div>
+          <p class="help"> <%#= i_car_comulative_kerma %> </p>
+
+        </div>
+   <!------------------------------------->
+
+        </div><!----column 1------------->
+
+        <div class="column">
+        
+        </div>
+
+     </div><!-----columns------------>
+     <!-------end start------------------------>
+     </div><!--------colmn LEFT------------->
+
+    <div class="column frame_1"><!-----start rigth Column----------->
+
+
+  <span class="button is-danger  is-fullwidth ">
+<i class="fa fa-sticky-note">
+My Notes
+</i>
+</span>
+      <!------start---------------------->
+      <div class="columns">
+        <div class="column">
+
+              <div class="field">
+  <label class="label"> My Notes </label>
+  <div class="control">
+    <%= text_input f, :car_notes,
+        class: "textarea",
+        type: "input", placeholder: "car_notes"  %>
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+        </div><!----column 1------------->
+
+     </div><!-----columns------------>
+     <!-------end start------------------------>
+
+ 
+ <%= render  AngioWeb.SharedView, "_help_area.html" %>
+
+      </div><!----end Right Column------>
+    </div><!------end Columns------------------------>
+  <div>
+    <%= submit "Save and Continue", class: "button is-info is-large is-fullwidth " %>
+
+  </div>
+
+<% end %>

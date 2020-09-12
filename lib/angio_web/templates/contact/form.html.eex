@@ -1,0 +1,306 @@
+
+<% alias Angio.Canons, as: Query %>
+
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+  <div class="notification is-danger">
+    <button class="delete"></button>
+    Oops, something went wrong! Please check the errors below or Dublicate Record
+</div>
+
+  <% end %>
+<div class="columns">
+
+<div class="column frame_1">
+  
+ 
+  <div class = "columns">
+<div class = "column">
+
+<!--------start---------------------->
+        <div class="field">
+          <label class="label">Contact Last Name </label>
+          <div class="control">
+           <span class="field_help"></span>
+            <%= text_input f,
+              :pacntcts_lname,
+               class: "input", type: "text",
+                placeholder: "pacntcts_lname",
+              required: false %>
+              <%= error_tag f, :pacntcts_lname %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+   <!----------end start--------------------------->
+
+
+</div><!----column-------------------->
+ <div class = "column">
+ <!--------start---------------------->
+        <div class="field">
+          <label class="label">Contact First Name </label>
+          <div class="control">
+           <span class="field_help"></span>
+            <%= text_input f,
+              :pacntcts_fname,
+               class: "input", type: "text",
+                placeholder: "pacntcts_fname",
+              required: false %>
+              <%= error_tag f, :pacntcts_fname %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+   <!----------end start--------------------------->
+ </div><!----column-------------------->
+
+
+<div class = "column">
+ <!--------start---------------------->
+        <div class="field">
+          <label class="label">Mid Name </label>
+          <div class="control">
+           <span class="field_help"></span>
+            <%= text_input f,
+              :pacntcts_mname,
+               class: "input", type: "text",
+                placeholder: "pacntcts_mname",
+              required: false %>
+              <%= error_tag f, :pacntcts_mname %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+   <!----------end start--------------------------->
+ </div><!----column-------------------->
+
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+  
+  
+   <!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!--------start---------------------->
+        <div class="field">
+          <label class="label">SSN </label>
+          <div class="control">
+           <span class="field_help"></span>
+            <%= text_input f,
+              :pacntcts_ssn,
+               class: "input", type: "text",
+                placeholder: ":pacntcts_ssn",
+              required: false %>
+              <%= error_tag f, :pacntcts_ssn %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+   <!----------end start--------------------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+
+
+
+
+
+<!--------start---------------------->
+        <div class="field">
+          <label class="label">Address</label>
+          <div class="control">
+           <span class="field_help"></span>
+            <%= text_input f,
+              :pacntcts_address,
+               class: "input", type: "text",
+                placeholder: "pacntcts_address",
+              required: false %>
+              <%= error_tag f, :pacntcts_address %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+   <!----------end start--------------------------->
+
+ </div><!----column-------------------->
+
+<div class = "column">
+
+<!--------start---------------------->
+        <div class="field">
+          <label class="label">E-mail</label>
+          <div class="control">
+           <span class="field_help"></span>
+            <%= text_input f,
+              :pacntcts_telecom,
+               class: "input", type: "text",
+                placeholder: "pacntcts_telecom",
+              required: false %>
+              <%= error_tag f, :pacntcts_telecom %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+   <!----------end start--------------------------->
+
+ </div><!----column-------------------->
+
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+ 
+
+ 
+
+     <!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+   <% s_pacntcts_relationship =
+            Query.select_options("pacntcts_relationship") %>
+
+          <% #i_car_area_product_units =raw  Query.search_in_instructions("car_area_product_units")%>
+
+        <div class="field">
+          <label class="label">Relationship  </label>
+          <div class="control">
+            <div class="select is-primary">
+            <span class="field_help"></span>
+              <%= select(f, :pacntcts_relationship,
+                     s_pacntcts_relationship,
+prompt: "---Select---",
+class: "form-control") %>
+            </div>
+            <!--select---->
+            <p class="help is-danger">
+              <%#= i_car_area_product_units%>
+            </p>
+          </div>
+          <!--control---->
+        </div>
+        <!---field--->
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+
+
+<!--------start---------------------->
+        <div class="field">
+          <label class="label">Organization</label>
+          <div class="control">
+           <span class="field_help"></span>
+            <%= text_input f,
+              :pacntcts_organization,
+               class: "input", type: "text",
+                placeholder: "pacntcts_organization",
+              required: false %>
+              <%= error_tag f, :pacntcts_organization %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+   <!----------end start--------------------------->
+
+ </div><!----column-------------------->
+
+
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+  
+
+ 
+</div><!-------column----------------->
+
+<div class="column frame_1">
+  <!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<div class="field">
+          <label class="label">Date Start </label>
+          <div class="control">
+          <span class="field_help"></span>
+            <%= text_input f, :pacntcts_period_start, class: "input", type: "date",
+            placeholder: "pacntcts_period_start", required: false %> <%= error_tag f,
+            :pacntcts_period_start %>
+          </div>
+          <p class="help"></p>
+        </div>
+        <!--field---->
+
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+
+<div class="field">
+          <label class="label">Date End </label>
+          <div class="control">
+          <span class="field_help"></span>
+            <%= text_input f, :pacntcts_period_end, class: "input", type: "date",
+            placeholder: "pacntcts_period_end", required: false %> <%= error_tag f,
+            :pacntcts_period_end %>
+          </div>
+          <p class="help"></p>
+        </div>
+        <!--field---->
+
+
+
+
+ </div><!----column-------------------->
+
+
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+ 
+  
+  
+
+  <%#= error_tag f, :pacntcts_period %>
+   <!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<div class="field">
+          <label class="label">My Notes </label>
+          <div class="control">
+            <%= text_input f, :pacntcts_notes, class: "textarea", type: "input",
+            placeholder: "pacntcts_notes" %> <%= error_tag f, :pacntcts_note %>
+
+            <p class="help"></p>
+          </div>
+          <!---control---------->
+        </div>
+        <!-------field-------->
+
+
+</div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+  
+
+   <%= render  AngioWeb.SharedView, "_help_area.html" %>
+</div><!-------column---------------------------->
+</div><!-----------columns--------------->
+
+ <div>
+    <%= submit "Save and Continue", class: "button is-info is-large is-fullwidth " %>
+
+  </div>
+<% end %>

@@ -1,0 +1,139 @@
+<div class="title_form">
+<h5 class="title is-5 has-text-centered">Show Congenital Risk Factors</h5>
+</div>
+
+<div class="element_info">
+
+    <%= render  AngioWeb.SharedView, "_patient_info.html", patient: @patient %>
+</div>
+
+<div class="element_info_coronary">
+Angio : <%= render AngioWeb.SharedView, "_info_coronary.html", info_coronary:
+   @info_coronary%>
+</div>
+
+<div class="content frame_1">
+  <ol type="1">
+
+
+  <li>
+    <strong>Chd cardiomyopathy yn:</strong>
+    <%= @chd_risk_factor.chd_cardiomyopathy_yn %>
+  </li>
+
+  <li>
+    <strong>Chd cardiomyopathy history:</strong>
+    <%= @chd_risk_factor.chd_cardiomyopathy_history %>
+  </li>
+
+  <li>
+    <strong>Chd chronic lung disease yn:</strong>
+    <%= @chd_risk_factor.chd_chronic_lung_disease_yn %>
+  </li>
+
+  <li>
+    <strong>Chd coagulation disorder yn:</strong>
+    <%= @chd_risk_factor.chd_coagulation_disorder_yn %>
+  </li>
+
+  <li>
+    <strong>Chd hyper coagulable state yn:</strong>
+    <%= @chd_risk_factor.chd_hyper_coagulable_state_yn %>
+  </li>
+
+  <li>
+    <strong>Chd hypo coagulable state yn:</strong>
+    <%= @chd_risk_factor.chd_hypo_coagulable_state_yn %>
+  </li>
+
+  <li>
+    <strong>Chd diabetes yn:</strong>
+    <%= @chd_risk_factor.chd_diabetes_yn %>
+  </li>
+
+  <li>
+    <strong>Chd endocarditis yn:</strong>
+    <%= @chd_risk_factor.chd_endocarditis_yn %>
+  </li>
+
+  <li>
+    <strong>Chd hf 1 month yn:</strong>
+    <%= @chd_risk_factor.chd_hf_1_month_yn %>
+  </li>
+
+  <li>
+    <strong>Chd nyha:</strong>
+    <%= @chd_risk_factor.chd_nyha %>
+  </li>
+
+  <li>
+    <strong>Chd heart transplant yn:</strong>
+    <%= @chd_risk_factor.chd_heart_transplant_yn %>
+  </li>
+
+  <li>
+    <strong>Chd hepatic disease yn:</strong>
+    <%= @chd_risk_factor.chd_hepatic_disease_yn %>
+  </li>
+
+  <li>
+    <strong>Chd ischemic heart disease yn:</strong>
+    <%= @chd_risk_factor.chd_ischemic_heart_disease_yn %>
+  </li>
+
+  <li>
+    <strong>Chd kawasaki yn:</strong>
+    <%= @chd_risk_factor.chd_kawasaki_yn %>
+  </li>
+
+  <li>
+    <strong>Chd renal insufficiency yn:</strong>
+    <%= @chd_risk_factor.chd_renal_insufficiency_yn %>
+  </li>
+
+  <li>
+    <strong>Chd rheumatic heart disease yn:</strong>
+    <%= @chd_risk_factor.chd_rheumatic_heart_disease_yn %>
+  </li>
+
+  <li>
+    <strong>Chd seizure disorder yn:</strong>
+    <%= @chd_risk_factor.chd_seizure_disorder_yn %>
+  </li>
+
+  <li>
+    <strong>Chd sickle cell anemia yn:</strong>
+    <%= @chd_risk_factor.chd_sickle_cell_anemia_yn %>
+  </li>
+
+  <li>
+    <strong>Chd stroke prior yn:</strong>
+    <%= @chd_risk_factor.chd_stroke_prior_yn %>
+  </li>
+
+  <li>
+    <strong>Chd arrhythmia history:</strong>
+    <%= @chd_risk_factor.chd_arrhythmia_history %>
+  </li>
+
+  <li>
+    <strong>Chd risk factors notes:</strong>
+    <%= @chd_risk_factor.chd_risk_factors_notes %>
+  </li>
+
+</ol>
+</div>
+<p class ="buttons_separator"> . </p>
+<span>
+    <%= link "Edit Congenital Risk", to: Routes.pt_angio_chd_risk_path(@conn, :edit, @patient,
+  @info_coronary, @chd_risk_factor), class: "button is-link"%>
+</span>
+
+<span>
+  <%= link "Back To CHD Risk Factors Index", to: Routes.pt_angio_chd_risk_path(@conn, :index,
+  @patient, @info_coronary) , class: "button is-link"%>
+</span>
+<span>
+<%= link "Back To Cath Lab",  to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-link"   %>
+ </span>

@@ -1,0 +1,32 @@
+<div class="title_form">
+<h5 class="title is-5 has-text-centered"> Procedure Details Form</h5>
+</div>
+
+<div class="element_info">
+
+    <%= render  AngioWeb.SharedView, "_patient_info.html", patient: @patient %>
+</div>
+
+<div class="element_info_coronary">
+<%= render AngioWeb.SharedView, "_info_coronary.html", info_coronary:
+   @info_coronary%>
+</div>
+
+ <%= render "form.html", changeset: @changeset,
+        info_coronary: @info_coronary,
+action: Routes.pt_angio_proc_episode_path(@conn, :update, @patient, @info_coronary,
+@proc_episode  ) %>
+
+<p class ="buttons_separator"> . </p>
+        <span>
+          <%= link "Back To Procedure Episode  List",
+          to: Routes.pt_angio_proc_episode_path(@conn, :index, @patient,
+                         @info_coronary) , class: "button is-link"%>
+</span>
+<span>
+<%= link "To Cath Lab",   to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-link "   %>
+ </span>
+
+
+

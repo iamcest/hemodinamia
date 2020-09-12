@@ -1,0 +1,17 @@
+<!-- -HELP AREA -->
+<span class="button is-success  is-fullwidth ">
+<i class="fa fa-sticky-note">
+   Fields Info
+</i>
+</span>
+
+<div class="notification">
+<div class="columns">
+  <div class="column frame_2">
+        <div class="info_area"></div>
+  </div>
+  <!-----column------------>
+</div>
+</div>
+
+<!-- -END HELP AREA -->

@@ -1,0 +1,21 @@
+01/01/2008,,1,"P","Anticoagulants","Fondaparinux",10,10
+01/01/2008,,2,"P","Anticoagulants","Low Molecular Weight Heparin (any)",10,20
+01/01/2008,,3,"P","Anticoagulants","Unfractionated Heparin (any)",10,30
+01/01/2008,,4,"P","Aspirin","Aspirin (any)",20,10
+01/01/2008,,5,"P","Direct Thrombin Inhibitors","Bivalirudin",30,10
+01/01/2008,,6,"P","Direct Thrombin Inhibitors","Direct Thrombin Inhibitor (other)",30,20
+01/01/2008,,7,"P","Glycoprotein IIb/IIIa Inhibitors","GP IIb/IIIa (any)",40,10
+01/01/2008,,8,"P","Thienopyridines","Clopidogrel",50,10
+01/01/2008,,9,"P","Thienopyridines","Ticlopidine",50,20
+01/01/2008,,10,"D","ACE Inhibitors","ACE Inhibitor (any)",10,10
+01/01/2008,,11,"D","ARBs","ARB (any)",20,10
+01/01/2008,,12,"D","Aspirin","Aspirin (any)",30,10
+01/01/2008,,13,"D","Beta Blockers","Beta Blocker (any)",40,10
+01/01/2008,,14,"D","Lipid Lowering Agents","Statin (any)",50,10
+01/01/2008,,15,"D","Lipid Lowering Agents","Non-Statin (any)",50,20
+01/01/2008,,16,"D","Thienopyridines","Clopidogrel",60,10
+01/01/2008,,17,"D","Thienopyridines","Ticlopidine",60,20
+10/01/2009,,18,"P","Thienopyridines","Prasugrel",50,30
+10/01/2009,,19,"D","Thienopyridines","Prasugrel",60,30
+10/01/2011,,20,"P","Thienopyridines","Ticagrelor",50,40
+10/01/2011,,21,"D","Thienopyridines","Ticagrelor",60,40

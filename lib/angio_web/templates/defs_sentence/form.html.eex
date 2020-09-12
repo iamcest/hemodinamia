@@ -1,0 +1,66 @@
+
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+  <div class="notification is-danger">
+    <button class="delete"></button>
+    Oops, something went wrong! Please check the errors below or Dublicate Record
+</div>
+  <% end %>
+
+
+  <div class="columns">
+  <div class="column frame_1">
+    <%= if assigns[:languages] do %>
+<div class="field">
+  <label class="label">Language of Sentence</label>
+  <div class="control">
+          <%=  select(f, :language, @languages,
+         prompt: "----Select----",
+         class: "form-control hollow button secondary dropdown f-dropdown"  ) %>
+<%= error_tag f, :language %>
+  </div>
+
+<% end %>
+ </div>
+  </div><!--column--->
+
+ <div class="column frame_1">
+  <div class="field">
+  <label class="label">Sentence </label>
+  <div class="control">
+    <%= text_input f, :sentence,
+        class: "textarea",
+        type: "input", placeholder: "Type A Senctence"  %>
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+
+  </div><!--column------>
+
+</div><!---columns---------------------------->
+<span class="button is-success  is-fullwidth ">
+    My  Notes
+        </span>
+<div class ="columns frame_1">
+ <div class ="column">
+<div class="field">
+  <label class="label">Notes </label>
+  <div class="control">
+    <%= text_input f, :note,
+        class: "textarea",
+        type: "input", placeholder: "note"  %>
+  <p class="help"></p>
+ <%= error_tag f, :note %>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+   </div><!--column--->
+
+ </div><!--columns------>
+
+ <div>
+    <%= submit "Save and Continue", class: "button is-info is-large is-fullwidth " %>
+
+  </div>
+<% end %>

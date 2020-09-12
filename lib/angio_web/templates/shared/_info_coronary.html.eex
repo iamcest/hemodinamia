@@ -1,0 +1,14 @@
+ Procedure Date:   <%= @info_coronary.info_cor_date %>
+
+
+<span>
+<i class="fa fa-hand-o-right "></i>
+</span>
+ <span>
+   Lab Number: <%= @info_coronary.info_exam_num %>
+</span>
+<span>
+<i class="fa fa-hand-o-left "></i>
+</span>
+<%#  end %>
+<span>  </span>

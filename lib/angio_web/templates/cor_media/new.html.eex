@@ -1,0 +1,31 @@
+<% alias Angio.Cor_media%>
+<div class="title_form">
+<h5 class="title is-5 has-text-centered">New Form For Media File</h5>
+</div><!--------title---------------->
+<div class="element_info">
+  <%= render AngioWeb.SharedView, "_patient_info.html", patient:
+  @patient %>
+</div>
+<div class="element_info_coronary">
+<%= render AngioWeb.SharedView, "_info_coronary.html", info_coronary:
+   @info_coronary%>
+</div>
+
+<section>
+<div class="container">
+
+<%= render "form.html", changeset: @changeset, action:
+Routes.pt_angio_cor_media_path(@conn, :create, @patient, @info_coronary) %> 
+       <span>
+          <%= link "Back To Media  List", to: Routes.pt_angio_cor_media_path(@conn, :index,
+@patient,@info_coronary) , class: "button is-link "%>
+</span>
+
+<span>
+<%= link "Back To Lab",  to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-link"   %>
+ </span>
+
+</div><!-------------container--------------------->
+</section>
+

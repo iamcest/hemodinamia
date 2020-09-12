@@ -1,0 +1,56 @@
+
+<div class="element_info">
+    <h5 is-5>Show DB  - Tables</h5>
+</div>
+
+<div class="frame_1">
+<ul>
+
+  <li>
+    <strong>Cda xml:</strong>
+    <%= @defs_table.cda_xml %>
+  </li>
+
+  <li>
+    <strong>Code:</strong>
+    <%= @defs_table.code %>
+  </li>
+
+  <li>
+    <strong>Code system:</strong>
+    <%= @defs_table.code_system %>
+  </li>
+
+  <li>
+    <strong>Code system name:</strong>
+    <%= @defs_table.code_system_name %>
+  </li>
+
+  <li>
+    <strong>Display name:</strong>
+    <%= @defs_table.display_name %>
+  </li>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @defs_table.name %>
+  </li>
+
+  <li>
+    <strong>Note:</strong>
+    <%= raw @defs_table.defs_tables_notes %>
+  </li>
+
+
+
+
+  <li>
+    <strong>Template:</strong>
+    <%= @defs_table.template_id %>
+  </li>
+
+</ul>
+</div>
+
+<span><%= link "Edit DB Tables", to: Routes.defs_table_path(@conn, :edit, @defs_table), class: "button is-primary" %></span>
+<span><%= link "Back To DB Tables Index", to: Routes.defs_table_path(@conn, :index), class: "button is-primary" %></span>

@@ -1,0 +1,35 @@
+
+
+
+<div class="title_form">
+<h5 class="title is-5 has-text-centered">Editing Echo Encounter</h5>
+</div><!-----------title_form------------------->
+<div class="element_info">
+
+<%= render  AngioWeb.SharedView, "_patient_info.html", patient: @patient %>
+</div>
+
+ <%= render "form.html", changeset: @changeset,
+        cardiac_echo: @cardiac_echo,
+action: Routes.pt_echo_path(@conn, :update,
+@patient,
+@cardiac_echo ) %>
+
+<p class ="buttons_separator"> . </p>
+
+<span>
+ <%= link "Back To Echo Encounter List ",
+  to: Routes.pt_echo_path(@conn, :index,
+@patient) , class: "button is-primary "%>
+</span>
+
+<span>
+   <%= link "Back To Patient List",
+   to: Routes.pt_path(@conn,   :index), class: "button is-link" %>
+
+ </span>
+
+
+
+
+

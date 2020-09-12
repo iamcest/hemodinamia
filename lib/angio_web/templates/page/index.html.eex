@@ -1,0 +1,47 @@
+<section class="hero is-primary">
+  <div class="hero-body">
+    <div class="container">
+      <h4 class="title is-4">
+         An Information System for  Cardiology
+      </h4>
+
+      <h4 class="subtitle">
+        Based On Standard
+        <strong>
+          Definitions and Contolled Vocabularies
+        </strong>
+      </h4>
+    </div>
+  </div>
+ </section>
+
+
+<section>
+  <div class='column is-one-half has-text-centered'>
+    <div class='card equal-height'>
+      <div class='card-content'>
+<!-- Place image inside .level within your card element -->
+        <nav class="level">
+<span>
+  <i class="fa fa-home"
+    style="font-size:80px;color:#1b9e77;"></i>
+</span>
+          <div class="level-item has-text-centered">
+
+            <figure class='image is-64x64'>
+              <img src="images/roptro.png" />
+            </figure>
+
+
+
+          </div>
+          <span>
+            <i class="fa fa-home"
+              style="font-size:80px;color:#d95f02;"></i>
+</span>
+
+          <!-- And it'll be centered like so -->
+      </div>
+    </div>
+  </div>
+</section>

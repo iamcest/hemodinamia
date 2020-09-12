@@ -1,0 +1,406 @@
+<% alias Angio.Canons, as: Query %>
+
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+<div class="columns">
+<div class="column frame_1">
+
+
+ <!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!--------start---field----------------------------->
+ <div class="field">
+          <label class="label">Procedure Date  </label>
+          <div class="control">
+      <%= text_input f, :coarc_dt,
+class: "input",
+type: "date",
+placeholder: "coarc_dt",
+required: false %>
+<%= error_tag f,:coarc_dt %>
+          </div>
+          <p class="help"></p>
+        </div>
+        <!---------end ---field---->
+
+
+</div><!----column-------------------->
+
+ <div class = "column">
+<!--------start---field----------------------------->
+ <div class="field">
+          <label class="label">Procedure Start Time  </label>
+          <div class="control">
+      <%= text_input f, :coarc_tm,
+class: "input",
+type: "time",
+placeholder: "coarc_tm",
+required: false %>
+<%= error_tag f,:coarc_tm %>
+          </div>
+          <p class="help"></p>
+        </div>
+        <!---------end ---field---->
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+ <!---------start----------------------------------->
+  <div class = "columns">
+
+<div class = "column">
+
+  <!--- start field--------------------------------->
+<div class="field">
+            <label class="label field_help " >Operator Last Name </label>
+            <%= text_input f, :coarc_operator_lname , class: "input", type: "text",
+            placeholder: "coarc_operator_lname", required: false %>
+            <%= error_tag f, :coarc_operator_lname %>
+          <p class="help"></p>
+        </div>
+<!-----------end field----------------------->
+
+
+</div><!----column-------------------->
+
+
+
+
+ <div class = "column">
+<div class="field">
+            <label class="label field_help " >Operator First Name </label>
+            <%= text_input f, :coarc_operator_fname , class: "input", type: "text",
+            placeholder: "coarc_operator_fname", required: false %>
+            <%= error_tag f, :coarc_operator_fname %>
+          <p class="help"></p>
+        </div>
+<!-----------end field----------------------->
+
+
+ </div><!----column-------------------->
+
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+<div class="field">
+            <label class="label field_help " >Operator Mid Name </label>
+            <%= text_input f, :coarc_operator_mname , class: "input", type: "text",
+            placeholder: "coarc_operator_mname", required: false %>
+            <%= error_tag f, :coarc_operator_mname %>
+          <p class="help"></p>
+        </div>
+<!-----------end field----------------------->
+</div><!----column-------------------->
+ <div class = "column">
+
+
+<div class="field">
+            <label class="label field_help " >Operator NPI </label>
+            <%= text_input f, :coarc_asdcl_operator_npi, class: "input", type: "text",
+            placeholder: "coarc_asdcl_operator_npi", required: false %>
+            <%= error_tag f, :coarc_asdcl_operator_npi %>
+          <p class="help"></p>
+        </div>
+<!-----------end field----------------------->
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!----- start selection field---------------------------->
+   <%  s_coarc_primary_indication  =  Query.select_options("coarc_primary_indication") %>
+<div class="field">
+    <label class="label">Primary Indication </label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f,
+:coarc_primary_indication, s_coarc_primary_indication,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :coarc_primary_indication   %>
+            <span class="help"></span>
+
+
+          </div><!----control---->
+        </div><!------field--->
+
+ <!-------end selection field----------------------->
+
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!----- start selection field---------------------------->
+   <%  s_coarc_nature  =  Query.select_options("coarc_nature") %>
+<div class="field">
+    <label class="label"> Nature of simple discrete coarctation (One site of intervention) </label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f,
+:coarc_nature, s_coarc_nature,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :coarc_nature  %>
+            <span class="help"></span>
+
+
+          </div><!----control---->
+        </div><!------field--->
+
+ <!-------end selection field----------------------->
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+
+ <div class = "columns">
+<div class = "column">
+
+<%  s_coarc_nature_post_prior_treatment  =
+   Query.select_options("coarc_nature_post_prior_treatment") %>
+<div class="field">
+    <label class="label">Most Recent Prior Treatment </label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f,
+:coarc_nature_post_prior_treatment, s_coarc_nature_post_prior_treatment,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :coarc_nature_post_prior_treatment   %>
+            <span class="help"></span>
+
+
+          </div><!----control---->
+        </div><!------field--->
+
+ <!-------end selection field----------------------->
+
+ </div><!----column-------------------->
+
+<div class = "column">
+
+<div class="field">
+            <label class="label field_help " >Pre Proc Min Diameter(mm) </label>
+            <%= text_input f, :coarc_min_diam_pre_proc, class: "input", type: "text",
+            placeholder: "coarc_min_diam_pre", required: false %>
+            <%= error_tag f, :coarc_min_diam_pre_proc %>
+          <p class="help"></p>
+        </div>
+
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+
+ <!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<div class="field">
+            <label class="label field_help " >Pre Peak Sys Gradient </label>
+            <%= text_input f, :coarc_peak_sys_gradient_pre , class: "input", type: "text",
+            placeholder: "coarc_peak_sys_gradient_pre", required: false %>
+            <%= error_tag f, :coarc_peak_sys_gradient_pre %>
+          <p class="help"></p>
+        </div>
+
+</div><!----column-------------------->
+ <div class = "column">
+
+
+
+<div class="field">
+            <label class="label field_help " >Post Min Diameter </label>
+            <%= text_input f, :coarc_min_diam_post_proc, class: "input", type: "text",
+            placeholder: "coarc_min_diam_post_proc", required: false %>
+            <%= error_tag f, :coarc_min_diam_post_proc %>
+          <p class="help"></p>
+        </div>
+
+
+ </div><!----column-------------------->
+<div class = "column">
+
+<div class="field">
+            <label class="label field_help " >Post Peak Gradient </label>
+            <%= text_input f, :coarc_peak_sys_gradient_post, class: "input", type: "text",
+            placeholder: "coarc_peak_sys_gradient_post", required: false %>
+            <%= error_tag f, :coarc_peak_sys_gradient_post %>
+          <p class="help"></p>
+        </div>
+
+
+</div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+
+<div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label"> Coarctation with Additional Associated Aortic Obstruction</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :coarc_aortic_obstruction_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :coarc_aortic_obstruction_yn %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label"> Additional Intervention on Aortic Arch?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :coarc_arch_treated_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :coarc_arch_treated_yn %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+
+<div class = "column">
+
+<div class="field">
+            <label class="label field_help " >Pre-Procedure Total Ascending to Descending Ao Sys Gradient </label>
+            <%= text_input f, :coarc_ao_obstruction_pre_sys_gradient,
+            class: "input", type: "text",
+            placeholder: "coarc_ao_obstruction_pre_sys_gradient",
+            required: false %>
+            <%= error_tag f, :coarc_ao_obstruction_pre_sys_gradient %>
+          <p class="help"></p>
+        </div>
+
+
+</div><!----column-------------------->
+ <div class = "column">
+<div class="field">
+            <label class="label field_help " > Post-Procedure Total Ascending to Descending Aortic Systolic Gradient</label>
+            <%= text_input f, :coarc_ao_obstruction_post_sys_gradient,
+            class: "input", type: "text",
+            placeholder: "coarc_ao_obstruction_post_sys_gradient",
+            required: false %>
+            <%= error_tag f, :coarc_ao_obstruction_post_sys_gradient %>
+          <p class="help"></p>
+        </div>
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+
+
+</div><!----------LEFT COLUMN------------------------>
+
+<div class="column frame_1">
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+  <div class="field">
+  <label class="label"> My Notes On Coarctation Procedure</label>
+  <div class="control">
+    <%= text_input f, :coarc_note,
+        class: "textarea",
+        type: "input", placeholder: "coarc_note"  %>
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+</div><!----column-------------------->
+</div><!----columns--------------------------->
+
+
+ <div class = "columns">
+<div class = "column">
+ <%= render  AngioWeb.SharedView, "_help_area.html" %>
+</div><!----column-------------------->
+</div><!----columns--------------------------->
+
+</div><!-----------RIGTH COLUMN----------------->
+</div><!-------------column------------------>
+
+<div><!------------------------------------>
+    <%= submit "Save Coarctation Record", class: "button is-info  is-medium is-fullwidth " %>
+  </div>
+
+<% end %>

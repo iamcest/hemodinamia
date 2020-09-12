@@ -1,0 +1,326 @@
+<% alias Angio.Canons, as: Query %>
+
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+  <div class="notification is-danger">
+    <button class="delete"></button>
+    Oops, something went wrong! Please check the errors below or Dublicate Record
+</div>
+  <% end %>
+<div class="columns">
+  <div class="column is-7 frame_1">
+<!---------start----------------------------------->
+  <div class = "columns">
+    <div class = "column">
+
+      <!----field start-------------------------------------->
+   <% s_soh_education_level= Query.select_options("soh_education_level") %>
+<div class="field">
+  <label class="label"> Education Level</label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f, :soh_education_level,
+s_soh_education_level ,
+prompt: "---Select---",
+class: "form-control") %>
+            </div>
+            <!--select---->
+            <%= error_tag f, :soh_education_level %>
+            <p class="help"><%#= i_collat_donor_seg 0%></p>
+          </div>
+          <!--control---->
+        </div>
+        <!---field-end------------------->
+
+
+</div><!----column-------------------->
+<div class = "column">
+<!---------field------------------------->
+ <div class="field">
+   <label class="label">Life Expectancy > 1yr?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :soh_life_expect_1yr_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :soh_life_expect_1yr_yn  %>
+        </div>
+        <p class="help">Check If Yes
+        </p>
+    </div><!-----field------------------>
+
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+    <div class = "column">
+
+    <!----field start-------------------------------------->
+   <% s_soh_alcohol_depend= Query.select_options("soh_alcohol_depend") %>
+<div class="field">
+  <label class="label"> Alcohol Depended </label>
+          <div class="control">
+            <div class="select is-primary">
+              <span class="field_help"></span>
+              <%= select(f, :soh_alcohol_depend ,
+s_soh_alcohol_depend ,
+prompt: "---Select---",
+class: "form-control") %>
+            </div>
+            <!--select---->
+            <%= error_tag f, :soh_alcohol_depend  %>
+            <p class="help"><%#= i_collat_donor_seg 0%></p>
+          </div>
+          <!--control---->
+        </div>
+        <!---field-end------------------->
+
+
+
+
+</div><!----column-------------------->
+<div class = "column">
+
+ <!----field start-------------------------------------->
+   <% s_soh_alcohol_depend_amount = Query.select_options("soh_alcohol_depend_amount") %>
+<div class="field">
+  <label class="label"> Alcohol Amount </label>
+          <div class="control">
+            <div class="select is-primary">
+              <span class="field_help"></span>
+              <%= select(f, :soh_alcohol_depend_amount,
+s_soh_alcohol_depend_amount ,
+prompt: "---Select---",
+class: "form-control") %>
+            </div>
+            <!--select---->
+            <%= error_tag f, :soh_alcohol_depend_amount  %>
+            <p class="help"><%#= i_collat_donor_seg 0%></p>
+          </div>
+          <!--control---->
+        </div>
+        <!---field-end------------------->
+
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+    <div class = "column">
+
+
+      <!---------field------------------------->
+ <div class="field">
+   <label class="label">Sleep Apnea? </label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :soh_sleep_apnea_yn ,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :soh_sleep_apnea_yn %>
+        </div>
+        <p class="help">Check If Yes
+        </p>
+    </div><!-----field------------------>
+
+
+
+</div><!----column-------------------->
+ <div class = "column">
+      <!---------field------------------------->
+ <div class="field">
+   <label class="label">Sleep Apnea On CPAP? </label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :soh_sleep_apnea_on_cpap_yn  ,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :soh_sleep_apnea_on_cpap_yn  %>
+        </div>
+        <p class="help">Check If Yes
+        </p>
+    </div><!-----field------------------>
+
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+    <div class = "column">
+
+<!----field start-------------------------------------->
+   <% s_soh_marital_status = Query.select_options("soh_marital_status") %>
+<div class="field">
+  <label class="label"> Marital Status </label>
+          <div class="control">
+            <div class="select is-primary">
+              <span class="field_help"></span>
+              <%= select(f, :soh_marital_status,
+s_soh_marital_status,
+prompt: "---Select---",
+class: "form-control") %>
+            </div>
+            <!--select---->
+            <%= error_tag f, :soh_marital_status  %>
+            <p class="help"><%#= i_collat_donor_seg 0%></p>
+          </div>
+          <!--control---->
+        </div>
+        <!---field-end------------------->
+
+
+
+
+
+</div><!----column-------------------->
+<div class = "column">
+      <!---------field------------------------->
+ <div class="field">
+   <label class="label">Eractile Dysfunction? </label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :soh_erectile_dysfunc_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :soh_erectile_dysfunc_yn  %>
+        </div>
+        <p class="help">Check If Yes
+        </p>
+    </div><!-----field------------------>
+
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+<!---------start----------------------------------->
+  <div class = "columns">
+    <div class = "column">
+   <!---------field------------------------->
+ <div class="field">
+   <label class="label">Depressed Mood? </label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :soh_depressed_mood_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :soh_depressed_mood_yn  %>
+        </div>
+        <p class="help">Check If Yes
+        </p>
+    </div><!-----field------------------>
+
+
+
+
+
+</div><!----column-------------------->
+ <div class = "column">
+<!----field start-------------------------------------->
+   <% s_soh_employ_status = Query.select_options("soh_employ_status") %>
+<div class="field">
+  <label class="label"> Empolyment Status </label>
+          <div class="control">
+            <div class="select is-primary">
+              <span class="field_help"></span>
+              <%= select(f, :soh_employ_status,
+s_soh_employ_status,
+prompt: "---Select---",
+class: "form-control") %>
+            </div>
+            <!--select---->
+            <%= error_tag f, :soh_employ_status %>
+            <p class="help"><%#= i_collat_donor_seg 0%></p>
+          </div>
+          <!--control---->
+        </div>
+        <!---field-end------------------->
+
+
+
+
+ </div><!----column-------------------->
+ <div class = "column">
+
+   <!---------field------------------------->
+ <div class="field">
+   <label class="label">Illicid Drugs? </label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :soh_illicit_drug_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :soh_illicit_drug_yn  %>
+        </div>
+        <p class="help">Check If Yes
+        </p>
+    </div><!-----field------------------>
+
+
+
+
+
+ </div><!----column-------------------->
+
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+
+   </div><!--------left column----------------------->
+  <div class="column  is-5 frame_1">
+ <!--start-------------------------------->
+      <div class="columns">
+        <div class="column">
+
+  <div class="field">
+  <label class="label"> My Notes On Social History Record </label>
+  <div class="control">
+    <%= text_input f, :soh_notes,
+        class: "textarea",
+        type: "input", placeholder: "My Notes"  %>
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+<%= render  AngioWeb.SharedView, "_help_area.html" %>
+
+        </div><!---------column 1-------->
+      </div><!-----colomns---------->
+      <!----end----------------------------------->
+
+    </div>
+  </div><!--------R column----------------------->
+</div><!-------- columns----------------------->
+
+<div>
+    <%= submit "Save and Continue", class: "button is-info is-large is-fullwidth " %>
+  </div>
+
+<% end %>

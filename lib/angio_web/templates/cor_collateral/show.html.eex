@@ -1,0 +1,96 @@
+
+<div class="title_form">
+<h5 class="title is-5 has-text-centered"> Showing A  Collateral</h5>
+</div>
+
+<div class="element_info">
+   <%= render AngioWeb.SharedView, "_patient_info.html", patient:
+  @patient %>
+</div>
+
+<div class="element_info_coronary">
+<%= render AngioWeb.SharedView, "_info_coronary.html", info_coronary:
+   @info_coronary%>
+</div>
+
+
+<div class = "columns">
+<div class = "column frame_1">
+<ul>
+
+  <li>
+    <strong>Collat yn:</strong>
+    <%= @cor_collateral.collat_yn %>
+  </li>
+
+  <li>
+    <strong>Collat donor seg:</strong>
+    <%= @cor_collateral.collat_donor_seg %>
+  </li>
+
+  <li>
+    <strong>Collat recipient seg:</strong>
+    <%= @cor_collateral.collat_recipient_seg %>
+  </li>
+
+  <li>
+    <strong>Collat via seg:</strong>
+    <%= @cor_collateral.collat_via_seg %>
+  </li>
+
+  <li>
+    <strong>Collat rentrop grade:</strong>
+    <%= @cor_collateral.collat_rentrop_grade %>
+  </li>
+
+  <li>
+    <strong>Collat flow idx calc yn:</strong>
+    <%= @cor_collateral.collat_flow_idx_calc_yn %>
+  </li>
+
+  <li>
+    <strong>Collat flow idx method:</strong>
+    <%= @cor_collateral.collat_flow_idx_method %>
+  </li>
+
+  <li>
+    <strong>Collat flow idx result:</strong>
+    <%= @cor_collateral.collat_flow_idx_result %>
+  </li>
+
+  <li>
+    <strong>Collat qualitative class:</strong>
+    <%= @cor_collateral.collat_qualitative_class %>
+  </li>
+
+  <li>
+    <strong>Collat notes:</strong>
+    <%= @cor_collateral.collat_notes %>
+  </li>
+
+  <li>
+    <strong>Patient:</strong>
+    <%= @cor_collateral.patient_id %>
+  </li>
+
+  <li>
+    <strong>Info coronary:</strong>
+    <%= @cor_collateral.info_coronary_id %>
+  </li>
+</ul>
+
+</div><!-----column--------------------->
+</div><!------columns-------------------------->
+<p class ="buttons_separator"> . </p>
+<span
+  ><%= link "Edit", to: Routes.pt_angio_collateral_path(@conn, :edit, @patient,
+  @info_coronary, @cor_collateral ), class: "button is-link"%>
+</span>
+<span>
+  <%= link "Back To Collaterals List", to: Routes.pt_angio_collateral_path(@conn, :index,
+  @patient, @info_coronary) , class: "button is-link"%>
+</span>
+<span>
+<%= link "Back To Lab",  to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-link"   %>
+ </span>

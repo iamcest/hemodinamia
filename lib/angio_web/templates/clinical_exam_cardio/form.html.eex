@@ -1,0 +1,1198 @@
+<% alias Angio.Canons, as: Query %>
+
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+  <div class="notification is-danger">
+    <button class="delete"></button>
+    Oops, something went wrong! Please check the errors below
+</div>
+  <% end %>
+<div class="columns">
+
+  <div class="column frame_1">
+    
+   <span class="button is-success is-fullwidth ">
+    Exam Dates 
+   </span>
+ 
+
+<!-------start----------------------------------->
+
+  <div class = "columns">
+<div class = "column">
+  <!--------start Field ----------------------------->
+  <div class="field">
+          <label class="label">Exam Date </label>
+          <div class="control">
+          <span class='field_help'></span>
+     <%= text_input f, :cle_dt,
+        class: "input", type: "date",
+         placeholder: "vital_sgns_dt", required: false %>
+          <%= error_tag f,
+            :cle_dt %>
+          </div>
+          <p class="help">  <%#= i_proc_epis_request_dt %> </p>
+        </div>
+        <!--field---------->
+
+</div><!----column-------------------->
+<div class = "column">
+
+   <!--------start Field ----------------------------->
+  <div class="field">
+          <label class="label">Exam Time </label>
+          <div class="control">
+          <span class='field_help'></span>
+     <%= text_input f, :cle_tm,
+        class: "input", type: "time",
+         placeholder: "vital_sgns_dt", required: false %>
+          <%= error_tag f,
+            :cle_tm %>
+          </div>
+          <p class="help">  <%#= i_proc_epis_request_dt %> </p>
+        </div>
+        <!--field---------->
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!-------end start------------------------------------>
+
+<!---------start--------------------------------->
+  <div class = "columns">
+    <div class = "column">
+      <!---------field------------------------->
+ <div class="field">
+        <label class="label">Examination is Normal??</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :cle_normal_yn ,
+            type: "checkbox" %> 
+            <%= error_tag f,
+           :cle_normal_yn %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+
+</div><!----column-------------------->
+</div><!----columns--------------------------->
+<!-------end start----------------------------------->
+
+<span class="button is-info is-fullwidth ">
+   Complains - Tmp - Killip
+ </span>
+ 
+<!---------start--------------------------------->
+  <div class = "columns">
+<div class = "column">
+      <!---------field------------------------->
+ <div class="field">
+        <label class="label">Complains?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :cle_complain_yn  ,
+            type: "checkbox" %> 
+            <%= error_tag f,
+           :cle_complain_yn  %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+ 
+
+</div><!----column------------------->
+<div class = "column">
+
+  <div class = "column">
+
+   <!----- start selection field---------------------------->
+   <%  s_cle_complain_dysp =  Query.select_options("cle_complain_dysp") %>
+<div class="field">
+    <label class="label">Dyspnea </label>
+          <div class="control">
+          
+            <div class="select is-primary">
+              <%= select(f,
+:cle_complain_dysp , s_cle_complain_dysp,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :cle_complain_dysp   %>
+            <span class="help"></span>
+          
+          </div><!---select------------------>
+
+          </div><!----control---->
+        </div><!------field--->
+
+        <!-------end selection field----------------------->
+
+
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------->
+ <!---------start--------------------------------->
+  <div class = "columns">
+    <div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Chest Pain</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :cle_complain_chest_pain_yn,
+            type: "checkbox" %> 
+            <%= error_tag f,
+           :cle_complain_chest_pain_yn%>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+ 
+
+</div><!----column------------------->
+<div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Palpitations?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :cle_complain_palpitations_yn,
+            type: "checkbox" %> 
+            <%= error_tag f,
+           :cle_complain_palpitations_yn%>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+
+ </div><!----column------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------->
+ 
+ <!---------start--------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Cough ?</label>
+        <div class="control">
+          <%= checkbox f, :cle_complain_cough_yn,
+            type: "checkbox" %> 
+            <%= error_tag f,
+           :cle_complain_cough_yn %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+ 
+
+
+</div><!----column------------------->
+ <div class = "column">
+   <!-----selection field---------------------------->
+   <%  s_cle_killip_class =  Query.select_options("cle_killip_class") %>
+<div class="field">
+    <label class="label">Killip Class </label>
+          <div class="control">
+          
+            <div class="select is-primary">
+              <%= select(f,
+:cle_killip_class , s_cle_killip_class,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :cle_killip_class   %>
+            <span class="help"></span>
+          </div>
+          <!----control---->
+        </div>
+        <!------field--->
+
+
+
+ </div><!----column-------------------->
+<div class = "column">
+<!---------field--------------------->
+<div class="field">
+            <label class="label " >Temperature </label> 
+            <%= text_input f, :cle_temperature, class: "input", type: "text",
+            placeholder: "cle_temperature", required: false %> <%= error_tag f,
+            :cle_temperature %>
+          <p class="help"></p>
+        </div>
+<!----------field end------------------->
+
+
+</div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start----------------------------------->
+
+<!---------start--------------------------------->
+  <div class = "columns">
+    <div class = "column">
+
+    <div class="field">
+  <label class="label"> Notes on Complains </label>
+  <div class="control">
+    <%= text_input f, :cle_complain_notes,
+        class: "textarea",
+        type: "input", placeholder: "cle_complain_notes"  %>
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+
+      
+
+</div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start--------------------------------->
+
+<span class="button is-link  is-fullwidth ">
+<i class="fa fa-stethoscope">
+  Sounds
+</i>
+</span>
+  
+ 
+<!---------start--------------------------------->
+  <div class = "columns">
+    <div class = "column ">
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Any Abnormal Heart Sound?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :cle_heart_sounds_abnormal_yn,
+            type: "checkbox" %> 
+            <%= error_tag f,
+           :cle_heart_sounds_abnormal_yn %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+
+</div><!----column------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start----------------------------------->
+
+<!---------start--------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+    <!----- start selection field---------------------------->
+   <%  s_cle_s1_heart_sound =  Query.select_options("cle_s1_heart_sound") %>
+<div class="field">
+    <label class="label">S1 Quality </label>
+          <div class="control">
+            <div class="select is-primary">
+              <span class="field_help"></span>
+              <%= select(f,
+:cle_s1_heart_sound , s_cle_s1_heart_sound,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :cle_s1_heart_sound   %>
+            <span class="help"></span>
+          
+          </div><!----control---->
+        </div><!------field--->
+
+        <!-------end selection field----------------------->
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+    <!----- start selection field---------------------------->
+   <%  s_cle_s2_heart_sound =  Query.select_options("cle_s2_heart_sound") %>
+<div class="field">
+    <label class="label">S2 Quality </label>
+          <div class="control">
+            <div class="select is-primary">
+              <span class="field_help"></span>
+              <%= select(f,
+:cle_s2_heart_sound  , s_cle_s2_heart_sound ,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :cle_s2_heart_sound   %>
+            <span class="help"></span>
+          
+          </div><!----control---->
+        </div><!------field--->
+
+        <!-------end selection field----------------------->
+
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start----------------------------------->
+
+<!---------start--------------------------------->
+  <div class = "columns">
+<div class = "column">
+    <!---------field------------------------->
+ <div class="field">
+        <label class="label">S3 Present?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :cle_s3_heart_sound_yn,
+            type: "checkbox" %> 
+            <%= error_tag f,
+           :cle_s3_heart_sound_yn %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field----------------->
+
+
+
+
+</div><!----column-------------------->
+ <div class = "column">
+   <!---------field------------------------->
+ <div class="field">
+   <label class="label">S4 Audible ?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :cle_s4_heart_sound_yn,
+            type: "checkbox" %> 
+            <%= error_tag f,
+           :cle_s4_heart_sound_yn %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field----------------->
+
+
+ </div><!----column-------------------->
+ <div class = "column">
+  <!---------field------------------------->
+ <div class="field">
+   <label class="label">Pericardial Rub?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :cle_peri_rub_yn,
+            type: "checkbox" %> 
+            <%= error_tag f,
+           :cle_peri_rub_yn %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field----------------->
+
+
+</div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start----------------------------------->
+<!---------start--------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+  <!-----start notes field--------------------------------> 
+    <div class="field">
+  <label class="label"> Notes on Heart Sounds </label>
+  <div class="control">
+    <%= text_input f, :cle_sounds_notes,
+        class: "textarea",
+        type: "input", placeholder: "cle_sounds_notes"  %>
+  <p class="help"></p>
+
+  </div><!---control---------->
+  </div><!-----end not4es --field-------->
+
+
+</div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start--------------------------------->
+
+
+  <span class="button is-info is-fullwidth ">
+   Mitral Valve 
+ </span>
+ 
+<!---------start--------------------------------->
+  <div class = "columns">
+    <div class = "column ">
+  
+<!---------field------------------------->
+ <div class="field">
+   <label class="label">Abnormal Mitral Valve?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :cle_mv_abnormal_yn,
+            type: "checkbox" %> 
+            <%= error_tag f,
+           :cle_mv_abnormal_yn %>
+        </div>
+        <p class="help">Check if Abnormal
+        </p>
+    </div><!-----field----------------->
+
+
+</div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start----------------------------------->
+<!---------start--------------------------------->
+  <div class = "columns">
+    <div class = "column">
+  
+<!---------field------------------------->
+ <div class="field">
+   <label class="label">Systolic Mitral Valve Muurmur?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :cle_mv_sys_murmur_yn,
+            type: "checkbox" %> 
+            <%= error_tag f,
+           :cle_mv_sys_murmur_yn %>
+        </div>
+        <p class="help">Check if Murmur
+        </p>
+    </div><!-----field----------------->
+
+
+
+</div><!----column-------------------->
+ <div class = "column">
+    <!----- start selection field---------------------------->
+   <%  s_uni_sys_murmur_grade =  Query.select_options("uni_sys_murmur_grade") %>
+<div class="field">
+  <label class="label">Systolic Murmur Grade</label>
+          <div class="control">
+          
+            <div class="select is-primary">
+              <%= select(f,
+:cle_mv_sys_murmur_grade,  s_uni_sys_murmur_grade,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :cle_mv_sys_murmur_grade   %>
+            <span class="help"></span>
+          
+          </div><!----control---->
+        </div><!------field--->
+
+        <!-------end selection field----------------------->
+
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start----------------------------------->
+<!---------start--------------------------------->
+  <div class = "columns">
+    <div class = "column">
+
+  
+<!---------field------------------------->
+ <div class="field">
+   <label class="label">Diastolic Mitral Valve Murmur?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :cle_mv_dias_murmur_yn,
+            type: "checkbox" %> 
+            <%= error_tag f,
+           :cle_mv_dias_murmur_yn %>
+        </div>
+        <p class="help">Check if Diastolic Murmur
+        </p>
+    </div><!-----field----------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+
+     <!----- start selection field---------------------------->
+     <%  s_uni_dias_murmur_grade =  
+          Query.select_options("uni_dias_murmur_grade") %>
+<div class="field">
+  <label class="label">MV Diastolic  Murmur Grade</label>
+          <div class="control">
+          
+            <div class="select is-primary">
+              <%= select(f,
+:cle_mv_dias_murmur_grade,  s_uni_dias_murmur_grade,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :cle_mv_dias_murmur_grade   %>
+            <span class="help"></span>
+          
+          </div><!----control---->
+        </div><!------field--->
+
+        <!-------end selection field----------------------->
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start----------------------------------->
+
+ 
+  <!---------start----------------------------->
+  <div class = "columns">
+    <div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+   <label class="label">Opening Snap?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :cle_mv_opening_snap_yn,
+            type: "checkbox" %> 
+            <%= error_tag f,
+           :cle_mv_opening_snap_yn %>
+        </div>
+        <p class="help">
+        </p>
+    </div><!-----field----------------->
+
+
+
+</div><!----column----------------->
+<div class="column">
+  <!---------field------------------------->
+ <div class="field">
+   <label class="label">No Ejection Click  ?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :cle_no_ejection_click_yn,
+            type: "checkbox" %> 
+            <%= error_tag f,
+           :cle_no_ejection_click_yn %>
+        </div>
+        <p class="help">Check if Yes</p>
+    </div><!-----field----------------->
+
+
+</div><!-----column-------------->
+<div class = "column">
+<!---------field----------------------->
+ <div class="field">
+   <label class="label">Any Prosthetic Sound?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :cle_mv_prosthetic_sound_yn,
+            type: "checkbox" %> 
+            <%= error_tag f,
+           :cle_mv_prosthetic_sound_yn %>
+        </div>
+        <p class="help">
+        </p>
+    </div><!-----field----------------->
+
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start--------------------------------->
+<!---------start------------------------------->
+  <div class = "columns">
+<div class = "column">
+  
+ <!-----start notes field-----------------------------> 
+    <div class="field">
+  <label class="label"> Notes on Mitral Valve </label>
+  <div class="control">
+    <%= text_input f, :cle_mv_notes,
+        class: "textarea",
+        type: "input", placeholder: "cle_mv_notes"  %>
+  <p class="help"></p>
+
+  </div><!---control---------->
+  </div><!-----end notes --field-------->
+
+
+
+</div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start----------------------------------->
+
+ 
+  
+  
+ 
+    
+  
+  <span class="button is-info is-fullwidth ">
+   Aortic Valve
+ </span>
+ 
+<!---------start------------------------------->
+  <div class = "columns">
+    <div class = "column ">
+
+      <!---------field------------------------->
+ <div class="field">
+   <label class="label">Aortic Valve Abnormal?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :cle_av_abnormal_yn ,
+            type: "checkbox" %> 
+            <%= error_tag f,
+           :cle_av_abnormal_yn  %>
+        </div>
+        <p class="help">Check if Yes</p>
+    </div><!-----field----------------->
+
+
+</div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start----------------------------------->
+<!---------start--------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+      <!---------field------------------------->
+ <div class="field">
+   <label class="label">Aortic Valve Systolic Murmur?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :cle_av_sys_murmur_yn,
+            type: "checkbox" %> 
+            <%= error_tag f,
+           :cle_av_sys_murmur_yn %>
+        </div>
+        <p class="help">Check if Yes</p>
+    </div><!-----field----------------->
+
+
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+
+  <!----- start selection field---------------------------->
+     <%  s_uni_sys_murmur_grade =  
+          Query.select_options("uni_sys_murmur_grade") %>
+<div class="field">
+  <label class="label">Ao Valve Systolic  Murmur Grade</label>
+          <div class="control">
+          
+            <div class="select is-primary">
+              <%= select(f,
+:cle_av_sys_murmur_grade,  s_uni_sys_murmur_grade,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :cle_av_dias_murmur_grade   %>
+            <span class="help"></span>
+          
+          </div><!----control---->
+        </div><!------field--->
+
+        <!-------end selection field----------------------->
+
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start----------------------------------->
+<!---------start--------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+
+      <!---------field------------------------->
+ <div class="field">
+   <label class="label">Aortic Valve Diastolic Murmur?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :cle_av_dias_murmur_yn,
+            type: "checkbox" %> 
+            <%= error_tag f,
+           :cle_av_dias_murmur_yn %>
+        </div>
+        <p class="help">Check if Yes</p>
+    </div><!-----field----------------->
+
+
+
+</div><!----column-------------------->
+<div class = "column">
+
+
+     <!----- start selection field---------------------------->
+     <%  s_uni_dias_murmur_grade =  
+          Query.select_options("uni_dias_murmur_grade") %>
+<div class="field">
+  <label class="label">Ao Valve Diastolic  Murmur Grade</label>
+          <div class="control">
+          
+            <div class="select is-primary">
+              <%= select(f,
+:cle_av_dias_murmur_grade,  s_uni_dias_murmur_grade,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :cle_av_dias_murmur_grade   %>
+            <span class="help"></span>
+          
+          </div><!----control---->
+        </div><!------field--->
+
+        <!-------end selection field----------------------->
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start----------------------------------->
+
+ <!---------start--------------------------------->
+  <div class = "columns">
+    <div class = "column">
+     <!---------field------------------------->
+ <div class="field">
+   <label class="label">Aortic Valve Ejection Click?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :cle_av_ejection_click_yn,
+            type: "checkbox" %> 
+            <%= error_tag f,
+           :cle_av_ejection_click_yn %>
+        </div>
+        <p class="help">Check if Yes</p>
+    </div><!-----field----------------->
+
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+
+<!---------field------------------------->
+ <div class="field">
+   <label class="label">Aortic Valve Prosthetic Sound  ?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :cle_av_prosthetic_sound_yn,
+            type: "checkbox" %> 
+            <%= error_tag f,
+           :cle_av_prosthetic_sound_yn %>
+        </div>
+        <p class="help">Check if Yes</p>
+    </div><!-----field----------------->
+
+
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start----------------------------------->
+
+<!-------start----------------------------------->
+<!---------start--------------------------------->
+  <div class = "columns">
+    <div class = "column">
+
+      
+Aux Field 
+
+</div><!----column-------------------->
+<div class = "column">
+
+
+   <!----- start selection field---------------------------->
+     <%  s_cle_continuous_murmur =  
+          Query.select_options("cle_continuous_murmur") %>
+<div class="field">
+  <label class="label">Continous Murmur</label>
+          <div class="control">
+          
+            <div class="select is-primary">
+              <%= select(f,
+:cle_continuous_murmur,  s_cle_continuous_murmur,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :cle_continuous_murmur   %>
+            <span class="help"></span>
+          
+          </div><!----control---->
+        </div><!------field--->
+
+        <!-------end selection field----------------------->
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start----------------------------------->
+
+<!-------start----------------------------------->
+
+ 
+ 
+ <!---------start------------------------------->
+  <div class = "columns">
+    <div class = "column">
+      
+  <!-----start notes field---------------------------> 
+    <div class="field">
+  <label class="label"> Notes on Murmurs </label>
+  <div class="control">
+    <%= text_input f, :cle_murmur_notes,
+        class: "textarea",
+        type: "input", placeholder: "cle_murmur_notes"  %>
+  <p class="help"></p>
+
+  </div><!---control---------->
+  </div><!-----end notes --field-------->
+
+
+
+
+</div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start--------------------------------->
+
+  
+  
+  
+
+ </div><!--------LEFT COLUMN------------->
+ 
+ <div class="column frame_1">
+
+
+ <span class="button is-info is-fullwidth ">
+   Pulmonary  Valve 
+ </span>
+ 
+    
+<!---------start--------------------------------->
+  <div class = "columns">
+<div class = "column ">
+<!---------field------------------------->
+ <div class="field">
+   <label class="label">Pulmonary Valve Abnormal ?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :cle_pv_abnormal_yn,
+            type: "checkbox" %> 
+            <%= error_tag f,
+           :cle_pv_abnormal_yn %>
+        </div>
+        <p class="help">Check if Yes</p>
+    </div><!-----field----------------->
+
+
+
+</div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start----------------------------------->
+    
+<!---------start--------------------------------->
+  <div class = "columns">
+<div class = "column">
+<!---------field------------------------->
+ <div class="field">
+   <label class="label">Pulmonary Valve Systolic Murmur ?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :cle_pv_sys_murmur_yn ,
+            type: "checkbox" %> 
+            <%= error_tag f,
+           :cle_pv_sys_murmur_yn  %>
+        </div>
+        <p class="help">Check if Yes</p>
+    </div><!-----field----------------->
+
+
+
+</div><!----column-------------------->
+<div class = "column">
+
+
+ <!----- start selection field---------------------------->
+   <%  s_uni_sys_murmur_grade =  Query.select_options("uni_sys_murmur_grade") %>
+<div class="field">
+  <label class="label">PA Systolic Murmur Grade</label>
+          <div class="control">
+          
+            <div class="select is-primary">
+              <%= select(f,
+:cle_pv_sys_murmur_grade,  s_uni_sys_murmur_grade,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :cle_pv_sys_murmur_grade   %>
+            <span class="help"></span>
+          
+          </div><!----control---->
+        </div><!------field--->
+
+        <!-------end selection field----------------------->
+
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start----------------------------------->
+    
+<!---------start--------------------------------->
+  <div class = "columns">
+    <div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+   <label class="label">Pulmonary Valve Diastolic Murmur ?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :cle_pv_dias_murmur_yn ,
+            type: "checkbox" %> 
+            <%= error_tag f,
+           :cle_pv_dias_murmur_yn  %>
+        </div>
+        <p class="help">Check if Yes</p>
+    </div><!-----field----------------->
+
+
+
+
+</div><!----column-------------------->
+<div class = "column">
+
+ <!----- start selection field---------------------------->
+     <%  s_uni_dias_murmur_grade =  
+          Query.select_options("uni_dias_murmur_grade") %>
+<div class="field">
+  <label class="label">PA Diastolic  Murmur Grade</label>
+          <div class="control">
+          
+            <div class="select is-primary">
+              <%= select(f,
+:cle_pv_dias_murmur_grade,  s_uni_dias_murmur_grade,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :cle_pv_dias_murmur_grade   %>
+            <span class="help"></span>
+          
+          </div><!----control---->
+        </div><!------field--->
+
+        <!-------end selection field----------------------->
+
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start----------------------------------->
+<!---------start----------------------------->
+  <div class = "columns">
+<div class = "column">
+ <!-----start notes field-----------------------------> 
+    <div class="field">
+  <label class="label"> Notes on Pulmonary Valve </label>
+  <div class="control">
+    <%= text_input f, :cle_pv_notes,
+        class: "textarea",
+        type: "input", placeholder: "cle_pv_notes"  %>
+  <p class="help"></p>
+
+  </div><!---control--------->
+  </div><!-----end notes --field-------->
+
+
+</div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start----------------------------------->
+
+ 
+  
+ 
+  <span class="button is-info is-fullwidth ">
+   Tricuspid  Valve 
+ </span>
+ 
+<!---------start--------------------------------->
+  <div class = "columns ">
+    <div class = "column ">
+
+
+<!---------field------------------------->
+ <div class="field">
+   <label class="label">Tricuspid Valve Abnormal  ?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :cle_tr_abnormal_yn,
+            type: "checkbox" %> 
+            <%= error_tag f,
+           :cle_tr_abnormal_yn  %>
+        </div>
+        <p class="help">Check if Yes</p>
+    </div><!-----field----------------->
+
+
+
+
+</div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start----------------------------------->
+
+<!---------start--------------------------------->
+  <div class = "columns">
+<div class = "column">
+  
+<!---------field------------------------->
+ <div class="field">
+   <label class="label">Tricuspid  Systolic Murmur ?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :cle_tr_sys_murmur_yn ,
+            type: "checkbox" %> 
+            <%= error_tag f,
+           :cle_tr_sys_murmur_yn %>
+        </div>
+        <p class="help">Check if Yes</p>
+    </div><!-----field----------------->
+
+
+
+</div><!----column-------------------->
+<div class = "column">
+
+
+<!---------field------------------------->
+ <div class="field">
+   <label class="label">Tricuspid  Diastolic  Murmur ?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :cle_tr_dias_murmur_yn,
+            type: "checkbox" %> 
+            <%= error_tag f,
+           :cle_tr_dias_murmur_yn %>
+        </div>
+        <p class="help">Check if Yes</p>
+    </div><!-----field----------------->
+
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start----------------------------------->
+  
+ 
+
+  <div class="columns">
+        <div class="column">
+
+ <!-----start notes field-----------------------------> 
+    <div class="field">
+  <label class="label"> Notes on Tricuspid Valve </label>
+  <div class="control">
+    <%= text_input f, :cle_tr_notes ,
+        class: "textarea",
+        type: "input", placeholder: "cle_tr_notes"  %>
+  <p class="help"></p>
+
+  </div><!---control--------->
+  </div><!-----end notes --field-------->
+
+
+
+
+
+        </div><!-------column notes-------->
+
+  </div><!-----colomns------->
+ <div class="columns">
+        <div class="column">
+
+<%= render  AngioWeb.SharedView, "_help_area.html" %>
+
+</div><!-------column help-------->
+
+  </div><!-----colomns---------->
+ 
+ </div><!--------R column--------------------->
+</div><!--------- columns--------------------->
+
+<div>
+    <%= submit "Save and Continue", class: "button is-info is-large is-fullwidth " %>
+  </div>
+<% end %>

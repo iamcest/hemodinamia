@@ -1,0 +1,132 @@
+<div class="menu_info_tabs" >
+<%= render  AngioWeb.SharedView, "_menu_info_coronary_tabs.html", assigns %>
+</div>
+
+
+<div class="element_info">
+   <%= render AngioWeb.SharedView, "_patient_info.html", patient:
+  @patient %>
+</div>
+
+<div class="element_info_coronary">
+ <%= render AngioWeb.SharedView, "_info_coronary.html", info_coronary:
+   @info_coronary%>
+</div>
+
+
+<% alias Angio.Canons, as: Query %>
+
+<div class="columns">
+<div class="column is-2 menu_all">
+<%= render AngioWeb.SharedView, "_menu_all.html", info_coronary:
+   @info_coronary, conn: @conn, patient: @patient%>
+</div><!----------------------------->
+
+<div class="column is-10 frame_1">
+<div class="table-container">
+<table
+  class="table is-bordered
+                    is-striped
+                    is-full-width
+                    is-hoverable"
+>
+<div class="title_form">
+<h6 class="title is-6 has-text-centered">Grafts Index - List</h6>
+</div>
+  <thead class="thead">
+    <tr>
+    <tr>
+    <th>Graft Origin</th>
+    <th>Distal Anastomosis</th>
+      <th>Graft morphology</th>
+      <th>Graft index</th>
+      <th>Conduit Type</th>
+      <th>Show</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for cath_graft <- @cath_grafts do %>
+    <tr>
+    <td>
+   <%= cath_graft.cath_graft_prox_site %>
+    </td>
+   <td>
+      <%= cath_graft.cath_graft_segments_cdisc %>
+    </td>
+      <td>
+    <% s_morphology =  Query.select_options("graft_morphology") %>
+ <% v_morphology= cath_graft.graft_morphology   %>
+
+  <ul class="list-group">
+<%= raw(Query.convert_select_key( s_morphology , v_morphology)) %>
+</ul>
+
+      </td>
+      <td><%= cath_graft.graft_index %></td>
+
+      <td>
+ <% s_conduit =  Query.select_options("uni_graft_conduit_type") %>
+ <% v_conduit= cath_graft.cath_graft_conduit_type %>
+
+  <ul class="list-group">
+<%= raw(Query.convert_select_key( s_conduit , v_conduit)) %>
+</ul>
+
+        </td>
+
+        <td>
+
+   <%= link "Show", to: Routes.pt_angio_graft_path(@conn, :show, @patient, @info_coronary, cath_graft),
+    class: "button is-primary is-small" %>
+
+        <%#= link "Show", to: Routes.cath_graft_path(@conn, :show, cath_graft) %>
+
+
+
+      </td>
+
+      <td>
+
+ <%= link "Edit", to: Routes.pt_angio_graft_path(@conn, :edit, @patient,
+        @info_coronary, cath_graft), class: "button is-primary is-small" %>
+      </td>
+
+
+      <td>
+
+   <%= link "Delete", to: Routes.pt_angio_graft_path(@conn, :delete,
+        @patient, @info_coronary, cath_graft), method: :delete, data: [confirm:
+        "Are you sure?"], class: "button is-small is-danger" %>
+      </td>
+
+
+
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+</div><!------table container--------------------------->
+
+</div><!-------------------column---------------->
+</div><!------columns----------------->
+
+<span
+  ><%= link "Insert - Add A New Graft ", to: Routes.pt_angio_graft_path(@conn, :new,
+  @patient, @info_coronary), class: "button is-info is-medium is-fullwidth" %>
+</span>
+
+<p class ="buttons_separator"> . </p>
+
+<span>
+  <%= link "To Patient List", to: Routes.pt_path(@conn, :index), class: "button
+  is-link" %>
+
+</span>
+
+<span>
+<%= link "Back To Lab",  to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-link"   %>
+ </span>

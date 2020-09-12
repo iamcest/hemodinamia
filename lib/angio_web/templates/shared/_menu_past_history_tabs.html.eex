@@ -1,0 +1,60 @@
+<% alias Angio.Congenitals%>
+<% alias Angio.Caths%>
+<% alias Angio.Interventions %>
+<%alias Angio.Histories %>
+<span class="button  is-info is-fullwidth ">
+    Past History
+ </span>
+<div class="menu_info_coronary_tabs">
+  <div class="tabs is-small is-centered">
+    <ul>
+
+     <div class="dropdown-item">
+<% count_infect_histories  =  Histories.count_infect_histories(@info_coronary.id) %>
+<%= link to: Routes.pt_angio_infh_path(@conn, :index, @patient, @info_coronary),
+        class: "button is-link is-small is-rounded is-fullwidth", title: "Infections: HIV, Hepatatis, TB ..." do %>
+        <%= render  AngioWeb.SharedView, "_info_menu_count.html",
+                 prompt: "History of Infections",
+                 count: count_infect_histories%>
+        <% end %>
+
+      </div>
+    <div class="dropdown-item">
+<% count_core_histories  =  Histories.count_core_histories(@info_coronary.id) %>
+<%= link to: Routes.pt_angio_coreh_path(@conn, :index, @patient, @info_coronary),
+        class: "button is-link is-small is-rounded  is-fullwidth", title: "Past History: Essential" do %>
+        <%= render  AngioWeb.SharedView, "_info_menu_count.html",
+                 prompt: "Essential History",
+                 count: count_core_histories%>
+        <% end %>
+
+      </div>
+
+ <div class="dropdown-item">
+<% count_social_histories  =  Histories.count_social_histories(@info_coronary.id) %>
+<%= link to: Routes.pt_angio_socialh_path(@conn, :index, @patient, @info_coronary),
+        class: "button is-link is-small is-rounded is-fullwidth", title: "Social History" do %>
+        <%= render  AngioWeb.SharedView, "_info_menu_count.html",
+                 prompt: "Social History",
+                 count: count_social_histories%>
+        <% end %>
+
+      </div>
+
+<div class="dropdown-item">
+<% count_proc_histories  =  Histories.count_proc_histories(@info_coronary.id) %>
+<%= link to: Routes.pt_angio_proch_path(@conn, :index, @patient, @info_coronary),
+class: "button is-link  is-small is-rounded is-fullwidth", title: "Prior Procedures " do %>
+        <%= render  AngioWeb.SharedView, "_info_menu_count.html",
+                 prompt: "Prior Procedures",
+                 count: count_proc_histories%>
+        <% end %>
+
+      </div>
+
+
+      <!------------------------------------>
+     </ul>
+
+</div><!-------------------------------->
+</div><!--------------------------------->

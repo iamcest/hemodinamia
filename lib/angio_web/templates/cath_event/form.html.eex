@@ -1,0 +1,1169 @@
+<% alias Angio.Canons, as: Query %>
+
+
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+
+  <div class="notification is-danger">
+    <button class="delete"></button>
+    Oops, something went wrong! Please check the errors below or Dublicate Record
+</div>
+  <% end %>
+
+  <div class = "columns">
+
+    <div class = "column frame_1">
+
+     <!----start-------------------------------->
+<span class="button is-primary is-medium is-fullwidth ">
+      Important
+        </span>
+
+
+     <div class="columns">
+        <div class="column important_column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Any Complication ?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :cath_ev_event_yn,
+            type: "checkbox" %> <%= error_tag f,
+           :cath_ev_event_yn  %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+        </div><!-----column 1-------->
+
+      </div><!-----colomns---------->
+    <!----end START----------------------------------->
+
+    <!--start-------------------------------->
+  <span class="button is-danger is-medium is-fullwidth ">
+      Death
+        </span>
+
+    <div class="columns">
+        <div class="column">
+
+
+           <div class="field">
+        <label class="label">Patient Expired ?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :cath_ev_expired_yn,
+            type: "checkbox" %> <%= error_tag f,
+           :cath_ev_expired_yn  %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+        </div><!---------column 1-------->
+<div class="column">
+
+
+           <div class="field">
+        <label class="label">Death During Procedure ?</label>
+        <div class="control">
+        <span class = "field_help" ></span>
+          <%= checkbox f, :cath_ev_death_at_proc_yn,
+type: "checkbox" %>
+<%= error_tag f,
+           :cath_ev_death_at_proc_yn  %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+
+
+        </div><!---------column 1-------->
+      </div><!-----colomns---------->
+    <!----end START----------------------------------->
+    <span class="button is-primary is-medium is-fullwidth ">
+        Infarction
+        </span>
+
+
+ <!--start-------------------------------->
+      <div class="columns ">
+        <div class="column">
+  <div class="field">
+        <label class="label">New Infarction ?</label>
+        <div class="control">
+        <span class = "field_help" ></span>
+          <%= checkbox f, :cath_ev_infarction_yn,
+type: "checkbox" %>
+<%= error_tag f,
+           :cath_ev_infarction_yn  %>
+        </div>
+    </div><!-----field------------------>
+
+        </div><!---------column 1-------->
+        <div class="column">
+
+          <% s_res_term_infarction_type=
+          Query.select_options("res_term_infarction_type") %>
+          <% i_res_term_infarction_type =
+raw Query.search_in_instructions("res_term_infarction_type")%>
+<div class="field">
+  <label class="label">Infarction Type </label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class = "field_help" ></span>
+              <%= select(f, :res_term_infarction_type,
+              s_res_term_infarction_type , prompt: "--Select--",  class: "form-control")
+              %>
+            </div>
+            <!--select---->
+            <%= error_tag f, :res_term_infarction_type  %>
+            <span class="help"><%=  i_res_term_infarction_type %> </span>
+          </div>
+          <!--control---->
+        </div>
+        <!---field--->
+
+          </div><!---------column 1-------->
+
+          <div class="column">
+ <div class="field">
+        <label class="label">Prior MI?</label>
+        <div class="control">
+          <%= checkbox f, :cath_ev_prior_mi_yn,
+type: "checkbox" %>
+<%= error_tag f,
+           :cath_ev_prior_mi_yn   %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+</div><!---------column 1-------->
+
+      </div><!-----colomns---------->
+    <!----end START----------------------------------->
+
+<span class="button is-primary is-medium is-fullwidth ">
+      Shock
+        </span>
+
+
+ <!--start-------------------------------->
+      <div class="columns ">
+        <div class="column">
+
+  <div class="field">
+        <label class="label">Shock? Cath Induced?</label>
+        <div class="control">
+         <span class = "field_help" ></span>
+          <%= checkbox f, :cath_ev_shock_cath_induced_yn,
+type: "checkbox" %>
+<%= error_tag f,
+           :cath_ev_shock_cath_induced_yn   %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+
+        </div><!---------column 1-------->
+<div class="column">
+ <div class="field">
+        <label class="label">Shocked At Start of  Angio?</label>
+        <div class="control">
+          <%= checkbox f, :cath_ev_shock_start_yn ,
+type: "checkbox" %>
+<%= error_tag f,
+           :cath_ev_shock_start_yn   %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+
+        </div><!---------column 1-------->
+        <div class="column">
+
+
+ <div class="field">
+        <label class="label">Shock After Angio?</label>
+        <div class="control">
+        <span class = "field_help" ></span>
+          <%= checkbox f, :cath_ev_shock_new_post_yn,
+type: "checkbox" %>
+<%= error_tag f,
+           :cath_ev_shock_new_post_yn%>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+        </div><!---------column 1-------->
+      </div><!-----colomns---------->
+      <!----end START----------------------------------->
+<span class="button is-primary is-medium is-fullwidth ">
+      Perforation
+        </span>
+
+ <!--start-------------------------------->
+      <div class="columns">
+       <div class="column">
+ <div class="field">
+        <label class="label">Cardiac Perforation?</label>
+        <div class="control">
+          <%= checkbox f, :cath_ev_cardiac_perforation_yn,
+type: "checkbox" %>
+<%= error_tag f,
+           :cath_ev_cardiac_perforation_yn%>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+
+        </div><!---------column 1-------->
+      </div><!-----colomns---------->
+    <!----end START----------------------------------->
+
+  <!--start-------------------------------->
+      <div class="columns">
+        <div class="column">
+
+         <% s_uni_cardiac_perforation_site=
+          Query.select_options("uni_cardiac_perforation_site") %>
+          <% i_uni_cardiac_perforation_site =
+raw Query.search_in_instructions("uni_cardiac_perforation_site")%>
+<div class="field">
+  <label class="label">Perforation Site </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f, :uni_cardiac_perforation_site,
+              s_uni_cardiac_perforation_site , prompt: "--Select--",  class: "form-control")
+              %>
+            </div>
+            <!--select---->
+            <%= error_tag f, :uni_cardiac_perforation_site%>
+            <span class="help"><%=  i_uni_cardiac_perforation_site%> </span>
+          </div>
+          <!--control---->
+        </div>
+        <!---field--->
+
+
+
+        </div><!---------column 1-------->
+<div class="column">
+ <div class="field">
+        <label class="label">Tamponate?</label>
+        <div class="control">
+          <%= checkbox f, :cath_ev_tamponate_yn ,
+type: "checkbox" %>
+<%= error_tag f,
+           :cath_ev_tamponate_yn%>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+
+        </div><!---------column 1-------->
+      </div><!-----colomns---------->
+    <!----end START----------------------------------->
+
+
+ <!--start-------------------------------->
+      <div class="columns">
+        <div class="column">
+
+<div class="field">
+        <label class="label">Arterial Perforation?</label>
+        <div class="control">
+          <%= checkbox f, :cath_ev_cor_art_perforation_yn,
+type: "checkbox" %>
+<%= error_tag f,
+           :cath_ev_cor_art_perforation_yn%>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+
+        </div><!---------column 1-------->
+<div class="column">
+<div class="field">
+        <label class="label">Arterial Dissection?</label>
+        <div class="control">
+          <%= checkbox f, :cath_ev_cor_art_dissection_yn,
+type: "checkbox" %>
+<%= error_tag f,
+           :cath_ev_cor_art_dissection_yn%>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+
+
+        </div><!---------column 1-------->
+         </div><!-----colomns---------->
+
+    <!----end START----------------------------------->
+
+    <!--start-------------------------------->
+      <div class="columns">
+        <div class="column">
+
+
+<div class="field">
+        <label class="label">Coronary Thrombus?</label>
+        <div class="control">
+          <%= checkbox f, :cath_ev_cor_art_thrombus_yn,
+type: "checkbox" %>
+<%= error_tag f,
+           :cath_ev_cor_art_thrombus_yn%>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+
+
+
+        </div><!---------column 1-------->
+        <div class="column">
+<div class="field">
+        <label class="label">Coronary  Vein Dissection?</label>
+        <div class="control">
+          <%= checkbox f, :cath_ev_cor_vein_dissection_yn,
+type: "checkbox" %>
+<%= error_tag f,
+           :cath_ev_cor_vein_dissection_yn%>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+
+        </div><!---------column 1-------->
+      </div><!-----colomns---------->
+    <!----end START----------------------------------->
+<span class="button is-primary is-medium is-fullwidth ">
+      Stroke
+        </span>
+
+  <!--start-------------------------------->
+      <div class="columns">
+        <div class="column">
+<div class="field">
+        <label class="label">CVS Stroke?</label>
+        <div class="control">
+        <span class = "field_help" ></span>
+          <%= checkbox f, :cath_ev_stroke_new_yn,
+type: "checkbox" %>
+<%= error_tag f,
+           :cath_ev_stroke_new_yn%>
+        </div>
+        <p class="help">
+        </p>
+    </div><!-----field------------------>
+
+
+        </div><!---------column 1-------->
+        <div class="column">
+
+<div class="field">
+        <label class="label">CVS Hemorragic Stroke?</label>
+        <div class="control">
+        <span class = "field_help" ></span>
+          <%= checkbox f, :cath_ev_stroke_new_hemo_yn,
+type: "checkbox" %>
+<%= error_tag f,
+           :cath_ev_stroke_new_hemo_yn%>
+        </div>
+        <p class="help">
+        </p>
+    </div><!-----field------------------>
+
+
+        </div><!---------column 1-------->
+      </div><!-----colomns---------->
+    <!----end START----------------------------------->
+
+
+     <!--start-------------------------------->
+      <div class="columns">
+        <div class="column">
+
+<div class="field">
+  <label class="label">CVS Residual > 24h?</label>
+        <div class="control">
+        <span class = "field_help" ></span>
+          <%= checkbox f, :cath_ev_stroke_new_24h_yn,
+type: "checkbox" %>
+<%= error_tag f,
+           :cath_ev_stroke_new_24h_yn%>
+        </div>
+        <p class="help">
+        </p>
+    </div><!-----field------------------>
+
+
+
+        </div><!---------column 1-------->
+        <div class="column">
+
+<div class="field">
+  <label class="label">Prior Stroke?</label>
+        <div class="control has-icons-left has-icons-right">
+        <span class = "field_help" ></span>
+          <%= checkbox f, :cath_ev_stroke_prior_yn,
+type: "checkbox" %>
+<%= error_tag f,
+           :cath_ev_stroke_prior_yn%>
+        </div>
+        <p class="help">
+        </p>
+    </div><!-----field------------------>
+
+
+
+        </div><!---------column 1-------->
+      </div><!-----colomns---------->
+    <!----end START----------------------------------->
+
+<span class="button is-primary is-medium is-fullwidth ">
+      Dialysis
+        </span>
+
+
+<!--start-------------------------------->
+      <div class="columns">
+        <div class="column">
+<div class="field">
+  <label class="label">Dialysis  Required?</label>
+        <div class="control has-icons-left has-icons-right">
+        <span class = "field_help" ></span>
+          <%= checkbox f, :uni_dialysis_new_req_yn,
+type: "checkbox" %>
+<%= error_tag f,
+           :uni_dialysis_new_req_yn %>
+        </div>
+        <p class="help">
+        </p>
+    </div><!-----field------------------>
+
+
+
+
+
+        </div><!---------column 1-------->
+        <div class="column">
+
+<!--------start---field----------------------------->
+ <div class="field">
+          <label class="label">Dialysis Start Date  </label>
+          <div class="control">
+      <%= text_input f, :uni_dialysis_new_req_dt,
+class: "input",
+type: "date",
+placeholder: "uni_dialysis_new_req_dt",
+required: false %>
+<%= error_tag f,
+            :uni_dialysis_new_req_dt %>
+          </div>
+          <p class="help"></p>
+        </div>
+        <!---------end ---field---->
+
+        </div><!---------column 1-------->
+      </div><!-----colomns---------->
+    <!----end START----------------------------------->
+
+
+ <!--start-------------------------------->
+      <div class="columns">
+        <div class="column">
+<div class="field">
+  <label class="label">Currently on Dialysis?</label>
+        <div class="control has-icons-left has-icons-right">
+<span class="field_help"></span>
+
+          <%= checkbox f, :uni_currently_on_dialysis,
+type: "checkbox" %>
+<%= error_tag f,
+           :uni_currently_on_dialysis %>
+        </div>
+        <p class="help">
+        </p>
+    </div><!-----field------------------>
+
+
+
+        </div><!---------column 1-------->
+      </div><!-----colomns---------->
+    <!----end START----------------------------------->
+<span class="button is-primary is-medium is-fullwidth ">
+      Bleeding
+        </span>
+
+
+ <!--start-------------------------------->
+      <div class="columns">
+        <div class="column">
+
+          <div class="field">
+  <label class="label">Bleeding?</label>
+        <div class="control has-icons-left has-icons-right">
+        <span class="field_help"></span>
+          <%= checkbox f, :cath_ev_bleed_yn ,
+type: "checkbox" %>
+<%= error_tag f,
+           :cath_ev_bleed_yn %>
+        </div>
+        <p class="help">
+        </p>
+    </div><!-----field------------------>
+
+        </div><!---------column 1-------->
+        <div class="column">
+
+ <div class="field">
+          <label class="label">Bleeding Time  </label>
+          <div class="control">
+      <%= text_input f, :cath_ev_cabg_tm,
+class: "input",
+type: "time",
+placeholder: "cath_ev_cabg_tm",
+required: false %>
+<%= error_tag f,
+            :cath_ev_cabg_tm %>
+          </div>
+          <p class="help"></p>
+        </div>
+        <!--field---->
+
+
+
+       </div><!---------column 1-------->
+      </div><!-----colomns---------->
+    <!----end START----------------------------------->
+
+      <!--start-------------------------------->
+      <div class="columns">
+        <div class="column">
+
+     <div class="field">
+  <label class="label">Blood Transfusion?</label>
+        <div class="control has-icons-left has-icons-right">
+        <span class="field_help"></span>
+          <%= checkbox f, :cath_ev_blood_transfusion_yn ,
+type: "checkbox" %>
+<%= error_tag f,
+           :cath_ev_blood_transfusion_yn %>
+        </div>
+        <p class="help">
+
+        </p>
+    </div><!-----field------------------>
+
+
+
+        </div><!---------column 1-------->
+        <div class="column">
+          <!-------
+           <div class="field">
+          <label class="label">Hb Prior </label>
+          <div class="control">
+            <%#= text_input f, :cath_ev_hb_prior_transfer, class: "input", type: "text",
+placeholder: "cath_ev_hb_prior_transfer",
+       required: false %>
+
+       <%#= error_tag f,
+            :cath_ev_hb_prior_transfer %>
+          </div>
+          <p class="help">
+
+Indicate the patient's hemoglobin value, in g/dL, prior to transfusion.
+
+          </p>
+        </div>
+
+          -->
+        </div><!---------column 1-------->
+      </div><!-----colomns---------->
+    <!----end START----------------------------------->
+ <!--start-------------------------------->
+      <div class="columns">
+        <div class="column">
+
+
+            <div class="field">
+  <label class="label">Bleeding At access Site?</label>
+        <div class="control has-icons-left has-icons-right">
+         <span class="field_help"></span>
+          <%= checkbox f, :cath_ev_bleed_access_yn ,
+type: "checkbox" %>
+<%= error_tag f,
+           :cath_ev_bleed_access_yn %>
+        </div>
+        <p class="help">
+
+        </p>
+    </div><!-----field------------------>
+
+
+
+        </div><!---------column 1-------->
+        <div class="column">
+
+
+            <div class="field">
+  <label class="label">Bleeding GenitoUrinary?</label>
+        <div class="control has-icons-left has-icons-right">
+          <%= checkbox f, :cath_ev_bleed_gu_yn ,
+type: "checkbox" %>
+<%= error_tag f,
+           :cath_ev_bleed_gu_yn  %>
+        </div>
+        <p class="help">
+
+        </p>
+    </div><!-----field------------------>
+
+
+        </div><!---------column 1-------->
+      </div><!-----colomns---------->
+    <!----end START----------------------------------->
+
+
+ <!--start-------------------------------->
+      <div class="columns">
+        <div class="column">
+
+
+            <div class="field">
+  <label class="label">Bleeding GastroIntestinal?</label>
+        <div class="control has-icons-left has-icons-right">
+          <%= checkbox f, :cath_ev_bleed_gi_yn ,
+type: "checkbox" %>
+<%= error_tag f,
+           :cath_ev_bleed_gi_yn %>
+        </div>
+        <p class="help">
+
+        </p>
+    </div><!-----field------------------>
+
+
+        </div><!----------column 1-------->
+<div class="column">
+
+            <div class="field">
+  <label class="label">Bleeding RetroPeritoneal?</label>
+        <div class="control">
+          <%= checkbox f, :cath_ev_bleed_retroperi_yn  ,
+            type: "checkbox" %>
+             <%= error_tag f, :cath_ev_bleed_retroperi_yn  %>
+        </div>
+        <p class="help">
+
+        </p>
+    </div><!-----field------------------>
+
+
+
+        </div><!---------column 1-------->
+      </div><!-----colomns---------->
+    <!----end START----------------------------------->
+
+      <!--start-------------------------------->
+      <div class="columns">
+        <div class="column">
+
+
+         <div class="field">
+  <label class="label">Bleeding Other?</label>
+        <div class="control has-icons-left has-icons-right">
+          <%= checkbox f, :cath_ev_bleed_other_yn ,
+type: "checkbox" %>
+<%= error_tag f,
+           :cath_ev_bleed_other_yn  %>
+        </div>
+        <p class="help">
+
+        </p>
+    </div><!-----field------------------>
+
+
+        </div><!---------column 1-------->
+<div class="column">
+        Aux Field
+        </div><!---------column 1-------->
+      </div><!-----colomns---------->
+    <!----end START----------------------------------->
+
+  <%#= label f, :uni_bleed_barc_class %>
+  <%#= text_input f, :uni_bleed_barc_class %>
+  <%#= error_tag f, :uni_bleed_barc_class %>
+
+
+    </div><!---END LEFT BIG COLUMN---------------------->
+   <div class = "column frame_1">
+     <!--start-------------------------------->
+
+    <!--start-------------------------------->
+  <span class="button is-primary is-medium is-fullwidth ">
+      Vascular Complications
+        </span>
+
+      <div class="columns">
+        <div class="column">
+
+
+         <div class="field">
+  <label class="label">Any Vascular Compication?</label>
+        <div class="control has-icons-left has-icons-right">
+         <span class="field_help"></span>
+          <%= checkbox f, :cath_ev_vasc_compl_yn ,
+type: "checkbox" %>
+<%= error_tag f,
+           :cath_ev_vasc_compl_yn %>
+        </div>
+        <p class="help">
+
+        </p>
+    </div><!-----field------------------>
+
+
+
+        </div><!---------column 1-------->
+      </div><!-----colomns---------->
+    <!----end START----------------------------------->
+
+
+  <!--start-------------------------------->
+      <div class="columns">
+        <div class="column">
+
+    <div class="field">
+  <label class="label">Hematoma At Access Site?</label>
+        <div class="control has-icons-left has-icons-right">
+         <span class="field_help"></span>
+          <%= checkbox f, :cath_ev_hematoma_at_access_yn  ,
+type: "checkbox" %>
+<%= error_tag f,
+           :cath_ev_hematoma_at_access_yn %>
+        </div>
+        <p class="help">
+
+        </p>
+    </div><!-----field------------------>
+        </div><!---------column 1-------->
+<div class="column">
+
+            <!--------start ------------------------->
+          <% s_cath_ev_hematoma_size=
+          Query.select_options("cath_ev_hematoma_size") %>
+          <%# i_cath_ev_hematoma_size=
+raw Query.search_in_instructions("cath_ev_hematoma_size")%>
+<div class="field">
+  <label class="label">Hematoma Size </label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f, :cath_ev_hematoma_size,
+              s_cath_ev_hematoma_size, prompt: "--Select--",  class: "form-control")
+              %>
+            </div>
+            <!--select---->
+            <%= error_tag f, :cath_ev_hematoma_size  %>
+            <span class="help"><%#=  i_cath_ev_hematoma_size %> </span>
+          </div>
+          <!--control---->
+        </div>
+        <!---field--->
+
+
+
+
+
+        </div><!---------column 1-------->
+      </div><!-----colomns---------->
+    <!----end START----------------------------------->
+
+
+ <!--start-------------------------------->
+      <div class="columns">
+        <div class="column">
+
+
+          <% s_cath_ev_hematoma_treat=
+          Query.select_options("cath_ev_hematoma_treat") %>
+          <%# i_cath_ev_hematoma_treat=
+raw Query.search_in_instructions("cath_ev_hematoma_treat")%>
+<div class="field">
+  <label class="label">Hematoma Treatment </label>
+          <div class="control">
+            <div class="select is-primary">
+            <span class="field_help"></span>
+              <%= select(f, :cath_ev_hematoma_treat,
+              s_cath_ev_hematoma_treat, prompt: "--Select--",  class: "form-control")
+              %>
+            </div>
+            <!--select---->
+            <%= error_tag f, :cath_ev_hematoma_treat  %>
+            <span class="help"><%#=  i_cath_ev_hematoma_treat%> </span>
+          </div>
+          <!--control---->
+        </div>
+        <!---field--->
+
+
+        </div><!---------column 1-------->
+        <div class="column">
+
+  <div class="field">
+    <label class="label"> Pseudoaneurysm? </label>
+        <div class="control has-icons-left has-icons-right">
+         <span class="field_help"></span>
+          <%= checkbox f, :cath_ev_vasc_pseudoaneurysm_yn  ,
+type: "checkbox" %>
+<%= error_tag f,
+           :cath_ev_vasc_pseudoaneurysm_yn  %>
+        </div>
+        <p class="help">
+        Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+
+
+        </div><!---------column 1-------->
+      </div><!-----colomns---------->
+    <!----end START----------------------------------->
+
+ <!--start-------------------------------->
+      <div class="columns">
+        <div class="column">
+
+
+  <div class="field">
+    <label class="label"> Dissection? </label>
+        <div class="control has-icons-left has-icons-right">
+         <span class="field_help"></span>
+          <%= checkbox f, :cath_ev_vasc_dissection_yn,
+type: "checkbox" %>
+<%= error_tag f,
+           :cath_ev_vasc_dissection_yn  %>
+        </div>
+        <p class="help">
+        Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+        </div><!---------column 1-------->
+<div class="column">
+
+   <div class="field">
+    <label class="label"> Fistula? </label>
+        <div class="control has-icons-left has-icons-right">
+         <span class="field_help"></span>
+          <%= checkbox f, :cath_ev_av_fistula_yn,
+type: "checkbox" %>
+<%= error_tag f,
+           :cath_ev_av_fistula_yn %>
+        </div>
+        <p class="help">
+        Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+
+
+        </div><!---------column 1-------->
+      </div><!-----colomns---------->
+    <!----end START----------------------------------->
+
+ <!--start-------------------------------->
+      <div class="columns">
+        <div class="column">
+
+
+ <div class="field">
+    <label class="label">Limb Ischemia? </label>
+        <div class="control has-icons-left has-icons-right">
+          <%= checkbox f, :cath_ev_vasc_limb_ischemia_yn,
+type: "checkbox" %>
+<%= error_tag f,
+           :cath_ev_vasc_limb_ischemia_yn %>
+        </div>
+        <p class="help">
+        Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+        </div><!---------column 1-------->
+<div class="column">
+        Aux Field
+        </div><!---------column 1-------->
+      </div><!-----colomns---------->
+    <!----end START----------------------------------->
+    <!--start-------------------------------->
+  <span class="button is-primary is-medium is-fullwidth ">
+      CABG
+        </span>
+
+
+ <!--start-------------------------------->
+      <div class="columns">
+        <div class="column">
+
+          <% s_cath_ev_for_cabg_indication =
+Query.select_options("cath_ev_for_cabg_indication") %>
+<%# r_cath_ev_for_cabg_indication =  raw "#{s_cath_ev_for_cabg_indication}" %>
+
+          <%# i_cath_ev_for_cabg_indication =
+raw Query.search_in_instructions("cath_ev_for_cabg_indication")%>
+<div class="field">
+  <label class="label">CABG Indication </label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f, :cath_ev_for_cabg_indication ,
+              s_cath_ev_for_cabg_indication , prompt: "--Select--",  class: "form-control")
+              %>
+            </div>
+            <!--select---->
+            <%= error_tag f, :cath_ev_for_cabg_indication   %>
+            <span class="help"><%#=  i_cath_ev_for_cabg_indication  %> </span>
+          </div>
+          <!--control---->
+        </div>
+        <!---field--->
+
+
+
+        </div><!---------column 1-------->
+<div class="column">
+    <% s_cath_ev_for_cabg_status =
+Query.select_options("cath_ev_for_cabg_status") %>
+          <%# i_cath_ev_for_cabg_status =
+raw Query.search_in_instructions("cath_ev_for_cabg_status")%>
+<div class="field">
+  <label class="label">CABG Status </label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f, :cath_ev_for_cabg_status ,
+              s_cath_ev_for_cabg_status, prompt: "--Select--",  class: "form-control")
+              %>
+            </div>
+            <!--select---->
+            <%= error_tag f, :cath_ev_for_cabg_status   %>
+            <span class="help"><%#=  i_cath_ev_for_cabg_status  %> </span>
+          </div>
+          <!--control---->
+        </div>
+        <!---field--->
+
+
+        </div><!---------column 1-------->
+      </div><!-----colomns---------->
+    <!----end START----------------------------------->
+
+
+
+  <!--start-------------------------------->
+      <div class="columns">
+        <div class="column">
+  <% s_cath_ev_cabg_location =
+Query.select_options("cath_ev_cabg_location") %>
+<%# r_cath_ev_for_cabg_status = raw s_cath_ev_for_cabg_status %>
+          <%# i_cath_ev_cabg_location =
+raw Query.search_in_instructions("cath_ev_cabg_location")%>
+<div class="field">
+  <label class="label">CABG Location </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f, :cath_ev_cabg_location ,
+              s_cath_ev_cabg_location, prompt: "--Select--",  class: "form-control")
+              %>
+            </div>
+            <!--select---->
+            <%= error_tag f, :cath_ev_cabg_location   %>
+            <span class="help"><%#=  i_cath_ev_cabg_location  %> </span>
+          </div>
+          <!--control---->
+        </div>
+        <!---field--->
+
+
+        </div><!---------column 1-------->
+<div class="column">
+
+<!-----field start----------------------------->
+
+  <div class="field">
+          <label class="label">CABG Date  </label>
+          <div class="control">
+      <%= text_input f, :cath_ev_cabg_dt,
+class: "input",
+type: "date",
+placeholder: "cath_ev_cabg_dt",
+required: false %>
+<%= error_tag f,
+            :cath_ev_cabg_dt %>
+          </div>
+          <p class="help"></p>
+        </div>
+        <!--field---->
+
+
+
+</div><!---------column 1-------->
+  <div class="column">
+
+<div class="field">
+          <label class="label">CABG Time  </label>
+          <div class="control">
+      <%= text_input f, :cath_ev_cabg_tm,
+class: "input",
+type: "time",
+placeholder: "cath_ev_cabg_tm",
+required: false %>
+<%= error_tag f,
+            :cath_ev_cabg_tm %>
+          </div>
+          <p class="help"></p>
+        </div>
+        <!--field---->
+
+        </div><!---------column 1-------->
+
+
+      </div><!-----colomns---------->
+    <!----end START----------------------------------->
+
+  <span class="button is-primary is-medium is-fullwidth ">
+      CardioVersion - CCF
+        </span>
+
+  <!--start-------------------------------->
+      <div class="columns">
+        <div class="column">
+
+ <div class="field">
+        <label class="label">CardioVersion ?</label>
+        <div class="control">
+         <span class = "field_help" ></span>
+          <%= checkbox f, :cath_ev_cardioversion_yn,
+            type: "checkbox" %> <%= error_tag f,
+           :cath_ev_cardioversion_yn  %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+
+
+        </div><!---------column 1-------->
+        <div class="column">
+ <div class="field">
+        <label class="label">Heart Block ?</label>
+        <div class="control">
+          <%= checkbox f, :cath_ev_heart_block_yn ,
+            type: "checkbox" %> <%= error_tag f,
+           :cath_ev_heart_block_yn   %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+
+        </div><!---------column 1-------->
+      </div><!-----colomns---------->
+    <!----end START----------------------------------->
+
+
+<!--start-------------------------------->
+      <div class="columns">
+        <div class="column">
+ <div class="field">
+        <label class="label">Valvular Injury ?</label>
+        <div class="control">
+          <%= checkbox f, :cath_ev_valve_injury_yn,
+            type: "checkbox" %> <%= error_tag f,
+           :cath_ev_valve_injury_yn %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+
+
+
+        </div><!---------column 1-------->
+        <div class="column">
+ <div class="field">
+        <label class="label"> CCF After Proc ?</label>
+        <div class="control">
+         <span class = "field_help" ></span>
+          <%= checkbox f, :cath_ev_chf_new_post_yn,
+            type: "checkbox" %> <%= error_tag f,
+           :cath_ev_chf_new_post_yn%>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+
+
+        </div><!---------column 1-------->
+      </div><!-----colomns---------->
+    <!----end START----------------------------------->
+
+ <!--start-------------------------------->
+    <span class="button is-danger  is-fullwidth ">
+<i class="fa fa-sticky-note">
+My Notes
+</i>
+</span>
+      <div class="columns">
+        <div class="column">
+
+
+  <div class="field">
+  <label class="label"> My Notes </label>
+  <div class="control">
+    <%= text_input f, :cath_event_notes,
+        class: "textarea",
+        type: "input", placeholder: "My Notes"  %>
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+
+
+
+        </div><!---------column 1-------->
+      </div><!-----colomns---------->
+    <!----end START----------------------------------->
+   
+ <%= render  AngioWeb.SharedView, "_help_area.html" %>
+
+
+
+
+
+ </div><!---END RIGTH BIG COLUMN---------------------->
+
+  </div><!------END LEFT RIGHT COLUMNS------------>
+  <div>
+    <%= submit "Save and Continue", class: "button is-info is-large is-fullwidth " %>
+
+  </div>
+
+<% end %>

@@ -1,0 +1,43 @@
+
+<div class="dropdown">
+  <div class="dropdown-trigger">
+    <button class="button is-small is-info is-fullwidth" aria-haspopup="true" aria-controls="dropdown-menu4">
+      <span>Echo Menu</span>
+      <span class="icon is-small">
+        <i class="fa  fa-angle-down" aria-hidden="true"></i>
+      </span>
+    </button>
+  </div>
+
+<div class="dropdown-menu " id="dropdown-menu4" role="menu">
+    <div class="dropdown-content">
+     <div class="dropdown-item">
+  </div>
+
+
+<div class="dropdown-item">
+<%= link to: Routes.pt_echo_ela_path(@conn, :index, @patient,
+      @cardiac_echo), class: "button is-link is-small is-fullwidth " do %>
+      Left Atrium <% end %>
+
+      </div>
+
+<!----------------------------------------->
+
+<div class="dropdown-item">
+<%= link to: Routes.pt_echo_era_path(@conn, :index, @patient,
+      @cardiac_echo), class: "button is-link is-small is-fullwidth " do %> Right Atrium <% end %>
+      </div>
+
+
+<!----------------------------------------->
+<div class="dropdown-item">
+<%= link to: Routes.pt_echo_elv_path(@conn, :index, @patient,
+      @cardiac_echo), class: "button is-link is-small is-fullwidth " do %> LV Structure <% end %>
+      </div>
+
+
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,83 @@
+
+<div class="title_form">
+<h6 class="title is-6 has-text-centered">Showing Chest Pains  Record</h6>
+</div>
+
+<div class="element_info">
+
+    <%= render  AngioWeb.SharedView, "_patient_info.html", patient: @patient %>
+</div>
+
+<div class="element_info_coronary">
+Angio : <%= render AngioWeb.SharedView, "_info_coronary.html", info_coronary:
+   @info_coronary%>
+</div>
+
+<div class="content frame_1">
+  <ol type="1">
+
+
+  <li>
+    <strong>Chestp dt:</strong>
+    <%= @chest_pains.chestp_dt %>
+  </li>
+
+  <li>
+    <strong>Chestp tm:</strong>
+    <%= @chest_pains.chestp_tm %>
+  </li>
+
+  <li>
+    <strong>Chestp location:</strong>
+    <%= @chest_pains.chestp_location %>
+  </li>
+
+  <li>
+    <strong>Chestp quality:</strong>
+    <%= @chest_pains.chestp_quality %>
+  </li>
+
+  <li>
+    <strong>Chestp perciptating factors:</strong>
+    <%= @chest_pains.chestp_perciptating_factors %>
+  </li>
+
+  <li>
+    <strong>Chestp relieving factors:</strong>
+    <%= @chest_pains.chestp_relieving_factors %>
+  </li>
+
+  <li>
+    <strong>Chestp assoc symptoms:</strong>
+    <%= @chest_pains.chestp_assoc_symptoms %>
+  </li>
+
+  <li>
+    <strong>Chestp duration:</strong>
+    <%= @chest_pains.chestp_duration %>
+  </li>
+
+  <li>
+    <strong>Chestp notes:</strong>
+    <%= @chest_pains.chestp_notes %>
+  </li>
+
+</ol>
+</div>
+
+<p class ="buttons_separator"> . </p>
+
+<span>
+    <%= link "Edit Chest Pains", to: Routes.pt_angio_chestp_path(@conn, :edit, @patient,
+  @info_coronary, @chest_pains), class: "button is-link"%>
+</span>
+
+<span>
+  <%= link "Back To Chest Pains Index", to: Routes.pt_angio_chestp_path(@conn, :index,
+  @patient, @info_coronary) , class: "button is-link"%>
+</span>
+<span>
+
+<%= link "Back To Cath Lab",  to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-link"   %>
+ </span>

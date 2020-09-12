@@ -1,0 +1,298 @@
+<% alias Angio.Canons, as: Query %>
+
+
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="notification is-danger">
+    <button class="delete"></button>
+    Oops, something went wrong! Please check the errors below or Dublicate Record
+</div>
+
+  <% end %>
+  <div class="columns">
+
+    <div class="column frame_1">
+
+      <div class="columns">
+        <div class="column">
+
+
+         <div class="field">
+        <label class="label">Has Collaterals </label>
+        <div class="control">
+          <%= checkbox f, :collat_yn,
+            type: "checkbox" %> <%= error_tag f,
+           :collat_yn %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+        </div><!---------column 1-------->
+
+      </div><!-----colomns---------->
+      <!----end----------------------------------->
+
+
+ <!--start-------------------------------->
+      <div class="columns">
+
+        <div class="column">
+
+<% s_collat_donor_seg = Query.select_options("uni_segments_cdisc") %>
+          <%# i_collat_donor_seg =
+raw Query.search_in_instructions("uni_segments_cdisc")%>
+<div class="field">
+  <label class="label"> Donor Segment - CDISC</label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f, :collat_donor_seg,
+s_collat_donor_seg ,
+prompt: "---Select---",
+class: "form-control") %>
+            </div>
+            <!--select---->
+            <%= error_tag f, :collat_donor_seg  %>
+            <p class="help"><%#= i_collat_donor_seg %></p>
+          </div>
+          <!--control---->
+        </div>
+        <!---field--->
+        </div><!---------column 1-------->
+      </div><!-----colomns---------->
+      <!----end----------------------------------->
+
+      <div class="columns">
+        <div class="column">
+<!--start--Field Selection------------------------------>
+
+<% s_collat_recipient_seg = Query.select_options("uni_segments_cdisc") %>
+          <%# i_collat_recipient_seg =
+raw Query.search_in_instructions("uni_segments_cdisc")%>
+<div class="field">
+  <label class="label"> Recipient Segment  - CDISC</label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f, :collat_recipient_seg,
+s_collat_recipient_seg ,
+prompt: "---Select---",
+class: "form-control") %>
+            </div>
+            <!--select---->
+            <%= error_tag f, :collat_recipient_seg  %>
+            <p class="help"><%#= i_collat_recipient_seg %></p>
+          </div>
+          <!--control---->
+        </div>
+        <!---field--->
+
+
+        </div><!---------column 1-------->
+      </div><!-----colomns---------->
+      <!----end----------------------------------->
+
+
+<!--start-------------------------------->
+      <div class="columns">
+        <div class="column">
+
+<!--start--Field Selection------------------------------>
+
+<% s_collat_via_seg  = Query.select_options("uni_segments_cdisc") %>
+          <%# i_collat_via_seg =
+raw Query.search_in_instructions("uni_segments_cdisc")%>
+<div class="field">
+  <label class="label"> Via Segment - CDISC </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f, :collat_via_seg,
+s_collat_via_seg ,
+prompt: "---Select---",
+class: "form-control") %>
+            </div>
+            <!--select---->
+            <%= error_tag f, :collat_via_seg  %>
+            <p class="help"><%#= i_collat_recipient_seg %></p>
+          </div>
+          <!--control---->
+        </div>
+        <!---field--->
+
+
+</div><!---------column 1-------->
+      </div><!-----colomns---------->
+      <!----end----------------------------------->
+
+<!--start-------------------------------->
+      <div class="columns">
+               <div class="column">
+
+<!--start--Field Selection------------------------------>
+
+<% s_collat_rentrop_grade  = Query.select_options("collat_rentrop_grade") %>
+          <%# i_collat_rentrop_grade =
+raw Query.search_in_instructions("collat_rentrop_grade")%>
+<div class="field">
+  <label class="label">Rentrop Grade </label>
+          <div class="control">
+            <div class="select is-primary">
+<span class="field_help"> </span>
+              <%= select(f, :collat_rentrop_grade,
+s_collat_rentrop_grade,
+prompt: "---Select---",
+class: "form-control") %>
+            </div>
+            <!--select---->
+            <%= error_tag f, :collat_rentrop_grade  %>
+            <p class="help"><%#= i_collat_recipient_seg %></p>
+          </div>
+          <!--control---->
+        </div>
+        <!---field--->
+
+
+        </div><!---------column 1-------->
+      </div><!-----colomns---------->
+      <!----end----------------------------------->
+
+
+
+     </div><!--------END LEFT COLUMN----------------->
+    <!-------START RIGHT COLUMN--------------->
+    <div class="column frame_1">
+ <!--start-------------------------------->
+      <div class="columns">
+        <div class="column">
+
+
+  <div class="field">
+        <label class="label">Flow Index? </label>
+        <div class="control">
+          <%= checkbox f, :collat_flow_idx_calc_yn,
+type: "checkbox" %>
+            <%= error_tag f, :collat_flow_idx_calc_yn %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+
+        </div><!---------column 1-------->
+
+        <div class="column">
+
+
+<!--start--Field Selection------------------------------>
+
+<% s_collat_flow_idx_method   =
+        Query.select_options("collat_flow_idx_method") %>
+  <%# i_collat_flow_idx_method =
+raw Query.search_in_instructions("collat_flow_idx_method")%>
+<div class="field">
+  <label class="label"> Idx Method </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f, :collat_flow_idx_method,
+s_collat_flow_idx_method,
+prompt: "---Select---",
+class: "form-control") %>
+            </div>
+            <!--select---->
+            <%= error_tag f, :collat_flow_idx_method  %>
+            <p class="help"><%#= i_collat_recipient_seg %></p>
+          </div>
+          <!--control---->
+        </div>
+        <!---field--->
+
+
+
+        </div><!---------column 1-------->
+<div class="column">
+
+       <div class="field">
+  <label class="label">Idx Results </label>
+  <div class="control">
+
+    <%= text_input f, :collat_flow_idx_result ,
+        class: "text_input",
+        type: "input", placeholder: "Flow Idx Results"  %>
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+
+
+
+        </div><!---------column 1-------->
+      </div><!-----colomns---------->
+      <!----end----------------------------------->
+
+ <!--start-------------------------------->
+      <div class="columns">
+        <div class="column">
+
+    <!--start--Field Selection------------------------------>
+
+<% s_collat_qualitative_class    =
+        Query.select_options("collat_qualitative_class") %>
+  <%# i_collat_qualitative_class  =
+raw Query.search_in_instructions("collat_qualitative_class")%>
+<div class="field">
+  <label class="label">Qualitative Class </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f, :collat_qualitative_class ,
+s_collat_qualitative_class ,
+prompt: "---Select---",
+class: "form-control") %>
+            </div>
+            <!--select---->
+            <%= error_tag f, :collat_qualitative_class   %>
+            <p class="help"><%#= i_collat_recipient_seg %></p>
+          </div>
+          <!--control---->
+        </div>
+        <!---field--->
+
+        </div><!---------column 1-------->
+<div class="column">
+        </div><!---------column 1-------->
+      </div><!-----colomns---------->
+      <!----end----------------------------------->
+
+
+  <!--start-------------------------------->
+      <div class="columns">
+        <div class="column">
+  <div class="field">
+  <label class="label"> My Notes On Collaterals </label>
+  <div class="control">
+    <%= text_input f, :collat_notes,
+        class: "textarea",
+        type: "input", placeholder: "My Notes"  %>
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+
+
+<%= render  AngioWeb.SharedView, "_help_area.html" %>
+
+        </div><!---------column 1-------->
+      </div><!-----colomns---------->
+      <!----end----------------------------------->
+
+    </div>
+
+</div><!----END R COLUMN------------>
+
+</div><!---END start columns----------->
+
+  <div>
+    <%= submit "Save and Continue", class: "button is-info is-medium is-fullwidth " %>
+
+  </div>
+
+
+<% end %>

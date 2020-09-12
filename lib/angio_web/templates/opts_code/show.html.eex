@@ -1,0 +1,56 @@
+
+<h4 class="title is-4 has-text-centered"> Showing Option Code</h4>
+<div class="element_info">
+    
+    <%= render  AngioWeb.SharedView, "_definition_info.html", definition: @definition %>
+</div>
+
+<ul class="frame_1">
+
+
+    <li>
+        <strong>Code system:</strong>
+        <%= @opts_code.code_system %>
+    </li>
+
+    <li>
+        <strong>Code:</strong>
+        <%= @opts_code.code %>
+    </li>
+
+    <li class="item">
+        <strong>Description:</strong>
+        <%= @opts_code.description %>
+    </li>
+
+    <li class="item">
+        <strong>Note:</strong>
+        <%= @opts_code.notes %>
+    </li>
+
+
+</ul>
+<span>
+   <%= link "Edit", to: Routes.definition_defs_option_opts_code_path(@conn, :edit, @definition , @defs_option, @opts_code), class: "button  is-link" %>
+   </span>
+<span>
+   <%= link "Back Options Codes", to: Routes.definition_defs_option_opts_code_path(@conn, :index, @definition, @defs_option),
+    class: "button  is-link"%>
+</span>
+
+<!----
+<div class="stacked-for-small button-group">
+    <%#= link "Edit", to: Routes.definition_defs_option_opts_code_path(@conn, :edit, @definition , @defs_option, @opts_code), class: "button" %>
+
+    <%#= link "Back Options Codes", to: Routes.definition_defs_option_opts_code_path(@conn, :index, @definition, @defs_option),
+    class: "button"
+    %>
+</div>
+</div>
+
+<div class="medium-2 columns show_frame defs_frame">
+    <%#= render  AngioWeb.SharedView, "_opts_codes_info.html", definition: @definition, defs_option: @defs_option, defs_code: @defs_code %>
+</div>
+
+</div>
+--->

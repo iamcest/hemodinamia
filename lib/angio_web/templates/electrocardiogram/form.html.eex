@@ -1,0 +1,678 @@
+<% alias Angio.Canons, as: Query %>
+
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+ <div class="notification is-danger">
+    <button class="delete"></button>
+    Oops, something went wrong! Please check the errors below
+</div>
+  <% end %>
+   <div class = "columns">
+  <div class = "column frame_1"
+
+    <!---------start----------------------------------->
+    <div class = "columns">
+      <div class = "column">
+
+        <!-------field-------------------------->
+      <div class="field">
+          <label class="label">ECG Date </label>
+          <div class="control">
+     <%= text_input f, :ecg_dt,
+        class: "input", type: "date",
+         placeholder: "ecg_dt", required: true %>
+          <%= error_tag f,
+            :ecg_dt  %>
+          </div>
+          <p class="help">  </p>
+        </div>
+        <!----field---------------->
+
+
+
+      </div><!----column-------------------->
+ <div class = "column">
+        <!-------field-------------------------->
+      <div class="field">
+          <label class="label">Time </label>
+          <div class="control">
+     <%= text_input f, :ecg_tm,
+        class: "input", type: "time",
+         placeholder: "ecg_dt", required: true %>
+          <%= error_tag f,
+            :ecg_tm  %>
+          </div>
+          <p class="help">  </p>
+        </div>
+        <!----field---------------->
+
+
+ </div><!----column-------------------->
+ <div class = "column">
+
+        <!-------field-------------------------->
+      <div class="field">
+          <label class="label"> First ECG Time </label>
+          <div class="control">
+            <span class="field_help"></span>
+     <%= text_input f, :ecg_first_tm,
+        class: "input", type: "time",
+         placeholder: "ecg_first_tm", required: false  %>
+          <%= error_tag f,
+            :ecg_first_tm  %>
+          </div>
+          <p class="help">  </p>
+        </div>
+        <!----field---------------->
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!-------end start------------------------------------>
+
+ <!-------start----------------------------------->
+
+ <div class = "columns">
+<div class = "column important_column">
+<!-----field------------------------->
+ <div class="field">
+        <label class="label">ECG Normal?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :ecg_normal_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :ecg_normal_yn %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+
+
+
+
+</div><!------column-------------------->
+
+<div class = "column">
+<!-----field------------------------->
+ <div class="field">
+        <label class="label">ECG With Symptoms?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :ecg_with_symptoms_yn ,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :ecg_with_symptoms_yn %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+
+
+
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!-------end start------------------------------------>
+
+
+<!-------start----------------------------------->
+  <div class = "columns">
+    <div class = "column">
+<!------field------------------------------------->
+  <div class="field">
+  <label class="label"> Heart Rate</label>
+  <div class="control">
+    <span class="field_help"></span>
+    <%= text_input f, :ecg_heart_rate,
+        class: "input",
+        type: "text",
+        placeholder: "ecg_heart_rate",
+        required: false %>
+   <%= error_tag f, :ecg_heart_rate %>
+  </div>
+  <p class="help"></p>
+  </div>
+    <!----------field----------------->
+
+
+
++
+</div><!------column-------------------->
+<div class = "column">
+<%  s_ecg_rhythm =  Query.select_options("ecg_rhythm") %>
+<div class="field">
+    <label class="label"> Rhytm </label>
+          <div class="control">
+
+            <div class="select is-primary">
+            <span class="field_help"></span>
+              <%= select(f,
+:ecg_rhythm , s_ecg_rhythm,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :ecg_rhythm   %>
+            <span class="help"></span>
+          </div>
+          <!----control---->
+        </div>
+        <!------field--->
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!-------end start------------------------------------>
+<!-------start----------------------------------->
+  <div class = "columns">
+    <div class = "column">
+<!------field----------------------------------->
+  <div class="field">
+  <label class="label"> P wave Duration</label>
+  <div class="control">
+    <span class="field_help"></span>
+    <%= text_input f, :ecg_p_duration_val ,
+        class: "input",
+        type: "text",
+        placeholder: "ecg_p_duration_val",
+        required: false %>
+   <%= error_tag f, :ecg_p_duration_val %>
+  </div>
+  <p class="help"></p>
+  </div>
+    <!----------field--------------->
+
+
+</div><!----column-------------------->
+ <div class = "column">
+<!------field----------------------------------->
+  <div class="field">
+  <label class="label"> PR Interval Duration</label>
+  <div class="control">
+    <span class="field_help"></span>
+    <%= text_input f, :ecg_pr_interval_val  ,
+        class: "input",
+        type: "text",
+        placeholder: "ecg_pr_interval_val ",
+        required: false %>
+   <%= error_tag f, :ecg_pr_interval_val  %>
+  </div>
+  <p class="help"></p>
+  </div>
+    <!----------field--------------->
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!-------end start------------------------------------>
+
+
+<!-------start----------------------------------->
+  <div class = "columns">
+    <div class = "column">
+<!------field----------------------------------->
+  <div class="field">
+  <label class="label"> QRS Duration</label>
+  <div class="control">
+    <span class="field_help"></span>
+    <%= text_input f, :ecg_qrs_duration_val,
+        class: "input",
+        type: "text",
+        placeholder: "ecg_qrs_duration_val ",
+        required: false %>
+   <%= error_tag f, :ecg_qrs_duration_val  %>
+  </div>
+  <p class="help"></p>
+  </div>
+    <!----------field--------------->
+
+
+
+
+
+
+
+</div><!----column-------------------->
+ <div class = "column">
+ <!-----field------------------------->
+ <div class="field">
+        <label class="label">QTc Long?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :ecg_qtc_long_yn  ,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :ecg_qtc_long_yn  %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!-------end start------------------------------------>
+
+
+<!-----start----------------------------------->
+  <div class = "columns">
+    <div class = "column">
+<!-----field------------------------->
+ <div class="field">
+        <label class="label">ST Depression?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :ecg_st_depression_yn,
+            type: "checkbox" %>
+            <%= error_tag f, :ecg_st_depression_yn  %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+
+
+</div><!----column------------------->
+ <div class = "column">
+
+  <!-----field------------------------->
+ <div class="field">
+        <label class="label">ST Elevation?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :ecg_st_elevation_yn,
+            type: "checkbox" %>
+            <%= error_tag f, :ecg_st_elevation_yn  %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!-------end start------------------------------------>
+
+ <!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<%  s_ecg_st_with_symptoms=  Query.select_options("ecg_st_with_symptoms") %>
+<div class="field">
+    <label class="label"> ST With Symptoms </label>
+          <div class="control">
+
+            <div class="select is-primary">
+            <span class="field_help"></span>
+              <%= select(f,
+:ecg_st_with_symptoms , s_ecg_st_with_symptoms,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :ecg_st_with_symptoms  %>
+            <span class="help"></span>
+          </div>
+          <!----control---->
+        </div>
+        <!------field--->
+
+
+
+</div><!----column-------------------->
+<div class = "column">
+
+
+  <!-----field------------------------->
+ <div class="field">
+        <label class="label">Inverted T waves?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :ecg_inverted_t_waves_yn,
+            type: "checkbox" %>
+            <%= error_tag f, :ecg_inverted_t_waves_yn  %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+ <!-------start----------------------------------->
+  <div class = "columns">
+    <div class = "column">
+
+<%  s_ecg_t_with_symptoms=  Query.select_options("ecg_t_with_symptoms") %>
+<div class="field">
+  <label class="label"> T With Symptoms </label>
+  <div class="control">
+
+    <div class="select is-primary">
+      <span class="field_help"></span>
+      <%= select(f,
+:ecg_t_with_symptoms , s_ecg_t_with_symptoms,
+prompt: "---Select---",
+class: "form-control")
+              %>
+    </div>
+    <!--select--->
+    <%= error_tag f, :ecg_t_with_symptoms  %>
+    <span class="help"></span>
+  </div>
+  <!----control---->
+</div>
+<!------field--->
+
+
+</div><!----column-------------------->
+<div class = "column">
+
+ <!-----field------------------------->
+ <div class="field">
+   <label class="label">Pathological Q Waves?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :ecg_pathological_q_yn,
+            type: "checkbox" %>
+            <%= error_tag f, :ecg_pathological_q_yn  %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!-------end start------------------------------------>
+<!-----start----------------------------------->
+  <div class = "columns">
+    <div class = "column">
+ <!-----field------------------------->
+ <div class="field">
+   <label class="label">Infarct Pattern?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :ecg_infarct_pattern_yn,
+            type: "checkbox" %>
+            <%= error_tag f, :ecg_infarct_pattern_yn   %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+
+
+
+
+</div><!---column-------------------->
+ <div class = "column">
+
+  <%  s_ecg_infarct_pattern_location =  Query.select_options("uni_ecg_infarct_pattern_location") %>
+<div class="field">
+  <label class="label">Main Infarct Pattern Location </label>
+  <div class="control">
+
+    <div class="select is-primary">
+      <span class="field_help"></span>
+      <%= select(f,
+:ecg_infarct_pattern_location , s_ecg_infarct_pattern_location ,
+prompt: "---Select---",
+class: "form-control")
+              %>
+    </div>
+    <!--select--->
+    <%= error_tag f, :ecg_infarct_pattern_location   %>
+    <span class="help"></span>
+  </div>
+  <!----control---->
+</div>
+<!------field--->
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+<!---------start----------------------------------->
+  <div class = "columns">
+    <div class = "column">
+
+ <%  s_ecg_infarct_pattern_location =  Query.select_options("ecg_infarct_pattern_location") %>
+<div class="field">
+  <label class="label">Infarct Location </label>
+  <div class="control">
+
+    <div class="select is-primary">
+      <span class="field_help"></span>
+      <%= select(f,
+:ecg_infarct_pattern_location , s_ecg_infarct_pattern_location ,
+prompt: "---Select---",
+class: "form-control")
+              %>
+    </div>
+    <!--select--->
+    <%= error_tag f, :ecg_infarct_pattern_location   %>
+    <span class="help"></span>
+  </div>
+  <!----control---->
+</div>
+<!------field--->
+
+
+
+<!--*==============================================*-->
+ <%  s_ecg_lv_hypertrophy =  Query.select_options("ecg_lv_hypertrophy") %>
+<div class="field">
+  <label class="label">LV Hyperthrophy  </label>
+  <div class="control">
+    <div class="select is-primary">
+      <span class="field_help"></span>
+      <%= select(f,
+:ecg_lv_hypertrophy , s_ecg_lv_hypertrophy ,
+prompt: "---Select---",
+class: "form-control")
+              %>
+    </div>
+    <!--select--->
+    <%= error_tag f, :ecg_lv_hypertrophy  %>
+    <span class="help"></span>
+  </div>
+  <!----control---->
+</div>
+<!------field--->
+<!--========================================================-->
+
+</div><!----column-------------------->
+ <div class = "column">
+ <!-----field------------------------->
+ <div class="field">
+   <label class="label">RV Hyperthrophy ?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :ecg_rv_hypertrophy_yn,
+            type: "checkbox" %>
+            <%= error_tag f, :ecg_rv_hypertrophy_yn  %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<!-------start----------------------------------->
+  <div class = "columns">
+    <div class = "column">
+
+<!--*==============================================*-->
+ <%  s_ecg_av_conduction =  Query.select_options("ecg_av_conduction") %>
+<div class="field">
+  <label class="label">AV Conduction  </label>
+  <div class="control">
+    <div class="select is-primary">
+      <span class="field_help"></span>
+      <%= select(f,
+:ecg_av_conduction , s_ecg_av_conduction,
+prompt: "---Select---",
+class: "form-control")
+              %>
+    </div>
+    <!--select--->
+    <%= error_tag f, :ecg_av_conduction %>
+    <span class="help"></span>
+  </div>
+  <!----control---->
+</div>
+<!------field--->
+<!--========================================================-->
+
+
+
+</div><!----column-------------------->
+<div class = "column">
+<!--*==============================================*-->
+ <%  s_ecg_lbbb =  Query.select_options("ecg_lbbb") %>
+<div class="field">
+  <label class="label">LBBB  </label>
+  <div class="control">
+    <div class="select is-primary">
+      <span class="field_help"></span>
+      <%= select(f,
+:ecg_lbbb, s_ecg_lbbb,
+prompt: "---Select---",
+class: "form-control")
+              %>
+    </div>
+    <!--select--->
+    <%= error_tag f, :ecg_lbbb%>
+    <span class="help"></span>
+  </div>
+  <!----control---->
+</div>
+<!------field--->
+<!--========================================================-->
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+<!---------start----------------------------------->
+  <div class = "columns">
+    <div class = "column">
+
+<!-----field------------------------->
+ <div class="field">
+   <label class="label">RBBB ?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :ecg_rbbb_yn ,
+            type: "checkbox" %>
+            <%= error_tag f, :ecg_rbbb_yn   %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+
+
+</div><!----==============column======================-->
+ <div class = "column">
+   <!-----field------------------------->
+ <div class="field">
+   <label class="label">e [epsilon] Wave?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :ecg_epsilon_wave_yn  ,
+            type: "checkbox" %>
+            <%= error_tag f, :ecg_epsilon_wave_yn   %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+
+
+
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+
+
+
+
+   </div><!---column------------------>
+
+ <div class="column frame_1">
+  <div class = "columns">
+ <div class="column">
+<div class="field">
+  <label class="label"> My Notes On This ECG </label>
+  <div class="control">
+    <%= text_input f, :ecg_notes,
+        class: "textarea",
+        type: "input", placeholder: "MY ECG NOTES"  %>
+
+    <p class="help"></p>
+  </div><!---control---------->
+  </div><!------field--------------->
+ </div><!---columns-------------->
+</div><!---column-------------->
+
+  <div class = "columns">
+ <div class="column">
+
+  <%= render  AngioWeb.SharedView, "_help_area.html" %>
+
+ </div><!---columns-------------->
+</div><!---column-------------->
+
+  </div><!------column-------------->
+  </div><!------columns------------------->
+
+ <div>
+    <%= submit "Save and Continue", class: "button is-info is-large is-fullwidth " %>
+  </div>
+
+<% end %>

@@ -1,0 +1,686 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+ <div class = "columns" >
+ <div class="column frame_1">
+
+
+<span class="button is-link is-fullwidth ">
+Essencial Data
+ </span>
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column is-5">
+
+<!------field------------------------------------->
+<div class="field">
+  <label class="label">Segment - Vessel ID </label>
+  <div class="control">
+    <%= text_input f, :vessel_id, class: "input",
+                       type: "text",
+                       placeholder: "vessel_id",
+                      required: true%>
+   <%= error_tag f, :vessel_id%>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+
+
+</div><!----column-------------------->
+ <div class = "column is-7">
+
+
+<!------field------------------------------------->
+<div class="field">
+  <label class="label">Description Name </label>
+  <div class="control">
+    <%= text_input f, :description_name, class: "input",
+                       type: "text",
+                       placeholder: "description_name",
+                      required: true%>
+   <%= error_tag f, :description_name%>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+
+<div class = "column">
+
+
+
+
+
+
+<!--------start -field----------------------------->
+
+<div class="field">
+  <label class="label">  Segment Definition </label>
+  <div class="control">
+    <%= text_input f, :seg_def,
+        class: "textarea",
+        type: "input", placeholder: "seg_def"  %>
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+</div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!------field------------------------------------->
+<div class="field">
+  <label class="label">Vessel Group </label>
+  <div class="control">
+    <%= text_input f, :vessel_group, class: "input",
+                       type: "text",
+                       placeholder: "vessel_group",
+                      required: false
+                      %>
+   <%= error_tag f, :vessel_group%>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+</div><!----column-------------------->
+ <div class = "column">
+
+<!------field------------------------------------->
+<div class="field">
+  <label class="label">CDISC Segment Name </label>
+  <div class="control">
+    <%= text_input f, :cor_les_segments_cdisc, class: "input",
+                       type: "text",
+                       placeholder: "cor_les_segments_cdisc",
+                      required: false
+                      %>
+   <%= error_tag f, :cor_les_segments_cdisc%>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+ </div><!----column-------------------->
+<div class = "column">
+
+<!------field------------------------------------->
+<div class="field">
+  <label class="label">Vessel Group AHA</label>
+  <div class="control">
+    <%= text_input f, :vessel_group_aha, class: "input",
+                       type: "text",
+                       placeholder: "vessel_group_aha",
+                      required: false%>
+   <%= error_tag f, :vessel_group_aha%>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+</div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<!------field------------------------------------->
+<div class="field">
+  <label class="label">Segment Size</label>
+  <div class="control">
+    <%= text_input f, :size, class: "input",
+                       type: "text",
+                       placeholder: "size",
+                      required: true%>
+   <%= error_tag f, :size%>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+<!------field------------------------------------->
+<div class="field">
+  <label class="label">Segment Belongs To Epicardial </label>
+  <div class="control">
+    <%= text_input f, :vessel, class: "input",
+                       type: "text",
+                       placeholder: "vessel",
+                      required: false%>
+   <%= error_tag f, :size%>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<!------field------------------------------------->
+<div class="field">
+  <label class="label">Visible (Y/N) </label>
+  <div class="control">
+    <%= text_input f, :visible, class: "input",
+                       type: "text",
+                       placeholder: "visible",
+                      required: false,
+                      minlength: 1,
+                      maxlength: 2
+                      %>
+   <%= error_tag f, :visble%>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+<!------field------------------------------------->
+<div class="field">
+  <label class="label">Draw By Default (Y/N) </label>
+  <div class="control">
+    <%= text_input f, :default_draw, class: "input",
+                       type: "text",
+                       placeholder: "default_draw ",
+                      required: false,
+                      minlength: 1,
+                      maxlength: 2
+                      %>
+   <%= error_tag f, :default_draw%>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!------field------------------------------------->
+<div class="field">
+  <label class="label">Course Benign? (Y/N) </label>
+  <div class="control">
+    <%= text_input f, :course_benign, class: "input",
+                       type: "text",
+                       placeholder: "course_benign",
+                      required: false,
+                      minlength: 1,
+                      maxlength: 2
+                      %>
+   <%= error_tag f, :course_benign%>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+
+</div><!----column-------------------->
+ <div class = "column">
+<!------field------------------------------------->
+<div class="field">
+  <label class="label">Course Malignant? (Y/N) </label>
+  <div class="control">
+    <%= text_input f, :course_malignant, class: "input",
+                       type: "text",
+                       placeholder: "course_malignant",
+                      required: false,
+                      minlength: 1,
+                      maxlength: 2
+                      %>
+   <%= error_tag f, :course_malignant%>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+
+
+<!---------start---------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!------field------------------------------------->
+<div class="field">
+  <label class="label">Is A Variant? (Y/N) </label>
+  <div class="control">
+    <%= text_input f, :is_variant, class: "input",
+                       type: "text",
+                       placeholder: "is_variant",
+                      required: false,
+                      minlength: 1,
+                      maxlength: 2
+                      %>
+   <%= error_tag f, :is_variant%>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+
+
+<!------field------------------------------------->
+<div class="field">
+  <label class="label">Is An Anomaly (Y/N) </label>
+  <div class="control">
+    <%= text_input f, :is_anomaly, class: "input",
+                       type: "text",
+                       placeholder: "is_anomaly",
+                      required: false,
+                      minlength: 1,
+                      maxlength: 2
+                      %>
+   <%= error_tag f, :is_variant%>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+
+<span class="button is-link is-fullwidth ">
+Dominance
+ </span>
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<!------field------------------------------------->
+<div class="field">
+  <label class="label">If RCA Dominance to  Draw? (Y/N) </label>
+  <div class="control">
+    <%= text_input f, :rca_dom_draw, class: "input",
+                       type: "text",
+                       placeholder: "rca_dom_draw",
+                      required: false,
+                      minlength: 1,
+                      maxlength: 2
+                      %>
+   <%= error_tag f, :visble%>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+
+<!------field------------------------------------->
+<div class="field">
+  <label class="label">If LCX Dominance to  Draw? (Y/N) </label>
+  <div class="control">
+    <%= text_input f, :lcx_dom_draw, class: "input",
+                       type: "text",
+                       placeholder: "lcx_dom_draw",
+                      required: false,
+                      minlength: 1,
+                      maxlength: 2
+                      %>
+   <%= error_tag f, :visble%>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+
+ </div><!----column-------------------->
+<div class = "column">
+<!------field------------------------------------->
+<div class="field">
+  <label class="label">Balanced  Dominance to  Draw? (Y/N) </label>
+  <div class="control">
+    <%= text_input f, :balanced_dom_draw, class: "input",
+                       type: "text",
+                       placeholder: "balanced_dom_draw",
+                      required: false,
+                      minlength: 1,
+                      maxlength: 2
+                      %>
+   <%= error_tag f, :balanced_dom_draw%>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+</div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+
+
+
+
+
+   </div><!-------Left -column--------------------->
+   <div class = "column frame_1">
+
+<span class="button is-link is-fullwidth ">
+ SVG Paths From Inkscape
+ </span>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<!-------field---------------------->
+<div class="field">
+  <label class="label">  Segment  SVG Path </label>
+  <div class="control">
+    <%= text_input f, :path,
+        class: "textarea",
+        type: "input", placeholder: "path"  %>
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+</div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+ <div class = "column">
+
+<!-------field---------------------->
+<div class="field">
+  <label class="label"> Lesion Path </label>
+  <div class="control">
+    <%= text_input f, :lesion_path,
+        class: "textarea",
+        type: "input", placeholder: "lesion_path"  %>
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<!-------field---------------------->
+<div class="field">
+  <label class="label">Graft Path </label>
+  <div class="control">
+    <%= text_input f, :graft_path,
+        class: "textarea",
+        type: "input", placeholder: "graft_path"  %>
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!-------field---------------------->
+<div class="field">
+  <label class="label">Stent Path </label>
+  <div class="control">
+    <%= text_input f, :stent_path,
+        class: "textarea",
+        type: "input", placeholder: "stent_path"  %>
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+<span class="button is-link is-fullwidth ">
+ Calculated Parms
+ </span>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<!------field------------------------------------->
+<div class="field">
+  <label class="label">Lesion x</label>
+  <div class="control">
+    <%= text_input f, :lesion_x , class: "input",
+                       type: "text",
+                       placeholder: "lesion_x",
+                      required: false%>
+   <%= error_tag f, :lesion_x%>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+<!------field------------------------------------->
+<div class="field">
+  <label class="label">Lesion y</label>
+  <div class="control">
+    <%= text_input f, :lesion_y , class: "input",
+                       type: "text",
+                       placeholder: "lesion_y",
+                      required: false%>
+   <%= error_tag f, :lesion_y%>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!------field------------------------------------->
+<div class="field">
+  <label class="label">Stent  x</label>
+  <div class="control">
+    <%= text_input f, :stent_x , class: "input",
+                       type: "text",
+                       placeholder: "stent_x",
+                      required: false%>
+   <%= error_tag f, :stent_x%>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+<!------field------------------------------------->
+<div class="field">
+  <label class="label">Stent  y</label>
+  <div class="control">
+    <%= text_input f, :stent_y , class: "input",
+                       type: "text",
+                       placeholder: "stent_y",
+                      required: false%>
+   <%= error_tag f, :stent_y%>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!------field------------------------------------->
+<div class="field">
+  <label class="label">Graft x </label>
+  <div class="control">
+    <%= text_input f, :graft_x, class: "input",
+                       type: "text",
+                       placeholder: "graft_x ",
+                      required: false%>
+   <%= error_tag f, :graft_x%>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+
+<!------field------------------------------------->
+<div class="field">
+  <label class="label">Graft y </label>
+  <div class="control">
+    <%= text_input f, :graft_y, class: "input",
+                       type: "text",
+                       placeholder: "graft_y",
+                      required: false%>
+   <%= error_tag f, :graft_y%>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+Aux Field
+
+
+</div><!----column-------------------->
+ <div class = "column">
+<!------field------------------------------------->
+<div class="field">
+  <label class="label">LAD Type to Draw</label>
+  <div class="control">
+    <%= text_input f, :lad_type_draw, class: "input",
+                       type: "text",
+                       placeholder: "lad_type_draw",
+                      required: false%>
+   <%= error_tag f, :lad_type_draw%>
+  </div>
+  <p class="help"></p>
+    </div>
+    <!----------field----------------->
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+
+
+
+
+
+
+
+</div><!-----------R COLUMN--------------->
+</div><!-------  end big columns--------------------------->
+<div>
+    <%= submit "Save", class: "button is-primary is-medium is-fullwidth" %>
+  </div>
+
+<% end %>

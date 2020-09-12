@@ -1,0 +1,21 @@
+<div class="title_form">
+<h6 class="title is-6 has-text-centered">Editing ASD Closure Follow-Ups</h6>
+</div><!-----------title_form------------------->
+<div class="element_info">
+
+    <%= render  AngioWeb.SharedView, "_patient_info.html", patient: @patient %>
+</div>
+ <%= render "form.html", changeset: @changeset,
+      asd_closures_fup: @asd_closures_fup,
+action: Routes.pt_asdclf_path(@conn, :update,
+@patient,
+@asd_closures_fup ) %>
+<p class ="buttons_separator"> . </p>
+<span>
+ <%= link "Back To ASD Closure FollowUp List",
+  to: Routes.pt_asdclf_path(@conn, :index,
+@patient) , class: "button is-link "%>
+</span>
+
+
+

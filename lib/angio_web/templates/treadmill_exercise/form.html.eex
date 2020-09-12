@@ -1,0 +1,2165 @@
+
+
+<% alias Angio.Canons, as: Query %>
+
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+  <div class="notification is-danger">
+    <button class="delete"></button>
+    Oops, something went wrong! Please check the errors below.
+</div>
+
+  <% end %>
+
+<div class="columns">
+
+<div class="column frame_1">
+
+
+
+
+<span class="button is-primary  is-fullwidth ">
+<i class="fa fa-sticky-note">
+Admin
+</i>
+</span>
+
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+ <!-----------start Field------------------------------------------>
+<div class="field">
+          <label class="label">Date Of Exercise </label>
+          <div class="control">
+          <%= text_input f, :ext_dt, class: "input", type: "date",
+            placeholder: "ext_dt", required: false %>
+            <%= error_tag f,
+            :ext_dt %>
+          </div>
+          <p class="help"></p>
+        </div>
+<!----------end field---------------------->
+
+
+</div><!----column-------------------->
+
+
+ <div class = "column">
+
+ <!-----------start Field------------------------------------------>
+<div class="field">
+          <label class="label">Time Of Exercise </label>
+          <div class="control">
+          <%= text_input f, :ext_tm, class: "input", type: "time",
+            placeholder: "ext_tm", required: false %>
+            <%= error_tag f,
+            :ext_tm %>
+          </div>
+          <p class="help"></p>
+        </div>
+<!----------end field---------------------->
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!--------start------------------------------------>
+<% s_ext_lab_id  =
+         Query.select_options("ext_lab_id") %>
+
+<div class="field">
+    <label class="label">EXT Lab </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f, :ext_lab_id, s_ext_lab_id ,
+              prompt: "---Select---",
+              class: "form-control")
+              %>
+            </div>
+            <%= error_tag f, :ext_lab_id    %>
+            <span class="help"></span>
+          </div>
+          <!----control---->
+        </div>
+    <!---end field-------------------------------->
+
+
+</div><!----column-------------------->
+<div class = "column">
+
+
+<!-----------start field------------------------------------------->
+<div class="field">
+          <label class="label">Lab Number </label>
+          <div class="control">
+            <%= text_input f,
+              :ext_lab_num,
+               class: "input", type: "text",
+                placeholder: "ext_lab_num",
+              required: false %>
+              <%= error_tag f, :ext_lab_num %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+<!---------end field---------------------------->
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!-----------start field------------------------------------------->
+<div class="field">
+          <label class="label">Year </label>
+          <div class="control">
+            <%= text_input f, :ext_lab_yr,
+               class: "input",
+               type: "text",
+              placeholder: "ext_lab_yr",
+              required: false %>
+              <%= error_tag f, :ext_lab_yr %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+<!---------end field---------------------------->
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+<!---------start----------------------------------->
+  <div class = "columns">
+
+ <div class = "column">
+
+
+<!-----------start field------------------------------------------->
+<div class="field">
+          <label class="label">Doctor Last Name </label>
+          <div class="control">
+            <%= text_input f, :ext_doctor_lname,
+               class: "input",
+               type: "text",
+              placeholder: "ext_doctor_lname",
+              required: false %>
+              <%= error_tag f, :ext_doctor_lname %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+<!---------end field---------------------------->
+
+ </div><!----column-------------------->
+
+ <div class = "column">
+
+<!-----------start field------------------------------------------->
+<div class="field">
+          <label class="label">Doctor First Name </label>
+          <div class="control">
+            <%= text_input f, :ext_doctor_fname,
+               class: "input",
+               type: "text",
+              placeholder: "ext_doctor_fname",
+              required: false %>
+              <%= error_tag f, :ext_doctor_fname %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+<!---------end field---------------------------->
+
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!-----------start field------------------------------------------->
+<div class="field">
+          <label class="label">Tech  Last Name </label>
+          <div class="control">
+            <%= text_input f, :ext_technician_lname,
+               class: "input",
+               type: "text",
+              placeholder: "ext_technician_lname",
+              required: false %>
+              <%= error_tag f, :ext_technician_lname %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+<!---------end field---------------------------->
+
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!-----------start field------------------------------------------->
+<div class="field">
+          <label class="label">Tech  First Name </label>
+          <div class="control">
+            <%= text_input f, :ext_technician_fname,
+               class: "input",
+               type: "text",
+              placeholder: "ext_technician_fname",
+              required: false %>
+              <%= error_tag f, :ext_technician_fname %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+<!---------end field---------------------------->
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!-----------start field------------------------------------------->
+<div class="field">
+          <label class="label">Referral </label>
+          <div class="control">
+            <%= text_input f, :ext_referral_person,
+               class: "input",
+               type: "text",
+              placeholder: "ext_referral_person",
+              required: false %>
+              <%= error_tag f, :ext_referral_person %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+<!---------end field---------------------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!-------------start--field--------------------------------->
+    <div class="field">
+          <label class="label">Consent ?</label>
+          <div class="control">
+            <%= checkbox f, :ext_consent_yn,
+               type: "checkbox" %>
+                 <%= error_tag f, :ext_consent_yn %>
+            <p class = "help"></p>
+
+          </div>
+                 </div>
+<!----------------end field------------------------------>
+
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<span class="button is-primary  is-fullwidth ">
+<i class="fa fa-sticky-note">
+Main Problem - Reason to Test
+</i>
+</span>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!-------------start--field--------------------------------->
+    <div class="field">
+          <label class="label">The EXT Finaly Is Done?</label>
+          <div class="control">
+           <span class="field_help"> </span>
+            <%= checkbox f, :ext_is_done_yn,
+               type: "checkbox" %>
+                 <%= error_tag f, :ext_is_done_yn %>
+            <p class = "help">Check if Yes</p>
+
+          </div>
+                 </div>
+<!----------------end field------------------------------>
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!--------start------------------------------------>
+<% s_ext_not_done_reason  =
+         Query.select_options("ext_not_done_reason") %>
+
+<div class="field">
+    <label class="label">Main Contraindication - Not Done Reason </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f, :ext_not_done_reason, s_ext_not_done_reason ,
+              prompt: "---Select---",
+              class: "form-control")
+              %>
+            </div>
+            <%= error_tag f, :ext_not_done_reason    %>
+            <span class="help"></span>
+          </div>
+          <!----control---->
+        </div>
+    <!---end field-------------------------------->
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!--------start------------------------------------>
+<% s_ext_indication  =
+         Query.select_options("ext_indication") %>
+
+<div class="field">
+    <label class="label">Main Indication </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f, :ext_indication, s_ext_indication ,
+              prompt: "---Select---",
+              class: "form-control")
+              %>
+            </div>
+            <%= error_tag f, :ext_indication  %>
+            <span class="help"></span>
+          </div>
+          <!----control---->
+        </div>
+    <!---end field-------------------------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!--------start------------------------------------>
+<% s_ext_limitations  =
+         Query.select_options("ext_limitations") %>
+
+<div class="field">
+    <label class="label">Main Limitation </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f, :ext_limitations, s_ext_limitations,
+              prompt: "---Select---",
+              class: "form-control")
+              %>
+            </div>
+            <%= error_tag f, :ext_limitations %>
+            <span class="help"></span>
+          </div>
+          <!----control---->
+        </div>
+    <!---end field-------------------------------->
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+<!--------start------------------------------------>
+<% s_ext_limitations_relative  =
+         Query.select_options("ext_limitations_relative") %>
+
+<div class="field">
+    <label class="label">Relative Limitation </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f, :ext_limitations_relative, s_ext_limitations_relative,
+              prompt: "---Select---",
+              class: "form-control")
+              %>
+            </div>
+            <%= error_tag f, :ext_limitations_relative %>
+            <span class="help"></span>
+          </div>
+          <!----control---->
+        </div>
+    <!---end field-------------------------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+
+
+ <!--------start------------------------------------>
+<% s_ext_protocole_used  =
+         Query.select_options("ext_protocole_used") %>
+
+<div class="field">
+    <label class="label">Protocole Used </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f, :ext_protocole_used, s_ext_protocole_used,
+              prompt: "---Select---",
+              class: "form-control")
+              %>
+            </div>
+            <%= error_tag f, :ext_protocole_used %>
+            <span class="help"></span>
+          </div>
+          <!----control---->
+        </div>
+    <!---end field-------------------------------->
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!---------field--------------------------------->
+ <div class="field">
+                  <label class="label"> Notes On Indication</label>
+                  <div class="control">
+                      <%= text_input f, :ext_indication_notes , class: "textarea",
+                      type: "input",
+                      placeholder: "ext_indication_notes",
+                      required: false
+                      %>
+                      <%= error_tag f, :ext_indication_notes   %>
+                  </div>
+                  <p class="help"></p>
+              </div><!----field---------------->
+
+
+</div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+
+<!-------------start--field--------------------------------->
+    <div class="field">
+          <label class="label">Main Problem Cardiac ?</label>
+          <div class="control">
+           <span class="field_help"> </span>
+            <%= checkbox f, :ext_main_problem_cardiac_yn,
+               type: "checkbox" %>
+                 <%= error_tag f, :ext_main_problem_cardiac_yn %>
+            <p class = "help"></p>
+
+          </div>
+                 </div>
+<!----------------end field------------------------------>
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+
+<!-------------start--field--------------------------------->
+    <div class="field">
+          <label class="label">Main Problem Pulmonary ?</label>
+          <div class="control">
+           <span class="field_help"> </span>
+            <%= checkbox f, :ext_main_problem_pulm_yn,
+               type: "checkbox" %>
+                 <%= error_tag f, :ext_main_problem_pulm_yn %>
+            <p class = "help"></p>
+
+          </div>
+                 </div>
+<!----------------end field------------------------------>
+
+ </div><!----column-------------------->
+ <div class = "column">
+
+
+<!-------------start--field--------------------------------->
+    <div class="field">
+          <label class="label">Main Problem Other Medical ?</label>
+          <div class="control">
+           <span class="field_help"> </span>
+            <%= checkbox f, :ext_main_problem_medical_yn,
+               type: "checkbox" %>
+              <%= error_tag f, :ext_main_problem_medical_yn %>
+              <p class = "help"></p>
+
+          </div>
+                 </div>
+<!----------------end field------------------------------>
+
+</div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!---------field--------------------------------->
+ <div class="field">
+                  <label class="label"> Notes On Main Problem</label>
+                  <div class="control">
+                      <%= text_input f, :ext_main_problem_notes , class: "textarea",
+                      type: "input",
+                      placeholder: "ext_main_problem_notes",
+                      required: false
+                      %>
+                      <%= error_tag f, :ext_main_problem_notes   %>
+                  </div>
+                  <p class="help"></p>
+</div><!----field---------------->
+
+
+
+</div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+
+
+
+
+
+
+
+<span class="button is-primary  is-fullwidth ">
+<i class="fa fa-sticky-note">
+Medications
+</i>
+</span>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column ">
+
+<!-------------start--field--------------------------------->
+    <div class="field">
+          <label class="label">On Medications ?</label>
+          <div class="control">
+            <%= checkbox f, :ext_medications_yn,
+               type: "checkbox" %>
+                 <%= error_tag f, :ext_medications_yn %>
+            <p class = "help"></p>
+
+          </div>
+                 </div>
+<!----------------end field------------------------------>
+
+</div><!----column-------------------->
+
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!-------------start--field--------------------------------->
+    <div class="field">
+          <label class="label">On Anti Anginals ?</label>
+          <div class="control">
+            <%= checkbox f, :ext_anginal_meds_yn,
+               type: "checkbox" %>
+                 <%= error_tag f, :ext_anginal_meds_yn %>
+            <p class = "help">Check if Yes</p>
+
+          </div>
+                 </div>
+<!----------------end field------------------------------>
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+
+<!-------------start--field--------------------------------->
+    <div class="field">
+          <label class="label">On Digoxin ?</label>
+          <div class="control">
+            <%= checkbox f, :ext_anginal_meds_yn,
+               type: "checkbox" %>
+                 <%= error_tag f, :ext_anginal_meds_yn %>
+            <p class = "help"></p>
+
+          </div>
+                 </div>
+<!----------------end field------------------------------>
+
+
+
+ </div><!----column-------------------->
+<div class = "column">
+
+<!-------------start--field--------------------------------->
+    <div class="field">
+          <label class="label">On bblocker ?</label>
+          <div class="control">
+            <%= checkbox f, :ext_on_bblockers_yn,
+               type: "checkbox" %>
+                 <%= error_tag f, :ext_on_bblockers_yn %>
+            <p class = "help"></p>
+
+          </div>
+                 </div>
+<!----------------end field------------------------------>
+
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+
+<span class="button is-primary  is-fullwidth ">
+<i class="fa fa-sticky-note">
+Pre ECG
+</i>
+</span>
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+
+<!-------------start--field--------------------------------->
+    <div class="field">
+          <label class="label">Pre ECG Normal ?</label>
+          <div class="control">
+            <%= checkbox f, :ext_ecg_normal_pre_yn,
+               type: "checkbox" %>
+                 <%= error_tag f, :ext_ecg_normal_pre_yn %>
+            <p class = "help"></p>
+
+          </div>
+                 </div>
+<!----------------end field------------------------------>
+
+</div><!----column-------------------->
+ <div class = "column">
+
+
+ <!--------start------------------------------------>
+<% s_ext_qrs_morphology_pre  =
+         Query.select_options("ext_qrs_morphology_pre") %>
+
+<div class="field">
+    <label class="label">QRS Morphology </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= multiple_select(f, :ext_qrs_morphology_pre, s_ext_qrs_morphology_pre,
+              prompt: "---Select---",
+              class: "form-control",
+              size: 2)
+              %>
+            </div>
+            <%= error_tag f, :ext_qrs_morphology_pre %>
+            <span class="help"></span>
+          </div>
+          <!----control---->
+        </div>
+    <!---end field-------------------------------->
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+ <!--------start------------------------------------>
+<% s_ext_qwaves_pre  =
+         Query.select_options("ext_qwaves_pre") %>
+
+<div class="field">
+    <label class="label">Q Waves </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f, :ext_qwaves_pre, s_ext_qwaves_pre,
+              prompt: "---Select---",
+              class: "form-control")
+              %>
+            </div>
+            <%= error_tag f, :ext_qwaves_pre %>
+            <span class="help"></span>
+          </div>
+          <!----control---->
+        </div>
+    <!---end field-------------------------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!-------------start--field--------------------------------->
+    <div class="field">
+          <label class="label">ST Depression ?</label>
+          <div class="control">
+            <%= checkbox f, :ext_st_depres_pre_yn,
+               type: "checkbox" %>
+                 <%= error_tag f, :ext_st_depres_pre_yn %>
+            <p class = "help"></p>
+
+          </div>
+                 </div>
+<!----------------end field------------------------------>
+
+
+ </div><!----column-------------------->
+<div class = "column">
+
+<!-----------start field------------------------------------------->
+<div class="field">
+          <label class="label"> Pre EXT: ST Depres (mm) </label>
+          <div class="control">
+            <%= text_input f, :ext_st_depres_pre_val,
+               class: "input",
+               type: "text",
+              placeholder: "ext_st_depres_pre_val",
+              required: false %>
+              <%= error_tag f, :ext_st_depres_pre_val %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+<!---------end field---------------------------->
+
+
+
+</div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!-------------start--field--------------------------------->
+    <div class="field">
+          <label class="label">Pre ECG: T inverted ?</label>
+          <div class="control">
+            <%= checkbox f, :ext_t_wave_inversion_pre_yn,
+               type: "checkbox" %>
+                 <%= error_tag f, :ext_t_wave_inversion_pre_yn %>
+            <p class = "help"></p>
+
+          </div>
+                 </div>
+<!----------------end field------------------------------>
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!-------------start--field--------------------------------->
+    <div class="field">
+          <label class="label">Pre ECG: LV Hypertrophy ?</label>
+          <div class="control">
+            <%= checkbox f, :ext_lv_hypertrophy_pre_yn,
+               type: "checkbox" %>
+                 <%= error_tag f, :ext_lv_hypertrophy_pre_yn %>
+            <p class = "help">Check If Yes</p>
+
+          </div>
+                 </div>
+<!----------------end field------------------------------>
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+<!-------------start--field--------------------------------->
+    <div class="field">
+          <label class="label">Pre ECG: PVS's ?</label>
+          <div class="control">
+            <%= checkbox f, :ext_pvc_pre_yn,
+               type: "checkbox" %>
+                 <%= error_tag f, :ext_pvc_pre_yn %>
+            <p class = "help">Check If Yes</p>
+
+          </div>
+                 </div>
+<!----------------end field------------------------------>
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!-------------start--field--------------------------------->
+    <div class="field">
+          <label class="label">Pre ECG: Atrial Fib/Flutter ?</label>
+          <div class="control">
+            <%= checkbox f, :ext_afib_pre_yn,
+               type: "checkbox" %>
+                 <%= error_tag f, :ext_afib_pre_yn %>
+            <p class = "help">Check If Yes</p>
+
+          </div>
+                 </div>
+<!----------------end field------------------------------>
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+
+
+
+
+
+<span class="button is-primary  is-fullwidth ">
+<i class="fa fa-sticky-note">
+EXT Response
+</i>
+</span>
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<!-----------start field------------------------------------------->
+<div class="field">
+          <label class="label">Stages Completed </label>
+          <div class="control">
+            <%= text_input f,
+              :ext_stages_completed,
+               class: "input", type: "text",
+                placeholder: "ext_stages_completed",
+              required: false %>
+              <%= error_tag f, :ext_stages_completed %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+<!---------end field---------------------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!--------start------------------------------------>
+<% s_ext_stop_reason  =
+         Query.select_options("ext_stop_reason") %>
+
+<div class="field">
+    <label class="label">Stop Reason </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f, :ext_stop_reason, s_ext_stop_reason ,
+              prompt: "---Select---",
+              class: "form-control")
+              %>
+            </div>
+            <%= error_tag f, :ext_stop_reason  %>
+            <span class="help"></span>
+          </div>
+          <!----control---->
+        </div>
+    <!---end field-------------------------------->
+
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!-------------start--field--------------------------------->
+    <div class="field">
+          <label class="label">Strop Reason: Angina ?</label>
+          <div class="control">
+            <%= checkbox f, :ext_stop_reason_angina_yn,
+               type: "checkbox" %>
+                 <%= error_tag f, :ext_stop_reason_angina_yn %>
+            <p class = "help">Check If Yes</p>
+
+          </div>
+                 </div>
+<!----------------end field------------------------------>
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!-------------start--field--------------------------------->
+    <div class="field">
+          <label class="label">Strop Reason: Other ?</label>
+          <div class="control">
+            <%= checkbox f, :ext_stop_reason_other_yn,
+               type: "checkbox" %>
+                 <%= error_tag f, :ext_stop_reason_other_yn %>
+            <p class = "help">Check If Yes</p>
+
+          </div>
+                 </div>
+<!----------------end field------------------------------>
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+<!---------field--------------------------------->
+ <div class="field">
+                  <label class="label"> Notes On Stopping Reason </label>
+                  <div class="control">
+                      <%= text_input f, :ext_stopping_reason_notes , class: "textarea",
+                      type: "input",
+                      placeholder: "ext_stopping_reason_notes",
+                      required: false
+                      %>
+                      <%= error_tag f, :ext_stopping_reason_notes   %>
+                  </div>
+                  <p class="help"></p>
+</div><!----field---------------->
+
+</div><!----column-------------------->
+
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+<!-----------start field------------------------------------------->
+<div class="field">
+          <label class="label"> At Rest BP Diastolic </label>
+          <div class="control">
+            <%= text_input f, :ext_bp_diast_rest,
+               class: "input",
+               type: "text",
+              placeholder: "ext_bp_diast_rest",
+              required: false %>
+              <%= error_tag f, :ext_bp_diast_rest %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+<!---------end field---------------------------->
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!-----------start field------------------------------------------->
+<div class="field">
+          <label class="label"> Max BP Diastolic </label>
+          <div class="control">
+          <span class="field_help"></span>
+            <%= text_input f, :ext_bp_diast_max,
+               class: "input",
+               type: "text",
+              placeholder: "ext_bp_diast_max",
+              required: false %>
+              <%= error_tag f, :ext_bp_diast_max %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+<!---------end field---------------------------->
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+<!-----------start field------------------------------------------->
+<div class="field">
+          <label class="label"> Pre BP Systolic  </label>
+          <div class="control">
+          <span class="field_help"></span>
+            <%= text_input f, :ext_bp_sys_rest,
+               class: "input",
+               type: "text",
+              placeholder: "ext_bp_sys_rest",
+              required: false %>
+              <%= error_tag f, :ext_bp_sys_rest %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+<!---------end field---------------------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+
+
+<!-----------start field------------------------------------------->
+<div class="field">
+          <label class="label"> Max  BP Systolic  </label>
+          <div class="control">
+          <span class="field_help"></span>
+            <%= text_input f, :ext_bp_sys_max,
+               class: "input",
+               type: "text",
+              placeholder: "ext_bp_sys_max",
+              required: false %>
+              <%= error_tag f, :ext_bp_sys_max %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+<!---------end field---------------------------->
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!-----------start field------------------------------------------->
+<div class="field">
+          <label class="label"> At Rest: Heart Rate  </label>
+          <div class="control">
+          <span class="field_help"></span>
+            <%= text_input f, :ext_heart_rate_rest,
+               class: "input",
+               type: "text",
+              placeholder: "ext_heart_rate_rest",
+              required: false %>
+              <%= error_tag f, :ext_heart_rate_rest %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+<!---------end field---------------------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!-----------start field------------------------------------------->
+<div class="field">
+          <label class="label"> Heart Rate  Achieved</label>
+          <div class="control">
+          <span class="field_help"></span>
+            <%= text_input f, :ext_heart_rate_achieved,
+               class: "input",
+               type: "text",
+              placeholder: "ext_heart_rate_achieved",
+              required: false %>
+              <%= error_tag f, :ext_heart_rate_achieved %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+<!---------end field---------------------------->
+
+ </div><!----column-------------------->
+<div class = "column">
+
+<!-----------start field------------------------------------------->
+<div class="field">
+          <label class="label"> Heart Rate Predicted</label>
+          <div class="control">
+          <span class="field_help"></span>
+            <%= text_input f, :ext_heart_rate_max_predicted,
+               class: "input",
+               type: "text",
+              placeholder: "ext_heart_rate_max_predicted",
+              required: false %>
+              <%= error_tag f, :ext_heart_rate_max_predicted %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+<!---------end field---------------------------->
+
+
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!-----------start field------------------------------------------->
+<div class="field">
+          <label class="label"> Max ST Elevetion</label>
+          <div class="control">
+          <span class="field_help"></span>
+            <%= text_input f, :ext_st_elevation_max,
+               class: "input",
+               type: "text",
+              placeholder: "ext_st_elevation_max",
+              required: false %>
+              <%= error_tag f, :ext_st_elevation_max %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+<!---------end field---------------------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+
+
+<!-----------start field------------------------------------------->
+<div class="field">
+          <label class="label"> Max ST Depression</label>
+          <div class="control">
+          <span class="field_help"></span>
+            <%= text_input f, :ext_st_depres_max,
+               class: "input",
+               type: "text",
+              placeholder: "ext_st_depres_max",
+              required: false %>
+              <%= error_tag f, :ext_st_depres_max %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+<!---------end field---------------------------->
+
+ </div><!----column-------------------->
+ <div class = "column">
+
+
+<!-----------start field------------------------------------------->
+<div class="field">
+          <label class="label"> Max ST Depres Duration</label>
+          <div class="control">
+          <span class="field_help"></span>
+            <%= text_input f, :ext_st_depres_max_duration,
+               class: "input",
+               type: "text",
+              placeholder: "ext_st_depres_max_duration",
+              required: false %>
+              <%= error_tag f, :ext_st_depres_max_duration %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+<!---------end field---------------------------->
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!--------start------------------------------------>
+<% s_ext_st_depres_max_location  =
+         Query.select_options("ext_st_depres_max_location") %>
+
+<div class="field">
+    <label class="label">ST Depres Location </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f, :ext_st_depres_max_location, s_ext_st_depres_max_location ,
+              prompt: "---Select---",
+              class: "form-control")
+              %>
+            </div>
+            <%= error_tag f, :ext_st_depres_max_location  %>
+            <span class="help"></span>
+          </div>
+          <!----control---->
+        </div>
+    <!---end field-------------------------------->
+
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!-----------start field------------------------------------------->
+<div class="field">
+          <label class="label"> Max ST Slop</label>
+          <div class="control">
+          <span class="field_help"></span>
+            <%= text_input f, :ext_st_slop_max,
+               class: "input",
+               type: "text",
+              placeholder: "ext_st_slop_max",
+              required: false %>
+              <%= error_tag f, :ext_st_slop_max %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+<!---------end field---------------------------->
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+
+
+<span class="button is-primary  is-fullwidth ">
+<i class="fa fa-sticky-note">
+Recovery
+</i>
+</span>
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!-----------start field------------------------------------------->
+<div class="field">
+          <label class="label"> BP Systolic</label>
+          <div class="control">
+          <span class="field_help"></span>
+            <%= text_input f, :ext_bp_sys_recovery,
+               class: "input",
+               type: "text",
+              placeholder: "ext_bp_sys_recovery",
+              required: false %>
+              <%= error_tag f, :ext_bp_sys_recovery %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+<!---------end field---------------------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!-----------start field------------------------------------------->
+<div class="field">
+          <label class="label"> Recovery: BP Diastolic</label>
+          <div class="control">
+          <span class="field_help"></span>
+            <%= text_input f, :ext_bp_diast_recovery,
+               class: "input",
+               type: "text",
+              placeholder: "ext_bp_diast_recovery",
+              required: false %>
+              <%= error_tag f, :ext_bp_diast_recovery %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+<!---------end field---------------------------->
+
+
+ </div><!----column-------------------->
+<div class = "column">
+
+<!-----------start field------------------------------------------->
+<div class="field">
+          <label class="label"> Recover: ST Depression (mm)</label>
+          <div class="control">
+          <span class="field_help"></span>
+            <%= text_input f, :ext_st_depres_recovery_val,
+               class: "input",
+               type: "text",
+              placeholder: "ext_st_depres_recovery_val",
+              required: false %>
+              <%= error_tag f, :ext_st_depres_recovery_val %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+<!---------end field---------------------------->
+
+
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+<!--------start------------------------------------>
+<% s_ext_st_depres_recovery_location  =
+         Query.select_options("ext_st_depres_max_location") %>
+
+<div class="field">
+    <label class="label">Recovery ST Depres Location </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f, :ext_st_depres_recovery_location, s_ext_st_depres_recovery_location,
+              prompt: "---Select---",
+              class: "form-control")
+              %>
+            </div>
+            <%= error_tag f, :ext_st_depres_recovery_location %>
+            <span class="help"></span>
+          </div>
+          <!----control---->
+        </div>
+    <!---end field-------------------------------->
+
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!-----------start field------------------------------------------->
+<div class="field">
+          <label class="label"> Recovery: HRate At Max ST Depres </label>
+          <div class="control">
+          <span class="field_help"></span>
+            <%= text_input f, :ext_heart_rate_at_max_st_depres,
+               class: "input",
+               type: "text",
+              placeholder: "ext_heart_rate_at_max_st_depres",
+              required: false %>
+              <%= error_tag f, :ext_heart_rate_at_max_st_depres %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+<!---------end field---------------------------->
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+<span class="button is-primary  is-fullwidth ">
+<i class="fa fa-sticky-note">
+Complications
+</i>
+</span>
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+<!-------------start--field--------------------------------->
+    <div class="field">
+          <label class="label">Any Complication ?</label>
+          <div class="control">
+            <%= checkbox f, :ext_complication_yn,
+               type: "checkbox" %>
+                 <%= error_tag f, :ext_complication_yn %>
+            <p class = "help">Check If Yes</p>
+
+          </div>
+                 </div>
+<!----------------end field------------------------------>
+
+</div><!----column-------------------->
+ <div class = "column">
+
+
+<!-------------start--field--------------------------------->
+    <div class="field">
+          <label class="label">CPR Performed </label>
+          <div class="control">
+            <%= checkbox f, :ext_cpr_post_yn,
+               type: "checkbox" %>
+                 <%= error_tag f, :ext_cpr_post_yn %>
+            <p class = "help">Check If Yes</p>
+
+          </div>
+                 </div>
+<!----------------end field------------------------------>
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+<!-------------start--field--------------------------------->
+    <div class="field">
+          <label class="label">Bradycardia? </label>
+          <div class="control">
+            <%= checkbox f, :ext_bradycardia_post_yn,
+               type: "checkbox" %>
+                 <%= error_tag f, :ext_bradycardia_post_yn %>
+            <p class = "help">Check If Yes</p>
+
+          </div>
+                 </div>
+<!----------------end field------------------------------>
+
+
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+
+<!-------------start--field--------------------------------->
+    <div class="field">
+          <label class="label">Cardiogenic Shock ? </label>
+          <div class="control">
+            <%= checkbox f, :ext_cardio_shock_post_yn,
+               type: "checkbox" %>
+                 <%= error_tag f, :ext_cardio_shock_post_yn %>
+            <p class = "help">Check If Yes</p>
+
+          </div>
+                 </div>
+<!----------------end field------------------------------>
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!-------------start--field--------------------------------->
+    <div class="field">
+          <label class="label">Myocardial Infarction ? </label>
+          <div class="control">
+            <%= checkbox f, :ext_mi_post_yn ,
+               type: "checkbox" %>
+                 <%= error_tag f, :ext_mi_post_yn %>
+            <p class = "help">Check If Yes</p>
+
+          </div>
+                 </div>
+<!----------------end field------------------------------>
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!-------------start--field--------------------------------->
+    <div class="field">
+          <label class="label">Severe Angina ? </label>
+          <div class="control">
+            <%= checkbox f, :ext_angina_severe_post_yn ,
+               type: "checkbox" %>
+                 <%= error_tag f, :ext_angina_severe_post_yn %>
+            <p class = "help">Check If Yes</p>
+
+          </div>
+                 </div>
+<!----------------end field------------------------------>
+
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!-------------start--field--------------------------------->
+    <div class="field">
+          <label class="label">Post EXT: VTachy ? </label>
+          <div class="control">
+            <%= checkbox f, :ext_vt_post_yn ,
+               type: "checkbox" %>
+                 <%= error_tag f, :ext_vt_post_yn %>
+            <p class = "help">Check If Yes</p>
+
+          </div>
+                 </div>
+<!----------------end field------------------------------>
+
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!-------------start--field--------------------------------->
+    <div class="field">
+          <label class="label">Post EXT: AFib/Flutter ? </label>
+          <div class="control">
+            <%= checkbox f, :ext_compl_afib_post_yn  ,
+               type: "checkbox" %>
+                 <%= error_tag f, :ext_compl_afib_post_yn  %>
+            <p class = "help">Check If Yes</p>
+
+          </div>
+                 </div>
+<!----------------end field------------------------------>
+
+
+ </div><!----column-------------------->
+
+<div class = "column">
+
+
+
+<!-------------start--field--------------------------------->
+    <div class="field">
+          <label class="label">Post EXT: Other Complication ? </label>
+          <div class="control">
+            <%= checkbox f, :ext_compl_other_yn ,
+               type: "checkbox" %>
+                 <%= error_tag f, :ext_compl_other_yn  %>
+            <p class = "help">Check If Yes</p>
+
+          </div>
+                 </div>
+<!----------------end field------------------------------>
+
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+<!---------field--------------------------------->
+ <div class="field">
+                  <label class="label"> Notes On Complications </label>
+                  <div class="control">
+                      <%= text_input f, :ext_compl_notes, class: "textarea",
+                      type: "input",
+                      placeholder: "ext_compl_notes",
+                      required: false
+                      %>
+                      <%= error_tag f, :ext_compl_notes   %>
+                  </div>
+                  <p class="help"></p>
+</div><!----field---------------->
+
+
+</div><!----column-------------------->
+
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+
+
+
+</div><!--------END LEFT COLUMN------------------>
+
+<div class="column frame_1">
+
+
+
+
+<span class="button is-primary  is-fullwidth ">
+<i class="fa fa-sticky-note">
+Scales
+</i>
+</span>
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!-----------start field------------------------------------------->
+<div class="field">
+          <label class="label"> Mets Completed </label>
+          <div class="control">
+          <span class="field_help"></span>
+            <%= text_input f, :ext_mets,
+               class: "input",
+               type: "text",
+              placeholder: "ext_mets",
+              required: false %>
+              <%= error_tag f, :ext_mets %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+<!---------end field---------------------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!-----------start field------------------------------------------->
+<div class="field">
+          <label class="label"> Watts </label>
+          <div class="control">
+          <span class="field_help"></span>
+            <%= text_input f, :ext_watts,
+               class: "input",
+               type: "text",
+              placeholder: "ext_watts",
+              required: false %>
+              <%= error_tag f, :ext_watts %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+<!---------end field---------------------------->
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!-----------start field------------------------------------------->
+<div class="field">
+          <label class="label">Duke Score </label>
+          <div class="control">
+          <span class="field_help"></span>
+            <%= text_input f, :ext_duke_score,
+               class: "input",
+               type: "text",
+              placeholder: ":ext_duke_score",
+              required: false %>
+              <%= error_tag f, :ext_duke_score %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+<!---------end field---------------------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!-----------start field------------------------------------------->
+<div class="field">
+          <label class="label">Borg Score </label>
+          <div class="control">
+          <span class="field_help"></span>
+            <%= text_input f, :ext_borg_scale,
+               class: "input",
+               type: "text",
+              placeholder: ":ext_borg_scale",
+              required: false %>
+              <%= error_tag f, :ext_borg_scale %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+<!---------end field---------------------------->
+
+
+ </div><!----column-------------------->
+<div class = "column">
+
+<!-----------start field------------------------------------------->
+<div class="field">
+          <label class="label">Athens Score </label>
+          <div class="control">
+          <span class="field_help"></span>
+            <%= text_input f, :ext_athens_score,
+               class: "input",
+               type: "text",
+              placeholder: ":ext_athens_score",
+              required: false %>
+              <%= error_tag f, :ext_athens_score %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+<!---------end field---------------------------->
+
+
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+<span class="button is-danger  is-fullwidth ">
+<i class="fa fa-sticky-note">
+Results
+</i>
+</span>
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+<!--------start------------------------------------>
+<% s_ext_result  =
+         Query.select_options("ext_result") %>
+
+<div class="field">
+    <label class="label">Result </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f, :ext_result, s_ext_result ,
+              prompt: "---Select---",
+              class: "form-control")
+              %>
+            </div>
+            <%= error_tag f, :ext_result%>
+            <span class="help"></span>
+          </div>
+          <!----control---->
+        </div>
+    <!---end field-------------------------------->
+
+
+
+</div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+<!---------field--------------------------------->
+ <div class="field">
+                  <label class="label"> Notes On The Results </label>
+                  <div class="control">
+                      <%= text_input f, :ext_result_notes, class: "textarea",
+                      type: "input",
+                      placeholder: "ext_result_notes",
+                      required: false
+                      %>
+                      <%= error_tag f, :ext_result_notes   %>
+                  </div>
+                  <p class="help"></p>
+</div><!----field---------------->
+
+
+</div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+<!---------start----------------------------------->
+  <div class = "columns">
+
+
+
+<div class = "column">
+
+<!---------field--------------------------------->
+ <div class="field">
+                  <label class="label"> Recommendations </label>
+                  <div class="control">
+                      <%= text_input f, :ext_recommendations, class: "textarea",
+                      type: "input",
+                      placeholder: "ext_recommendations",
+                      required: false
+                      %>
+                      <%= error_tag f, :ext_recommendations   %>
+                  </div>
+                  <p class="help"></p>
+</div><!----field---------------->
+
+</div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+<span class="button is-primary  is-fullwidth ">
+<i class="fa fa-sticky-note">
+Notes
+</i>
+</span>
+
+
+ <!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<div class="field">
+          <label class="label">My Notes </label>
+          <div class="control">
+            <%= text_input f, :ext_notes, class: "textarea", type: "input",
+            placeholder: "ext_notes" %> <%= error_tag f, :ext_notes %>
+
+            <p class="help"></p>
+          </div>
+          <!---control---------->
+        </div>
+        <!-------field-------->
+
+
+</div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<%= render  AngioWeb.SharedView, "_help_area.html" %>
+</div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+
+
+
+<span class="button is-primary  is-fullwidth ">
+<i class="fa fa-sticky-note">
+Extras
+</i>
+</span>
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+
+<!-----------start field------------------------------------------->
+<div class="field">
+          <label class="label">Age Vo2 </label>
+          <div class="control">
+          <span class="field_help"></span>
+            <%= text_input f, :ext_cpx_age_vo2,
+               class: "input",
+               type: "text",
+              placeholder: "ext_cpx_age_vo2",
+              required: false %>
+              <%= error_tag f, :ext_cpx_age_vo2 %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+<!---------end field---------------------------->
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+
+
+<!-----------start field------------------------------------------->
+<div class="field">
+          <label class="label">Vo2 Ventilatory Response </label>
+          <div class="control">
+          <span class="field_help"></span>
+            <%= text_input f, :ext_cpx_vo2_ventilatory_response,
+               class: "input",
+               type: "text",
+              placeholder: "ext_cpx_vo2_ventilatory_response",
+              required: false %>
+              <%= error_tag f, :ext_cpx_vo2_ventilatory_response %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+<!---------end field---------------------------->
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!-----------start field------------------------------------------->
+<div class="field">
+          <label class="label">Vo2 Ventilatory Slope </label>
+          <div class="control">
+          <span class="field_help"></span>
+            <%= text_input f, :ext_cpx_ve_vco2_slope,
+               class: "input",
+               type: "text",
+              placeholder: "ext_cpx_ve_vco2_slope",
+              required: false %>
+              <%= error_tag f, :ext_cpx_ve_vco2_slope %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+<!---------end field---------------------------->
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!-----------start field------------------------------------------->
+<div class="field">
+          <label class="label">CPX Peak Mets </label>
+          <div class="control">
+          <span class="field_help"></span>
+            <%= text_input f, :ext_cpx_peak_mets,
+               class: "input",
+               type: "text",
+              placeholder: "ext_cpx_peak_mets",
+              required: false %>
+              <%= error_tag f, :ext_cpx_peak_mets %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+<!---------end field---------------------------->
+
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!-----------start field------------------------------------------->
+<div class="field">
+          <label class="label">CPX Peak Vo2 </label>
+          <div class="control">
+          <span class="field_help"></span>
+            <%= text_input f, :ext_cpx_peak_vo2 ,
+               class: "input",
+               type: "text",
+              placeholder: "ext_cpx_peak_vo2",
+              required: false %>
+              <%= error_tag f, :ext_cpx_peak_vo2 %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+<!---------end field---------------------------->
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!-----------start field------------------------------------------->
+<div class="field">
+          <label class="label">VA Score </label>
+          <div class="control">
+          <span class="field_help"></span>
+            <%= text_input f, :ext_va_treadmill_score ,
+               class: "input",
+               type: "text",
+              placeholder: "ext_va_treadmill_score",
+              required: false %>
+              <%= error_tag f, :ext_va_treadmill_score %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+<!---------end field---------------------------->
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!-----------start field------------------------------------------->
+<div class="field">
+          <label class="label">Max Aerobic Capacity </label>
+          <div class="control">
+          <span class="field_help"></span>
+            <%= text_input f, :ext_aerobic_capacity_max ,
+               class: "input",
+               type: "text",
+              placeholder: "ext_aerobic_capacity_max",
+              required: false %>
+              <%= error_tag f, :ext_aerobic_capacity_max %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+<!---------end field---------------------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!-----------start field------------------------------------------->
+<div class="field">
+          <label class="label">Pre Test CAD Propability </label>
+          <div class="control">
+          <span class="field_help"></span>
+            <%= text_input f, :ext_cad_pretest_probability ,
+               class: "input",
+               type: "text",
+              placeholder: "ext_cad_pretest_probability",
+              required: false %>
+              <%= error_tag f, :ext_cad_pretest_probability %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+<!---------end field---------------------------->
+
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!-----------start field------------------------------------------->
+<div class="field">
+          <label class="label">Pre Test CAD Mortality Risk </label>
+          <div class="control">
+          <span class="field_help"></span>
+            <%= text_input f, :ext_mortality_cad_risk ,
+               class: "input",
+               type: "text",
+              placeholder: "ext_mortality_cad_risk",
+              required: false %>
+              <%= error_tag f, :ext_mortality_cad_risk %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+<!---------end field---------------------------->
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+
+<!-------------start--field--------------------------------->
+    <div class="field">
+          <label class="label"> Was  Holding Handrails ? </label>
+          <div class="control">
+          <span class= "field_help"></span>
+
+            <%= checkbox f, :ext_need_hold_handrails_yn ,
+               type: "checkbox" %>
+                 <%= error_tag f, :ext_need_hold_handrails_yn  %>
+            <p class = "help">Check If Yes</p>
+
+          </div>
+                 </div>
+<!----------------end field------------------------------>
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+
+
+
+
+</div><!-----R COLUMN----------------------------------->
+
+
+
+</div><!-----columns--------------------------->
+<div>
+    <%= submit "Save and Continue", class: "button is-info is-large is-fullwidth " %>
+
+  </div>
+
+
+<% end %>

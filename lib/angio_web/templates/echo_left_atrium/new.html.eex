@@ -1,0 +1,37 @@
+
+<div class="title_form">
+<h6 class="title is-6 has-text-centered">New  Record for Left Atrium  Echo </h6>
+</div><!----title_form----------------------->
+
+<div class="element_info">
+  Patient : <%= render AngioWeb.SharedView, "_patient_info.html", patient:
+  @patient %>
+</div>
+
+<%= render "form.html", changeset: @changeset, action:
+Routes.pt_echo_ela_path(@conn, :create, @patient, @cardiac_echo) %>
+
+<p class ="buttons_separator"> . </p>
+
+<span>
+<%=link "Back To LA Echo  List ", to: Routes.pt_echo_ela_path(@conn, :create,
+@patient, @cardiac_echo), class: "button is-link"%>
+</span>
+
+<span>
+<%= link "To Patient List",  to: Routes.pt_path(@conn, :index),
+class: "button is-link"   %>
+</span>
+
+
+<span>
+<%= link "To Cath Lab",  to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-link"   %>
+</span>
+
+
+
+
+
+
+

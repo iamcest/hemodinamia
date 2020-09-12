@@ -1,0 +1,318 @@
+<% alias Angio.Canons, as: Query %>
+
+
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+<div class = "columns">
+<div class = "column frame_1">
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!--------start Field ----------------------------->
+  <div class="field">
+          <label class="label">Exam Date </label>
+          <div class="control">
+          <span class='field_help'></span>
+     <%= text_input f, :chestp_dt,
+        class: "input", type: "date",
+         placeholder: "vital_sgns_dt", required: false %>
+          <%= error_tag f,
+            :chestp_dt%>
+          </div>
+          <p class="help">  <%#= i_proc_epis_request_dt %> </p>
+        </div>
+        <!--field---------->
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+ <!--------start Field ----------------------------->
+  <div class="field">
+          <label class="label">Exam Time </label>
+          <div class="control">
+          <span class='field_help'></span>
+     <%= text_input f, :chestp_tm,
+        class: "input", type: "time",
+         placeholder: "vital_sgns_dt", required: false %>
+          <%= error_tag f,
+            :chestp_tm%>
+          </div>
+          <p class="help">  <%#= i_proc_epis_request_dt %> </p>
+        </div>
+        <!--field---------->
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+
+<!----- start selection field---------------------------->
+   <%  s_chestp_location  =  Query.select_options("chestp_location") %>
+<div class="field">
+    <label class="label">Pain Location </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f,
+:chestp_location  , s_chestp_location,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :chestp_location   %>
+            <span class="help"></span>
+
+
+          </div><!----control---->
+        </div><!------field--->
+
+ <!-------end selection field----------------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+
+
+
+
+<!----- start selection field---------------------------->
+   <%  s_chestp_quality  =  Query.select_options("chestp_quality") %>
+<div class="field">
+    <label class="label">Pain Quality </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f,
+:chestp_quality, s_chestp_quality,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :chestp_quality  %>
+            <span class="help"></span>
+
+
+          </div><!----control---->
+        </div><!------field--->
+
+ <!-------end selection field----------------------->
+
+
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+<!----- start selection field---------------------------->
+   <%  s_chestp_perciptating_factors  =  Query.select_options("chestp_perciptating_factors") %>
+<div class="field">
+    <label class="label">Pain Percipitating Factors </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f,
+:chestp_perciptating_factors, s_chestp_perciptating_factors,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :chestp_perciptating_factors  %>
+            <span class="help"></span>
+
+
+          </div><!----control---->
+        </div><!------field--->
+
+ <!-------end selection field----------------------->
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+
+
+<!----- start selection field---------------------------->
+   <%  s_chestp_relieving_factors  =  Query.select_options("chestp_relieving_factors") %>
+<div class="field">
+    <label class="label">Pain Relieving Factors </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f,
+:chestp_relieving_factors, s_chestp_relieving_factors,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :chechest_relieving_factors  %>
+            <span class="help"></span>
+
+
+          </div><!----control---->
+        </div><!------field--->
+
+ <!-------end selection field----------------------->
+
+
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<!----- start selection field---------------------------->
+   <%  s_chestp_assoc_symptoms  =  Query.select_options("chestp_assoc_symptoms") %>
+<div class="field">
+    <label class="label">Pain Asssoc Symptoms</label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f,
+:chestp_assoc_symptoms, s_chestp_assoc_symptoms,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :chestp_assoc_symptoms  %>
+            <span class="help"></span>
+
+
+          </div><!----control---->
+        </div><!------field--->
+
+ <!-------end selection field----------------------->
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!----- start selection field---------------------------->
+   <%  s_chestp_duration  = Query.select_options("chestp_duration") %>
+<div class="field">
+    <label class="label">Pain Duration</label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f,
+:chestp_duration, s_chestp_duration,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :chestp_duration %>
+            <span class="help"></span>
+
+
+          </div><!----control---->
+        </div><!------field--->
+
+ <!-------end selection field----------------------->
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+
+
+</div><!--------LEFT---column-------------->
+<div class = "column frame_1">
+
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+  <div class="field">
+  <label class="label"> My Notes Chest Pain Evaluation</label>
+  <div class="control">
+    <%= text_input f, :chestp_notes,
+        class: "textarea",
+        type: "input", placeholder: "chestp_notes"  %>
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+</div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+ <div class = "columns">
+<div class = "column">
+ <%= render  AngioWeb.SharedView, "_help_area.html" %>
+</div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------start----------------------------------->
+
+<span class="button is-primary is-fullwidth ">
+<i class="fa fa-heartbeat" ></i>
+Diagrams For Pain Location (Ref: CADOSA)
+ </span>
+
+  <div class = "columns">
+<div class = "column">
+<p/>
+<img   height="400px"
+src= "http://localhost:4000/images/chest_pains_front.png"
+alt="slide image" class="float-center"/>
+</div><!----column-------------------->
+<div class = "column">
+<p/>
+<img   height="400px"
+src= "http://localhost:4000/images/chest_pains_back.png"
+alt="slide image" class="float-center"/>
+
+</div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+
+
+
+</div><!---Right Column --------------->
+</div><!----------columns-------------------->
+<div>
+    <%= submit "Save and Continue", class: "button is-info is-large is-fullwidth " %>
+  </div>
+<% end %>

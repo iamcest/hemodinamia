@@ -1,0 +1,93 @@
+<% alias Angio.Canons, as: Query %>
+<div class="menu_info_tabs" >
+<%= render  AngioWeb.SharedView, "_menu_assesment_tabs.html", assigns %>
+</div>
+
+<div class="element_info">
+  <%= render AngioWeb.SharedView, "_patient_info.html", patient:
+  @patient %>
+</div>
+
+<div class="element_info_coronary">
+<%= render AngioWeb.SharedView, "_info_coronary.html", info_coronary:
+   @info_coronary%>
+</div>
+
+<div class="columns">
+<div class="column is-2 menu_all">
+
+  <%= render AngioWeb.SharedView, "_menu_all.html", info_coronary:
+   @info_coronary, conn: @conn, patient: @patient%>
+</div><!-----------menu column ------------------>
+
+<div class="column is-10 frame_1">
+<table
+  class="table is-bordered
+                    is-striped
+                    is-full-width
+                    is-hoverable" >
+
+
+<div class="title_form">
+<h6 class="title is-6 has-text-centered"> Cardio Clinical Exam Index</h6>
+</div>
+  <thead>
+    <tr>
+      <th>Exam Date </th>
+      <th>Exam Time`</th>
+      <th>Is Normal?</th>
+      <th>Show</th>
+      <th>Edit</th>
+      <th>Delete</th>
+
+    </tr>
+  </thead>
+  <tbody>
+<%= for clinical_exam_cardio <- @clinical_exams_cardios do %>
+    <tr>
+      <td><%= clinical_exam_cardio.cle_dt %></td>
+      <td><%= clinical_exam_cardio.cle_tm %></td>
+       <td><%= raw Query.convert_true_false(clinical_exam_cardio.cle_normal_yn) %></td>
+      <td>
+        <%= link "Show", to: Routes.pt_angio_cle_cardio_path(@conn, :show, @patient, @info_coronary,
+                    clinical_exam_cardio ),
+                    class: "button  is-link is-small" %>
+
+        <%#= link "Show", to: Routes.clinical_exam_cardio_path(@conn, :show, clinical_exam_cardio) %>
+      </td>
+      <td>
+          <%= link "Edit", to: Routes.pt_angio_cle_cardio_path(@conn, :edit, @patient,
+        @info_coronary, clinical_exam_cardio), class: "button is-link is-small" %>
+
+        <%#= link "Edit", to: Routes.clinical_exam_cardio_path(@conn, :edit, clinical_exam_cardio) %>
+      </td>
+      <td>
+ <%= link "Delete", to: Routes.pt_angio_cle_cardio_path(@conn, :delete,
+        @patient, @info_coronary, clinical_exam_cardio), method: :delete, data: [confirm:
+        "Are you sure?"], class: "button is-small is-danger" %>
+
+        <%#= link "Delete", to: Routes.clinical_exam_cardio_path(@conn, :delete, clinical_exam_cardio), method: :delete, data: [confirm: "Are you sure?"] %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+</div><!-------------------column---------------->
+</div><!----columns--------------->
+
+
+<span><%= link "Insert A Clinical Exam Record ",
+      to: Routes.pt_angio_cle_cardio_path(@conn, :new,
+  @patient, @info_coronary), class: "button is-info is-medium is-fullwidth" %>
+</span>
+<p class ="buttons_separator"> . </p>
+<span>
+  <%= link "To Patient List", to: Routes.pt_path(@conn, :index), class: "button
+  is-link" %>
+</span>
+
+<span>
+<%= link "Back To Cath Lab",  to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-link"   %>
+ </span>
+

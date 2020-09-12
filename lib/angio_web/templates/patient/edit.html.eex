@@ -1,0 +1,14 @@
+
+<div class="title_form">
+<h5 class="title is-5 has-text-centered">Edit Patient</h5>
+</div>
+
+
+<%= render "form.html", Map.put(assigns, :action,
+Routes.pt_path(@conn, :update, @patient)) %>
+
+<p class ="buttons_separator"> . </p>
+
+<div>
+    <%= link "Back To Patient List", to: Routes.pt_path(@conn, :index), class: "button is-link" %>
+</div>

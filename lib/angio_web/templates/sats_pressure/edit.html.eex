@@ -1,0 +1,31 @@
+
+<div class="title_form">
+<h4 class="title is-4 has-text-centered"> Editing Sats Pressures Record </h4>
+</div>
+
+<div class="element_info">
+   <%= render AngioWeb.SharedView, "_patient_info.html", patient:
+  @patient %>
+</div>
+
+<div class="element_info_coronary">
+<%= render AngioWeb.SharedView, "_info_coronary.html", info_coronary:
+   @info_coronary%>
+</div>
+
+ <%= render "form.html", changeset: @changeset,
+        sats_pressure: @sats_pressure,
+action: Routes.pt_angio_satpres_path(@conn, :update,
+@patient,
+@info_coronary,
+@sats_pressure ) %>
+<p class ="buttons_separator"> . </p>
+        <span>
+ <%= link "Back To Sats PressuresIndex",
+  to: Routes.pt_angio_satpres_path(@conn, :index,
+@patient,@info_coronary) , class: "button is-link "%>
+</span>
+<span>
+<%= link "Back To Lab",  to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-link"   %>
+ </span>

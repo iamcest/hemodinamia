@@ -1,0 +1,25 @@
+
+<div class="title_form">
+<h5 class="title is-5 has-text-centered">New Record For Coarctation Devices </h5>
+</div><!----title_form----------------------->
+<div class="element_info">
+   <%= render AngioWeb.SharedView, "_patient_info.html", patient:
+  @patient %>
+</div>
+<div class="element_info_coronary">
+<%= render AngioWeb.SharedView, "_info_coronary.html", info_coronary:
+   @info_coronary%>
+</div>
+
+<%= render "form.html", changeset: @changeset, action:
+Routes.pt_angio_coarc_device_path(@conn, :create,
+                  @patient, @info_coronary, @coarc_procedure) %>
+
+<p class ="buttons_separator"> . </p>
+<%=link "Back To Coarc Device Index ", to: Routes.pt_angio_coarc_device_path(@conn, :create,
+@patient, @info_coronary, @coarc_procedure), class: "button is-link"%>
+
+<span>
+<%= link "Back To Cath Lab",  to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-link"   %>
+ </span>

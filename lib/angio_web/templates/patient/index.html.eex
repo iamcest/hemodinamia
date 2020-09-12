@@ -1,0 +1,220 @@
+ <% alias Angio.Canons, as: Query %>
+<div class="search_form">
+ <h5 class="title is-5 has-text-centered">
+  Search For A Patient
+ </h5>
+</div><!------title form------------------->
+
+
+<div class="columns  is-centered search_form_2">
+
+  <div class="column is-2">
+<span class="has-form">
+   <%= form_for @conn, Routes.patient_path(@conn, :search_patients), [as: :search_patients], fn f -> %>
+
+ <div class="field">
+     <label class="label">Search In: </label>
+
+     <div class="control">
+    <div  class="select is-primary">
+      <%= select(f, :selection,
+ ["Last Names": "last_name",
+  "Social Security Num": "ssn",
+     ],
+class: "form-control")    %>
+
+    </div><!--select---->
+     </div><!--control---->
+  </div><!---field--->
+
+    </span>
+
+  </div><!--column---------->
+
+  <div class="column is-4">
+  <label class="label"> Your Query  </label>
+  <div class="control">
+    <%= text_input f, :query, class: "input",
+           type: "text", placeholder: "Text input"  %>
+   <%= error_tag f, :query %>
+  </div>
+
+  </div> <!--column----->
+
+  <div class="column is-2">
+ <label class="label">Search  </label>
+   <%= submit "Search", class: "button  is-primary is-fullwidth"  %>
+</div>
+
+<% end %>
+
+</div><!--columns------>
+<p >
+
+</div>
+
+<div class="title_form">
+ <h6 class="title is-6 has-text-centered">
+  List Of Patients
+</h6>
+
+</div>
+
+<table class="
+table is-bordered
+                    is-striped
+                    is-full-width
+                    is-hoverable
+  ">
+  <thead class="thead">
+    <tr>
+      <th>Last Name</th>
+      <th>First name</th>
+      <th>Gender</th>
+      <th>Middle name</th>
+      <th>Birth Date</th>
+      <th>SSN</th>
+      <th>Active Record? </th>
+       <th>
+
+             <span>
+         <i class="fa fa-phone"
+          style="font-size:28px;color:#053eff;text-align:center;">
+          </i>
+          <br/>
+
+         </span>
+         Contacts
+
+      </th>
+ <th>
+
+             <span>
+         <i class="fa fa-address-card"
+          style="font-size:28px;color:#1F7A1F;text-align:center;">
+          </i>
+          <br/>
+         </span>
+         F/Ups
+
+      </th>
+
+ <th>
+
+             <span>
+         <i class="fa fa-sign-in"
+          style="font-size:28px;color:#00997A;text-align:center;">
+          </i>
+          <br/>
+         </span>
+         Exercise Test
+
+      </th>
+      <th>
+
+      <span>
+         <i class="fa fa-sign-in"
+          style="font-size:28px;color:#993D00;text-align:center;">
+          </i>
+          <br/>
+         </span>
+        Echo
+      </th>
+
+      <th>
+
+             <span>
+         <i class="fa fa-sign-in"
+          style="font-size:28px;color:#053eff;text-align:center;">
+          </i>
+          <br/>
+         </span>
+          Cath Lab
+
+      </th>
+      <th>Show</th>
+ <th>Edit</th>
+ <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for patient <- @patients do %>
+    <tr>
+      <td> <strong>
+          <%= patient.patnts_last_name %>
+          </strong>
+      </td>
+      <td><%= patient.patnts_first_name %></td>
+
+     <% s_patnts_gender =  Query.select_options("patnts_gender") %>
+      <% v_patnts_gender = patient.patnts_gender  %>
+
+      <td><%= raw(Query.convert_select_key( s_patnts_gender, v_patnts_gender)) %></td>
+
+      <td><%= patient.patnts_middle_name %></td>
+      <td><%= patient.patnts_birth_dt %></td>
+      <td><%= patient.patnts_ssn %></td>
+      <td>
+
+       <%=  raw Query.convert_true_false(patient.patnts_record_active) %>
+
+
+      </td>
+       <td>
+        <%= link "Contacts", to: Routes.pt_contacts_path(@conn, :index, patient),
+        class: "button is-info is-small is-fullwidth"  %>
+
+        </td>
+ <td>
+
+<%= render  AngioWeb.SharedView, "_menu_followups.html",
+conn: @conn, patient: patient%>
+
+ </td>
+ <td>
+ <%= link "Exeecise Test", to: Routes.pt_ext_path(@conn, :index, patient),
+        class: "button is-info is-small is-fullwidth"  %>
+
+ </td>
+
+  <td>
+ <%= link "Echo", to: Routes.pt_echo_path(@conn, :index, patient),
+        class: "button is-info is-small is-fullwidth"  %>
+
+ </td>
+      <td>
+
+        <%= link  to: Routes.pt_angio_path(@conn, :index, patient),
+class: "button is-primary is-small is-fullwidth" do  %>
+<%= render  AngioWeb.SharedView,
+ "_info_coronary_count.html",
+  patient: patient %>
+           <%end%>
+
+        </td>
+
+      <td>
+
+        <%= link "Show", to: Routes.pt_path(@conn, :show, patient),
+        class: "button is-primary is-rounded is-small"  %>
+
+      </td>
+    <td>
+        <%= link "Edit", to: Routes.pt_path(@conn, :edit, patient),
+        class: "button is-primary is-rounded is-small"  %>
+        </td>
+        <td>
+        <%= link "Delete", to: Routes.pt_path(@conn, :delete, patient), method: :delete,
+        data: [confirm: "Are you sure?"], class: " button is-danger is-rounded is-small"  %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "Enter A New Patient",
+to: Routes.pt_path(@conn, :new),
+class: "button is-primary is-medium is-fullwidth"  %>
+</span>
+
+

@@ -1,0 +1,402 @@
+<% alias Angio.Canons, as: Query %>
+
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+  <div class="notification is-danger">
+    <button class="delete"></button>
+    Oops, something went wrong! Please check the errors below or Maybe dublicated Record
+</div>
+
+  <% end %>
+
+
+<div class="columns">
+  <div class="column is-7 frame_1">
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+
+<!----- start selection field---------------------------->
+   <%  s_era_size_volume_desc  =  Query.select_options("era_size_volume_desc") %>
+<div class="field">
+    <label class="label">RA Volume Description</label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f,
+:era_size_volume_descc, s_era_size_volume_desc,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :era_size_volume_desc %>
+            <span class="help"></span>
+          </div><!----control---->
+        </div><!------field--->
+
+ <!-------end selection field----------------------->
+</div><!----column-------------------->
+ <div class = "column">
+
+ <!--- start field--------------------------------->
+<div class="field">
+            <label class="label" >RA Volume (mL) </label>
+            <p/>
+           <span class= "field_help"></span>
+            <%= text_input f, :era_volume_val,
+            class: "input",
+            type: "text",
+            placeholder: "era_volume_val",
+            required: false %>
+            <%= error_tag f, :era_volume_val %>
+          <p class="help"></p>
+        </div>
+<!-----------end field----------------------->
+
+ </div><!----column-------------------->
+
+ <div class = "column">
+
+
+
+<!----- start selection field---------------------------->
+   <%  s_era_size_volume_method  =  Query.select_options("era_size_volume_method") %>
+<div class="field">
+    <label class="label">RA Volume Mesurment Method</label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f,
+:era_size_volume_method, s_era_size_volume_method,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :era_size_volume_method %>
+            <span class="help"></span>
+          </div><!----control---->
+        </div><!------field--->
+
+ <!-------end selection field----------------------->
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------><!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+ <!--- start field--------------------------------->
+<div class="field">
+            <label class="label" >RA Diameter Superior-Inferior </label>
+            <p/>
+           <span class= "field_help"></span>
+            <%= text_input f, :era_si_diameter_val,
+            class: "input",
+            type: "text",
+            placeholder: "era_si_diameter_val",
+            required: false %>
+            <%= error_tag f, :era_si_diameter_val %>
+          <p class="help"></p>
+        </div>
+<!-----------end field----------------------->
+
+</div><!----column-------------------->
+
+ <div class = "column">
+
+<!--- start field--------------------------------->
+<div class="field">
+            <label class="label" >RA Diameter Medial-Lateral </label>
+            <p/>
+           <span class= "field_help"></span>
+            <%= text_input f, :era_ml_diameter_val,
+            class: "input",
+            type: "text",
+            placeholder: "era_ml_diameter_val",
+            required: false %>
+            <%= error_tag f, :era_ml_diameter_val %>
+          <p class="help"></p>
+        </div>
+<!-----------end field----------------------->
+
+
+ </div><!----column-------------------->
+ <div class = "column">
+
+
+<!--- start field--------------------------------->
+<div class="field">
+            <label class="label" >RA Max Diameter </label>
+            <p/>
+           <span class= "field_help"></span>
+            <%= text_input f, :era_max_diameter_val,
+            class: "input",
+            type: "text",
+            placeholder: "era_max_diameter_val",
+            required: false %>
+            <%= error_tag f, :era_max_diameter_val %>
+          <p class="help"></p>
+        </div>
+<!-----------end field----------------------->
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------><!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+<!--- start field--------------------------------->
+<div class="field">
+            <label class="label" >RA Area </label>
+            <p/>
+           <span class= "field_help"></span>
+            <%= text_input f, :era_area_val,
+            class: "input",
+            type: "text",
+            placeholder: "era_area_val",
+            required: false %>
+            <%= error_tag f, :era_area_val %>
+          <p class="help"></p>
+        </div>
+<!-----------end field----------------------->
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Septum Bowed to Left?</label>
+        <div class="control">
+         <p/>
+         <span class="field_help"></span>
+          <%= checkbox f, :era_septum_bowed_left_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :era_septum_bowed_left_yn %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+
+ </div><!----column-------------------->
+ <div class = "column">
+
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Any Lead Wire - Catheter In RA?</label>
+        <div class="control">
+
+         <span class="field_help"></span>
+          <%= checkbox f, :era_cath_wire_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :era_cath_wire_yn %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------><!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Coronary Sinus Dilated?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :era_coronary_sinus_dilated_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :era_coronary_sinus_dilated_yn %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+
+
+</div><!----column-------------------->
+
+ <div class = "column">
+
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Prominent Eustachian?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :era_eustachian_prominent_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :era_eustachian_prominent_yn %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+ </div><!----column-------------------->
+<div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Prominent Chiari Net?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :era_chiari_prominent_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :era_chiari_prominent_yn %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------><!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Any Mass In RA Cavity?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :era_thrombus_tumour_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :era_thrombus_tumour_yn %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+</div><!----column-------------------->
+ <div class = "column">
+
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Any Mass In IVC Cavity?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :era_ivc_thrombus_tumour_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :era_ivc_thrombus_tumour_yn %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+ </div><!----column-------------------->
+
+ <div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Any Mass In SVC Cavity?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :era_svc_thrombus_tumour_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :era_svc_thrombus_tumour_yn %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+ </div><!----column-------------------->
+
+
+ <div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Persistant SVC ?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :era_persistent_svc_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :era_persistent_svc_yn %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+
+
+
+
+
+</div><!--------LEFT COLUMN----------------->
+
+<div class="column is-5 frame_1">
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+  <div class="field">
+  <label class="label"> My Notes On Right Atrium Echo</label>
+  <div class="control">
+    <%= text_input f, :era_notes,
+        class: "textarea",
+        type: "input", placeholder: "era_notes"  %>
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+</div><!----column-------------------->
+</div><!----columns--------------------------->
+
+
+ <div class = "columns">
+<div class = "column">
+ <%= render  AngioWeb.SharedView, "_help_area.html" %>
+</div><!----column-------------------->
+</div><!----columns--------------------------->
+
+
+</div><!------RIGHT COLUMN----------------------------->
+</div><!------end columns-------------------------------------------->
+
+
+   <div>
+    <%= submit "Save Record", class: "button is-info is-large is-fullwidth " %>
+
+  </div>
+
+<% end %>

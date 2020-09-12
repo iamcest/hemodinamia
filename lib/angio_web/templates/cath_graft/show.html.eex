@@ -1,0 +1,283 @@
+<div class="title_form">
+<h5 class="title is-5 has-text-centered"> Showing Coronary Graft</h5>
+</div>
+
+<div class="element_info">
+   <%= render AngioWeb.SharedView, "_patient_info.html", patient:
+  @patient %>
+</div>
+
+<div class="element_info_coronary">
+<%= render AngioWeb.SharedView, "_info_coronary.html", info_coronary:
+   @info_coronary%>
+</div>
+
+<div class="content frame_1">
+  <ol type="1">
+
+
+  <li>
+    <strong>Cath graft header:</strong>
+    <%= @cath_graft.cath_graft_header %>
+  </li>
+
+  <li>
+    <strong>Graft morphology:</strong>
+    <%= @cath_graft.graft_morphology %>
+  </li>
+
+  <li>
+    <strong>Graft index:</strong>
+    <%= @cath_graft.graft_index %>
+  </li>
+
+  <li>
+    <strong>Graft total occlusion yn:</strong>
+    <%= @cath_graft.graft_total_occlusion_yn %>
+  </li>
+
+  <li>
+    <strong>Graft sten yn:</strong>
+    <%= @cath_graft.graft_sten_yn %>
+  </li>
+
+  <li>
+    <strong>Graft ostial sten yn:</strong>
+    <%= @cath_graft.graft_ostial_sten_yn %>
+  </li>
+
+  <li>
+    <strong>Graft ostial sten pct:</strong>
+    <%= @cath_graft.graft_ostial_sten_pct %>
+  </li>
+
+  <li>
+    <strong>Graft ostial device present yn:</strong>
+    <%= @cath_graft.graft_ostial_device_present_yn %>
+  </li>
+
+  <li>
+    <strong>Graft ostial prior treated yn:</strong>
+    <%= @cath_graft.graft_ostial_prior_treated_yn %>
+  </li>
+
+  <li>
+    <strong>Graft ostial prior treated dt:</strong>
+    <%= @cath_graft.graft_ostial_prior_treated_dt %>
+  </li>
+
+  <li>
+    <strong>Graft ostial sten ffr:</strong>
+    <%= @cath_graft.graft_ostial_sten_ffr %>
+  </li>
+
+  <li>
+    <strong>Graft ostial sten ivus:</strong>
+    <%= @cath_graft.graft_ostial_sten_ivus %>
+  </li>
+
+  <li>
+    <strong>Graft prox sten yn:</strong>
+    <%= @cath_graft.graft_prox_sten_yn %>
+  </li>
+
+  <li>
+    <strong>Graft prox sten pct:</strong>
+    <%= @cath_graft.graft_prox_sten_pct %>
+  </li>
+
+  <li>
+    <strong>Graft prox sten device present yn:</strong>
+    <%= @cath_graft.graft_prox_sten_device_present_yn %>
+  </li>
+
+  <li>
+    <strong>Graft prox sten prior treated yn:</strong>
+    <%= @cath_graft.graft_prox_sten_prior_treated_yn %>
+  </li>
+
+  <li>
+    <strong>Graft prox sten prior treated dt:</strong>
+    <%= @cath_graft.graft_prox_sten_prior_treated_dt %>
+  </li>
+
+  <li>
+    <strong>Graft prox sten ffr:</strong>
+    <%= @cath_graft.graft_prox_sten_ffr %>
+  </li>
+
+  <li>
+    <strong>Graft prox sten ivus:</strong>
+    <%= @cath_graft.graft_prox_sten_ivus %>
+  </li>
+
+  <li>
+    <strong>Graft mid sten yn:</strong>
+    <%= @cath_graft.graft_mid_sten_yn %>
+  </li>
+
+  <li>
+    <strong>Graft mid sten pct:</strong>
+    <%= @cath_graft.graft_mid_sten_pct %>
+  </li>
+
+  <li>
+    <strong>Graft mid sten device present yn:</strong>
+    <%= @cath_graft.graft_mid_sten_device_present_yn %>
+  </li>
+
+  <li>
+    <strong>Graft mid sten prior treated yn:</strong>
+    <%= @cath_graft.graft_mid_sten_prior_treated_yn %>
+  </li>
+
+  <li>
+    <strong>Graft mid sten prior treated dt:</strong>
+    <%= @cath_graft.graft_mid_sten_prior_treated_dt %>
+  </li>
+
+  <li>
+    <strong>Graft mid sten ffr:</strong>
+    <%= @cath_graft.graft_mid_sten_ffr %>
+  </li>
+
+  <li>
+    <strong>Graft mid sten ivus:</strong>
+    <%= @cath_graft.graft_mid_sten_ivus %>
+  </li>
+
+  <li>
+    <strong>Graft dist sten yn:</strong>
+    <%= @cath_graft.graft_dist_sten_yn %>
+  </li>
+
+  <li>
+    <strong>Graft dist sten pct:</strong>
+    <%= @cath_graft.graft_dist_sten_pct %>
+  </li>
+
+  <li>
+    <strong>Graft dist sten device present yn:</strong>
+    <%= @cath_graft.graft_dist_sten_device_present_yn %>
+  </li>
+
+  <li>
+    <strong>Graft dist sten prior treated yn:</strong>
+    <%= @cath_graft.graft_dist_sten_prior_treated_yn %>
+  </li>
+
+  <li>
+    <strong>Graft dist sten prior treated dt:</strong>
+    <%= @cath_graft.graft_dist_sten_prior_treated_dt %>
+  </li>
+
+  <li>
+    <strong>Graft dist sten ffr:</strong>
+    <%= @cath_graft.graft_dist_sten_ffr %>
+  </li>
+
+  <li>
+    <strong>Graft dist sten ivus:</strong>
+    <%= @cath_graft.graft_dist_sten_ivus %>
+  </li>
+
+  <li>
+    <strong>Graft dist anast sten yn:</strong>
+    <%= @cath_graft.graft_dist_anast_sten_yn %>
+  </li>
+
+  <li>
+    <strong>Graft dist anast type:</strong>
+    <%= @cath_graft.graft_dist_anast_type %>
+  </li>
+
+  <li>
+    <strong>Graft dist anast device present yn:</strong>
+    <%= @cath_graft.graft_dist_anast_device_present_yn %>
+  </li>
+
+  <li>
+    <strong>Graft dist anast sten pct:</strong>
+    <%= @cath_graft.graft_dist_anast_sten_pct %>
+  </li>
+
+  <li>
+    <strong>Graft dist anast prior treated yn:</strong>
+    <%= @cath_graft.graft_dist_anast_prior_treated_yn %>
+  </li>
+
+  <li>
+    <strong>Graft dist anast prior treated dt:</strong>
+    <%= @cath_graft.graft_dist_anast_prior_treated_dt %>
+  </li>
+
+  <li>
+    <strong>Graft dist anast sten ffr:</strong>
+    <%= @cath_graft.graft_dist_anast_sten_ffr %>
+  </li>
+
+  <li>
+    <strong>Graft dist anast sten ivus:</strong>
+    <%= @cath_graft.graft_dist_anast_sten_ivus %>
+  </li>
+
+  <li>
+    <strong>Cath graft prox site:</strong>
+    <%= @cath_graft.cath_graft_prox_site %>
+  </li>
+
+  <li>
+    <strong>Cath graft conduit type:</strong>
+    <%= @cath_graft.cath_graft_conduit_type %>
+  </li>
+
+  <li>
+    <strong>Cath graft segments main vessel:</strong>
+    <%= @cath_graft.cath_graft_segments_main_vessel %>
+  </li>
+
+  <li>
+    <strong>Cath graft segments ncdr:</strong>
+    <%= @cath_graft.cath_graft_segments_ncdr %>
+  </li>
+
+  <li>
+    <strong>Cath graft segments cdisc:</strong>
+    <%= @cath_graft.cath_graft_segments_cdisc %>
+  </li>
+
+  <li>
+    <strong>Cath graft segments sts:</strong>
+    <%= @cath_graft.cath_graft_segments_sts %>
+  </li>
+
+  <li>
+    <strong>Patient:</strong>
+    <%= @cath_graft.patient_id %>
+  </li>
+
+  <li>
+    <strong>Graft notes:</strong>
+    <%= @cath_graft.graft_notes %>
+  </li>
+
+</ol>
+</div>
+
+<p class ="buttons_separator"> . </p>
+
+<span>
+    <%= link "Edit Graft", to: Routes.pt_angio_graft_path(@conn, :edit, @patient,
+  @info_coronary, @cath_graft ), class: "button is-link"%>
+</span>
+
+<span>
+  <%= link "Back To Grafts List", to: Routes.pt_angio_graft_path(@conn, :index,
+  @patient, @info_coronary) , class: "button is-link"%>
+</span>
+</span>
+
+<span>
+<%= link "Back To Cath Lab",  to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-link"   %>
+ </span>

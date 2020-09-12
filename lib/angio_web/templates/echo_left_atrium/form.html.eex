@@ -1,0 +1,546 @@
+
+
+<% alias Angio.Canons, as: Query %>
+
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+  <div class="notification is-danger">
+    <button class="delete"></button>
+    Oops, something went wrong! Please check the errors below or Maybe dublicated Record
+</div>
+
+  <% end %>
+
+<div class="columns">
+  <div class="column is-7 frame_1">
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!----- start selection field---------------------------->
+   <%  s_ela_volume_desc  =  Query.select_options("ela_volume_desc") %>
+<div class="field">
+    <label class="label">LA Volume </label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f,
+:ela_volume_desc, s_ela_volume_desc,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :ela_volume_desc %>
+            <span class="help"></span>
+          </div><!----control---->
+        </div><!------field--->
+
+ <!-------end selection field----------------------->
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+
+
+ <!--- start field--------------------------------->
+<div class="field">
+            <label class="label field_help " >LA Volume (mL) </label>
+            <%= text_input f, :ela_volume_val,
+            class: "input",
+            type: "text",
+            placeholder: "ela_volume_val",
+            required: false %>
+            <%= error_tag f, :ela_volume_val %>
+          <p class="help"></p>
+        </div>
+<!-----------end field----------------------->
+
+ </div><!----column-------------------->
+<div class = "column">
+
+<!----- start selection field---------------------------->
+   <%  s_ela_volume_method  =  Query.select_options("ela_volume_method") %>
+<div class="field">
+    <label class="label">LA Volume Method </label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f,
+:ela_volume_method, s_ela_volume_method,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :ela_volume_method %>
+            <span class="help"></span>
+
+
+          </div><!----control---->
+        </div><!------field--->
+
+ <!-------end selection field----------------------->
+
+ </div><!----column-------------------->
+<div class = "column">
+<!--- start field--------------------------------->
+<div class="field">
+            <label class="label field_help " >LA Volume Index </label>
+            <%= text_input f, :ela_volume_index,
+            class: "input",
+            type: "text",
+            placeholder: "ela_volume_index",
+            required: false %>
+            <%= error_tag f, :ela_volume_index %>
+          <p class="help"></p>
+        </div>
+<!-----------end field----------------------->
+
+
+</div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------><!---------start----------------------------------->
+  <div class = "columns">
+
+ <div class = "column">
+ <!--- start field--------------------------------->
+<div class="field">
+            <label class="label field_help " >LA Diameter Medial-Lateral </label>
+            <%= text_input f, :ela_diam_ml_val,
+            class: "input",
+            type: "text",
+            placeholder: "ela_diam_ml_val",
+            required: false %>
+            <%= error_tag f, :ela_diam_ml_val %>
+          <p class="help"></p>
+        </div>
+<!-----------end field----------------------->
+
+
+ </div><!----column-------------------->
+
+ <div class = "column">
+
+<!--- start field--------------------------------->
+<div class="field">
+            <label class="label field_help " >LA Diameter Superior-Inferior </label>
+            <%= text_input f, :ela_diam_si_val,
+            class: "input",
+            type: "text",
+            placeholder: "ela_diam_si_val",
+            required: false %>
+            <%= error_tag f, :ela_diam_si_val %>
+          <p class="help"></p>
+        </div>
+<!-----------end field----------------------->
+
+ </div><!----column-------------------->
+
+
+<div class = "column">
+
+<!--- start field--------------------------------->
+<div class="field">
+            <label class="label field_help " >LA Diameter Aterior-Posterior </label>
+            <%= text_input f, :ela_diam_ap_val,
+            class: "input",
+            type: "text",
+            placeholder: "ela_diam_ap_val",
+            required: false %>
+            <%= error_tag f, :ela_diam_ap_val %>
+          <p class="help"></p>
+        </div>
+<!-----------end field----------------------->
+
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+<div class = "columns">
+<div class = "column">
+
+<!--- start field--------------------------------->
+<div class="field">
+            <label class="label field_help " >LA Area - 4ch </label>
+            <%= text_input f, :ela_area_4ch_2d_us,
+            class: "input",
+            type: "text",
+            placeholder: "ela_area_4ch_2d_us",
+            required: false %>
+            <%= error_tag f, :ela_area_4ch_2d_us %>
+          <p class="help"></p>
+        </div>
+<!-----------end field----------------------->
+
+
+</div><!----column-------------------->
+
+ <div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Appearance As Tranplant?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :ela_appearance_trasplantation_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :ela_appearance_trasplantation_yn %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<div class = "columns">
+<div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Cor Triatrium?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :ela_cor_triatrium_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :ela_cor_triatrium_yn %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+ </div><!----column-------------------->
+<!---------end start------------------------------------>
+
+<div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">ASD ?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :ela_asd_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :ela_asd_yn %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+<!---------end start------------------------------------>
+
+  <div class = "columns">
+<div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Spontaneous Contrast ?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :ela_spontaneous_contrast_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :ela_spontaneous_contrast_yn %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+ </div><!----column-------------------->
+
+ <div class = "column">
+
+<!----- start selection field---------------------------->
+   <%  s_ela_spontaneous_contrast_loc  =  Query.select_options("ela_spontaneous_contrast_loc") %>
+<div class="field">
+    <label class="label">Contrast Location  </label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f,
+:ela_spontaneous_contrast_loc, s_ela_spontaneous_contrast_loc,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :ela_spontaneous_contrast_loc %>
+            <span class="help"></span>
+
+
+          </div><!----control---->
+        </div><!------field--->
+
+ <!-------end selection field----------------------->
+
+ </div><!----column-------------------->
+ <div class = "column">
+
+<!----- start selection field---------------------------->
+   <%  s_ela_spontaneous_contrast_persist  =
+   Query.select_options("ela_spontaneous_contrast_persist") %>
+<div class="field">
+    <label class="label">Contrast Persists </label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f,
+:ela_spontaneous_contrast_persist, s_ela_spontaneous_contrast_persist,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :ela_spontaneous_contrast_persist %>
+            <span class="help"></span>
+          </div><!----control---->
+        </div><!------field--->
+
+ <!-------end selection field----------------------->
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------><!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Pulmonary Veins Thrombus ?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :ela_pum_veins_thrombus_tumour_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :ela_pum_veins_thrombus_tumour_yn %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+
+<!----- start selection field---------------------------->
+<% s_ela_thromus_tumour_body_loc =
+   Query.select_options("ela_thromus_tumour_body_loc") %>
+<div class="field">
+    <label class="label">Pulm Veins Thrombus Location </label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f,
+:ela_thromus_tumour_body_loc, s_ela_thromus_tumour_body_loc,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :ela_thromus_tumour_body_loc %>
+            <span class="help"></span>
+          </div><!----control---->
+        </div><!------field--->
+
+ <!-------end selection field----------------------->
+
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">LA Mass ?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :ela_mas_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :ela_mas_yn %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+</div><!----column-------------------->
+ <div class = "column">
+
+
+<!----- start selection field---------------------------->
+<% s_ela_mas_attachment_site =
+   Query.select_options("ela_mas_attachment_site") %>
+<div class="field">
+    <label class="label">Mass attachment Site  </label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f,
+:ela_mas_attachment_site, s_ela_mas_attachment_site,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :ela_mas_attachment_site %>
+            <span class="help"></span>
+          </div><!----control---->
+        </div><!------field--->
+
+ <!-------end selection field----------------------->
+
+
+
+ </div><!----column-------------------->
+
+ <div class = "column">
+
+
+
+<!----- start selection field---------------------------->
+<% s_ela_mas_location_desc =
+   Query.select_options("ela_mas_location_desc") %>
+<div class="field">
+    <label class="label">Mass Location  </label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f,
+:ela_mas_location_desc, s_ela_mas_location_desc,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :ela_mas_location_desc %>
+            <span class="help"></span>
+          </div><!----control---->
+        </div><!------field--->
+
+ <!-------end selection field----------------------->
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">Catheter Present ?</label>
+        <div class="control">
+         <span class="field_help"></span>
+          <%= checkbox f, :ela_chatheter_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :ela_chatheter_yn %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+
+<!----- start selection field---------------------------->
+<% s_ela_chatheter_loc_desc =
+   Query.select_options("ela_chatheter_loc_desc") %>
+<div class="field">
+    <label class="label">Catheter Location  </label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f,
+:ela_chatheter_loc_desc, s_ela_chatheter_loc_desc,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :ela_mas_location_desc %>
+            <span class="help"></span>
+          </div><!----control---->
+        </div><!------field--->
+
+ <!-------end selection field----------------------->
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+  </div><!--------LEFT COLUMN----------------->
+  <div class="column is-5 frame_1">
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+  <div class="field">
+  <label class="label"> My Notes On LA Echo</label>
+  <div class="control">
+    <%= text_input f, :ela_notes,
+        class: "textarea",
+        type: "input", placeholder: "ela_notes"  %>
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+</div><!----column-------------------->
+</div><!----columns--------------------------->
+
+
+ <div class = "columns">
+<div class = "column">
+ <%= render  AngioWeb.SharedView, "_help_area.html" %>
+</div><!----column-------------------->
+</div><!----columns--------------------------->
+
+
+  </div><!------RIGHT COLUMN----------------------------->
+</div><!------end columns-------------------------------------------->
+
+
+<div>
+    <%= submit "Save and Continue", class: "button is-info is-large is-fullwidth " %>
+
+  </div>
+
+<% end %>

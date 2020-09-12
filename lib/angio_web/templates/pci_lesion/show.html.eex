@@ -1,0 +1,453 @@
+
+<div class="title_form">
+<h5 class="title is-5 has-text-centered">
+Show PCI Lesion</h5>
+</div>
+<div class="element_info">
+
+    <%= render  AngioWeb.SharedView, "_patient_info.html", patient: @patient %>
+</div>
+
+<div class="element_info_coronary">
+Angio : <%= render AngioWeb.SharedView, "_info_coronary.html", info_coronary:
+   @info_coronary%>
+</div>
+<div class="content frame_1 ">
+  <ol type="1">
+
+  <li>
+    <strong>Pci les counter:</strong>
+    <%= @pci_lesion.pci_les_counter %>
+  </li>
+
+  <li>
+    <strong>Pci les gw cossed yn:</strong>
+    <%= @pci_lesion.pci_les_gw_cossed_yn %>
+  </li>
+
+  <li>
+    <strong>Pci les success yn:</strong>
+    <%= @pci_lesion.pci_les_success_yn %>
+  </li>
+
+  <li>
+    <strong>Pci les main technique:</strong>
+    <%= @pci_lesion.pci_les_main_technique %>
+  </li>
+
+  <li>
+    <strong>Pci les de novo yn:</strong>
+    <%= @pci_lesion.pci_les_de_novo_yn %>
+  </li>
+
+  <li>
+    <strong>Pci les in native yn:</strong>
+    <%= @pci_lesion.pci_les_in_native_yn %>
+  </li>
+
+  <li>
+    <strong>Pci les in graft yn:</strong>
+    <%= @pci_lesion.pci_les_in_graft_yn %>
+  </li>
+
+  <li>
+    <strong>Pci les culprit yn:</strong>
+    <%= @pci_lesion.pci_les_culprit_yn %>
+  </li>
+
+  <li>
+    <strong>Pci les bifurc sb treat yn:</strong>
+    <%= @pci_lesion.pci_les_bifurc_sb_treat_yn %>
+  </li>
+
+  <li>
+    <strong>Pci les rest no prior stent yn:</strong>
+    <%= @pci_lesion.pci_les_rest_no_prior_stent_yn %>
+  </li>
+
+  <li>
+    <strong>Pci les prior treat stent yn:</strong>
+    <%= @pci_lesion.pci_les_prior_treat_stent_yn %>
+  </li>
+
+  <li>
+    <strong>Pci les status stent thrombus:</strong>
+    <%= @pci_lesion.pci_les_status_stent_thrombus %>
+  </li>
+
+  <li>
+    <strong>Pci les status isr yn:</strong>
+    <%= @pci_lesion.pci_les_status_isr_yn %>
+  </li>
+
+  <li>
+    <strong>Pci les status isr stent type:</strong>
+    <%= @pci_lesion.pci_les_status_isr_stent_type %>
+  </li>
+
+  <li>
+    <strong>Pci les status isr duration:</strong>
+    <%= @pci_lesion.pci_les_status_isr_duration %>
+  </li>
+
+  <li>
+    <strong>Pci les status isr class:</strong>
+    <%= @pci_lesion.pci_les_status_isr_class %>
+  </li>
+
+  <li>
+    <strong>Pci les prior stent thromb yn:</strong>
+    <%= @pci_lesion.pci_les_prior_stent_thromb_yn %>
+  </li>
+
+  <li>
+    <strong>Pci les prior stent for isr yn:</strong>
+    <%= @pci_lesion.pci_les_prior_stent_for_isr_yn %>
+  </li>
+
+  <li>
+    <strong>Pci les status:</strong>
+    <%= @pci_lesion.pci_les_status %>
+  </li>
+
+  <li>
+    <strong>Pci les complexity:</strong>
+    <%= @pci_lesion.pci_les_complexity %>
+  </li>
+
+  <li>
+    <strong>Pci les length:</strong>
+    <%= @pci_lesion.pci_les_length %>
+  </li>
+
+  <li>
+    <strong>Pci les aha type:</strong>
+    <%= @pci_lesion.pci_les_aha_type %>
+  </li>
+
+  <li>
+    <strong>Pci les calcium yn:</strong>
+    <%= @pci_lesion.pci_les_calcium_yn %>
+  </li>
+
+  <li>
+    <strong>Pci les cto yn:</strong>
+    <%= @pci_lesion.pci_les_cto_yn %>
+  </li>
+
+  <li>
+    <strong>Pci les bifurcation yn:</strong>
+    <%= @pci_lesion.pci_les_bifurcation_yn %>
+  </li>
+
+  <li>
+    <strong>Pci les prior treated yn:</strong>
+    <%= @pci_lesion.pci_les_prior_treated_yn %>
+  </li>
+
+  <li>
+    <strong>Pci les prior stent type:</strong>
+    <%= @pci_lesion.pci_les_prior_stent_type %>
+  </li>
+
+  <li>
+    <strong>Pci les prior treat timeframe:</strong>
+    <%= @pci_lesion.pci_les_prior_treat_timeframe %>
+  </li>
+
+  <li>
+    <strong>Pci les sten pct pre:</strong>
+    <%= @pci_lesion.pci_les_sten_pct_pre %>
+  </li>
+
+  <li>
+    <strong>Pci les timi flow pre:</strong>
+    <%= @pci_lesion.pci_les_timi_flow_pre %>
+  </li>
+
+  <li>
+    <strong>Pci les sten pct post:</strong>
+    <%= @pci_lesion.pci_les_sten_pct_post %>
+  </li>
+
+  <li>
+    <strong>Pci les timi flow post:</strong>
+    <%= @pci_lesion.pci_les_timi_flow_post %>
+  </li>
+
+  <li>
+    <strong>Pci les stented yn:</strong>
+    <%= @pci_lesion.pci_les_stented_yn %>
+  </li>
+
+  <li>
+    <strong>Pci les direct stenting yn:</strong>
+    <%= @pci_lesion.pci_les_direct_stenting_yn %>
+  </li>
+
+  <li>
+    <strong>Pci les stent type:</strong>
+    <%= @pci_lesion.pci_les_stent_type %>
+  </li>
+
+  <li>
+    <strong>Pci les des type:</strong>
+    <%= @pci_lesion.pci_les_des_type %>
+  </li>
+
+  <li>
+    <strong>Pci les stent length total:</strong>
+    <%= @pci_lesion.pci_les_stent_length_total %>
+  </li>
+
+  <li>
+    <strong>Pci les stent 1 diam:</strong>
+    <%= @pci_lesion.pci_les_stent_1_diam %>
+  </li>
+
+  <li>
+    <strong>Pci les stent 1 len:</strong>
+    <%= @pci_lesion.pci_les_stent_1_len %>
+  </li>
+
+  <li>
+    <strong>Pci les stent 1 code:</strong>
+    <%= @pci_lesion.pci_les_stent_1_code %>
+  </li>
+
+  <li>
+    <strong>Pci les stent 2 diam:</strong>
+    <%= @pci_lesion.pci_les_stent_2_diam %>
+  </li>
+
+  <li>
+    <strong>Pci les stent 2 len:</strong>
+    <%= @pci_lesion.pci_les_stent_2_len %>
+  </li>
+
+  <li>
+    <strong>Pci les stent 2 code:</strong>
+    <%= @pci_lesion.pci_les_stent_2_code %>
+  </li>
+
+  <li>
+    <strong>Pci les stent 3 diam:</strong>
+    <%= @pci_lesion.pci_les_stent_3_diam %>
+  </li>
+
+  <li>
+    <strong>Pci les stent 3 len:</strong>
+    <%= @pci_lesion.pci_les_stent_3_len %>
+  </li>
+
+  <li>
+    <strong>Pci les stent 3 code:</strong>
+    <%= @pci_lesion.pci_les_stent_3_code %>
+  </li>
+
+  <li>
+    <strong>Pci les stent 4 diam:</strong>
+    <%= @pci_lesion.pci_les_stent_4_diam %>
+  </li>
+
+  <li>
+    <strong>Pci les stent 4 len:</strong>
+    <%= @pci_lesion.pci_les_stent_4_len %>
+  </li>
+
+  <li>
+    <strong>Pci les stent 4 code:</strong>
+    <%= @pci_lesion.pci_les_stent_4_code %>
+  </li>
+
+  <li>
+    <strong>Pci les balloon size pre:</strong>
+    <%= @pci_lesion.pci_les_balloon_size_pre %>
+  </li>
+
+  <li>
+    <strong>Pci les balloon type pre:</strong>
+    <%= @pci_lesion.pci_les_balloon_type_pre %>
+  </li>
+
+  <li>
+    <strong>Pci les balloon size post:</strong>
+    <%= @pci_lesion.pci_les_balloon_size_post %>
+  </li>
+
+  <li>
+    <strong>Pci les balloon type post:</strong>
+    <%= @pci_lesion.pci_les_balloon_type_post %>
+  </li>
+
+  <li>
+    <strong>Pci les balloon pres post:</strong>
+    <%= @pci_lesion.pci_les_balloon_pres_post %>
+  </li>
+
+  <li>
+    <strong>Pci les event yn:</strong>
+    <%= @pci_lesion.pci_les_event_yn %>
+  </li>
+
+  <li>
+    <strong>Pci lesev dissection yn:</strong>
+    <%= @pci_lesion.pci_lesev_dissection_yn %>
+  </li>
+
+  <li>
+    <strong>Pci lesev dissection type:</strong>
+    <%= @pci_lesion.pci_lesev_dissection_type %>
+  </li>
+
+  <li>
+    <strong>Pci lesev perforation yn:</strong>
+    <%= @pci_lesion.pci_lesev_perforation_yn %>
+  </li>
+
+  <li>
+    <strong>Pci lesev perforation class:</strong>
+    <%= @pci_lesion.pci_lesev_perforation_class %>
+  </li>
+
+  <li>
+    <strong>Pci lesev perforation treat:</strong>
+    <%= @pci_lesion.pci_lesev_perforation_treat %>
+  </li>
+
+  <li>
+    <strong>Pci lesev acute clossure yn:</strong>
+    <%= @pci_lesion.pci_lesev_acute_clossure_yn %>
+  </li>
+
+  <li>
+    <strong>Pci lesev acute clossure treat:</strong>
+    <%= @pci_lesion.pci_lesev_acute_clossure_treat %>
+  </li>
+
+  <li>
+    <strong>Pci les branch occlusion yn:</strong>
+    <%= @pci_lesion.pci_les_branch_occlusion_yn %>
+  </li>
+
+  <li>
+    <strong>Pci lesev hosp stent thrombosis category:</strong>
+    <%= @pci_lesion.pci_lesev_hosp_stent_thrombosis_category %>
+  </li>
+
+  <li>
+    <strong>Pci lesev re interven yn:</strong>
+    <%= @pci_lesion.pci_lesev_re_interven_yn %>
+  </li>
+
+  <li>
+    <strong>Pci les no reflow yn:</strong>
+    <%= @pci_lesion.pci_les_no_reflow_yn %>
+  </li>
+
+  <li>
+    <strong>Pci les no reflow type:</strong>
+    <%= @pci_lesion.pci_les_no_reflow_type %>
+  </li>
+
+  <li>
+    <strong>Pci les no reflow treat:</strong>
+    <%= @pci_lesion.pci_les_no_reflow_treat %>
+  </li>
+
+  <li>
+    <strong>Pci les involved seg cdisc:</strong>
+    <%= @pci_lesion.pci_les_involved_seg_cdisc %>
+  </li>
+
+  <li>
+    <strong>Pci les involved seg ncdr:</strong>
+    <%= @pci_lesion.pci_les_involved_seg_ncdr %>
+  </li>
+
+  <li>
+    <strong>Pci les involved seg sts:</strong>
+    <%= @pci_lesion.pci_les_involved_seg_sts %>
+  </li>
+
+  <li>
+    <strong>Pci les after graft type:</strong>
+    <%= @pci_lesion.pci_les_after_graft_type %>
+  </li>
+
+  <li>
+    <strong>Pci les graft prox site:</strong>
+    <%= @pci_lesion.pci_les_graft_prox_site %>
+  </li>
+
+  <li>
+    <strong>Pci les graft segments cdisc:</strong>
+    <%= @pci_lesion.pci_les_graft_segments_cdisc %>
+  </li>
+
+  <li>
+    <strong>Pci les graft segments ncdr:</strong>
+    <%= @pci_lesion.pci_les_graft_segments_ncdr %>
+  </li>
+
+  <li>
+    <strong>Pci les graft segments sts:</strong>
+    <%= @pci_lesion.pci_les_graft_segments_sts %>
+  </li>
+
+  <li>
+    <strong>Pci les graft segment pos:</strong>
+    <%= @pci_lesion.pci_les_graft_segment_pos %>
+  </li>
+
+  <li>
+    <strong>Pci les graft conduit type:</strong>
+    <%= @pci_lesion.pci_les_graft_conduit_type %>
+  </li>
+
+  <li>
+    <strong>Pci les guide types:</strong>
+    <%= @pci_lesion.pci_les_guide_types %>
+  </li>
+
+  <li>
+    <strong>Pci les guide size:</strong>
+    <%= @pci_lesion.pci_les_guide_size %>
+  </li>
+
+  <li>
+    <strong>Pci les device counter:</strong>
+    <%= @pci_lesion.pci_les_device_counter %>
+  </li>
+
+  <li>
+    <strong>Pci les devices used:</strong>
+    <%= @pci_lesion.pci_les_devices_used %>
+  </li>
+
+  <li>
+    <strong>Pci les embolic protect type:</strong>
+    <%= @pci_lesion.pci_les_embolic_protect_type %>
+  </li>
+
+  <li>
+    <strong>Pci les notes:</strong>
+    <%= @pci_lesion.pci_les_notes %>
+  </li>
+</ol>
+</div>
+<p class ="buttons_separator"> . </p>
+<span>
+    <%= link "Edit PCI Lesion", to: Routes.pt_angio_pci_proc_lesion_path(@conn, :edit, @patient,
+  @info_coronary, @pci_procedure, @pci_lesion), class: "button is-link"%>
+</span>
+
+<span>
+  <%= link "Back To PCI Lesions  List", to: Routes.pt_angio_pci_proc_lesion_path(@conn, :index,
+  @patient, @info_coronary,@pci_procedure) , class: "button is-link"%>
+</span>
+<span>
+<%= link "Back To Cath Lab",  to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-link"   %>
+ </span>
+

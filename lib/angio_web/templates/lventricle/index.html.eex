@@ -1,0 +1,90 @@
+<% alias Angio.Canons, as: Query %>
+<div class="menu_info_tabs">
+  <%= render  AngioWeb.SharedView, "_menu_info_coronary_tabs.html", assigns %>
+</div>
+
+
+
+<div class="element_info">
+   <%= render AngioWeb.SharedView, "_patient_info.html", patient:
+  @patient %>
+</div>
+
+<div class="element_info_coronary">
+  <%= render AngioWeb.SharedView, "_info_coronary.html", info_coronary:
+   @info_coronary%>
+</div>
+<div class="columns">
+<div class="column is-2 menu_all">
+<%= render AngioWeb.SharedView, "_menu_all.html", info_coronary:
+   @info_coronary, conn: @conn, patient: @patient%>
+</div><!----------------------------->
+
+<div class="column is-10 frame_1">
+<table class="table is-bordered
+                    is-striped
+                    is-full-width
+                    is-hoverable">
+<div class="title_form">
+  <h6 class="title is-6 has-text-centered">Left Ventricle Data</h6>
+</div>
+  <thead class="thead">
+
+    <tr>
+      <th>LV Normal?</th>
+      <th>EF</th>
+      <th>Show Diagram</th>
+      <th> Edit </th>
+      <th> Delete </th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= for lventricle <- @lventricles do %>
+    <tr>
+      <td>
+
+        <%=  raw Query.convert_true_false(lventricle.cath_lv_normal_yn) %>
+        <%#= lventricle.cath_lv_normal_yn %>
+      </td>
+      <td><%= lventricle.cath_lv_ef_val %></td>
+
+      <td>
+        <%= link "Show Diagram", to: Routes.pt_angio_lv_path(@conn, :show, @patient, @info_coronary,
+          lventricle), class: "button is-primary is-small" %>
+
+      </td>
+
+      <td>
+        <%= link "Edit", to: Routes.pt_angio_lv_path(@conn, :edit, @patient,
+        @info_coronary, lventricle), class: "button is-primary is-small" %>
+
+
+        <%#= link "Edit", to: Routes.lventricle_path(@conn, :edit, lventricle) %>
+      </td>
+
+      <td>
+        <%= link "Delete", to: Routes.pt_angio_lv_path(@conn, :delete,
+        @patient, @info_coronary, lventricle), method: :delete, data: [confirm:
+        "Are you sure?"], class: "button is-small is-danger" %>
+
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+</div><!-------------------column---------------->
+</div><!------columns----------------->
+<span><%= link "Insert Once - Add New LV Record  ",
+      to: Routes.pt_angio_lv_path(@conn, :new,
+  @patient, @info_coronary), class: "button is-info is-medium is-fullwidth" %>
+
+<p class ="buttons_separator"> . </p>
+  <%= link "To Patient List", to: Routes.pt_path(@conn, :index), class: "button
+  is-link" %>
+</span>
+<span>
+  <%= link "Back To Lab",  to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-link"   %>
+</span>

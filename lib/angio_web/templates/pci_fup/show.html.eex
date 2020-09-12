@@ -1,0 +1,322 @@
+div class="title_form">
+<h5 class="title is-5 has-text-centered">Show PCI F/Ups</h5>
+</div>
+<div class="element_info">
+    Patient :
+    <%= render  AngioWeb.SharedView, "_patient_info.html", patient: @patient %>
+</div>
+
+
+
+
+<div class="content frame_1 ">
+  <ol type="1">
+  <li>
+    <strong>Pfup assessment dt:</strong>
+    <%= @pci_fup.pfup_assessment_dt %>
+  </li>
+
+  <li>
+    <strong>Pfup reason:</strong>
+    <%= @pci_fup.pfup_reason %>
+  </li>
+
+  <li>
+    <strong>Pfup type:</strong>
+    <%= @pci_fup.pfup_type %>
+  </li>
+
+  <li>
+    <strong>Pfup primary fup method:</strong>
+    <%= @pci_fup.pfup_primary_fup_method %>
+  </li>
+
+  <li>
+    <strong>Pfup survival status:</strong>
+    <%= @pci_fup.pfup_survival_status %>
+  </li>
+
+  <li>
+    <strong>Pfup clinical improvement yn:</strong>
+    <%= @pci_fup.pfup_clinical_improvement_yn %>
+  </li>
+
+  <li>
+    <strong>Pfup complications after pci:</strong>
+    <%= @pci_fup.pfup_complications_after_pci %>
+  </li>
+
+  <li>
+    <strong>Pfup death dt:</strong>
+    <%= @pci_fup.pfup_death_dt %>
+  </li>
+
+  <li>
+    <strong>Pfup death cause:</strong>
+    <%= @pci_fup.pfup_death_cause %>
+  </li>
+
+  <li>
+    <strong>Pfup prior stent type:</strong>
+    <%= @pci_fup.pfup_prior_stent_type %>
+  </li>
+
+  <li>
+    <strong>Pfup stent thrombosis yn:</strong>
+    <%= @pci_fup.pfup_stent_thrombosis_yn %>
+  </li>
+
+  <li>
+    <strong>Pfup stent thrombosis dt:</strong>
+    <%= @pci_fup.pfup_stent_thrombosis_dt %>
+  </li>
+
+  <li>
+    <strong>Pfup stent thrombosis timing:</strong>
+    <%= @pci_fup.pfup_stent_thrombosis_timing %>
+  </li>
+
+  <li>
+    <strong>Pfup readmission yn:</strong>
+    <%= @pci_fup.pfup_readmission_yn %>
+  </li>
+
+  <li>
+    <strong>Pfup readmission dt:</strong>
+    <%= @pci_fup.pfup_readmission_dt %>
+  </li>
+
+  <li>
+    <strong>Pfup readmission reason:</strong>
+    <%= @pci_fup.pfup_readmission_reason %>
+  </li>
+
+  <li>
+    <strong>Pfup stroke yn:</strong>
+    <%= @pci_fup.pfup_stroke_yn %>
+  </li>
+
+  <li>
+    <strong>Pfup stroke dt:</strong>
+    <%= @pci_fup.pfup_stroke_dt %>
+  </li>
+
+  <li>
+    <strong>Pfup angio after yn:</strong>
+    <%= @pci_fup.pfup_angio_after_yn %>
+  </li>
+
+  <li>
+    <strong>Pfup angio after dt:</strong>
+    <%= @pci_fup.pfup_angio_after_dt %>
+  </li>
+
+  <li>
+    <strong>Pfup angio after results:</strong>
+    <%= @pci_fup.pfup_angio_after_results %>
+  </li>
+
+  <li>
+    <strong>Pfup pci after yn:</strong>
+    <%= @pci_fup.pfup_pci_after_yn %>
+  </li>
+
+  <li>
+    <strong>Pfup pci after dt:</strong>
+    <%= @pci_fup.pfup_pci_after_dt %>
+  </li>
+
+  <li>
+    <strong>Pfup pci location:</strong>
+    <%= @pci_fup.pfup_pci_location %>
+  </li>
+
+  <li>
+    <strong>Pfup cabg after yn:</strong>
+    <%= @pci_fup.pfup_cabg_after_yn %>
+  </li>
+
+  <li>
+    <strong>Pfup cabg after dt:</strong>
+    <%= @pci_fup.pfup_cabg_after_dt %>
+  </li>
+
+  <li>
+    <strong>Pfup cabage notes:</strong>
+    <%= @pci_fup.pfup_cabage_notes %>
+  </li>
+
+  <li>
+    <strong>Pfup other intevention yn:</strong>
+    <%= @pci_fup.pfup_other_intevention_yn %>
+  </li>
+
+  <li>
+    <strong>Pfup other intevention notes:</strong>
+    <%= @pci_fup.pfup_other_intevention_notes %>
+  </li>
+
+  <li>
+    <strong>Pfup infarction yn:</strong>
+    <%= @pci_fup.pfup_infarction_yn %>
+  </li>
+
+  <li>
+    <strong>Pfup new infarction dt:</strong>
+    <%= @pci_fup.pfup_new_infarction_dt %>
+  </li>
+
+  <li>
+    <strong>Pfup old infarction location:</strong>
+    <%= @pci_fup.pfup_old_infarction_location %>
+  </li>
+
+  <li>
+    <strong>Pfup new infarction location:</strong>
+    <%= @pci_fup.pfup_new_infarction_location %>
+  </li>
+
+  <li>
+    <strong>Pfup new infarction treatment:</strong>
+    <%= @pci_fup.pfup_new_infarction_treatment %>
+  </li>
+
+  <li>
+    <strong>Pfup infarction notes:</strong>
+    <%= @pci_fup.pfup_infarction_notes %>
+  </li>
+
+  <li>
+    <strong>Pfup chest pain:</strong>
+    <%= @pci_fup.pfup_chest_pain %>
+  </li>
+
+  <li>
+    <strong>Pfup angina type:</strong>
+    <%= @pci_fup.pfup_angina_type %>
+  </li>
+
+  <li>
+    <strong>Pfup angina total num:</strong>
+    <%= @pci_fup.pfup_angina_total_num %>
+  </li>
+
+  <li>
+    <strong>Pfup angina duration:</strong>
+    <%= @pci_fup.pfup_angina_duration %>
+  </li>
+
+  <li>
+    <strong>Pfup angina last episode dt:</strong>
+    <%= @pci_fup.pfup_angina_last_episode_dt %>
+  </li>
+
+  <li>
+    <strong>Pfup nyha:</strong>
+    <%= @pci_fup.pfup_nyha %>
+  </li>
+
+  <li>
+    <strong>Pfup angina class canadian:</strong>
+    <%= @pci_fup.pfup_angina_class_canadian %>
+  </li>
+
+  <li>
+    <strong>Pfup aspirin yn:</strong>
+    <%= @pci_fup.pfup_aspirin_yn %>
+  </li>
+
+  <li>
+    <strong>Pfup beta blocker yn:</strong>
+    <%= @pci_fup.pfup_beta_blocker_yn %>
+  </li>
+
+  <li>
+    <strong>Pfup nitrates yn:</strong>
+    <%= @pci_fup.pfup_nitrates_yn %>
+  </li>
+
+  <li>
+    <strong>Pfup diuretics yn:</strong>
+    <%= @pci_fup.pfup_diuretics_yn %>
+  </li>
+
+  <li>
+    <strong>Pfup statin yn:</strong>
+    <%= @pci_fup.pfup_statin_yn %>
+  </li>
+
+  <li>
+    <strong>Pfup no statin yn:</strong>
+    <%= @pci_fup.pfup_no_statin_yn %>
+  </li>
+
+  <li>
+    <strong>Pfup antiplatelet yn:</strong>
+    <%= @pci_fup.pfup_antiplatelet_yn %>
+  </li>
+
+  <li>
+    <strong>Pfup thienopyridines:</strong>
+    <%= @pci_fup.pfup_thienopyridines %>
+  </li>
+
+  <li>
+    <strong>Pfup arb yn:</strong>
+    <%= @pci_fup.pfup_arb_yn %>
+  </li>
+
+  <li>
+    <strong>Pfup anticoagulant yn:</strong>
+    <%= @pci_fup.pfup_anticoagulant_yn %>
+  </li>
+
+  <li>
+    <strong>Pfup thienopyridines types:</strong>
+    <%= @pci_fup.pfup_thienopyridines_types %>
+  </li>
+
+  <li>
+    <strong>Pfup xa inhibitors:</strong>
+    <%= @pci_fup.pfup_xa_inhibitors %>
+  </li>
+
+  <li>
+    <strong>Pfup ace yn:</strong>
+    <%= @pci_fup.pfup_ace_yn %>
+  </li>
+
+  <li>
+    <strong>Pfup rehabilitation:</strong>
+    <%= @pci_fup.pfup_rehabilitation %>
+  </li>
+
+  <li>
+    <strong>Pfup notes:</strong>
+    <%= @pci_fup.pfup_notes %>
+  </li>
+
+</ol>
+
+<p class ="buttons_separator"> . </p>
+<span>
+    <%= link "Back To Patient List", to: Routes.pt_path(@conn, :index), class: "button is-link" %>
+</span>
+
+
+<span>
+    <%= link "Edit PCI F/Up", to: Routes.pt_pcif_path(@conn, :edit, @patient,
+    @pci_fup ), class: "button is-link"%>
+</span>
+<span>
+  <%= link "Back PCI F/up Index", to: Routes.pt_pcif_path(@conn, :index,
+  @patient) , class: "button is-link"%>
+</span>
+
+<span>
+<%= link "To Cath  Lab",  to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-link"   %>
+ </span>
+
+
+

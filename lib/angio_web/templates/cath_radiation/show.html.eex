@@ -1,0 +1,69 @@
+
+<div class="title_form">
+<h5 class="title is-5 has-text-centered">Show Radiation</h5>
+</div>
+<div class="element_info">
+
+    <%= render  AngioWeb.SharedView, "_patient_info.html", patient: @patient %>
+</div>
+
+<div class="element_info_coronary">
+Angio : <%= render AngioWeb.SharedView, "_info_coronary.html", info_coronary:
+   @info_coronary%>
+</div>
+
+<div class="columns">
+<div class="column frame_1">
+
+<ul>
+
+  <li>
+    <strong>Car fluoro time:</strong>
+    <%= @cath_radiation.car_fluoro_time %>
+  </li>
+
+  <li>
+    <strong>Car dose area product:</strong>
+    <%= @cath_radiation.car_dose_area_product %>
+  </li>
+
+  <li>
+    <strong>Car area product units:</strong>
+    <%= @cath_radiation.car_area_product_units %>
+  </li>
+
+  <li>
+    <strong>Car dose area meas method:</strong>
+    <%= @cath_radiation.car_dose_area_meas_method %>
+  </li>
+
+  <li>
+    <strong>Car comulative kerma:</strong>
+    <%= @cath_radiation.car_comulative_kerma %>
+  </li>
+
+  <li>
+    <strong>Car notes:</strong>
+    <%= @cath_radiation.car_notes %>
+  </li>
+
+  <li>
+    <strong>Patient:</strong>
+    <%= @cath_radiation.patient_id %>
+  </li>
+
+</ul>
+</div><!------column-------------------------->
+</div><!------columns--------------------------------->
+<span>
+    <%= link "Edit Radiation", to: Routes.pt_angio_radiation_path(@conn, :edit, @patient,
+  @info_coronary, @cath_radiation ), class: "button is-link"%>
+</span>
+<span>
+  <%= link "Back To Radiation Index", to: Routes.pt_angio_radiation_path(@conn, :index,
+  @patient, @info_coronary) , class: "button is-link"%>
+</span>
+<span>
+<%= link "Back To Lab",  to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-link"   %>
+ </span>

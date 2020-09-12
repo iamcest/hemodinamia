@@ -1,0 +1,35 @@
+
+<div class="title_form">
+<h6 class="title is-6 has-text-centered">Editing PCI Procedure Record</h6>
+</div><!-----------title_form------------------->
+
+<div class="element_info">
+
+    <%= render  AngioWeb.SharedView, "_patient_info.html", patient: @patient %>
+</div>
+
+<div class="element_info_coronary">
+<%= render AngioWeb.SharedView, "_info_coronary.html", info_coronary:
+   @info_coronary%>
+</div>
+
+   <%= render "form.html", changeset: @changeset,
+        pci_procedure: @pci_procedure,
+action: Routes.pt_angio_pci_proc_path(@conn, :update,
+@patient,
+@info_coronary,
+@pci_procedure) %>
+
+<p class ="buttons_separator"> . </p>
+
+<span>
+ <%= link "Back To PCI Procedure Index",
+  to: Routes.pt_angio_pci_proc_path(@conn, :index,
+@patient,@info_coronary) , class: "button is-link "%>
+</span>
+
+<span>
+<%= link "Back To Cath Lab",  to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-link"   %>
+ </span>
+

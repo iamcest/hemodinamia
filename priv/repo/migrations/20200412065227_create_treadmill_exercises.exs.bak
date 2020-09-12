@@ -1,0 +1,40 @@
+defmodule Angio.Repo.Migrations.CreateTreadmillExercises do
+  use Ecto.Migration
+
+  def change do
+    create table(:treadmill_exercises) do
+      add :ext_dt, :date
+      add :ext_tm, :time
+      add :ext_lab_num, :string
+      add :ext_lab_yr, :string
+      add :ext_lab_id, :string
+      add :ext_consent_yn, :boolean, default: false, null: false
+      add :ext_doctor_lname, :string
+      add :ext_doctor_fname, :string
+      add :ext_technician_lname, :string
+      add :ext_technician_fname, :string
+      add :ext_referral_person, :string
+      add :ext_is_done_yn, :boolean, default: false, null: false
+      add :ext_not_done_reason, :string
+      add :ext_indication, :string
+      add :ext_limitations_relative, :string
+      add :ext_limitations, :string
+      add :ext_indication_notes, :text
+      add :ext_protocole_used, :string
+      add :ext_main_problem_cardiac_yn, :boolean, default: false, null: false
+      add :ext_cad_pretest_probability, :string
+      add :ext_mortality_cad_risk, :string
+      add :ext_main_problem_pulm_yn, :boolean, default: false, null: false
+      add :ext_main_problem_medical_yn, :boolean, default: false, null: false
+      add :ext_main_problem_notes, :text
+      add :ext_medications_yn, :boolean, default: false, null: false
+      add :ext_anginal_meds_yn, :boolean, default: false, null: false
+      add :ext_on_digoxin_yn, :boolean, default: false, null: false
+      add :ext_on_bblockers_yn, :boolean, default: false, null: false
+      add :ext_ecg_normal_pre_yn, :boolean, default: false, null: false
+
+      timestamps()
+    end
+
+  end
+end

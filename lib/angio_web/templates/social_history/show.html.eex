@@ -1,0 +1,94 @@
+<div class="title_form">
+<h5 class="title is-5 has-text-centered">Show Social History Record</h5>
+</div>
+
+<div class="element_info">
+
+    <%= render  AngioWeb.SharedView, "_patient_info.html", patient: @patient %>
+</div>
+
+<div class="element_info_coronary">
+Angio : <%= render AngioWeb.SharedView, "_info_coronary.html", info_coronary:
+   @info_coronary%>
+</div>
+<div class="content frame_1">
+  <ol type="I">
+
+
+  <li>
+    <strong>Alcohol depend:</strong>
+    <%= @social_history.soh_alcohol_depend %>
+  </li>
+
+  <li>
+    <strong>Alcohol depend amount:</strong>
+    <%= @social_history.soh_alcohol_depend_amount %>
+  </li>
+
+  <li>
+    <strong>employ status:</strong>
+    <%= @social_history.soh_employ_status %>
+  </li>
+
+  <li>
+    <strong> sleep apnea yn:</strong>
+    <%= @social_history.soh_sleep_apnea_yn %>
+  </li>
+
+  <li>
+    <strong>depressed mood yn:</strong>
+    <%= @social_history.soh_depressed_mood_yn %>
+  </li>
+
+  <li>
+    <strong>illicit drug yn:</strong>
+    <%= @social_history.soh_illicit_drug_yn %>
+  </li>
+
+  <li>
+    <strong>erectile dysfunc yn:</strong>
+    <%= @social_history.soh_erectile_dysfunc_yn %>
+  </li>
+
+  <li>
+    <strong>life expect 1yr yn:</strong>
+    <%= @social_history.soh_life_expect_1yr_yn %>
+  </li>
+
+  <li>
+    <strong>sleep apnea on cpap yn:</strong>
+    <%= @social_history.soh_sleep_apnea_on_cpap_yn %>
+  </li>
+
+  <li>
+    <strong>marital status:</strong>
+    <%= @social_history.soh_marital_status %>
+  </li>
+
+  <li>
+    <strong>education level:</strong>
+    <%= @social_history.soh_education_level %>
+  </li>
+
+  <li>
+    <strong>notes:</strong>
+    <%= @social_history.soh_notes %>
+  </li>
+
+</ol>
+</div>
+
+<span>
+    <%= link "Edit Social History", to: Routes.pt_angio_socialh_path(@conn, :edit, @patient,
+  @info_coronary, @social_history), class: "button is-primary"%>
+</span>
+
+<span>
+  <%= link "Back To Social History  Index", to: Routes.pt_angio_socialh_path(@conn, :index,
+  @patient, @info_coronary) , class: "button is-primary"%>
+</span>
+<span>
+
+<%= link "Back To Cath Lab",  to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-primary"   %>
+ </span>

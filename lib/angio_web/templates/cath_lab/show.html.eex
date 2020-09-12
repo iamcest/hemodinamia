@@ -1,0 +1,181 @@
+<div class="title_form">
+<h5 class="title is-5 has-text-centered">Show Radiation</h5>
+</div>
+<div class="element_info">
+
+    <%= render  AngioWeb.SharedView, "_patient_info.html", patient: @patient %>
+</div>
+
+<div class="element_info_coronary">
+Angio : <%= render AngioWeb.SharedView, "_info_coronary.html", info_coronary:
+   @info_coronary%>
+</div>
+
+<div class="content frame_1">
+  <ol type="1">
+
+
+
+  <li>
+    <strong>Cath hb pre val:</strong>
+    <%= @cath_lab.cath_hb_pre_val %>
+  </li>
+
+  <li>
+    <strong>Cath hb pre na:</strong>
+    <%= @cath_lab.cath_hb_pre_na %>
+  </li>
+
+  <li>
+    <strong>Cath hb post val:</strong>
+    <%= @cath_lab.cath_hb_post_val %>
+  </li>
+
+  <li>
+    <strong>Cath hb post lowest val:</strong>
+    <%= @cath_lab.cath_hb_post_lowest_val %>
+  </li>
+
+  <li>
+    <strong>Cath hb post na:</strong>
+    <%= @cath_lab.cath_hb_post_na %>
+  </li>
+
+  <li>
+    <strong>Cath biomarker positive post yn:</strong>
+    <%= @cath_lab.cath_biomarker_positive_post_yn %>
+  </li>
+
+  <li>
+    <strong>Cath ck pre normal ckmb pre na:</strong>
+    <%= @cath_lab.cath_ck_pre_normal_ckmb_pre_na %>
+  </li>
+
+  <li>
+    <strong>Cath ck post normal ckmb na:</strong>
+    <%= @cath_lab.cath_ck_post_normal_ckmb_na %>
+  </li>
+
+  <li>
+    <strong>Cath ckmb pre val:</strong>
+    <%= @cath_lab.cath_ckmb_pre_val %>
+  </li>
+
+  <li>
+    <strong>Cath ckmb pre na:</strong>
+    <%= @cath_lab.cath_ckmb_pre_na %>
+  </li>
+
+  <li>
+    <strong>Cath ckmb post val:</strong>
+    <%= @cath_lab.cath_ckmb_post_val %>
+  </li>
+
+  <li>
+    <strong>Cath ckmb peak post na:</strong>
+    <%= @cath_lab.cath_ckmb_peak_post_na %>
+  </li>
+
+  <li>
+    <strong>Cath tropo t pre val:</strong>
+    <%= @cath_lab.cath_tropo_t_pre_val %>
+  </li>
+
+  <li>
+    <strong>Cath tropo t pre na:</strong>
+    <%= @cath_lab.cath_tropo_t_pre_na %>
+  </li>
+
+  <li>
+    <strong>Cath tropo t peak post val:</strong>
+    <%= @cath_lab.cath_tropo_t_peak_post_val %>
+  </li>
+
+  <li>
+    <strong>Cath tropo t peak post na:</strong>
+    <%= @cath_lab.cath_tropo_t_peak_post_na %>
+  </li>
+
+  <li>
+    <strong>Cath tropo i pre val:</strong>
+    <%= @cath_lab.cath_tropo_i_pre_val %>
+  </li>
+
+  <li>
+    <strong>Cath tropo i pre na:</strong>
+    <%= @cath_lab.cath_tropo_i_pre_na %>
+  </li>
+
+  <li>
+    <strong>Cath tropo i peak post val:</strong>
+    <%= @cath_lab.cath_tropo_i_peak_post_val %>
+  </li>
+
+  <li>
+    <strong>Cath tropo i peak post na:</strong>
+    <%= @cath_lab.cath_tropo_i_peak_post_na %>
+  </li>
+
+  <li>
+    <strong>Cath creatinine pre val:</strong>
+    <%= @cath_lab.cath_creatinine_pre_val %>
+  </li>
+
+  <li>
+    <strong>Cath creatinine pre na:</strong>
+    <%= @cath_lab.cath_creatinine_pre_na %>
+  </li>
+
+  <li>
+    <strong>Cath creatinine highest val:</strong>
+    <%= @cath_lab.cath_creatinine_highest_val %>
+  </li>
+
+  <li>
+    <strong>Cath creatinine highest na:</strong>
+    <%= @cath_lab.cath_creatinine_highest_na %>
+  </li>
+
+  <li>
+    <strong>Cath creatinine post val:</strong>
+    <%= @cath_lab.cath_creatinine_post_val %>
+  </li>
+
+  <li>
+    <strong>Cath creatinine post na:</strong>
+    <%= @cath_lab.cath_creatinine_post_na %>
+  </li>
+
+  <li>
+    <strong>Cath creatinine pre discharge:</strong>
+    <%= @cath_lab.cath_creatinine_pre_discharge %>
+  </li>
+
+  <li>
+    <strong>Cath creatinine pre discharge na:</strong>
+    <%= @cath_lab.cath_creatinine_pre_discharge_na %>
+  </li>
+
+</ol>
+</div>
+<p class ="buttons_separator"> . </p>
+
+<span>
+    <%= link "Edit Blood Lab", to: Routes.pt_angio_cath_lab_path(@conn, :edit, @patient,
+  @info_coronary, @cath_lab ), class: "button is-link"%>
+</span>
+<span>
+  <%= link "Back To Blood Lab Index", to: Routes.pt_angio_cath_lab_path(@conn, :index,
+  @patient, @info_coronary) , class: "button is-link"%>
+</span>
+<span>
+<%= link "Back To Cath Lab",  to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-link"   %>
+ </span>
+
+
+
+
+
+
+

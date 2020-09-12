@@ -1,0 +1,25 @@
+<% alias Angio.Cath%>
+<div class="title_form">
+<h4 class="title is-4 has-text-centered">Form For Cath Events - Complications</h4>
+</div>
+
+<div class="element_info">
+   <%= render AngioWeb.SharedView, "_patient_info.html", patient:
+  @patient %>
+</div>
+
+<div class="element_info_coronary">
+<%= render AngioWeb.SharedView, "_info_coronary.html", info_coronary:
+   @info_coronary%>
+</div>
+
+<%= render "form.html", changeset: @changeset, action:
+Routes.pt_angio_event_path(@conn, :create, @patient, @info_coronary) %>
+<%=link "Back To Event Index", to: Routes.pt_angio_event_path(@conn, :create,
+@patient, @info_coronary), class: "button is-link"%>
+
+<span>
+<%= link "Back To Lab",  to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-link"   %>
+ </span>
+

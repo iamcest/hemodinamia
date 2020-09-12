@@ -1,0 +1,194 @@
+
+<div class="title_form">
+<h6 class="title is-6 has-text-centered"> Show Coronary Anatomy </h6>
+</div>
+
+<div class="element_info">
+   <%= render AngioWeb.SharedView, "_patient_info.html", patient:
+  @patient %>
+</div>
+
+<div class="element_info_coronary">
+<%= render AngioWeb.SharedView, "_info_coronary.html", info_coronary:
+   @info_coronary%>
+</div>
+
+<div class="content frame_1">
+  <ol type="1">
+
+
+  <li>
+    <strong>Cor anat variations yn:</strong>
+    <%= @cor_anatomy.cor_anat_variations_yn %>
+  </li>
+
+  <li>
+    <strong>Cor anat anomalies yn:</strong>
+    <%= @cor_anatomy.cor_anat_anomalies_yn %>
+  </li>
+
+  <li>
+    <strong>Cor anat dominance:</strong>
+    <%= @cor_anatomy.cor_anat_dominance %>
+  </li>
+
+  <li>
+    <strong>Cor anat lm ostium type:</strong>
+    <%= @cor_anatomy.cor_anat_lm_ostium_type %>
+  </li>
+
+  <li>
+    <strong>Cor anat lm type:</strong>
+    <%= @cor_anatomy.cor_anat_lm_type %>
+  </li>
+
+  <li>
+    <strong>Cor anat rca type:</strong>
+    <%= @cor_anatomy.cor_anat_rca_type %>
+  </li>
+
+  <li>
+    <strong>Cor anat rca ostium type:</strong>
+    <%= @cor_anatomy.cor_anat_rca_ostium_type %>
+  </li>
+
+  <li>
+    <strong>Cor anat rca mid type:</strong>
+    <%= @cor_anatomy.cor_anat_rca_mid_type %>
+  </li>
+
+  <li>
+    <strong>Cor anat rca rv branch type:</strong>
+    <%= @cor_anatomy.cor_anat_rca_rv_branch_type %>
+  </li>
+
+  <li>
+    <strong>Cor anat rca distal type:</strong>
+    <%= @cor_anatomy.cor_anat_rca_distal_type %>
+  </li>
+
+  <li>
+    <strong>Cor anat rca pda type:</strong>
+    <%= @cor_anatomy.cor_anat_rca_pda_type %>
+  </li>
+
+  <li>
+    <strong>Cor anat lad ostium type:</strong>
+    <%= @cor_anatomy.cor_anat_lad_ostium_type %>
+  </li>
+
+  <li>
+    <strong>Cor anat lad prox type:</strong>
+    <%= @cor_anatomy.cor_anat_lad_prox_type %>
+  </li>
+
+  <li>
+    <strong>Cor anat lad mid type:</strong>
+    <%= @cor_anatomy.cor_anat_lad_mid_type %>
+  </li>
+
+  <li>
+    <strong>Cor anat septal ostium type:</strong>
+    <%= @cor_anatomy.cor_anat_septal_ostium_type %>
+  </li>
+
+  <li>
+    <strong>Cor anat lad distal type:</strong>
+    <%= @cor_anatomy.cor_anat_lad_distal_type %>
+  </li>
+
+  <li>
+    <strong>Cor anat lad d1 type:</strong>
+    <%= @cor_anatomy.cor_anat_lad_d1_type %>
+  </li>
+
+  <li>
+    <strong>Cor anat lad d2 type:</strong>
+    <%= @cor_anatomy.cor_anat_lad_d2_type %>
+  </li>
+
+  <li>
+    <strong>Cor anat lad d3 type:</strong>
+    <%= @cor_anatomy.cor_anat_lad_d3_type %>
+  </li>
+
+  <li>
+    <strong>Cor anat sino atrial type:</strong>
+    <%= @cor_anatomy.cor_anat_sino_atrial_type %>
+  </li>
+
+  <li>
+    <strong>Cor anat lcx type:</strong>
+    <%= @cor_anatomy.cor_anat_lcx_type %>
+  </li>
+
+  <li>
+    <strong>Cor anat lcx ostium type:</strong>
+    <%= @cor_anatomy.cor_anat_lcx_ostium_type %>
+  </li>
+
+  <li>
+    <strong>Cor anat lcx prox type:</strong>
+    <%= @cor_anatomy.cor_anat_lcx_prox_type %>
+  </li>
+
+  <li>
+    <strong>Cor anat lcx mid type:</strong>
+    <%= @cor_anatomy.cor_anat_lcx_mid_type %>
+  </li>
+
+  <li>
+    <strong>Cor anat lcx distal type:</strong>
+    <%= @cor_anatomy.cor_anat_lcx_distal_type %>
+  </li>
+
+  <li>
+    <strong>Cor anat lcx om1 type:</strong>
+    <%= @cor_anatomy.cor_anat_lcx_om1_type %>
+  </li>
+
+  <li>
+    <strong>Cor anat lcx om2 type:</strong>
+    <%= @cor_anatomy.cor_anat_lcx_om2_type %>
+  </li>
+
+  <li>
+    <strong>Cor anat lcx om3 type:</strong>
+    <%= @cor_anatomy.cor_anat_lcx_om3_type %>
+  </li>
+
+  <li>
+    <strong>Cor anat ramus type:</strong>
+    <%= @cor_anatomy.cor_anat_ramus_type %>
+  </li>
+
+  <li>
+    <strong>Cor anat pl type:</strong>
+    <%= @cor_anatomy.cor_anat_pl_type %>
+  </li>
+
+  <li>
+    <strong>Cor anat conus type:</strong>
+    <%= @cor_anatomy.cor_anat_conus_type %>
+  </li>
+
+  <li>
+    <strong>Cor anat notes:</strong>
+    <%= @cor_anatomy.cor_anat_notes %>
+  </li>
+
+</ol>
+</div>
+<p class ="buttons_separator"> . </p>
+<span>
+    <%= link "Edit Anatomy", to: Routes.pt_angio_anatomy_path(@conn, :edit, @patient,
+  @info_coronary, @cor_anatomy ), class: "button is-link"%>
+</span>
+<span>
+  <%= link "Back To Anatomy Index", to: Routes.pt_angio_anatomy_path(@conn, :index,
+  @patient, @info_coronary) , class: "button is-link"%>
+</span>
+<span>
+<%= link "Back To Lab",  to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-link"   %>
+ </span>

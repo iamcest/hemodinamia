@@ -1,0 +1,23 @@
+
+<h4 class="title is-h4">Editing Episode Of Care</h4>
+
+<div class="element_info">
+    <%= render  AngioWeb.SharedView, "_patient_info.html", patient: @patient %>
+</div>
+
+
+ <%= render "form.html", changeset: @changeset,
+        info_coronary: @info_coronary,
+action: Routes.pt_angio_episode_path(@conn, :update, @patient, @info_coronary,
+@care_episode  ) %>
+
+        <span>
+          <%= link "Back To Care Episode  List", to: Routes.pt_angio_episode_path(@conn, :index,
+@patient,@info_coronary) , class: "button is-link"%>
+</span>
+<span>
+<%= link "To Lab",   to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-link "   %>
+ </span>
+
+

@@ -1,0 +1,171 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+  <div class="notification is-danger">
+    <button class="delete"></button>
+    Oops, something went wrong! Please check the errors below or Dublicate Record
+</div>
+  <% end %>
+  <div class="columns">
+  <div class= "column frame_1">
+
+
+     <!-------------start------------------------->
+   <div class="columns">
+
+     <div class="column is-8">
+
+       <div class="field">
+    <label class="label">Table Name</label>
+  <div class="control">
+   <%= text_input f, :name, class: "input", type: "text", placeholder: "name"  %>
+   <%= error_tag f, :name %>
+   <p class="help"></p>
+  </div><!---control--->
+       </div><!-----field--------------->
+
+       </div><!----column 1---------------->
+
+
+   </div><!-----columns----------------->
+
+    <!------------end -start------------------------->
+
+
+
+    <!-------------start------------------------->
+   <div class="columns">
+
+     <div class="column">
+
+   <div class="field">
+    <label class="label">Template ID </label>
+  <div class="control">
+   <%= text_input f, :template_id, class: "input", type: "text", placeholder: "template_id "  %>
+   <%= error_tag f, :template_id %>
+   <p class="help"></p>
+  </div><!---control--->
+       </div><!-----field--------------->
+
+
+
+     </div><!----column 1---------------->
+     <div class="column">
+
+ <div class="field">
+    <label class="label">Code </label>
+  <div class="control">
+   <%= text_input f, :code, class: "input", type: "text", placeholder: "code"  %>
+   <%= error_tag f, :code %>
+   <p class="help"></p>
+  </div><!---control--->
+       </div><!-----field--------------->
+
+
+     </div><!----column 2---------------->
+
+
+   </div><!-----columns----------------->
+    <!------------end -start------------------------->
+ <!-------------start------------------------->
+   <div class="columns">
+
+     <div class="column">
+ <div class="field">
+    <label class="label">Coding System </label>
+  <div class="control">
+   <%= text_input f, :code_system , class: "input", type: "text", placeholder: "code_system "  %>
+   <%= error_tag f, :code_system  %>
+   <p class="help"></p>
+  </div><!---control--->
+       </div><!-----field--------------->
+     </div><!----column 1---------------->
+    <div class="column">
+
+
+
+     </div><!----column 2---------------->
+
+
+   </div><!-----columns----------------->
+    <!------------end -start------------------------->
+
+
+  </div><!-------end LEFT COLUMN--------------------->
+  <div class= "column frame_1">
+
+  <!-------------start------------------------->
+   <div class="columns">
+
+     <div class="column is-8">
+
+        <div class="field">
+    <label class="label">Display Name </label>
+  <div class="control">
+   <%= text_input f, :display_name , class: "input", type: "text", placeholder: "display_name "  %>
+   <%= error_tag f, :display_name  %>
+   <p class="help"></p>
+  </div><!---control--->
+       </div><!-----field--------------->
+
+
+     </div><!----column 1---------------->
+     </div><!-------coloumns-------------------->
+   <div class = "columns">
+     <div class="column">
+
+<div class="field">
+  <label class="label">CDA XML </label>
+  <div class="control">
+    <%= text_input f, :cda_xml,
+        class: "textarea",
+        type: "input", placeholder: "cda_xml"  %>
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+
+   </div><!----column 2---------------->
+
+
+   </div><!-----columns----------------->
+
+    <!------------end -start------------------------->
+<div class="columns">
+    <div class="column">
+
+<div class="field">
+  <label class="label">Notes On Table </label>
+  <div class="control">
+    <%= text_input f, :defs_tables_notes,
+        class: "textarea",
+        type: "input", placeholder: "defs_tables_notes"  %>
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+
+     </div><!----column 2---------------->
+
+</div><!---------columns--------------------->
+
+    <!----
+  <%#= label f, :definition_id %>
+  <%#= number_input f, :definition_id %>
+  <%#= error_tag f, :definition_id %>
+
+  <%#= label f, :defs_table_id %>
+  <%#= number_input f, :defs_table_id %>
+  <%#= error_tag f, :defs_table_id %>
+
+  <%#= label f, :table_id %>
+  <%#= text_input f, :table_id %>
+  <%#= error_tag f, :table_id %>
+  --->
+   </div><!-------end RIGTH COLUMN--------------------->
+  </div><!------END columns------------------------------------->
+
+
+  <div>
+    <%= submit "Save", class: "button is-primary is-large is-fullwidth" %>
+  </div>
+<% end %>

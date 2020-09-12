@@ -1,0 +1,81 @@
+
+<div class="title_form">
+<h5 class="title is-5 has-text-centered"> Showing Functional States </h4>
+</div>
+
+<div class="element_info">
+   <%= render AngioWeb.SharedView, "_patient_info.html", patient:
+  @patient %>
+</div>
+
+<div class="element_info_coronary">
+<%= render AngioWeb.SharedView, "_info_coronary.html", info_coronary:
+   @info_coronary%>
+</div>
+
+<ul>
+
+  <li>
+    <strong>Funs status assess dt:</strong>
+    <%= @functional_state.funs_status_assess_dt %>
+  </li>
+
+  <li>
+    <strong>Funs cognition level:</strong>
+    <%= @functional_state.funs_cognition_level %>
+  </li>
+
+  <li>
+    <strong>Funs katz index:</strong>
+    <%= @functional_state.funs_katz_index %>
+  </li>
+
+  <li>
+    <strong>Funs frailty scale csha:</strong>
+    <%= @functional_state.funs_frailty_scale_csha %>
+  </li>
+
+  <li>
+    <strong>Funs stroke rankin dt:</strong>
+    <%= @functional_state.funs_stroke_rankin_dt %>
+  </li>
+
+  <li>
+    <strong>Funs stroke rankin modified:</strong>
+    <%= @functional_state.funs_stroke_rankin_modified %>
+  </li>
+
+  <li>
+    <strong>Funs kccq12 score:</strong>
+    <%= @functional_state.funs_kccq12_score %>
+  </li>
+
+  <li>
+    <strong>Funs walking level:</strong>
+    <%= @functional_state.funs_walking_level %>
+  </li>
+
+  <li>
+    <strong>Funs basic adl:</strong>
+    <%= @functional_state.funs_basic_adl %>
+  </li>
+
+  <li>
+    <strong>Funs notes:</strong>
+    <%= @functional_state.funs_notes %>
+  </li>
+
+</ul>
+<p class ="buttons_separator"> . </p>
+<span>
+    <%= link "Edit Functional States ", to: Routes.pt_angio_funs_path(@conn, :edit, @patient,
+  @info_coronary, @functional_state ), class: "button is-link"%>
+</span>
+<span>
+  <%= link "Back To States  Index", to: Routes.pt_angio_funs_path(@conn, :index,
+  @patient, @info_coronary) , class: "button is-link"%>
+</span>
+<span>
+<%= link "Back To Lab",  to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-link"   %>
+ </span>

@@ -1,0 +1,5 @@
+<h1>Edit Loinc</h1>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.loinc_path(@conn, :update, @loinc)) %>
+
+<span><%= link "Back", to: Routes.loinc_path(@conn, :index) %></span>

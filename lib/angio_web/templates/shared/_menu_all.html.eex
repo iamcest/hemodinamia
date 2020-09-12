@@ -1,0 +1,371 @@
+<% alias Angio.Clinicals%>
+<% alias Angio.Assements %>
+
+<% alias Angio.Caths%>
+<% alias Angio.Cor_mediae %>
+<% alias Angio.Congenitals%>
+<%alias Angio.Histories %>
+<% alias Angio.Diagnostics %>
+<% alias Angio.Interventions%>
+
+
+<div class="dropdown ">
+
+  <div class="dropdown-trigger">
+    <button class="button  is-primary is-fullwidth" aria-haspopup="true" aria-controls="dropdown-menu4">
+      <span> Menu - All Records  </span>
+      <span class="icon is-small">
+        <i class="fa  fa-angle-down" aria-hidden="true"></i>
+      </span>
+    </button>
+  </div>
+
+  <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+    <div class="dropdown-content">
+
+
+<div class="is-divider" data-content="Past History"></div>
+
+     <div class="dropdown-item">
+<% count_infect_histories  =  Histories.count_infect_histories(@info_coronary.id) %>
+<%= link to: Routes.pt_angio_infh_path(@conn, :index, @patient, @info_coronary),
+        class: "button is-link  is-fullwidth", title: "Infections: HIV, Hepatatis, TB ..." do %>
+        <%= render  AngioWeb.SharedView, "_info_menu_count.html",
+                 prompt: "Infections",
+                 count: count_infect_histories%>
+        <% end %>
+
+      </div>
+    <div class="dropdown-item">
+<% count_core_histories  =  Histories.count_core_histories(@info_coronary.id) %>
+<%= link to: Routes.pt_angio_coreh_path(@conn, :index, @patient, @info_coronary),
+        class: "button is-link is-fullwidth", title: "Past History: Essential" do %>
+        <%= render  AngioWeb.SharedView, "_info_menu_count.html",
+                 prompt: "Essential Hist",
+                 count: count_core_histories%>
+        <% end %>
+
+      </div>
+
+ <div class="dropdown-item">
+<% count_social_histories  =  Histories.count_social_histories(@info_coronary.id) %>
+<%= link to: Routes.pt_angio_socialh_path(@conn, :index, @patient, @info_coronary),
+        class: "button is-link is-fullwidth", title: "Social Histor" do %>
+        <%= render  AngioWeb.SharedView, "_info_menu_count.html",
+                 prompt: "Social Hist",
+                 count: count_social_histories%>
+        <% end %>
+
+      </div>
+
+<div class="dropdown-item">
+<% count_proc_histories  =  Histories.count_proc_histories(@info_coronary.id) %>
+<%= link to: Routes.pt_angio_proch_path(@conn, :index, @patient, @info_coronary),
+class: "button is-link  is-fullwidth", title: "Prior Procedures " do %>
+        <%= render  AngioWeb.SharedView, "_info_menu_count.html",
+                 prompt: "Prior Procedures",
+                 count: count_proc_histories%>
+        <% end %>
+
+      </div>
+<div class="is-divider" data-content="Assesment"></div>
+
+<!----------------------------------------->
+
+<div class="dropdown-item">
+
+       <% c_count_clinical_exams_cardio =  Assements.count_clinical_exams_cardio(@info_coronary.id) %>
+        <%= link to: Routes.pt_angio_cle_cardio_path(@conn, :index, @patient,
+      @info_coronary), class: "button is-link  is-fullwidth", title: "Exam Date, BP.." do %>
+
+        <%= render  AngioWeb.SharedView,
+ "_info_menu_count.html",
+  prompt: "Exam-Cardio", count: c_count_clinical_exams_cardio %>
+        <% end %>
+      </div>
+<!----------------------------------------->
+
+<div class="dropdown-item">
+
+       <% count_vitals =  Assements.count_vitals(@info_coronary.id) %>
+        <%= link to: Routes.pt_angio_vitals_path(@conn, :index, @patient,
+      @info_coronary), class: "button is-link  is-fullwidth", title: "Exam Date, BP.." do %>
+
+        <%= render  AngioWeb.SharedView,
+ "_info_menu_count.html",
+  prompt: "Vitals", count: count_vitals %>
+        <% end %>
+      </div>
+ <div class="dropdown-item">
+
+       <% count_states = Angio.Assements.count_functional_states(@info_coronary.id) %>
+        <%= link to: Routes.pt_angio_funs_path(@conn, :index, @patient,
+      @info_coronary), class: "button is-link  is-fullwidth", title: "Functional States: Rankin Katz Index..." do %>
+
+        <%= render  AngioWeb.SharedView,
+ "_info_menu_count.html",
+  prompt: "Functional States", count: count_states %>
+        <% end %>
+      </div>
+
+     </div>
+
+<!-------------CHEST PAINS--------------------------------->
+<div class="dropdown-item">
+  <% count_clinicals =  Clinicals.count_clinicals(@info_coronary.id) %>
+        <%= link  to: Routes.pt_angio_clinical_path(@conn, :index, @patient, @info_coronary),
+class: "button is-link is-fullwidth", title: "Heart Failure, Shock, IABP..." do  %>
+
+        <%= render  AngioWeb.SharedView,
+ "_info_menu_count.html",
+  prompt: "Clinicals", count: count_clinicals %>
+
+        <%end%>
+
+
+      </div>
+<div class="is-divider" data-content="Cath Lab"></div>
+
+      <div class="dropdown-item">
+
+ <% count_episodes =  Caths.count_episodes(@info_coronary.id) %>
+        <%= link  to: Routes.pt_angio_proc_episode_path(@conn, :index, @patient, @info_coronary),
+class: "button is-link is-fullwidth", title: "Procedure Details. Operator, ICD-10.." do  %>
+
+        <%= render  AngioWeb.SharedView,
+ "_info_menu_count.html",
+  prompt: "Details", count: count_episodes %>
+        <%end%>
+
+      </div>
+
+       <div class="dropdown-item ">
+ <% count_anatomies =  Caths.count_anatomies(@info_coronary.id) %>
+        <%= link  to: Routes.pt_angio_anatomy_path(@conn, :index, @patient, @info_coronary),
+class: "button is-link is-fullwidth", title: "Coronary Anatomy. Cor Variations" do  %>
+
+        <%= render  AngioWeb.SharedView,
+ "_info_menu_count.html",
+  prompt: "Anatomy", count: count_anatomies %>
+        <%end%>
+
+      </div>
+
+      <div class="dropdown-item ">
+ <% count_lesions =  Caths.count_lesions(@info_coronary.id) %>
+        <%= link to: Routes.pt_angio_lesion_path(@conn, :index, @patient,
+      @info_coronary), class: "button is-link  is-fullwidth" do %>
+        <%= render  AngioWeb.SharedView,
+ "_info_menu_count.html",
+  prompt: "Lesions", count: count_lesions %>
+        <% end %>
+
+
+      </div>
+      <div class="dropdown-item">
+  <% count_grafts =  Caths.count_grafts(@info_coronary.id) %>
+        <%= link to: Routes.pt_angio_graft_path(@conn, :index, @patient,
+      @info_coronary), class: "button is-link  is-fullwidth", title: "Grafts Implanted, Graft Lesions" do %>
+        <%= render  AngioWeb.SharedView,
+ "_info_menu_count.html",
+  prompt: "Grafts", count: count_grafts %>
+        <% end %>
+
+      </div>
+  <div class="dropdown-item">
+ <% count_collaterals =  Caths.count_collaterals(@info_coronary.id) %>
+        <%= link to: Routes.pt_angio_collateral_path(@conn, :index, @patient,
+      @info_coronary), class: "button is-link  is-fullwidth" do %>
+        <%= render  AngioWeb.SharedView,
+ "_info_menu_count.html",
+  prompt: "Collaterals", count: count_collaterals %>
+        <% end %>
+
+
+      </div>
+  <div class="dropdown-item">
+  <% count_lvs =  Caths.count_lvs(@info_coronary.id) %>
+        <%= link to: Routes.pt_angio_lv_path(@conn, :index, @patient,
+      @info_coronary), class: "button is-link  is-fullwidth", title: "Left Ventricular Function" do %>
+        <%= render  AngioWeb.SharedView,
+ "_info_menu_count.html",
+  prompt: "LV", count: count_lvs %>
+        <% end %>
+
+      </div>
+
+      <div class="dropdown-item">
+        <% count_sats =  Caths.count_sats(@info_coronary.id) %>
+        <%= link to: Routes.pt_angio_satpres_path(@conn, :index, @patient,
+      @info_coronary), class: "button is-link  is-fullwidth" do %>
+        <%= render  AngioWeb.SharedView,
+ "_info_menu_count.html",
+  prompt: "Sats", count: count_sats %>
+        <% end %>
+      </div>
+
+  <div class="dropdown-item">
+ <% count_events =  Caths.count_events(@info_coronary.id) %>
+        <%= link to: Routes.pt_angio_event_path(@conn, :index, @patient,
+      @info_coronary), class: "button is-link  is-fullwidth" do %>
+        <%= render  AngioWeb.SharedView,
+ "_info_menu_count.html",
+  prompt: "Events", count: count_events %>
+        <% end %>
+
+
+      </div>
+  <div class="dropdown-item">
+  <% count_radiations =  Caths.count_radiations(@info_coronary.id) %>
+        <%= link to: Routes.pt_angio_radiation_path(@conn, :index, @patient,
+      @info_coronary), class: "button is-link  is-fullwidth" do %>
+        <%= render  AngioWeb.SharedView,
+ "_info_menu_count.html",
+  prompt: "Radiation", count: count_radiations %>
+        <% end %>
+
+      </div>
+       <div class="dropdown-item">
+
+<% count_bloods =  Caths.count_bloods(@info_coronary.id) %>
+        <%= link to: Routes.pt_angio_cath_lab_path(@conn, :index, @patient,
+      @info_coronary), class: "button is-link  is-fullwidth" do %>
+        <%= render  AngioWeb.SharedView,
+ "_info_menu_count.html",
+  prompt: "Blood Res", count: count_bloods %>
+        <% end %>
+
+
+      </div>
+  <div class="dropdown-item">
+ <% count_meds =  Caths.count_meds(@info_coronary.id) %>
+        <%= link to: Routes.pt_angio_cathmed_path(@conn, :index, @patient,
+      @info_coronary), class: "button is-link  is-fullwidth" do %>
+        <%= render  AngioWeb.SharedView,
+ "_info_menu_count.html",
+  prompt: "Meds", count: count_meds %>
+        <% end %>
+
+
+      </div>
+
+ <div class="dropdown-item">
+ <% count_media =  Cor_mediae.count_media(@info_coronary.id) %>
+        <%= link to: Routes.pt_angio_cor_media_path(@conn, :index, @patient,
+      @info_coronary), class: "button is-link  is-fullwidth" do %>
+        <%= render  AngioWeb.SharedView,
+ "_info_menu_count.html",
+  prompt: "Media", count: count_media %>
+        <% end %>
+
+
+      </div>
+
+ <div class="is-divider" data-content="Diagnostics"></div>
+
+   <div class="dropdown-item">
+     <% count_ecgs  =  Diagnostics.count_electrocardiograms(@info_coronary.id) %>
+<%= link to: Routes.pt_angio_ecg_path(@conn, :index, @patient, @info_coronary),
+        class: "button is-link  is-fullwidth", title: "ECG's" do %>
+        <%= render  AngioWeb.SharedView, "_info_menu_count.html",
+                 prompt: "ECG",
+                 count: count_ecgs%>
+        <% end %>
+
+      </div>
+
+<div class="is-divider" data-content="Interventions"></div>
+
+
+ <div class="dropdown-item">
+<% count_closures  =  Interventions.count_asd_closures(@info_coronary.id) %>
+<%= link to: Routes.pt_angio_asdcl_path(@conn, :index, @patient, @info_coronary),
+        class: "button is-link  is-fullwidth", title: "ASD Closure" do %>
+        <%= render  AngioWeb.SharedView, "_info_menu_count.html",
+                 prompt: "ASD Closure",
+                 count: count_closures %>
+        <% end %>
+
+      </div>
+
+
+
+ <div class="dropdown-item">
+<% count_coarc_procedures =  Interventions.count_coarc_procedures(@info_coronary.id) %>
+<%= link to: Routes.pt_angio_coarc_path(@conn, :index, @patient, @info_coronary),
+        class: "button is-link  is-fullwidth", title: "ASD Closure" do %>
+        <%= render  AngioWeb.SharedView, "_info_menu_count.html",
+                 prompt: "Coarc Proc",
+                 count: count_coarc_procedures %>
+        <% end %>
+
+      </div>
+    <!--------------------------------->
+<div class="dropdown-item">
+<% count_av_plasties =  Interventions.count_av_plasties(@info_coronary.id) %>
+<%= link to: Routes.pt_angio_avp_path(@conn, :index, @patient, @info_coronary),
+        class: "button is-link  is-fullwidth", title: "Aortic Valvuloplasty " do %>
+        <%= render  AngioWeb.SharedView, "_info_menu_count.html",
+                 prompt: "AV-Plasty",
+                 count: count_av_plasties %>
+        <% end %>
+
+      </div>
+
+ <!--------------------------------->
+
+
+<!--------------------------------->
+<div class="dropdown-item">
+<% count_pci_procedures =  Interventions.count_pci_procedures(@info_coronary.id) %>
+<%= link to: Routes.pt_angio_pci_proc_path(@conn, :index, @patient, @info_coronary),
+        class: "button is-link  is-fullwidth", title: "PCI Procedure " do %>
+        <%= render  AngioWeb.SharedView, "_info_menu_count.html",
+                 prompt: "PCI-Procedure",
+                 count: count_pci_procedures %>
+        <% end %>
+
+      </div>
+
+ <!--------------------------------->
+<div class="is-divider" data-content="Congentitals"></div>
+
+      <div class="dropdown-item">
+<% count_episodes  =  Congenitals.count_chd_episodes(@info_coronary.id) %>
+<%= link to: Routes.pt_angio_chd_episode_path(@conn, :index, @patient, @info_coronary),
+        class: "button is-link  is-fullwidth", title: "Congenital Care Episode: Proc Codes, Insurance, Arrival Date..." do %>
+        <%= render  AngioWeb.SharedView, "_info_menu_count.html",
+                 prompt: "Episode",
+                 count: count_episodes %>
+        <% end %>
+
+      </div>
+
+  <div class="dropdown-item">
+<% count_conditions  =  Congenitals.count_chd_conditions(@info_coronary.id) %>
+        <%= link to: Routes.pt_angio_chd_condition_path(@conn, :index, @patient, @info_coronary),
+        class: "button is-link  is-fullwidth", title: "Congenital Coditions as: Heterotaxy, Marfan..." do %>
+
+        <%= render  AngioWeb.SharedView, "_info_menu_count.html",
+                 prompt: "Conditions",
+                 count: count_conditions %>
+        <% end %>
+
+      </div>
+<!-----------start--------------------------------->
+ <div class="dropdown-item">
+<% count_risk_factors  =  Congenitals.count_chd_risk_factors(@info_coronary.id) %>
+        <%= link to: Routes.pt_angio_chd_risk_path(@conn, :index, @patient, @info_coronary),
+        class: "button is-link  is-fullwidth", title: "Congenital Risk Factors as: Heterotaxy, Marfan..." do %>
+
+        <%= render  AngioWeb.SharedView, "_info_menu_count.html",
+                 prompt: "Risk Factors",
+                 count: count_risk_factors %>
+        <% end %>
+
+      </div>
+<!--------------End------------------------------>
+
+
+    </div>
+  </div>

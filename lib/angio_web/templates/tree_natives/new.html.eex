@@ -1,0 +1,8 @@
+<div class="title_form">
+<h5 class="title is-5 has-text-centered">New Tree Data To Draw The Coronary Sketch</h5>
+</div><!------title_form----------------------->
+<%= render "form.html", Map.put(assigns, :action, Routes.tree_natives_path(@conn, :create)) %>
+
+<span><%= link "Back To List",
+to: Routes.tree_natives_path(@conn, :index), class: "button is-primary" %></span>
+

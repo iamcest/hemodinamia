@@ -1,0 +1,131 @@
+<div class="title_form">
+  <h5 class="title is-5 has-text-centered">Show Prior Procedures  History Record</h5>
+</div>
+
+<div class="element_info">
+
+    <%= render  AngioWeb.SharedView, "_patient_info.html", patient: @patient %>
+</div>
+
+<div class="element_info_coronary">
+Angio : <%= render AngioWeb.SharedView, "_info_coronary.html", info_coronary:
+   @info_coronary%>
+</div>
+<div class="content frame_1">
+  <ol type="1">
+
+
+  <li>
+    <strong>Proch pci prior yn:</strong>
+    <%= @proc_history.proch_pci_prior_yn %>
+  </li>
+
+  <li>
+    <strong>Proch pci prior dt:</strong>
+    <%= @proc_history.proch_pci_prior_dt %>
+  </li>
+
+  <li>
+    <strong>Proch prior valve interv yn:</strong>
+    <%= @proc_history.proch_prior_valve_interv_yn %>
+  </li>
+
+  <li>
+    <strong>Proch prior valve interv dt:</strong>
+    <%= @proc_history.proch_prior_valve_interv_dt %>
+  </li>
+
+  <li>
+    <strong>Proch transplant prior yn:</strong>
+    <%= @proc_history.proch_transplant_prior_yn %>
+  </li>
+
+  <li>
+    <strong>Proch transplant prior dt:</strong>
+    <%= @proc_history.proch_transplant_prior_dt %>
+  </li>
+
+  <li>
+    <strong>Proch pacer prior yn:</strong>
+    <%= @proc_history.proch_pacer_prior_yn %>
+  </li>
+
+  <li>
+    <strong>Proch pacer prior dt:</strong>
+    <%= @proc_history.proch_pacer_prior_dt %>
+  </li>
+
+  <li>
+    <strong>Proch prior icd yn:</strong>
+    <%= @proc_history.proch_prior_icd_yn %>
+  </li>
+
+  <li>
+    <strong>Proch prior icd dt:</strong>
+    <%= @proc_history.proch_prior_icd_dt %>
+  </li>
+
+  <li>
+    <strong>Proch prior rv biopsy yn:</strong>
+    <%= @proc_history.proch_prior_rv_biopsy_yn %>
+  </li>
+
+  <li>
+    <strong>Proch prior rv biopsy dt:</strong>
+    <%= @proc_history.proch_prior_rv_biopsy_dt %>
+  </li>
+
+  <li>
+    <strong>Proch carotid surg stent yn:</strong>
+    <%= @proc_history.proch_carotid_surg_stent_yn %>
+  </li>
+
+  <li>
+    <strong>Proch carotid surg stent dt:</strong>
+    <%= @proc_history.proch_carotid_surg_stent_dt %>
+  </li>
+
+  <li>
+    <strong>Proch cabg prior yn:</strong>
+    <%= @proc_history.proch_cabg_prior_yn %>
+  </li>
+
+  <li>
+    <strong>Proch cabg prior dt:</strong>
+    <%= @proc_history.proch_cabg_prior_dt %>
+  </li>
+
+  <li>
+    <strong>Proch cardiac surg other yn:</strong>
+    <%= @proc_history.proch_cardiac_surg_other_yn %>
+  </li>
+
+  <li>
+    <strong>Proch notes:</strong>
+    <%= @proc_history.proch_notes %>
+  </li>
+
+  <li>
+    <strong>Proc epis request dt:</strong>
+    <%= @proc_history.proc_epis_request_dt %>
+  </li>
+
+
+</ol>
+</div>
+<p class ="buttons_separator"> . </p>
+
+<span>
+    <%= link "Edit Prior Procedures  History", to: Routes.pt_angio_proch_path(@conn, :edit, @patient,
+  @info_coronary, @proc_history), class: "button is-link"%>
+</span>
+
+<span>
+  <%= link "Back To Procedures  History  Index", to: Routes.pt_angio_proch_path(@conn, :index,
+  @patient, @info_coronary) , class: "button is-link"%>
+</span>
+<span>
+
+<%= link "Back To Cath Lab",  to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-link"   %>
+ </span>

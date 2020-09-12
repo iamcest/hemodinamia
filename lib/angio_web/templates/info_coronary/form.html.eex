@@ -1,0 +1,459 @@
+<% alias Angio.Canons, as: Query %>
+
+
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+  <div class="notification is-danger">
+    <button class="delete"></button>
+    Oops, something went wrong! Please check the errors below
+</div>
+  <% end %>
+  <div class="columns">
+    <div class ="column frame_1">
+      <span class="button is-link  is-fullwidth ">
+Status - Diseased Vessels
+        </span
+</div><!----columns------------------------->
+
+<div class="columns">
+    <div class ="column">
+
+   <% s_info_cor_diagnostic_status= Query.select_options("info_cor_diagnostic_status") %>
+   <%# i_info_cor_diagnostic_status =
+raw Query.search_in_instructions("info_cor_diagnostic_status")%>
+ <%# i_status =
+raw  Query.search_in_instructions("info_cor_diagnostic_status")%>
+<div class="field">
+  <label class="label">Cath  Status </label>
+            <div class="select is-primary">
+            <span class="field_help"> </span>
+              <%= select(f, :info_cor_diagnostic_status,
+  s_info_cor_diagnostic_status, prompt: "---Select---",
+ class: "form-control")
+              %>
+            </div>
+            <!--select---->
+            <%= error_tag f, :info_cor_diagnostic_status  %>
+            <p class="help"><%#= i_info_cor_diagnostic_status %></p>
+          <!--control---->
+        </div>
+        <!---field--->
+
+    </div><!----column---------->
+ <div class ="column">
+<!-----------------sart field------------->
+        <div class="field">
+          <label class="label">Lab Number </label>
+          <div class="control">
+            <%= text_input f,
+              :info_exam_num ,
+               class: "input", type: "text",
+                placeholder: "info_exam_num ",
+              required: false %>
+              <%= error_tag f, :info_exam_num %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+        <!----------end field--------------------------->
+</div><!----column------->
+
+</div><!--------columns---------->
+
+
+<span class="button is-link  is-fullwidth ">
+      Times
+        </span>
+
+<div class="columns">
+  <div class ="column">
+ <%# i_cor_date =
+raw  Query.search_in_instructions("info_cor_date")%>
+
+
+<div class="field">
+          <label class="label">Cath Date </label>
+          <div class="control">
+            <%= date_input f, :info_cor_date  , class: "input", type: "date",
+            placeholder: "Field Name", required: false %> <%= error_tag f,
+            :info_cor_date %>
+          </div>
+          <p class="help">  <%#= i_cor_date%>   </p>
+        </div>
+        <!--field---->
+
+    </div><!----column------->
+
+
+
+    <div class ="column">
+<div class="field">
+          <label class="label">Cath Start Time </label>
+          <div class="control">
+            <%= time_input f, :info_cor_start_tm, class: "input", type: "time",
+            placeholder: "Field Name", required: false %> <%= error_tag f,
+            :info_cor_start_tm %>
+          </div>
+          <p class="help"></p>
+        </div>
+        <!--field---->
+ </div><!----column------->
+   <div class ="column">
+<div class="field">
+          <label class="label"> Cath  End Time </label>
+          <div class="control">
+            <%= time_input f, :info_cor_end_tm, class: "input", type: "time",
+            placeholder: "Field Name", required: false %> <%= error_tag f,
+            :info_cor_end_tm %>
+          </div>
+          <p class="help"></p>
+        </div>
+        <!--field---->
+
+ </div><!----column------->
+</div><!--------columns---------->
+<div class="columns">
+
+
+    <div class ="column">
+       <%# i_info_cor_arrival_dt =
+raw  Query.search_in_instructions("info_cor_arrival_dt")%>
+
+
+      <div class="field">
+          <label class="label">Arrival Date </label>
+          <div class="control">
+            <%= date_input f, :info_cor_arrival_dt , class: "input", type: "date",
+            placeholder: "Field Name", required: false %> <%= error_tag f,
+            :info_cor_arrival_dt %>
+          </div>
+          <p class="help"><%#=  i_info_cor_arrival_dt %> </p>
+        </div>
+        <!--field---->
+   </div><!----column------->
+   <div class ="column">
+<div class="field">
+          <label class="label">Arrival Time </label>
+          <div class="control">
+            <%= time_input f, :info_cor_arrival_tm , class: "input", type: "time",
+            placeholder: "Field Name", required: false %> <%= error_tag f,
+            :info_cor_arrival_tm %>
+          </div>
+          <p class="help"></p>
+        </div>
+        <!--field---->
+ </div><!----column------->
+</div><!--------columns---------->
+<span class="button is-info  is-fullwidth ">
+      Reasons - Diagnosis
+        </span>
+
+
+<div class="columns">
+      <div class ="column">
+
+     <% s_reason=   Query.select_options("info_cor_main_reason") %>
+     <%# i_reason =
+raw Query.search_in_instructions("info_cor_main_reason")%>
+
+
+<div class="field">
+          <label class="label"> Main Reason For This Cath</label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"> </span>
+<%= select(f, :info_cor_main_reason,
+  s_reason,  prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select---->
+            <%= error_tag f, :info_cor_diagnostic_status  %>
+            <p class="help"><%#= i_reason %></p>
+          </div>
+          <!--control---->
+        </div>
+        <!---field--->
+
+
+
+
+
+   </div><!----column------->
+</div><!--------columns---------->
+<div class="columns">
+    <div class ="column">
+
+      <div class="field">
+          <label class="label">Main ICD-10-CM </label>
+          <div class="control">
+            <%= text_input f, :icd10cm_code_1, class: "input", type: "text",
+            placeholder: "Field Name", required: false %> <%= error_tag f,
+            :icd10cm_code_1 %>
+          </div>
+          <p class="help">ICD-10 Clinical Modification Diagnosis</p>
+        </div>
+      <!----field----->
+
+</div><!----column------->
+   <div class ="column">
+
+  <div class="field">
+          <label class="label">ICD-10-CM </label>
+          <div class="control">
+            <%= text_input f, :icd10cm_code_2, class: "input", type: "text",
+            placeholder: "Field Name", required: false %> <%= error_tag f,
+            :icd10cm_code_2 %>
+          </div>
+          <p class="help">ICD-10 Clinical Modification Diagnosis</p>
+        </div>
+      <!----field----->
+ </div><!----column------->
+</div><!--------columns---------->
+
+<div class="columns">
+    <div class ="column">
+ <div class="field">
+          <label class="label">ICD-10-CM </label>
+          <div class="control">
+            <%= text_input f, :icd10cm_code_3, class: "input", type: "text",
+            placeholder: "Field Name", required: false %> <%= error_tag f,
+            :icd10cm_code_3 %>
+          </div>
+          <p class="help"></p>
+        </div>
+      <!----field----->
+
+</div><!----column------->
+   <div class ="column">
+ <div class="field">
+          <label class="label">ICD-10-CM </label>
+          <div class="control">
+            <%= text_input f, :icd10cm_code_4, class: "input", type: "text",
+            placeholder: "Field Name", required: false %> <%= error_tag f,
+            :icd10cm_code_4 %>
+          </div>
+          <p class="help"></p>
+        </div>
+      <!----field----->
+
+ </div><!----column------->
+</div><!--------columns---------->
+
+<div class="columns">
+    <div class ="column">
+
+
+ </div><!----column------->
+   <div class ="column">
+
+    Aux
+     </div><!----column------->
+</div><!--------columns---------->
+
+
+
+
+
+
+    </div><!----LEFT COLUMN---------->
+
+    <div class ="column frame_1">
+  <span class="button is-link is-fullwidth ">
+      Coronary Artery Disease
+        </span>
+<div class="columns">
+    <div class ="column">
+    <%# i_info_cor_normal_natives_yn  =
+raw Query.search_in_instructions("info_cor_normal_natives_yn")%>
+
+      <div class="field">
+     <label class="label">Nativies Normal? </label>
+          <div class="control">
+            <%= checkbox f, :info_cor_normal_natives_yn, placeholder: "Field Name",
+required: false,
+checked: false,
+type: "checkbox" %> <%= error_tag f,
+            :info_cor_normal_natives_yn %>
+          </div>
+          <p class="help"><%#= i_info_cor_normal_natives_yn %></p>
+        </div>
+        <!--field---->
+
+
+</div><!----column------->
+   <div class ="column">
+<%# i_diseased_ves  =
+raw Query.search_in_instructions("info_cor_dis_ves_num")%>
+
+      <div class="field">
+          <label class="label">Number Of Disease Vessels </label>
+          <div class="control">
+           <span class="field_help"> </span>
+            <%= text_input f, :info_cor_dis_ves_num, class: "input", type: "text",
+            placeholder: "Field Name", required: false %> <%= error_tag f,
+            :info_cor_dis_ves_num %>
+          </div>
+          <p class="help"> <%#= i_diseased_ves %> </p>
+        </div>
+      <!--------->
+
+
+ </div><!----column------->
+</div><!--------columns---------->
+<div class="columns">
+  <div class ="column">
+
+     <div class="field">
+          <label class="label">Prior Intervention </label>
+          <div class="control">
+            <%= checkbox f, :info_cor_prior_interv_yn, type: "checkbox" %> <%= error_tag f,
+            :info_cor_prior_interv_yn %>
+          </div>
+          <p class="help"></p>
+        </div>
+        <!--field---->
+
+
+
+
+
+
+
+
+
+</div><!----column------->
+   <div class ="column">
+
+ <div class="field">
+          <label class="label">Any Grafts?</label>
+          <div class="control">
+            <%= checkbox f, :info_cor_grafts_yn, type: "checkbox" %> <%= error_tag f,
+            :info_cor_grafts_yn %>
+          </div>
+          <p class="help"></p>
+        </div>
+        <!--field---->
+
+
+
+
+
+</div><!-----column------->
+</div><!--------columns---------->
+
+<div class="columns">
+
+
+
+
+      <div class ="column">
+
+
+       <div class="field">
+          <label class="label">Grafts Are Diseased?</label>
+          <div class="control">
+            <%= checkbox f, :info_cor_grafts_dis_yn,
+            type: "checkbox" %>
+            <%= error_tag f, :info_cor_grafts_dis_yn %>
+          </div>
+          <p class="help"></p>
+        </div>
+        <!--field---->
+
+
+
+
+
+</div><!----column------->
+   <div class ="column">
+<div class="field">
+          <label class="label">CABG Date </label>
+          <div class="control">
+            <%= date_input f, :info_cor_cabg_prior_dt  , class: "input", type: "date",
+            placeholder: "Field Name", required: false %> <%= error_tag f,
+            :info_cor_cabg_prior_dt %>
+          </div>
+          <p class="help">  </p>
+        </div>
+        <!--field---->
+
+</div><!----column------->
+</div><!--------columns---------->
+
+<div class="columns">
+    <div class ="column">
+<div class="field">
+          <label class="label">Number of Grafts Implanted </label>
+          <div class="control">
+            <%= text_input f, :info_cor_grafts_implanted_num , class: "input", type: "text",
+            placeholder: "Field Name", required: false %> <%= error_tag f,
+            :info_cor_grafts_implanted_num %>
+          </div>
+          <p class="help"></p>
+        </div>
+        <!--field---->
+</div><!----column------->
+   <div class ="column">
+<div class="field">
+          <label class="label">Number of Grafts Patent </label>
+          <div class="control">
+            <%= text_input f, :info_cor_grafts_patent_num  , class: "input", type: "text",
+            placeholder: "Field Name", required: false %> <%= error_tag f,
+            :info_cor_grafts_patent_num  %>
+          </div>
+          <p class="help"></p>
+        </div>
+        <!--field---->
+</div><!----column------->
+</div><!--------columns---------->
+<span class="button is-success  is-fullwidth ">
+      Recommendations - Notes
+        </span>
+
+<div class="columns">
+    <div class ="column">
+ <div class="field">
+  <label class="label">Rx Advice </label>
+  <div class="control">
+    <%= text_input f, :info_cor_rx_recommend ,
+        class: "textarea",
+        type: "input", placeholder: "Text input"  %>
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+
+</div><!----column------->
+</div><!--------columns---------->
+
+<div class="columns">
+    <div class ="column">
+<div class="field">
+  <label class="label"> My Notes </label>
+  <div class="control">
+    <%= text_input f, :info_cor_notes ,
+        class: "textarea",
+        type: "input", placeholder: "Text input"  %>
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+
+</div><!----column------->
+</div><!--------columns---------->
+
+  <%#= label f, :cor_les_count %>
+  <%#= text_input f, :cor_les_count %>
+  <%#= error_tag f, :cor_les_count %>
+<!-- -HELP AREA -->
+  <%= render  AngioWeb.SharedView, "_help_area.html" %>
+
+  </div> <!----end Right Column------------->
+  </div> <!-----columns------------>
+
+<div>
+     <%= submit "Save", class: "button is-info is-large is-fullwidth " %>
+  </div>
+
+<% end %>

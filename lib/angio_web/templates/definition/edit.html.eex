@@ -1,0 +1,21 @@
+<div class="title_form">
+<div class="title is-5 has-text-centered">
+      Editing Field
+    </div>
+</div>
+
+<div class="element_info">
+
+    <%= render  AngioWeb.SharedView, "_definition_info.html", definition: @definition, table: @definition.table_name %>
+</div>
+
+<%= render "form.html",
+    Map.put(assigns, :action,
+Routes.definition_path(@conn, :update,
+@definition)) %>
+
+
+<p class ="buttons_separator"> . </p>
+<div>
+<%= link "Back To Definitions - Fields List", to: Routes.definition_path(@conn, :index), class: "button is-link"%>
+</div>

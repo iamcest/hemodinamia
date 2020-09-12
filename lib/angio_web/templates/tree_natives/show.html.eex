@@ -1,0 +1,272 @@
+<div class="title_form">
+<h5 class="title is-5 has-text-centered">Showing Tree Data For Draw</h5>
+</div>
+<div class="columns">
+<div class="column is-7 frame_1" >
+<ul>
+
+  <li>
+    <strong>Segment Vessel ID:</strong>
+    <%= @tree_natives.vessel_id %>
+  </li>
+<li>
+    <strong>Segment Description:</strong>
+   <span style="background-color:#D5F3FE;">
+    <%= @tree_natives.description_name %>
+   </span>
+  </li>
+
+  <li>
+    <strong>Path Of The Segment:</strong>
+    <p/>
+    <%= @tree_natives.path %>
+  </li>
+
+  <li>
+    <strong>The Size of Segment:</strong>
+    <%= @tree_natives.size %>
+  </li>
+
+  <li>
+    <strong>Belongs To Vessel:</strong>
+    <%= @tree_natives.vessel %>
+  </li>
+
+  <li>
+    <strong>Visible:</strong>
+    <%= @tree_natives.visible %>
+  </li>
+
+  <li>
+    <strong>Default draw:</strong>
+    <%= @tree_natives.default_draw %>
+  </li>
+
+  <li>
+    <strong>Course benign:</strong>
+    <%= @tree_natives.course_benign %>
+  </li>
+
+  <li>
+    <strong>Course malignant:</strong>
+    <%= @tree_natives.course_malignant %>
+  </li>
+
+  <li>
+    <strong>Is variant:</strong>
+    <%= @tree_natives.is_variant %>
+  </li>
+
+  <li>
+    <strong>Is anomaly:</strong>
+    <%= @tree_natives.is_anomaly %>
+  </li>
+
+
+  <li>
+    <strong>Is any Lesion present:</strong>
+    <%= @tree_natives.lesion_present %>
+  </li>
+
+  <li>
+    <strong>Lesion ID:</strong>
+    <%= @tree_natives.lesion_id %>
+  </li>
+
+  <li>
+    <strong>Device present:</strong>
+    <%= @tree_natives.device_present %>
+  </li>
+
+  <li>
+    <strong>Device ID:</strong>
+    <%= @tree_natives.device_id %>
+  </li>
+
+  <li>
+    <strong>Cor les prior treated yn:</strong>
+    <%= @tree_natives.cor_les_prior_treated_yn %>
+  </li>
+
+  <li>
+    <strong>Prior treated date:</strong>
+    <%= @tree_natives.prior_treated_date %>
+  </li>
+
+  <li>
+    <strong>Graft present:</strong>
+    <%= @tree_natives.graft_present %>
+  </li>
+
+  <li>
+    <strong>Graft:</strong>
+    <%= @tree_natives.graft_id %>
+  </li>
+
+  <li>
+    <strong>Collateral points:</strong>
+    <%= @tree_natives.collateral_points %>
+  </li>
+
+  <li>
+    <strong>Rca dom draw:</strong>
+    <%= @tree_natives.rca_dom_draw %>
+  </li>
+
+  <li>
+    <strong>Lcx dom draw:</strong>
+    <%= @tree_natives.lcx_dom_draw %>
+  </li>
+
+  <li>
+    <strong>Balanced dom draw:</strong>
+    <%= @tree_natives.balanced_dom_draw %>
+  </li>
+
+  <li>
+    <strong>Cor les calcium yn:</strong>
+    <%= @tree_natives.cor_les_calcium_yn %>
+  </li>
+
+  <li>
+    <strong>Vessel group:</strong>
+    <%= @tree_natives.vessel_group %>
+  </li>
+
+  <li>
+    <strong>Cor les thrombus yn:</strong>
+    <%= @tree_natives.cor_les_thrombus_yn %>
+  </li>
+
+  <li>
+    <strong>Irregularities has:</strong>
+    <%= @tree_natives.irregularities_has %>
+  </li>
+
+  <li>
+    <strong>Segment definition:</strong>
+    <p/>
+    <span style="background-color:#D5F3FE;">
+    <%= @tree_natives.seg_def %>
+    </span>
+  </li>
+
+  <li>
+    <strong>Cor les segments cdisc:</strong>
+
+    <%= @tree_natives.cor_les_segments_cdisc %>
+  </li>
+
+  <li>
+    <strong>Cor les pct:</strong>
+    <%= @tree_natives.cor_les_pct %>
+  </li>
+
+  <li>
+    <strong>Cor les prior stent yn:</strong>
+    <%= @tree_natives.cor_les_prior_stent_yn %>
+  </li>
+
+  <li>
+    <strong>Cor les stent ptc:</strong>
+    <%= @tree_natives.cor_les_stent_ptc %>
+  </li>
+
+  <li>
+    <strong>Lesion path:</strong>
+    <%= @tree_natives.lesion_path %>
+  </li>
+
+  <li>
+    <strong>Graft path:</strong>
+    <%= @tree_natives.graft_path %>
+  </li>
+
+  <li>
+    <strong>Stent path:</strong>
+    <%= @tree_natives.stent_path %>
+  </li>
+
+  <li>
+    <strong>Lesion x:</strong>
+    <%= @tree_natives.lesion_x %>
+  </li>
+
+  <li>
+    <strong>Lesion y:</strong>
+    <%= @tree_natives.lesion_y %>
+  </li>
+
+  <li>
+    <strong>Stent x:</strong>
+    <%= @tree_natives.stent_x %>
+  </li>
+
+  <li>
+    <strong>Stent y:</strong>
+    <%= @tree_natives.stent_y %>
+  </li>
+
+  <li>
+    <strong>Graft x:</strong>
+    <%= @tree_natives.graft_x %>
+  </li>
+
+  <li>
+    <strong>Graft y:</strong>
+    <%= @tree_natives.graft_y %>
+  </li>
+
+  <li>
+    <strong>Vessel group aha:</strong>
+    <%= @tree_natives.vessel_group_aha %>
+  </li>
+
+  <li>
+    <strong>Lad type draw:</strong>
+    <%= @tree_natives.lad_type_draw %>
+  </li>
+
+  <li>
+    <strong>Add:</strong>
+    <%= @tree_natives.add %>
+  </li>
+
+  <li>
+    <strong>Aor les thrombus yn:</strong>
+    <%= @tree_natives.aor_les_thrombus_yn %>
+  </li>
+
+  <li>
+    <strong>Cor les stent pct:</strong>
+    <%= @tree_natives.cor_les_stent_pct %>
+  </li>
+
+</ul>
+</div><!-----column----------------------->
+<div class="column is-5 frame_1">
+
+<% path = @tree_natives.path   %>
+<% width = String.to_float( @tree_natives.size) * 4.0   %>
+
+<div class="title_form">
+<h6 class="title is-6 has-text-centered">Test: The Path Element. The View is LAO 60 </h6>
+</div>
+<div class="frame_3">
+<img   height="300px" src= "http://localhost:4000/images/cdisc.png" alt="CorTree image" class="float-center"/>
+
+<svg viewBox="0 0 600 900">
+ <path d =  '<%=  "#{path}" %>' stroke="#0000ff"
+  stroke-width = <%= "#{width}" %> fill="none" />
+</svg>
+ </div>
+<br/>
+
+</div><!-----column----------------------->
+</div><!-----columns----------------------->
+<p class ="buttons_separator"> . </p>
+
+<span><%= link "Edit Tree Data", to: Routes.tree_natives_path(@conn, :edit, @tree_natives),
+class: "button is-link" %></span>
+<span><%= link "Back Tree Data Index", to: Routes.tree_natives_path(@conn, :index) ,
+class: "button  is-link" %></span>

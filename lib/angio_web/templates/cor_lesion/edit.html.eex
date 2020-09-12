@@ -1,0 +1,47 @@
+
+
+
+<div class="title_form">
+<h4 class="title is-4 has-text-centered"> Editing Lesions In Natives</h4>
+</div>
+
+<div class="element_info">
+   <%= render AngioWeb.SharedView, "_patient_info.html", patient:
+  @patient %>
+</div>
+
+<div class="element_info_coronary">
+<%= render AngioWeb.SharedView, "_info_coronary.html", info_coronary:
+   @info_coronary%>
+</div>
+
+
+
+
+
+
+ <%#= render "form.html", changeset: @changeset,
+        cath_graft: @cath_graft,
+action: Routes.pt_angio_graft_path(@conn, :update, @patient, @info_coronary,
+@cath_graft ) %>
+
+
+ <%= render "form.html", changeset: @changeset,
+        cor_lesion: @cor_lesion,
+action: Routes.pt_angio_lesion_path(@conn, :update, @patient, @info_coronary,
+@cor_lesion ) %>
+
+<p class ="buttons_separator"> . </p>
+
+<span>
+          <%= link "Back To Lesions  List", to: Routes.pt_angio_lesion_path(@conn, :index,
+@patient,@info_coronary) , class: "button is-link"%>
+</span>
+
+<span>
+<%= link "Back To Cath Lab",  to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-link "   %>
+ </span>
+
+
+

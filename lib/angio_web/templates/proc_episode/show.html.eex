@@ -1,0 +1,189 @@
+
+<div class="title_form">
+<h5 class="title is-5 has-text-centered"> Show Procedure </h5>
+</div>
+
+<div class="element_info">
+   <%= render AngioWeb.SharedView, "_patient_info.html", patient:
+  @patient %>
+</div>
+
+<div class="element_info_coronary">
+<%= render AngioWeb.SharedView, "_info_coronary.html", info_coronary:
+   @info_coronary%>
+</div>
+
+
+<div class="content frame_1">
+  <ol type="1">
+
+  <li>
+    <strong>Proc epis request dt:</strong>
+    <%= @proc_episode.proc_epis_request_dt %>
+  </li>
+
+  <li>
+    <strong>Proc epis request tm:</strong>
+    <%= @proc_episode.proc_epis_request_tm %>
+  </li>
+
+  <li>
+    <strong>Proc epis cor machine:</strong>
+    <%= @proc_episode.proc_epis_cor_machine %>
+  </li>
+
+  <li>
+    <strong>Proc epis cor machine loc:</strong>
+    <%= @proc_episode.proc_epis_cor_machine_loc %>
+  </li>
+
+  <li>
+    <strong>Proc epis cor machine:</strong>
+    <%= @proc_episode.proc_epis_cor_machine_id %>
+  </li>
+
+  <li>
+    <strong>Proc epis refer person:</strong>
+    <%= @proc_episode.proc_epis_refer_person %>
+  </li>
+
+  <li>
+    <strong>Proc epis prim operetor fname:</strong>
+    <%= @proc_episode.proc_epis_prim_operetor_fname %>
+  </li>
+
+  <li>
+    <strong>Proc epis prim operator lname:</strong>
+    <%= @proc_episode.proc_epis_prim_operator_lname %>
+  </li>
+
+  <li>
+    <strong>Proc epis prim operator mname:</strong>
+    <%= @proc_episode.proc_epis_prim_operator_mname %>
+  </li>
+
+  <li>
+    <strong>Proc epis prim operator npi:</strong>
+    <%= @proc_episode.proc_epis_prim_operator_npi %>
+  </li>
+
+  <li>
+    <strong>Proc epis art access r femoral:</strong>
+    <%= @proc_episode.proc_epis_art_access_r_femoral %>
+  </li>
+
+  <li>
+    <strong>Proc epis art access l femoral:</strong>
+    <%= @proc_episode.proc_epis_art_access_l_femoral %>
+  </li>
+
+  <li>
+    <strong>Proc epis art access r brachial:</strong>
+    <%= @proc_episode.proc_epis_art_access_r_brachial %>
+  </li>
+
+  <li>
+    <strong>Proc epis art access l brachial:</strong>
+    <%= @proc_episode.proc_epis_art_access_l_brachial %>
+  </li>
+
+  <li>
+    <strong>Proc epis art access r radial:</strong>
+    <%= @proc_episode.caepsds_art_access_r_radial %>
+  </li>
+
+  <li>
+    <strong>Proc epis art access l radial:</strong>
+    <%= @proc_episode.proc_epis_art_access_l_radial %>
+  </li>
+
+  <li>
+    <strong>Proc epis closure device:</strong>
+    <%= @proc_episode.proc_epis_closure_device %>
+  </li>
+
+  <li>
+    <strong>Proc epis icd10 pcs 1:</strong>
+    <%= @proc_episode.proc_epis_icd10_pcs_1 %>
+  </li>
+
+  <li>
+    <strong>Proc epis icd10 pcs 2:</strong>
+    <%= @proc_episode.proc_epis_icd10_pcs_2 %>
+  </li>
+
+  <li>
+    <strong>Proc epis icd10 pcs 3:</strong>
+    <%= @proc_episode.proc_epis_icd10_pcs_3 %>
+  </li>
+
+  <li>
+    <strong>Proc epis icd10 pcs 4:</strong>
+    <%= @proc_episode.proc_epis_icd10_pcs_4 %>
+  </li>
+
+  <li>
+    <strong>Proc epis contrast volume:</strong>
+    <%= @proc_episode.proc_epis_contrast_volume %>
+  </li>
+
+  <li>
+    <strong>Proc epis contrast name:</strong>
+    <%= @proc_episode.proc_epis_contrast_name %>
+  </li>
+
+  <li>
+    <strong>Proc epis catheter l name:</strong>
+    <%= @proc_episode.proc_epis_catheter_l_name %>
+  </li>
+
+  <li>
+    <strong>Proc epis catheter l size:</strong>
+    <%= @proc_episode.proc_epis_catheter_l_size %>
+  </li>
+
+  <li>
+    <strong>Proc epis catheter r name:</strong>
+    <%= @proc_episode.proc_epis_catheter_r_name %>
+  </li>
+
+  <li>
+    <strong>Proc epis catheter r size:</strong>
+    <%= @proc_episode.proc_epis_catheter_r_size %>
+  </li>
+
+  <li>
+    <strong>Proc epis catheter lv name:</strong>
+    <%= @proc_episode.proc_epis_catheter_lv_name %>
+  </li>
+
+  <li>
+    <strong>Proc epis catheter lv size:</strong>
+    <%= @proc_episode.proc_epis_catheter_lv_size %>
+  </li>
+
+  <li>
+    <strong>Proc epis notes:</strong>
+    <%= @proc_episode.proc_epis_notes %>
+  </li>
+
+</ol>
+</div>
+
+<p class ="buttons_separator"> . </p>
+
+<span>
+  <%= link "Edit Proc Episode",
+          to: Routes.pt_angio_proc_episode_path(@conn, :edit, @patient,
+  @info_coronary, @proc_episode) , class: "button is-primary "%>
+</span>
+<span>
+  <%= link "Back To Proc Episode Index ",
+    to: Routes.pt_angio_proc_episode_path(@conn, :index,
+  @patient, @info_coronary) , class: "button is-primary"%>
+
+</span>
+<span>
+<%= link "To Cath Lab",  to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-primary "   %>
+

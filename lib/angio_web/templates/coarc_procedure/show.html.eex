@@ -1,0 +1,125 @@
+
+<div class="title_form">
+<h5 class="title is-5 has-text-centered">Show ASD Closure Procedure</h5>
+</div>
+<div class="element_info">
+
+    <%= render  AngioWeb.SharedView, "_patient_info.html", patient: @patient %>
+</div>
+
+<div class="element_info_coronary">
+Angio : <%= render AngioWeb.SharedView, "_info_coronary.html", info_coronary:
+   @info_coronary%>
+</div>
+<div class="content frame_1 ">
+  <ol type="1">
+
+
+
+  <li>
+    <strong>Coarc dt:</strong>
+    <%= @coarc_procedure.coarc_dt %>
+  </li>
+
+  <li>
+    <strong>Coarc tm:</strong>
+    <%= @coarc_procedure.coarc_tm %>
+  </li>
+
+  <li>
+    <strong>Coarc operator lname:</strong>
+    <%= @coarc_procedure.coarc_operator_lname %>
+  </li>
+
+  <li>
+    <strong>Coarc asdcl operator fname:</strong>
+    <%= @coarc_procedure.coarc_asdcl_operator_fname %>
+  </li>
+
+  <li>
+    <strong>Coarc asdcl operator mname:</strong>
+    <%= @coarc_procedure.coarc_asdcl_operator_mname %>
+  </li>
+
+  <li>
+    <strong>Coarc asdcl operator npi:</strong>
+    <%= @coarc_procedure.coarc_asdcl_operator_npi %>
+  </li>
+
+  <li>
+    <strong>Coarc primary indication:</strong>
+    <%= @coarc_procedure.coarc_primary_indication %>
+  </li>
+
+  <li>
+    <strong>Coarc nature:</strong>
+    <%= @coarc_procedure.coarc_nature %>
+  </li>
+
+  <li>
+    <strong>Coarc nature post prior treatment:</strong>
+    <%= @coarc_procedure.coarc_nature_post_prior_treatment %>
+  </li>
+
+  <li>
+    <strong>Coarc min diam pre proc:</strong>
+    <%= @coarc_procedure.coarc_min_diam_pre_proc %>
+  </li>
+
+  <li>
+    <strong>Coarc peak sys gradient pre:</strong>
+    <%= @coarc_procedure.coarc_peak_sys_gradient_pre %>
+  </li>
+
+  <li>
+    <strong>Coarc min diam post proc:</strong>
+    <%= @coarc_procedure.coarc_min_diam_post_proc %>
+  </li>
+
+  <li>
+    <strong>Coarc peak sys gradient post:</strong>
+    <%= @coarc_procedure.coarc_peak_sys_gradient_post %>
+  </li>
+
+  <li>
+    <strong>Coarc aortic obstruction yn:</strong>
+    <%= @coarc_procedure.coarc_aortic_obstruction_yn %>
+  </li>
+
+  <li>
+    <strong>Coarc arch treated yn:</strong>
+    <%= @coarc_procedure.coarc_arch_treated_yn %>
+  </li>
+
+  <li>
+    <strong>Coarc ao obstruction pre sys gradient:</strong>
+    <%= @coarc_procedure.coarc_ao_obstruction_pre_sys_gradient %>
+  </li>
+
+  <li>
+    <strong>Coarc ao obstruction post sys gradient:</strong>
+    <%= @coarc_procedure.coarc_ao_obstruction_post_sys_gradient %>
+  </li>
+
+  <li>
+    <strong>Coarc notes:</strong>
+    <%= @coarc_procedure.coarc_note %>
+  </li>
+
+
+</ol>
+</div>
+<p class ="buttons_separator"> . </p>
+<span>
+    <%= link "Edit Coarc", to: Routes.pt_angio_coarc_path(@conn, :edit, @patient,
+  @info_coronary, @coarc_procedure), class: "button is-link"%>
+</span>
+
+<span>
+  <%= link "Back To  Coarc List", to: Routes.pt_angio_coarc_path(@conn, :index,
+  @patient, @info_coronary) , class: "button is-link"%>
+</span>
+<span>
+<%= link "Back To Cath Lab",  to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-link"   %>
+ </span>

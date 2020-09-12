@@ -1,0 +1,57 @@
+
+<div class="header panel">
+    <div class="sign">
+        <h1>Field Info</h1>
+    </div>
+
+    <div class="instructions">
+        <h5>Field Instructions</h5>
+        <%= raw(@definition.coding_instructions) %>
+    </div><!-- instructions-->
+
+    <hr/>
+
+    <%= if length(@defs_code) > 0  do %>
+        
+        <table class="tablee">
+            <h5>
+                Field Codes
+            </h5>
+            <thead>
+                <th>System</th>
+                <th>Code</th>
+            </thead>
+
+            <%=for defs_code <-  @defs_code do %>
+                <% system = String.trim(defs_code.code_system) %>
+                <% code = String.trim(defs_code.code) %>
+                <tr>
+                    <%=  if String.length(system) > 0 do %>
+                        <td style="font-weight:500;word-break:break-all;" > <%= defs_code.code_system %></td>
+                    <% else %>
+                        <td>Code System Not Found</td>
+                    <% end %>
+                    <%=  if String.length(code) > 0 do %>
+                        <td style="font-weight:500;word-break:break-all;" > <%= defs_code.code %> </td>
+                    <% else %>
+                        <td>Code Not Found</td>
+                    <% end %>
+                </tr>
+            <% end %>
+        </table>
+    <% else %>
+
+        <h6 class="info_blue text-center">No Field Codes</h6>
+
+    <% end %>
+    <div class="option">
+        <em>Option</em><br>
+        <%= @defs_option.code %>.   <%= @defs_option.selection_text %>
+    </div><!-- options -->
+
+ 
+</div><!-- panel -->
+
+
+
+

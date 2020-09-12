@@ -1,0 +1,188 @@
+
+<div class="title_form">
+<h5 class="title is-5 has-text-centered"> Show Coronary Lesions</h5>
+</div>
+
+<div class="element_info">
+   <%= render AngioWeb.SharedView, "_patient_info.html", patient:
+  @patient %>
+</div>
+
+<div class="element_info_coronary">
+<%= render AngioWeb.SharedView, "_info_coronary.html", info_coronary:
+   @info_coronary%>
+</div>
+
+<div class="content frame_1">
+  <ol type="1">
+
+
+  <li>
+    <strong>Cor les pct,:</strong>
+    <%= @cor_lesion.cor_les_pct %>
+  </li>
+
+  <li>
+    <strong>Cor les major branch,:</strong>
+    <%= @cor_lesion.cor_les_major_branch %>
+  </li>
+
+  <li>
+    <strong>Cor les seg ncdr:</strong>
+    <%#= @cor_lesion.cor_les_seg_ncdr %>
+  </li>
+
+  <li>
+    <strong>Cor les seg cdisc:</strong>
+    <%= @cor_lesion.cor_les_seg_cdisc %>
+  </li>
+
+  <li>
+    <strong>Cor les seg sts:</strong>
+    <%= @cor_lesion.cor_les_seg_sts %>
+  </li>
+
+  <li>
+    <strong>Cor les vessel size:</strong>
+    <%= @cor_lesion.cor_les_vessel_size %>
+  </li>
+
+  <li>
+    <strong>Cor les type scai,:</strong>
+    <%= @cor_lesion.cor_les_type_scai %>
+  </li>
+
+  <li>
+    <strong>Cor les type aha,:</strong>
+    <%= @cor_lesion.cor_les_type_aha %>
+  </li>
+
+  <li>
+    <strong>Cor les length,:</strong>
+    <%= @cor_lesion.cor_les_length %>
+  </li>
+
+  <li>
+    <strong>Cor les chronic total yn:</strong>
+    <%= @cor_lesion.cor_les_chronic_total_yn %>
+  </li>
+
+  <li>
+    <strong>Ostial Location of the Lesion</strong>
+    <%= @cor_lesion.cor_les_ostial_loc_yn %>
+  </li>
+
+  <li>
+    <strong>Cor les calcium yn,:</strong>
+    <%= @cor_lesion.cor_les_calcium_yn %>
+  </li>
+
+  <li>
+    <strong>Cor les thrombus yn:</strong>
+    <%= @cor_lesion.cor_les_thrombus_yn %>
+  </li>
+
+  <li>
+    <strong>Cor les bifurcation yn:</strong>
+    <%= @cor_lesion.cor_les_bifurcation_yn %>
+  </li>
+
+  <li>
+    <strong>Cor les tandem yn:</strong>
+    <%= @cor_lesion.cor_les_tandem_yn %>
+  </li>
+
+  <li>
+    <strong>Cor les aneurysm yn</strong>
+    <%= @cor_lesion.cor_les_aneurysm_yn %>
+  </li>
+
+  <li>
+    <strong>Cor les protected yn</strong>
+    <%= @cor_lesion.cor_les_protected_yn %>
+  </li>
+
+  <li>
+    <strong>Cor les graft pct</strong>
+    <%= @cor_lesion.cor_les_graft_pct %>
+  </li>
+
+  <li>
+    <strong>Cor les prior treated yn</strong>
+    <%= @cor_lesion.cor_les_prior_treated_yn %>
+  </li>
+
+  <li>
+    <strong>Cor les prior treated other</strong>
+    <%= @cor_lesion.cor_les_prior_treated_other %>
+  </li>
+
+  <li>
+    <strong>Cor les prior treated dt:</strong>
+    <%= @cor_lesion.cor_les_prior_treated_dt %>
+  </li>
+
+  <li>
+    <strong>Cor les prior stent yn:</strong>
+    <%= @cor_lesion.cor_les_prior_stent_yn %>
+  </li>
+
+  <li>
+    <strong>Cor les stent dt:</strong>
+    <%= @cor_lesion.cor_les_stent_dt %>
+  </li>
+
+  <li>
+    <strong>Cor les stent pct:</strong>
+    <%= @cor_lesion.cor_les_stent_pct %>
+  </li>
+
+  <li>
+    <strong>Cor les ffr:</strong>
+    <%= @cor_lesion.cor_les_ffr %>
+  </li>
+
+  <li>
+    <strong>Cor les ivus:</strong>
+    <%= @cor_lesion.cor_les_ivus %>
+  </li>
+
+  <li>
+    <strong>Cor les counter:</strong>
+    <%= @cor_lesion.cor_les_counter %>
+  </li>
+
+  <li>
+    <strong>Patient id:</strong>
+    <%= @cor_lesion.patient_id %>
+  </li>
+
+  <li>
+    <strong>Info coronary id:</strong>
+    <%= @cor_lesion.info_coronary_id %>
+  </li>
+
+<li>
+<strong>Notes</strong>
+ <%= @cor_lesion.cor_les_notes %>
+</li>
+
+</ol>
+
+<div>
+
+<p class ="buttons_separator"> . </p>
+<span
+  ><%= link "Edit", to: Routes.pt_angio_lesion_path(@conn, :edit, @patient,
+  @info_coronary, @cor_lesion ), class: "button is-link"%>
+</span>
+<span>
+  <%= link "Back To Lesion List", to: Routes.pt_angio_lesion_path(@conn, :index,
+  @patient, @info_coronary) , class: "button is-link"%>
+</span>
+<span>
+<%= link "Back To Cath Lab",  to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-link"   %>
+ </span>
+
+

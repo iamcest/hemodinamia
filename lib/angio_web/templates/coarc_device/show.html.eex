@@ -1,0 +1,86 @@
+
+
+
+<div class="title_form">
+<h5 class="title is-5 has-text-centered">Show ASD Closure Procedure</h5>
+</div>
+<div class="element_info">
+
+    <%= render  AngioWeb.SharedView, "_patient_info.html", patient: @patient %>
+</div>
+
+<div class="element_info_coronary">
+Angio : <%= render AngioWeb.SharedView, "_info_coronary.html", info_coronary:
+   @info_coronary%>
+</div>
+<div class="content frame_1 ">
+  <ol type="1">
+
+
+
+  <li>
+    <strong>Coarc device:</strong>
+    <%= @coarc_device.coarc_device_id %>
+  </li>
+
+  <li>
+    <strong>Coarc device type:</strong>
+    <%= @coarc_device.coarc_device_type %>
+  </li>
+
+  <li>
+    <strong>Coarc balloon purpose:</strong>
+    <%= @coarc_device.coarc_balloon_purpose %>
+  </li>
+
+  <li>
+    <strong>Coarc balloon max pres:</strong>
+    <%= @coarc_device.coarc_balloon_max_pres %>
+  </li>
+
+  <li>
+    <strong>Coarc balloon outcome:</strong>
+    <%= @coarc_device.coarc_balloon_outcome %>
+  </li>
+
+  <li>
+    <strong>Coarc stent outcome:</strong>
+    <%= @coarc_device.coarc_stent_outcome %>
+  </li>
+
+  <li>
+    <strong>Coarc stent diam min assesed yn:</strong>
+    <%= @coarc_device.coarc_stent_diam_min_assesed_yn %>
+  </li>
+
+  <li>
+    <strong>Coarc stent diam min post:</strong>
+    <%= @coarc_device.coarc_stent_diam_min_post %>
+  </li>
+
+  <li>
+    <strong>Coarc device counter:</strong>
+    <%= @coarc_device.coarc_device_counter %>
+  </li>
+
+  <li>
+    <strong>Coarc device notes:</strong>
+    <%= @coarc_device.coarc_device_notes %>
+  </li>
+
+</ol>
+</div>
+<p class ="buttons_separator"> . </p>
+<span>
+    <%= link "Edit Coarc Devices", to: Routes.pt_angio_coarc_device_path(@conn, :edit, @patient,
+  @info_coronary, @coarc_procedure, @coarc_device), class: "button is-primary"%>
+</span>
+
+<span>
+  <%= link "Back To  Coarc Devices List", to: Routes.pt_angio_coarc_device_path(@conn, :index,
+  @patient, @info_coronary, @coarc_procedure) , class: "button is-primary"%>
+</span>
+<span>
+<%= link "Back To Cath Lab",  to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-primary"   %>
+ </span>

@@ -1,0 +1,46 @@
+defmodule Angio.Repo.Migrations.CreateTableCoreHistories do
+  use Ecto.Migration
+
+  def change do
+    create table(:core_histories) do
+      add(:coh_contrast_allergy_yn, :boolean, default: false)
+      add(:coh_angina_yn, :boolean, default: false)
+      add(:coh_angina_class, :string, size: 50)
+      add(:coh_prior_cor_interv_yn, :boolean, default: false)
+      add(:coh_prior_sten_50pct_yn, :boolean, default: false)
+      add(:coh_prior_mi_yn, :boolean, default: false)
+      add(:coh_mi_timeframe, :string, size: 50)
+      add(:coh_family_cor_dis_yn, :boolean, default: false)
+      add(:coh_diabetes_yn, :boolean, default: false)
+      add(:coh_diabetes_therapy, :string, size: 50)
+      add(:coh_family_diabetes_yn, :boolean, default: false)
+      add(:coh_hypertension_yn, :boolean, default: false)
+      add(:coh_dyslipidemia_yn, :boolean, default: false)
+      add(:coh_arrest_cardiac_yn, :boolean, default: false)
+      add(:coh_cerebrovasc_dis_yn, :boolean, default: false)
+      add(:coh_copd_yn, :boolean, default: false)
+      add(:coh_chf_prior_yn, :boolean, default: false)
+      add(:coh_chf_etiology, :string, size: 50)
+      add(:coh_chf_symptom_duration, :string, size: 50)
+      add(:coh_chf_hosp_timeframe, :string, size: 50)
+      add(:coh_cancer_type, :string, size: 50)
+      add(:coh_cancer_history_yn, :boolean, default: false)
+      add(:coh_arthritis_collagen_dis_yn, :boolean, default: false)
+      add(:coh_prior_afib_yn, :boolean, default: false)
+      add(:coh_tobacco_use, :string, size: 50)
+      add(:coh_tobacco_type, :string, size: 50)
+      add(:coh_tobacco_cigarette_amount, :string, size: 50)
+      add(:coh_renal_artery_dis_yn, :boolean, default: false)
+      add(:coh_fatigue_yn, :boolean, default: false)
+      add(:coh_mascular_dis_yn, :boolean, default: false)
+      add(:coh_chronic_kidney_dis, :string, size: 50)
+      add(:coh_cur_on_dyalisis_yn, :boolean, default: false)
+      add(:coh_stroke_ischemic_yn, :boolean, default: false)
+      add(:coh_cardiomyo, :string, size: 50)
+      add(:coh_peripheral_art_dis_yn, :boolean, default: false)
+      add(:coh_histories_notes, :text)
+      add(:info_coronary_id, references(:info_coronaries, on_delete: :delete_all))
+      timestamps()
+    end
+  end
+end

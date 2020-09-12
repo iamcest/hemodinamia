@@ -1,0 +1,65 @@
+<%alias Angio.Histories %>
+
+<div class="dropdown">
+  <div class="dropdown-trigger">
+    <button class="button is-small is-info is-fullwidth" aria-haspopup="true" aria-controls="dropdown-menu4">
+      <span>Past History</span>
+      <span class="icon is-small">
+        <i class="fa  fa-angle-down" aria-hidden="true"></i>
+      </span>
+    </button>
+  </div>
+
+  <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+    <div class="dropdown-content">
+     <div class="dropdown-item">
+  </div>
+
+ <div class="dropdown-item">
+<% count_infect_histories  =  Histories.count_infect_histories(@info_coronary.id) %>
+<%= link to: Routes.pt_angio_infh_path(@conn, :index, @patient, @info_coronary),
+        class: "button is-link is-small  is-fullwidth", title: "Infections: HIV, Hepatatis, TB ..." do %>
+        <%= render  AngioWeb.SharedView, "_info_menu_count.html",
+                 prompt: "Infections",
+                 count: count_infect_histories%>
+        <% end %>
+
+      </div>
+    <div class="dropdown-item">
+<% count_core_histories  =  Histories.count_core_histories(@info_coronary.id) %>
+<%= link to: Routes.pt_angio_coreh_path(@conn, :index, @patient, @info_coronary),
+        class: "button is-link is-small is-fullwidth", title: "Past History: Essential" do %>
+        <%= render  AngioWeb.SharedView, "_info_menu_count.html",
+                 prompt: "Essential Hist",
+                 count: count_core_histories%>
+        <% end %>
+
+      </div>
+
+ <div class="dropdown-item">
+<% count_social_histories  =  Histories.count_social_histories(@info_coronary.id) %>
+<%= link to: Routes.pt_angio_socialh_path(@conn, :index, @patient, @info_coronary),
+        class: "button is-link is-small is-fullwidth", title: "Social Histor" do %>
+        <%= render  AngioWeb.SharedView, "_info_menu_count.html",
+                 prompt: "Social Hist",
+                 count: count_social_histories%>
+        <% end %>
+
+      </div>
+ <div class="dropdown-item">
+<% count_proc_histories  =  Histories.count_proc_histories(@info_coronary.id) %>
+<%= link to: Routes.pt_angio_proch_path(@conn, :index, @patient, @info_coronary),
+        class: "button is-link is-small is-fullwidth", title: "Social Histor" do %>
+        <%= render  AngioWeb.SharedView, "_info_menu_count.html",
+                 prompt: "Prior Procs",
+                 count: count_proc_histories%>
+        <% end %>
+
+      </div>
+
+
+     </div>
+
+    </div>
+  </div>
+</div>

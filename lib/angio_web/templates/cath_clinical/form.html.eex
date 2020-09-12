@@ -1,0 +1,750 @@
+
+<% alias Angio.Canons, as: Query %>
+<!-----------
+angina_class_within_2wk_yn
+------------------->
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+
+  <div class="notification is-danger">
+    <button class="delete"></button>
+    Oops, something went wrong! Please check the errors below or Dublicate Record
+</div>
+  <% end %>
+ <div class="columns">
+    <div class="column frame_1">
+
+
+<!---------start----------------------------------->
+ <div class="is-divider" data-content="Heart Failure - LV Function"></div>
+
+  <div class = "columns">
+  
+<div class = "column">
+
+  <div class="field ">
+          <label class="label">HF within the past 2wks?</label>
+            <span class="field_help"></span>
+            <%= checkbox f, :chf_prior_2wk_yn,
+placeholder: "chf_prior_2wk_yn",
+                required: false,
+                type: "checkbox"
+              %>
+             <%= error_tag f, :chf_prior_2wk_yn %>
+           <p class = "help">
+           </p>
+
+           </div>
+        <!-----field---->
+
+</div><!----column-------------------->
+ <div class = "column">
+ 
+<div class="field">
+    <label class="label"> Glasgow Scale </label>
+          <div class="control">
+          
+            <div class="select">
+            <span class="field_help"></span>
+              <%= select(f,
+:glasgow_coma_scale, 1..15,
+   prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <%= error_tag f, :glasgow_coma_scale    %>
+            <span class="help"><%#=_i_nyha_prior_2wk_category %></span>
+          </div>
+        </div>
+        <!---field--->
+ </div><!----column-------------------->
+
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+ 
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<% s_nyha_prior_2wk_category  =
+         Query.select_options("nyha_prior_2wk_category") %>
+
+      <% _i_nyha_prior_2wk_category   =
+raw Query.search_in_instructions("nyha_prior_2wk_category")%>
+
+<div class="field">
+    <label class="label"> Worst NYHA Last 2w </label>
+          <div class="control">
+          
+            <div class="select">
+            <span class="field_help"></span>
+              <%= select(f,
+:nyha_prior_2wk_category, s_nyha_prior_2wk_category,
+   prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <%= error_tag f, :nyha_prior_2wk_category    %>
+            <span class="help"><%#=_i_nyha_prior_2wk_category %></span>
+          </div>
+        </div>
+        <!---field--->
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<div class="field ">
+          <label class="label">Cath Reason LV Dysfunction?</label>
+            <span class="field_help"></span>
+            <%= checkbox f, :lv_dysfunction_yn,
+placeholder: "lv_dysfunction_yn",
+                required: false,
+                type: "checkbox"
+              %>
+             <%= error_tag f, :lv_dysfunction_yn %>
+           <p class = "help">
+           </p>
+
+           </div>
+        <!-----field---->
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+  
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<div class="field ">
+          <label class="label">In Shock last 24h?</label>
+            <span class="field_help"></span>
+            <%= checkbox f, :cardio_shock_last_24hours_yn,
+placeholder: "cardio_shock_last_24hours_yn",
+                required: false,
+                type: "checkbox"
+              %>
+             <%= error_tag f, :cardio_shock_last_24hours_yn %>
+           <p class = "help">
+           </p>
+
+           </div>
+        <!-----field---->
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<div class="field ">
+          <label class="label">IABP Required?</label>
+            <span class="field_help"></span>
+            <%= checkbox f, :iabp_support_req_yn,
+placeholder: "iabp_support_req_yn",
+                required: false,
+                type: "checkbox"
+              %>
+             <%= error_tag f, :iabp_support_req_yn %>
+           <p class = "help">
+           </p>
+
+           </div>
+        <!-----field---->
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+  <!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+ <div class="field">
+          <label class="label">IABP Start Date </label>
+          <div class="control">
+      <%= text_input f, :cath_cl_iabp_start_dt,
+class: "input",
+type: "date",
+placeholder: "cath_cl_iabp_start_dt",
+required: false %>
+<%= error_tag f,
+            :cath_cl_iabp_start_dt %>
+          </div>
+          <p class="help"></p>
+        </div>
+        <!--field---->
+
+</div><!----column-------------------->
+ <div class = "column">
+ <div class="field">
+          <label class="label">IABP Start Time </label>
+          <div class="control">
+      <%= text_input f, :iabp_start_tm,
+class: "input",
+type: "time",
+placeholder: "iabp_start_tm",
+required: false %>
+<%= error_tag f,
+            :iabp_start_tm %>
+          </div>
+          <p class="help"></p>
+        </div>
+        <!--field---->
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+  
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+
+<div class="field ">
+          <label class="label">LV Support Other?</label>
+            <span class="field_help"></span>
+            <%= checkbox f, :mech_lv_support_other_yn,
+placeholder: "mech_lv_support_other_yn",
+                required: false,
+                type: "checkbox"
+              %>
+             <%= error_tag f, :mech_lv_support_other_yn %>
+           <p class = "help">
+           </p>
+
+           </div>
+        <!-----field---->
+
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<div class="field">
+          <label class="label">LV Support Other Date </label>
+          <div class="control">
+      <%= text_input f, :mech_lv_support_other_dt,
+class: "input",
+type: "date",
+placeholder: "mech_lv_support_other_dt",
+required: false %>
+<%= error_tag f,
+            :mech_lv_support_other_dt %>
+          </div>
+          <p class="help"></p>
+        </div>
+        <!--field---->
+
+
+ </div><!----column-------------------->
+<div class = "column">
+
+<div class="field">
+          <label class="label">LV Support Other Time </label>
+          <div class="control">
+      <%= text_input f, :mech_lv_support_other_tm,
+class: "input",
+type: "time",
+placeholder: "mech_lv_support_other_tm",
+required: false %>
+<%= error_tag f,
+            :mech_lv_support_other_tm %>
+          </div>
+          <p class="help"></p>
+        </div>
+        <!--field---->
+</div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+<!---------start----------------------------------->
+<div class="is-divider" data-content="Arrest"></div>
+  <div class = "columns">
+
+
+ <div class = "column">
+
+
+<div class="field ">
+          <label class="label">Arrest Out-of-Hosp witnessed?</label>
+            <span class="field_help"></span>
+            <%= checkbox f, :cath_cl_arrest_pre_wit_yn,
+placeholder: "cath_cl_arrest_pre_wit_yn",
+                required: false,
+                type: "checkbox"
+              %>
+             <%= error_tag f, :cath_cl_arrest_pre_wit_yn %>
+           <p class = "help">
+           </p>
+
+           </div>
+        <!-----field---->
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+  <!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<% s_cath_cl_arrest_loc  =
+         Query.select_options("cath_cl_arrest_loc") %>
+
+      <%# _i_nyha_prior_2wk_category   =
+raw Query.search_in_instructions("nyha_prior_2wk_category")%>
+
+<div class="field">
+    <label class="label"> Arrest Location </label>
+          <div class="control">
+          
+            <div class="select">
+            <span class="field_help"></span>
+              <%= select(f,
+:cath_cl_arrest_loc, s_cath_cl_arrest_loc,
+   prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <%= error_tag f, :cath_cl_arrest_loc    %>
+            <span class="help"><%#=_i_nyha_prior_2wk_category %></span>
+          </div>
+        </div>
+        <!---field--->
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<div class="field ">
+          <label class="label">On hypothermia</label>
+            <span class="field_help"></span>
+            <%= checkbox f, :cath_cl_arrest_hypothermia_yn,
+placeholder: "cath_cl_arrest_hypothermia_yn",
+                required: false,
+                type: "checkbox"
+              %>
+             <%= error_tag f, :cath_cl_arrest_hypothermia_yn %>
+           <p class = "help">
+           </p>
+
+           </div>
+        <!-----field---->
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+
+<div class="field">
+          <label class="label">Hypothermia Start Date </label>
+          <div class="control">
+      <%= text_input f, :cath_cl_arrest_hypothermia_dt,
+class: "input",
+type: "date",
+placeholder: "cath_cl_arrest_hypothermia_dt",
+required: false %>
+<%= error_tag f,
+            :cath_cl_arrest_hypothermia_dt %>
+          </div>
+          <p class="help"></p>
+        </div>
+        <!--field---->
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<div class="field">
+          <label class="label">Hypothermia Start Time </label>
+          <div class="control">
+      <%= text_input f, :cath_cl_arrest_hypothermia_tm,
+class: "input",
+type: "time",
+placeholder: "cath_cl_arrest_hypothermia_tm",
+required: false %>
+<%= error_tag f,
+            :cath_cl_arrest_hypothermia_tm %>
+          </div>
+          <p class="help"></p>
+        </div>
+        <!--field---->
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+<div class="is-divider" data-content="Ventilation"></div>
+
+  <div class = "columns">
+<div class = "column">
+
+
+<div class="field ">
+          <label class="label">Intubated Before Cath</label>
+            <span class="field_help"></span>
+            <%= checkbox f, :intubated_before_cath_yn,
+placeholder: "intubated_before_cath_yn",
+                required: false,
+                type: "checkbox"
+              %>
+             <%= error_tag f, :intubated_before_cath_yn %>
+           <p class = "help">
+           </p>
+
+           </div>
+        <!-----field---->
+
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<div class="field ">
+          <label class="label">On Ventilator</label>
+            <span class="field_help"></span>
+            <%= checkbox f, :ventilator_support_yn,
+placeholder: "ventilator_support_yn",
+                required: false,
+                type: "checkbox"
+              %>
+             <%= error_tag f, :ventilator_support_yn %>
+           <p class = "help">
+           </p>
+
+           </div>
+        <!-----field---->
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<div class="field ">
+          <label class="label">On Ventilation Mask</label>
+          <div class="control">
+            <span class="field_help"></span>
+            <%= checkbox f, :bag_mask_ventilation_yn,
+placeholder: "bag_mask_ventilation_yn",
+                required: false,
+                type: "checkbox"
+              %>
+             <%= error_tag f, :bag_mask_ventilation_yn %>
+           <p class = "help">
+           </div>
+           </p>
+
+           </div>
+        <!-----field---->
+</div><!----column-------------------->
+ <div class = "column">
+<% s_sedation_type  =
+         Query.select_options("sedation_type") %>
+
+      <%# _i_nyha_prior_2wk_category   =
+raw Query.search_in_instructions("nyha_prior_2wk_category")%>
+
+<div class="field">
+    <label class="label"> Sedation Type</label>
+          <div class="control">
+            <div class="select">
+            <span class="field_help"></span>
+              <%= select(f,
+:sedation_type, s_sedation_type,
+   prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <%= error_tag f, :sedation_type    %>
+            <span class="help"><%#=_i_nyha_prior_2wk_category %></span>
+          </div>
+        </div>
+        <!---field--->
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<div class="field ">
+          <label class="label">Anesthitist At Start</label>
+          <div class="control">
+            <span class="field_help"></span>
+            <%= checkbox f, :anesthitist_at_start_yn,
+placeholder: "anesthitist_at_start_yn",
+                required: false,
+                type: "checkbox"
+              %>
+             <%= error_tag f, :anesthitist_at_start_yn%>
+           <p class = "help">
+           </div>
+           </p>
+
+           </div>
+        <!-----field---->
+
+
+</div><!----column-------------------->
+ <div class = "column">
+ <div class="field ">
+          <label class="label">Anesthitist Colled</label>
+          <div class="control">
+            <span class="field_help"></span>
+            <%= checkbox f, :anesthitist_called_yn,
+placeholder: "anesthitist_called_yn",
+                required: false,
+                type: "checkbox"
+              %>
+             <%= error_tag f, :anesthitist_called_yn %>
+           <p class = "help">
+           </div>
+           </p>
+
+           </div>
+        <!-----field---->
+
+<%#= label f, :anesthitist_called_yn %>
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+  
+  
+  
+ 
+
+ 
+
+  
+
+  
+
+   </div><!----------column---------------------------->
+   <div class="column frame_1">
+<!---------start----------------------------------->
+
+
+ <!---------start----------------------------------->
+ <div class="is-divider" data-content="For Coronary Artery Disease"></div>
+  <div class = "columns">
+<div class = "column">
+
+
+<% s_cad_presentation_type =
+         Query.select_options("cad_presentation_type") %>
+
+      <%# _i_nyha_prior_2wk_category   =
+raw Query.search_in_instructions("nyha_prior_2wk_category")%>
+
+<div class="field">
+    <label class="label"> CAD  Type</label>
+          <div class="control">
+          
+            <div class="select">
+            <span class="field_help"></span>
+              <%= select(f,
+:cad_presentation_type, s_cad_presentation_type,
+   prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <%= error_tag f, :cad_presentation_type    %>
+            <span class="help"><%#=_i_nyha_prior_2wk_category %></span>
+          </div>
+        </div>
+        <!---field--->
+
+
+</div><!----column-------------------->
+ <div class = "column">
+ 
+ Aux Field
+  <%#= label f, :angina_class_within_2wk_yn %>
+  <%#= checkbox f, :angina_class_within_2wk_yn %>
+  <%#= error_tag f, :angina_class_within_2wk_yn %>
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+ <div class="field">
+          <label class="label">Symptom Onset Date </label>
+          <div class="control">
+      <%= text_input f, :symptom_onset_dt,
+class: "input",
+type: "date",
+placeholder: "symptom_onset_dt",
+required: false %>
+<%= error_tag f,
+            :symptom_onset_dt %>
+          </div>
+          <p class="help"></p>
+        </div>
+        <!--field---->
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<div class="field">
+          <label class="label">Symptom Onset Time </label>
+          <div class="control">
+      <%= text_input f, :cath_cl_symptom_onset_tm,
+class: "input",
+type: "time",
+placeholder: "cath_cl_symptom_onset_tm",
+required: false %>
+<%= error_tag f,
+            :cath_cl_symptom_onset_tm %>
+          </div>
+          <p class="help"></p>
+        </div>
+        <!--field---->
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<div class="field ">
+          <label class="label">Onset Time N/A</label>
+          <div class="control">
+            <span class="field_help"></span>
+            <%= checkbox f, :symptom_onset_tm_na,
+placeholder: "symptom_onset_tm_na",
+                required: false,
+                type: "checkbox"
+              %>
+             <%= error_tag f, :symptom_onset_tm_na %>
+           <p class = "help">
+           </div>
+           </p>
+
+           </div>
+        <!-----field---->
+
+</div><!----column-------------------->
+ <div class = "column">
+ <div class="field ">
+          <label class="label">Onset Time Estimated</label>
+          <div class="control">
+            <span class="field_help"></span>
+            <%= checkbox f, :symptom_onset_tm_estim,
+placeholder: "symptom_onset_tm_estim",
+                required: false,
+                type: "checkbox"
+              %>
+             <%= error_tag f, :symptom_onset_tm_estim %>
+           <p class = "help">
+           </div>
+           </p>
+
+           </div>
+        <!-----field---->
+
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<div class="field">
+          <label class="label">Recent CABG: Date </label>
+          <div class="control">
+      <%= text_input f, :cabg_most_recent_dt,
+class: "input",
+type: "date",
+placeholder: "cabg_most_recent_dt",
+required: false %>
+<%= error_tag f,
+            :cabg_most_recent_dt %>
+          </div>
+          <p class="help"></p>
+        </div>
+        <!--field---->
+</div><!----column-------------------->
+<div class = "column"> 
+
+Aux Field
+</div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+ 
+
+  
+  
+
+     <span class="button is-danger  is-fullwidth ">
+<i class="fa fa-sticky-note">
+My Notes
+</i>
+</span>
+ <div class="columns">
+        <div class="column">
+    <div class="field">
+  <label class="label"> My Notes On Clinical Record </label>
+  <div class="control">
+    <%= text_input f, :cath_cl_notes,
+        class: "textarea",
+        type: "input", placeholder: "cath_cl_notes"  %>
+  <p class="help"></p>
+
+   </div><!----column 1------------->
+
+     </div><!-----columns------------>
+     <div class="columns">
+        <div class="column">
+ <%= render  AngioWeb.SharedView, "_help_area.html" %>
+
+</div><!----column 1------------->
+
+     </div><!-----columns------------>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+</div><!----------column---------------------------->
+</div><!----------columns--------------------------------->
+  <%#= label f, :" " %>
+  <%#= text_input f, :" " %>
+  <%#= error_tag f, :" " %>
+
+  <div>
+   <%= submit "Save and Continue", class: "button is-info is-large is-fullwidth " %>
+    
+  </div>
+<% end %>

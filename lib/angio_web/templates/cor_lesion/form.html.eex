@@ -1,0 +1,608 @@
+<% alias Angio.Canons, as: Query %>
+
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+   <div class="notification is-danger">
+    <button class="delete"></button>
+    Oops, something went wrong! Please check the errors below or Dublicate Record
+</div>
+
+  <% end %>
+  <div class="columns">
+    <div class="column frame_1">
+
+ <!---------------------------------->
+      <div class="columns">
+        <div class="column">
+          <% stenosis_pct = 0..100%>
+<div class="field">
+     <label class="label">Stenosis (%) </label>
+     <div class="control">
+
+    <div class="select is-primary">
+  <%= select(f, :cor_les_pct, stenosis_pct, prompt: "---Select---", class: "form-control")  %>
+<%= error_tag f, :cor_les_pct %>
+      <option></option>
+      <p class="help"></p>
+    </div><!--select---->
+     </div><!--control---->
+  </div><!---field--->
+
+        </div><!---------column 1-------->
+
+        <div class="column">
+
+
+
+          <% s_major= Query.select_options("cor_les_major_branch") %>
+          <%# i_major =
+raw Query.search_in_instructions("cor_les_major_branch")%>
+ <%# i_status =
+raw  Query.search_in_instructions("cor_les_major_branch")%>
+<div class="field">
+  <label class="label"> Major Branch </label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= select(f, :cor_les_major_branch,
+              s_major , prompt: "---Select---",class: "form-control")
+              %>
+            </div>
+            <!--select---->
+            <%= error_tag f, :cor_les_major_branch  %>
+            <span class="help"></span>
+          </div>
+          <!--control---->
+        </div>
+        <!---field--->
+
+        </div><!---------column 1-------->
+     <div class="column">
+   <div class="field">
+  <label class="label">Vessel Size (mm)</label>
+  <div class="control">
+    <%= text_input f, :cor_les_vessel_size , class: "input",
+                       type: "text",
+                       placeholder: "cor_les_vessel_size",
+                      required: false
+  %>
+   <%= error_tag f, :cor_les_vessel_size %>
+  </div>
+  <p class="help">Vessel Size At Lesion Point</p>
+   </div><!-------------------->
+        </div><!---------column 1-------->
+          </div><!-----columns------------->
+
+<span class="button is-primary is-fullwidth ">
+    Lesion Location
+        </span>
+
+
+ <!--stet-------------------------------->
+      <div class="columns">
+        <div class="column">
+         <% s_cdisc = Query.select_options("uni_segments_cdisc") %>
+
+          <%# i_cdisc =
+raw Query.search_in_instructions("uni_segments_cdisc")%>
+ <% _i_cdisc=
+raw  Query.search_in_instructions("uni_segments_cdisc")%>
+<div class="field">
+  <label class="label"> Segments involved - CDISC (required)</label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"> </span>
+              <%= multiple_select(f, :cor_les_seg_cdisc,
+s_cdisc , prompt: "---Select---",
+required: true, class: "form-control", size: 2)
+              %>
+            </div>
+            <!--select---->
+            <%= error_tag f, :cor_les_seg_cdisc  %>
+            <p class="help"><%#= _i_cdisc %></p>
+          </div>
+          <!--control---->
+        </div>
+        <!---field--->
+
+        </div><!---------column 1-------->
+      </div><!------columns-------------->
+
+      <div class="columns">
+        <div class="column">
+
+
+ <% s_ncdr = Query.select_options("uni_segments_ncdr") %>
+          <%# i_ncdr =
+raw Query.search_in_instructions("uni_segments_ncdr")%>
+ <% i_ncdr=
+raw  Query.search_in_instructions("uni_segments_ncdr")%>
+<div class="field">
+  <label class="label"> Segments involved - NCDR</label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= multiple_select(f, :cor_les_seg_ncdr,
+s_ncdr ,prompt: "---Select---", class: "form-control", size: 2)
+              %>
+            </div>
+            <!--select---->
+            <%= error_tag f, :cor_les_seg_ncdr  %>
+            <p class="help"><%#= i_ncdr %></p>
+          </div>
+          <!--control---->
+        </div>
+        <!---field--->
+</div><!---------column 1-------->
+      </div><!-----colomns---------->
+      <!----end----------------------------------->
+
+      <!--stet-------------------------------->
+      <div class="columns">
+        <div class="column">
+
+
+ <% s_sts = Query.select_options("uni_segments_sts") %>
+
+ <%# i_sts=
+raw  Query.search_in_instructions("uni_segments_sts")%>
+<div class="field">
+  <label class="label"> Segments involved - STS</label>
+          <div class="control">
+            <div class="select is-primary">
+              <%= multiple_select(f, :cor_les_seg_sts,
+s_sts , prompt: "---Select---",class: "form-control", size: 2)
+              %>
+            </div>
+            <!--select---->
+            <%= error_tag f, :cor_les_seg_sts  %>
+            <p class="help"><%#= i_sts %></p>
+          </div>
+          <!--control---->
+        </div>
+        <!---field--->
+
+        </div><!---------column 1-------->
+      </div><!---columns-------------->
+<span class="button is-primary is-fullwidth  ">
+      Lesion Morphology
+        </span>
+
+
+
+ <div class="columns">
+    <div class="column">
+ <% s_cor_les_type_scai = Query.select_options("uni_lesion_type_scai") %>
+          <%# i_cor_les_type_scai =
+raw Query.search_in_instructions("uni_lesion_type_scai")%>
+ <% i_cor_les_type_scai=
+raw  Query.search_in_instructions("uni_lesion_type_scai")%>
+<div class="field">
+  <label class="label"> Lesion  Morphology SCAI</label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"> </span>
+              <%= select(f, :cor_les_type_scai,
+s_cor_les_type_scai ,prompt: "---Select---", class: "form-control")
+              %>
+            </div>
+            <!--select---->
+            <%= error_tag f, :cor_les_type_scai  %>
+            <p class="help"></p>
+          </div>
+          <!--control---->
+
+        </div>
+        <!---field--->
+
+        </div><!---------column 1-------->
+
+        <div class="column">
+
+           <% s_cor_les_type_aha = Query.select_options("uni_lesion_type_aha") %>
+          <%# i_cor_les_type_aha =
+raw Query.search_in_instructions("uni_lesion_type_aha")%>
+ <% i_cor_les_type_aha=
+raw  Query.search_in_instructions("uni_lesion_type_aha")%>
+<div class="field">
+  <label class="label"> Lesion  Morphology AHA </label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"> </span>
+              <%= select(f, :cor_les_type_aha,
+s_cor_les_type_aha , prompt: "---Select---", class: "form-control")
+              %>
+            </div>
+            <!--select---->
+            <%= error_tag f, :cor_les_type_aha  %>
+            <p class="help"></p>
+          </div>
+          <!--control---->
+        </div>
+        <!---field--->
+
+
+</div><!---------column 1-------->
+
+
+ </div><!-----colomns---------->
+      <!----end----------------------------------->
+
+
+  <!----stet-------------------------------->
+      <div class="columns">
+
+
+          <div class="column">
+              <div class="field">
+                  <label class="label">Lesion Length (mm)</label>
+                  <div class="control">
+                      <%= text_input f, :cor_les_length , class: "input",
+                      type: "text",
+                      placeholder: "Lesion Length",
+                      required: false
+                      %>
+                      <%= error_tag f, :cor_les_length  %>
+                  </div>
+                  <p class="help"></p>
+              </div><!----field---------------->
+
+
+        </div><!---------column 1-------->
+<div class="column">
+<!-------------start--field--------------------------------->
+    <div class="field">
+          <label class="label">CTO?</label>
+          <div class="control">
+           <span class="field_help"> </span>
+            <%= checkbox f, :cor_les_chronic_total_yn,
+               type: "checkbox" %>
+                 <%= error_tag f, :cor_les_chronic_total_yn %>
+            <p class = "help"><%#= i_pt_restriction_yn %></p>
+
+          </div>
+                 </div>
+<!----------------end field------------------------------>
+
+
+
+
+</div><!---------column 1-------->
+      </div><!-----colomns---------->
+      <!----end----------------------------------->
+
+ <!--stet-------------------------------->
+      <div class="columns">
+
+        <div class="column">
+
+
+<div class="field">
+          <label class="label">In Ostium?</label>
+          <div class="control">
+            <%= checkbox f, :cor_les_ostial_loc_yn,
+            type: "checkbox" %>
+            <%= error_tag f, :cor_les_ostial_loc_yn %>
+          </div>
+          <p class="help"></p>
+        </div>
+        <!--field---->
+
+
+
+
+        </div><!---------column 1-------->
+<div class="column">
+<div class="field">
+    <label class="label">Ca++ ? </label>
+        <div class="control">
+            <%= checkbox f, :cor_les_calcium_yn,
+            type: "checkbox" %> <%= error_tag f,
+           :cor_les_calcium_yn %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+
+</div><!---------column 1-------->
+      </div><!-----colomns---------->
+      <!----end----------------------------------->
+
+ <!--stet-------------------------------->
+      <div class="columns">
+        <div class="column">
+<div class="field">
+    <label class="label">Thombus ? </label>
+        <div class="control">
+            <%= checkbox f, :cor_les_thrombus_yn,
+            type: "checkbox" %> <%= error_tag f,
+           :cor_les_thrombus_yn %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+
+        </div><!---------column 1-------->
+<div class="column">
+
+  <div class="field">
+    <label class="label">In Bifurcation ? </label>
+        <div class="control">
+        <%= checkbox f, :cor_les_bifurcation_yn,
+            type: "checkbox" %> <%= error_tag f,
+           :cor_les_bifurcation_yn %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+        </div><!---------column 1-------->
+      </div><!-----colomns---------->
+      <!----end----------------------------------->
+
+ <!--stet-------------------------------->
+      <div class="columns">
+        <div class="column">
+
+  <div class="field">
+    <label class="label">In Tandem ? </label>
+        <div class="control">
+            <%= checkbox f, :cor_les_tandem_yn ,
+            type: "checkbox" %> <%= error_tag f,
+           :cor_les_tandem_yn%>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+
+        </div><!---------column 1-------->
+<div class="column">
+   <div class="field">
+    <label class="label">Aneurismatic ? </label>
+        <div class="control">
+            <%= checkbox f, :cor_les_aneurysm_yn,
+type: "checkbox" %>
+<%= error_tag f,
+           :cor_les_aneurysm_yn %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+        </div><!---------column 1-------->
+      </div><!-----colomns---------->
+      <!----end----------------------------------->
+
+ <!--stet-------------------------------->
+      <div class="columns">
+        <div class="column">
+           <div class="field">
+    <label class="label">Is prorected ? </label>
+        <div class="control">
+            <%= checkbox f, :cor_les_protected_yn,
+            type: "checkbox" %> <%= error_tag f,
+           :cor_les_protected_yn %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
+
+
+
+        </div><!---------column 1-------->
+<div class="column">
+    <% graft_pct = 0..100%>
+<div class="field">
+     <label class="label">If Graft  -Stenosis (%) </label>
+     <div class="control">
+    <div class="select is-primary">
+  <%= select(f, :cor_les_graft_pct , graft_pct, prompt: "---Select---", class: "form-control")    %>
+<%= error_tag f, :cor_les_graft_pct %>
+      <p class="help"></p>
+    </div><!--select---->
+     </div><!--control---->
+  </div><!---field--->
+
+
+        </div><!---------column 1-------->
+      </div><!-----colomns---------->
+      <!----end----------------------------------->
+
+
+
+    </div><!----END-LEFT COLUMN---------->
+    <div class="column frame_1">
+<span class="button is-primary is-fullwidth  ">
+    Prior Treatment For this  Lesion
+        </span>
+
+
+ <!--stet-------------------------------->
+      <div class="columns">
+        <div class="column">
+
+   <div class="field">
+    <label class="label">Lesion is Prior Treated? </label>
+        <div class="control">
+          <%= checkbox f, :cor_les_prior_treated_yn,
+type: "checkbox" %>
+<%= error_tag f,
+           :cor_les_prior_treated_yn  %>
+        </div>
+        <p class="help">Check if Prior Treated is Yes</p>
+    </div><!-----field------------------>
+
+
+        </div><!---------column 1-------->
+        <div class="column">
+
+<!------------------------------------------------------>
+
+<div class="field">
+          <label class="label">No Stent. Other Treatment (Rota..)? </label>
+          <div class="control">
+            <%= text_input f,
+              :cor_les_prior_treated_other,
+               class: "input", type: "text",
+                placeholder: "cor_les_prior_treated_other",
+              required: false %>
+              <%= error_tag f, :cor_les_prior_treated_other %>
+          </div>
+          <p class="help"></p>
+
+        </div>
+   <!------------------------------------->
+
+</div><!---------column 1-------->
+      </div><!-----colomns---------->
+      <!----end----------------------------------->
+  <!--stet-------------------------------->
+      <div class="columns">
+        <div class="column">
+
+        
+<!-----------start Field------------------------------------------>
+<div class="field">
+          <label class="label">Date Of Treatment </label>
+          <div class="control">
+          <%= text_input f, :cor_les_prior_treated_dt, class: "input", type: "date",
+            placeholder: "cor_les_prior_treated_dt", required: false %>
+            <%= error_tag f,
+            :cor_les_prior_treated_dt %>
+          </div>
+          <p class="help"></p>
+        </div>
+<!----------end field---------------------->
+
+
+        </div><!---------column 1-------->
+<div class="column">
+ <div class="field">
+    <label class="label">Stented Lesion ? </label>
+        <div class="control">
+          <%= checkbox f, :cor_les_prior_stent_yn,
+type: "checkbox" %>
+<%= error_tag f,
+           :cor_les_prior_stent_yn  %>
+        </div>
+        <p class="help">Check if Prior Stented is Yes</p>
+    </div><!-----field------------------>
+
+</div><!---------column 1-------->
+      </div><!-----colomns---------->
+      <!----end----------------------------------->
+  <!--stet-------------------------------->
+      <div class="columns">
+        <div class="column">
+
+<div class="field">
+          <label class="label">Stented date </label>
+          <div class="control">
+          <%= text_input f, :cor_les_stent_dt, class: "input", type: "date",
+placeholder: "cor_les_stent_dt", required: false %>
+<%= error_tag f,
+            :cor_les_stent_dt %>
+          </div>
+          <p class="help"></p>
+        </div>
+        <!--field---->
+
+
+        </div><!---------column 1-------->
+<div class="column">
+
+    <% s_cor_les_stent_pct = 0..100%>
+<div class="field">
+     <label class="label">If Stent  - Stenosis (%) </label>
+     <div class="control">
+    <div class="select is-primary">
+  <%= select(f, :cor_les_stent_pct  , s_cor_les_stent_pct, prompt: "---Select---",class: "form-control")    %>
+<%= error_tag f, :cor_les_stent_pct %>
+      <p class="help"></p>
+    </div><!--select---->
+     </div><!--control---->
+  </div><!---field--->
+
+        </div><!---------column 1-------->
+      </div><!-----colomns---------->
+      <!----end----------------------------------->
+<span class="button is-primary  is-fullwidth ">
+    Lesion Severity
+        </span>
+
+
+ <!--stet-------------------------------->
+      <div class="columns">
+        <div class="column">
+  <div class="field">
+                  <label class="label">If FFR The Value</label>
+                  <div class="control">
+                      <%= text_input f, :cor_les_ffr  , class: "input",
+                      type: "text",
+                      placeholder: "ffr Value",
+                      required: false
+                      %>
+                      <%= error_tag f, :cor_les_ffr  %>
+                  </div>
+                  <p class="help"></p>
+              </div><!----field---------------->
+
+
+        </div><!---------column 1-------->
+<div class="column">
+ <div class="field">
+                  <label class="label"> IVUS Max Stenosis </label>
+                  <div class="control">
+                      <%= text_input f, :cor_les_ivus , class: "input",
+                      type: "text",
+                      placeholder: "ffr Value",
+                      required: false
+                      %>
+                      <%= error_tag f, :cor_les_ivus   %>
+                  </div>
+                  <p class="help"></p>
+              </div><!----field---------------->
+
+</div><!---------column 1-------->
+
+      </div><!-----colomns---------->
+      <!----end----------------------------------->
+
+     <span class="button is-danger  is-fullwidth ">
+<i class="fa fa-sticky-note">
+My Notes
+</i>
+</span>
+<div class="columns">
+ <div class="column">
+
+ <!---------field--------------------------------->
+ <div class="field">
+                  <label class="label"> Notes</label>
+                  <div class="control">
+                      <%= text_input f, :cor_les_notes , class: "textarea",
+                      type: "input",
+                      placeholder: "notes",
+                      required: false
+                      %>
+                      <%= error_tag f, :cor_les_notes   %>
+                  </div>
+                  <p class="help"></p>
+              </div><!----field---------------->
+
+</div><!----------column----------------------->
+</div><!-----------columns----------------->
+<!-- -HELP AREA -->
+  <%= render  AngioWeb.SharedView, "_help_area.html" %>
+
+     </div><!----END R COLUMN------------>
+
+  </div><!---END start columns----------->
+
+<div>
+    <%= submit "Save and Continue", class: "button is-info is-large is-fullwidth " %>
+
+  </div>
+
+<% end %>
