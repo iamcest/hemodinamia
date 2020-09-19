@@ -25,7 +25,7 @@ Angio : <%= render AngioWeb.SharedView, "_info_coronary.html", info_coronary:
 
 <div class="column is-10 frame_1">
 <div class="table-container">
-<table class="table is-bordered
+<table class="table is-bordered 
                     is-striped
                     is-full-width
                     is-hoverable">

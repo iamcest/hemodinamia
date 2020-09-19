@@ -9,17 +9,44 @@ defmodule Angio.CorMedia do
   @acl :public_read
 
   def validate({file, _}) do
-    ~w(.jpg .jpeg .gif .png) |> Enum.member?(Path.extname(file.file_name))
+    ~w(.jpg .jpeg .gif .png .pdf .mp4) |> Enum.member?(Path.extname(file.file_name))
   end
 
   # Define a thumbnail transformation:
-  def transform(:thumb, _) do
-    {:convert, "-thumbnail 128x128^ -gravity center -extent 128x128 -format png", :png}
+  #orgiginal func
+  #def transform(:thumb, _) do
+  #  {:convert, "-thumbnail 128x128^ -gravity center -extent 128x128 -format png", :png}
+  #end
+
+  # Define a thumbnail transformation:
+ def transform(:thumb, {file, _scope}) do
+  if Enum.member?(~w(.jpg .jpeg .gif .png), Path.extname(file.file_name)) do
+    {:convert, "-strip -thumbnail 250x250^ -format png", :png}
+  else
+    :noaction
   end
 
-  def __storage do
+end
+
+def __storage do
     Arc.Storage.Local
   end
+
+def filename(version, {file, _scope}) do
+    file_name = Path.basename(file.file_name, Path.extname(file.file_name))
+
+    "#{version}_#{file_name}"
+  end
+
+  def filename(version, _) do
+    version
+  end
+
+  # Override the storage directory:
+
+ # def storage_dir(_version, {_file, media}) do
+ #   "uploads/data/#{media.data.id}/mediae/"
+ # end
 
   # def filename(version, _) do
   #  version

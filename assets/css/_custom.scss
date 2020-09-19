@@ -433,19 +433,23 @@ input[type="checkbox"] {
   
 
   &.assesment{
-    @include background-alpha($azure, 0.8);
+    @include background-alpha(#b3e2cd, 0.8);
   }
   &.congenital{
-    @include background-alpha($light-red, 0.8);
+    @include background-alpha(#fdcdac, 0.8);
   }
   &.intervention{
-    @include background-alpha($orangered, 0.8);
+    @include background-alpha(#cbd5e8, 0.8);
     @include  box-shadow_2();
 
-    color: #fff 
+    color: #000;
   }
   &.caths_angio{
-    @include background-alpha($purpleLighter, 0.8);
+    @include background-alpha(#f4cae4, 0.8);
+    box-shadow: 0 2px 15px $purple;
+  }
+  &.history{
+    @include background-alpha(#e6f5c9, 0.8);
     box-shadow: 0 2px 15px $purple;
   }
 }

@@ -1,4 +1,9 @@
 
+<div class="element_info">
+  <%= render AngioWeb.SharedView, "_patient_info.html", patient:
+  @patient %>
+</div>
+
 <table
   class="table is-bordered
                     is-striped

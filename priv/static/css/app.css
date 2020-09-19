@@ -432,40 +432,49 @@ input[type="checkbox"] {
   border-radius: 18px;
   padding: 5px 4px 5px 5px; }
   .menu_tabs.assesment {
-    background-color: azure;
+    background-color: #b3e2cd;
     /* fallback color */
-    background-color: rgba(240, 255, 255, 0.8);
+    background-color: rgba(179, 226, 205, 0.8);
     /* IE */
     background-color: transparent\9;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr= argb(rgba(240, 255, 255, 0.8)), endColorstr= argb(rgba(240, 255, 255, 0.8)));
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr= argb(rgba(179, 226, 205, 0.8)), endColorstr= argb(rgba(179, 226, 205, 0.8)));
     zoom: 1; }
   .menu_tabs.congenital {
-    background-color: #efaca6;
+    background-color: #fdcdac;
     /* fallback color */
-    background-color: rgba(239, 172, 166, 0.8);
+    background-color: rgba(253, 205, 172, 0.8);
     /* IE */
     background-color: transparent\9;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr= argb(rgba(239, 172, 166, 0.8)), endColorstr= argb(rgba(239, 172, 166, 0.8)));
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr= argb(rgba(253, 205, 172, 0.8)), endColorstr= argb(rgba(253, 205, 172, 0.8)));
     zoom: 1; }
   .menu_tabs.intervention {
-    background-color: #ff4400;
+    background-color: #cbd5e8;
     /* fallback color */
-    background-color: rgba(255, 68, 0, 0.8);
+    background-color: rgba(203, 213, 232, 0.8);
     /* IE */
     background-color: transparent\9;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr= argb(rgba(255, 68, 0, 0.8)), endColorstr= argb(rgba(255, 68, 0, 0.8)));
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr= argb(rgba(203, 213, 232, 0.8)), endColorstr= argb(rgba(203, 213, 232, 0.8)));
     zoom: 1;
     -webkit-box-shadow: 0px 1px 2px #CCC;
     -moz-box-shadow: 0px 1px 2px #CCC;
     box-shadow: 0px 1px 2px #CCC;
-    color: #fff; }
+    color: #000; }
   .menu_tabs.caths_angio {
-    background-color: #c2a3ff;
+    background-color: #f4cae4;
     /* fallback color */
-    background-color: rgba(194, 163, 255, 0.8);
+    background-color: rgba(244, 202, 228, 0.8);
     /* IE */
     background-color: transparent\9;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr= argb(rgba(194, 163, 255, 0.8)), endColorstr= argb(rgba(194, 163, 255, 0.8)));
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr= argb(rgba(244, 202, 228, 0.8)), endColorstr= argb(rgba(244, 202, 228, 0.8)));
+    zoom: 1;
+    box-shadow: 0 2px 15px #8a4d76; }
+  .menu_tabs.history {
+    background-color: #e6f5c9;
+    /* fallback color */
+    background-color: rgba(230, 245, 201, 0.8);
+    /* IE */
+    background-color: transparent\9;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr= argb(rgba(230, 245, 201, 0.8)), endColorstr= argb(rgba(230, 245, 201, 0.8)));
     zoom: 1;
     box-shadow: 0 2px 15px #8a4d76; }
 

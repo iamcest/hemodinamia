@@ -13,15 +13,19 @@
 <div class="column">
 
 <div class="file has-name is-fullwidth">
-  <label class="file-label">
+
+ <label class="file-label">
  <input class="file-input" type="file" name="resume">
  <span class="file-cta">
+
    <span class="file-icon">
      <i class="fa fa-upload"></i>
    </span>
+
    <span class="file-label">
      Choose a file…
    </span>
+
  </span>
  <span class="file-name">
    myfile.png
@@ -39,13 +43,13 @@
      ------------------------------>
 <div class="field">
 <div class="file is-primary">
-<label class="label">Media File</label> 
+<label class="label">Media File</label>
           <div class="control">
-            <%= file_input f, :mime_name, 
-            class: "input", 
+            <%= file_input f, :mime_name,
+            class: "input",
             type: "file",
             placeholder: "mime_name",
-             required: false %> 
+             required: false %>
              <%= error_tag f, :mime_nane %>
           </div>
           <p class="help"></p>
@@ -57,7 +61,7 @@
   <%#= error_tag f, :mime_name %>
   -------------------->
 </div><!---------column----------->
-  
+
   <div class="column">
 Aux
 <!---------------------------
@@ -69,7 +73,7 @@ Aux
             :mime_type %>
           </div>
           <p class="help"></p>
-        
+
   </div>
   ---------------------->
 
@@ -91,7 +95,7 @@ Aux
 
   </div><!---control---------->
    </div><!-------field-------->
- 
+
  </div><!---------column----------->
  </div><!-----columns----------------->
 
@@ -99,8 +103,8 @@ Aux
 
 
 <div class="column frame_1">
-   <div class="columns"> 
- 
+   <div class="columns">
+
    <div class="column">
 
 <div class="field">
@@ -116,7 +120,7 @@ Aux
 
  </div><!---------column----------->
 
-<div class="column"> 
+<div class="column">
 <div class="field">
           <label class="label">Radlex Code </label>
           <div class="control">
@@ -142,10 +146,10 @@ Aux
  </div><!---------column----------->
 
 </div><!-----columns----------------->
-  
-  
-  
-   <div class="columns"> 
+
+
+
+   <div class="columns">
    <div class="column">
      <div class="field">
   <label class="label"> My  Notes </label>
@@ -159,7 +163,7 @@ Aux
    </div><!-------field-------->
 </div><!---------column----------->
 </div><!-----columns----------------->
- <div class="columns"> 
+ <div class="columns">
    <div class="column">
   <%= render  AngioWeb.SharedView, "_help_area.html" %>
 </div><!---------column----------->
