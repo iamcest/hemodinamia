@@ -97,6 +97,4 @@ defmodule AngioWeb.Chd_risk_factorController do
         )
     )
   end
-
-
 end

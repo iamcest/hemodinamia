@@ -224,9 +224,39 @@ defmodule Angio.ClinicalsTest do
   describe "chest_pain" do
     alias Angio.Clinicals.Chest_pains
 
-    @valid_attrs %{chestp_assoc_symptoms: "some chestp_assoc_symptoms", chestp_dt: ~D[2010-04-17], chestp_duration: "some chestp_duration", chestp_location: "some chestp_location", chestp_notes: "some chestp_notes", chestp_perciptating_factors: "some chestp_perciptating_factors", chestp_quality: "some chestp_quality", chestp_relieving_factors: "some chestp_relieving_factors", chestp_tm: ~T[14:00:00]}
-    @update_attrs %{chestp_assoc_symptoms: "some updated chestp_assoc_symptoms", chestp_dt: ~D[2011-05-18], chestp_duration: "some updated chestp_duration", chestp_location: "some updated chestp_location", chestp_notes: "some updated chestp_notes", chestp_perciptating_factors: "some updated chestp_perciptating_factors", chestp_quality: "some updated chestp_quality", chestp_relieving_factors: "some updated chestp_relieving_factors", chestp_tm: ~T[15:01:01]}
-    @invalid_attrs %{chestp_assoc_symptoms: nil, chestp_dt: nil, chestp_duration: nil, chestp_location: nil, chestp_notes: nil, chestp_perciptating_factors: nil, chestp_quality: nil, chestp_relieving_factors: nil, chestp_tm: nil}
+    @valid_attrs %{
+      chestp_assoc_symptoms: "some chestp_assoc_symptoms",
+      chestp_dt: ~D[2010-04-17],
+      chestp_duration: "some chestp_duration",
+      chestp_location: "some chestp_location",
+      chestp_notes: "some chestp_notes",
+      chestp_perciptating_factors: "some chestp_perciptating_factors",
+      chestp_quality: "some chestp_quality",
+      chestp_relieving_factors: "some chestp_relieving_factors",
+      chestp_tm: ~T[14:00:00]
+    }
+    @update_attrs %{
+      chestp_assoc_symptoms: "some updated chestp_assoc_symptoms",
+      chestp_dt: ~D[2011-05-18],
+      chestp_duration: "some updated chestp_duration",
+      chestp_location: "some updated chestp_location",
+      chestp_notes: "some updated chestp_notes",
+      chestp_perciptating_factors: "some updated chestp_perciptating_factors",
+      chestp_quality: "some updated chestp_quality",
+      chestp_relieving_factors: "some updated chestp_relieving_factors",
+      chestp_tm: ~T[15:01:01]
+    }
+    @invalid_attrs %{
+      chestp_assoc_symptoms: nil,
+      chestp_dt: nil,
+      chestp_duration: nil,
+      chestp_location: nil,
+      chestp_notes: nil,
+      chestp_perciptating_factors: nil,
+      chestp_quality: nil,
+      chestp_relieving_factors: nil,
+      chestp_tm: nil
+    }
 
     def chest_pains_fixture(attrs \\ %{}) do
       {:ok, chest_pains} =
@@ -266,7 +296,10 @@ defmodule Angio.ClinicalsTest do
 
     test "update_chest_pains/2 with valid data updates the chest_pains" do
       chest_pains = chest_pains_fixture()
-      assert {:ok, %Chest_pains{} = chest_pains} = Clinicals.update_chest_pains(chest_pains, @update_attrs)
+
+      assert {:ok, %Chest_pains{} = chest_pains} =
+               Clinicals.update_chest_pains(chest_pains, @update_attrs)
+
       assert chest_pains.chestp_assoc_symptoms == "some updated chestp_assoc_symptoms"
       assert chest_pains.chestp_dt == ~D[2011-05-18]
       assert chest_pains.chestp_duration == "some updated chestp_duration"
@@ -280,7 +313,10 @@ defmodule Angio.ClinicalsTest do
 
     test "update_chest_pains/2 with invalid data returns error changeset" do
       chest_pains = chest_pains_fixture()
-      assert {:error, %Ecto.Changeset{}} = Clinicals.update_chest_pains(chest_pains, @invalid_attrs)
+
+      assert {:error, %Ecto.Changeset{}} =
+               Clinicals.update_chest_pains(chest_pains, @invalid_attrs)
+
       assert chest_pains == Clinicals.get_chest_pains!(chest_pains.id)
     end
 

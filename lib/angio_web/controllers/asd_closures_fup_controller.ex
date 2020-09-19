@@ -21,28 +21,26 @@ defmodule AngioWeb.Asd_closures_fupController do
 
   def create(conn, %{"asd_closures_fup" => asd_closures_fup_params}) do
     changeset =
-    conn.assigns[:patient]
-    |> Ecto.build_assoc(:asd_closures_fups)
-    |> Asd_closures_fup.changeset(asd_closures_fup_params)
+      conn.assigns[:patient]
+      |> Ecto.build_assoc(:asd_closures_fups)
+      |> Asd_closures_fup.changeset(asd_closures_fup_params)
 
-  case Repo.insert(changeset) do
-    {:ok, _asd_closures_fup} ->
-      conn
-      |> put_flash(:info, "Followup  Record for ASD Closure created successfully.")
-      |> redirect(
-        to:
-          Routes.pt_asdclf_path(
-            conn,
-            :index,
-            conn.assigns[:patient]
-          )
-      )
+    case Repo.insert(changeset) do
+      {:ok, _asd_closures_fup} ->
+        conn
+        |> put_flash(:info, "Followup  Record for ASD Closure created successfully.")
+        |> redirect(
+          to:
+            Routes.pt_asdclf_path(
+              conn,
+              :index,
+              conn.assigns[:patient]
+            )
+        )
 
-    {:error, %Ecto.Changeset{} = changeset} ->
-      render(conn, "new.html", changeset: changeset)
-
+      {:error, %Ecto.Changeset{} = changeset} ->
+        render(conn, "new.html", changeset: changeset)
     end
-
   end
 
   def show(conn, %{"id" => id}) do
@@ -64,13 +62,13 @@ defmodule AngioWeb.Asd_closures_fupController do
         conn
         |> put_flash(:info, "Asd closures fup updated successfully.")
         |> redirect(
-        to:
-          Routes.pt_asdclf_path(
-            conn,
-            :index,
-            conn.assigns[:patient]
-          )
-      )
+          to:
+            Routes.pt_asdclf_path(
+              conn,
+              :index,
+              conn.assigns[:patient]
+            )
+        )
 
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "edit.html", asd_closures_fup: asd_closures_fup, changeset: changeset)
@@ -92,6 +90,6 @@ defmodule AngioWeb.Asd_closures_fupController do
         )
     )
 
-    #|> redirect(to: Routes.asd_closures_fup_path(conn, :index))
+    # |> redirect(to: Routes.asd_closures_fup_path(conn, :index))
   end
 end

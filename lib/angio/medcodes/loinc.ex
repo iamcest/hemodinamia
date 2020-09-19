@@ -24,7 +24,7 @@ defmodule Angio.Medcodes.Loinc do
     field(:common_test_rank, :integer)
     field(:definitiondescription, :string)
     field(:unitsandrange, :string)
-    #field(:andrangeunits, :string)
+    # field(:andrangeunits, :string)
     field(:validhl7attachmentrequest, :string)
     field(:common_order_rank, :integer)
     field(:versionlastchanged, :string)
@@ -50,9 +50,9 @@ defmodule Angio.Medcodes.Loinc do
     field(:loinc_num, :string)
     field(:method_typ, :string)
     field(:component, :string)
-    #field(:tsv_search, Angio.TsVtector)
+    # field(:tsv_search, Angio.TsVtector)
 
-   #timestamps()
+    # timestamps()
   end
 
   @doc false
@@ -88,7 +88,7 @@ defmodule Angio.Medcodes.Loinc do
       :external_copyright_notice,
       :example_units,
       :long_common_name,
-      #:andrangeunits,
+      # :andrangeunits,
       :example_ucum_units,
       :example_si_ucum_units,
       :status_reason,
@@ -104,12 +104,9 @@ defmodule Angio.Medcodes.Loinc do
       :associatedobservations,
       :versionfirstreleased,
       :validhl7attachmentrequest,
-      :displayname,
-      #:tsv_search
+      :displayname
+      # :tsv_search
     ])
     |> validate_required([])
   end
-
-
-
 end

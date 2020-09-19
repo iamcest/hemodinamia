@@ -177,7 +177,6 @@ defmodule AngioWeb.Defs_optionController do
           to: Routes.definition_defs_option_path(conn, :show, conn.assigns[:definition], id)
         )
 
-
         definition_id_str = conn.params["definition_id"]
         definition_id = String.to_integer(definition_id_str)
 
@@ -187,7 +186,6 @@ defmodule AngioWeb.Defs_optionController do
             :definition_id,
             definition_id
           )
-
 
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "edit.html", defs_option: defs_option, changeset: changeset)
@@ -201,8 +199,6 @@ defmodule AngioWeb.Defs_optionController do
     conn
     |> put_flash(:info, "Definition  Pick-list Item  deleted successfully.")
     |> redirect(to: Routes.definition_defs_option_path(conn, :index, conn.assigns[:definition]))
-
-
   end
 
   defp assign_definition_1(conn, _opts) do

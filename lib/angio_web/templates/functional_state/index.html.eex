@@ -35,7 +35,7 @@
       <th>Assesment Date</th>
    <th>Show</th>
    <th>Edit</th>
-   <th>Deleteth>
+   <th>Delete></th>
     </tr>
   </thead>
   <tbody>
@@ -45,14 +45,14 @@
 
       <td>
          <%= link "Show", to: Routes.pt_angio_funs_path(@conn, :show, @patient, @info_coronary,
-          functional_state ), class: "button is-primary is-small" %>
+          functional_state ), class: "button is-primary is-rounded   is-small" %>
 
         <%#= link "Show", to: Routes.functional_state_path(@conn, :show, functional_state) %>
       </td>
 
       <td>
          <%= link "Edit", to: Routes.pt_angio_funs_path(@conn, :edit, @patient,
-        @info_coronary,  functional_state ), class: "button is-primary is-small" %>
+        @info_coronary,  functional_state ), class: "button is-primary is-rounded  is-small" %>
 
       <%#= link "Edit", to: Routes.functional_state_path(@conn, :edit, functional_state) %>
       </td>
@@ -60,7 +60,7 @@
       <td>
  <%= link "Delete", to: Routes.pt_angio_funs_path(@conn, :delete,
         @patient, @info_coronary,  functional_state ), method: :delete, data: [confirm:
-        "Are you sure?"], class: "button is-small is-danger" %>
+        "Are you sure?"], class: "button is-small is-rounded  is-danger" %>
 
       <%#= link "Delete", to: Routes.functional_state_path(@conn, :delete, functional_state), method: :delete, data: [confirm: "Are you sure?"] %>
       </td>

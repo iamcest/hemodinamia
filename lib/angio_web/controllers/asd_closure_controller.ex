@@ -98,6 +98,5 @@ defmodule AngioWeb.Asd_closureController do
           conn.assigns[:info_coronary]
         )
     )
-
   end
 end

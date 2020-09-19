@@ -1,0 +1,63 @@
+@mixin border_radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin box_shadow($left: 0, $top: 2px, $blur: 2px, $color: #000, $inset: "inset") {
+  -webkit-box-shadow: $left $top $blur $color #{$inset};
+  -moz-box-shadow: $left $top $blur $color #{$inset};
+  box-shadow: $left $top $blur $color #{$inset};
+}
+@mixin box-shadow_2($horizontal: 0px, $vertical: 1px, $blur: 2px, $color: #CCC) {
+  -webkit-box-shadow: $horizontal $vertical $blur $color;
+  -moz-box-shadow: $horizontal $vertical $blur $color;
+  box-shadow: $horizontal $vertical $blur $color;
+ }
+ 
+@mixin background-alpha($color, $alpha) {
+  $acolor: hsla(hue($color), saturation($color), lightness($color), $alpha);
+  $iecolor: argb($acolor);
+
+  background-color: $color; /* fallback color */
+  background-color: $acolor;
+
+  /* IE */
+  background-color: transparent\9;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr= #{$iecolor}, endColorstr= #{$iecolor});
+  zoom: 1;
+}
+
+@mixin rounded_borders($color, $width: 5px, $rounding: 5px) {
+  -moz-border-radius: $rounding $rounding;
+  -webkit-border-radius: $rounding $rounding;
+  -khtml-border-radius: $rounding $rounding;
+  -o-border-radius: $rounding $rounding;
+  border-radius: $rounding $rounding;
+  border: $width $color solid;
+}
+
+@mixin background-gradient($startColor: #3c3c3c, $endColor: #999999) {
+  background-color: $startColor;
+  background-image: -webkit-gradient(linear, left top, left bottom, from($startColor), to($endColor));
+  background-image: -webkit-linear-gradient(top, $startColor, $endColor);
+  background-image: -moz-linear-gradient(top, $startColor, $endColor);
+  background-image: -ms-linear-gradient(top, $startColor, $endColor);
+  background-image: -o-linear-gradient(top, $startColor, $endColor);
+  background-image: linear-gradient(top, $startColor, $endColor);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$startColor}', endColorStr='#{$endColor}');
+}
+// @include padding(1px 2px 3px 4px);
+@mixin padding($padding) {
+  padding: $padding;
+}
+//@include padding-all(top, right, bottom, left);
+//@include padding-all(1px, 2px, 3px, 4px);
+
+@mixin padding-all($top, $right, $bottom, $left) {
+  padding-top: $top;
+  padding-right: $right;
+  padding-bottom: $bottom;
+  padding-left: $left;
+}

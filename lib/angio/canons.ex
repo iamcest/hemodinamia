@@ -118,7 +118,7 @@ defmodule Angio.Canons do
       "table_name" -> search_a_table_name(query)
       "option_name" -> search_a_option_name(query)
       "instruction" -> search_from_utilities_instruction(query)
-      "tsv_search" ->  search_definition_tsv_search(query)
+      "tsv_search" -> search_definition_tsv_search(query)
       _ -> ""
     end
   end
@@ -226,75 +226,68 @@ defmodule Angio.Canons do
 
   def search_definition_tsv_search_old(query) do
     query =
-    from(
-      d in Definition,
-      #where: fragment("ts_headline((?), (?), 'StartSel=<em>, StopSel=</em>' ", d.coding_instructions, ^query)
-      where: fragment( "(?) @@ plainto_tsquery(?)",  d.tsv_search, ^query)
-
-       )
-
+      from(
+        d in Definition,
+        # where: fragment("ts_headline((?), (?), 'StartSel=<em>, StopSel=</em>' ", d.coding_instructions, ^query)
+        where: fragment("(?) @@ plainto_tsquery(?)", d.tsv_search, ^query)
+      )
   end
 
- #$stmt=$db->prepare("SELECT *,
-  #ts_headline(long_description"
- #. ", query) AS bold_text,
- # ts_rank_cd("
-# . $field
-#. ", query, 32)  AS rank FROM icd10pcs,
-#  plainto_tsquery("
-#. "'$text'"
-#. " ) "
-#. " AS query WHERE "
-#. $field
-#. "@@ query ORDER BY rank DESC LIMIT $limit");
+  # $stmt=$db->prepare("SELECT *,
+  # ts_headline(long_description"
+  # . ", query) AS bold_text,
+  # ts_rank_cd("
+  # . $field
+  # . ", query, 32)  AS rank FROM icd10pcs,
+  #  plainto_tsquery("
+  # . "'$text'"
+  # . " ) "
+  # . " AS query WHERE "
+  # . $field
+  # . "@@ query ORDER BY rank DESC LIMIT $limit");
 
+  # SELECT ts_headline('english', 'Winter is coming', to_tsquery('winter'), 'StartSel = <strong>, StopSel = </strong>');
+  # SELECT * FROM definitions WHERE to_tsvector(coding_instructions)
+  # || to_tsvector( support_definition) @@ to_tsquery('angina')
+  # ORDER BY ts_rank(setweight(to_tsvector(support_definition), 'A') || setweight(to_tsvector( support_definition),
+  # 'C'), to_tsquery('angina'));
 
+  # select: %{
+  # id: c.id, title: c.title, slug: c.slug, display_date: c.display_date,
+  # rank: fragment("ts_rank_cd(search_vector, ?, 32) AS rank", sq.search_query),
+  # introduction: fragment("ts_headline('english',CONCAT(introduction,' ',main_body), search_query, 'StartSel=,StopSel=,MinWords=50,MaxWords=100') AS headline"),
+  # tags: c.tags
+  # }
 
- # SELECT ts_headline('english', 'Winter is coming', to_tsquery('winter'), 'StartSel = <strong>, StopSel = </strong>');
- #SELECT * FROM definitions WHERE to_tsvector(coding_instructions)
- # || to_tsvector( support_definition) @@ to_tsquery('angina')
- # ORDER BY ts_rank(setweight(to_tsvector(support_definition), 'A') || setweight(to_tsvector( support_definition),
- # 'C'), to_tsquery('angina'));
-
- #select: %{
- # id: c.id, title: c.title, slug: c.slug, display_date: c.display_date,
- # rank: fragment("ts_rank_cd(search_vector, ?, 32) AS rank", sq.search_query),
- # introduction: fragment("ts_headline('english',CONCAT(introduction,' ',main_body), search_query, 'StartSel=,StopSel=,MinWords=50,MaxWords=100') AS headline"),
- # tags: c.tags
-#}
-
-
-
-  #rank: fragment("ts_rank_cd(search_vector, ?, 32) AS rank", sq.search_query),
-      #introduction: fragment("ts_headline('english',CONCAT(introduction,' ',main_body), search_query, 'StartSel=,StopSel=,MinWords=50,MaxWords=100') AS headline"),
-       # where: fragment("ts_headline( (?), 'StartSel=<em>, StopSel=</em>'), (?), (?) @@ to_tsquery(?)",
-       # ^query, d.tsv_search, ^query) ,
-       #from(u in query,
-       #where: fragment("similarity(?, ?) > ?", u.name, ^search_term, ^limit),
-       #order_by: fragment("similarity(?, ?) DESC", u.name, ^search_term)
-
+  # rank: fragment("ts_rank_cd(search_vector, ?, 32) AS rank", sq.search_query),
+  # introduction: fragment("ts_headline('english',CONCAT(introduction,' ',main_body), search_query, 'StartSel=,StopSel=,MinWords=50,MaxWords=100') AS headline"),
+  # where: fragment("ts_headline( (?), 'StartSel=<em>, StopSel=</em>'), (?), (?) @@ to_tsquery(?)",
+  # ^query, d.tsv_search, ^query) ,
+  # from(u in query,
+  # where: fragment("similarity(?, ?) > ?", u.name, ^search_term, ^limit),
+  # order_by: fragment("similarity(?, ?) DESC", u.name, ^search_term)
 
   #################################
-def search_definition_tsv_search(query) do
-  query =
+  def search_definition_tsv_search(query) do
+    query =
       from(
         d in Definition,
         where: fragment("(?) @@ to_tsquery(?)", d.tsv_search, ^query),
-        #select: {d.name, d.support_definition,table},
+        # select: {d.name, d.support_definition,table},
         limit: 250,
-        #order_by: [asc: d.name, asc: d.table_name]
+        # order_by: [asc: d.name, asc: d.table_name]
         order_by:
-        fragment(
-          "ts_rank((to_tsvector('english', ?)
+          fragment(
+            "ts_rank((to_tsvector('english', ?)
             || to_tsvector(coalesce('english', ?))),
             plainto_tsquery('english', ?)) DESC",
-          d.name,
-          d.table_name,
-          ^query
-        )
+            d.name,
+            d.table_name,
+            ^query
+          )
       )
+  end
 
-end
   #####################
 
   def search_tsv(query, search_term) do
@@ -724,9 +717,9 @@ end
   end
 
   def get_opts_codes(defs_option_id) when is_nil(defs_option_id) do
-      ""
-
+    ""
   end
+
   ############################
 
   def count_options(id) do
@@ -974,7 +967,6 @@ end
         select: d.selection_text
       )
       |> Angio.Repo.one()
-
   end
 
   def get_option_text(_name, code) when is_nil(code) do
@@ -1229,9 +1221,7 @@ end
         where: used.used_yn == true
       )
     )
-
   end
-
 
   ######################################## 3
 end

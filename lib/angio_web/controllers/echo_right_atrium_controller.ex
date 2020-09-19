@@ -21,31 +21,28 @@ defmodule AngioWeb.Echo_right_atriumController do
   end
 
   def create(conn, %{"echo_right_atrium" => echo_right_atrium_params}) do
-
-
     changeset =
-    conn.assigns[:cardiac_echo]
-    |> Ecto.build_assoc(:echo_right_atriums)
-    |> Echo_right_atrium.changeset(echo_right_atrium_params)
+      conn.assigns[:cardiac_echo]
+      |> Ecto.build_assoc(:echo_right_atriums)
+      |> Echo_right_atrium.changeset(echo_right_atrium_params)
 
-  case Repo.insert(changeset) do
-    {:ok, _echo_right_atrium} ->
-      conn
-      |> put_flash(:info, "Echo For LA Record created successfully.")
-      |> redirect(
-        to:
-          Routes.pt_echo_era_path(
-            conn,
-            :index,
-            conn.assigns[:patient],
-            conn.assigns[:cardiac_echo]
-          )
-      )
+    case Repo.insert(changeset) do
+      {:ok, _echo_right_atrium} ->
+        conn
+        |> put_flash(:info, "Echo For LA Record created successfully.")
+        |> redirect(
+          to:
+            Routes.pt_echo_era_path(
+              conn,
+              :index,
+              conn.assigns[:patient],
+              conn.assigns[:cardiac_echo]
+            )
+        )
 
-    {:error, %Ecto.Changeset{} = changeset} ->
-      render(conn, "new.html", changeset: changeset)
+      {:error, %Ecto.Changeset{} = changeset} ->
+        render(conn, "new.html", changeset: changeset)
     end
-
   end
 
   def show(conn, %{"id" => id}) do
@@ -67,14 +64,14 @@ defmodule AngioWeb.Echo_right_atriumController do
         conn
         |> put_flash(:info, "Echo right atrium updated successfully.")
         |> redirect(
-        to:
-          Routes.pt_echo_era_path(
-            conn,
-            :index,
-            conn.assigns[:patient],
-            conn.assigns[:cardiac_echo]
-          )
-      )
+          to:
+            Routes.pt_echo_era_path(
+              conn,
+              :index,
+              conn.assigns[:patient],
+              conn.assigns[:cardiac_echo]
+            )
+        )
 
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "edit.html", echo_right_atrium: echo_right_atrium, changeset: changeset)
@@ -96,6 +93,7 @@ defmodule AngioWeb.Echo_right_atriumController do
           conn.assigns[:cardiac_echo]
         )
     )
-    #|> redirect(to: Routes.echo_right_atrium_path(conn, :index))
+
+    # |> redirect(to: Routes.echo_right_atrium_path(conn, :index))
   end
 end

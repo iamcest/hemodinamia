@@ -156,9 +156,48 @@ defmodule Angio.PersonsTest do
   describe "contacts" do
     alias Angio.Persons.Contact
 
-    @valid_attrs %{pacntcts_address: "some pacntcts_address", pacntcts_fname: "some pacntcts_fname", pacntcts_lname: "some pacntcts_lname", pacntcts_mname: "some pacntcts_mname", pacntcts_notes: "some pacntcts_notes", pacntcts_organization: "some pacntcts_organization", pacntcts_period: "some pacntcts_period", pacntcts_period_end: ~D[2010-04-17], pacntcts_period_start: ~D[2010-04-17], pacntcts_relationship: "some pacntcts_relationship", pacntcts_ssn: "some pacntcts_ssn", pacntcts_telecom: "some pacntcts_telecom"}
-    @update_attrs %{pacntcts_address: "some updated pacntcts_address", pacntcts_fname: "some updated pacntcts_fname", pacntcts_lname: "some updated pacntcts_lname", pacntcts_mname: "some updated pacntcts_mname", pacntcts_notes: "some updated pacntcts_notes", pacntcts_organization: "some updated pacntcts_organization", pacntcts_period: "some updated pacntcts_period", pacntcts_period_end: ~D[2011-05-18], pacntcts_period_start: ~D[2011-05-18], pacntcts_relationship: "some updated pacntcts_relationship", pacntcts_ssn: "some updated pacntcts_ssn", pacntcts_telecom: "some updated pacntcts_telecom"}
-    @invalid_attrs %{pacntcts_address: nil, pacntcts_fname: nil, pacntcts_lname: nil, pacntcts_mname: nil, pacntcts_notes: nil, pacntcts_organization: nil, pacntcts_period: nil, pacntcts_period_end: nil, pacntcts_period_start: nil, pacntcts_relationship: nil, pacntcts_ssn: nil, pacntcts_telecom: nil}
+    @valid_attrs %{
+      pacntcts_address: "some pacntcts_address",
+      pacntcts_fname: "some pacntcts_fname",
+      pacntcts_lname: "some pacntcts_lname",
+      pacntcts_mname: "some pacntcts_mname",
+      pacntcts_notes: "some pacntcts_notes",
+      pacntcts_organization: "some pacntcts_organization",
+      pacntcts_period: "some pacntcts_period",
+      pacntcts_period_end: ~D[2010-04-17],
+      pacntcts_period_start: ~D[2010-04-17],
+      pacntcts_relationship: "some pacntcts_relationship",
+      pacntcts_ssn: "some pacntcts_ssn",
+      pacntcts_telecom: "some pacntcts_telecom"
+    }
+    @update_attrs %{
+      pacntcts_address: "some updated pacntcts_address",
+      pacntcts_fname: "some updated pacntcts_fname",
+      pacntcts_lname: "some updated pacntcts_lname",
+      pacntcts_mname: "some updated pacntcts_mname",
+      pacntcts_notes: "some updated pacntcts_notes",
+      pacntcts_organization: "some updated pacntcts_organization",
+      pacntcts_period: "some updated pacntcts_period",
+      pacntcts_period_end: ~D[2011-05-18],
+      pacntcts_period_start: ~D[2011-05-18],
+      pacntcts_relationship: "some updated pacntcts_relationship",
+      pacntcts_ssn: "some updated pacntcts_ssn",
+      pacntcts_telecom: "some updated pacntcts_telecom"
+    }
+    @invalid_attrs %{
+      pacntcts_address: nil,
+      pacntcts_fname: nil,
+      pacntcts_lname: nil,
+      pacntcts_mname: nil,
+      pacntcts_notes: nil,
+      pacntcts_organization: nil,
+      pacntcts_period: nil,
+      pacntcts_period_end: nil,
+      pacntcts_period_start: nil,
+      pacntcts_relationship: nil,
+      pacntcts_ssn: nil,
+      pacntcts_telecom: nil
+    }
 
     def contact_fixture(attrs \\ %{}) do
       {:ok, contact} =

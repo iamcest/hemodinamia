@@ -9,6 +9,7 @@ defmodule AngioWeb.Pci_procedureController do
   plug(:assign_patient)
 
   plug(:scrub_params, "pci_procedure" when action in [:create, :update])
+
   def index(conn, _params) do
     pci_procedures = Interventions.list_pci_procedures(conn)
     render(conn, "index.html", pci_procedures: pci_procedures)
@@ -20,35 +21,31 @@ defmodule AngioWeb.Pci_procedureController do
   end
 
   def create(conn, %{"pci_procedure" => pci_procedure_params}) do
-################# start##########################
-changeset =
-conn.assigns[:info_coronary]
-|> Ecto.build_assoc(:pci_procedures)
-|> Pci_procedure.changeset(pci_procedure_params)
+    ################# start##########################
+    changeset =
+      conn.assigns[:info_coronary]
+      |> Ecto.build_assoc(:pci_procedures)
+      |> Pci_procedure.changeset(pci_procedure_params)
 
-case Repo.insert(changeset) do
-{:ok, _asd_closure} ->
-  conn
-  |> put_flash(:info, "ASD PCI Procedure Record created successfully.")
-  |> redirect(
-    to:
-      Routes.pt_angio_pci_proc_path(
-        conn,
-        :index,
-        conn.assigns[:patient],
-        conn.assigns[:info_coronary]
-      )
-  )
+    case Repo.insert(changeset) do
+      {:ok, _asd_closure} ->
+        conn
+        |> put_flash(:info, "ASD PCI Procedure Record created successfully.")
+        |> redirect(
+          to:
+            Routes.pt_angio_pci_proc_path(
+              conn,
+              :index,
+              conn.assigns[:patient],
+              conn.assigns[:info_coronary]
+            )
+        )
 
-{:error, %Ecto.Changeset{} = changeset} ->
-  render(conn, "new.html", changeset: changeset)
+      {:error, %Ecto.Changeset{} = changeset} ->
+        render(conn, "new.html", changeset: changeset)
 
-  ##############################
-
+        ##############################
     end
-
-
-
   end
 
   def show(conn, %{"id" => id}) do
@@ -70,15 +67,16 @@ case Repo.insert(changeset) do
         conn
         |> put_flash(:info, "Pci procedure updated successfully.")
         |> redirect(
-    to:
-      Routes.pt_angio_pci_proc_path(
-        conn,
-        :index,
-        conn.assigns[:patient],
-        conn.assigns[:info_coronary]
-      )
-  )
-        #|> redirect(to: Routes.pci_procedure_path(conn, :show, pci_procedure))
+          to:
+            Routes.pt_angio_pci_proc_path(
+              conn,
+              :index,
+              conn.assigns[:patient],
+              conn.assigns[:info_coronary]
+            )
+        )
+
+      # |> redirect(to: Routes.pci_procedure_path(conn, :show, pci_procedure))
 
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "edit.html", pci_procedure: pci_procedure, changeset: changeset)
@@ -100,6 +98,7 @@ case Repo.insert(changeset) do
           conn.assigns[:info_coronary]
         )
     )
-    #|> redirect(to: Routes.pci_procedure_path(conn, :index))
+
+    # |> redirect(to: Routes.pci_procedure_path(conn, :index))
   end
 end

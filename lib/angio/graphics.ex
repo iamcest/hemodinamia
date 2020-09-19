@@ -18,13 +18,12 @@ defmodule Angio.Graphics do
 
   """
   def list_tree_natives(params) do
- _page =
- Tree_natives
- |> Tree_natives.order_by_vessel_id()
- |> Repo.paginate(params)
+    _page =
+      Tree_natives
+      |> Tree_natives.order_by_vessel_id()
+      |> Repo.paginate(params)
 
-  #Repo.all(Tree_natives)
-
+    # Repo.all(Tree_natives)
   end
 
   @doc """

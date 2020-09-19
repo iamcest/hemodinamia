@@ -1,4 +1,4 @@
- defmodule Angio.Caths.Cor_diagram_calcs do
+defmodule Angio.Caths.Cor_diagram_calcs do
   use Ecto.Schema
   # import Ecto.Query
   # alias Angio.Persons.Patient

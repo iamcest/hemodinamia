@@ -25,8 +25,12 @@ defmodule Angio.Persons.Patient do
     has_many(:contacts, Angio.Persons.Contact, foreign_key: :patient_id)
     has_many(:asd_closures_fups, Angio.Followups.Asd_closures_fup, foreign_key: :patient_id)
     has_many(:pci_fups, Angio.Followups.Pci_fup, foreign_key: :patient_id)
-    has_many(:treadmill_exercises, Angio.Ivestigations.Treadmill_exercise, foreign_key: :patient_id)
-    has_many(:cardiac_echoes, Angio.Ivestigations.Cardiac_echo , foreign_key: :patient_id)
+
+    has_many(:treadmill_exercises, Angio.Ivestigations.Treadmill_exercise,
+      foreign_key: :patient_id
+    )
+
+    has_many(:cardiac_echoes, Angio.Ivestigations.Cardiac_echo, foreign_key: :patient_id)
     has_many(:info_coronaries, Angio.Caths.Info_coronary, foreign_key: :patient_id)
   end
 

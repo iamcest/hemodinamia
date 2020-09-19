@@ -129,9 +129,8 @@ defmodule Angio.Interventions do
   """
   def list_coarc_procedures(conn) do
     Repo.all(Ecto.assoc(conn.assigns[:info_coronary], :coarc_procedures))
-    #Repo.all(Coarc_procedure)
+    # Repo.all(Coarc_procedure)
   end
-
 
   @doc """
   Gets a single coarc_procedure.
@@ -223,8 +222,6 @@ defmodule Angio.Interventions do
       )
     )
   end
-
-
 
   alias Angio.Interventions.Coarc_device
 
@@ -329,12 +326,10 @@ defmodule Angio.Interventions do
     Coarc_device.changeset(coarc_device, %{})
   end
 
-def list_coarc_devices(conn) do
+  def list_coarc_devices(conn) do
     Repo.all(Ecto.assoc(conn.assigns[:coarc_procedure], :coarc_devices))
-    #Repo.all(Coarc_device)
+    # Repo.all(Coarc_device)
   end
-
-
 
   alias Angio.Interventions.Av_plasty
 
@@ -432,11 +427,9 @@ def list_coarc_devices(conn) do
     Av_plasty.changeset(av_plasty, %{})
   end
 
-
   def list_av_plasties(conn) do
     Repo.all(Ecto.assoc(conn.assigns[:info_coronary], :av_plasties))
   end
-
 
   @spec count_av_plasties(any) :: any
   def count_av_plasties(id) do
@@ -448,8 +441,6 @@ def list_coarc_devices(conn) do
       )
     )
   end
-
-
 
   alias Angio.Interventions.Av_plasties_inflation
 
@@ -463,8 +454,8 @@ def list_coarc_devices(conn) do
 
   """
   def list_av_plasties_inflations(conn) do
-   # Repo.all(Av_plasties_inflation)
-   Repo.all(Ecto.assoc(conn.assigns[:av_plasty], :av_plasties_inflations))
+    # Repo.all(Av_plasties_inflation)
+    Repo.all(Ecto.assoc(conn.assigns[:av_plasty], :av_plasties_inflations))
   end
 
   @spec count_av_plasties_inflations(any) :: any
@@ -477,8 +468,6 @@ def list_coarc_devices(conn) do
       )
     )
   end
-
-
 
   @doc """
   Gets a single av_plasties_inflation.
@@ -560,11 +549,6 @@ def list_coarc_devices(conn) do
   def change_av_plasties_inflation(%Av_plasties_inflation{} = av_plasties_inflation) do
     Av_plasties_inflation.changeset(av_plasties_inflation, %{})
   end
-
-
-
-
-
 
   alias Angio.Interventions.Pci_procedure
 
@@ -666,7 +650,6 @@ def list_coarc_devices(conn) do
     Repo.all(Ecto.assoc(conn.assigns[:info_coronary], :pci_procedures))
   end
 
-
   @spec count_av_plasties(any) :: any
   def count_pci_procedures(id) do
     Angio.Repo.one(
@@ -690,9 +673,10 @@ def list_coarc_devices(conn) do
 
   """
   def list_pci_lesions(conn) do
-    #Repo.all(Pci_lesion)
+    # Repo.all(Pci_lesion)
     Repo.all(Ecto.assoc(conn.assigns[:pci_procedure], :pci_lesions))
   end
+
   @doc """
   Gets a single pci_lesion.
 
@@ -783,7 +767,4 @@ def list_coarc_devices(conn) do
       )
     )
   end
-
-
-
 end

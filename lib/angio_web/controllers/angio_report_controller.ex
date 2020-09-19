@@ -75,20 +75,17 @@ defmodule AngioWeb.Angio_reportController do
         report_data = Angio.Canons.Report.make_radiations(info_coronary_id, language)
         render(conn, "show.html", report_data: report_data, title: title)
 
-
       "electrocardiogram" ->
         title = "ECG"
 
         report_data = Angio.Canons.Report.make_electrocardiograms(info_coronary_id, language)
         render(conn, "show.html", report_data: report_data, title: title)
 
-
       "infect_history" ->
         title = "Infections"
 
         report_data = Angio.Canons.Report.make_infect_history(info_coronary_id, language)
         render(conn, "show.html", report_data: report_data, title: title)
-
 
       "proc_episode" ->
         title = "Procedure Episode"
@@ -120,20 +117,17 @@ defmodule AngioWeb.Angio_reportController do
         report_data = Angio.Canons.Report.make_lab_admissions(info_coronary_id, language)
         render(conn, "show.html", report_data: report_data, title: title)
 
-
       "cle_cardio" ->
         title = "Clinical Cardio Examination"
 
         report_data = Angio.Canons.Report.make_cle_cardio(info_coronary_id, language)
         render(conn, "show.html", report_data: report_data, title: title)
 
-
       "functional_state" ->
         title = "Functional States"
 
         report_data = Angio.Canons.Report.make_functional_states(info_coronary_id, language)
         render(conn, "show.html", report_data: report_data, title: title)
-
 
       "ext_test" ->
         title = "Exercise Test"

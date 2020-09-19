@@ -1,8 +1,6 @@
 
 NOTES:
 
-
-
    All Key elements are collected from various sources as  Papers,
       Registries(CathPci, Action, Impact, etc), HL7 Version 3.
 

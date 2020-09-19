@@ -81,9 +81,9 @@ is-fullwidth
       <tr>
         <th>#</th>
         <th>Field
-             Field ID -
-             Inserted -
-              Updated </th>
+             - Field ID 
+             - Inserted 
+             - Updated </th>
         <th>Field Is Used?</th>
           <th>Table (Table id) </th>
           <th>Instructions</th>
@@ -153,7 +153,7 @@ is-fullwidth
 
       <span style="color:#8c92ac;">
       <em>
-   <%= inserted_date = "#{definition.inserted_at.year}/
+   <%=  "#{definition.inserted_at.year}/
                 #{definition.inserted_at.month}/
                 #{definition.inserted_at.day}:
                 #{definition.inserted_at.minute}min
@@ -165,7 +165,7 @@ is-fullwidth
     <br/>
     <span style="color:#8c92ac;">
     <em>
- <%= up_date = "#{definition.updated_at.year}/
+ <%= "#{definition.updated_at.year}/
                #{definition.updated_at.month}/
                #{definition.updated_at.day}:
                #{definition.updated_at.minute}min

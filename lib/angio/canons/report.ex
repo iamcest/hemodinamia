@@ -8,7 +8,7 @@ defmodule Angio.Canons.Report do
   alias Angio.Canons.Definition, as: Definition
   alias Angio.Canons.Defs_option, as: Defs_option
 
-  #import Pandex
+  # import Pandex
 
   def make_angio_report_2(id, _language) do
     {:ok, response} =
@@ -584,8 +584,8 @@ defmodule Angio.Canons.Report do
     else
       response
     end
-
   end
+
   def get_all_definition(id, language) do
     {:ok, response} =
       """
@@ -636,7 +636,7 @@ defmodule Angio.Canons.Report do
 
   ##########################
 
-###############################
+  ###############################
   ## Fix the booleans
   def make_patient_report(id, language) do
     # response =
@@ -671,117 +671,115 @@ defmodule Angio.Canons.Report do
 
   def make_ext_report(id, language) do
     {:ok, response} =
-    """
-      query GetPatientReport($id: ID) {
-      getPatientReport(id: $id){
-        patntsSsn
-        patntsLastName
-        treadmillExercises{
-          ext_medications_yn
-          ext_stopping_reason_notes
-          ext_stop_reason_other_yn
-          ext_angina_severe_post_yn
-          ext_cardio_shock_post_yn
-          ext_cpx_vo2_ventilatory_response
-          ext_lab_num
-          ext_heart_rate_at_max_st_depres
-          ext_referral_person
-          ext_st_depres_recovery_location
-          ext_cpr_post_yn
-          ext_compl_other_yn
-          ext_heart_rate_max_predicted
-          ext_vt_post_yn
-          ext_indication_notes
-          ext_afib_pre_yn
-          ext_st_depres_max
-          ext_stages_completed
-          ext_anginal_meds_yn
-          ext_technician_lname
-          ext_t_wave_inversion_pre_yn
-          ext_qrs_morphology_pre
-          ext_bradycardia_post_yn
-          ext_lab_yr
-          ext_main_problem_notes
-          ext_bp_diast_max
-          ext_ecg_normal_pre_yn
-          ext_heart_rate_achieved
-          ext_mets
-          ext_limitations
-          ext_bp_diast_recovery
-          ext_pvc_pre_yn
-          ext_duke_score
-          ext_mi_post_yn
-          ext_doctor_fname
-          ext_need_hold_handrails_yn
-          ext_st_slop_max
-          ext_main_problem_pulm_yn
-          ext_recommendations
-          ext_st_depres_pre_val
-          ext_qwaves_pre
-          ext_cad_pretest_probability
-          ext_complication_yn
-          ext_on_digoxin_yn
-          ext_mortality_cad_risk
-          ext_cpx_age_vo2
-          ext_heart_rate_rest
-          ext_bp_sys_rest
-          ext_st_depres_max_duration
-          ext_compl_notes
-          ext_athens_score
-          ext_on_bblockers_yn
-          ext_main_problem_medical_yn
-          ext_aerobic_capacity_max
-          ext_cpx_ve_vco2_slope
-          ext_borg_scale
-          ext_compl_afib_post_yn
-          ext_dt
-          ext_lab_id
-          ext_stop_reason_angina_yn
-          ext_bp_diast_rest
-          ext_st_depres_recovery_val
-          ext_not_done_reason
-          ext_st_elevation_max
-          ext_lv_hypertrophy_pre_yn
-          ext_limitations_relative
-          ext_cpx_peak_mets
-          ext_main_problem_cardiac_yn
-          ext_bp_sys_recovery
-          ext_technician_fname
-          ext_result_notes
-          ext_indication
-          ext_is_done_yn
-          ext_notes
-          ext_cpx_peak_vo2
-          ext_doctor_lname
-          ext_va_treadmill_score
-          ext_watts
-          ext_bp_sys_max
-          ext_tm
-          ext_consent_yn
-          ext_st_depres_max_location
-          ext_result
-          ext_stop_reason
-          ext_st_depres_pre_yn
-          ext_protocole_used
+      """
+         query GetPatientReport($id: ID) {
+         getPatientReport(id: $id){
+           patntsSsn
+           patntsLastName
+           treadmillExercises{
+             ext_medications_yn
+             ext_stopping_reason_notes
+             ext_stop_reason_other_yn
+             ext_angina_severe_post_yn
+             ext_cardio_shock_post_yn
+             ext_cpx_vo2_ventilatory_response
+             ext_lab_num
+             ext_heart_rate_at_max_st_depres
+             ext_referral_person
+             ext_st_depres_recovery_location
+             ext_cpr_post_yn
+             ext_compl_other_yn
+             ext_heart_rate_max_predicted
+             ext_vt_post_yn
+             ext_indication_notes
+             ext_afib_pre_yn
+             ext_st_depres_max
+             ext_stages_completed
+             ext_anginal_meds_yn
+             ext_technician_lname
+             ext_t_wave_inversion_pre_yn
+             ext_qrs_morphology_pre
+             ext_bradycardia_post_yn
+             ext_lab_yr
+             ext_main_problem_notes
+             ext_bp_diast_max
+             ext_ecg_normal_pre_yn
+             ext_heart_rate_achieved
+             ext_mets
+             ext_limitations
+             ext_bp_diast_recovery
+             ext_pvc_pre_yn
+             ext_duke_score
+             ext_mi_post_yn
+             ext_doctor_fname
+             ext_need_hold_handrails_yn
+             ext_st_slop_max
+             ext_main_problem_pulm_yn
+             ext_recommendations
+             ext_st_depres_pre_val
+             ext_qwaves_pre
+             ext_cad_pretest_probability
+             ext_complication_yn
+             ext_on_digoxin_yn
+             ext_mortality_cad_risk
+             ext_cpx_age_vo2
+             ext_heart_rate_rest
+             ext_bp_sys_rest
+             ext_st_depres_max_duration
+             ext_compl_notes
+             ext_athens_score
+             ext_on_bblockers_yn
+             ext_main_problem_medical_yn
+             ext_aerobic_capacity_max
+             ext_cpx_ve_vco2_slope
+             ext_borg_scale
+             ext_compl_afib_post_yn
+             ext_dt
+             ext_lab_id
+             ext_stop_reason_angina_yn
+             ext_bp_diast_rest
+             ext_st_depres_recovery_val
+             ext_not_done_reason
+             ext_st_elevation_max
+             ext_lv_hypertrophy_pre_yn
+             ext_limitations_relative
+             ext_cpx_peak_mets
+             ext_main_problem_cardiac_yn
+             ext_bp_sys_recovery
+             ext_technician_fname
+             ext_result_notes
+             ext_indication
+             ext_is_done_yn
+             ext_notes
+             ext_cpx_peak_vo2
+             ext_doctor_lname
+             ext_va_treadmill_score
+             ext_watts
+             ext_bp_sys_max
+             ext_tm
+             ext_consent_yn
+             ext_st_depres_max_location
+             ext_result
+             ext_stop_reason
+             ext_st_depres_pre_yn
+             ext_protocole_used
 
-      }
-      }
-    }
+         }
+         }
+       }
 
-   """
-  |> Absinthe.run(AngioWeb.Schema, variables: %{"id" => id})
+      """
+      |> Absinthe.run(AngioWeb.Schema, variables: %{"id" => id})
 
+    list = response[:data]["getPatientReport"]["treadmillExercises"]
 
- list  = response[:data]["getPatientReport"]["treadmillExercises"]
-
-  if list !== nil do
-    manage_elements(list, language)
-  else
-    nothing_found("Functional States")
+    if list !== nil do
+      manage_elements(list, language)
+    else
+      nothing_found("Functional States")
+    end
   end
 
-
-end
   def make_lab_admissions(id, language) do
     {:ok, response} =
       """
@@ -1044,9 +1042,7 @@ end
   def manage_elements(elements, language) do
     for element <- elements do
       data = format_info(element, language)
-       make_page(data)
-
-
+      make_page(data)
     end
   end
 
@@ -1077,10 +1073,10 @@ end
 
     Enum.each(result, fn {field_name, value} ->
       allow_value = allow_value(value)
-     # IO.puts("----field name---value -----------------------")
-     # IO.inspect(field_name)
+      # IO.puts("----field name---value -----------------------")
+      # IO.inspect(field_name)
       IO.inspect(value)
-      #allow_value = allow_value_2.(value)
+      # allow_value = allow_value_2.(value)
       if allow_value !== nil do
         a_value = check_type(allow_value)
 
@@ -1123,17 +1119,13 @@ end
   ###############################
 
   def make_template_2(data) do
+    # Enum.each(data, fn d ->
+    # _d_data = Mustache.render("Hello {{field_name}}, my name is {{sentence}}", d)
+    #
+    #  end)
 
-
-  # Enum.each(data, fn d ->
-  #_d_data = Mustache.render("Hello {{field_name}}, my name is {{sentence}}", d)
-  #
-  #  end)
-
-
-
-    #data_1 = %{subject: "world", name: "John"}
-    #name = Mustache.render("Hello {{subject}}, my name is {{name}}", data_1)
+    # data_1 = %{subject: "world", name: "John"}
+    # name = Mustache.render("Hello {{subject}}, my name is {{name}}", data_1)
     # name = Mustache.render("Hello {{field_name}}, my name is {{sentence}}", data)
     # actual = Mustache.render(template, data)
   end
@@ -1155,7 +1147,7 @@ end
     # }}
     # template = """
 
-  field_format =
+    field_format =
       "<span style='color:#fff'>" <>
         " ( " <>
         field_name <>
@@ -1175,25 +1167,25 @@ end
     # say = %{field_name: field_name, sentence: sentence, value: value}
   end
 
-  allow_value_2 = fn(value) ->
-  cond do
-    value == nil ->
-      nil
+  allow_value_2 = fn value ->
+    cond do
+      value == nil ->
+        nil
 
-    value == true ->
-      value
+      value == true ->
+        value
 
-    value == false ->
-      nil
+      value == false ->
+        nil
 
-    is_list(value) ->
-      List.first(value)
+      is_list(value) ->
+        List.first(value)
 
-    value ->
-      value
+      value ->
+        value
+    end
   end
 
-end
   ###################################
   def allow_value(value) do
     cond do
@@ -1241,8 +1233,8 @@ end
     option_id = get_defs_option_id(value, field_name)
     opts_sentence = get_opts_sentence(option_id, language)
 
-    #$opts_codes = get_opts_codes(definition_id, language, option_id)
-    #opts_codes = Angio.Canons.get_opts_codes(option_id)
+    # $opts_codes = get_opts_codes(definition_id, language, option_id)
+    # opts_codes = Angio.Canons.get_opts_codes(option_id)
 
     defs_options_selection_text = get_defs_options_selection_text(definition_id, value, language)
 
@@ -1327,10 +1319,8 @@ end
     end
   end
 
-
   # end make_patient_report
   ##################
-
 
   def get_definition_id(field_name) do
     query =
@@ -1383,43 +1373,35 @@ end
 
         if opts_language == language do
           _opts_sentence = response[:data]["getReportOptsSentence"]["sentence"]
-
         end
     end
 
     #################
   end
 
+  def get_opts_codes(definition_id, language, option_id) do
+    response = get_all_definition(definition_id, language)
+    defs_options = response["defsOptions"]
 
-  def get_opts_codes(definition_id, language, option_id)  do
-        response = get_all_definition(definition_id, language)
-        defs_options = response["defsOptions"]
+    opts_codes =
+      Enum.map(defs_options, fn x ->
+        codes = Map.get(x, "optsCodes")
 
+        Enum.map(codes, fn a_code ->
+          if a_code["defs_option_id"] == option_id do
+            a_code
+          else
+            ""
+          end
+        end)
+      end)
 
+    ##########################################
 
-        opts_codes = Enum.map(defs_options, fn(x) ->
+    tmp_codes = Angio.Canons.get_opts_codes(option_id)
 
-           codes = Map.get(x, "optsCodes")
-           Enum.map(codes, fn(a_code) ->
-
-                   if a_code["defs_option_id"] == option_id do
-                    a_code
-                   else
-                    ""
-                   end
-          end)
-
-        end
-          )
-
-##########################################
-
-   tmp_codes = Angio.Canons.get_opts_codes(option_id)
-
-
-
-###############################################
-      end
+    ###############################################
+  end
 
   ## function
 
@@ -1439,10 +1421,9 @@ end
     else
       ""
     end
-
-
   end
-###################################
+
+  ###################################
   def get_defs_codes(definition_id, language) do
     response = get_all_definition(definition_id, language)
 
@@ -1546,11 +1527,11 @@ end
     $endif$
     """
 
-    #{:ok, output_html} = Pandex.markdown_to_html(a_res)
-    #IO.puts("=========convert=================")
-    #IO.inspect(output_html)
-    #IO.inspect(res)
-    #IO.inspect(field)
+    # {:ok, output_html} = Pandex.markdown_to_html(a_res)
+    # IO.puts("=========convert=================")
+    # IO.inspect(output_html)
+    # IO.inspect(res)
+    # IO.inspect(field)
   end
 
   ## end module###############

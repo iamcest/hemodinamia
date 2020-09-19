@@ -102,7 +102,7 @@ defmodule AngioWeb.Opts_codeController do
   end
 
   #################
-  #defp assign_definition_1(conn, _opts) do
+  # defp assign_definition_1(conn, _opts) do
   #  case conn.params do
   #    %{"definition_id" => definition_id} ->
   #      case Repo.get(Angio.Canons.Definition, definition_id) do
@@ -113,7 +113,7 @@ defmodule AngioWeb.Opts_codeController do
   #    _ ->
   #      conn
   #  end
-  #end
+  # end
 
   ###########################
 
@@ -160,7 +160,6 @@ defmodule AngioWeb.Opts_codeController do
         conn
     end
   end
-
 
   #################
 end

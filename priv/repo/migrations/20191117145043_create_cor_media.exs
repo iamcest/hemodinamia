@@ -6,7 +6,7 @@ defmodule Angio.Repo.Migrations.CreateCorMedia do
       add(:mime_type, :string)
       add(:mime_name, :string)
       add(:desc, :text)
-      add :reference, :string
+      add(:reference, :string)
       add(:radlex_1, :string)
       add(:radlex_2, :string)
       add(:patient_id, :integer)

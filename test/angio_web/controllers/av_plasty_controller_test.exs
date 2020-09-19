@@ -3,9 +3,48 @@ defmodule AngioWeb.Av_plastyControllerTest do
 
   alias Angio.Interventions
 
-  @create_attrs %{avp_av_ann_diam_us: "some avp_av_ann_diam_us", avp_av_morphology: "some avp_av_morphology", avp_av_reg_degree_pre: "some avp_av_reg_degree_pre", avp_dt: ~D[2010-04-17], avp_notes: "some avp_notes", avp_operator_fname: "some avp_operator_fname", avp_operator_lname: "some avp_operator_lname", avp_operator_mname: "some avp_operator_mname", avp_operator_npi: "some avp_operator_npi", avp_peak_sys_gradient_pre: "some avp_peak_sys_gradient_pre", avp_primary_indication: "some avp_primary_indication", avp_tm: ~T[14:00:00]}
-  @update_attrs %{avp_av_ann_diam_us: "some updated avp_av_ann_diam_us", avp_av_morphology: "some updated avp_av_morphology", avp_av_reg_degree_pre: "some updated avp_av_reg_degree_pre", avp_dt: ~D[2011-05-18], avp_notes: "some updated avp_notes", avp_operator_fname: "some updated avp_operator_fname", avp_operator_lname: "some updated avp_operator_lname", avp_operator_mname: "some updated avp_operator_mname", avp_operator_npi: "some updated avp_operator_npi", avp_peak_sys_gradient_pre: "some updated avp_peak_sys_gradient_pre", avp_primary_indication: "some updated avp_primary_indication", avp_tm: ~T[15:01:01]}
-  @invalid_attrs %{avp_av_ann_diam_us: nil, avp_av_morphology: nil, avp_av_reg_degree_pre: nil, avp_dt: nil, avp_notes: nil, avp_operator_fname: nil, avp_operator_lname: nil, avp_operator_mname: nil, avp_operator_npi: nil, avp_peak_sys_gradient_pre: nil, avp_primary_indication: nil, avp_tm: nil}
+  @create_attrs %{
+    avp_av_ann_diam_us: "some avp_av_ann_diam_us",
+    avp_av_morphology: "some avp_av_morphology",
+    avp_av_reg_degree_pre: "some avp_av_reg_degree_pre",
+    avp_dt: ~D[2010-04-17],
+    avp_notes: "some avp_notes",
+    avp_operator_fname: "some avp_operator_fname",
+    avp_operator_lname: "some avp_operator_lname",
+    avp_operator_mname: "some avp_operator_mname",
+    avp_operator_npi: "some avp_operator_npi",
+    avp_peak_sys_gradient_pre: "some avp_peak_sys_gradient_pre",
+    avp_primary_indication: "some avp_primary_indication",
+    avp_tm: ~T[14:00:00]
+  }
+  @update_attrs %{
+    avp_av_ann_diam_us: "some updated avp_av_ann_diam_us",
+    avp_av_morphology: "some updated avp_av_morphology",
+    avp_av_reg_degree_pre: "some updated avp_av_reg_degree_pre",
+    avp_dt: ~D[2011-05-18],
+    avp_notes: "some updated avp_notes",
+    avp_operator_fname: "some updated avp_operator_fname",
+    avp_operator_lname: "some updated avp_operator_lname",
+    avp_operator_mname: "some updated avp_operator_mname",
+    avp_operator_npi: "some updated avp_operator_npi",
+    avp_peak_sys_gradient_pre: "some updated avp_peak_sys_gradient_pre",
+    avp_primary_indication: "some updated avp_primary_indication",
+    avp_tm: ~T[15:01:01]
+  }
+  @invalid_attrs %{
+    avp_av_ann_diam_us: nil,
+    avp_av_morphology: nil,
+    avp_av_reg_degree_pre: nil,
+    avp_dt: nil,
+    avp_notes: nil,
+    avp_operator_fname: nil,
+    avp_operator_lname: nil,
+    avp_operator_mname: nil,
+    avp_operator_npi: nil,
+    avp_peak_sys_gradient_pre: nil,
+    avp_primary_indication: nil,
+    avp_tm: nil
+  }
 
   def fixture(:av_plasty) do
     {:ok, av_plasty} = Interventions.create_av_plasty(@create_attrs)
@@ -75,9 +114,10 @@ defmodule AngioWeb.Av_plastyControllerTest do
     test "deletes chosen av_plasty", %{conn: conn, av_plasty: av_plasty} do
       conn = delete(conn, Routes.av_plasty_path(conn, :delete, av_plasty))
       assert redirected_to(conn) == Routes.av_plasty_path(conn, :index)
-      assert_error_sent 404, fn ->
+
+      assert_error_sent(404, fn ->
         get(conn, Routes.av_plasty_path(conn, :show, av_plasty))
-      end
+      end)
     end
   end
 

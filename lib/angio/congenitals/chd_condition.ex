@@ -40,10 +40,9 @@ defmodule Angio.Congenitals.Chd_condition do
     ])
     |> validate_required([])
     |> unique_constraint(:info_coronary_id,
-    name: :chd_conditions_info_coronary_id_index,
-    message: "Error: Record For  the table  Congentital Conditions Was already Inserted"
-     )
-
+      name: :chd_conditions_info_coronary_id_index,
+      message: "Error: Record For  the table  Congentital Conditions Was already Inserted"
+    )
 
     # |> validate_required([:chd_heterotaxy_yn, :chd_rubella_prior_yn, :chd_syndrome_noonan_yn, :chd_syndrome_marfan_yn, :chd_syndrome_turner_yn, :chd_syndrome_alagille_yn, :chd_syndrome_digeorge_yn, :chd_syndrome_down_yn, :chd_trisomy_13_yn, :chd_trisomy_18_yn, :chd_syndrome_williams_yn, :chd_diaphragm_hernia_yn, :chd_conditions_notes])
   end

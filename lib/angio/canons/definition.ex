@@ -21,8 +21,8 @@ defmodule Angio.Canons.Definition do
     field(:valid_range, :string)
     field(:vocabulary_en, :string)
     field(:used_yn, :boolean)
-    field(:upper_value,:string)
-    field(:low_value,:string)
+    field(:upper_value, :string)
+    field(:low_value, :string)
 
     timestamps()
     has_many(:defs_sentences, Angio.Canons.Defs_sentence, foreign_key: :definition_id)
@@ -55,7 +55,7 @@ defmodule Angio.Canons.Definition do
       :defs_table_id,
       :used_yn,
       :upper_value,
-      :low_value,
+      :low_value
     ])
     |> validate_required([])
     |> unique_constraint(:name,

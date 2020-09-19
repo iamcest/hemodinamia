@@ -1,0 +1,16 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "watch",
+			"path": "assets/",
+			"problemMatcher": [
+				"$mixCompileError"
+			],
+			"group": "build",
+			"label": "npm: watch - assets",
+			"detail": "webpack --mode development --watch"
+		}
+	]
+}

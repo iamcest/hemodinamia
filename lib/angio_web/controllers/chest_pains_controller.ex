@@ -20,30 +20,31 @@ defmodule AngioWeb.Chest_painsController do
 
   def create(conn, %{"chest_pains" => chest_pains_params}) do
     changeset =
-    conn.assigns[:info_coronary]
-    |> Ecto.build_assoc(:chest_pain)
-    |> Chest_pains.changeset(chest_pains_params)
+      conn.assigns[:info_coronary]
+      |> Ecto.build_assoc(:chest_pain)
+      |> Chest_pains.changeset(chest_pains_params)
+
     # OR?????????
-    #|> Chest_pain.changeset(chest_pains_params)
-  case Repo.insert(changeset) do
-    {:ok, _chest_pain} ->
-      conn
-      |> put_flash(:info, " Record For Evaluation of  Chest Pain created successfully.")
-      |> redirect(
-        to:
-          Routes.pt_angio_chestp_path(
-            conn,
-            :index,
-            conn.assigns[:patient],
-            conn.assigns[:info_coronary]
-          )
-      )
+    # |> Chest_pain.changeset(chest_pains_params)
+    case Repo.insert(changeset) do
+      {:ok, _chest_pain} ->
+        conn
+        |> put_flash(:info, " Record For Evaluation of  Chest Pain created successfully.")
+        |> redirect(
+          to:
+            Routes.pt_angio_chestp_path(
+              conn,
+              :index,
+              conn.assigns[:patient],
+              conn.assigns[:info_coronary]
+            )
+        )
 
-    {:error, %Ecto.Changeset{} = changeset} ->
-      render(conn, "new.html", changeset: changeset)
-
+      {:error, %Ecto.Changeset{} = changeset} ->
+        render(conn, "new.html", changeset: changeset)
     end
- #############
+
+    #############
   end
 
   def show(conn, %{"id" => id}) do
@@ -64,7 +65,6 @@ defmodule AngioWeb.Chest_painsController do
       {:ok, _chest_pains} ->
         conn
         |> put_flash(:info, "Chest pains updated successfully.")
-
         |> redirect(
           to:
             Routes.pt_angio_chestp_path(
@@ -75,7 +75,7 @@ defmodule AngioWeb.Chest_painsController do
             )
         )
 
-        # |> redirect(to: Routes.chest_pains_path(conn, :show, chest_pains))
+      # |> redirect(to: Routes.chest_pains_path(conn, :show, chest_pains))
 
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "edit.html", chest_pains: chest_pains, changeset: changeset)
@@ -89,14 +89,13 @@ defmodule AngioWeb.Chest_painsController do
     conn
     |> put_flash(:info, "Record For Chest pain Evaluation deleted successfully.")
     |> redirect(
-        to:
-          Routes.pt_angio_chestp_path(
-            conn,
-            :index,
-            conn.assigns[:patient],
-            conn.assigns[:info_coronary]
-          )
-      )
+      to:
+        Routes.pt_angio_chestp_path(
+          conn,
+          :index,
+          conn.assigns[:patient],
+          conn.assigns[:info_coronary]
+        )
+    )
   end
-
 end

@@ -9,6 +9,7 @@ defmodule AngioWeb.Pci_lesionController do
   plug(:assign_patient)
   plug(:assign_pci_procedure)
   plug(:scrub_params, "pci_lesion" when action in [:create, :update])
+
   def index(conn, _params) do
     pci_lesions = Interventions.list_pci_lesions(conn)
     render(conn, "index.html", pci_lesions: pci_lesions)
@@ -21,31 +22,30 @@ defmodule AngioWeb.Pci_lesionController do
 
   def create(conn, %{"pci_lesion" => pci_lesion_params}) do
     changeset =
-    conn.assigns[:pci_procedure ]
-    |> Ecto.build_assoc(:pci_lesions)
-    |> Pci_lesion.changeset(pci_lesion_params)
+      conn.assigns[:pci_procedure]
+      |> Ecto.build_assoc(:pci_lesions)
+      |> Pci_lesion.changeset(pci_lesion_params)
 
-  case Repo.insert(changeset) do
-    {:ok, _pci_lesion} ->
-      conn
-      |> put_flash(:info, "AV Inflations Record created successfully.")
-      |> redirect(
-        to:
-          Routes.pt_angio_pci_proc_lesion_path(
-            conn,
-            :index,
-            conn.assigns[:patient],
-            conn.assigns[:info_coronary],
-            conn.assigns[:pci_procedure]
-          )
-      )
+    case Repo.insert(changeset) do
+      {:ok, _pci_lesion} ->
+        conn
+        |> put_flash(:info, "AV Inflations Record created successfully.")
+        |> redirect(
+          to:
+            Routes.pt_angio_pci_proc_lesion_path(
+              conn,
+              :index,
+              conn.assigns[:patient],
+              conn.assigns[:info_coronary],
+              conn.assigns[:pci_procedure]
+            )
+        )
 
-    {:error, %Ecto.Changeset{} = changeset} ->
-      render(conn, "new.html", changeset: changeset)
-
+      {:error, %Ecto.Changeset{} = changeset} ->
+        render(conn, "new.html", changeset: changeset)
     end
-    ###################3
 
+    ################### 3
   end
 
   def show(conn, %{"id" => id}) do
@@ -66,7 +66,7 @@ defmodule AngioWeb.Pci_lesionController do
       {:ok, pci_lesion} ->
         conn
         |> put_flash(:info, "Pci lesion updated successfully.")
-        #|> redirect(to: Routes.pci_lesion_path(conn, :show, pci_lesion))
+        # |> redirect(to: Routes.pci_lesion_path(conn, :show, pci_lesion))
         |> redirect(
           to:
             Routes.pt_angio_pci_proc_lesion_path(
@@ -77,6 +77,7 @@ defmodule AngioWeb.Pci_lesionController do
               conn.assigns[:pci_procedure]
             )
         )
+
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "edit.html", pci_lesion: pci_lesion, changeset: changeset)
     end
@@ -89,15 +90,16 @@ defmodule AngioWeb.Pci_lesionController do
     conn
     |> put_flash(:info, "Pci lesion deleted successfully.")
     |> redirect(
-        to:
-          Routes.pt_angio_pci_proc_lesion_path(
-            conn,
-            :index,
-            conn.assigns[:patient],
-            conn.assigns[:info_coronary],
-            conn.assigns[:pci_procedure]
-          )
-      )
-    #|> redirect(to: Routes.pci_lesion_path(conn, :index))
+      to:
+        Routes.pt_angio_pci_proc_lesion_path(
+          conn,
+          :index,
+          conn.assigns[:patient],
+          conn.assigns[:info_coronary],
+          conn.assigns[:pci_procedure]
+        )
+    )
+
+    # |> redirect(to: Routes.pci_lesion_path(conn, :index))
   end
 end

@@ -3,7 +3,7 @@ defmodule Angio.Repo.Migrations.LventriclesAddNotes do
 
   def change do
     alter table(:lventricles) do
-      add :cath_lv_notes, :text
+      add(:cath_lv_notes, :text)
     end
   end
 end

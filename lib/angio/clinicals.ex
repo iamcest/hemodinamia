@@ -126,9 +126,8 @@ defmodule Angio.Clinicals do
   """
   def list_chest_pain(conn) do
     Repo.all(Ecto.assoc(conn.assigns[:info_coronary], :chest_pain))
-    #Repo.all(Ecto.assoc(conn.assigns[:info_coronary], :cath_clinicals))
-    #Repo.all(Chest_pains)
-
+    # Repo.all(Ecto.assoc(conn.assigns[:info_coronary], :cath_clinicals))
+    # Repo.all(Chest_pains)
   end
 
   @doc """
@@ -221,6 +220,4 @@ defmodule Angio.Clinicals do
       )
     )
   end
-
-
 end

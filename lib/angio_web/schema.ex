@@ -4,7 +4,6 @@ defmodule AngioWeb.Schema do
   import_types(AngioWeb.Schema.Types)
   # import_types(Absinthe.Type.Custom)
 
-
   query do
     field :get_info_coronary, :info_coronary do
       arg(:id, non_null(:id))
@@ -65,14 +64,11 @@ defmodule AngioWeb.Schema do
       resolve(&AngioWeb.PatientResolver.make_patient_overview/3)
     end
 
-   
     #######
 
     mutation do
       field :create_patient, :patient do
       end
-
-
     end
 
     """
@@ -86,13 +82,11 @@ defmodule AngioWeb.Schema do
     }
     }
     """
-
-
-
   end
 
   # query
 
   ######################
 end
+
 # module

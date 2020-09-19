@@ -22,7 +22,6 @@ defmodule AngioWeb.Sats_pressureController do
 
   @spec create(Plug.Conn.t(), map) :: Plug.Conn.t()
   def create(conn, %{"sats_pressure" => sats_pressure_params}) do
-
     changeset =
       conn.assigns[:info_coronary]
       |> Ecto.build_assoc(:sats_pressures)

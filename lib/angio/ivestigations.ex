@@ -17,9 +17,10 @@ defmodule Angio.Ivestigations do
       [%Treadmill_exercise{}, ...]
 
   """
-  #def list_treadmill_exercises do
+
+  # def list_treadmill_exercises do
   #  Repo.all(Treadmill_exercise)
-  #end
+  # end
 
   @doc """
   Gets a single treadmill_exercise.
@@ -117,9 +118,6 @@ defmodule Angio.Ivestigations do
     )
   end
 
-
-
-
   alias Angio.Ivestigations.Cardiac_echo
 
   @doc """
@@ -139,6 +137,7 @@ defmodule Angio.Ivestigations do
     Repo.all(Ecto.assoc(conn.assigns[:patient], :cardiac_echoes))
     # Repo.all(Contact)
   end
+
   @doc """
   Gets a single cardiac_echo.
 
@@ -230,10 +229,6 @@ defmodule Angio.Ivestigations do
     )
   end
 
-
-
-
-
   alias Angio.Ivestigations.Echo_left_atrium
 
   @doc """
@@ -246,9 +241,8 @@ defmodule Angio.Ivestigations do
 
   """
   def list_echo_left_atriums(conn) do
-    #Repo.all(Echo_left_atrium)
+    # Repo.all(Echo_left_atrium)
     Repo.all(Ecto.assoc(conn.assigns[:cardiac_echo], :echo_left_atriums))
-
   end
 
   @doc """
@@ -342,7 +336,6 @@ defmodule Angio.Ivestigations do
     )
   end
 
-
   alias Angio.Ivestigations.Echo_right_atrium
 
   @doc """
@@ -356,7 +349,7 @@ defmodule Angio.Ivestigations do
   """
   def list_echo_right_atriums(conn) do
     Repo.all(Ecto.assoc(conn.assigns[:cardiac_echo], :echo_right_atriums))
-    #Repo.all(Echo_right_atrium)
+    # Repo.all(Echo_right_atrium)
   end
 
   @doc """
@@ -450,11 +443,6 @@ defmodule Angio.Ivestigations do
     )
   end
 
-
-
-
-
-
   alias Angio.Ivestigations.Echo_ventricle_left
 
   @doc """
@@ -468,8 +456,8 @@ defmodule Angio.Ivestigations do
   """
   def list_echo_ventricle_lefts(conn) do
     Repo.all(Ecto.assoc(conn.assigns[:cardiac_echo], :echo_ventricle_lefts))
-   # Repo.all(Ecto.assoc(conn.assigns[:cardiac_echo], :echo_right_atriums))
-    #Repo.all(Echo_ventricle_left)
+    # Repo.all(Ecto.assoc(conn.assigns[:cardiac_echo], :echo_right_atriums))
+    # Repo.all(Echo_ventricle_left)
   end
 
   @doc """
@@ -562,6 +550,4 @@ defmodule Angio.Ivestigations do
       )
     )
   end
-
-
 end

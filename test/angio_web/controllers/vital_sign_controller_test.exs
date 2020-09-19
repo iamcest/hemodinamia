@@ -128,9 +128,9 @@ defmodule AngioWeb.Vital_signControllerTest do
       conn = delete(conn, Routes.vital_sign_path(conn, :delete, vital_sign))
       assert redirected_to(conn) == Routes.vital_sign_path(conn, :index)
 
-      assert_error_sent 404, fn ->
+      assert_error_sent(404, fn ->
         get(conn, Routes.vital_sign_path(conn, :show, vital_sign))
-      end
+      end)
     end
   end
 

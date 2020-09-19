@@ -23,30 +23,29 @@ defmodule AngioWeb.Echo_ventricle_leftController do
   @spec create(Plug.Conn.t(), map) :: Plug.Conn.t()
   def create(conn, %{"echo_ventricle_left" => echo_ventricle_left_params}) do
     changeset =
-    conn.assigns[:cardiac_echo]
-    |> Ecto.build_assoc(:echo_ventricle_lefts)
-    |> Echo_ventricle_left.changeset(echo_ventricle_left_params)
+      conn.assigns[:cardiac_echo]
+      |> Ecto.build_assoc(:echo_ventricle_lefts)
+      |> Echo_ventricle_left.changeset(echo_ventricle_left_params)
 
-  case Repo.insert(changeset) do
-    {:ok, _echo_ventricle_left } ->
-      conn
-      |> put_flash(:info, "Echo For LV Structure  Record created successfully.")
-      |> redirect(
-        to:
-          Routes.pt_echo_elv_path(
-            conn,
-            :index,
-            conn.assigns[:patient],
-            conn.assigns[:cardiac_echo]
-          )
-      )
+    case Repo.insert(changeset) do
+      {:ok, _echo_ventricle_left} ->
+        conn
+        |> put_flash(:info, "Echo For LV Structure  Record created successfully.")
+        |> redirect(
+          to:
+            Routes.pt_echo_elv_path(
+              conn,
+              :index,
+              conn.assigns[:patient],
+              conn.assigns[:cardiac_echo]
+            )
+        )
 
-    {:error, %Ecto.Changeset{} = changeset} ->
-      render(conn, "new.html", changeset: changeset)
+      {:error, %Ecto.Changeset{} = changeset} ->
+        render(conn, "new.html", changeset: changeset)
     end
 
-
- #####################
+    #####################
   end
 
   def show(conn, %{"id" => id}) do
@@ -76,7 +75,8 @@ defmodule AngioWeb.Echo_ventricle_leftController do
               conn.assigns[:cardiac_echo]
             )
         )
-        #|> redirect(to: Routes.echo_ventricle_left_path(conn, :show, echo_ventricle_left))
+
+      # |> redirect(to: Routes.echo_ventricle_left_path(conn, :show, echo_ventricle_left))
 
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "edit.html", echo_ventricle_left: echo_ventricle_left, changeset: changeset)
@@ -98,6 +98,7 @@ defmodule AngioWeb.Echo_ventricle_leftController do
           conn.assigns[:cardiac_echo]
         )
     )
-    #|> redirect(to: Routes.echo_ventricle_left_path(conn, :index))
+
+    # |> redirect(to: Routes.echo_ventricle_left_path(conn, :index))
   end
 end

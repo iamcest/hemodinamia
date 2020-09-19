@@ -106,8 +106,8 @@ defmodule AngioWeb.DefinitionController do
 
   #################################
   def search_support_definitions(conn, %{"input" => input}) do
-    #IO.puts("-------support defini----------------")
-    #IO.inspect(input)
+    # IO.puts("-------support defini----------------")
+    # IO.inspect(input)
 
     input = String.trim(input)
     results = Angio.Canons.search_a_support_definition(input)
@@ -150,35 +150,38 @@ defmodule AngioWeb.DefinitionController do
 
   def search_definitions(
         conn,
-        %{"search_definitions" => %{"query" => query,
-        "selection" => selection}} = params
+        %{"search_definitions" => %{"query" => query, "selection" => selection}} = params
       ) do
     trim_query = String.trim(query)
 
     page =
       Canons.search_definition_from_utilities(trim_query, selection)
       |> Angio.Repo.paginate(page: params["page"], page_size: 500)
-      render(conn, "index.html", definitions: page.entries, page: page)
 
-      #render(conn, "index.html", definitions: page.entries,
-      #page: page,
-      #page_number: page.page_number,
-      #page_size: page.page_size,
-      #total_pages: page.total_pages,
-      #total_entries: page.total_entries)
+    render(conn, "index.html", definitions: page.entries, page: page)
 
-    end
+    # render(conn, "index.html", definitions: page.entries,
+    # page: page,
+    # page_number: page.page_number,
+    # page_size: page.page_size,
+    # total_pages: page.total_pages,
+    # total_entries: page.total_entries)
+  end
 
   ## search
 
-  def search_definitions_tsv(conn, %{"search_definitions" =>
-        %{"query" => query, "selection" => selection}} = params) do
+  def search_definitions_tsv(
+        conn,
+        %{"search_definitions" => %{"query" => query, "selection" => selection}} = params
+      ) do
     trim_query = String.trim(query)
 
     page =
       Canons.search_definition_tsv_search(trim_query)
       |> Angio.Repo.paginate(page: params["page"], page_size: 500)
-      render(conn, "index.html", definitions: page.entries, page: page)
+
+    render(conn, "index.html", definitions: page.entries, page: page)
   end
+
   ##################
 end

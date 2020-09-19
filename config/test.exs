@@ -18,4 +18,3 @@ config :angio, AngioWeb.Endpoint,
 config :logger, level: :warn
 
 config :arc, storage: Arc.Storage.Local
-

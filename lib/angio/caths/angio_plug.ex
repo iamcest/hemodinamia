@@ -10,7 +10,6 @@ defmodule AngioPlug do
   alias Angio.Canons.Country
   alias Angio.Ivestigations.Cardiac_echo
 
-
   plug(:assign_patient)
   plug(:assign_info_coronary)
   plug(:assign_languages)
@@ -20,8 +19,6 @@ defmodule AngioPlug do
   plug(:assign_av_plasty)
   plug(:assign_pci_procedure)
   plug(:assign_cardiac_echo)
-
-
 
   def assign_definition(conn, _opts) do
     case conn.params do
@@ -65,6 +62,7 @@ defmodule AngioPlug do
         conn
     end
   end
+
   #############
   def assign_coarc_procedure(conn, _opts) do
     case conn.params do
@@ -98,28 +96,29 @@ defmodule AngioPlug do
         |> halt()
     end
   end
-#####################
-def assign_pci_procedure(conn, _opts) do
-  case conn.params do
-    %{"pci_procedure_id" => pci_procedure_id} ->
-      case Repo.get(Pci_procedure, pci_procedure_id) do
-        pci_procedure ->
-          assign(conn, :pci_procedure, pci_procedure)
-      end
 
-    _ ->
-      conn
-      |> send_resp(404, "PCI PROCEDURE Record  Not Found")
-      |> halt()
+  #####################
+  def assign_pci_procedure(conn, _opts) do
+    case conn.params do
+      %{"pci_procedure_id" => pci_procedure_id} ->
+        case Repo.get(Pci_procedure, pci_procedure_id) do
+          pci_procedure ->
+            assign(conn, :pci_procedure, pci_procedure)
+        end
+
+      _ ->
+        conn
+        |> send_resp(404, "PCI PROCEDURE Record  Not Found")
+        |> halt()
+    end
   end
-end
 
   #############
   def assign_cardiac_echo(conn, _opts) do
     case conn.params do
       %{"cardiac_echo_id" => cardiac_echo_id} ->
-        case Repo.get(Cardiac_echo,  cardiac_echo_id) do
-          cardiac_echo  ->
+        case Repo.get(Cardiac_echo, cardiac_echo_id) do
+          cardiac_echo ->
             assign(conn, :cardiac_echo, cardiac_echo)
         end
 
@@ -130,7 +129,7 @@ end
     end
   end
 
-    #############
+  #############
 
   def assign_languages(conn, _) do
     case conn.params do

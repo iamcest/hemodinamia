@@ -3,9 +3,42 @@ defmodule AngioWeb.Coarc_deviceControllerTest do
 
   alias Angio.Interventions
 
-  @create_attrs %{coarc_balloon_max_pres: "some coarc_balloon_max_pres", coarc_balloon_outcome: "some coarc_balloon_outcome", coarc_balloon_purpose: "some coarc_balloon_purpose", coarc_device_counter: "some coarc_device_counter", coarc_device_id: "some coarc_device_id", coarc_device_notes: "some coarc_device_notes", coarc_device_type: "some coarc_device_type", coarc_stent_diam_min_assesed_yn: true, coarc_stent_diam_min_post: "some coarc_stent_diam_min_post", coarc_stent_outcome: "some coarc_stent_outcome"}
-  @update_attrs %{coarc_balloon_max_pres: "some updated coarc_balloon_max_pres", coarc_balloon_outcome: "some updated coarc_balloon_outcome", coarc_balloon_purpose: "some updated coarc_balloon_purpose", coarc_device_counter: "some updated coarc_device_counter", coarc_device_id: "some updated coarc_device_id", coarc_device_notes: "some updated coarc_device_notes", coarc_device_type: "some updated coarc_device_type", coarc_stent_diam_min_assesed_yn: false, coarc_stent_diam_min_post: "some updated coarc_stent_diam_min_post", coarc_stent_outcome: "some updated coarc_stent_outcome"}
-  @invalid_attrs %{coarc_balloon_max_pres: nil, coarc_balloon_outcome: nil, coarc_balloon_purpose: nil, coarc_device_counter: nil, coarc_device_id: nil, coarc_device_notes: nil, coarc_device_type: nil, coarc_stent_diam_min_assesed_yn: nil, coarc_stent_diam_min_post: nil, coarc_stent_outcome: nil}
+  @create_attrs %{
+    coarc_balloon_max_pres: "some coarc_balloon_max_pres",
+    coarc_balloon_outcome: "some coarc_balloon_outcome",
+    coarc_balloon_purpose: "some coarc_balloon_purpose",
+    coarc_device_counter: "some coarc_device_counter",
+    coarc_device_id: "some coarc_device_id",
+    coarc_device_notes: "some coarc_device_notes",
+    coarc_device_type: "some coarc_device_type",
+    coarc_stent_diam_min_assesed_yn: true,
+    coarc_stent_diam_min_post: "some coarc_stent_diam_min_post",
+    coarc_stent_outcome: "some coarc_stent_outcome"
+  }
+  @update_attrs %{
+    coarc_balloon_max_pres: "some updated coarc_balloon_max_pres",
+    coarc_balloon_outcome: "some updated coarc_balloon_outcome",
+    coarc_balloon_purpose: "some updated coarc_balloon_purpose",
+    coarc_device_counter: "some updated coarc_device_counter",
+    coarc_device_id: "some updated coarc_device_id",
+    coarc_device_notes: "some updated coarc_device_notes",
+    coarc_device_type: "some updated coarc_device_type",
+    coarc_stent_diam_min_assesed_yn: false,
+    coarc_stent_diam_min_post: "some updated coarc_stent_diam_min_post",
+    coarc_stent_outcome: "some updated coarc_stent_outcome"
+  }
+  @invalid_attrs %{
+    coarc_balloon_max_pres: nil,
+    coarc_balloon_outcome: nil,
+    coarc_balloon_purpose: nil,
+    coarc_device_counter: nil,
+    coarc_device_id: nil,
+    coarc_device_notes: nil,
+    coarc_device_type: nil,
+    coarc_stent_diam_min_assesed_yn: nil,
+    coarc_stent_diam_min_post: nil,
+    coarc_stent_outcome: nil
+  }
 
   def fixture(:coarc_device) do
     {:ok, coarc_device} = Interventions.create_coarc_device(@create_attrs)
@@ -56,7 +89,11 @@ defmodule AngioWeb.Coarc_deviceControllerTest do
     setup [:create_coarc_device]
 
     test "redirects when data is valid", %{conn: conn, coarc_device: coarc_device} do
-      conn = put(conn, Routes.coarc_device_path(conn, :update, coarc_device), coarc_device: @update_attrs)
+      conn =
+        put(conn, Routes.coarc_device_path(conn, :update, coarc_device),
+          coarc_device: @update_attrs
+        )
+
       assert redirected_to(conn) == Routes.coarc_device_path(conn, :show, coarc_device)
 
       conn = get(conn, Routes.coarc_device_path(conn, :show, coarc_device))
@@ -64,7 +101,11 @@ defmodule AngioWeb.Coarc_deviceControllerTest do
     end
 
     test "renders errors when data is invalid", %{conn: conn, coarc_device: coarc_device} do
-      conn = put(conn, Routes.coarc_device_path(conn, :update, coarc_device), coarc_device: @invalid_attrs)
+      conn =
+        put(conn, Routes.coarc_device_path(conn, :update, coarc_device),
+          coarc_device: @invalid_attrs
+        )
+
       assert html_response(conn, 200) =~ "Edit Coarc device"
     end
   end
@@ -75,9 +116,10 @@ defmodule AngioWeb.Coarc_deviceControllerTest do
     test "deletes chosen coarc_device", %{conn: conn, coarc_device: coarc_device} do
       conn = delete(conn, Routes.coarc_device_path(conn, :delete, coarc_device))
       assert redirected_to(conn) == Routes.coarc_device_path(conn, :index)
-      assert_error_sent 404, fn ->
+
+      assert_error_sent(404, fn ->
         get(conn, Routes.coarc_device_path(conn, :show, coarc_device))
-      end
+      end)
     end
   end
 

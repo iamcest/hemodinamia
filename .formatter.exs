@@ -1,7 +1,4 @@
-
 [
-  inputs: [
-    "lib/**/*.{ex,exs}",
-    "mix.exs"
-  ]
+  import_deps: [:phoenix],
+  inputs: ["*.{ex,exs}", "{config,lib}/**/*.{ex,exs}"]
 ]

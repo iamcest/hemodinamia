@@ -24,7 +24,7 @@ defmodule Angio.Repo.Migrations.CreateTablePatients do
       timestamps()
     end
 
-    create index(:patients, [:patnts_last_name])
-    execute "CREATE EXTENSION IF NOT EXISTS \"uuid-ossp\" WITH SCHEMA public;"
+    create(index(:patients, [:patnts_last_name]))
+    execute("CREATE EXTENSION IF NOT EXISTS \"uuid-ossp\" WITH SCHEMA public;")
   end
 end

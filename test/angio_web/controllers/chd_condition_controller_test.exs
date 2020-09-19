@@ -3,9 +3,51 @@ defmodule AngioWeb.Chd_conditionControllerTest do
 
   alias Angio.Congenitals
 
-  @create_attrs %{chd_conditions_notes: "some chd_conditions_notes", chd_diaphragm_hernia_yn: true, chd_heterotaxy_yn: true, chd_rubella_prior_yn: true, chd_syndrome_alagille_yn: true, chd_syndrome_digeorge_yn: true, chd_syndrome_down_yn: true, chd_syndrome_marfan_yn: true, chd_syndrome_noonan_yn: true, chd_syndrome_turner_yn: true, chd_syndrome_williams_yn: true, chd_trisomy_13_yn: true, chd_trisomy_18_yn: true}
-  @update_attrs %{chd_conditions_notes: "some updated chd_conditions_notes", chd_diaphragm_hernia_yn: false, chd_heterotaxy_yn: false, chd_rubella_prior_yn: false, chd_syndrome_alagille_yn: false, chd_syndrome_digeorge_yn: false, chd_syndrome_down_yn: false, chd_syndrome_marfan_yn: false, chd_syndrome_noonan_yn: false, chd_syndrome_turner_yn: false, chd_syndrome_williams_yn: false, chd_trisomy_13_yn: false, chd_trisomy_18_yn: false}
-  @invalid_attrs %{chd_conditions_notes: nil, chd_diaphragm_hernia_yn: nil, chd_heterotaxy_yn: nil, chd_rubella_prior_yn: nil, chd_syndrome_alagille_yn: nil, chd_syndrome_digeorge_yn: nil, chd_syndrome_down_yn: nil, chd_syndrome_marfan_yn: nil, chd_syndrome_noonan_yn: nil, chd_syndrome_turner_yn: nil, chd_syndrome_williams_yn: nil, chd_trisomy_13_yn: nil, chd_trisomy_18_yn: nil}
+  @create_attrs %{
+    chd_conditions_notes: "some chd_conditions_notes",
+    chd_diaphragm_hernia_yn: true,
+    chd_heterotaxy_yn: true,
+    chd_rubella_prior_yn: true,
+    chd_syndrome_alagille_yn: true,
+    chd_syndrome_digeorge_yn: true,
+    chd_syndrome_down_yn: true,
+    chd_syndrome_marfan_yn: true,
+    chd_syndrome_noonan_yn: true,
+    chd_syndrome_turner_yn: true,
+    chd_syndrome_williams_yn: true,
+    chd_trisomy_13_yn: true,
+    chd_trisomy_18_yn: true
+  }
+  @update_attrs %{
+    chd_conditions_notes: "some updated chd_conditions_notes",
+    chd_diaphragm_hernia_yn: false,
+    chd_heterotaxy_yn: false,
+    chd_rubella_prior_yn: false,
+    chd_syndrome_alagille_yn: false,
+    chd_syndrome_digeorge_yn: false,
+    chd_syndrome_down_yn: false,
+    chd_syndrome_marfan_yn: false,
+    chd_syndrome_noonan_yn: false,
+    chd_syndrome_turner_yn: false,
+    chd_syndrome_williams_yn: false,
+    chd_trisomy_13_yn: false,
+    chd_trisomy_18_yn: false
+  }
+  @invalid_attrs %{
+    chd_conditions_notes: nil,
+    chd_diaphragm_hernia_yn: nil,
+    chd_heterotaxy_yn: nil,
+    chd_rubella_prior_yn: nil,
+    chd_syndrome_alagille_yn: nil,
+    chd_syndrome_digeorge_yn: nil,
+    chd_syndrome_down_yn: nil,
+    chd_syndrome_marfan_yn: nil,
+    chd_syndrome_noonan_yn: nil,
+    chd_syndrome_turner_yn: nil,
+    chd_syndrome_williams_yn: nil,
+    chd_trisomy_13_yn: nil,
+    chd_trisomy_18_yn: nil
+  }
 
   def fixture(:chd_condition) do
     {:ok, chd_condition} = Congenitals.create_chd_condition(@create_attrs)
@@ -46,7 +88,10 @@ defmodule AngioWeb.Chd_conditionControllerTest do
   describe "edit chd_condition" do
     setup [:create_chd_condition]
 
-    test "renders form for editing chosen chd_condition", %{conn: conn, chd_condition: chd_condition} do
+    test "renders form for editing chosen chd_condition", %{
+      conn: conn,
+      chd_condition: chd_condition
+    } do
       conn = get(conn, Routes.chd_condition_path(conn, :edit, chd_condition))
       assert html_response(conn, 200) =~ "Edit Chd condition"
     end
@@ -56,7 +101,11 @@ defmodule AngioWeb.Chd_conditionControllerTest do
     setup [:create_chd_condition]
 
     test "redirects when data is valid", %{conn: conn, chd_condition: chd_condition} do
-      conn = put(conn, Routes.chd_condition_path(conn, :update, chd_condition), chd_condition: @update_attrs)
+      conn =
+        put(conn, Routes.chd_condition_path(conn, :update, chd_condition),
+          chd_condition: @update_attrs
+        )
+
       assert redirected_to(conn) == Routes.chd_condition_path(conn, :show, chd_condition)
 
       conn = get(conn, Routes.chd_condition_path(conn, :show, chd_condition))
@@ -64,7 +113,11 @@ defmodule AngioWeb.Chd_conditionControllerTest do
     end
 
     test "renders errors when data is invalid", %{conn: conn, chd_condition: chd_condition} do
-      conn = put(conn, Routes.chd_condition_path(conn, :update, chd_condition), chd_condition: @invalid_attrs)
+      conn =
+        put(conn, Routes.chd_condition_path(conn, :update, chd_condition),
+          chd_condition: @invalid_attrs
+        )
+
       assert html_response(conn, 200) =~ "Edit Chd condition"
     end
   end
@@ -75,9 +128,10 @@ defmodule AngioWeb.Chd_conditionControllerTest do
     test "deletes chosen chd_condition", %{conn: conn, chd_condition: chd_condition} do
       conn = delete(conn, Routes.chd_condition_path(conn, :delete, chd_condition))
       assert redirected_to(conn) == Routes.chd_condition_path(conn, :index)
-      assert_error_sent 404, fn ->
+
+      assert_error_sent(404, fn ->
         get(conn, Routes.chd_condition_path(conn, :show, chd_condition))
-      end
+      end)
     end
   end
 

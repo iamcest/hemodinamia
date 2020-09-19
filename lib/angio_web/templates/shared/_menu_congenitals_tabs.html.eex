@@ -1,9 +1,11 @@
 <% alias Angio.Congenitals%>
 <% alias Angio.Caths%>
 <% alias Angio.Interventions %>
-<span class="button  is-primary is-medium is-fullwidth ">
-    Congenital Records 
- </span>
+<div class="menu_tabs congenital">
+  Congenital Records 
+ </div>
+
+
 <div class="menu_info_coronary_tabs">
   <div class="tabs is-small is-centered">
     <ul>

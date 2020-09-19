@@ -3,7 +3,7 @@ defmodule Angio.Repo.Migrations.AlterVitalSignsAddPatienetId do
 
   def change do
     alter table(:vital_signs) do
-      add :patient_id, :integer
+      add(:patient_id, :integer)
     end
   end
 end

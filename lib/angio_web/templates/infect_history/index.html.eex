@@ -50,12 +50,12 @@
 
       <td>
         <%= link "Show", to: Routes.pt_angio_infh_path(@conn, :show, @patient, @info_coronary, infect_history),
-                    class: "button  is-primary is-small" %>
+                    class: "button  is-primary is-rounded is-small is-fullwidth" %>
          </td>
 
          <td>
          <%= link "Edit", to: Routes.pt_angio_infh_path(@conn, :edit, @patient,
-        @info_coronary, infect_history), class: "button is-primary is-small" %>
+        @info_coronary, infect_history), class: "button is-primary is-rounded  is-small is-fullwidth" %>
           </td>
 
 
@@ -63,7 +63,7 @@
           <td>
           <%= link "Delete", to: Routes.pt_angio_infh_path(@conn, :delete,
         @patient, @info_coronary, infect_history), method: :delete, data: [confirm:
-        "Are you sure?"], class: "button is-small is-danger" %>
+        "Are you sure?"], class: "button is-small is-rounded is-danger is-fullwidth" %>
       </td>
     </tr>
 <% end %>

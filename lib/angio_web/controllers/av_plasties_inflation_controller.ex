@@ -23,31 +23,30 @@ defmodule AngioWeb.Av_plasties_inflationController do
 
   def create(conn, %{"av_plasties_inflation" => av_plasties_inflation_params}) do
     changeset =
-    conn.assigns[:av_plasty]
-    |> Ecto.build_assoc(:av_plasties_inflations)
-    |> Av_plasties_inflation.changeset(av_plasties_inflation_params)
+      conn.assigns[:av_plasty]
+      |> Ecto.build_assoc(:av_plasties_inflations)
+      |> Av_plasties_inflation.changeset(av_plasties_inflation_params)
 
-  case Repo.insert(changeset) do
-    {:ok, _coarc_device} ->
-      conn
-      |> put_flash(:info, "AV Inflations Record created successfully.")
-      |> redirect(
-        to:
-          Routes.pt_angio_avp_avpi_path(
-            conn,
-            :index,
-            conn.assigns[:patient],
-            conn.assigns[:info_coronary],
-            conn.assigns[:av_plasty]
-          )
-      )
+    case Repo.insert(changeset) do
+      {:ok, _coarc_device} ->
+        conn
+        |> put_flash(:info, "AV Inflations Record created successfully.")
+        |> redirect(
+          to:
+            Routes.pt_angio_avp_avpi_path(
+              conn,
+              :index,
+              conn.assigns[:patient],
+              conn.assigns[:info_coronary],
+              conn.assigns[:av_plasty]
+            )
+        )
 
-    {:error, %Ecto.Changeset{} = changeset} ->
-      render(conn, "new.html", changeset: changeset)
-
+      {:error, %Ecto.Changeset{} = changeset} ->
+        render(conn, "new.html", changeset: changeset)
     end
 
- ##########################
+    ##########################
   end
 
   def show(conn, %{"id" => id}) do
@@ -64,7 +63,10 @@ defmodule AngioWeb.Av_plasties_inflationController do
   def update(conn, %{"id" => id, "av_plasties_inflation" => av_plasties_inflation_params}) do
     av_plasties_inflation = Interventions.get_av_plasties_inflation!(id)
 
-    case Interventions.update_av_plasties_inflation(av_plasties_inflation, av_plasties_inflation_params) do
+    case Interventions.update_av_plasties_inflation(
+           av_plasties_inflation,
+           av_plasties_inflation_params
+         ) do
       {:ok, _av_plasties_inflation} ->
         conn
         |> put_flash(:info, "Av plasties inflation updated successfully.")
@@ -78,16 +80,22 @@ defmodule AngioWeb.Av_plasties_inflationController do
               conn.assigns[:av_plasty]
             )
         )
-        #|> redirect(to: Routes.av_plasties_inflation_path(conn, :show, av_plasties_inflation))
+
+      # |> redirect(to: Routes.av_plasties_inflation_path(conn, :show, av_plasties_inflation))
 
       {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, "edit.html", av_plasties_inflation: av_plasties_inflation, changeset: changeset)
+        render(conn, "edit.html",
+          av_plasties_inflation: av_plasties_inflation,
+          changeset: changeset
+        )
     end
   end
 
   def delete(conn, %{"id" => id}) do
     av_plasties_inflation = Interventions.get_av_plasties_inflation!(id)
-    {:ok, _av_plasties_inflation} = Interventions.delete_av_plasties_inflation(av_plasties_inflation)
+
+    {:ok, _av_plasties_inflation} =
+      Interventions.delete_av_plasties_inflation(av_plasties_inflation)
 
     conn
     |> put_flash(:info, "Av plasties inflation deleted successfully.")
@@ -101,6 +109,7 @@ defmodule AngioWeb.Av_plasties_inflationController do
           conn.assigns[:av_plasty]
         )
     )
-    #|> redirect(to: Routes.av_plasties_inflation_path(conn, :index))
+
+    # |> redirect(to: Routes.av_plasties_inflation_path(conn, :index))
   end
 end

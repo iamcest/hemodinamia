@@ -103,9 +103,9 @@ defmodule AngioWeb.Cor_mediaControllerTest do
       conn = delete(conn, Routes.cor_media_path(conn, :delete, cor_media))
       assert redirected_to(conn) == Routes.cor_media_path(conn, :index)
 
-      assert_error_sent 404, fn ->
+      assert_error_sent(404, fn ->
         get(conn, Routes.cor_media_path(conn, :show, cor_media))
-      end
+      end)
     end
   end
 

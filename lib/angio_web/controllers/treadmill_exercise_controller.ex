@@ -20,32 +20,29 @@ defmodule AngioWeb.Treadmill_exerciseController do
 
   @spec create(Plug.Conn.t(), map) :: Plug.Conn.t()
   def create(conn, %{"treadmill_exercise" => treadmill_exercise_params}) do
-
     changeset =
-    conn.assigns[:patient]
-    |> Ecto.build_assoc(:treadmill_exercises)
-    |> Treadmill_exercise.changeset(treadmill_exercise_params)
+      conn.assigns[:patient]
+      |> Ecto.build_assoc(:treadmill_exercises)
+      |> Treadmill_exercise.changeset(treadmill_exercise_params)
 
-  case Repo.insert(changeset) do
-    {:ok, _treadmill_exercise} ->
-      conn
-      |> put_flash(:info, "Treadmill Exercise Record created successfully.")
-      |> redirect(
-        to:
-          Routes.pt_ext_path(
-            conn,
-            :index,
-            conn.assigns[:patient]
-          )
-      )
+    case Repo.insert(changeset) do
+      {:ok, _treadmill_exercise} ->
+        conn
+        |> put_flash(:info, "Treadmill Exercise Record created successfully.")
+        |> redirect(
+          to:
+            Routes.pt_ext_path(
+              conn,
+              :index,
+              conn.assigns[:patient]
+            )
+        )
 
-    {:error, %Ecto.Changeset{} = changeset} ->
-      render(conn, "new.html", changeset: changeset)
-  end
+      {:error, %Ecto.Changeset{} = changeset} ->
+        render(conn, "new.html", changeset: changeset)
+    end
 
-
-    #########################3
-
+    ######################### 3
   end
 
   def show(conn, %{"id" => id}) do
@@ -67,14 +64,15 @@ defmodule AngioWeb.Treadmill_exerciseController do
         conn
         |> put_flash(:info, "Treadmill exercise updated successfully.")
         |> redirect(
-        to:
-          Routes.pt_ext_path(
-            conn,
-            :index,
-            conn.assigns[:patient]
-          )
-      )
-        #|> redirect(to: Routes.treadmill_exercise_path(conn, :show, treadmill_exercise))
+          to:
+            Routes.pt_ext_path(
+              conn,
+              :index,
+              conn.assigns[:patient]
+            )
+        )
+
+      # |> redirect(to: Routes.treadmill_exercise_path(conn, :show, treadmill_exercise))
 
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "edit.html", treadmill_exercise: treadmill_exercise, changeset: changeset)
@@ -88,13 +86,14 @@ defmodule AngioWeb.Treadmill_exerciseController do
     conn
     |> put_flash(:info, "Treadmill exercise deleted successfully.")
     |> redirect(
-        to:
-          Routes.pt_ext_path(
-            conn,
-            :index,
-            conn.assigns[:patient]
-          )
-      )
-    #|> redirect(to: Routes.treadmill_exercise_path(conn, :index))
+      to:
+        Routes.pt_ext_path(
+          conn,
+          :index,
+          conn.assigns[:patient]
+        )
+    )
+
+    # |> redirect(to: Routes.treadmill_exercise_path(conn, :index))
   end
 end

@@ -1,7 +1,8 @@
 
-div class="title_form">
+<div class="title_form">
 <h5 class="title is-5 has-text-centered">Show EXT Record</h5>
 </div>
+
 <div class="element_info">
     Patient :
     <%= render  AngioWeb.SharedView, "_patient_info.html", patient: @patient %>

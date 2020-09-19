@@ -147,9 +147,42 @@ defmodule Angio.AssementsTest do
   describe "functional_states" do
     alias Angio.Assements.Functional_state
 
-    @valid_attrs %{funs_basic_adl: "some funs_basic_adl", funs_cognition_level: "some funs_cognition_level", funs_frailty_scale_csha: "some funs_frailty_scale_csha", funs_katz_index: "some funs_katz_index", funs_kccq12_score: "some funs_kccq12_score", funs_notes: "some funs_notes", funs_status_assess_dt: ~D[2010-04-17], funs_stroke_rankin_dt: ~D[2010-04-17], funs_stroke_rankin_modified: "some funs_stroke_rankin_modified", funs_walking_level: "some funs_walking_level"}
-    @update_attrs %{funs_basic_adl: "some updated funs_basic_adl", funs_cognition_level: "some updated funs_cognition_level", funs_frailty_scale_csha: "some updated funs_frailty_scale_csha", funs_katz_index: "some updated funs_katz_index", funs_kccq12_score: "some updated funs_kccq12_score", funs_notes: "some updated funs_notes", funs_status_assess_dt: ~D[2011-05-18], funs_stroke_rankin_dt: ~D[2011-05-18], funs_stroke_rankin_modified: "some updated funs_stroke_rankin_modified", funs_walking_level: "some updated funs_walking_level"}
-    @invalid_attrs %{funs_basic_adl: nil, funs_cognition_level: nil, funs_frailty_scale_csha: nil, funs_katz_index: nil, funs_kccq12_score: nil, funs_notes: nil, funs_status_assess_dt: nil, funs_stroke_rankin_dt: nil, funs_stroke_rankin_modified: nil, funs_walking_level: nil}
+    @valid_attrs %{
+      funs_basic_adl: "some funs_basic_adl",
+      funs_cognition_level: "some funs_cognition_level",
+      funs_frailty_scale_csha: "some funs_frailty_scale_csha",
+      funs_katz_index: "some funs_katz_index",
+      funs_kccq12_score: "some funs_kccq12_score",
+      funs_notes: "some funs_notes",
+      funs_status_assess_dt: ~D[2010-04-17],
+      funs_stroke_rankin_dt: ~D[2010-04-17],
+      funs_stroke_rankin_modified: "some funs_stroke_rankin_modified",
+      funs_walking_level: "some funs_walking_level"
+    }
+    @update_attrs %{
+      funs_basic_adl: "some updated funs_basic_adl",
+      funs_cognition_level: "some updated funs_cognition_level",
+      funs_frailty_scale_csha: "some updated funs_frailty_scale_csha",
+      funs_katz_index: "some updated funs_katz_index",
+      funs_kccq12_score: "some updated funs_kccq12_score",
+      funs_notes: "some updated funs_notes",
+      funs_status_assess_dt: ~D[2011-05-18],
+      funs_stroke_rankin_dt: ~D[2011-05-18],
+      funs_stroke_rankin_modified: "some updated funs_stroke_rankin_modified",
+      funs_walking_level: "some updated funs_walking_level"
+    }
+    @invalid_attrs %{
+      funs_basic_adl: nil,
+      funs_cognition_level: nil,
+      funs_frailty_scale_csha: nil,
+      funs_katz_index: nil,
+      funs_kccq12_score: nil,
+      funs_notes: nil,
+      funs_status_assess_dt: nil,
+      funs_stroke_rankin_dt: nil,
+      funs_stroke_rankin_modified: nil,
+      funs_walking_level: nil
+    }
 
     def functional_state_fixture(attrs \\ %{}) do
       {:ok, functional_state} =
@@ -171,7 +204,9 @@ defmodule Angio.AssementsTest do
     end
 
     test "create_functional_state/1 with valid data creates a functional_state" do
-      assert {:ok, %Functional_state{} = functional_state} = Assements.create_functional_state(@valid_attrs)
+      assert {:ok, %Functional_state{} = functional_state} =
+               Assements.create_functional_state(@valid_attrs)
+
       assert functional_state.funs_basic_adl == "some funs_basic_adl"
       assert functional_state.funs_cognition_level == "some funs_cognition_level"
       assert functional_state.funs_frailty_scale_csha == "some funs_frailty_scale_csha"
@@ -190,7 +225,10 @@ defmodule Angio.AssementsTest do
 
     test "update_functional_state/2 with valid data updates the functional_state" do
       functional_state = functional_state_fixture()
-      assert {:ok, %Functional_state{} = functional_state} = Assements.update_functional_state(functional_state, @update_attrs)
+
+      assert {:ok, %Functional_state{} = functional_state} =
+               Assements.update_functional_state(functional_state, @update_attrs)
+
       assert functional_state.funs_basic_adl == "some updated funs_basic_adl"
       assert functional_state.funs_cognition_level == "some updated funs_cognition_level"
       assert functional_state.funs_frailty_scale_csha == "some updated funs_frailty_scale_csha"
@@ -199,20 +237,29 @@ defmodule Angio.AssementsTest do
       assert functional_state.funs_notes == "some updated funs_notes"
       assert functional_state.funs_status_assess_dt == ~D[2011-05-18]
       assert functional_state.funs_stroke_rankin_dt == ~D[2011-05-18]
-      assert functional_state.funs_stroke_rankin_modified == "some updated funs_stroke_rankin_modified"
+
+      assert functional_state.funs_stroke_rankin_modified ==
+               "some updated funs_stroke_rankin_modified"
+
       assert functional_state.funs_walking_level == "some updated funs_walking_level"
     end
 
     test "update_functional_state/2 with invalid data returns error changeset" do
       functional_state = functional_state_fixture()
-      assert {:error, %Ecto.Changeset{}} = Assements.update_functional_state(functional_state, @invalid_attrs)
+
+      assert {:error, %Ecto.Changeset{}} =
+               Assements.update_functional_state(functional_state, @invalid_attrs)
+
       assert functional_state == Assements.get_functional_state!(functional_state.id)
     end
 
     test "delete_functional_state/1 deletes the functional_state" do
       functional_state = functional_state_fixture()
       assert {:ok, %Functional_state{}} = Assements.delete_functional_state(functional_state)
-      assert_raise Ecto.NoResultsError, fn -> Assements.get_functional_state!(functional_state.id) end
+
+      assert_raise Ecto.NoResultsError, fn ->
+        Assements.get_functional_state!(functional_state.id)
+      end
     end
 
     test "change_functional_state/1 returns a functional_state changeset" do
@@ -224,9 +271,150 @@ defmodule Angio.AssementsTest do
   describe "clinical_exams_cardios" do
     alias Angio.Assements.Clinical_exam_cardio
 
-    @valid_attrs %{cle_sounds_notes: "some cle_sounds_notes", cle_av_ejection_click_yn: true, cle_pv_sys_murmur_grade: "some cle_pv_sys_murmur_grade", cle_complain_chest_pain_yn: true, cle_tm: ~T[14:00:00], cle_tr_notes: "some cle_tr_notes", cle_complain_palpitations_yn: true, cle_heart_sounds_abnormal_yn: true, cle_s2_heart_sound: "some cle_s2_heart_sound", cle_temperature: "some cle_temperature", cle_mv_abnormal_yn: true, cle_s3_heart_sound_yn: true, cle_continuous_murmur: "some cle_continuous_murmur", cle_s1_heart_sound: "some cle_s1_heart_sound", cle_tr_sys_murmur_yn: true, cle_pv_dias_murmur_yn: true, cle_complain_dysp: "some cle_complain_dysp", cle_dt: ~D[2010-04-17], cle_mv_dias_murmur_grade: "some cle_mv_dias_murmur_grade", cle_av_sys_murmur_yn: true, cle_tr_dias_murmur_yn: true, cle_mv_sys_murmur_grade: "some cle_mv_sys_murmur_grade", cle_av_abnormal_yn: true, cle_mv_sys_murmur_yn: true, cle_av_dias_murmur_grade: "some cle_av_dias_murmur_grade", cle_av_prosthetic_sound_yn: true, cle_mv_dias_murmur_yn: true, cle_pv_notes: "some cle_pv_notes", cle_complain_cough_yn: true, cle_murmur_notes: "some cle_murmur_notes", cle_s4_heart_sound_yn: true, cle_av_sys_murmur_grade: "some cle_av_sys_murmur_grade", cle_mv_opening_snap_yn: true, cle_complain_yn: true, cle_av_dias_murmur_yn: true, cle_no_ejection_click_yn: true, cle_complain_notes: "some cle_complain_notes", cle_mv_notes: "some cle_mv_notes", cle_pv_sys_murmur_yn: true, cle_pv_abnormal_yn: true, cle_peri_rub_yn: true, cle_killip_class: "some cle_killip_class", cle_normal_yn: true, cle_pv_dias_murmur_grade: "some cle_pv_dias_murmur_grade", cle_tr_abnormal_yn: true, cle_mv_prosthetic_sound_yn: true}
-    @update_attrs %{cle_sounds_notes: "some updated cle_sounds_notes", cle_av_ejection_click_yn: false, cle_pv_sys_murmur_grade: "some updated cle_pv_sys_murmur_grade", cle_complain_chest_pain_yn: false, cle_tm: ~T[15:01:01], cle_tr_notes: "some updated cle_tr_notes", cle_complain_palpitations_yn: false, cle_heart_sounds_abnormal_yn: false, cle_s2_heart_sound: "some updated cle_s2_heart_sound", cle_temperature: "some updated cle_temperature", cle_mv_abnormal_yn: false, cle_s3_heart_sound_yn: false, cle_continuous_murmur: "some updated cle_continuous_murmur", cle_s1_heart_sound: "some updated cle_s1_heart_sound", cle_tr_sys_murmur_yn: false, cle_pv_dias_murmur_yn: false, cle_complain_dysp: "some updated cle_complain_dysp", cle_dt: ~D[2011-05-18], cle_mv_dias_murmur_grade: "some updated cle_mv_dias_murmur_grade", cle_av_sys_murmur_yn: false, cle_tr_dias_murmur_yn: false, cle_mv_sys_murmur_grade: "some updated cle_mv_sys_murmur_grade", cle_av_abnormal_yn: false, cle_mv_sys_murmur_yn: false, cle_av_dias_murmur_grade: "some updated cle_av_dias_murmur_grade", cle_av_prosthetic_sound_yn: false, cle_mv_dias_murmur_yn: false, cle_pv_notes: "some updated cle_pv_notes", cle_complain_cough_yn: false, cle_murmur_notes: "some updated cle_murmur_notes", cle_s4_heart_sound_yn: false, cle_av_sys_murmur_grade: "some updated cle_av_sys_murmur_grade", cle_mv_opening_snap_yn: false, cle_complain_yn: false, cle_av_dias_murmur_yn: false, cle_no_ejection_click_yn: false, cle_complain_notes: "some updated cle_complain_notes", cle_mv_notes: "some updated cle_mv_notes", cle_pv_sys_murmur_yn: false, cle_pv_abnormal_yn: false, cle_peri_rub_yn: false, cle_killip_class: "some updated cle_killip_class", cle_normal_yn: false, cle_pv_dias_murmur_grade: "some updated cle_pv_dias_murmur_grade", cle_tr_abnormal_yn: false, cle_mv_prosthetic_sound_yn: false}
-    @invalid_attrs %{cle_sounds_notes: nil, cle_av_ejection_click_yn: nil, cle_pv_sys_murmur_grade: nil, cle_complain_chest_pain_yn: nil, cle_tm: nil, cle_tr_notes: nil, cle_complain_palpitations_yn: nil, cle_heart_sounds_abnormal_yn: nil, cle_s2_heart_sound: nil, cle_temperature: nil, cle_mv_abnormal_yn: nil, cle_s3_heart_sound_yn: nil, cle_continuous_murmur: nil, cle_s1_heart_sound: nil, cle_tr_sys_murmur_yn: nil, cle_pv_dias_murmur_yn: nil, cle_complain_dysp: nil, cle_dt: nil, cle_mv_dias_murmur_grade: nil, cle_av_sys_murmur_yn: nil, cle_tr_dias_murmur_yn: nil, cle_mv_sys_murmur_grade: nil, cle_av_abnormal_yn: nil, cle_mv_sys_murmur_yn: nil, cle_av_dias_murmur_grade: nil, cle_av_prosthetic_sound_yn: nil, cle_mv_dias_murmur_yn: nil, cle_pv_notes: nil, cle_complain_cough_yn: nil, cle_murmur_notes: nil, cle_s4_heart_sound_yn: nil, cle_av_sys_murmur_grade: nil, cle_mv_opening_snap_yn: nil, cle_complain_yn: nil, cle_av_dias_murmur_yn: nil, cle_no_ejection_click_yn: nil, cle_complain_notes: nil, cle_mv_notes: nil, cle_pv_sys_murmur_yn: nil, cle_pv_abnormal_yn: nil, cle_peri_rub_yn: nil, cle_killip_class: nil, cle_normal_yn: nil, cle_pv_dias_murmur_grade: nil, cle_tr_abnormal_yn: nil, cle_mv_prosthetic_sound_yn: nil}
+    @valid_attrs %{
+      cle_sounds_notes: "some cle_sounds_notes",
+      cle_av_ejection_click_yn: true,
+      cle_pv_sys_murmur_grade: "some cle_pv_sys_murmur_grade",
+      cle_complain_chest_pain_yn: true,
+      cle_tm: ~T[14:00:00],
+      cle_tr_notes: "some cle_tr_notes",
+      cle_complain_palpitations_yn: true,
+      cle_heart_sounds_abnormal_yn: true,
+      cle_s2_heart_sound: "some cle_s2_heart_sound",
+      cle_temperature: "some cle_temperature",
+      cle_mv_abnormal_yn: true,
+      cle_s3_heart_sound_yn: true,
+      cle_continuous_murmur: "some cle_continuous_murmur",
+      cle_s1_heart_sound: "some cle_s1_heart_sound",
+      cle_tr_sys_murmur_yn: true,
+      cle_pv_dias_murmur_yn: true,
+      cle_complain_dysp: "some cle_complain_dysp",
+      cle_dt: ~D[2010-04-17],
+      cle_mv_dias_murmur_grade: "some cle_mv_dias_murmur_grade",
+      cle_av_sys_murmur_yn: true,
+      cle_tr_dias_murmur_yn: true,
+      cle_mv_sys_murmur_grade: "some cle_mv_sys_murmur_grade",
+      cle_av_abnormal_yn: true,
+      cle_mv_sys_murmur_yn: true,
+      cle_av_dias_murmur_grade: "some cle_av_dias_murmur_grade",
+      cle_av_prosthetic_sound_yn: true,
+      cle_mv_dias_murmur_yn: true,
+      cle_pv_notes: "some cle_pv_notes",
+      cle_complain_cough_yn: true,
+      cle_murmur_notes: "some cle_murmur_notes",
+      cle_s4_heart_sound_yn: true,
+      cle_av_sys_murmur_grade: "some cle_av_sys_murmur_grade",
+      cle_mv_opening_snap_yn: true,
+      cle_complain_yn: true,
+      cle_av_dias_murmur_yn: true,
+      cle_no_ejection_click_yn: true,
+      cle_complain_notes: "some cle_complain_notes",
+      cle_mv_notes: "some cle_mv_notes",
+      cle_pv_sys_murmur_yn: true,
+      cle_pv_abnormal_yn: true,
+      cle_peri_rub_yn: true,
+      cle_killip_class: "some cle_killip_class",
+      cle_normal_yn: true,
+      cle_pv_dias_murmur_grade: "some cle_pv_dias_murmur_grade",
+      cle_tr_abnormal_yn: true,
+      cle_mv_prosthetic_sound_yn: true
+    }
+    @update_attrs %{
+      cle_sounds_notes: "some updated cle_sounds_notes",
+      cle_av_ejection_click_yn: false,
+      cle_pv_sys_murmur_grade: "some updated cle_pv_sys_murmur_grade",
+      cle_complain_chest_pain_yn: false,
+      cle_tm: ~T[15:01:01],
+      cle_tr_notes: "some updated cle_tr_notes",
+      cle_complain_palpitations_yn: false,
+      cle_heart_sounds_abnormal_yn: false,
+      cle_s2_heart_sound: "some updated cle_s2_heart_sound",
+      cle_temperature: "some updated cle_temperature",
+      cle_mv_abnormal_yn: false,
+      cle_s3_heart_sound_yn: false,
+      cle_continuous_murmur: "some updated cle_continuous_murmur",
+      cle_s1_heart_sound: "some updated cle_s1_heart_sound",
+      cle_tr_sys_murmur_yn: false,
+      cle_pv_dias_murmur_yn: false,
+      cle_complain_dysp: "some updated cle_complain_dysp",
+      cle_dt: ~D[2011-05-18],
+      cle_mv_dias_murmur_grade: "some updated cle_mv_dias_murmur_grade",
+      cle_av_sys_murmur_yn: false,
+      cle_tr_dias_murmur_yn: false,
+      cle_mv_sys_murmur_grade: "some updated cle_mv_sys_murmur_grade",
+      cle_av_abnormal_yn: false,
+      cle_mv_sys_murmur_yn: false,
+      cle_av_dias_murmur_grade: "some updated cle_av_dias_murmur_grade",
+      cle_av_prosthetic_sound_yn: false,
+      cle_mv_dias_murmur_yn: false,
+      cle_pv_notes: "some updated cle_pv_notes",
+      cle_complain_cough_yn: false,
+      cle_murmur_notes: "some updated cle_murmur_notes",
+      cle_s4_heart_sound_yn: false,
+      cle_av_sys_murmur_grade: "some updated cle_av_sys_murmur_grade",
+      cle_mv_opening_snap_yn: false,
+      cle_complain_yn: false,
+      cle_av_dias_murmur_yn: false,
+      cle_no_ejection_click_yn: false,
+      cle_complain_notes: "some updated cle_complain_notes",
+      cle_mv_notes: "some updated cle_mv_notes",
+      cle_pv_sys_murmur_yn: false,
+      cle_pv_abnormal_yn: false,
+      cle_peri_rub_yn: false,
+      cle_killip_class: "some updated cle_killip_class",
+      cle_normal_yn: false,
+      cle_pv_dias_murmur_grade: "some updated cle_pv_dias_murmur_grade",
+      cle_tr_abnormal_yn: false,
+      cle_mv_prosthetic_sound_yn: false
+    }
+    @invalid_attrs %{
+      cle_sounds_notes: nil,
+      cle_av_ejection_click_yn: nil,
+      cle_pv_sys_murmur_grade: nil,
+      cle_complain_chest_pain_yn: nil,
+      cle_tm: nil,
+      cle_tr_notes: nil,
+      cle_complain_palpitations_yn: nil,
+      cle_heart_sounds_abnormal_yn: nil,
+      cle_s2_heart_sound: nil,
+      cle_temperature: nil,
+      cle_mv_abnormal_yn: nil,
+      cle_s3_heart_sound_yn: nil,
+      cle_continuous_murmur: nil,
+      cle_s1_heart_sound: nil,
+      cle_tr_sys_murmur_yn: nil,
+      cle_pv_dias_murmur_yn: nil,
+      cle_complain_dysp: nil,
+      cle_dt: nil,
+      cle_mv_dias_murmur_grade: nil,
+      cle_av_sys_murmur_yn: nil,
+      cle_tr_dias_murmur_yn: nil,
+      cle_mv_sys_murmur_grade: nil,
+      cle_av_abnormal_yn: nil,
+      cle_mv_sys_murmur_yn: nil,
+      cle_av_dias_murmur_grade: nil,
+      cle_av_prosthetic_sound_yn: nil,
+      cle_mv_dias_murmur_yn: nil,
+      cle_pv_notes: nil,
+      cle_complain_cough_yn: nil,
+      cle_murmur_notes: nil,
+      cle_s4_heart_sound_yn: nil,
+      cle_av_sys_murmur_grade: nil,
+      cle_mv_opening_snap_yn: nil,
+      cle_complain_yn: nil,
+      cle_av_dias_murmur_yn: nil,
+      cle_no_ejection_click_yn: nil,
+      cle_complain_notes: nil,
+      cle_mv_notes: nil,
+      cle_pv_sys_murmur_yn: nil,
+      cle_pv_abnormal_yn: nil,
+      cle_peri_rub_yn: nil,
+      cle_killip_class: nil,
+      cle_normal_yn: nil,
+      cle_pv_dias_murmur_grade: nil,
+      cle_tr_abnormal_yn: nil,
+      cle_mv_prosthetic_sound_yn: nil
+    }
 
     def clinical_exam_cardio_fixture(attrs \\ %{}) do
       {:ok, clinical_exam_cardio} =
@@ -248,7 +436,9 @@ defmodule Angio.AssementsTest do
     end
 
     test "create_clinical_exam_cardio/1 with valid data creates a clinical_exam_cardio" do
-      assert {:ok, %Clinical_exam_cardio{} = clinical_exam_cardio} = Assements.create_clinical_exam_cardio(@valid_attrs)
+      assert {:ok, %Clinical_exam_cardio{} = clinical_exam_cardio} =
+               Assements.create_clinical_exam_cardio(@valid_attrs)
+
       assert clinical_exam_cardio.cle_mv_prosthetic_sound_yn == true
       assert clinical_exam_cardio.cle_tr_abnormal_yn == true
       assert clinical_exam_cardio.cle_pv_dias_murmur_grade == "some cle_pv_dias_murmur_grade"
@@ -303,10 +493,16 @@ defmodule Angio.AssementsTest do
 
     test "update_clinical_exam_cardio/2 with valid data updates the clinical_exam_cardio" do
       clinical_exam_cardio = clinical_exam_cardio_fixture()
-      assert {:ok, %Clinical_exam_cardio{} = clinical_exam_cardio} = Assements.update_clinical_exam_cardio(clinical_exam_cardio, @update_attrs)
+
+      assert {:ok, %Clinical_exam_cardio{} = clinical_exam_cardio} =
+               Assements.update_clinical_exam_cardio(clinical_exam_cardio, @update_attrs)
+
       assert clinical_exam_cardio.cle_mv_prosthetic_sound_yn == false
       assert clinical_exam_cardio.cle_tr_abnormal_yn == false
-      assert clinical_exam_cardio.cle_pv_dias_murmur_grade == "some updated cle_pv_dias_murmur_grade"
+
+      assert clinical_exam_cardio.cle_pv_dias_murmur_grade ==
+               "some updated cle_pv_dias_murmur_grade"
+
       assert clinical_exam_cardio.cle_normal_yn == false
       assert clinical_exam_cardio.cle_killip_class == "some updated cle_killip_class"
       assert clinical_exam_cardio.cle_peri_rub_yn == false
@@ -318,20 +514,32 @@ defmodule Angio.AssementsTest do
       assert clinical_exam_cardio.cle_av_dias_murmur_yn == false
       assert clinical_exam_cardio.cle_complain_yn == false
       assert clinical_exam_cardio.cle_mv_opening_snap_yn == false
-      assert clinical_exam_cardio.cle_av_sys_murmur_grade == "some updated cle_av_sys_murmur_grade"
+
+      assert clinical_exam_cardio.cle_av_sys_murmur_grade ==
+               "some updated cle_av_sys_murmur_grade"
+
       assert clinical_exam_cardio.cle_s4_heart_sound_yn == false
       assert clinical_exam_cardio.cle_murmur_notes == "some updated cle_murmur_notes"
       assert clinical_exam_cardio.cle_complain_cough_yn == false
       assert clinical_exam_cardio.cle_pv_notes == "some updated cle_pv_notes"
       assert clinical_exam_cardio.cle_mv_dias_murmur_yn == false
       assert clinical_exam_cardio.cle_av_prosthetic_sound_yn == false
-      assert clinical_exam_cardio.cle_av_dias_murmur_grade == "some updated cle_av_dias_murmur_grade"
+
+      assert clinical_exam_cardio.cle_av_dias_murmur_grade ==
+               "some updated cle_av_dias_murmur_grade"
+
       assert clinical_exam_cardio.cle_mv_sys_murmur_yn == false
       assert clinical_exam_cardio.cle_av_abnormal_yn == false
-      assert clinical_exam_cardio.cle_mv_sys_murmur_grade == "some updated cle_mv_sys_murmur_grade"
+
+      assert clinical_exam_cardio.cle_mv_sys_murmur_grade ==
+               "some updated cle_mv_sys_murmur_grade"
+
       assert clinical_exam_cardio.cle_tr_dias_murmur_yn == false
       assert clinical_exam_cardio.cle_av_sys_murmur_yn == false
-      assert clinical_exam_cardio.cle_mv_dias_murmur_grade == "some updated cle_mv_dias_murmur_grade"
+
+      assert clinical_exam_cardio.cle_mv_dias_murmur_grade ==
+               "some updated cle_mv_dias_murmur_grade"
+
       assert clinical_exam_cardio.cle_dt == ~D[2011-05-18]
       assert clinical_exam_cardio.cle_complain_dysp == "some updated cle_complain_dysp"
       assert clinical_exam_cardio.cle_pv_dias_murmur_yn == false
@@ -347,21 +555,32 @@ defmodule Angio.AssementsTest do
       assert clinical_exam_cardio.cle_tr_notes == "some updated cle_tr_notes"
       assert clinical_exam_cardio.cle_tm == ~T[15:01:01]
       assert clinical_exam_cardio.cle_complain_chest_pain_yn == false
-      assert clinical_exam_cardio.cle_pv_sys_murmur_grade == "some updated cle_pv_sys_murmur_grade"
+
+      assert clinical_exam_cardio.cle_pv_sys_murmur_grade ==
+               "some updated cle_pv_sys_murmur_grade"
+
       assert clinical_exam_cardio.cle_av_ejection_click_yn == false
       assert clinical_exam_cardio.cle_sounds_notes == "some updated cle_sounds_notes"
     end
 
     test "update_clinical_exam_cardio/2 with invalid data returns error changeset" do
       clinical_exam_cardio = clinical_exam_cardio_fixture()
-      assert {:error, %Ecto.Changeset{}} = Assements.update_clinical_exam_cardio(clinical_exam_cardio, @invalid_attrs)
+
+      assert {:error, %Ecto.Changeset{}} =
+               Assements.update_clinical_exam_cardio(clinical_exam_cardio, @invalid_attrs)
+
       assert clinical_exam_cardio == Assements.get_clinical_exam_cardio!(clinical_exam_cardio.id)
     end
 
     test "delete_clinical_exam_cardio/1 deletes the clinical_exam_cardio" do
       clinical_exam_cardio = clinical_exam_cardio_fixture()
-      assert {:ok, %Clinical_exam_cardio{}} = Assements.delete_clinical_exam_cardio(clinical_exam_cardio)
-      assert_raise Ecto.NoResultsError, fn -> Assements.get_clinical_exam_cardio!(clinical_exam_cardio.id) end
+
+      assert {:ok, %Clinical_exam_cardio{}} =
+               Assements.delete_clinical_exam_cardio(clinical_exam_cardio)
+
+      assert_raise Ecto.NoResultsError, fn ->
+        Assements.get_clinical_exam_cardio!(clinical_exam_cardio.id)
+      end
     end
 
     test "change_clinical_exam_cardio/1 returns a clinical_exam_cardio changeset" do

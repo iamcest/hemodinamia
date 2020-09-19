@@ -18,7 +18,7 @@ defmodule Angio.Followups do
 
   """
   def list_asd_closures_fups(conn) do
-    #Repo.all(Asd_closures_fup)
+    # Repo.all(Asd_closures_fup)
     Repo.all(Ecto.assoc(conn.assigns[:patient], :asd_closures_fups))
   end
 
@@ -103,17 +103,15 @@ defmodule Angio.Followups do
     Asd_closures_fup.changeset(asd_closures_fup, %{})
   end
 
-
- def count_asd_closures_fups(patient_id) do
-  Angio.Repo.one(
-    from(
-      asdclf in Asd_closures_fup,
-      select: count(asdclf.id),
-      where: asdclf.patient_id == ^patient_id
+  def count_asd_closures_fups(patient_id) do
+    Angio.Repo.one(
+      from(
+        asdclf in Asd_closures_fup,
+        select: count(asdclf.id),
+        where: asdclf.patient_id == ^patient_id
+      )
     )
-  )
- end
-
+  end
 
   alias Angio.Followups.Pci_fup
 
@@ -212,8 +210,6 @@ defmodule Angio.Followups do
     Repo.all(Ecto.assoc(conn.assigns[:patient], :pci_fups))
   end
 
-
-
   def count_pci_fups(patient_id) do
     Angio.Repo.one(
       from(
@@ -222,6 +218,5 @@ defmodule Angio.Followups do
         where: pfup.patient_id == ^patient_id
       )
     )
-   end
-
   end
+end

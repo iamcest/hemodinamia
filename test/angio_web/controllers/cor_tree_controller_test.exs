@@ -76,9 +76,9 @@ defmodule AngioWeb.Cor_treeControllerTest do
       conn = delete(conn, Routes.cor_tree_path(conn, :delete, cor_tree))
       assert redirected_to(conn) == Routes.cor_tree_path(conn, :index)
 
-      assert_error_sent 404, fn ->
+      assert_error_sent(404, fn ->
         get(conn, Routes.cor_tree_path(conn, :show, cor_tree))
-      end
+      end)
     end
   end
 

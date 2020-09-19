@@ -3,9 +3,72 @@ defmodule AngioWeb.Proc_historyControllerTest do
 
   alias Angio.Histories
 
-  @create_attrs %{"": ~D[2010-04-17], proc_epis_request_dt: "some proc_epis_request_dt", proch_cabg_prior_dt: ~D[2010-04-17], proch_cabg_prior_yn: true, proch_cardiac_surg_other_yn: true, proch_carotid_surg_stent_dt: ~D[2010-04-17], proch_carotid_surg_stent_yn: true, proch_notes: "some proch_notes", proch_pacer_prior_dt: ~D[2010-04-17], proch_pacer_prior_yn: true, proch_pci_prior_dt: ~D[2010-04-17], proch_pci_prior_yn: true, proch_prior_icd_dt: ~D[2010-04-17], proch_prior_icd_yn: true, proch_prior_rv_biopsy_dt: ~D[2010-04-17], proch_prior_rv_biopsy_yn: true, proch_prior_valve_interv_dt: ~D[2010-04-17], proch_prior_valve_interv_yn: true, proch_transplant_prior_dt: ~D[2010-04-17], proch_transplant_prior_yn: true}
-  @update_attrs %{"": ~D[2011-05-18], proc_epis_request_dt: "some updated proc_epis_request_dt", proch_cabg_prior_dt: ~D[2011-05-18], proch_cabg_prior_yn: false, proch_cardiac_surg_other_yn: false, proch_carotid_surg_stent_dt: ~D[2011-05-18], proch_carotid_surg_stent_yn: false, proch_notes: "some updated proch_notes", proch_pacer_prior_dt: ~D[2011-05-18], proch_pacer_prior_yn: false, proch_pci_prior_dt: ~D[2011-05-18], proch_pci_prior_yn: false, proch_prior_icd_dt: ~D[2011-05-18], proch_prior_icd_yn: false, proch_prior_rv_biopsy_dt: ~D[2011-05-18], proch_prior_rv_biopsy_yn: false, proch_prior_valve_interv_dt: ~D[2011-05-18], proch_prior_valve_interv_yn: false, proch_transplant_prior_dt: ~D[2011-05-18], proch_transplant_prior_yn: false}
-  @invalid_attrs %{"": nil, proc_epis_request_dt: nil, proch_cabg_prior_dt: nil, proch_cabg_prior_yn: nil, proch_cardiac_surg_other_yn: nil, proch_carotid_surg_stent_dt: nil, proch_carotid_surg_stent_yn: nil, proch_notes: nil, proch_pacer_prior_dt: nil, proch_pacer_prior_yn: nil, proch_pci_prior_dt: nil, proch_pci_prior_yn: nil, proch_prior_icd_dt: nil, proch_prior_icd_yn: nil, proch_prior_rv_biopsy_dt: nil, proch_prior_rv_biopsy_yn: nil, proch_prior_valve_interv_dt: nil, proch_prior_valve_interv_yn: nil, proch_transplant_prior_dt: nil, proch_transplant_prior_yn: nil}
+  @create_attrs %{
+    "": ~D[2010-04-17],
+    proc_epis_request_dt: "some proc_epis_request_dt",
+    proch_cabg_prior_dt: ~D[2010-04-17],
+    proch_cabg_prior_yn: true,
+    proch_cardiac_surg_other_yn: true,
+    proch_carotid_surg_stent_dt: ~D[2010-04-17],
+    proch_carotid_surg_stent_yn: true,
+    proch_notes: "some proch_notes",
+    proch_pacer_prior_dt: ~D[2010-04-17],
+    proch_pacer_prior_yn: true,
+    proch_pci_prior_dt: ~D[2010-04-17],
+    proch_pci_prior_yn: true,
+    proch_prior_icd_dt: ~D[2010-04-17],
+    proch_prior_icd_yn: true,
+    proch_prior_rv_biopsy_dt: ~D[2010-04-17],
+    proch_prior_rv_biopsy_yn: true,
+    proch_prior_valve_interv_dt: ~D[2010-04-17],
+    proch_prior_valve_interv_yn: true,
+    proch_transplant_prior_dt: ~D[2010-04-17],
+    proch_transplant_prior_yn: true
+  }
+  @update_attrs %{
+    "": ~D[2011-05-18],
+    proc_epis_request_dt: "some updated proc_epis_request_dt",
+    proch_cabg_prior_dt: ~D[2011-05-18],
+    proch_cabg_prior_yn: false,
+    proch_cardiac_surg_other_yn: false,
+    proch_carotid_surg_stent_dt: ~D[2011-05-18],
+    proch_carotid_surg_stent_yn: false,
+    proch_notes: "some updated proch_notes",
+    proch_pacer_prior_dt: ~D[2011-05-18],
+    proch_pacer_prior_yn: false,
+    proch_pci_prior_dt: ~D[2011-05-18],
+    proch_pci_prior_yn: false,
+    proch_prior_icd_dt: ~D[2011-05-18],
+    proch_prior_icd_yn: false,
+    proch_prior_rv_biopsy_dt: ~D[2011-05-18],
+    proch_prior_rv_biopsy_yn: false,
+    proch_prior_valve_interv_dt: ~D[2011-05-18],
+    proch_prior_valve_interv_yn: false,
+    proch_transplant_prior_dt: ~D[2011-05-18],
+    proch_transplant_prior_yn: false
+  }
+  @invalid_attrs %{
+    "": nil,
+    proc_epis_request_dt: nil,
+    proch_cabg_prior_dt: nil,
+    proch_cabg_prior_yn: nil,
+    proch_cardiac_surg_other_yn: nil,
+    proch_carotid_surg_stent_dt: nil,
+    proch_carotid_surg_stent_yn: nil,
+    proch_notes: nil,
+    proch_pacer_prior_dt: nil,
+    proch_pacer_prior_yn: nil,
+    proch_pci_prior_dt: nil,
+    proch_pci_prior_yn: nil,
+    proch_prior_icd_dt: nil,
+    proch_prior_icd_yn: nil,
+    proch_prior_rv_biopsy_dt: nil,
+    proch_prior_rv_biopsy_yn: nil,
+    proch_prior_valve_interv_dt: nil,
+    proch_prior_valve_interv_yn: nil,
+    proch_transplant_prior_dt: nil,
+    proch_transplant_prior_yn: nil
+  }
 
   def fixture(:proc_history) do
     {:ok, proc_history} = Histories.create_proc_history(@create_attrs)
@@ -56,7 +119,11 @@ defmodule AngioWeb.Proc_historyControllerTest do
     setup [:create_proc_history]
 
     test "redirects when data is valid", %{conn: conn, proc_history: proc_history} do
-      conn = put(conn, Routes.proc_history_path(conn, :update, proc_history), proc_history: @update_attrs)
+      conn =
+        put(conn, Routes.proc_history_path(conn, :update, proc_history),
+          proc_history: @update_attrs
+        )
+
       assert redirected_to(conn) == Routes.proc_history_path(conn, :show, proc_history)
 
       conn = get(conn, Routes.proc_history_path(conn, :show, proc_history))
@@ -64,7 +131,11 @@ defmodule AngioWeb.Proc_historyControllerTest do
     end
 
     test "renders errors when data is invalid", %{conn: conn, proc_history: proc_history} do
-      conn = put(conn, Routes.proc_history_path(conn, :update, proc_history), proc_history: @invalid_attrs)
+      conn =
+        put(conn, Routes.proc_history_path(conn, :update, proc_history),
+          proc_history: @invalid_attrs
+        )
+
       assert html_response(conn, 200) =~ "Edit Proc history"
     end
   end
@@ -75,9 +146,10 @@ defmodule AngioWeb.Proc_historyControllerTest do
     test "deletes chosen proc_history", %{conn: conn, proc_history: proc_history} do
       conn = delete(conn, Routes.proc_history_path(conn, :delete, proc_history))
       assert redirected_to(conn) == Routes.proc_history_path(conn, :index)
-      assert_error_sent 404, fn ->
+
+      assert_error_sent(404, fn ->
         get(conn, Routes.proc_history_path(conn, :show, proc_history))
-      end
+      end)
     end
   end
 

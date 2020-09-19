@@ -11,8 +11,9 @@ defmodule AngioWeb.LoincController do
     page =
       Loinc
       |> order_by(asc: :long_common_name)
-      #|> Angio.Medcodes.count_loincs()
+      # |> Angio.Medcodes.count_loincs()
       |> Angio.Repo.paginate(page: params["page"], page_size: 40)
+
     render(conn, "index.html", loincs: page.entries, page: page)
   end
 
@@ -66,19 +67,18 @@ defmodule AngioWeb.LoincController do
     |> put_flash(:info, "Loinc deleted successfully.")
     |> redirect(to: Routes.loinc_path(conn, :index))
   end
-#######################3
-  def search_loincs(conn, %{"search_loincs" =>
-  %{"query" => query, "selection" => selection}} = params) do
 
+  ####################### 3
+  def search_loincs(
+        conn,
+        %{"search_loincs" => %{"query" => query, "selection" => selection}} = params
+      ) do
     trim_query = String.trim(query)
+
     page =
-    Medcodes.search_loincs(trim_query, selection)
-    |> Angio.Repo.paginate(page: params["page"], page_size: 500)
+      Medcodes.search_loincs(trim_query, selection)
+      |> Angio.Repo.paginate(page: params["page"], page_size: 500)
+
     render(conn, "index.html", loincs: page.entries, page: page)
-
-
   end
-
-
-
 end

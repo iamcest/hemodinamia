@@ -180,9 +180,9 @@ defmodule AngioWeb.Cath_clinicalControllerTest do
       conn = delete(conn, Routes.cath_clinical_path(conn, :delete, cath_clinical))
       assert redirected_to(conn) == Routes.cath_clinical_path(conn, :index)
 
-      assert_error_sent 404, fn ->
+      assert_error_sent(404, fn ->
         get(conn, Routes.cath_clinical_path(conn, :show, cath_clinical))
-      end
+      end)
     end
   end
 

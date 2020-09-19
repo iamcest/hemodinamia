@@ -21,30 +21,30 @@ defmodule AngioWeb.Av_plastyController do
   end
 
   def create(conn, %{"av_plasty" => av_plasty_params}) do
-
     changeset =
-    conn.assigns[:info_coronary]
-    |> Ecto.build_assoc(:av_plasties)
-    |> Av_plasty.changeset(av_plasty_params)
+      conn.assigns[:info_coronary]
+      |> Ecto.build_assoc(:av_plasties)
+      |> Av_plasty.changeset(av_plasty_params)
 
-  case Repo.insert(changeset) do
-    {:ok, _av_plasty} ->
-      conn
-      |> put_flash(:info, "Coarctation Porocedure Created successfully.")
-      |> redirect(
-        to:
-          Routes.pt_angio_avp_path(
-            conn,
-            :index,
-            conn.assigns[:patient],
-            conn.assigns[:info_coronary]
-          )
-      )
+    case Repo.insert(changeset) do
+      {:ok, _av_plasty} ->
+        conn
+        |> put_flash(:info, "Coarctation Porocedure Created successfully.")
+        |> redirect(
+          to:
+            Routes.pt_angio_avp_path(
+              conn,
+              :index,
+              conn.assigns[:patient],
+              conn.assigns[:info_coronary]
+            )
+        )
 
-    {:error, %Ecto.Changeset{} = changeset} ->
-      render(conn, "new.html", changeset: changeset)
-  end
-###########3
+      {:error, %Ecto.Changeset{} = changeset} ->
+        render(conn, "new.html", changeset: changeset)
+    end
+
+    ########### 3
   end
 
   def show(conn, %{"id" => id}) do
@@ -65,16 +65,17 @@ defmodule AngioWeb.Av_plastyController do
       {:ok, _av_plasty} ->
         conn
         |> put_flash(:info, "Av plasty updated successfully.")
-       # |> redirect(to: Routes.av_plasty_path(conn, :show, av_plasty))
-       |> redirect(
-        to:
-          Routes.pt_angio_avp_path(
-            conn,
-            :index,
-            conn.assigns[:patient],
-            conn.assigns[:info_coronary]
-          )
-      )
+        # |> redirect(to: Routes.av_plasty_path(conn, :show, av_plasty))
+        |> redirect(
+          to:
+            Routes.pt_angio_avp_path(
+              conn,
+              :index,
+              conn.assigns[:patient],
+              conn.assigns[:info_coronary]
+            )
+        )
+
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "edit.html", av_plasty: av_plasty, changeset: changeset)
     end
@@ -87,14 +88,15 @@ defmodule AngioWeb.Av_plastyController do
     conn
     |> put_flash(:info, "Av plasty deleted successfully.")
     |> redirect(
-        to:
-          Routes.pt_angio_avp_path(
-            conn,
-            :index,
-            conn.assigns[:patient],
-            conn.assigns[:info_coronary]
-          )
-      )
-    #|> redirect(to: Routes.av_plasty_path(conn, :index))
+      to:
+        Routes.pt_angio_avp_path(
+          conn,
+          :index,
+          conn.assigns[:patient],
+          conn.assigns[:info_coronary]
+        )
+    )
+
+    # |> redirect(to: Routes.av_plasty_path(conn, :index))
   end
 end

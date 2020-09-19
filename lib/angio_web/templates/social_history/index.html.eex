@@ -51,21 +51,22 @@
       <td><%= raw(Query.convert_select_key( s_status, v_status)) %></td>
 
       <td>
-         <%= link "Show", to: Routes.pt_angio_socialh_path(@conn, :show, @patient, @info_coronary, social_history), class: "button          is-primary is-small" %>
+         <%= link "Show", to: Routes.pt_angio_socialh_path(@conn, :show, @patient, @info_coronary, social_history),
+         class: "button is-primary is-rounded is-small" %>
 
 
 
       </td>
       <td>
            <%= link "Edit", to: Routes.pt_angio_socialh_path(@conn, :edit, @patient,
-        @info_coronary, social_history), class: "button is-primary is-small" %>
+        @info_coronary, social_history), class: "button is-primary is-rounded is-small" %>
 
         <%#= link "Edit", to: Routes.social_history_path(@conn, :edit, social_history) %>
       </td>
       <td>
            <%= link "Delete", to: Routes.pt_angio_socialh_path(@conn, :delete,
         @patient, @info_coronary, social_history), method: :delete, data: [confirm:
-        "Are you sure?"], class: "button is-small is-danger" %>
+        "Are you sure?"], class: "button is-small is-rounded is-danger" %>
 
         <%#= link "Delete", to: Routes.social_history_path(@conn, :delete, social_history), method: :delete, data: [confirm: "Are you sure?"] %>
       </td>

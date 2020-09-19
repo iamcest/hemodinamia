@@ -21,32 +21,30 @@ defmodule AngioWeb.Coarc_procedureController do
   end
 
   def create(conn, %{"coarc_procedure" => coarc_procedure_params}) do
-
     changeset =
-    conn.assigns[:info_coronary]
-    |> Ecto.build_assoc(:coarc_procedures)
-    |> Coarc_procedure.changeset(coarc_procedure_params)
+      conn.assigns[:info_coronary]
+      |> Ecto.build_assoc(:coarc_procedures)
+      |> Coarc_procedure.changeset(coarc_procedure_params)
 
-  case Repo.insert(changeset) do
-    {:ok, _coarc_procedure} ->
-      conn
-      |> put_flash(:info, "Coarctation Porocedure Created successfully.")
-      |> redirect(
-        to:
-          Routes.pt_angio_coarc_path(
-            conn,
-            :index,
-            conn.assigns[:patient],
-            conn.assigns[:info_coronary]
-          )
-      )
+    case Repo.insert(changeset) do
+      {:ok, _coarc_procedure} ->
+        conn
+        |> put_flash(:info, "Coarctation Porocedure Created successfully.")
+        |> redirect(
+          to:
+            Routes.pt_angio_coarc_path(
+              conn,
+              :index,
+              conn.assigns[:patient],
+              conn.assigns[:info_coronary]
+            )
+        )
 
-    {:error, %Ecto.Changeset{} = changeset} ->
-      render(conn, "new.html", changeset: changeset)
-  end
+      {:error, %Ecto.Changeset{} = changeset} ->
+        render(conn, "new.html", changeset: changeset)
+    end
 
-
-  ##################
+    ##################
   end
 
   def show(conn, %{"id" => id}) do
@@ -76,7 +74,8 @@ defmodule AngioWeb.Coarc_procedureController do
               conn.assigns[:info_coronary]
             )
         )
-        # |> redirect(to: Routes.coarc_procedure_path(conn, :show, coarc_procedure))
+
+      # |> redirect(to: Routes.coarc_procedure_path(conn, :show, coarc_procedure))
 
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "edit.html", coarc_procedure: coarc_procedure, changeset: changeset)
@@ -98,6 +97,7 @@ defmodule AngioWeb.Coarc_procedureController do
           conn.assigns[:info_coronary]
         )
     )
-    #|> redirect(to: Routes.coarc_procedure_path(conn, :index))
+
+    # |> redirect(to: Routes.coarc_procedure_path(conn, :index))
   end
 end

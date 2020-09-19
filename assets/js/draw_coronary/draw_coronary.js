@@ -167,8 +167,8 @@ import {
 
 /* **** The data from Database****/
 const get_db_data = () => {
-  if (typeof (INFO_CORONARY_DATA) !== 'undefined' ) {
-      return INFO_CORONARY_DATA;
+  if (typeof (INFO_CORONARY_DATA) !== 'undefined') {
+    return INFO_CORONARY_DATA;
   }
 
 };
@@ -196,7 +196,7 @@ const get_db_collaterals_data = () => {
 const get_db_anatomy_data = () => {
   let db_data = get_db_data();
   let anatomy_db_data = db_data['info_coronary']['corAnatomies'];
-  if(anatomy_db_data == null ){
+  if (anatomy_db_data == null) {
     alert("Please Add Some Data in Anatomy Record. Sketch Is Not Going to be drawn");
   }
   return anatomy_db_data[0];
@@ -400,7 +400,7 @@ let get_draw_collaterals_template = () => {
   return draw_collaterals_template;
 };
 class Points2Rect {
-  constructor() {}
+  constructor() { }
 
   make(points) {
     let rect_w = 15;
@@ -545,61 +545,61 @@ class Calc_paths {
     let point_at_90 = this.find_points(p1.x, p2.x, p1.y, p2.y, distance * 0.9);
     let point_at_95 = this.find_points(p1.x, p2.x, p1.y, p2.y, distance * 0.95);
     let path_all_points = [{
-        x: p1.x,
-        y: p1.y,
-      },
-      {
-        x: point_at_05.x - 4,
-        y: point_at_05.y - 2,
-      },
-      {
-        x: point_at_10.x + 8,
-        y: point_at_10.y - 2,
-      },
-      {
-        x: point_at_20.x + 12,
-        y: point_at_20.y - 1,
-      },
-      {
-        x: point_at_30.x + 10,
-        y: point_at_30.y - 2,
-      },
-      {
-        x: point_at_40.x + 5,
-        y: point_at_40.y - 2,
-      },
-      {
-        x: point_at_50.x + 4,
-        y: point_at_50.y - 1,
-      },
-      {
-        x: point_at_60.x - 3,
-        y: point_at_60.y - 1,
-      },
-      {
-        x: point_at_70.x + 4,
-        y: point_at_70.y - 1,
-      },
-      {
-        x: point_at_75.x + 0,
-        y: point_at_75.y - 2,
-      },
-      {
-        x: point_at_80.x + 0,
-        y: point_at_80.y - 1,
-      },
-      {
-        x: point_at_90.x + 2,
-        y: point_at_90.y - 1,
-      },
-      {
-        x: point_at_95.x - 3,
-        y: point_at_95.y - 1,
-      },
-      {
-        x: p2.x,
-        y: p2.y,
-      },
+      x: p1.x,
+      y: p1.y,
+    },
+    {
+      x: point_at_05.x - 4,
+      y: point_at_05.y - 2,
+    },
+    {
+      x: point_at_10.x + 8,
+      y: point_at_10.y - 2,
+    },
+    {
+      x: point_at_20.x + 12,
+      y: point_at_20.y - 1,
+    },
+    {
+      x: point_at_30.x + 10,
+      y: point_at_30.y - 2,
+    },
+    {
+      x: point_at_40.x + 5,
+      y: point_at_40.y - 2,
+    },
+    {
+      x: point_at_50.x + 4,
+      y: point_at_50.y - 1,
+    },
+    {
+      x: point_at_60.x - 3,
+      y: point_at_60.y - 1,
+    },
+    {
+      x: point_at_70.x + 4,
+      y: point_at_70.y - 1,
+    },
+    {
+      x: point_at_75.x + 0,
+      y: point_at_75.y - 2,
+    },
+    {
+      x: point_at_80.x + 0,
+      y: point_at_80.y - 1,
+    },
+    {
+      x: point_at_90.x + 2,
+      y: point_at_90.y - 1,
+    },
+    {
+      x: point_at_95.x - 3,
+      y: point_at_95.y - 1,
+    },
+    {
+      x: p2.x,
+      y: p2.y,
+    },
     ];
 
     return path_all_points;
@@ -873,7 +873,7 @@ export class Interface_buttons {
 } //class DrawCoronay
 /////////////////
 class Show_dendrogram {
-  constructor() {}; //
+  constructor() { }; //
 
   show_dendrogram() {
     let main_svg = d3.select('#main_svg');
@@ -1024,14 +1024,14 @@ class Draw_natives {
 
     let natives_title_text = natives_title.text(
       d =>
-      d.cor_les_pct +
-      ' % ' +
-      ' ' +
-      d.id +
-      ' : ' +
-      d.description_name +
-      ' : ' +
-      d.seg_def,
+        d.cor_les_pct +
+        ' % ' +
+        ' ' +
+        d.id +
+        ' : ' +
+        d.description_name +
+        ' : ' +
+        d.seg_def,
     );
   } //make
 
@@ -3627,13 +3627,13 @@ class Test_graph {
     this.g = new Cor_tree_graph();
     let nodes = new Array();
     for (const [
-        source,
-        target,
-        sourceAttributes,
-        targetAttributes,
-        edge,
-        edgeAttributes,
-      ] of graph.adjacency()) {
+      source,
+      target,
+      sourceAttributes,
+      targetAttributes,
+      edge,
+      edgeAttributes,
+    ] of graph.adjacency()) {
       let p_c = {
         parent: source,
         children: target,
@@ -4332,7 +4332,7 @@ function wrap(text) {
 } //class Utility
 ///////////////////////
 class Marker_2 {
-  constructor() {}
+  constructor() { }
 
   present() {
 
@@ -4416,11 +4416,11 @@ class Guides {
 
   make_bullets(svg) {
     let margin = {
-        top: 30,
-        right: 20,
-        bottom: 30,
-        left: 50,
-      },
+      top: 30,
+      right: 20,
+      bottom: 30,
+      left: 50,
+    },
       width = 1100 - margin.left - margin.right,
       height = 1300 - margin.top - margin.bottom;
 
@@ -4591,7 +4591,7 @@ class Guides {
 
 /////////////////
 class Set_sketch {
-  constructor() {}
+  constructor() { }
   svg() {
     let container = d3.select('#draw_info_coronary_canvas');
     let svg = container.append('svg');

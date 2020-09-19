@@ -8,7 +8,7 @@ defmodule AngioWeb.Router do
     plug(:protect_from_forgery)
     plug(:put_secure_browser_headers)
     plug(:fetch_flash)
-    #plug(Phoenix.LiveView.Flash)
+    # plug(Phoenix.LiveView.Flash)
   end
 
   pipeline :api do
@@ -27,7 +27,7 @@ defmodule AngioWeb.Router do
 
   scope "/", AngioWeb do
     pipe_through(:browser)
-    #live("/counter", CounterLive)
+    # live("/counter", CounterLive)
 
     #    live "/thermostat", ThermostatLive
     # in Index
@@ -61,12 +61,13 @@ defmodule AngioWeb.Router do
       resources("/asd_closures_fups", Asd_closures_fupController, as: :asdclf)
       resources("/pci_fups", Pci_fupController, as: :pcif)
       resources("/treadmill_exercises", Treadmill_exerciseController, as: :ext)
-      resources("/cardiac_echoes", Cardiac_echoController, as: :echo) do
-      resources("/echo_left_atriums", Echo_left_atriumController, as: :ela)
-      resources("/echo_right_atriums", Echo_right_atriumController, as: :era)
-      resources("/echo_ventricle_lefts", Echo_ventricle_leftController, as: :elv)
 
+      resources("/cardiac_echoes", Cardiac_echoController, as: :echo) do
+        resources("/echo_left_atriums", Echo_left_atriumController, as: :ela)
+        resources("/echo_right_atriums", Echo_right_atriumController, as: :era)
+        resources("/echo_ventricle_lefts", Echo_ventricle_leftController, as: :elv)
       end
+
       ########## CORONARY ANGIO#################
       resources(
         "/info_coronaries",
@@ -119,21 +120,19 @@ defmodule AngioWeb.Router do
         end
 
         resources("/coarc_procedures", Coarc_procedureController, as: :coarc) do
-        resources("/coarc_devices", Coarc_deviceController, as: :device)
+          resources("/coarc_devices", Coarc_deviceController, as: :device)
         end
 
         resources("/av_plasties", Av_plastyController, as: :avp) do
           resources("/av_plasties_inflations", Av_plasties_inflationController, as: :avpi)
-
         end
-
       end
 
       ## end for info_coronaries
     end
 
     ## end for partients
-    ################DATA FOR DRAW CORONARY TREE##################
+    ################ DATA FOR DRAW CORONARY TREE##################
     resources("/tree_natives", Tree_nativesController)
     resources("/loincs", LoincController)
     post("/loincs/search_loincs", LoincController, :search_loincs)

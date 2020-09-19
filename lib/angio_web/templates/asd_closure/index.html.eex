@@ -1,5 +1,6 @@
 
 <% alias Angio.Canons, as: Query %>
+
 <div class="menu_info_tabs" >
 <%= render  AngioWeb.SharedView, "_menu_interventions_tabs.html", assigns %>
 </div>

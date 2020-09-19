@@ -8,7 +8,6 @@ defmodule AngioWeb.Cardiac_echoController do
   plug(:assign_patient)
   plug(:scrub_params, "cardiac_echo" when action in [:create, :update])
 
-
   def index(conn, _params) do
     cardiac_echoes = Ivestigations.list_cardiac_echoes(conn)
     render(conn, "index.html", cardiac_echoes: cardiac_echoes)
@@ -21,7 +20,7 @@ defmodule AngioWeb.Cardiac_echoController do
   end
 
   def create(conn, %{"cardiac_echo" => cardiac_echo_params}) do
-      changeset =
+    changeset =
       conn.assigns[:patient]
       |> Ecto.build_assoc(:cardiac_echoes)
       |> Cardiac_echo.changeset(cardiac_echo_params)
@@ -42,8 +41,6 @@ defmodule AngioWeb.Cardiac_echoController do
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", changeset: changeset)
     end
-
-
   end
 
   def show(conn, %{"id" => id}) do
@@ -64,7 +61,7 @@ defmodule AngioWeb.Cardiac_echoController do
       {:ok, _cardiac_echo} ->
         conn
         |> put_flash(:info, "Cardiac echo updated successfully.")
-        #|> redirect(to: Routes.cardiac_echo_path(conn, :show, cardiac_echo))
+        # |> redirect(to: Routes.cardiac_echo_path(conn, :show, cardiac_echo))
         |> redirect(
           to:
             Routes.pt_echo_path(
@@ -86,14 +83,14 @@ defmodule AngioWeb.Cardiac_echoController do
     conn
     |> put_flash(:info, "Cardiac echo deleted successfully.")
     |> redirect(
-          to:
-            Routes.pt_echo_path(
-              conn,
-              :index,
-              conn.assigns[:patient]
-            )
+      to:
+        Routes.pt_echo_path(
+          conn,
+          :index,
+          conn.assigns[:patient]
         )
+    )
 
-    #|> redirect(to: Routes.cardiac_echo_path(conn, :index))
+    # |> redirect(to: Routes.cardiac_echo_path(conn, :index))
   end
 end

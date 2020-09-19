@@ -31,7 +31,7 @@
 
 
 <div class="title_form">
-<h5 class="title is-5 has-text-centered">Essential Past History  Index</h5>
+<h6 class="title is-6 has-text-centered">Essential Past History  Index</h6>
 </div>
   <thead>
     <tr>
@@ -46,19 +46,20 @@
     <tr>
       <td><%= raw Query.convert_true_false(core_history.coh_contrast_allergy_yn) %></td>
       <td>
-          <%= link "Show", to: Routes.pt_angio_coreh_path(@conn, :show, @patient, @info_coronary, core_history), class: "button  is-link is-small" %>
+          <%= link "Show", to: Routes.pt_angio_coreh_path(@conn, :show, @patient, @info_coronary, core_history),
+           class: "button  is-link is-rounded is-small" %>
        </td>
 
 
        <td>
         <%= link "Edit", to: Routes.pt_angio_coreh_path(@conn, :edit, @patient,
-        @info_coronary, core_history), class: "button is-link is-small" %>
+        @info_coronary, core_history), class: "button is-link is-rounded is-small" %>
         </td>
 
         <td>
         <%= link "Delete", to: Routes.pt_angio_coreh_path(@conn, :delete,
         @patient, @info_coronary, core_history), method: :delete, data: [confirm:
-        "Are you sure?"], class: "button is-small is-danger" %>
+        "Are you sure?"], class: "button is-small is-rounded is-danger" %>
 
       </td>
     </tr>

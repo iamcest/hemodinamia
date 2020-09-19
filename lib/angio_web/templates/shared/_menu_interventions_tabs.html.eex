@@ -1,9 +1,11 @@
 
 <% alias Angio.Interventions %>
 
-<span class="button  is-info is-fullwidth ">
-  Interventions
- </span>
+<div class="menu_tabs intervention">
+  Intervention Files
+ </div>
+
+
 <div class="menu_info_coronary_tabs">
   <div class="tabs is-small is-centered">
     <ul>

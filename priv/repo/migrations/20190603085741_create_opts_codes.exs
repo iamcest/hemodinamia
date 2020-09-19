@@ -3,12 +3,12 @@ defmodule Angio.Repo.Migrations.CreateOptsCodes do
 
   def change do
     create table(:opts_codes) do
-      add :code_system, :string
-      add :code, :string
-      add :description, :text
-      add :notes, :text
-      add :definition_id, :integer
-      add :defs_option_id, :integer
+      add(:code_system, :string)
+      add(:code, :string)
+      add(:description, :text)
+      add(:notes, :text)
+      add(:definition_id, :integer)
+      add(:defs_option_id, :integer)
 
       timestamps()
     end

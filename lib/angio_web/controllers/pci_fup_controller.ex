@@ -20,30 +20,29 @@ defmodule AngioWeb.Pci_fupController do
   end
 
   def create(conn, %{"pci_fup" => pci_fup_params}) do
-
     changeset =
-    conn.assigns[:patient]
-    |> Ecto.build_assoc(:pci_fups)
-    |> Pci_fup.changeset(pci_fup_params)
+      conn.assigns[:patient]
+      |> Ecto.build_assoc(:pci_fups)
+      |> Pci_fup.changeset(pci_fup_params)
 
-  case Repo.insert(changeset) do
-    {:ok, _asd_closures_fup} ->
-      conn
-      |> put_flash(:info, "PCI Follow Up Record created successfully.")
-      |> redirect(
-        to:
-          Routes.pt_pcif_path(
-            conn,
-            :index,
-            conn.assigns[:patient]
-          )
-      )
+    case Repo.insert(changeset) do
+      {:ok, _asd_closures_fup} ->
+        conn
+        |> put_flash(:info, "PCI Follow Up Record created successfully.")
+        |> redirect(
+          to:
+            Routes.pt_pcif_path(
+              conn,
+              :index,
+              conn.assigns[:patient]
+            )
+        )
 
-    {:error, %Ecto.Changeset{} = changeset} ->
-      render(conn, "new.html", changeset: changeset)
-
+      {:error, %Ecto.Changeset{} = changeset} ->
+        render(conn, "new.html", changeset: changeset)
     end
-  ########################3
+
+    ######################## 3
   end
 
   def show(conn, %{"id" => id}) do
@@ -65,13 +64,13 @@ defmodule AngioWeb.Pci_fupController do
         conn
         |> put_flash(:info, "Pci fup updated successfully.")
         |> redirect(
-        to:
-          Routes.pt_pcif_path(
-            conn,
-            :index,
-            conn.assigns[:patient]
-          )
-      )
+          to:
+            Routes.pt_pcif_path(
+              conn,
+              :index,
+              conn.assigns[:patient]
+            )
+        )
 
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "edit.html", pci_fup: pci_fup, changeset: changeset)
@@ -85,13 +84,12 @@ defmodule AngioWeb.Pci_fupController do
     conn
     |> put_flash(:info, "Pci fup deleted successfully.")
     |> redirect(
-        to:
-          Routes.pt_pcif_path(
-            conn,
-            :index,
-            conn.assigns[:patient]
-          )
-      )
-
+      to:
+        Routes.pt_pcif_path(
+          conn,
+          :index,
+          conn.assigns[:patient]
+        )
+    )
   end
 end

@@ -3,9 +3,96 @@ defmodule AngioWeb.Cath_labControllerTest do
 
   alias Angio.Caths
 
-  @create_attrs %{cath_biomarker_positive_post_yn: true, cath_ck_post_normal_ckmb_na: true, cath_ck_pre_normal_ckmb_pre_na: true, cath_ckmb_peak_post_na: true, cath_ckmb_post_val: "some cath_ckmb_post_val", cath_ckmb_pre_na: true, cath_ckmb_pre_val: "some cath_ckmb_pre_val", cath_creatinine_highest_na: true, cath_creatinine_highest_val: "some cath_creatinine_highest_val", cath_creatinine_post_na: true, cath_creatinine_post_val: "some cath_creatinine_post_val", cath_creatinine_pre_discharge: "some cath_creatinine_pre_discharge", cath_creatinine_pre_discharge_na: true, cath_creatinine_pre_na: true, cath_creatinine_pre_val: "some cath_creatinine_pre_val", cath_hb_post_lowest_val: "some cath_hb_post_lowest_val", cath_hb_post_na: true, cath_hb_post_val: "some cath_hb_post_val", cath_hb_pre_na: true, cath_hb_pre_val: "some cath_hb_pre_val", cath_tropo_i_peak_post_na: true, cath_tropo_i_peak_post_val: "some cath_tropo_i_peak_post_val", cath_tropo_i_pre_na: true, cath_tropo_i_pre_val: "some cath_tropo_i_pre_val", cath_tropo_t_peak_post_na: true, cath_tropo_t_peak_post_val: "some cath_tropo_t_peak_post_val", cath_tropo_t_pre_na: true, cath_tropo_t_pre_val: "some cath_tropo_t_pre_val"}
-  @update_attrs %{cath_biomarker_positive_post_yn: false, cath_ck_post_normal_ckmb_na: false, cath_ck_pre_normal_ckmb_pre_na: false, cath_ckmb_peak_post_na: false, cath_ckmb_post_val: "some updated cath_ckmb_post_val", cath_ckmb_pre_na: false, cath_ckmb_pre_val: "some updated cath_ckmb_pre_val", cath_creatinine_highest_na: false, cath_creatinine_highest_val: "some updated cath_creatinine_highest_val", cath_creatinine_post_na: false, cath_creatinine_post_val: "some updated cath_creatinine_post_val", cath_creatinine_pre_discharge: "some updated cath_creatinine_pre_discharge", cath_creatinine_pre_discharge_na: false, cath_creatinine_pre_na: false, cath_creatinine_pre_val: "some updated cath_creatinine_pre_val", cath_hb_post_lowest_val: "some updated cath_hb_post_lowest_val", cath_hb_post_na: false, cath_hb_post_val: "some updated cath_hb_post_val", cath_hb_pre_na: false, cath_hb_pre_val: "some updated cath_hb_pre_val", cath_tropo_i_peak_post_na: false, cath_tropo_i_peak_post_val: "some updated cath_tropo_i_peak_post_val", cath_tropo_i_pre_na: false, cath_tropo_i_pre_val: "some updated cath_tropo_i_pre_val", cath_tropo_t_peak_post_na: false, cath_tropo_t_peak_post_val: "some updated cath_tropo_t_peak_post_val", cath_tropo_t_pre_na: false, cath_tropo_t_pre_val: "some updated cath_tropo_t_pre_val"}
-  @invalid_attrs %{cath_biomarker_positive_post_yn: nil, cath_ck_post_normal_ckmb_na: nil, cath_ck_pre_normal_ckmb_pre_na: nil, cath_ckmb_peak_post_na: nil, cath_ckmb_post_val: nil, cath_ckmb_pre_na: nil, cath_ckmb_pre_val: nil, cath_creatinine_highest_na: nil, cath_creatinine_highest_val: nil, cath_creatinine_post_na: nil, cath_creatinine_post_val: nil, cath_creatinine_pre_discharge: nil, cath_creatinine_pre_discharge_na: nil, cath_creatinine_pre_na: nil, cath_creatinine_pre_val: nil, cath_hb_post_lowest_val: nil, cath_hb_post_na: nil, cath_hb_post_val: nil, cath_hb_pre_na: nil, cath_hb_pre_val: nil, cath_tropo_i_peak_post_na: nil, cath_tropo_i_peak_post_val: nil, cath_tropo_i_pre_na: nil, cath_tropo_i_pre_val: nil, cath_tropo_t_peak_post_na: nil, cath_tropo_t_peak_post_val: nil, cath_tropo_t_pre_na: nil, cath_tropo_t_pre_val: nil}
+  @create_attrs %{
+    cath_biomarker_positive_post_yn: true,
+    cath_ck_post_normal_ckmb_na: true,
+    cath_ck_pre_normal_ckmb_pre_na: true,
+    cath_ckmb_peak_post_na: true,
+    cath_ckmb_post_val: "some cath_ckmb_post_val",
+    cath_ckmb_pre_na: true,
+    cath_ckmb_pre_val: "some cath_ckmb_pre_val",
+    cath_creatinine_highest_na: true,
+    cath_creatinine_highest_val: "some cath_creatinine_highest_val",
+    cath_creatinine_post_na: true,
+    cath_creatinine_post_val: "some cath_creatinine_post_val",
+    cath_creatinine_pre_discharge: "some cath_creatinine_pre_discharge",
+    cath_creatinine_pre_discharge_na: true,
+    cath_creatinine_pre_na: true,
+    cath_creatinine_pre_val: "some cath_creatinine_pre_val",
+    cath_hb_post_lowest_val: "some cath_hb_post_lowest_val",
+    cath_hb_post_na: true,
+    cath_hb_post_val: "some cath_hb_post_val",
+    cath_hb_pre_na: true,
+    cath_hb_pre_val: "some cath_hb_pre_val",
+    cath_tropo_i_peak_post_na: true,
+    cath_tropo_i_peak_post_val: "some cath_tropo_i_peak_post_val",
+    cath_tropo_i_pre_na: true,
+    cath_tropo_i_pre_val: "some cath_tropo_i_pre_val",
+    cath_tropo_t_peak_post_na: true,
+    cath_tropo_t_peak_post_val: "some cath_tropo_t_peak_post_val",
+    cath_tropo_t_pre_na: true,
+    cath_tropo_t_pre_val: "some cath_tropo_t_pre_val"
+  }
+  @update_attrs %{
+    cath_biomarker_positive_post_yn: false,
+    cath_ck_post_normal_ckmb_na: false,
+    cath_ck_pre_normal_ckmb_pre_na: false,
+    cath_ckmb_peak_post_na: false,
+    cath_ckmb_post_val: "some updated cath_ckmb_post_val",
+    cath_ckmb_pre_na: false,
+    cath_ckmb_pre_val: "some updated cath_ckmb_pre_val",
+    cath_creatinine_highest_na: false,
+    cath_creatinine_highest_val: "some updated cath_creatinine_highest_val",
+    cath_creatinine_post_na: false,
+    cath_creatinine_post_val: "some updated cath_creatinine_post_val",
+    cath_creatinine_pre_discharge: "some updated cath_creatinine_pre_discharge",
+    cath_creatinine_pre_discharge_na: false,
+    cath_creatinine_pre_na: false,
+    cath_creatinine_pre_val: "some updated cath_creatinine_pre_val",
+    cath_hb_post_lowest_val: "some updated cath_hb_post_lowest_val",
+    cath_hb_post_na: false,
+    cath_hb_post_val: "some updated cath_hb_post_val",
+    cath_hb_pre_na: false,
+    cath_hb_pre_val: "some updated cath_hb_pre_val",
+    cath_tropo_i_peak_post_na: false,
+    cath_tropo_i_peak_post_val: "some updated cath_tropo_i_peak_post_val",
+    cath_tropo_i_pre_na: false,
+    cath_tropo_i_pre_val: "some updated cath_tropo_i_pre_val",
+    cath_tropo_t_peak_post_na: false,
+    cath_tropo_t_peak_post_val: "some updated cath_tropo_t_peak_post_val",
+    cath_tropo_t_pre_na: false,
+    cath_tropo_t_pre_val: "some updated cath_tropo_t_pre_val"
+  }
+  @invalid_attrs %{
+    cath_biomarker_positive_post_yn: nil,
+    cath_ck_post_normal_ckmb_na: nil,
+    cath_ck_pre_normal_ckmb_pre_na: nil,
+    cath_ckmb_peak_post_na: nil,
+    cath_ckmb_post_val: nil,
+    cath_ckmb_pre_na: nil,
+    cath_ckmb_pre_val: nil,
+    cath_creatinine_highest_na: nil,
+    cath_creatinine_highest_val: nil,
+    cath_creatinine_post_na: nil,
+    cath_creatinine_post_val: nil,
+    cath_creatinine_pre_discharge: nil,
+    cath_creatinine_pre_discharge_na: nil,
+    cath_creatinine_pre_na: nil,
+    cath_creatinine_pre_val: nil,
+    cath_hb_post_lowest_val: nil,
+    cath_hb_post_na: nil,
+    cath_hb_post_val: nil,
+    cath_hb_pre_na: nil,
+    cath_hb_pre_val: nil,
+    cath_tropo_i_peak_post_na: nil,
+    cath_tropo_i_peak_post_val: nil,
+    cath_tropo_i_pre_na: nil,
+    cath_tropo_i_pre_val: nil,
+    cath_tropo_t_peak_post_na: nil,
+    cath_tropo_t_peak_post_val: nil,
+    cath_tropo_t_pre_na: nil,
+    cath_tropo_t_pre_val: nil
+  }
 
   def fixture(:cath_lab) do
     {:ok, cath_lab} = Caths.create_cath_lab(@create_attrs)
@@ -75,9 +162,10 @@ defmodule AngioWeb.Cath_labControllerTest do
     test "deletes chosen cath_lab", %{conn: conn, cath_lab: cath_lab} do
       conn = delete(conn, Routes.cath_lab_path(conn, :delete, cath_lab))
       assert redirected_to(conn) == Routes.cath_lab_path(conn, :index)
-      assert_error_sent 404, fn ->
+
+      assert_error_sent(404, fn ->
         get(conn, Routes.cath_lab_path(conn, :show, cath_lab))
-      end
+      end)
     end
   end
 

@@ -19,9 +19,10 @@ defmodule Angio.Medcodes do
   """
   def list_loincs(params) do
     _page =
-    Loinc
-    |> Loinc.order_by_shortname()
-    |> Repo.paginate(params)
+      Loinc
+      |> Loinc.order_by_shortname()
+      |> Repo.paginate(params)
+
     # Repo.all(Loinc)
   end
 
@@ -109,84 +110,83 @@ defmodule Angio.Medcodes do
   def search_loincs(query, selection) do
     case selection do
       "loinc_codes" -> search_loinc_codes(query)
-      "tsv_search" ->  search_loinc_tsv(query)
+      "tsv_search" -> search_loinc_tsv(query)
       "tsv_long_name" -> search_tsv_long_name(query)
       _ -> ""
     end
   end
+
   def search_tsv_long_name(query) do
-  _query =
-    from( d in Loinc,
-    where: ilike(d.long_common_name, ^"%#{query}%"),
-    #where: fragment( "(?) @@ plainto`_tsquery(?)",  d.long_common_name, ^query),
-    limit: 100,
-    order_by: [asc:  d.long_common_name]
-    )
+    _query =
+      from(d in Loinc,
+        where: ilike(d.long_common_name, ^"%#{query}%"),
+        # where: fragment( "(?) @@ plainto`_tsquery(?)",  d.long_common_name, ^query),
+        limit: 100,
+        order_by: [asc: d.long_common_name]
+      )
   end
+
   def search_loinc_codes(query) do
- _query =
-  from(
-     p in Loinc,
-         where: ilike(p.loinc_num, ^"#{query}%"),
-          limit: 100,
-         order_by: [asc: p.loinc_num]
-)
-  #Angio.Repo.all(query)
+    _query =
+      from(
+        p in Loinc,
+        where: ilike(p.loinc_num, ^"#{query}%"),
+        limit: 100,
+        order_by: [asc: p.loinc_num]
+      )
+
+    # Angio.Repo.all(query)
   end
 
   def search_loinc_tsv(query) do
     _query =
-    from(
-      d in Loinc,
-      #where: fragment("ts_headline((?), (?), 'StartSel=<em>, StopSel=</em>' ", d.coding_instructions, ^query)
-      where: fragment( "(?) @@ plainto_tsquery(?)",  d.tsv_search, ^query),
-      #where: fragment( "(?) @@ plainto_tsquery(?)",  d.long_common_name, ^query),
-      limit: 100,
-      order_by:
-      fragment(
-        "ts_rank((to_tsvector('english', ?)
+      from(
+        d in Loinc,
+        # where: fragment("ts_headline((?), (?), 'StartSel=<em>, StopSel=</em>' ", d.coding_instructions, ^query)
+        where: fragment("(?) @@ plainto_tsquery(?)", d.tsv_search, ^query),
+        # where: fragment( "(?) @@ plainto_tsquery(?)",  d.long_common_name, ^query),
+        limit: 100,
+        order_by:
+          fragment(
+            "ts_rank((to_tsvector('english', ?)
         || to_tsvector(coalesce('english', ?))),
           plainto_tsquery('english', ?)) DESC",
-          d.long_common_name,
-          d.shortname,
-        ^query
+            d.long_common_name,
+            d.shortname,
+            ^query
+          )
       )
-       )
   end
 
   def search_loinc_tsv_1(query) do
-   sql = "SELECT ts_headline(long_common_name,q,'StartSel=<mark>,StopSel=</mark>,MaxWords=10,MinWords=5'),
+    sql =
+      "SELECT ts_headline(long_common_name,q,'StartSel=<mark>,StopSel=</mark>,MaxWords=10,MinWords=5'),
    ts_rank_cd(tsv_search, q) as rank from loincs, plainto_tsquery('#{query}')  q
    WHERE tsv_search  @@  q ORDER By rank DESC;"
 
-   {:ok, result} = Ecto.Adapters.SQL.query(Repo, sql, [])
+    {:ok, result} = Ecto.Adapters.SQL.query(Repo, sql, [])
 
-   rows = result.rows
-    #IO.puts("-----------columns -------------------------")
-    #IO.inspect  columns
+    rows = result.rows
+    # IO.puts("-----------columns -------------------------")
+    # IO.inspect  columns
 
     IO.puts("-----------rows -------------------------")
-    IO.inspect  rows
+    IO.inspect(rows)
 
-   {:ok, record} = Enum.map(result.rows, &Repo.load(Loinc, {result.rows, &1}))
-  # list_record = List.last( record )
+    {:ok, record} = Enum.map(result.rows, &Repo.load(Loinc, {result.rows, &1}))
+    # list_record = List.last( record )
 
-   IO.puts("------------map -------------------------")
-   IO.inspect  record
+    IO.puts("------------map -------------------------")
+    IO.inspect(record)
 
-   record
-
-
-
+    record
   end
 
-###################
+  ###################
 
-def count_loincs do
-  Repo.aggregate(Loinc, :count, :id)
+  def count_loincs do
+    Repo.aggregate(Loinc, :count, :id)
+  end
+
+  ####################
 end
-
-
-
-####################
-  end

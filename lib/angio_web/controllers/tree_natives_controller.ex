@@ -3,20 +3,18 @@ defmodule AngioWeb.Tree_nativesController do
 
   alias Angio.Graphics
   alias Angio.Graphics.Tree_natives
-  #alias Angio.Repo
+  # alias Angio.Repo
   import Ecto.Query
   plug(:scrub_params, "tree_natives" when action in [:create, :update])
-
 
   @spec index(Plug.Conn.t(), keyword | map) :: Plug.Conn.t()
   def index(conn, _params) do
     page = Graphics.list_tree_natives(_params)
     render(conn, "index.html", tree_native: page.entries, page: page)
 
-  #tree_native = Graphics.list_tree_native()
-  #render(conn, "index.html", tree_native: tree_native)
-
-end
+    # tree_native = Graphics.list_tree_native()
+    # render(conn, "index.html", tree_native: tree_native)
+  end
 
   def new(conn, _params) do
     changeset = Graphics.change_tree_natives(%Tree_natives{})

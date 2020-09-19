@@ -84,9 +84,9 @@ defmodule AngioWeb.Angio_reportControllerTest do
       conn = delete(conn, Routes.angio_report_path(conn, :delete, angio_report))
       assert redirected_to(conn) == Routes.angio_report_path(conn, :index)
 
-      assert_error_sent 404, fn ->
+      assert_error_sent(404, fn ->
         get(conn, Routes.angio_report_path(conn, :show, angio_report))
-      end
+      end)
     end
   end
 

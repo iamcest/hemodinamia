@@ -104,12 +104,13 @@ defmodule AngioWeb.Schema.Types do
     field(:patnts_record_active, :boolean)
     field(:patnts_ssn, :string)
     field(:patnts_ssn_na, :boolean)
+
     field(:treadmill_exercises, list_of(:treadmill_exercise), resolve: assoc(:treadmill_exercises))
+
     field(:info_coronaries, list_of(:info_coronary), resolve: assoc(:info_coronaries))
   end
 
-
-  ####check again jgour
+  #### check again jgour
   input_object :patient_input do
     field(:patnts_last_name, non_null(:string))
     field(:patnts_first_name, non_null(:string))

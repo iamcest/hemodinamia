@@ -5,7 +5,6 @@ defmodule Angio.MixProject do
     [
       app: :angio,
       version: "0.1.0",
-      
       elixirc_paths: elixirc_paths(Mix.env()),
       compilers: [:phoenix, :gettext] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
@@ -52,12 +51,12 @@ defmodule Angio.MixProject do
       {:poison, "~> 3.1"},
       {:mustache, "~> 0.3.1"},
       {:xml_builder, "~> 2.1"},
-      #{:pandex, "~> 0.2.0"},
+      # {:pandex, "~> 0.2.0"},
       {:arc, "~> 0.11.0"},
-      #{:waffle, "~> 1.0.0"},
-      #{:waffle_ecto, "~> 0.0.8"},
-      #{:libgraph, "~> 0.7"},
-      #{:absinthe_sorting_codec, "~> 1.0.1"},
+      # {:waffle, "~> 1.0.0"},
+      # {:waffle_ecto, "~> 0.0.8"},
+      # {:libgraph, "~> 0.7"},
+      # {:absinthe_sorting_codec, "~> 1.0.1"},
       {:arc_ecto, "~> 0.11.2"},
       {:plug_cowboy, "~> 2.0"}
     ]

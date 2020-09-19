@@ -22,33 +22,30 @@ defmodule AngioWeb.Echo_left_atriumController do
   end
 
   def create(conn, %{"echo_left_atrium" => echo_left_atrium_params}) do
-
     changeset =
-    conn.assigns[:cardiac_echo]
-    |> Ecto.build_assoc(:echo_left_atriums)
-    |> Echo_left_atrium.changeset(echo_left_atrium_params)
+      conn.assigns[:cardiac_echo]
+      |> Ecto.build_assoc(:echo_left_atriums)
+      |> Echo_left_atrium.changeset(echo_left_atrium_params)
 
-  case Repo.insert(changeset) do
-    {:ok, _echo_left_atrium} ->
-      conn
-      |> put_flash(:info, "Echo For LA Record created successfully.")
-      |> redirect(
-        to:
-          Routes.pt_echo_ela_path(
-            conn,
-            :index,
-            conn.assigns[:patient],
-            conn.assigns[:cardiac_echo]
-          )
-      )
+    case Repo.insert(changeset) do
+      {:ok, _echo_left_atrium} ->
+        conn
+        |> put_flash(:info, "Echo For LA Record created successfully.")
+        |> redirect(
+          to:
+            Routes.pt_echo_ela_path(
+              conn,
+              :index,
+              conn.assigns[:patient],
+              conn.assigns[:cardiac_echo]
+            )
+        )
 
-    {:error, %Ecto.Changeset{} = changeset} ->
-      render(conn, "new.html", changeset: changeset)
+      {:error, %Ecto.Changeset{} = changeset} ->
+        render(conn, "new.html", changeset: changeset)
     end
 
-
-    ###########################33
-
+    ########################### 33
   end
 
   def show(conn, %{"id" => id}) do
@@ -70,16 +67,16 @@ defmodule AngioWeb.Echo_left_atriumController do
         conn
         |> put_flash(:info, "Echo left atrium updated successfully.")
         |> redirect(
-        to:
-          Routes.pt_echo_ela_path(
-            conn,
-            :index,
-            conn.assigns[:patient],
-            conn.assigns[:cardiac_echo]
-          )
-      )
+          to:
+            Routes.pt_echo_ela_path(
+              conn,
+              :index,
+              conn.assigns[:patient],
+              conn.assigns[:cardiac_echo]
+            )
+        )
 
-        #|> redirect(to: Routes.echo_left_atrium_path(conn, :show, echo_left_atrium))
+      # |> redirect(to: Routes.echo_left_atrium_path(conn, :show, echo_left_atrium))
 
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "edit.html", echo_left_atrium: echo_left_atrium, changeset: changeset)

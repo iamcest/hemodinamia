@@ -184,16 +184,19 @@ defmodule Angio.Caths.Info_coronary do
       Angio.Interventions.Coarc_procedure,
       foreign_key: :info_coronary_id
     )
+
     has_many(
       :av_plasties,
       Angio.Interventions.Av_plasty,
       foreign_key: :info_coronary_id
     )
+
     has_many(
       :pci_procedures,
       Angio.Interventions.Pci_procedure,
       foreign_key: :info_coronary_id
     )
+
     has_many(
       :clinical_exams_cardios,
       Angio.Assements.Clinical_exam_cardio,

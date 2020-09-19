@@ -49,37 +49,35 @@ defmodule Angio.Repo.Migrations.CreateLoincs do
       add(:VersionFirstReleased, :string)
       add(:ValidHL7AttachmentRequest, :string)
       add(:DisplayName, :string)
-      add(:loinc_notes,:text)
+      add(:loinc_notes, :text)
       add(:tsv_search, :tsvector)
 
       timestamps()
     end
-    create index(:loincs, [:loinc_num])
 
-    execute(
-      """
-        CREATE FUNCTION create_loinc_data_tsv_search() RETURNS trigger AS $$
-        begin
-         new.tsv_search :=
-           to_tsvector(
-             'pg_catalog.english',
-             coalesce(new.long_common_name, ' ') || ' ' ||
-             coalesce(new.shortname , ' ')
-           );
-         return new;
-        end
-       $$ LANGUAGE plpgsql;
-      """)
-      execute(
-        """
-          CREATE TRIGGER loinc_tsv_search BEFORE INSERT OR UPDATE
-          ON loincs FOR EACH ROW EXECUTE PROCEDURE create_loinc_data_tsv_search();
-        """)
+    create(index(:loincs, [:loinc_num]))
 
-      execute(
-      """
-         CREATE INDEX loinc_tsv_search_idx ON loincs USING gin (to_tsvector('english'::regconfig, (tsv_search)::text));
-     """
-)
+    execute("""
+      CREATE FUNCTION create_loinc_data_tsv_search() RETURNS trigger AS $$
+      begin
+       new.tsv_search :=
+         to_tsvector(
+           'pg_catalog.english',
+           coalesce(new.long_common_name, ' ') || ' ' ||
+           coalesce(new.shortname , ' ')
+         );
+       return new;
+      end
+     $$ LANGUAGE plpgsql;
+    """)
+
+    execute("""
+      CREATE TRIGGER loinc_tsv_search BEFORE INSERT OR UPDATE
+      ON loincs FOR EACH ROW EXECUTE PROCEDURE create_loinc_data_tsv_search();
+    """)
+
+    execute("""
+        CREATE INDEX loinc_tsv_search_idx ON loincs USING gin (to_tsvector('english'::regconfig, (tsv_search)::text));
+    """)
   end
 end

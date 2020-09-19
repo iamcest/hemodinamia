@@ -44,7 +44,7 @@ conn: @conn, patient: @patient, cardiac_echo: @cardiac_echo %>
          <%= link "Show", to: Routes.pt_echo_era_path(@conn, :show,
           @patient,
           @cardiac_echo,
-          echo_right_atrium), class: "button  is-primary is-small is-fullwidth" %>
+          echo_right_atrium), class: "button  is-primary is-rounded is-small is-fullwidth" %>
         </span>
         </td>
        <td>
@@ -54,7 +54,7 @@ conn: @conn, patient: @patient, cardiac_echo: @cardiac_echo %>
       <%= link "Edit", to: Routes.pt_echo_era_path(@conn, :edit,
         @patient,
         @cardiac_echo,
-        echo_right_atrium), class: "button is-primary is-small is-fullwidth" %>
+        echo_right_atrium), class: "button is-primary is-rounded is-small is-fullwidth" %>
         </span>
        </td>
 
@@ -64,7 +64,7 @@ conn: @conn, patient: @patient, cardiac_echo: @cardiac_echo %>
 @patient,
 @cardiac_echo,
 echo_right_atrium), method: :delete, data: [confirm:
-        "Are you sure?"], class: "button is-small is-danger is-fullwidth" %>
+        "Are you sure?"], class: "button is-small is-rounded is-danger is-fullwidth" %>
       </td>
     </tr>
 <% end %>

@@ -48,7 +48,6 @@ defmodule AngioWeb.Coarc_deviceController do
         render(conn, "new.html", changeset: changeset)
     end
 
-   
     ##
   end
 
@@ -70,17 +69,18 @@ defmodule AngioWeb.Coarc_deviceController do
       {:ok, _coarc_device} ->
         conn
         |> put_flash(:info, "Coarc device updated successfully.")
-        #|> redirect(to: Routes.coarc_device_path(conn, :show, coarc_device))
+        # |> redirect(to: Routes.coarc_device_path(conn, :show, coarc_device))
         |> redirect(
-        to:
-          Routes.pt_angio_coarc_device_path(
-            conn,
-            :index,
-            conn.assigns[:patient],
-            conn.assigns[:info_coronary],
-            conn.assigns[:coarc_procedure]
-          )
-      )
+          to:
+            Routes.pt_angio_coarc_device_path(
+              conn,
+              :index,
+              conn.assigns[:patient],
+              conn.assigns[:info_coronary],
+              conn.assigns[:coarc_procedure]
+            )
+        )
+
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "edit.html", coarc_device: coarc_device, changeset: changeset)
     end
@@ -102,6 +102,7 @@ defmodule AngioWeb.Coarc_deviceController do
           conn.assigns[:coarc_procedure]
         )
     )
-    #|> redirect(to: Routes.coarc_device_path(conn, :index))
+
+    # |> redirect(to: Routes.coarc_device_path(conn, :index))
   end
 end

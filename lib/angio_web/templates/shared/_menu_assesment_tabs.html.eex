@@ -5,9 +5,12 @@
 <% alias Angio.Caths%>
 <% alias Angio.Interventions %>
 <%alias Angio.Histories %>
-<span class="button is-medium is-info is-fullwidth ">
-  Assesment Menu Items
- </span>
+
+<div class="menu_tabs assesment">
+  Assesment Files
+ </div>
+
+
 <div class="menu_info_coronary_tabs">
   <div class="tabs is-small is-centered">
     <ul>

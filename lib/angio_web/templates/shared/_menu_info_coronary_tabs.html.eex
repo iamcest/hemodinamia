@@ -12,9 +12,10 @@ class: "button is-link is-small is-fullwidth" do  %>
 
 <% alias Angio.Caths%>
 <% alias Angio.Cor_mediae %>
-<span class="button  is-primary is-fullwidth ">
+<div class="menu_tabs caths_angio ">
     Caths - Angio
- </span>
+ </div>
+
 <div class="menu_info_coronary_tabs">
   <div class="tabs is-medium is-centered">
     <ul>
