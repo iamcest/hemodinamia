@@ -1,0 +1,194 @@
+<div class="title_form">
+  <h6 class="title is-6 has-text-centered">Show Echo ventricle left systolic func </h6>
+</div>
+
+<div class="element_info">
+   <%= render AngioWeb.SharedView, "_patient_info.html", patient:
+  @patient %>
+</div>
+
+
+
+<ul>
+
+  <li>
+    <strong>Elvsf is normal yn:</strong>
+    <%= @echo_ventricle_left_systolic_func.elvsf_is_normal_yn %>
+  </li>
+
+  <li>
+    <strong>Elvsf systolic function desc:</strong>
+    <%= @echo_ventricle_left_systolic_func.elvsf_systolic_function_desc %>
+  </li>
+
+  <li>
+    <strong>Elvsf measurment dt:</strong>
+    <%= @echo_ventricle_left_systolic_func.elvsf_measurment_dt %>
+  </li>
+
+  <li>
+    <strong>Elvsf cardiac output val:</strong>
+    <%= @echo_ventricle_left_systolic_func.elvsf_cardiac_output_val %>
+  </li>
+
+  <li>
+    <strong>Elvsf cardiac output method:</strong>
+    <%= @echo_ventricle_left_systolic_func.elvsf_cardiac_output_method %>
+  </li>
+
+  <li>
+    <strong>Elvsf ejection fraction calculated:</strong>
+    <%= @echo_ventricle_left_systolic_func.elvsf_ejection_fraction_calculated %>
+  </li>
+
+  <li>
+    <strong>Elvsf ejection fraction desc:</strong>
+    <%= @echo_ventricle_left_systolic_func.elvsf_ejection_fraction_desc %>
+  </li>
+
+  <li>
+    <strong>Elvsf ejection:</strong>
+    <%= @echo_ventricle_left_systolic_func.elvsf_ejection %>
+  </li>
+
+  <li>
+    <strong>Elvsf fractional shortening method:</strong>
+    <%= @echo_ventricle_left_systolic_func.elvsf_fractional_shortening_method %>
+  </li>
+
+  <li>
+    <strong>Elvsf fractional shortening val:</strong>
+    <%= @echo_ventricle_left_systolic_func.elvsf_fractional_shortening_val %>
+  </li>
+
+  <li>
+    <strong>Elvsf fractional shortening desc:</strong>
+    <%= @echo_ventricle_left_systolic_func.elvsf_fractional_shortening_desc %>
+  </li>
+
+  <li>
+    <strong>Elvsf wall seg doppler val:</strong>
+    <%= @echo_ventricle_left_systolic_func.elvsf_wall_seg_doppler_val %>
+  </li>
+
+  <li>
+    <strong>Elvsf lvot vti val:</strong>
+    <%= @echo_ventricle_left_systolic_func.elvsf_lvot_vti_val %>
+  </li>
+
+  <li>
+    <strong>Elvsf lvot area val:</strong>
+    <%= @echo_ventricle_left_systolic_func.elvsf_lvot_area_val %>
+  </li>
+
+  <li>
+    <strong>Elvsf lvot diameter val:</strong>
+    <%= @echo_ventricle_left_systolic_func.elvsf_lvot_diameter_val %>
+  </li>
+
+  <li>
+    <strong>Elvsf lvot peak velocity val:</strong>
+    <%= @echo_ventricle_left_systolic_func.elvsf_lvot_peak_velocity_val %>
+  </li>
+
+  <li>
+    <strong>Elvsf cardiac index:</strong>
+    <%= @echo_ventricle_left_systolic_func.elvsf_cardiac_index %>
+  </li>
+
+  <li>
+    <strong>Elvsf stroke work val:</strong>
+    <%= @echo_ventricle_left_systolic_func.elvsf_stroke_work_val %>
+  </li>
+
+  <li>
+    <strong>Elvsf stroke work index:</strong>
+    <%= @echo_ventricle_left_systolic_func.elvsf_stroke_work_index %>
+  </li>
+
+  <li>
+    <strong>Elvsf stroke volume method:</strong>
+    <%= @echo_ventricle_left_systolic_func.elvsf_stroke_volume_method %>
+  </li>
+
+  <li>
+    <strong>Elvsf peak dp dt:</strong>
+    <%= @echo_ventricle_left_systolic_func.elvsf_peak_dp_dt %>
+  </li>
+
+  <li>
+    <strong>Elvsf stroke distance:</strong>
+    <%= @echo_ventricle_left_systolic_func.elvsf_stroke_distance %>
+  </li>
+
+  <li>
+    <strong>Elvsf stroke volume valumetric:</strong>
+    <%= @echo_ventricle_left_systolic_func.elvsf_stroke_volume_valumetric %>
+  </li>
+
+  <li>
+    <strong>Elvsf stroke volume doppler:</strong>
+    <%= @echo_ventricle_left_systolic_func.elvsf_stroke_volume_doppler %>
+  </li>
+
+  <li>
+    <strong>Elvsf vti a wave us val:</strong>
+    <%= @echo_ventricle_left_systolic_func.elvsf_vti_a_wave_us_val %>
+  </li>
+
+  <li>
+    <strong>Elvsf vti e wave us val:</strong>
+    <%= @echo_ventricle_left_systolic_func.elvsf_vti_e_wave_us_val %>
+  </li>
+
+  <li>
+    <strong>Elvsf pulsed tissue doppler s:</strong>
+    <%= @echo_ventricle_left_systolic_func.elvsf_pulsed_tissue_doppler_s %>
+  </li>
+
+  <li>
+    <strong>Elvsf tei index:</strong>
+    <%= @echo_ventricle_left_systolic_func.elvsf_tei_index %>
+  </li>
+
+  <li>
+    <strong>Elvsf dyssynchrony:</strong>
+    <%= @echo_ventricle_left_systolic_func.elvsf_dyssynchrony %>
+  </li>
+
+  <li>
+    <strong>Elvsf mean dp dt:</strong>
+    <%= @echo_ventricle_left_systolic_func.elvsf_mean_dp_dt %>
+  </li>
+
+  <li>
+    <strong>Elvsf global long strain:</strong>
+    <%= @echo_ventricle_left_systolic_func.elvsf_global_long_strain %>
+  </li>
+
+  <li>
+    <strong>Elvsf notes:</strong>
+    <%= @echo_ventricle_left_systolic_func.elvsf_notes %>
+  </li>
+
+</ul>
+
+<span>
+    <%= link "Edit LV Echo ", to: Routes.pt_echo_elvsf_path(@conn, :edit,
+     @patient,
+     @cardiac_echo, @echo_ventricle_left_systolic_func), class: "button is-link"%>
+</span>
+<span>
+  <%= link "Back To LV Echo  Index", to: Routes.pt_echo_elvsf_path(@conn, :index,
+  @patient, @cardiac_echo) , class: "button is-link"%>
+</span>
+
+<span>
+<%= link "To Patients List",  to: Routes.pt_path(@conn, :index),
+class: "button is-link"   %>
+ </span>
+
+<span>
+<%= link "To Cath Lab",  to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-link"   %>
+ </span>

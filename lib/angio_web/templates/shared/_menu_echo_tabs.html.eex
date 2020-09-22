@@ -3,9 +3,11 @@
 <% alias Angio.Caths%>
 <% alias Angio.Interventions %>
 <% alias Angio.Ivestigations %>
-<span class="button  is-primary is-medium is-fullwidth ">
-    Echo  Records
- </span>
+
+<div class="menu_tabs echo ">
+    Echo Records
+ </div>
+
 <div class="menu_info_coronary_tabs">
   <div class="tabs is-small is-centered">
     <ul>
@@ -39,6 +41,16 @@
  <%= render  AngioWeb.SharedView, "_info_menu_count.html",
                  prompt: "Echo LV Structure",
                  count: count_echo_ventricle_lefts %>
+      <% end %>
+</li>
+      <!------------------------------------>
+ <li>
+<% count_echo_ventricle_left_systolic_funcs  =  Ivestigations.count_echo_ventricle_left_systolic_funcs(@cardiac_echo.id) %>
+<%= link to: Routes.pt_echo_elvsf_path(@conn, :index, @patient,
+      @cardiac_echo), class: "button is-link is-rounded is-small is-fullwidth " do %>
+ <%= render  AngioWeb.SharedView, "_info_menu_count.html",
+                 prompt: "Echo LV Syst Func",
+                 count: count_echo_ventricle_left_systolic_funcs %>
       <% end %>
 </li>
       <!------------------------------------>

@@ -452,6 +452,11 @@ input[type="checkbox"] {
     @include background-alpha(#e6f5c9, 0.8);
     box-shadow: 0 2px 15px $purple;
   }
+  &.echo{
+    @include background-alpha(#b2df8a, 0.8);
+    box-shadow: 0 2px 15px #fb9a99;
+  }
+
 }
 //////////////////
 

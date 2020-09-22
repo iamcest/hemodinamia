@@ -1,6 +1,4 @@
-# Angio Is an  Information System   For  for Cardiology / Cath Lab complemented with data Dictionary and Data Sets, Visualizations and Report generation, Loinc Searching
-
-## Based on Data Standards and  Controlled Vocabularies. Work in progress
+# Angio: An Information System For  Cardiology Based On Standard Definitions and Controlled Vocabularies. Work in progress
 
 ### Warning
 
@@ -17,11 +15,11 @@
 * Caths: Procedure Details - Coronary Artery Anatomy - LV - Sats Pressures -
   Complications - Radiation Dosages - The Lesions - Collaterals - Grafts, T-Grafts
 * Medications
-* Angio Images can be stored for each individul Patient
+* Angio Images can be stored for each individul Patient (Limited Functionality)
 * Specific Blood Lab results
 * Interventions: ASD Closures, Coarctation Procedures, Aortic Balloon Valvuloplasty
 * Follow Ups: ASD Closure - PCI
-* Echo:  Admin, Left Atrium
+* Echo:  Admin, Left Atrium, Right Atrium, LV structure
 * LOINC: Find a Code and Search in Short and Long common Name (Postgres Full Text Searching)
 
 
@@ -60,7 +58,7 @@ Demographis List. Patient Bach
 Naive Roport For Demographics in English
 ![DemoReport](screenshots/demographics_report.png)
 
-Saturations and Pressure in A graphical Report
+Saturations and Pressure in A Mullins Like graphical Report
 ![SatsPressures](screenshots/sats_pressures_diagram_1.png )
 
 

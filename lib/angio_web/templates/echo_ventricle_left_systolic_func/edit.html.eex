@@ -1,0 +1,29 @@
+<div class="title_form">
+<h5 class="title is-5 has-text-centered">Editing Echo: LV  Systolic Function </h5>
+</div><!-----------title_form------------------->
+<div class="element_info">
+
+<%= render  AngioWeb.SharedView, "_patient_info.html", patient: @patient %>
+</div>
+
+ <%= render "form.html", changeset: @changeset,
+        echo_ventricle_left_systolic_func: @echo_ventricle_left_systolic_func,
+action: Routes.pt_echo_elvsf_path(@conn, :update,
+@patient,
+@cardiac_echo,
+@echo_ventricle_left_systolic_func ) %>
+
+
+<p class ="buttons_separator"> . </p>
+<span>
+ <%= link "Back To Echo Of LV Sys Function List ",
+  to: Routes.pt_echo_elv_path(@conn, :index,
+@patient, @cardiac_echo) , class: "button is-link "%>
+</span>
+
+<span>
+   <%= link "Back To Patient List",
+   to: Routes.pt_path(@conn,   :index), class: "button is-link" %>
+
+ </span>
+

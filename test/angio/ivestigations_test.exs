@@ -798,4 +798,125 @@ defmodule Angio.IvestigationsTest do
       assert %Ecto.Changeset{} = Ivestigations.change_echo_ventricle_left(echo_ventricle_left)
     end
   end
+
+  describe "echo_ventricle_left_systolic_funcs" do
+    alias Angio.Ivestigations.Echo_ventricle_left_systolic_func
+
+    @valid_attrs %{elvsf_cardiac_index: "some elvsf_cardiac_index", elvsf_cardiac_output_method: "some elvsf_cardiac_output_method", elvsf_cardiac_output_val: "some elvsf_cardiac_output_val", elvsf_dyssynchrony: "some elvsf_dyssynchrony", elvsf_ejection: "some elvsf_ejection", elvsf_ejection_fraction_calculated: "some elvsf_ejection_fraction_calculated", elvsf_ejection_fraction_desc: "some elvsf_ejection_fraction_desc", elvsf_fractional_shortening_desc: "some elvsf_fractional_shortening_desc", elvsf_fractional_shortening_method: "some elvsf_fractional_shortening_method", elvsf_fractional_shortening_val: "some elvsf_fractional_shortening_val", elvsf_global_long_strain: "some elvsf_global_long_strain", elvsf_is_normal_yn: true, elvsf_lvot_area_val: "some elvsf_lvot_area_val", elvsf_lvot_diameter_val: "some elvsf_lvot_diameter_val", elvsf_lvot_peak_velocity_val: "some elvsf_lvot_peak_velocity_val", elvsf_lvot_vti_val: "some elvsf_lvot_vti_val", elvsf_mean_dp_dt: "some elvsf_mean_dp_dt", elvsf_measurment_dt: "some elvsf_measurment_dt", elvsf_notes: "some elvsf_notes", elvsf_peak_dp_dt: "some elvsf_peak_dp_dt", elvsf_pulsed_tissue_doppler_s: "some elvsf_pulsed_tissue_doppler_s", elvsf_stroke_distance: "some elvsf_stroke_distance", elvsf_stroke_volume_doppler: "some elvsf_stroke_volume_doppler", elvsf_stroke_volume_method: "some elvsf_stroke_volume_method", elvsf_stroke_volume_valumetric: "some elvsf_stroke_volume_valumetric", elvsf_stroke_work_index: "some elvsf_stroke_work_index", elvsf_stroke_work_val: "some elvsf_stroke_work_val", elvsf_systolic_function_desc: "some elvsf_systolic_function_desc", elvsf_tei_index: "some elvsf_tei_index", elvsf_vti_a_wave_us_val: "some elvsf_vti_a_wave_us_val", elvsf_vti_e_wave_us_val: "some elvsf_vti_e_wave_us_val", elvsf_wall_seg_doppler_val: "some elvsf_wall_seg_doppler_val"}
+    @update_attrs %{elvsf_cardiac_index: "some updated elvsf_cardiac_index", elvsf_cardiac_output_method: "some updated elvsf_cardiac_output_method", elvsf_cardiac_output_val: "some updated elvsf_cardiac_output_val", elvsf_dyssynchrony: "some updated elvsf_dyssynchrony", elvsf_ejection: "some updated elvsf_ejection", elvsf_ejection_fraction_calculated: "some updated elvsf_ejection_fraction_calculated", elvsf_ejection_fraction_desc: "some updated elvsf_ejection_fraction_desc", elvsf_fractional_shortening_desc: "some updated elvsf_fractional_shortening_desc", elvsf_fractional_shortening_method: "some updated elvsf_fractional_shortening_method", elvsf_fractional_shortening_val: "some updated elvsf_fractional_shortening_val", elvsf_global_long_strain: "some updated elvsf_global_long_strain", elvsf_is_normal_yn: false, elvsf_lvot_area_val: "some updated elvsf_lvot_area_val", elvsf_lvot_diameter_val: "some updated elvsf_lvot_diameter_val", elvsf_lvot_peak_velocity_val: "some updated elvsf_lvot_peak_velocity_val", elvsf_lvot_vti_val: "some updated elvsf_lvot_vti_val", elvsf_mean_dp_dt: "some updated elvsf_mean_dp_dt", elvsf_measurment_dt: "some updated elvsf_measurment_dt", elvsf_notes: "some updated elvsf_notes", elvsf_peak_dp_dt: "some updated elvsf_peak_dp_dt", elvsf_pulsed_tissue_doppler_s: "some updated elvsf_pulsed_tissue_doppler_s", elvsf_stroke_distance: "some updated elvsf_stroke_distance", elvsf_stroke_volume_doppler: "some updated elvsf_stroke_volume_doppler", elvsf_stroke_volume_method: "some updated elvsf_stroke_volume_method", elvsf_stroke_volume_valumetric: "some updated elvsf_stroke_volume_valumetric", elvsf_stroke_work_index: "some updated elvsf_stroke_work_index", elvsf_stroke_work_val: "some updated elvsf_stroke_work_val", elvsf_systolic_function_desc: "some updated elvsf_systolic_function_desc", elvsf_tei_index: "some updated elvsf_tei_index", elvsf_vti_a_wave_us_val: "some updated elvsf_vti_a_wave_us_val", elvsf_vti_e_wave_us_val: "some updated elvsf_vti_e_wave_us_val", elvsf_wall_seg_doppler_val: "some updated elvsf_wall_seg_doppler_val"}
+    @invalid_attrs %{elvsf_cardiac_index: nil, elvsf_cardiac_output_method: nil, elvsf_cardiac_output_val: nil, elvsf_dyssynchrony: nil, elvsf_ejection: nil, elvsf_ejection_fraction_calculated: nil, elvsf_ejection_fraction_desc: nil, elvsf_fractional_shortening_desc: nil, elvsf_fractional_shortening_method: nil, elvsf_fractional_shortening_val: nil, elvsf_global_long_strain: nil, elvsf_is_normal_yn: nil, elvsf_lvot_area_val: nil, elvsf_lvot_diameter_val: nil, elvsf_lvot_peak_velocity_val: nil, elvsf_lvot_vti_val: nil, elvsf_mean_dp_dt: nil, elvsf_measurment_dt: nil, elvsf_notes: nil, elvsf_peak_dp_dt: nil, elvsf_pulsed_tissue_doppler_s: nil, elvsf_stroke_distance: nil, elvsf_stroke_volume_doppler: nil, elvsf_stroke_volume_method: nil, elvsf_stroke_volume_valumetric: nil, elvsf_stroke_work_index: nil, elvsf_stroke_work_val: nil, elvsf_systolic_function_desc: nil, elvsf_tei_index: nil, elvsf_vti_a_wave_us_val: nil, elvsf_vti_e_wave_us_val: nil, elvsf_wall_seg_doppler_val: nil}
+
+    def echo_ventricle_left_systolic_func_fixture(attrs \\ %{}) do
+      {:ok, echo_ventricle_left_systolic_func} =
+        attrs
+        |> Enum.into(@valid_attrs)
+        |> Ivestigations.create_echo_ventricle_left_systolic_func()
+
+      echo_ventricle_left_systolic_func
+    end
+
+    test "list_echo_ventricle_left_systolic_funcs/0 returns all echo_ventricle_left_systolic_funcs" do
+      echo_ventricle_left_systolic_func = echo_ventricle_left_systolic_func_fixture()
+      assert Ivestigations.list_echo_ventricle_left_systolic_funcs() == [echo_ventricle_left_systolic_func]
+    end
+
+    test "get_echo_ventricle_left_systolic_func!/1 returns the echo_ventricle_left_systolic_func with given id" do
+      echo_ventricle_left_systolic_func = echo_ventricle_left_systolic_func_fixture()
+      assert Ivestigations.get_echo_ventricle_left_systolic_func!(echo_ventricle_left_systolic_func.id) == echo_ventricle_left_systolic_func
+    end
+
+    test "create_echo_ventricle_left_systolic_func/1 with valid data creates a echo_ventricle_left_systolic_func" do
+      assert {:ok, %Echo_ventricle_left_systolic_func{} = echo_ventricle_left_systolic_func} = Ivestigations.create_echo_ventricle_left_systolic_func(@valid_attrs)
+      assert echo_ventricle_left_systolic_func.elvsf_cardiac_index == "some elvsf_cardiac_index"
+      assert echo_ventricle_left_systolic_func.elvsf_cardiac_output_method == "some elvsf_cardiac_output_method"
+      assert echo_ventricle_left_systolic_func.elvsf_cardiac_output_val == "some elvsf_cardiac_output_val"
+      assert echo_ventricle_left_systolic_func.elvsf_dyssynchrony == "some elvsf_dyssynchrony"
+      assert echo_ventricle_left_systolic_func.elvsf_ejection == "some elvsf_ejection"
+      assert echo_ventricle_left_systolic_func.elvsf_ejection_fraction_calculated == "some elvsf_ejection_fraction_calculated"
+      assert echo_ventricle_left_systolic_func.elvsf_ejection_fraction_desc == "some elvsf_ejection_fraction_desc"
+      assert echo_ventricle_left_systolic_func.elvsf_fractional_shortening_desc == "some elvsf_fractional_shortening_desc"
+      assert echo_ventricle_left_systolic_func.elvsf_fractional_shortening_method == "some elvsf_fractional_shortening_method"
+      assert echo_ventricle_left_systolic_func.elvsf_fractional_shortening_val == "some elvsf_fractional_shortening_val"
+      assert echo_ventricle_left_systolic_func.elvsf_global_long_strain == "some elvsf_global_long_strain"
+      assert echo_ventricle_left_systolic_func.elvsf_is_normal_yn == true
+      assert echo_ventricle_left_systolic_func.elvsf_lvot_area_val == "some elvsf_lvot_area_val"
+      assert echo_ventricle_left_systolic_func.elvsf_lvot_diameter_val == "some elvsf_lvot_diameter_val"
+      assert echo_ventricle_left_systolic_func.elvsf_lvot_peak_velocity_val == "some elvsf_lvot_peak_velocity_val"
+      assert echo_ventricle_left_systolic_func.elvsf_lvot_vti_val == "some elvsf_lvot_vti_val"
+      assert echo_ventricle_left_systolic_func.elvsf_mean_dp_dt == "some elvsf_mean_dp_dt"
+      assert echo_ventricle_left_systolic_func.elvsf_measurment_dt == "some elvsf_measurment_dt"
+      assert echo_ventricle_left_systolic_func.elvsf_notes == "some elvsf_notes"
+      assert echo_ventricle_left_systolic_func.elvsf_peak_dp_dt == "some elvsf_peak_dp_dt"
+      assert echo_ventricle_left_systolic_func.elvsf_pulsed_tissue_doppler_s == "some elvsf_pulsed_tissue_doppler_s"
+      assert echo_ventricle_left_systolic_func.elvsf_stroke_distance == "some elvsf_stroke_distance"
+      assert echo_ventricle_left_systolic_func.elvsf_stroke_volume_doppler == "some elvsf_stroke_volume_doppler"
+      assert echo_ventricle_left_systolic_func.elvsf_stroke_volume_method == "some elvsf_stroke_volume_method"
+      assert echo_ventricle_left_systolic_func.elvsf_stroke_volume_valumetric == "some elvsf_stroke_volume_valumetric"
+      assert echo_ventricle_left_systolic_func.elvsf_stroke_work_index == "some elvsf_stroke_work_index"
+      assert echo_ventricle_left_systolic_func.elvsf_stroke_work_val == "some elvsf_stroke_work_val"
+      assert echo_ventricle_left_systolic_func.elvsf_systolic_function_desc == "some elvsf_systolic_function_desc"
+      assert echo_ventricle_left_systolic_func.elvsf_tei_index == "some elvsf_tei_index"
+      assert echo_ventricle_left_systolic_func.elvsf_vti_a_wave_us_val == "some elvsf_vti_a_wave_us_val"
+      assert echo_ventricle_left_systolic_func.elvsf_vti_e_wave_us_val == "some elvsf_vti_e_wave_us_val"
+      assert echo_ventricle_left_systolic_func.elvsf_wall_seg_doppler_val == "some elvsf_wall_seg_doppler_val"
+    end
+
+    test "create_echo_ventricle_left_systolic_func/1 with invalid data returns error changeset" do
+      assert {:error, %Ecto.Changeset{}} = Ivestigations.create_echo_ventricle_left_systolic_func(@invalid_attrs)
+    end
+
+    test "update_echo_ventricle_left_systolic_func/2 with valid data updates the echo_ventricle_left_systolic_func" do
+      echo_ventricle_left_systolic_func = echo_ventricle_left_systolic_func_fixture()
+      assert {:ok, %Echo_ventricle_left_systolic_func{} = echo_ventricle_left_systolic_func} = Ivestigations.update_echo_ventricle_left_systolic_func(echo_ventricle_left_systolic_func, @update_attrs)
+      assert echo_ventricle_left_systolic_func.elvsf_cardiac_index == "some updated elvsf_cardiac_index"
+      assert echo_ventricle_left_systolic_func.elvsf_cardiac_output_method == "some updated elvsf_cardiac_output_method"
+      assert echo_ventricle_left_systolic_func.elvsf_cardiac_output_val == "some updated elvsf_cardiac_output_val"
+      assert echo_ventricle_left_systolic_func.elvsf_dyssynchrony == "some updated elvsf_dyssynchrony"
+      assert echo_ventricle_left_systolic_func.elvsf_ejection == "some updated elvsf_ejection"
+      assert echo_ventricle_left_systolic_func.elvsf_ejection_fraction_calculated == "some updated elvsf_ejection_fraction_calculated"
+      assert echo_ventricle_left_systolic_func.elvsf_ejection_fraction_desc == "some updated elvsf_ejection_fraction_desc"
+      assert echo_ventricle_left_systolic_func.elvsf_fractional_shortening_desc == "some updated elvsf_fractional_shortening_desc"
+      assert echo_ventricle_left_systolic_func.elvsf_fractional_shortening_method == "some updated elvsf_fractional_shortening_method"
+      assert echo_ventricle_left_systolic_func.elvsf_fractional_shortening_val == "some updated elvsf_fractional_shortening_val"
+      assert echo_ventricle_left_systolic_func.elvsf_global_long_strain == "some updated elvsf_global_long_strain"
+      assert echo_ventricle_left_systolic_func.elvsf_is_normal_yn == false
+      assert echo_ventricle_left_systolic_func.elvsf_lvot_area_val == "some updated elvsf_lvot_area_val"
+      assert echo_ventricle_left_systolic_func.elvsf_lvot_diameter_val == "some updated elvsf_lvot_diameter_val"
+      assert echo_ventricle_left_systolic_func.elvsf_lvot_peak_velocity_val == "some updated elvsf_lvot_peak_velocity_val"
+      assert echo_ventricle_left_systolic_func.elvsf_lvot_vti_val == "some updated elvsf_lvot_vti_val"
+      assert echo_ventricle_left_systolic_func.elvsf_mean_dp_dt == "some updated elvsf_mean_dp_dt"
+      assert echo_ventricle_left_systolic_func.elvsf_measurment_dt == "some updated elvsf_measurment_dt"
+      assert echo_ventricle_left_systolic_func.elvsf_notes == "some updated elvsf_notes"
+      assert echo_ventricle_left_systolic_func.elvsf_peak_dp_dt == "some updated elvsf_peak_dp_dt"
+      assert echo_ventricle_left_systolic_func.elvsf_pulsed_tissue_doppler_s == "some updated elvsf_pulsed_tissue_doppler_s"
+      assert echo_ventricle_left_systolic_func.elvsf_stroke_distance == "some updated elvsf_stroke_distance"
+      assert echo_ventricle_left_systolic_func.elvsf_stroke_volume_doppler == "some updated elvsf_stroke_volume_doppler"
+      assert echo_ventricle_left_systolic_func.elvsf_stroke_volume_method == "some updated elvsf_stroke_volume_method"
+      assert echo_ventricle_left_systolic_func.elvsf_stroke_volume_valumetric == "some updated elvsf_stroke_volume_valumetric"
+      assert echo_ventricle_left_systolic_func.elvsf_stroke_work_index == "some updated elvsf_stroke_work_index"
+      assert echo_ventricle_left_systolic_func.elvsf_stroke_work_val == "some updated elvsf_stroke_work_val"
+      assert echo_ventricle_left_systolic_func.elvsf_systolic_function_desc == "some updated elvsf_systolic_function_desc"
+      assert echo_ventricle_left_systolic_func.elvsf_tei_index == "some updated elvsf_tei_index"
+      assert echo_ventricle_left_systolic_func.elvsf_vti_a_wave_us_val == "some updated elvsf_vti_a_wave_us_val"
+      assert echo_ventricle_left_systolic_func.elvsf_vti_e_wave_us_val == "some updated elvsf_vti_e_wave_us_val"
+      assert echo_ventricle_left_systolic_func.elvsf_wall_seg_doppler_val == "some updated elvsf_wall_seg_doppler_val"
+    end
+
+    test "update_echo_ventricle_left_systolic_func/2 with invalid data returns error changeset" do
+      echo_ventricle_left_systolic_func = echo_ventricle_left_systolic_func_fixture()
+      assert {:error, %Ecto.Changeset{}} = Ivestigations.update_echo_ventricle_left_systolic_func(echo_ventricle_left_systolic_func, @invalid_attrs)
+      assert echo_ventricle_left_systolic_func == Ivestigations.get_echo_ventricle_left_systolic_func!(echo_ventricle_left_systolic_func.id)
+    end
+
+    test "delete_echo_ventricle_left_systolic_func/1 deletes the echo_ventricle_left_systolic_func" do
+      echo_ventricle_left_systolic_func = echo_ventricle_left_systolic_func_fixture()
+      assert {:ok, %Echo_ventricle_left_systolic_func{}} = Ivestigations.delete_echo_ventricle_left_systolic_func(echo_ventricle_left_systolic_func)
+      assert_raise Ecto.NoResultsError, fn -> Ivestigations.get_echo_ventricle_left_systolic_func!(echo_ventricle_left_systolic_func.id) end
+    end
+
+    test "change_echo_ventricle_left_systolic_func/1 returns a echo_ventricle_left_systolic_func changeset" do
+      echo_ventricle_left_systolic_func = echo_ventricle_left_systolic_func_fixture()
+      assert %Ecto.Changeset{} = Ivestigations.change_echo_ventricle_left_systolic_func(echo_ventricle_left_systolic_func)
+    end
+  end
 end

@@ -55,6 +55,11 @@ defmodule Angio.Ivestigations.Cardiac_echo do
       Angio.Ivestigations.Echo_ventricle_left,
       foreign_key: :cardiac_echo_id
     )
+    has_many(
+      :echo_ventricle_left_systolic_funcs,
+      Angio.Ivestigations.Echo_ventricle_left_systolic_func,
+      foreign_key: :cardiac_echo_id
+    )
 
     timestamps()
   end

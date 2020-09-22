@@ -35,6 +35,11 @@
 <%= link to: Routes.pt_echo_elv_path(@conn, :index, @patient,
       @cardiac_echo), class: "button is-link is-small is-fullwidth " do %> LV Structure <% end %>
       </div>
+<!----------------------------------------->
+<div class="dropdown-item">
+<%= link to: Routes.pt_echo_elvsf_path(@conn, :index, @patient,
+      @cardiac_echo), class: "button is-link is-small is-fullwidth " do %> LV Syst Func <% end %>
+      </div>
 
 
 

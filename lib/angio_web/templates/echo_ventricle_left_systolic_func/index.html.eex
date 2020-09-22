@@ -1,0 +1,85 @@
+<div class="menu_info_tabs" >
+<%= render  AngioWeb.SharedView, "_menu_echo_tabs.html", assigns %>
+</div>
+
+<div class="element_info">
+  <%= render AngioWeb.SharedView, "_patient_info.html", patient:
+  @patient %>
+</div>
+
+<table
+  class="table is-bordered
+                    is-striped
+                    is-full-width
+                    is-hoverable" >
+
+
+<div class="title_form">
+<h6 class="title is-6 has-text-centered">
+Listing LV-Structure  Echo</h6>
+</div>
+  <thead>
+    <tr>
+      <th>Elvsf is normal yn</th>
+      <th>Elvsf systolic function desc</th>
+      <th>Show</th>
+<th>Edit</th>
+<th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for echo_ventricle_left_systolic_func <- @echo_ventricle_left_systolic_funcs do %>
+    <tr>
+      <td><%= echo_ventricle_left_systolic_func.elvsf_is_normal_yn %></td>
+      <td><%= echo_ventricle_left_systolic_func.elvsf_systolic_function_desc %></td>
+
+      <td>
+      <%= link "Show", to: Routes.pt_echo_elvsf_path(@conn, :show,
+          @patient,
+          @cardiac_echo,
+          echo_ventricle_left_systolic_func), class: "button  is-primary is-rounded is-small is-fullwidth" %>
+      </td>
+      <td>
+
+      <%= link "Edit", to: Routes.pt_echo_elvsf_path(@conn, :edit,
+       @patient,
+          @cardiac_echo,
+        echo_ventricle_left_systolic_func), class: "button is-primary is-rounded is-small is-fullwidth" %>
+      </td>
+
+      <td>
+ <%= link "Delete", to: Routes.pt_echo_elvsf_path(@conn, :delete,
+@patient,
+@cardiac_echo,
+echo_ventricle_left_systolic_func), method: :delete, data: [confirm:
+        "Are you sure?"], class: "button is-small is-rounded is-danger is-fullwidth" %>
+
+
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+
+<span><%= link "New  Left Ventricle  Sys Function Echo  Record ",
+      to: Routes.pt_echo_elvsf_path(@conn, :new,
+  @patient, @cardiac_echo), class: "button is-info is-medium is-fullwidth" %>
+</span>
+
+<p class ="buttons_separator"> . </p>
+
+<span><%= link "To Cardiac Echo List",
+      to: Routes.pt_echo_path(@conn, :index,
+  @patient), class: "button is-link" %>
+</span>
+
+<span>
+  <%= link "To Patient List", to: Routes.pt_path(@conn, :index), class: "button
+  is-link" %>
+</span>
+
+<span>
+<%= link " To Cath Lab ",  to: Routes.pt_angio_path(@conn, :index, @patient),
+class: "button is-link"   %>
+ </span>

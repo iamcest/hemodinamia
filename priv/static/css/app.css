@@ -477,6 +477,15 @@ input[type="checkbox"] {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr= argb(rgba(230, 245, 201, 0.8)), endColorstr= argb(rgba(230, 245, 201, 0.8)));
     zoom: 1;
     box-shadow: 0 2px 15px #8a4d76; }
+  .menu_tabs.echo {
+    background-color: #b2df8a;
+    /* fallback color */
+    background-color: rgba(178, 223, 138, 0.8);
+    /* IE */
+    background-color: transparent\9;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr= argb(rgba(178, 223, 138, 0.8)), endColorstr= argb(rgba(178, 223, 138, 0.8)));
+    zoom: 1;
+    box-shadow: 0 2px 15px #fb9a99; }
 
 /*! bulma.io v0.7.5 | MIT License | github.com/jgthms/bulma */
 @keyframes spinAround {

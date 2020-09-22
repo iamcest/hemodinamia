@@ -66,6 +66,8 @@ defmodule AngioWeb.Router do
         resources("/echo_left_atriums", Echo_left_atriumController, as: :ela)
         resources("/echo_right_atriums", Echo_right_atriumController, as: :era)
         resources("/echo_ventricle_lefts", Echo_ventricle_leftController, as: :elv)
+        resources("/echo_ventricle_left_systolic_funcs", Echo_ventricle_left_systolic_funcController, as: :elvsf)
+
       end
 
       ########## CORONARY ANGIO#################

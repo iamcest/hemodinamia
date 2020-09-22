@@ -550,4 +550,116 @@ defmodule Angio.Ivestigations do
       )
     )
   end
+
+  alias Angio.Ivestigations.Echo_ventricle_left_systolic_func
+
+  @doc """
+  Returns the list of echo_ventricle_left_systolic_funcs.
+
+  ## Examples
+
+      iex> list_echo_ventricle_left_systolic_funcs()
+      [%Echo_ventricle_left_systolic_func{}, ...]
+
+  """
+  def list_echo_ventricle_left_systolic_funcs do
+    Repo.all(Echo_ventricle_left_systolic_func)
+  end
+
+
+  def list_echo_ventricle_left_systolic_funcs(conn) do
+    #Repo.all(Echo_ventricle_left_systolic_func)
+    Repo.all(Ecto.assoc(conn.assigns[:cardiac_echo], :echo_ventricle_left_systolic_funcs))
+  end
+  @doc """
+  Gets a single echo_ventricle_left_systolic_func.
+
+  Raises `Ecto.NoResultsError` if the Echo ventricle left systolic func does not exist.
+
+  ## Examples
+
+      iex> get_echo_ventricle_left_systolic_func!(123)
+      %Echo_ventricle_left_systolic_func{}
+
+      iex> get_echo_ventricle_left_systolic_func!(456)
+      ** (Ecto.NoResultsError)
+
+  """
+  def get_echo_ventricle_left_systolic_func!(id), do: Repo.get!(Echo_ventricle_left_systolic_func, id)
+
+  @doc """
+  Creates a echo_ventricle_left_systolic_func.
+
+  ## Examples
+
+      iex> create_echo_ventricle_left_systolic_func(%{field: value})
+      {:ok, %Echo_ventricle_left_systolic_func{}}
+
+      iex> create_echo_ventricle_left_systolic_func(%{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def create_echo_ventricle_left_systolic_func(attrs \\ %{}) do
+    %Echo_ventricle_left_systolic_func{}
+    |> Echo_ventricle_left_systolic_func.changeset(attrs)
+    |> Repo.insert()
+  end
+
+  @doc """
+  Updates a echo_ventricle_left_systolic_func.
+
+  ## Examples
+
+      iex> update_echo_ventricle_left_systolic_func(echo_ventricle_left_systolic_func, %{field: new_value})
+      {:ok, %Echo_ventricle_left_systolic_func{}}
+
+      iex> update_echo_ventricle_left_systolic_func(echo_ventricle_left_systolic_func, %{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def update_echo_ventricle_left_systolic_func(%Echo_ventricle_left_systolic_func{} = echo_ventricle_left_systolic_func, attrs) do
+    echo_ventricle_left_systolic_func
+    |> Echo_ventricle_left_systolic_func.changeset(attrs)
+    |> Repo.update()
+  end
+
+  @doc """
+  Deletes a echo_ventricle_left_systolic_func.
+
+  ## Examples
+
+      iex> delete_echo_ventricle_left_systolic_func(echo_ventricle_left_systolic_func)
+      {:ok, %Echo_ventricle_left_systolic_func{}}
+
+      iex> delete_echo_ventricle_left_systolic_func(echo_ventricle_left_systolic_func)
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def delete_echo_ventricle_left_systolic_func(%Echo_ventricle_left_systolic_func{} = echo_ventricle_left_systolic_func) do
+    Repo.delete(echo_ventricle_left_systolic_func)
+  end
+
+  @doc """
+  Returns an `%Ecto.Changeset{}` for tracking echo_ventricle_left_systolic_func changes.
+
+  ## Examples
+
+      iex> change_echo_ventricle_left_systolic_func(echo_ventricle_left_systolic_func)
+      %Ecto.Changeset{source: %Echo_ventricle_left_systolic_func{}}
+
+  """
+  def change_echo_ventricle_left_systolic_func(%Echo_ventricle_left_systolic_func{} = echo_ventricle_left_systolic_func) do
+    Echo_ventricle_left_systolic_func.changeset(echo_ventricle_left_systolic_func, %{})
+  end
+  def count_echo_ventricle_left_systolic_funcs(id) do
+    Angio.Repo.one(
+      from(
+        echo_lv in Echo_ventricle_left_systolic_func,
+        select: count(echo_lv.id),
+        where: echo_lv.cardiac_echo_id == ^id
+      )
+    )
+  end
+
+
 end
