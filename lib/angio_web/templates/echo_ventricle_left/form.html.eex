@@ -945,7 +945,7 @@ class: "form-control")
     <%= text_input f, :elv_notes,
         class: "textarea",
         type: "input", placeholder: "elv_notes"  %>
-  <p class="help"></p>
+  <p class="help"></p> 
 
   </div><!---control---------->
    </div><!-------field-------->

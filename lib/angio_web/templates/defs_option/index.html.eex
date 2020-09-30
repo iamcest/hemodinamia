@@ -57,18 +57,21 @@ Listing Field Options - Pick-list Elements</h5>
 
 </td>
       <td>
-     <span><%= link "Show", to: Routes.definition_defs_option_path(@conn, :show, @definition,defs_option), class: "button is-link is-small is-fullwidth" %></span>
+     <span><%= link "Show", to: Routes.definition_defs_option_path(@conn, :show, @definition,defs_option),
+     class: "button is-link is-small is-rounded is-fullwidth" %></span>
 
       </td>
       <td>
- <span><%= link "Edit", to: Routes.definition_defs_option_path(@conn, :edit, @definition,defs_option), class: "button is-link is-small is-fullwidth " %></span>
+ <span><%= link "Edit", to: Routes.definition_defs_option_path(@conn, :edit, @definition,defs_option),
+  class: "button is-link is-small is-rounded is-fullwidth " %></span>
        </td>
                 </td>
 
 
        <td>
     <span>
- <%= link "Delete", to: Routes.definition_defs_option_path(@conn, :delete, @definition, defs_option), method: :delete, data: [confirm: "Are you sure?"], class: " button is-danger is-small  is-fullwidth" %>
+ <%= link "Delete", to: Routes.definition_defs_option_path(@conn, :delete, @definition, defs_option), method: :delete, data: [confirm: "Are you sure?"],
+  class: " button is-danger is-small  is-rounded is-fullwidth" %>
         </span>
   </td>
     </tr>
@@ -87,4 +90,3 @@ class: "button is-info is-large is-fullwidth" %>
        class: "button is-link"  %>
 
 </span>
-

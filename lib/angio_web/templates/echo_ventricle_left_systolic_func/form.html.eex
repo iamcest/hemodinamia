@@ -9,134 +9,671 @@
 </div>
 
      <% end %>
+<div class="columns">
+  <div class="column is-8 frame_1">
 
-  <%= label f, :elvsf_is_normal_yn %>
-  <%= checkbox f, :elvsf_is_normal_yn %>
-  <%= error_tag f, :elvsf_is_normal_yn %>
+ <!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+11111111
+</div><!----column-------------------->
+ <div class = "column">
+ 2222222
+ </div><!----column-------------------->
 
-  <%= label f, :elvsf_systolic_function_desc %>
-  <%= text_input f, :elvsf_systolic_function_desc %>
-  <%= error_tag f, :elvsf_systolic_function_desc %>
+ <div class = "column">
+ 333333333
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+<!---------end start------------------------------------>
 
-  <%= label f, :elvsf_measurment_dt %>
-  <%= text_input f, :elvsf_measurment_dt %>
-  <%= error_tag f, :elvsf_measurment_dt %>
 
-  <%= label f, :elvsf_cardiac_output_val %>
-  <%= text_input f, :elvsf_cardiac_output_val %>
-  <%= error_tag f, :elvsf_cardiac_output_val %>
 
-  <%= label f, :elvsf_cardiac_output_method %>
-  <%= text_input f, :elvsf_cardiac_output_method %>
-  <%= error_tag f, :elvsf_cardiac_output_method %>
+ <!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
 
-  <%= label f, :elvsf_ejection_fraction_calculated %>
-  <%= text_input f, :elvsf_ejection_fraction_calculated %>
-  <%= error_tag f, :elvsf_ejection_fraction_calculated %>
+<!---------field------------------------->
+ <div class="field">
+        <label class="label">LV Systolic Function Is Normal?</label>
+        <div class="control">
+         <p/>
+         <span class="field_help"></span>
+          <%= checkbox f, :elvsf_is_normal_yn,
+            type: "checkbox" %>
+            <%= error_tag f,
+           :elelvsf_is_normal_yn %>
+        </div>
+        <p class="help">Check if Yes
+        </p>
+    </div><!-----field------------------>
 
-  <%= label f, :elvsf_ejection_fraction_desc %>
-  <%= text_input f, :elvsf_ejection_fraction_desc %>
-  <%= error_tag f, :elvsf_ejection_fraction_desc %>
+</div><!----column-------------------->
+ <div class = "column">
 
+<!----- start selection field---------------------------->
+   <%  s_elvsf_systolic_function_desc  =  Query.select_options("elvsf_systolic_function_desc") %>
+<div class="field">
+    <label class="label">LV Syst Func Description</label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f, :elvsf_systolic_function_desc, s_elvsf_systolic_function_desc,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :elvsf_systolic_function_desc %>
+            <span class="help"></span>
+          </div><!----control---->
+        </div><!------field--->
+
+ <!-------end selection field----------------------->
+
+
+ </div><!----column-------------------->
+
+ <div class = "column">
+  <!-------field-------------------------->
+      <div class="field">
+          <label class="label">Measurment Date </label>
+          <div class="control">
+     <%= text_input f, :elvsf_measurment_dt,
+        class: "input", type: "date",
+         placeholder: "elvsf_measurment_dt", required: false %>
+          <%= error_tag f,  :elvsf_measurment_dt  %>
+          </div>
+          <p class="help">  </p>
+        </div>
+        <!----field---------------->
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+
+<!---------end start------------------------------------>
+
+ <!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!------field----------------------------------->
+  <div class="field">
+  <label class="label">Cardiac Output Value</label>
+  <div class="control">
+    <span class="field_help"></span>
+    <%= text_input f, :elvsf_cardiac_output_val ,
+        class: "input",
+        type: "text",
+        placeholder: "elvsf_cardiac_output_val",
+        required: false %>
+   <%= error_tag f, :elvsf_cardiac_output_val %>
+  </div>
+  <p class="help"></p>
+  </div>
+    <!----------field--------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+
+
+
+<!----- start selection field---------------------------->
+   <%  s_elvsf_cardiac_output_method  =
+    Query.select_options("elvsf_cardiac_output_method") %>
+<div class="field">
+    <label class="label">CO Method</label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f, :elvsf_cardiac_output_method, s_elvsf_cardiac_output_method,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :elvsf_cardiac_output_method %>
+          </div><!----control---->
+        </div><!------field--->
+
+ <!-------end selection field----------------------->
+
+ </div><!----column-------------------->
+
+ <div class = "column">
   <%= label f, :elvsf_ejection %>
   <%= text_input f, :elvsf_ejection %>
   <%= error_tag f, :elvsf_ejection %>
 
-  <%= label f, :elvsf_fractional_shortening_method %>
-  <%= text_input f, :elvsf_fractional_shortening_method %>
-  <%= error_tag f, :elvsf_fractional_shortening_method %>
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+<!---------end start------------------------------------>
 
-  <%= label f, :elvsf_fractional_shortening_val %>
-  <%= text_input f, :elvsf_fractional_shortening_val %>
-  <%= error_tag f, :elvsf_fractional_shortening_val %>
 
-  <%= label f, :elvsf_fractional_shortening_desc %>
-  <%= text_input f, :elvsf_fractional_shortening_desc %>
-  <%= error_tag f, :elvsf_fractional_shortening_desc %>
 
-  <%= label f, :elvsf_wall_seg_doppler_val %>
-  <%= text_input f, :elvsf_wall_seg_doppler_val %>
+ <!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!------start field----------------------------->
+
+ <div class="field">
+  <label class="label">Calculated EF </label>
+  <div class="control">
+    <%= text_input f, :elvsf_ejection_fraction_calculated,
+        class: "input is-primary",
+type: "text", placeholder: "elvsf_ejection_fraction_calculated",  required: false
+%>
+  <%= error_tag f, :elvsf_ejection_fraction_calculated %>
+
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+
+<!-----------end field----------------------------->
+
+</div><!----column-------------------->
+ <div class = "column">
+
+<!----- start selection field---------------------------->
+   <%  s_elvsf_ejection_fraction_desc  =
+    Query.select_options("elvsf_ejection_fraction_desc") %>
+<div class="field">
+    <label class="label">Resting LVEF Description</label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f, :elvsf_ejection_fraction_desc, s_elvsf_ejection_fraction_desc,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :elvsf_ejection_fraction_desc %>
+          </div><!----control---->
+        </div><!------field--->
+
+ <!-------end selection field----------------------->
+
+ </div><!----column-------------------->
+
+ <div class = "column">
+
+
+<!----- start selection field---------------------------->
+   <%  s_elvsf_fractional_shortening_method  =
+    Query.select_options("elvsf_fractional_shortening_method") %>
+<div class="field">
+    <label class="label">Shortening Method </label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f, :elvsf_fractional_shortening_method,
+              s_elvsf_fractional_shortening_method,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :elvsf_fractional_shortening_method %>
+          </div><!----control---->
+        </div><!------field--->
+
+ <!-------end selection field----------------------->
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+<!---------end start------------------------------------>
+
+
+
+
+
+
+
+
+ <!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+
+
+<!------start field----------------------------->
+
+ <div class="field">
+  <label class="label">Fractional Shortening </label>
+  <div class="control">
+    <%= text_input f, :elvsf_fractional_shortening_val,
+        class: "input is-primary",
+type: "text", placeholder: "elvsf_fractional_shortening_val",  required: false
+%>
   <%= error_tag f, :elvsf_wall_seg_doppler_val %>
 
-  <%= label f, :elvsf_lvot_vti_val %>
-  <%= text_input f, :elvsf_lvot_vti_val %>
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+
+<!-----------end field----------------------------->
+
+
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+
+
+<!----- start selection field---------------------------->
+   <%  s_elvsf_fractional_shortening_desc  =
+    Query.select_options("elvsf_fractional_shortening_desc") %>
+<div class="field">
+    <label class="label">Shortening Description </label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f, :elvsf_fractional_shortening_desc,
+              s_elvsf_fractional_shortening_desc,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :elvsf_fractional_shortening_desc %>
+          </div><!----control---->
+        </div><!------field--->
+
+ <!-------end selection field----------------------->
+
+
+ </div><!----column-------------------->
+
+ <div class = "column">
+
+
+<!------start field----------------------------->
+
+ <div class="field">
+  <label class="label">Peak Velocity </label>
+  <div class="control">
+    <%= text_input f, :elvsf_wall_seg_doppler_val,
+        class: "input is-primary",
+type: "text", placeholder: "elvsf_wall_seg_doppler_val",  required: false
+%>
+  <%= error_tag f, :elvsf_wall_seg_doppler_val %>
+
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+
+<!-----------end field----------------------------->
+
+
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+<!---------end start------------------------------------>
+
+
+
+
+
+ <!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+<!------start field----------------------------->
+
+ <div class="field">
+  <label class="label"> VTI  </label>
+  <div class="control">
+    <%= text_input f, :elvsf_lvot_vti_val,
+        class: "input is-primary",
+type: "text", placeholder: "elvsf_lvot_vti_val",  required: false
+%>
   <%= error_tag f, :elvsf_lvot_vti_val %>
 
-  <%= label f, :elvsf_lvot_area_val %>
-  <%= text_input f, :elvsf_lvot_area_val %>
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+
+<!-----------end field----------------------------->
+
+
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+
+
+<!------start field----------------------------->
+
+ <div class="field">
+  <label class="label"> LVOT Area  </label>
+  <div class="control">
+    <%= text_input f, :elvsf_lvot_area_val,
+        class: "input is-primary",
+type: "text", placeholder: "elvsf_lvot_area_val",  required: false
+%>
   <%= error_tag f, :elvsf_lvot_area_val %>
 
-  <%= label f, :elvsf_lvot_diameter_val %>
-  <%= text_input f, :elvsf_lvot_diameter_val %>
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+
+<!-----------end field----------------------------->
+
+ </div><!----column-------------------->
+
+ <div class = "column">
+
+
+<!------start field----------------------------->
+
+ <div class="field">
+  <label class="label"> LVOT Diameter  </label>
+  <div class="control">
+    <%= text_input f, :elvsf_lvot_diameter_val,
+        class: "input is-primary",
+type: "text", placeholder: "elvsf_lvot_diameter_val",  required: false
+%>
   <%= error_tag f, :elvsf_lvot_diameter_val %>
 
-  <%= label f, :elvsf_lvot_peak_velocity_val %>
-  <%= text_input f, :elvsf_lvot_peak_velocity_val %>
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+
+<!-----------end field----------------------------->
+
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+<!---------end start------------------------------------>
+
+
+ <!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+<!------start field----------------------------->
+
+ <div class="field">
+  <label class="label"> LVOT Peak Velocity  </label>
+  <div class="control">
+    <%= text_input f, :elvsf_lvot_peak_velocity_val,
+        class: "input is-primary",
+type: "text", placeholder: "elvsf_lvot_peak_velocity_val",  required: false
+%>
   <%= error_tag f, :elvsf_lvot_peak_velocity_val %>
 
-  <%= label f, :elvsf_cardiac_index %>
-  <%= text_input f, :elvsf_cardiac_index %>
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+
+<!-----------end field----------------------------->
+</div><!----column-------------------->
+ <div class = "column">
+
+<!------start field----------------------------->
+
+ <div class="field">
+  <label class="label"> LVOT Peak Velocity  </label>
+  <div class="control">
+    <%= text_input f, :elvsf_lvot_peak_velocity_val,
+        class: "input is-primary",
+type: "text", placeholder: "elvsf_lvot_peak_velocity_val",  required: false
+%>
+  <%= error_tag f, :elvsf_lvot_peak_velocity_val %>
+
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+
+<!-----------end field----------------------------->
+ </div><!----column-------------------->
+
+ <div class = "column">
+
+<!------start field----------------------------->
+
+ <div class="field">
+  <label class="label"> Cardiac Index  </label>
+  <div class="control">
+    <%= text_input f, :elvsf_cardiac_index,
+        class: "input is-primary",
+type: "text", placeholder: "elvsf_cardiac_index",  required: false
+%>
   <%= error_tag f, :elvsf_cardiac_index %>
 
-  <%= label f, :elvsf_stroke_work_val %>
-  <%= text_input f, :elvsf_stroke_work_val %>
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+
+<!-----------end field----------------------------->
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+ <div class = "columns">
+<div class = "column">
+
+
+ <div class="field">
+  <label class="label"> Stroke Work  </label>
+  <div class="control">
+    <%= text_input f, :elvsf_stroke_work_val,
+        class: "input is-primary",
+type: "text", placeholder: "elvsf_stroke_work_val",  required: false
+%>
   <%= error_tag f, :elvsf_stroke_work_val %>
 
-  <%= label f, :elvsf_stroke_work_index %>
-  <%= text_input f, :elvsf_stroke_work_index %>
-  <%= error_tag f, :elvsf_stroke_work_index %>
+  <p class="help"></p>
 
-  <%= label f, :elvsf_stroke_volume_method %>
-  <%= text_input f, :elvsf_stroke_volume_method %>
-  <%= error_tag f, :elvsf_stroke_volume_method %>
+  </div><!---control---------->
+   </div><!-------field-------->
+<!--------end field-------------------------------->
 
-  <%= label f, :elvsf_peak_dp_dt %>
-  <%= text_input f, :elvsf_peak_dp_dt %>
-  <%= error_tag f, :elvsf_peak_dp_dt %>
+ </div><!----column-------------------->
+<!---------end start------------------------------------>
 
-  <%= label f, :elvsf_stroke_distance %>
+
+ <!---------start----------------------------------->
+<div class = "column">
+
+<!------start field----------------------------->
+
+ <div class="field">
+  <label class="label"> Stroke Work Index  </label>
+  <div class="control">
+    <%= text_input f, :elvsf_stroke_work_index ,
+        class: "input is-primary",
+type: "text", placeholder: "elvsf_stroke_work_index ",  required: false
+%>
+  <%= error_tag f, :elvsf_stroke_work_index  %>
+
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+<!--------end field-------------------------------->
+
+
+</div><!----column-------------------->
+ <div class = "column">
+
+
+<!----- start selection field---------------------------->
+   <%  s_elvsf_stroke_volume_method  =
+    Query.select_options("elvsf_stroke_volume_method") %>
+<div class="field">
+    <label class="label">Stroke Volume Method </label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f, :elvsf_stroke_volume_method,
+              s_elvsf_stroke_volume_method,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :elvsf_stroke_volume_method %>
+          </div><!----control---->
+        </div><!------field--->
+
+ <!-------end selection field----------------------->
+<!---------end start------------------------------------>
+
+ </div><!----column-------------------->
+
+</div><!----columns--------------------------->
+<!---------end start------------------------------------>
+
+
+
+
+
+
+ <!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+ <%= label f, :elvsf_stroke_distance %>
   <%= text_input f, :elvsf_stroke_distance %>
   <%= error_tag f, :elvsf_stroke_distance %>
+</div><!----column-------------------->
+ <div class = "column">
 
   <%= label f, :elvsf_stroke_volume_valumetric %>
   <%= text_input f, :elvsf_stroke_volume_valumetric %>
   <%= error_tag f, :elvsf_stroke_volume_valumetric %>
+ </div><!----column-------------------->
+
+ <div class = "column">
 
   <%= label f, :elvsf_stroke_volume_doppler %>
   <%= text_input f, :elvsf_stroke_volume_doppler %>
   <%= error_tag f, :elvsf_stroke_volume_doppler %>
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+<!---------end start------------------------------------>
+
+
+
+ <!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
 
   <%= label f, :elvsf_vti_a_wave_us_val %>
   <%= text_input f, :elvsf_vti_a_wave_us_val %>
   <%= error_tag f, :elvsf_vti_a_wave_us_val %>
+</div><!----column-------------------->
+ <div class = "column">
 
   <%= label f, :elvsf_vti_e_wave_us_val %>
   <%= text_input f, :elvsf_vti_e_wave_us_val %>
   <%= error_tag f, :elvsf_vti_e_wave_us_val %>
+ </div><!----column-------------------->
+
+ <div class = "column">
+
 
   <%= label f, :elvsf_pulsed_tissue_doppler_s %>
   <%= text_input f, :elvsf_pulsed_tissue_doppler_s %>
   <%= error_tag f, :elvsf_pulsed_tissue_doppler_s %>
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+<!---------end start------------------------------------>
 
-  <%= label f, :elvsf_tei_index %>
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+ <%= label f, :elvsf_tei_index %>
   <%= text_input f, :elvsf_tei_index %>
   <%= error_tag f, :elvsf_tei_index %>
-
-  <%= label f, :elvsf_dyssynchrony %>
+</div><!----column-------------------->
+ <div class = "column">
+ <%= label f, :elvsf_dyssynchrony %>
   <%= text_input f, :elvsf_dyssynchrony %>
   <%= error_tag f, :elvsf_dyssynchrony %>
 
-  <%= label f, :elvsf_mean_dp_dt %>
+ </div><!----column-------------------->
+
+ <div class = "column">
+ <%= label f, :elvsf_mean_dp_dt %>
   <%= text_input f, :elvsf_mean_dp_dt %>
   <%= error_tag f, :elvsf_mean_dp_dt %>
 
-  <%= label f, :elvsf_global_long_strain %>
+ </div><!----column-------------------->
+  <div class = "column">
+ <%= label f, :elvsf_peak_dp_dt %>
+  <%= text_input f, :elvsf_peak_dp_dt %>
+  <%= error_tag f, :elvsf_peak_dp_dt %>
+   </div><!----column-------------------->
+</div><!----columns--------------------------->
+<!---------end start------------------------------------>
+
+
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+ <%= label f, :elvsf_global_long_strain %>
   <%= text_input f, :elvsf_global_long_strain %>
   <%= error_tag f, :elvsf_global_long_strain %>
+</div><!----column-------------------->
+ <div class = "column">
+ 2222222
+ </div><!----column-------------------->
 
-  <%= label f, :elvsf_notes %>
-  <%= textarea f, :elvsf_notes %>
-  <%= error_tag f, :elvsf_notes %>
+ <div class = "column">
+ 333333333
+ </div><!----column-------------------->
+</div><!----columns--------------------------->
+<!---------end start------------------------------------>
+
+
+
+
+</div>
+
+<div class="column is-4 frame_1">
+
+<!---------start----------------------------------->
+  <div class = "columns">
+<div class = "column">
+
+  <div class="field">
+  <label class="label"> My Notes On LV Systolic Function Echo</label>
+  <div class="control">
+    <%= text_input f, :elvsf_notes,
+        class: "textarea",
+        type: "input", placeholder: "elsf_notes"  %>
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+</div><!----column-------------------->
+</div><!----columns--------------------------->
+
+
+
+ <div class = "columns">
+<div class = "column">
+ <%= render  AngioWeb.SharedView, "_help_area.html" %>
+</div><!----column-------------------->
+</div><!----columns--------------------------->
+
+</div><!------RIGHT COLUMN----------------------------->
+</div><!------end columns---->
+
+
  <div>
     <%= submit "Save Record", class: "button is-info is-medium is-fullwidth " %>
 
