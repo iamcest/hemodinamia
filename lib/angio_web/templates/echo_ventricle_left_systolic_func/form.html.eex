@@ -12,21 +12,6 @@
 <div class="columns">
   <div class="column is-8 frame_1">
 
- <!---------start----------------------------------->
-  <div class = "columns">
-<div class = "column">
-11111111
-</div><!----column-------------------->
- <div class = "column">
- 2222222
- </div><!----column-------------------->
-
- <div class = "column">
- 333333333
- </div><!----column-------------------->
-</div><!----columns--------------------------->
-<!---------end start------------------------------------>
-
 
 
  <!---------start----------------------------------->
@@ -77,7 +62,7 @@ class: "form-control")
  <div class = "column">
   <!-------field-------------------------->
       <div class="field">
-          <label class="label">Measurment Date </label>
+          <label class="label">Measurments Date </label>
           <div class="control">
      <%= text_input f, :elvsf_measurment_dt,
         class: "input", type: "date",
@@ -141,10 +126,8 @@ class: "form-control")
  </div><!----column-------------------->
 
  <div class = "column">
-  <%= label f, :elvsf_ejection %>
-  <%= text_input f, :elvsf_ejection %>
-  <%= error_tag f, :elvsf_ejection %>
 
+ Aux
  </div><!----column-------------------->
 </div><!----columns--------------------------->
 <!---------end start------------------------------------>
@@ -328,6 +311,7 @@ type: "text", placeholder: "elvsf_wall_seg_doppler_val",  required: false
  <div class="field">
   <label class="label"> VTI  </label>
   <div class="control">
+  <span class="field_help"></span>
     <%= text_input f, :elvsf_lvot_vti_val,
         class: "input is-primary",
 type: "text", placeholder: "elvsf_lvot_vti_val",  required: false
@@ -354,6 +338,7 @@ type: "text", placeholder: "elvsf_lvot_vti_val",  required: false
  <div class="field">
   <label class="label"> LVOT Area  </label>
   <div class="control">
+  <span class="field_help"></span>
     <%= text_input f, :elvsf_lvot_area_val,
         class: "input is-primary",
 type: "text", placeholder: "elvsf_lvot_area_val",  required: false
@@ -377,6 +362,7 @@ type: "text", placeholder: "elvsf_lvot_area_val",  required: false
  <div class="field">
   <label class="label"> LVOT Diameter  </label>
   <div class="control">
+  <span class="field_help"></span>
     <%= text_input f, :elvsf_lvot_diameter_val,
         class: "input is-primary",
 type: "text", placeholder: "elvsf_lvot_diameter_val",  required: false
@@ -403,6 +389,7 @@ type: "text", placeholder: "elvsf_lvot_diameter_val",  required: false
  <div class="field">
   <label class="label"> LVOT Peak Velocity  </label>
   <div class="control">
+  <span class="field_help"></span>
     <%= text_input f, :elvsf_lvot_peak_velocity_val,
         class: "input is-primary",
 type: "text", placeholder: "elvsf_lvot_peak_velocity_val",  required: false
@@ -423,6 +410,7 @@ type: "text", placeholder: "elvsf_lvot_peak_velocity_val",  required: false
  <div class="field">
   <label class="label"> LVOT Peak Velocity  </label>
   <div class="control">
+  <span class="field_help"></span>
     <%= text_input f, :elvsf_lvot_peak_velocity_val,
         class: "input is-primary",
 type: "text", placeholder: "elvsf_lvot_peak_velocity_val",  required: false
@@ -444,6 +432,7 @@ type: "text", placeholder: "elvsf_lvot_peak_velocity_val",  required: false
  <div class="field">
   <label class="label"> Cardiac Index  </label>
   <div class="control">
+  <span class="field_help"></span>
     <%= text_input f, :elvsf_cardiac_index,
         class: "input is-primary",
 type: "text", placeholder: "elvsf_cardiac_index",  required: false
@@ -465,6 +454,7 @@ type: "text", placeholder: "elvsf_cardiac_index",  required: false
  <div class="field">
   <label class="label"> Stroke Work  </label>
   <div class="control">
+  <span class="field_help"></span>
     <%= text_input f, :elvsf_stroke_work_val,
         class: "input is-primary",
 type: "text", placeholder: "elvsf_stroke_work_val",  required: false
@@ -489,6 +479,7 @@ type: "text", placeholder: "elvsf_stroke_work_val",  required: false
  <div class="field">
   <label class="label"> Stroke Work Index  </label>
   <div class="control">
+  <span class="field_help"></span>
     <%= text_input f, :elvsf_stroke_work_index ,
         class: "input is-primary",
 type: "text", placeholder: "elvsf_stroke_work_index ",  required: false
@@ -541,22 +532,67 @@ class: "form-control")
  <!---------start----------------------------------->
   <div class = "columns">
 <div class = "column">
- <%= label f, :elvsf_stroke_distance %>
-  <%= text_input f, :elvsf_stroke_distance %>
-  <%= error_tag f, :elvsf_stroke_distance %>
+<!------start field----------------------------->
+
+ <div class="field">
+  <label class="label"> Stroke Distance  </label>
+  <div class="control">
+  <span class="field_help"></span>
+    <%= text_input f, :elvsf_stroke_distance ,
+        class: "input is-primary",
+type: "text", placeholder: "elvsf_stroke_distance",  required: false
+%>
+  <%= error_tag f, :elvsf_stroke_distance  %>
+
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+<!--------end field-------------------------------->
+
+
+
+
 </div><!----column-------------------->
  <div class = "column">
 
-  <%= label f, :elvsf_stroke_volume_valumetric %>
-  <%= text_input f, :elvsf_stroke_volume_valumetric %>
-  <%= error_tag f, :elvsf_stroke_volume_valumetric %>
+<!------start field----------------------------->
+ <div class="field">
+  <label class="label"> Stroke Vol Volumetric  </label>
+  <div class="control">
+  <span class="field_help"></span>
+    <%= text_input f, :elvsf_stroke_volume_valumetric ,
+        class: "input is-primary",
+type: "text", placeholder: "elvsf_stroke_volume_valumetric",  required: false
+%>
+  <%= error_tag f, :elvsf_stroke_volume_valumetric  %>
+
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+<!--------end field-------------------------------->
+
  </div><!----column-------------------->
 
  <div class = "column">
+<!------start field----------------------------->
 
-  <%= label f, :elvsf_stroke_volume_doppler %>
-  <%= text_input f, :elvsf_stroke_volume_doppler %>
-  <%= error_tag f, :elvsf_stroke_volume_doppler %>
+ <div class="field">
+  <label class="label"> Stroke Vol Doppler  </label>
+  <div class="control">
+  <span class="field_help"></span>
+    <%= text_input f, :elvsf_stroke_volume_doppler,
+        class: "input is-primary",
+type: "text", placeholder: "elvsf_stroke_volume_doppler",  required: false
+%>
+  <%= error_tag f, :elvsf_stroke_volume_doppler  %>
+
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+<!--------end field-------------------------------->
  </div><!----column-------------------->
 </div><!----columns--------------------------->
 <!---------end start------------------------------------>
@@ -567,23 +603,65 @@ class: "form-control")
   <div class = "columns">
 <div class = "column">
 
-  <%= label f, :elvsf_vti_a_wave_us_val %>
-  <%= text_input f, :elvsf_vti_a_wave_us_val %>
-  <%= error_tag f, :elvsf_vti_a_wave_us_val %>
+<!------start field----------------------------->
+ <div class="field">
+  <label class="label"> VTI a Value  </label>
+  <div class="control">
+  <span class="field_help"></span>
+    <%= text_input f, :elvsf_vti_a_wave_us_val,
+        class: "input is-primary",
+type: "text", placeholder: "elvsf_vti_a_wave_us_val",  required: false
+%>
+  <%= error_tag f, :elvsf_vti_a_wave_us_val  %>
+
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+<!--------end field-------------------------------->
+
 </div><!----column-------------------->
  <div class = "column">
 
-  <%= label f, :elvsf_vti_e_wave_us_val %>
-  <%= text_input f, :elvsf_vti_e_wave_us_val %>
-  <%= error_tag f, :elvsf_vti_e_wave_us_val %>
+<!------start field----------------------------->
+ <div class="field">
+  <label class="label"> VTI e Value  </label>
+  <div class="control">
+  <span class="field_help"></span>
+    <%= text_input f, :elvsf_vti_e_wave_us_val,
+        class: "input is-primary",
+type: "text", placeholder: "elvsf_vti_e_wave_us_val",  required: false
+%>
+  <%= error_tag f, :elvsf_vti_e_wave_us_val  %>
+
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+<!--------end field-------------------------------->
+
+
  </div><!----column-------------------->
 
  <div class = "column">
 
+<!------start field----------------------------->
+ <div class="field">
+  <label class="label"> Tissue Doppler Septal </label>
+  <div class="control">
+  <span class="field_help"></span>
+    <%= text_input f, :elvsf_pulsed_tissue_doppler_s,
+        class: "input is-primary",
+type: "text", placeholder: "elvsf_pulsed_tissue_doppler_s",  required: false
+%>
+  <%= error_tag f, :elvsf_pulsed_tissue_doppler_s  %>
 
-  <%= label f, :elvsf_pulsed_tissue_doppler_s %>
-  <%= text_input f, :elvsf_pulsed_tissue_doppler_s %>
-  <%= error_tag f, :elvsf_pulsed_tissue_doppler_s %>
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+<!--------end field-------------------------------->
+
  </div><!----column-------------------->
 </div><!----columns--------------------------->
 <!---------end start------------------------------------>
@@ -593,27 +671,94 @@ class: "form-control")
 <!---------start----------------------------------->
   <div class = "columns">
 <div class = "column">
- <%= label f, :elvsf_tei_index %>
-  <%= text_input f, :elvsf_tei_index %>
-  <%= error_tag f, :elvsf_tei_index %>
+
+<!------start field----------------------------->
+ <div class="field">
+  <label class="label"> TEI Index </label>
+  <div class="control">
+  <span class="field_help"></span>
+    <%= text_input f, :elvsf_tei_index ,
+        class: "input is-primary",
+type: "text", placeholder: "elvsf_tei_index",  required: false
+%>
+  <%= error_tag f, :elvsf_tei_index  %>
+
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+<!--------end field-------------------------------->
+
 </div><!----column-------------------->
  <div class = "column">
- <%= label f, :elvsf_dyssynchrony %>
-  <%= text_input f, :elvsf_dyssynchrony %>
-  <%= error_tag f, :elvsf_dyssynchrony %>
+
+<!----- start selection field---------------------------->
+   <%  s_elvsf_dyssynchrony  =  Query.select_options("elvsf_dyssynchrony") %>
+<div class="field">
+    <label class="label">LV Dyssynchrony</label>
+          <div class="control">
+            <div class="select is-primary">
+             <span class="field_help"></span>
+              <%= select(f, :elvsf_dyssynchrony, s_elvsf_dyssynchrony,
+prompt: "---Select---",
+class: "form-control")
+              %>
+            </div>
+            <!--select--->
+            <%= error_tag f, :elvsf_dyssynchrony %>
+            <span class="help"></span>
+          </div><!----control---->
+        </div><!------field--->
+
+ <!-------end selection field----------------------->
+
+
+
 
  </div><!----column-------------------->
 
  <div class = "column">
- <%= label f, :elvsf_mean_dp_dt %>
-  <%= text_input f, :elvsf_mean_dp_dt %>
-  <%= error_tag f, :elvsf_mean_dp_dt %>
+
+
+<!------start field----------------------------->
+ <div class="field">
+  <label class="label"> Mean Dp/Dt </label>
+  <div class="control">
+  <span class="field_help"></span>
+    <%= text_input f, :elvsf_mean_dp_dt ,
+        class: "input is-primary",
+type: "text", placeholder: "elvsf_mean_dp_dt",  required: false
+%>
+  <%= error_tag f, :elvsf_mean_dp_dt  %>
+
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+<!--------end field-------------------------------->
+
 
  </div><!----column-------------------->
   <div class = "column">
- <%= label f, :elvsf_peak_dp_dt %>
-  <%= text_input f, :elvsf_peak_dp_dt %>
-  <%= error_tag f, :elvsf_peak_dp_dt %>
+
+
+<!------start field----------------------------->
+ <div class="field">
+  <label class="label"> Peak Dp/Dt </label>
+  <div class="control">
+  <span class="field_help"></span>
+    <%= text_input f, :elvsf_peak_dp_dt ,
+        class: "input is-primary",
+type: "text", placeholder: "elvsf_peak_dp_dt",  required: false
+%>
+  <%= error_tag f, :elvsf_peak_dp_dt  %>
+
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+<!--------end field-------------------------------->
+
    </div><!----column-------------------->
 </div><!----columns--------------------------->
 <!---------end start------------------------------------>
@@ -624,16 +769,36 @@ class: "form-control")
   <div class = "columns">
 <div class = "column">
 
- <%= label f, :elvsf_global_long_strain %>
-  <%= text_input f, :elvsf_global_long_strain %>
-  <%= error_tag f, :elvsf_global_long_strain %>
+<!------start field----------------------------->
+ <div class="field">
+  <label class="label"> Long Strain </label>
+  <div class="control">
+  <span class="field_help"></span>
+    <%= text_input f, :elvsf_global_long_strain ,
+        class: "input is-primary",
+type: "text", placeholder: "elvsf_global_long_strain",  required: false
+%>
+  <%= error_tag f, :elvsf_global_long_strain  %>
+
+  <p class="help"></p>
+
+  </div><!---control---------->
+   </div><!-------field-------->
+<!--------end field-------------------------------->
+
 </div><!----column-------------------->
  <div class = "column">
- 2222222
+
+ Aux
+<!-----------
+  <%#= label f, :elvsf_ejection %>
+  <%#= text_input f, :elvsf_ejection %>
+  <%#= error_tag f, :elvsf_ejection %>
+------------------>
  </div><!----column-------------------->
 
  <div class = "column">
- 333333333
+ Aux
  </div><!----column-------------------->
 </div><!----columns--------------------------->
 <!---------end start------------------------------------>
