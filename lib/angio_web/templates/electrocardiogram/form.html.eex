@@ -144,7 +144,6 @@
 
 
 
-+
 </div><!------column-------------------->
 <div class = "column">
 <%  s_ecg_rhythm =  Query.select_options("ecg_rhythm") %>
