@@ -10,7 +10,7 @@
     "@vizuaalog/bulmajs": "^0.10.0",
     "bulma-extensions": "^6.2.7",
     "cool-checkboxes-for-bulma.io": "^1.1.0",
-    "d3": "^5.9.7",
+    "d3": "^7.6.1",
     "eslint": "^6.1.0",
     "file-loader": "^4.0.0",
     "font-awesome": "^4.7.0",
