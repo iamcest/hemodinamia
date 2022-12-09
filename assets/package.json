@@ -26,7 +26,7 @@
     "phoenix_live_view": "file:../deps/phoenix_live_view",
     "svg-path-to-polygons": "^0.1.0",
     "svg-points": "^6.0.1",
-    "tinymce": "^5.1.0",
+    "tinymce": "^5.10.7",
     "webpack": "^4.41.5",
     "xml-js": "^1.6.11"
   },
